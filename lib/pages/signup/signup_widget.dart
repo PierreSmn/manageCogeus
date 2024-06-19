@@ -805,7 +805,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           ),
                                                         );
                                                         shouldSetState = true;
-                                                        if (_model.queryOutput.isNotEmpty) {
+                                                        if (_model.queryOutput != null && _model.queryOutput!.isNotEmpty) {
                                                           await showDialog(
                                                             context: context,
                                                             builder:
