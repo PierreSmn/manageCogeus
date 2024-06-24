@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'signup_widget.dart' show SignupWidget;
 import 'package:flutter/material.dart';
@@ -30,8 +29,6 @@ class SignupModel extends FlutterFlowModel<SignupWidget> {
   late bool confirmPasswordVisibility;
   String? Function(BuildContext, String?)?
       confirmPasswordTextControllerValidator;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsRow>? queryOutput;
 
   @override
   void initState(BuildContext context) {

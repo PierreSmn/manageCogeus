@@ -791,17 +791,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             0.0, 0.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        _model.queryOutput =
-                                                            await ClientsTable()
-                                                                .queryRows(
-                                                          queryFn: (q) => q.eq(
-                                                            'name',
-                                                            _model
-                                                                .clientTextController
-                                                                .text,
-                                                          ),
-                                                        );
-
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
                                                         if (_model
@@ -837,13 +826,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           return;
                                                         }
 
-                                                        await ClientsTable()
-                                                            .insert({
-                                                          'name': _model
-                                                              .clientTextController
-                                                              .text,
-                                                        });
-
                                                         context.goNamedAuth(
                                                           'createProfile',
                                                           context.mounted,
@@ -857,8 +839,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             ),
                                                           }.withoutNulls,
                                                         );
-
-                                                        setState(() {});
                                                       },
                                                       text: 'Continuer',
                                                       options: FFButtonOptions(
