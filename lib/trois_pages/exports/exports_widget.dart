@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'exports_model.dart';
 export 'exports_model.dart';
 
@@ -230,14 +229,12 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          child: WebViewAware(
-                                                                                            child: GestureDetector(
-                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                              child: const SizedBox(
-                                                                                                height: 250.0,
-                                                                                                width: 500.0,
-                                                                                                child: AddlistWidget(),
-                                                                                              ),
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                            child: const SizedBox(
+                                                                                              height: 250.0,
+                                                                                              width: 500.0,
+                                                                                              child: AddlistWidget(),
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -292,12 +289,10 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                            child: WebViewAware(
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                child: EraseListWidget(
-                                                                                                  listId: _model.listSelect!,
-                                                                                                ),
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                              child: EraseListWidget(
+                                                                                                listId: _model.listSelect!,
                                                                                               ),
                                                                                             ),
                                                                                           );

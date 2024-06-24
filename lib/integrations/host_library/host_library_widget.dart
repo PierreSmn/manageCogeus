@@ -12,7 +12,6 @@ import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'host_library_model.dart';
 export 'host_library_model.dart';
 
@@ -304,6 +303,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                   'none',
                                                                 ),
                                                               );
+
                                                               shouldSetState =
                                                                   true;
                                                               if ((_model
@@ -537,15 +537,13 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                               builder: (dialogContext) {
                                                                                                 return Material(
                                                                                                   color: Colors.transparent,
-                                                                                                  child: WebViewAware(
-                                                                                                    child: GestureDetector(
-                                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                      child: SizedBox(
-                                                                                                        height: 680.0,
-                                                                                                        width: 330.0,
-                                                                                                        child: PlayVideoWidget(
-                                                                                                          videoAdress: hostedVideosItem.mediaLink!,
-                                                                                                        ),
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                    child: SizedBox(
+                                                                                                      height: 680.0,
+                                                                                                      width: 330.0,
+                                                                                                      child: PlayVideoWidget(
+                                                                                                        videoAdress: hostedVideosItem.mediaLink!,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -584,15 +582,13 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
                                                                                               alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              child: WebViewAware(
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                  child: SizedBox(
-                                                                                                    height: 275.0,
-                                                                                                    width: 400.0,
-                                                                                                    child: EraseAssetWidget(
-                                                                                                      assetID: hostedVideosItem.id,
-                                                                                                    ),
+                                                                                              child: GestureDetector(
+                                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                child: SizedBox(
+                                                                                                  height: 275.0,
+                                                                                                  width: 400.0,
+                                                                                                  child: EraseAssetWidget(
+                                                                                                    assetID: hostedVideosItem.id,
                                                                                                   ),
                                                                                                 ),
                                                                                               ),

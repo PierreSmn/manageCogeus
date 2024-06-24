@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'signup_model.dart';
 export 'signup_model.dart';
 
@@ -792,8 +791,6 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             0.0, 0.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        var shouldSetState =
-                                                            false;
                                                         _model.queryOutput =
                                                             await ClientsTable()
                                                                 .queryRows(
@@ -804,37 +801,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                 .text,
                                                           ),
                                                         );
-                                                        shouldSetState = true;
-                                                        if (_model.queryOutput != null && _model.queryOutput!.isNotEmpty) {
-                                                          await showDialog(
-                                                            context: context,
-                                                            builder:
-                                                                (alertDialogContext) {
-                                                              return WebViewAware(
-                                                                child:
-                                                                    AlertDialog(
-                                                                  title: const Text(
-                                                                      'Votre entreprise a déjà un compte.'),
-                                                                  content: const Text(
-                                                                      'Demandez une inviatiton pour pouvoir vous créer un compte.'),
-                                                                  actions: [
-                                                                    TextButton(
-                                                                      onPressed:
-                                                                          () =>
-                                                                              Navigator.pop(alertDialogContext),
-                                                                      child: const Text(
-                                                                          'Ok'),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              );
-                                                            },
-                                                          );
-                                                          if (shouldSetState) {
-                                                            setState(() {});
-                                                          }
-                                                          return;
-                                                        }
+
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
                                                         if (_model
@@ -891,9 +858,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           }.withoutNulls,
                                                         );
 
-                                                        if (shouldSetState) {
-                                                          setState(() {});
-                                                        }
+                                                        setState(() {});
                                                       },
                                                       text: 'Continuer',
                                                       options: FFButtonOptions(
