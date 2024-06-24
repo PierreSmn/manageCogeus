@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'widgets_edit_model.dart';
 export 'widgets_edit_model.dart';
 
@@ -282,14 +281,12 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          child: WebViewAware(
-                                                                                            child: GestureDetector(
-                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                              child: const SizedBox(
-                                                                                                height: 700.0,
-                                                                                                width: 980.0,
-                                                                                                child: AddIntegrationWidget(),
-                                                                                              ),
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                            child: const SizedBox(
+                                                                                              height: 700.0,
+                                                                                              width: 980.0,
+                                                                                              child: AddIntegrationWidget(),
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -453,15 +450,13 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
                                                                                                       alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                      child: WebViewAware(
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 330.0,
-                                                                                                            width: 550.0,
-                                                                                                            child: ExportCodeWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
-                                                                                                            ),
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                        child: SizedBox(
+                                                                                                          height: 330.0,
+                                                                                                          width: 550.0,
+                                                                                                          child: ExportCodeWidget(
+                                                                                                            integrationEditing: usersIntegrationsItem.id,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -511,15 +506,13 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
                                                                                                       alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                      child: WebViewAware(
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 580.0,
-                                                                                                            width: 1080.0,
-                                                                                                            child: EditIntegrationWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
-                                                                                                            ),
+                                                                                                      child: GestureDetector(
+                                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                        child: SizedBox(
+                                                                                                          height: 580.0,
+                                                                                                          width: 1080.0,
+                                                                                                          child: EditIntegrationWidget(
+                                                                                                            integrationEditing: usersIntegrationsItem.id,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),

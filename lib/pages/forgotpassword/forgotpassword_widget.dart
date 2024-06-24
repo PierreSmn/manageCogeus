@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'forgotpassword_model.dart';
 export 'forgotpassword_model.dart';
 
@@ -467,21 +466,19 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title: const Text(
-                                                          'Demande envoyée'),
-                                                      content: const Text(
-                                                          'Vous devriez recevoir un email pour mettre à jour votre mot de passe. '),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: const Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    ),
+                                                  return AlertDialog(
+                                                    title:
+                                                        const Text('Demande envoyée'),
+                                                    content: const Text(
+                                                        'Vous devriez recevoir un email pour mettre à jour votre mot de passe. '),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
                                                   );
                                                 },
                                               );

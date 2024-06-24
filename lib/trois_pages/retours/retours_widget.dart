@@ -11,7 +11,6 @@ import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'retours_model.dart';
 export 'retours_model.dart';
 
@@ -433,17 +432,15 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                               builder: (dialogContext) {
                                                                                                 return Material(
                                                                                                   color: Colors.transparent,
-                                                                                                  child: WebViewAware(
-                                                                                                    child: GestureDetector(
-                                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                      child: SizedBox(
-                                                                                                        height: 300.0,
-                                                                                                        width: 400.0,
-                                                                                                        child: AddtolistWidget(
-                                                                                                          vidId: getJsonField(
-                                                                                                            validItemItem,
-                                                                                                            r'''$.id''',
-                                                                                                          ),
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                    child: SizedBox(
+                                                                                                      height: 300.0,
+                                                                                                      width: 400.0,
+                                                                                                      child: AddtolistWidget(
+                                                                                                        vidId: getJsonField(
+                                                                                                          validItemItem,
+                                                                                                          r'''$.id''',
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),

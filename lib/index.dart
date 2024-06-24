@@ -9,10 +9,10 @@ export '/pages/signup/signup_widget.dart' show SignupWidget;
 export '/pages/create_profile/create_profile_widget.dart'
     show CreateProfileWidget;
 export '/trois_pages/triage/triage_widget.dart' show TriageWidget;
-export '/widget_mux/analytics/analytics_widget.dart' show AnalyticsWidget;
-export '/widget_mux/host_library/host_library_widget.dart'
+export '/integrations/analytics/analytics_widget.dart' show AnalyticsWidget;
+export '/integrations/host_library/host_library_widget.dart'
     show HostLibraryWidget;
-export '/widget_mux/widgets_edit/widgets_edit_widget.dart'
+export '/integrations/widgets_edit/widgets_edit_widget.dart'
     show WidgetsEditWidget;
 export '/trois_pages/solution/solution_widget.dart' show SolutionWidget;
 export '/pages/forgotpassword/forgotpassword_widget.dart'

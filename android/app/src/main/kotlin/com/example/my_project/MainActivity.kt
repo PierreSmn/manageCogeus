@@ -1,4 +1,4 @@
-package com.mycompany.clientfacingcogeus
+package com.mycompany.managecogeus
 
 import io.flutter.embedding.android.FlutterActivity
 

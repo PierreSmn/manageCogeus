@@ -242,6 +242,106 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                     fontStyle: FontStyle.italic,
                                                                                   ),
                                                                             ),
+                                                                            FutureBuilder<List<WebAppActivationsRow>>(
+                                                                              future: WebAppActivationsTable().queryRows(
+                                                                                queryFn: (q) => q
+                                                                                    .eq(
+                                                                                      'brandName',
+                                                                                      FFAppState().activeBrand,
+                                                                                    )
+                                                                                    .eq(
+                                                                                      'slug',
+                                                                                      flowsItem.slug,
+                                                                                    ),
+                                                                              ),
+                                                                              builder: (context, snapshot) {
+                                                                                // Customize what your widget looks like when it's loading.
+                                                                                if (!snapshot.hasData) {
+                                                                                  return Center(
+                                                                                    child: SizedBox(
+                                                                                      width: 50.0,
+                                                                                      height: 50.0,
+                                                                                      child: SpinKitRing(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        size: 50.0,
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }
+                                                                                List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
+                                                                                return RichText(
+                                                                                  textScaler: MediaQuery.of(context).textScaler,
+                                                                                  text: TextSpan(
+                                                                                    children: [
+                                                                                      const TextSpan(
+                                                                                        text: 'Scans: ',
+                                                                                        style: TextStyle(),
+                                                                                      ),
+                                                                                      TextSpan(
+                                                                                        text: richTextWebAppActivationsRowList.length.toString(),
+                                                                                        style: const TextStyle(
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      )
+                                                                                    ],
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ),
+                                                                            FutureBuilder<List<SubmittersNewRow>>(
+                                                                              future: SubmittersNewTable().queryRows(
+                                                                                queryFn: (q) => q
+                                                                                    .eq(
+                                                                                      'brand_name',
+                                                                                      FFAppState().activeBrand,
+                                                                                    )
+                                                                                    .eq(
+                                                                                      'flow_done',
+                                                                                      flowsItem.slug,
+                                                                                    ),
+                                                                              ),
+                                                                              builder: (context, snapshot) {
+                                                                                // Customize what your widget looks like when it's loading.
+                                                                                if (!snapshot.hasData) {
+                                                                                  return Center(
+                                                                                    child: SizedBox(
+                                                                                      width: 50.0,
+                                                                                      height: 50.0,
+                                                                                      child: SpinKitRing(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        size: 50.0,
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }
+                                                                                List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
+                                                                                return RichText(
+                                                                                  textScaler: MediaQuery.of(context).textScaler,
+                                                                                  text: TextSpan(
+                                                                                    children: [
+                                                                                      const TextSpan(
+                                                                                        text: 'Participants: ',
+                                                                                        style: TextStyle(),
+                                                                                      ),
+                                                                                      TextSpan(
+                                                                                        text: richTextSubmittersNewRowList.length.toString(),
+                                                                                        style: const TextStyle(
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      )
+                                                                                    ],
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ),
                                                                             FFButtonWidget(
                                                                               onPressed: () async {
                                                                                 await Clipboard.setData(ClipboardData(text: 'app.cogeus.com/home?slug=${flowsItem.slug}'));

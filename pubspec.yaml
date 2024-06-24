@@ -1,4 +1,4 @@
-name: client_facing_cogeus
+name: manage_cogeus
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -60,7 +60,6 @@ dependencies:
   path_provider_foundation: 2.2.2
   path_provider_platform_interface: 2.0.6
   plugin_platform_interface: 2.1.8
-  pointer_interceptor: 0.10.1
   postgrest: 1.5.2
   provider: 6.0.5
   realtime_client: 1.4.0
@@ -83,7 +82,6 @@ dependencies:
   url_launcher_android: 6.3.0
   url_launcher_ios: 6.2.5
   url_launcher_platform_interface: 2.3.2
-  uuid: ^4.0.0
   video_player: 2.8.1
   video_player_android: 2.4.10
   video_player_avfoundation: 2.5.1
@@ -93,7 +91,6 @@ dependencies:
   webview_flutter_android: 3.15.0
   webview_flutter_platform_interface: 2.10.0
   webview_flutter_wkwebview: 3.12.0
-  webviewx_plus: 0.5.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -102,7 +99,6 @@ dependencies:
 
 dependency_overrides:
   http: 1.2.0
-  pointer_interceptor: 0.10.1
   rxdart: 0.27.7
   uuid: ^4.0.0
 

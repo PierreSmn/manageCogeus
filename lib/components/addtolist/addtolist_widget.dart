@@ -169,6 +169,7 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
                               _model.listGet = await GetListCall.call(
                                 id: _model.idSelected,
                               );
+
                               shouldSetState = true;
                               FFAppState().userSelection = GetListCall.select(
                                 (_model.listGet?.jsonBody ?? ''),

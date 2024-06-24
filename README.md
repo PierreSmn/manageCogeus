@@ -1,4 +1,4 @@
-# clientFacingCogeus
+# manageCogeus
 
 A new Flutter project.
 

@@ -527,6 +527,11 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                             currentUserUid,
                                                           ),
                                                         );
+                                                        FFAppState()
+                                                                .activeBrand =
+                                                            updateProfileUsersRow!
+                                                                .companyName!;
+                                                        setState(() {});
 
                                                         context
                                                             .pushNamed('infos');

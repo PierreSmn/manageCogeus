@@ -3,7 +3,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
 import 'package:flutter/material.dart';
@@ -211,18 +210,6 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                                 fontFamily: 'Manrope',
                                                                                 letterSpacing: 0.0,
                                                                               ),
-                                                                        ),
-                                                                        const FlutterFlowWebView(
-                                                                          content:
-                                                                              '<script src=\"https://cdn.jsdelivr.net/npm/@mux/mux-player\"></script>\n<mux-player\n  playback-id=\"41pdWfWRz7xBc00laivBaXl1jcTwOA1h5A2Y9PEI3q7g\"\n  metadata-video-title=\"Placeholder (optional)\"\n  metadata-viewer-user-id=\"Placeholder (optional)\"\n  accent-color=\"#FF0000\"\n></mux-player>',
-                                                                          height:
-                                                                              500.0,
-                                                                          verticalScroll:
-                                                                              false,
-                                                                          horizontalScroll:
-                                                                              false,
-                                                                          html:
-                                                                              true,
                                                                         ),
                                                                       ].divide(const SizedBox(
                                                                               height: 12.0)),
