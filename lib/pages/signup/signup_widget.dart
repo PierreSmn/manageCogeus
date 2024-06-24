@@ -801,6 +801,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                 .text,
                                                           ),
                                                         );
+
                                                         GoRouter.of(context)
                                                             .prepareAuthEvent();
                                                         if (_model
