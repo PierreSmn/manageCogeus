@@ -301,6 +301,42 @@ class RejectSubCall {
   }
 }
 
+class SendNotificaitonOfNewUserCall {
+  static Future<ApiCallResponse> call({
+    String? companyName = '',
+    String? name = '',
+    String? surname = '',
+    String? email = '',
+    String? phone = '',
+    String? siteUrl = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "company_name": "$companyName",
+  "name": "$name",
+  "surname": "$surname",
+  "email": "$email",
+  "phone": "$phone",
+  "site_url": "$siteUrl"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Send notificaiton of new user',
+      apiUrl: 'https://tryinit.fastgenapp.com/usercreated',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

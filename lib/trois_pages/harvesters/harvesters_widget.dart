@@ -11,19 +11,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'solution_model.dart';
-export 'solution_model.dart';
+import 'harvesters_model.dart';
+export 'harvesters_model.dart';
 
-class SolutionWidget extends StatefulWidget {
-  const SolutionWidget({super.key});
+class HarvestersWidget extends StatefulWidget {
+  const HarvestersWidget({super.key});
 
   @override
-  State<SolutionWidget> createState() => _SolutionWidgetState();
+  State<HarvestersWidget> createState() => _HarvestersWidgetState();
 }
 
-class _SolutionWidgetState extends State<SolutionWidget>
+class _HarvestersWidgetState extends State<HarvestersWidget>
     with TickerProviderStateMixin {
-  late SolutionModel _model;
+  late HarvestersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasCheckboxTriggered = false;
@@ -32,7 +32,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SolutionModel());
+    _model = createModel(context, () => HarvestersModel());
 
     animationsMap.addAll({
       'checkboxOnActionTriggerAnimation': AnimationInfo(
@@ -71,7 +71,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
     context.watch<FFAppState>();
 
     return Title(
-        title: 'solution',
+        title: 'harvesters',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -221,11 +221,11 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                           children:
                                                                               [
                                                                             Text(
-                                                                              'Votre solution',
+                                                                              'Votre Harvester',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Manrope',
                                                                                     color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                    fontSize: 54.72,
+                                                                                    fontSize: 44.72,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
                                                                                   ),
@@ -277,7 +277,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                   text: TextSpan(
                                                                                     children: [
                                                                                       const TextSpan(
-                                                                                        text: 'Scans: ',
+                                                                                        text: 'Démarrages : ',
                                                                                         style: TextStyle(),
                                                                                       ),
                                                                                       TextSpan(
@@ -289,6 +289,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                     ],
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
+                                                                                          fontSize: 18.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -328,7 +329,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                   text: TextSpan(
                                                                                     children: [
                                                                                       const TextSpan(
-                                                                                        text: 'Participants: ',
+                                                                                        text: 'Vidéos reçues : ',
                                                                                         style: TextStyle(),
                                                                                       ),
                                                                                       TextSpan(
@@ -340,6 +341,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                     ],
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
+                                                                                          fontSize: 18.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),

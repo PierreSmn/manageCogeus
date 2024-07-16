@@ -1,10 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
-import 'solution_widget.dart' show SolutionWidget;
+import 'harvesters_widget.dart' show HarvestersWidget;
 import 'package:flutter/material.dart';
 
-class SolutionModel extends FlutterFlowModel<SolutionWidget> {
+class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

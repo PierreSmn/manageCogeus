@@ -14,7 +14,7 @@ export '/integrations/host_library/host_library_widget.dart'
     show HostLibraryWidget;
 export '/integrations/widgets_edit/widgets_edit_widget.dart'
     show WidgetsEditWidget;
-export '/trois_pages/solution/solution_widget.dart' show SolutionWidget;
+export '/trois_pages/harvesters/harvesters_widget.dart' show HarvestersWidget;
 export '/pages/forgotpassword/forgotpassword_widget.dart'
     show ForgotpasswordWidget;
 export '/pages/newpassword/newpassword_widget.dart' show NewpasswordWidget;

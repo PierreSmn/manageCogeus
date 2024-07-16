@@ -221,6 +221,171 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           0.32,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
+                                                                          0.13,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .revoWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(16.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children:
+                                                                              [
+                                                                            Text(
+                                                                              'Mes web stories',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Manrope',
+                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                    fontSize: 24.72,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            MouseRegion(
+                                                                              opaque: false,
+                                                                              cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                                                              onEnter: ((event) async {
+                                                                                setState(() => _model.mouseRegionHovered1 = true);
+                                                                              }),
+                                                                              onExit: ((event) async {
+                                                                                setState(() => _model.mouseRegionHovered1 = false);
+                                                                              }),
+                                                                              child: FFButtonWidget(
+                                                                                onPressed: () async {
+                                                                                  context.pushNamed('widgetsEdit');
+                                                                                },
+                                                                                text: 'Aller aux webstories',
+                                                                                options: FFButtonOptions(
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: const Color(0xFFEEE8FC),
+                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        color: const Color(0xFF5E35B1),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                  elevation: 0.0,
+                                                                                  borderSide: const BorderSide(
+                                                                                    color: Colors.transparent,
+                                                                                    width: 0.0,
+                                                                                  ),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.32,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.13,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .revoWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            const EdgeInsets.all(16.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children:
+                                                                              [
+                                                                            Text(
+                                                                              'Mes harvesters',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Manrope',
+                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                    fontSize: 24.72,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            MouseRegion(
+                                                                              opaque: false,
+                                                                              cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                                                              onEnter: ((event) async {
+                                                                                setState(() => _model.mouseRegionHovered2 = true);
+                                                                              }),
+                                                                              onExit: ((event) async {
+                                                                                setState(() => _model.mouseRegionHovered2 = false);
+                                                                              }),
+                                                                              child: FFButtonWidget(
+                                                                                onPressed: () async {
+                                                                                  context.pushNamed('harvesters');
+                                                                                },
+                                                                                text: 'Recolter du contenu',
+                                                                                icon: const Icon(
+                                                                                  Icons.add,
+                                                                                  size: 15.0,
+                                                                                ),
+                                                                                options: FFButtonOptions(
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: _model.mouseRegionHovered2 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
+                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        color: const Color(0xFF5E35B1),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                  elevation: 0.0,
+                                                                                  borderSide: const BorderSide(
+                                                                                    color: Colors.transparent,
+                                                                                    width: 0.0,
+                                                                                  ),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ].divide(const SizedBox(
+                                                                      width:
+                                                                          24.0)),
+                                                                ),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.32,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
                                                                           0.22,
                                                                       decoration:
                                                                           BoxDecoration(
@@ -267,10 +432,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               opaque: false,
                                                                               cursor: MouseCursor.defer ?? MouseCursor.defer,
                                                                               onEnter: ((event) async {
-                                                                                setState(() => _model.mouseRegionHovered1 = true);
+                                                                                setState(() => _model.mouseRegionHovered3 = true);
                                                                               }),
                                                                               onExit: ((event) async {
-                                                                                setState(() => _model.mouseRegionHovered1 = false);
+                                                                                setState(() => _model.mouseRegionHovered3 = false);
                                                                               }),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
@@ -353,10 +518,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               opaque: false,
                                                                               cursor: MouseCursor.defer ?? MouseCursor.defer,
                                                                               onEnter: ((event) async {
-                                                                                setState(() => _model.mouseRegionHovered2 = true);
+                                                                                setState(() => _model.mouseRegionHovered4 = true);
                                                                               }),
                                                                               onExit: ((event) async {
-                                                                                setState(() => _model.mouseRegionHovered2 = false);
+                                                                                setState(() => _model.mouseRegionHovered4 = false);
                                                                               }),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
@@ -371,7 +536,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   height: 40.0,
                                                                                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: _model.mouseRegionHovered2 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
+                                                                                  color: _model.mouseRegionHovered4 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
                                                                                         color: const Color(0xFF5E35B1),
@@ -431,7 +596,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       children:
                                                                           [
                                                                         Text(
-                                                                          'Mes dossier',
+                                                                          'Analytics',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -442,54 +607,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
-                                                                        MouseRegion(
-                                                                          opaque:
-                                                                              false,
-                                                                          cursor:
-                                                                              MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            setState(() =>
-                                                                                _model.mouseRegionHovered3 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            setState(() =>
-                                                                                _model.mouseRegionHovered3 = false);
-                                                                          }),
-                                                                          child:
-                                                                              FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              context.pushNamed('exports');
-                                                                            },
-                                                                            text:
-                                                                                'Aller',
-                                                                            icon:
-                                                                                const Icon(
-                                                                              Icons.arrow_right_alt_rounded,
-                                                                              size: 15.0,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: _model.mouseRegionHovered3 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: const Color(0xFF5E35B1),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderSide: const BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 0.0,
+                                                                        Text(
+                                                                          'Coming soon',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Manrope',
+                                                                                color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                fontSize: 24.72,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.normal,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
-                                                                          ),
                                                                         ),
                                                                       ].divide(const SizedBox(
                                                                               height: 12.0)),
