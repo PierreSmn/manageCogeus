@@ -22,4 +22,7 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get name => getField<String>('name');
   set name(String? value) => setField<String>('name', value);
+
+  String? get admin => getField<String>('admin');
+  set admin(String? value) => setField<String>('admin', value);
 }

@@ -73,6 +73,7 @@ class _EraseListWidgetState extends State<EraseListWidget> {
           );
         }
         List<ListsRow> containerListsRowList = snapshot.data!;
+
         final containerListsRow = containerListsRowList.isNotEmpty
             ? containerListsRowList.first
             : null;

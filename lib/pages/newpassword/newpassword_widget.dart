@@ -103,6 +103,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
           );
         }
         List<UsersRow> newpasswordUsersRowList = snapshot.data!;
+
         final newpasswordUsersRow = newpasswordUsersRowList.isNotEmpty
             ? newpasswordUsersRowList.first
             : null;

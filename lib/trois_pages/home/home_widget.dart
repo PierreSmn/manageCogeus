@@ -65,6 +65,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           );
         }
         List<NewSubsRow> homeNewSubsRowList = snapshot.data!;
+
         return Title(
             title: 'home',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -103,6 +104,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                           }
                           List<ValidSubsRow> containerValidSubsRowList =
                               snapshot.data!;
+
                           return Container(
                             height: MediaQuery.sizeOf(context).height * 1.0,
                             decoration: const BoxDecoration(),

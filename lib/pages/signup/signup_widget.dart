@@ -198,6 +198,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                 }
                                 List<ClientsRow> maxWidthClientsRowList =
                                     snapshot.data!;
+
                                 return Container(
                                   width: double.infinity,
                                   constraints: const BoxConstraints(

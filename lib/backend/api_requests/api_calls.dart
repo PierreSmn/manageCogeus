@@ -269,6 +269,10 @@ class PostToMuxThroughFastgenCall {
         response,
         r'''$.mux''',
       ));
+  static dynamic assetId(dynamic response) => getJsonField(
+        response,
+        r'''$.asset''',
+      );
 }
 
 class RejectSubCall {

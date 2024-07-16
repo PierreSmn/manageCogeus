@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -102,6 +103,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                               }
                               List<NewSubsRow> containerNewSubsRowList =
                                   snapshot.data!;
+
                               return Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).revoBG,
@@ -136,6 +138,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                         if (listSubs.isEmpty) {
                                                           return const EmptyListWidgetWidget();
                                                         }
+
                                                         return SizedBox(
                                                           width: 700.0,
                                                           child: Padding(
@@ -429,6 +432,30 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                               ),
                                                                               FFButtonWidget(
                                                                                 onPressed: () async {
+                                                                                  var shouldSetState = false;
+                                                                                  _model.mux = await PostToMuxThroughFastgenCall.call(
+                                                                                    link: listSubsItem.mediaLink,
+                                                                                  );
+
+                                                                                  shouldSetState = true;
+                                                                                  if (!(_model.mux?.succeeded ?? true)) {
+                                                                                    await showDialog(
+                                                                                      context: context,
+                                                                                      builder: (alertDialogContext) {
+                                                                                        return AlertDialog(
+                                                                                          title: const Text('NOt work'),
+                                                                                          actions: [
+                                                                                            TextButton(
+                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                              child: const Text('Ok'),
+                                                                                            ),
+                                                                                          ],
+                                                                                        );
+                                                                                      },
+                                                                                    );
+                                                                                    if (shouldSetState) setState(() {});
+                                                                                    return;
+                                                                                  }
                                                                                   await ValidSubsTable().insert({
                                                                                     'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
                                                                                     'submitter_name': listSubsItem.submitterName,
@@ -441,6 +468,9 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                     'rating': listSubsItem.rating,
                                                                                     'boolMail': listSubsItem.boolMail,
                                                                                     'question': listSubsItem.question,
+                                                                                    'playback_id': PostToMuxThroughFastgenCall.muxId(
+                                                                                      (_model.mux?.jsonBody ?? ''),
+                                                                                    ),
                                                                                   });
                                                                                   await NewSubsTable().delete(
                                                                                     matchingRows: (rows) => rows.eq(
@@ -450,6 +480,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                   );
                                                                                   setState(() => _model.requestCompleter = null);
                                                                                   await _model.waitForRequestCompleted();
+                                                                                  if (shouldSetState) setState(() {});
                                                                                 },
                                                                                 text: 'Sélectionner',
                                                                                 options: FFButtonOptions(

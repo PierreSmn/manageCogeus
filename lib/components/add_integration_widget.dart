@@ -71,6 +71,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
           );
         }
         List<IntegrationsRow> containerIntegrationsRowList = snapshot.data!;
+
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
@@ -88,7 +89,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Nouvelle Integration',
+                  'Nouveau Carousel',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -98,115 +99,125 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                       ),
                 ),
                 if (!FFAppState().integrationCreated)
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).revoSearchBarBg,
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        child: Form(
-                          key: _model.formKey,
-                          autovalidateMode: AutovalidateMode.disabled,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 8.0, 0.0),
-                            child: TextFormField(
-                              controller: _model.textController,
-                              focusNode: _model.textFieldFocusNode,
-                              autofocus: false,
-                              obscureText: false,
-                              decoration: const InputDecoration(
-                                labelText: 'Nom',
-                                enabledBorder: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                focusedErrorBorder: InputBorder.none,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    letterSpacing: 0.0,
-                                  ),
-                              validator: _model.textControllerValidator
-                                  .asValidator(context),
-                            ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).revoSearchBarBg,
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
-                        ),
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          MouseRegion(
-                            opaque: false,
-                            cursor: MouseCursor.defer ?? MouseCursor.defer,
-                            onEnter: ((event) async {
-                              setState(() => _model.mouseRegionHovered = true);
-                            }),
-                            onExit: ((event) async {
-                              setState(() => _model.mouseRegionHovered = false);
-                            }),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                if (_model.formKey.currentState == null ||
-                                    !_model.formKey.currentState!.validate()) {
-                                  return;
-                                }
-                                _model.integrationEdited =
-                                    await IntegrationsTable().insert({
-                                  'name': _model.textController.text,
-                                  'uuid': currentUserUid,
-                                  'ownerBrand': FFAppState().activeBrand,
-                                });
-                                FFAppState().integrationEdited =
-                                    _model.integrationEdited!.id;
-                                FFAppState().integrationCreated = true;
-                                FFAppState().vid1 = 0;
-                                FFAppState().vid2 = 0;
-                                FFAppState().vid3 = 0;
-                                FFAppState().vid4 = 0;
-                                FFAppState().vid5 = 0;
-                                setState(() {});
-
-                                setState(() {});
-                              },
-                              text: 'Créer',
-                              icon: const Icon(
-                                Icons.add,
-                                size: 15.0,
-                              ),
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: _model.mouseRegionHovered
-                                    ? FlutterFlowTheme.of(context)
-                                        .buttonRevHover
-                                    : FlutterFlowTheme.of(context).buttonRevBG,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
+                          child: Form(
+                            key: _model.formKey,
+                            autovalidateMode: AutovalidateMode.disabled,
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              child: TextFormField(
+                                controller: _model.textController,
+                                focusNode: _model.textFieldFocusNode,
+                                autofocus: false,
+                                obscureText: false,
+                                decoration: const InputDecoration(
+                                  labelText: 'Nom',
+                                  enabledBorder: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  errorBorder: InputBorder.none,
+                                  focusedErrorBorder: InputBorder.none,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
                                     .override(
                                       fontFamily: 'Manrope',
-                                      color: const Color(0xFF5E35B1),
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w600,
                                     ),
-                                elevation: 0.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 0.0,
-                                ),
-                                borderRadius: BorderRadius.circular(16.0),
+                                validator: _model.textControllerValidator
+                                    .asValidator(context),
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ].divide(const SizedBox(height: 12.0)),
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MouseRegion(
+                              opaque: false,
+                              cursor: MouseCursor.defer ?? MouseCursor.defer,
+                              onEnter: ((event) async {
+                                setState(
+                                    () => _model.mouseRegionHovered = true);
+                              }),
+                              onExit: ((event) async {
+                                setState(
+                                    () => _model.mouseRegionHovered = false);
+                              }),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  if (_model.formKey.currentState == null ||
+                                      !_model.formKey.currentState!
+                                          .validate()) {
+                                    return;
+                                  }
+                                  _model.integrationEdited =
+                                      await IntegrationsTable().insert({
+                                    'name': _model.textController.text,
+                                    'uuid': currentUserUid,
+                                    'ownerBrand': FFAppState().activeBrand,
+                                    'is_story': false,
+                                  });
+                                  FFAppState().integrationEdited =
+                                      _model.integrationEdited!.id;
+                                  FFAppState().integrationCreated = true;
+                                  FFAppState().vid1 = 0;
+                                  FFAppState().vid2 = 0;
+                                  FFAppState().vid3 = 0;
+                                  FFAppState().vid4 = 0;
+                                  FFAppState().vid5 = 0;
+                                  setState(() {});
+
+                                  setState(() {});
+                                },
+                                text: 'Créer',
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: _model.mouseRegionHovered
+                                      ? FlutterFlowTheme.of(context)
+                                          .buttonRevHover
+                                      : FlutterFlowTheme.of(context)
+                                          .buttonRevBG,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Manrope',
+                                        color: const Color(0xFF5E35B1),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ].divide(const SizedBox(height: 12.0)),
+                    ),
                   ),
                 if (FFAppState().integrationCreated)
                   Expanded(
@@ -277,6 +288,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               List<HostedSubsRow>
                                                   videoPlayerHostedSubsRowList =
                                                   snapshot.data!;
+
                                               final videoPlayerHostedSubsRow =
                                                   videoPlayerHostedSubsRowList
                                                           .isNotEmpty
@@ -522,6 +534,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               List<HostedSubsRow>
                                                   videoPlayerHostedSubsRowList =
                                                   snapshot.data!;
+
                                               final videoPlayerHostedSubsRow =
                                                   videoPlayerHostedSubsRowList
                                                           .isNotEmpty
@@ -765,6 +778,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               List<HostedSubsRow>
                                                   videoPlayerHostedSubsRowList =
                                                   snapshot.data!;
+
                                               final videoPlayerHostedSubsRow =
                                                   videoPlayerHostedSubsRowList
                                                           .isNotEmpty
@@ -1008,6 +1022,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               List<HostedSubsRow>
                                                   videoPlayerHostedSubsRowList =
                                                   snapshot.data!;
+
                                               final videoPlayerHostedSubsRow =
                                                   videoPlayerHostedSubsRowList
                                                           .isNotEmpty
@@ -1251,6 +1266,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               List<HostedSubsRow>
                                                   videoPlayerHostedSubsRowList =
                                                   snapshot.data!;
+
                                               final videoPlayerHostedSubsRow =
                                                   videoPlayerHostedSubsRowList
                                                           .isNotEmpty

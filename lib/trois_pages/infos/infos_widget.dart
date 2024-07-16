@@ -67,6 +67,7 @@ class _InfosWidgetState extends State<InfosWidget> {
           );
         }
         List<UsersRow> infosUsersRowList = snapshot.data!;
+
         final infosUsersRow =
             infosUsersRowList.isNotEmpty ? infosUsersRowList.first : null;
         return Title(
@@ -422,6 +423,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       containerLiveFlowsRowList =
                                                                       snapshot
                                                                           .data!;
+
                                                                   return Container(
                                                                     width: MediaQuery.sizeOf(context)
                                                                             .width *
@@ -434,6 +436,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           (context) {
                                                                         final flows =
                                                                             containerLiveFlowsRowList.toList();
+
                                                                         return Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,

@@ -121,6 +121,7 @@ class _SigninWidgetState extends State<SigninWidget>
           );
         }
         List<UsersRow> signinUsersRowList = snapshot.data!;
+
         final signinUsersRow =
             signinUsersRowList.isNotEmpty ? signinUsersRowList.first : null;
         return Title(
@@ -753,83 +754,135 @@ class _SigninWidgetState extends State<SigninWidget>
                                             ),
                                           ),
                                         ),
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent(true);
+                                        if (signinUsersRow?.companyName ==
+                                                null ||
+                                            signinUsersRow?.companyName == '')
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
 
-                                              final user = await authManager
-                                                  .signInWithEmail(
-                                                context,
-                                                _model.emailTextController.text,
-                                                _model.passwordTextController
-                                                    .text,
-                                              );
-                                              if (user == null) {
-                                                return;
-                                              }
+                                                final user = await authManager
+                                                    .signInWithEmail(
+                                                  context,
+                                                  _model
+                                                      .emailTextController.text,
+                                                  _model.passwordTextController
+                                                      .text,
+                                                );
+                                                if (user == null) {
+                                                  return;
+                                                }
 
-                                              setState(() => _model
-                                                  .requestCompleter = null);
-                                              await _model
-                                                  .waitForRequestCompleted();
-                                              FFAppState().userSelection = [];
-                                              FFAppState().activeBrand = '';
-                                              FFAppState().userSelection =
-                                                  signinUsersRow!.selection
-                                                      .toList()
-                                                      .cast<int>();
-                                              FFAppState().activeBrand =
-                                                  signinUsersRow.companyName!;
-
-                                              context.goNamedAuth(
-                                                'home',
-                                                context.mounted,
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      const TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                    duration: Duration(
-                                                        milliseconds: 0),
-                                                  ),
-                                                },
-                                                ignoreRedirect: true,
-                                              );
-                                            },
-                                            text: 'Connexion',
-                                            options: FFButtonOptions(
-                                              width: 230.0,
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
+                                                setState(() => _model
+                                                    .requestCompleter = null);
+                                                await _model
+                                                    .waitForRequestCompleted();
+                                              },
+                                              text: 'Connexion',
+                                              options: FFButtonOptions(
+                                                width: 230.0,
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: const Color(0xFFEEE8FC),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              const Color(0xFF5E35B1),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 0.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
-                                        ),
+                                        if (signinUsersRow?.companyName !=
+                                                null &&
+                                            signinUsersRow?.companyName != '')
+                                          Align(
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                setState(() => _model
+                                                    .requestCompleter = null);
+                                                await _model
+                                                    .waitForRequestCompleted();
+                                                FFAppState().userSelection =
+                                                    signinUsersRow!.selection
+                                                        .toList()
+                                                        .cast<int>();
+                                                FFAppState().activeBrand =
+                                                    signinUsersRow
+                                                        .companyName!;
+
+                                                context.goNamed(
+                                                  'home',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        const TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              text: 'Connexion',
+                                              options: FFButtonOptions(
+                                                width: 230.0,
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: const Color(0xFFEAFCE8),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              const Color(0xFF35B153),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 0.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                            ),
+                                          ),
                                       ].divide(const SizedBox(height: 8.0)),
                                     ),
                                   ),

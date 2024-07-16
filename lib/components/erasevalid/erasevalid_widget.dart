@@ -68,6 +68,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
           );
         }
         List<IntegrationsRow> containerIntegrationsRowList = snapshot.data!;
+
         return Container(
           decoration: const BoxDecoration(),
           child: FutureBuilder<List<HostedSubsRow>>(
@@ -92,6 +93,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                 );
               }
               List<HostedSubsRow> containerHostedSubsRowList = snapshot.data!;
+
               final containerHostedSubsRow =
                   containerHostedSubsRowList.isNotEmpty
                       ? containerHostedSubsRowList.first

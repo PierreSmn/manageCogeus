@@ -5,6 +5,10 @@ import 'signin_widget.dart' show SigninWidget;
 import 'package:flutter/material.dart';
 
 class SigninModel extends FlutterFlowModel<SigninWidget> {
+  ///  Local state fields for this page.
+
+  int? loginLoop = 0;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -116,6 +116,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
           );
         }
         List<UsersRow> forgotpasswordUsersRowList = snapshot.data!;
+
         final forgotpasswordUsersRow = forgotpasswordUsersRowList.isNotEmpty
             ? forgotpasswordUsersRowList.first
             : null;

@@ -105,6 +105,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                               }
                               List<ListsRow> containerListsRowList =
                                   snapshot.data!;
+
                               return Container(
                                 height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: BoxDecoration(
@@ -332,6 +333,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                               (context) {
                                                                             final containerVar =
                                                                                 containerListsRowList.toList();
+
                                                                             return Column(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -417,6 +419,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                 List<ListsRow>
                                                     columnListsRowList =
                                                     snapshot.data!;
+
                                                 final columnListsRow =
                                                     columnListsRowList
                                                             .isNotEmpty
@@ -452,6 +455,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                           ?.selection
                                                                           .toList() ??
                                                                       [];
+
                                                               return Wrap(
                                                                 spacing: 16.0,
                                                                 runSpacing:
@@ -516,6 +520,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                           containerValidSubsRowList =
                                                                           snapshot
                                                                               .data!;
+
                                                                       final containerValidSubsRow = containerValidSubsRowList
                                                                               .isNotEmpty
                                                                           ? containerValidSubsRowList

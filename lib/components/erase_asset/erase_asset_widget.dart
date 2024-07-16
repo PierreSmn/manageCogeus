@@ -92,6 +92,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     }
                     final containerGetMatchForIdBeforeErasingResponse =
                         snapshot.data!;
+
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16.0),
@@ -123,6 +124,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                                     .jsonBody,
                                               )?.toList() ??
                                               [];
+
                                       return Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: List.generate(
