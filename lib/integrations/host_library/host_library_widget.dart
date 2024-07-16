@@ -559,9 +559,9 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                           child: ClipRRect(
                                                                                             borderRadius: BorderRadius.circular(8.0),
                                                                                             child: Image.network(
-                                                                                              hostedVideosItem.thumbnail!,
-                                                                                              width: 237.0,
-                                                                                              height: double.infinity,
+                                                                                              'https://image.mux.com/${hostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
+                                                                                              width: 240.0,
+                                                                                              height: 330.0,
                                                                                               fit: BoxFit.cover,
                                                                                             ),
                                                                                           ),

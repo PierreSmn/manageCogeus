@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'create_profile_model.dart';
 export 'create_profile_model.dart';
@@ -46,8 +48,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
     _model.nameTextController ??= TextEditingController();
     _model.nameFocusNode ??= FocusNode();
 
-    _model.lastNameTextController ??= TextEditingController();
-    _model.lastNameFocusNode ??= FocusNode();
+    _model.lastNameTextController1 ??= TextEditingController();
+    _model.lastNameFocusNode1 ??= FocusNode();
+
+    _model.lastNameTextController2 ??= TextEditingController();
+    _model.lastNameFocusNode2 ??= FocusNode();
+
+    _model.phoneTextController ??= TextEditingController(text: '+33');
+    _model.phoneFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
@@ -345,9 +353,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
-                                                          .lastNameTextController,
+                                                          .lastNameTextController1,
                                                       focusNode: _model
-                                                          .lastNameFocusNode,
+                                                          .lastNameFocusNode1,
                                                       autofocus: true,
                                                       autofillHints: const [
                                                         AutofillHints.email
@@ -451,8 +459,252 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                           TextInputType
                                                               .emailAddress,
                                                       validator: _model
-                                                          .lastNameTextControllerValidator
+                                                          .lastNameTextController1Validator
                                                           .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 16.0),
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .lastNameTextController2,
+                                                      focusNode: _model
+                                                          .lastNameFocusNode2,
+                                                      autofocus: true,
+                                                      autofillHints: const [
+                                                        AutofillHints.url
+                                                      ],
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            'Url du site',
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: const Color(
+                                                                      0xFF778089),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .revoSearchBarBg,
+                                                        contentPadding:
+                                                            const EdgeInsets.all(
+                                                                16.0),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      keyboardType:
+                                                          TextInputType
+                                                              .emailAddress,
+                                                      validator: _model
+                                                          .lastNameTextController2Validator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 16.0),
+                                                  child: SizedBox(
+                                                    width: double.infinity,
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .phoneTextController,
+                                                      focusNode:
+                                                          _model.phoneFocusNode,
+                                                      autofocus: false,
+                                                      autofillHints: const [
+                                                        AutofillHints.email
+                                                      ],
+                                                      textCapitalization:
+                                                          TextCapitalization
+                                                              .none,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText: 'Téléphone',
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: const Color(
+                                                                      0xFF778089),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      40.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .revoSearchBarBg,
+                                                        contentPadding:
+                                                            const EdgeInsets.all(
+                                                                16.0),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      keyboardType:
+                                                          TextInputType.phone,
+                                                      validator: _model
+                                                          .phoneTextControllerValidator
+                                                          .asValidator(context),
+                                                      inputFormatters: [
+                                                        FilteringTextInputFormatter
+                                                            .allow(
+                                                                RegExp('[0-9]'))
+                                                      ],
                                                     ),
                                                   ),
                                                 ),
@@ -468,10 +720,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               .nameTextController
                                                               .text,
                                                           'last_name': _model
-                                                              .lastNameTextController
+                                                              .lastNameTextController1
                                                               .text,
                                                           'company_name':
                                                               widget.brand,
+                                                          'phone_number': _model
+                                                              .phoneTextController
+                                                              .text,
+                                                          'site_url': _model
+                                                              .lastNameTextController2
+                                                              .text,
                                                         },
                                                         matchingRows: (rows) =>
                                                             rows.eq(
@@ -479,6 +737,25 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                           currentUserUid,
                                                         ),
                                                       );
+                                                      await SendNotificaitonOfNewUserCall
+                                                          .call(
+                                                        companyName:
+                                                            widget.brand,
+                                                        name: _model
+                                                            .nameTextController
+                                                            .text,
+                                                        surname: _model
+                                                            .lastNameTextController1
+                                                            .text,
+                                                        email: currentUserEmail,
+                                                        phone: _model
+                                                            .phoneTextController
+                                                            .text,
+                                                        siteUrl: _model
+                                                            .lastNameTextController2
+                                                            .text,
+                                                      );
+
                                                       FFAppState().activeBrand =
                                                           widget.brand!;
                                                       setState(() {});
