@@ -73,6 +73,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
           );
         }
         List<HostedSubsRow> hostLibraryHostedSubsRowList = snapshot.data!;
+
         return Title(
             title: 'hostLibrary',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -312,10 +313,6 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                   true)) {
                                                                 await HostedSubsTable()
                                                                     .insert({
-                                                                  'created_at':
-                                                                      supaSerialize<
-                                                                              DateTime>(
-                                                                          getCurrentTimestamp),
                                                                   'media_link':
                                                                       _model
                                                                           .uploadedFileUrl,
@@ -339,6 +336,13 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                   ),
                                                                   'title':
                                                                       'Video d\'un client de ${FFAppState().activeBrand}',
+                                                                  'asset_id':
+                                                                      PostToMuxThroughFastgenCall
+                                                                          .assetId(
+                                                                    (_model.apiResultUpload
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                  ).toString(),
                                                                 });
                                                               }
                                                               if (shouldSetState) {
@@ -460,6 +464,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                   final hostedVideos =
                                                                       hostLibraryHostedSubsRowList
                                                                           .toList();
+
                                                                   return Wrap(
                                                                     spacing:
                                                                         16.0,

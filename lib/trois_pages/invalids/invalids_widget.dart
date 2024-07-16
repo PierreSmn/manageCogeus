@@ -69,6 +69,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
           );
         }
         final invalidsGetRejectedSubsResponse = snapshot.data!;
+
         return Title(
             title: 'invalids',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -269,6 +270,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                     invalidsGetRejectedSubsResponse
                                                                         .jsonBody
                                                                         .toList();
+
                                                                 return Wrap(
                                                                   spacing: 16.0,
                                                                   runSpacing:

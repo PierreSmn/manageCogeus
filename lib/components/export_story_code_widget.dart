@@ -5,11 +5,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'export_code_model.dart';
-export 'export_code_model.dart';
+import 'export_story_code_model.dart';
+export 'export_story_code_model.dart';
 
-class ExportCodeWidget extends StatefulWidget {
-  const ExportCodeWidget({
+class ExportStoryCodeWidget extends StatefulWidget {
+  const ExportStoryCodeWidget({
     super.key,
     required this.integrationEditing,
   });
@@ -17,11 +17,11 @@ class ExportCodeWidget extends StatefulWidget {
   final int? integrationEditing;
 
   @override
-  State<ExportCodeWidget> createState() => _ExportCodeWidgetState();
+  State<ExportStoryCodeWidget> createState() => _ExportStoryCodeWidgetState();
 }
 
-class _ExportCodeWidgetState extends State<ExportCodeWidget> {
-  late ExportCodeModel _model;
+class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
+  late ExportStoryCodeModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -32,7 +32,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ExportCodeModel());
+    _model = createModel(context, () => ExportStoryCodeModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -86,7 +86,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Exporter votre intégration',
+                  'Exporter votre Story',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -113,77 +113,6 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  _model.vidsby3 = true;
-                                  setState(() {});
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 50.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .alternate
-                                                : FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .alternate
-                                                : FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .alternate
-                                                : FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                      ].divide(const SizedBox(width: 6.0)),
-                                    ),
-                                    Text(
-                                      '3 vidéos dynamique',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            fontSize:
-                                                _model.vidsby3 ? 18.0 : 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                    ),
-                                  ].divide(const SizedBox(height: 16.0)),
-                                ),
-                              ),
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
                                   _model.vidsby3 = false;
                                   setState(() {});
                                 },
@@ -195,7 +124,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                       children: [
                                         Container(
                                           width: 50.0,
-                                          height: 100.0,
+                                          height: 50.0,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -203,12 +132,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(100.0),
                                           ),
                                         ),
                                         Container(
                                           width: 50.0,
-                                          height: 100.0,
+                                          height: 50.0,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -216,12 +145,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(100.0),
                                           ),
                                         ),
                                         Container(
                                           width: 50.0,
-                                          height: 100.0,
+                                          height: 50.0,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -229,39 +158,13 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                                : FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                                : FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(100.0),
                                           ),
                                         ),
                                       ].divide(const SizedBox(width: 6.0)),
                                     ),
                                     Text(
-                                      '5 vidéos dynamique',
+                                      '3 storys',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -283,7 +186,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                         onPressed: () async {
                           await Clipboard.setData(ClipboardData(
                               text:
-                                  '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'${widget.integrationEditing?.toString()}\',        numVideos: ${_model.vidsby3 ? '3' : '5'}      };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>'));
+                                  '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${widget.integrationEditing?.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(

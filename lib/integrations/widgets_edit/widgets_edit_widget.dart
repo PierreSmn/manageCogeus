@@ -1,7 +1,9 @@
 import '/backend/supabase/supabase.dart';
-import '/components/add_integration_widget.dart';
+import '/components/creation_choice_widget.dart';
 import '/components/edit_integration_widget.dart';
+import '/components/edit_story_widget.dart';
 import '/components/export_code_widget.dart';
+import '/components/export_story_code_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -88,6 +90,7 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                       }
                       List<HostedSubsRow> containerHostedSubsRowList =
                           snapshot.data!;
+
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
                         decoration: const BoxDecoration(),
@@ -130,6 +133,7 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                   List<IntegrationsRow>
                                       containerIntegrationsRowList =
                                       snapshot.data!;
+
                                   return Container(
                                     height:
                                         MediaQuery.sizeOf(context).height * 1.0,
@@ -273,7 +277,6 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                     FFAppState().integrationCreated = false;
                                                                                     setState(() {});
                                                                                     await showDialog(
-                                                                                      barrierDismissible: false,
                                                                                       context: context,
                                                                                       builder: (dialogContext) {
                                                                                         return Dialog(
@@ -284,9 +287,9 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                           child: GestureDetector(
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: const SizedBox(
-                                                                                              height: 700.0,
-                                                                                              width: 980.0,
-                                                                                              child: AddIntegrationWidget(),
+                                                                                              height: 330.0,
+                                                                                              width: 550.0,
+                                                                                              child: CreationChoiceWidget(),
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -342,6 +345,7 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                 final usersIntegrations =
                                                     containerIntegrationsRowList
                                                         .toList();
+
                                                 return Wrap(
                                                   spacing: 0.0,
                                                   runSpacing: 0.0,
@@ -442,27 +446,51 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                           Builder(
                                                                                             builder: (context) => FFButtonWidget(
                                                                                               onPressed: () async {
-                                                                                                await showDialog(
-                                                                                                  context: context,
-                                                                                                  builder: (dialogContext) {
-                                                                                                    return Dialog(
-                                                                                                      elevation: 0,
-                                                                                                      insetPadding: EdgeInsets.zero,
-                                                                                                      backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                        child: SizedBox(
-                                                                                                          height: 330.0,
-                                                                                                          width: 550.0,
-                                                                                                          child: ExportCodeWidget(
-                                                                                                            integrationEditing: usersIntegrationsItem.id,
+                                                                                                if (usersIntegrationsItem.isStory!) {
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (dialogContext) {
+                                                                                                      return Dialog(
+                                                                                                        elevation: 0,
+                                                                                                        insetPadding: EdgeInsets.zero,
+                                                                                                        backgroundColor: Colors.transparent,
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          child: SizedBox(
+                                                                                                            height: 330.0,
+                                                                                                            width: 550.0,
+                                                                                                            child: ExportStoryCodeWidget(
+                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => setState(() {}));
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ).then((value) => setState(() {}));
+                                                                                                } else {
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (dialogContext) {
+                                                                                                      return Dialog(
+                                                                                                        elevation: 0,
+                                                                                                        insetPadding: EdgeInsets.zero,
+                                                                                                        backgroundColor: Colors.transparent,
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          child: SizedBox(
+                                                                                                            height: 330.0,
+                                                                                                            width: 550.0,
+                                                                                                            child: ExportCodeWidget(
+                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ).then((value) => setState(() {}));
+                                                                                                }
                                                                                               },
                                                                                               text: 'Exporter le code',
                                                                                               icon: const Icon(
@@ -492,33 +520,61 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                           Builder(
                                                                                             builder: (context) => FFButtonWidget(
                                                                                               onPressed: () async {
-                                                                                                FFAppState().vid1 = usersIntegrationsItem.vid1!;
-                                                                                                FFAppState().vid2 = usersIntegrationsItem.vid2!;
-                                                                                                FFAppState().vid3 = usersIntegrationsItem.vid3!;
-                                                                                                FFAppState().vid4 = usersIntegrationsItem.vid4!;
-                                                                                                FFAppState().vid5 = usersIntegrationsItem.vid5!;
-                                                                                                setState(() {});
-                                                                                                await showDialog(
-                                                                                                  context: context,
-                                                                                                  builder: (dialogContext) {
-                                                                                                    return Dialog(
-                                                                                                      elevation: 0,
-                                                                                                      insetPadding: EdgeInsets.zero,
-                                                                                                      backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                        child: SizedBox(
-                                                                                                          height: 580.0,
-                                                                                                          width: 1080.0,
-                                                                                                          child: EditIntegrationWidget(
-                                                                                                            integrationEditing: usersIntegrationsItem.id,
+                                                                                                if (usersIntegrationsItem.isStory!) {
+                                                                                                  FFAppState().vid1 = usersIntegrationsItem.vid1!;
+                                                                                                  FFAppState().vid2 = usersIntegrationsItem.vid2!;
+                                                                                                  FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                  setState(() {});
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (dialogContext) {
+                                                                                                      return Dialog(
+                                                                                                        elevation: 0,
+                                                                                                        insetPadding: EdgeInsets.zero,
+                                                                                                        backgroundColor: Colors.transparent,
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          child: SizedBox(
+                                                                                                            height: 730.0,
+                                                                                                            width: 800.0,
+                                                                                                            child: EditStoryWidget(
+                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
-                                                                                                      ),
-                                                                                                    );
-                                                                                                  },
-                                                                                                ).then((value) => setState(() {}));
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ).then((value) => setState(() {}));
+                                                                                                } else {
+                                                                                                  FFAppState().vid1 = usersIntegrationsItem.vid1!;
+                                                                                                  FFAppState().vid2 = usersIntegrationsItem.vid2!;
+                                                                                                  FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                  FFAppState().vid4 = usersIntegrationsItem.vid4!;
+                                                                                                  FFAppState().vid5 = usersIntegrationsItem.vid5!;
+                                                                                                  setState(() {});
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (dialogContext) {
+                                                                                                      return Dialog(
+                                                                                                        elevation: 0,
+                                                                                                        insetPadding: EdgeInsets.zero,
+                                                                                                        backgroundColor: Colors.transparent,
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          child: SizedBox(
+                                                                                                            height: 580.0,
+                                                                                                            width: 1080.0,
+                                                                                                            child: EditIntegrationWidget(
+                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    },
+                                                                                                  ).then((value) => setState(() {}));
+                                                                                                }
                                                                                               },
                                                                                               text: 'Modifier integration',
                                                                                               icon: const Icon(
@@ -549,11 +605,198 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                       ),
                                                                                     ],
                                                                                   ),
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.center,
-                                                                                    children: [
-                                                                                      if (usersIntegrationsItem.vid1 != null)
+                                                                                  if (!usersIntegrationsItem.isStory!)
+                                                                                    Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                      children: [
+                                                                                        if (usersIntegrationsItem.vid1 != null)
+                                                                                          FutureBuilder<List<HostedSubsRow>>(
+                                                                                            future: HostedSubsTable().querySingleRow(
+                                                                                              queryFn: (q) => q.eq(
+                                                                                                'id',
+                                                                                                usersIntegrationsItem.vid1,
+                                                                                              ),
+                                                                                            ),
+                                                                                            builder: (context, snapshot) {
+                                                                                              // Customize what your widget looks like when it's loading.
+                                                                                              if (!snapshot.hasData) {
+                                                                                                return Center(
+                                                                                                  child: SizedBox(
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    child: SpinKitRing(
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                      size: 50.0,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              }
+                                                                                              List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
+
+                                                                                              final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+                                                                                              return ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  imageHostedSubsRow!.thumbnail!,
+                                                                                                  width: 140.0,
+                                                                                                  height: 240.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                        if (usersIntegrationsItem.vid2 != null)
+                                                                                          FutureBuilder<List<HostedSubsRow>>(
+                                                                                            future: HostedSubsTable().querySingleRow(
+                                                                                              queryFn: (q) => q.eq(
+                                                                                                'id',
+                                                                                                usersIntegrationsItem.vid2,
+                                                                                              ),
+                                                                                            ),
+                                                                                            builder: (context, snapshot) {
+                                                                                              // Customize what your widget looks like when it's loading.
+                                                                                              if (!snapshot.hasData) {
+                                                                                                return Center(
+                                                                                                  child: SizedBox(
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    child: SpinKitRing(
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                      size: 50.0,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              }
+                                                                                              List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
+
+                                                                                              final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+                                                                                              return ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  imageHostedSubsRow!.thumbnail!,
+                                                                                                  width: 140.0,
+                                                                                                  height: 240.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                        if (usersIntegrationsItem.vid3 != null)
+                                                                                          FutureBuilder<List<HostedSubsRow>>(
+                                                                                            future: HostedSubsTable().querySingleRow(
+                                                                                              queryFn: (q) => q.eq(
+                                                                                                'id',
+                                                                                                usersIntegrationsItem.vid3,
+                                                                                              ),
+                                                                                            ),
+                                                                                            builder: (context, snapshot) {
+                                                                                              // Customize what your widget looks like when it's loading.
+                                                                                              if (!snapshot.hasData) {
+                                                                                                return Center(
+                                                                                                  child: SizedBox(
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    child: SpinKitRing(
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                      size: 50.0,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              }
+                                                                                              List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
+
+                                                                                              final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+                                                                                              return ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  imageHostedSubsRow!.thumbnail!,
+                                                                                                  width: 140.0,
+                                                                                                  height: 240.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                        if (usersIntegrationsItem.vid4 != null)
+                                                                                          FutureBuilder<List<HostedSubsRow>>(
+                                                                                            future: HostedSubsTable().querySingleRow(
+                                                                                              queryFn: (q) => q.eq(
+                                                                                                'id',
+                                                                                                usersIntegrationsItem.vid4,
+                                                                                              ),
+                                                                                            ),
+                                                                                            builder: (context, snapshot) {
+                                                                                              // Customize what your widget looks like when it's loading.
+                                                                                              if (!snapshot.hasData) {
+                                                                                                return Center(
+                                                                                                  child: SizedBox(
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    child: SpinKitRing(
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                      size: 50.0,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              }
+                                                                                              List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
+
+                                                                                              final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+                                                                                              return ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  imageHostedSubsRow!.thumbnail!,
+                                                                                                  width: 140.0,
+                                                                                                  height: 240.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                        if (usersIntegrationsItem.vid5 != null)
+                                                                                          FutureBuilder<List<HostedSubsRow>>(
+                                                                                            future: HostedSubsTable().querySingleRow(
+                                                                                              queryFn: (q) => q.eq(
+                                                                                                'id',
+                                                                                                usersIntegrationsItem.vid5,
+                                                                                              ),
+                                                                                            ),
+                                                                                            builder: (context, snapshot) {
+                                                                                              // Customize what your widget looks like when it's loading.
+                                                                                              if (!snapshot.hasData) {
+                                                                                                return Center(
+                                                                                                  child: SizedBox(
+                                                                                                    width: 50.0,
+                                                                                                    height: 50.0,
+                                                                                                    child: SpinKitRing(
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                      size: 50.0,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                );
+                                                                                              }
+                                                                                              List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
+
+                                                                                              final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+                                                                                              return ClipRRect(
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                                child: Image.network(
+                                                                                                  imageHostedSubsRow!.thumbnail!,
+                                                                                                  width: 140.0,
+                                                                                                  height: 240.0,
+                                                                                                  fit: BoxFit.cover,
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                      ].divide(const SizedBox(width: 12.0)),
+                                                                                    ),
+                                                                                  if (usersIntegrationsItem.isStory ?? true)
+                                                                                    Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.center,
+                                                                                      children: [
                                                                                         FutureBuilder<List<HostedSubsRow>>(
                                                                                           future: HostedSubsTable().querySingleRow(
                                                                                             queryFn: (q) => q.eq(
@@ -575,20 +818,38 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                                 ),
                                                                                               );
                                                                                             }
-                                                                                            List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
-                                                                                            final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
-                                                                                            return ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                imageHostedSubsRow!.thumbnail!,
-                                                                                                width: 140.0,
-                                                                                                height: 240.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
+                                                                                            List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
+
+                                                                                            final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+                                                                                            return Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (usersIntegrationsItem.vid1 != null)
+                                                                                                  ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                                    child: Image.network(
+                                                                                                      columnHostedSubsRow!.thumbnail!,
+                                                                                                      width: 140.0,
+                                                                                                      height: 140.0,
+                                                                                                      fit: BoxFit.cover,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    usersIntegrationsItem.title1,
+                                                                                                    'noTitle',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontSize: 16.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ].divide(const SizedBox(height: 6.0)),
                                                                                             );
                                                                                           },
                                                                                         ),
-                                                                                      if (usersIntegrationsItem.vid2 != null)
                                                                                         FutureBuilder<List<HostedSubsRow>>(
                                                                                           future: HostedSubsTable().querySingleRow(
                                                                                             queryFn: (q) => q.eq(
@@ -610,20 +871,38 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                                 ),
                                                                                               );
                                                                                             }
-                                                                                            List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
-                                                                                            final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
-                                                                                            return ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                imageHostedSubsRow!.thumbnail!,
-                                                                                                width: 140.0,
-                                                                                                height: 240.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
+                                                                                            List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
+
+                                                                                            final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+                                                                                            return Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (usersIntegrationsItem.vid2 != null)
+                                                                                                  ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                                    child: Image.network(
+                                                                                                      columnHostedSubsRow!.thumbnail!,
+                                                                                                      width: 140.0,
+                                                                                                      height: 140.0,
+                                                                                                      fit: BoxFit.cover,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    usersIntegrationsItem.title2,
+                                                                                                    'noTitle',
+                                                                                                  ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontSize: 16.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ].divide(const SizedBox(height: 6.0)),
                                                                                             );
                                                                                           },
                                                                                         ),
-                                                                                      if (usersIntegrationsItem.vid3 != null)
                                                                                         FutureBuilder<List<HostedSubsRow>>(
                                                                                           future: HostedSubsTable().querySingleRow(
                                                                                             queryFn: (q) => q.eq(
@@ -645,91 +924,40 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                                                 ),
                                                                                               );
                                                                                             }
-                                                                                            List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
-                                                                                            final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
-                                                                                            return ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                imageHostedSubsRow!.thumbnail!,
-                                                                                                width: 140.0,
-                                                                                                height: 240.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
-                                                                                            );
-                                                                                          },
-                                                                                        ),
-                                                                                      if (usersIntegrationsItem.vid4 != null)
-                                                                                        FutureBuilder<List<HostedSubsRow>>(
-                                                                                          future: HostedSubsTable().querySingleRow(
-                                                                                            queryFn: (q) => q.eq(
-                                                                                              'id',
-                                                                                              usersIntegrationsItem.vid4,
-                                                                                            ),
-                                                                                          ),
-                                                                                          builder: (context, snapshot) {
-                                                                                            // Customize what your widget looks like when it's loading.
-                                                                                            if (!snapshot.hasData) {
-                                                                                              return Center(
-                                                                                                child: SizedBox(
-                                                                                                  width: 50.0,
-                                                                                                  height: 50.0,
-                                                                                                  child: SpinKitRing(
-                                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                                    size: 50.0,
+                                                                                            List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
+
+                                                                                            final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+                                                                                            return Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                if (usersIntegrationsItem.vid3 != null)
+                                                                                                  ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                                    child: Image.network(
+                                                                                                      columnHostedSubsRow!.thumbnail!,
+                                                                                                      width: 140.0,
+                                                                                                      height: 140.0,
+                                                                                                      fit: BoxFit.cover,
+                                                                                                    ),
                                                                                                   ),
-                                                                                                ),
-                                                                                              );
-                                                                                            }
-                                                                                            List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
-                                                                                            final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
-                                                                                            return ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                imageHostedSubsRow!.thumbnail!,
-                                                                                                width: 140.0,
-                                                                                                height: 240.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
-                                                                                            );
-                                                                                          },
-                                                                                        ),
-                                                                                      if (usersIntegrationsItem.vid5 != null)
-                                                                                        FutureBuilder<List<HostedSubsRow>>(
-                                                                                          future: HostedSubsTable().querySingleRow(
-                                                                                            queryFn: (q) => q.eq(
-                                                                                              'id',
-                                                                                              usersIntegrationsItem.vid5,
-                                                                                            ),
-                                                                                          ),
-                                                                                          builder: (context, snapshot) {
-                                                                                            // Customize what your widget looks like when it's loading.
-                                                                                            if (!snapshot.hasData) {
-                                                                                              return Center(
-                                                                                                child: SizedBox(
-                                                                                                  width: 50.0,
-                                                                                                  height: 50.0,
-                                                                                                  child: SpinKitRing(
-                                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                                    size: 50.0,
+                                                                                                Text(
+                                                                                                  valueOrDefault<String>(
+                                                                                                    usersIntegrationsItem.title3,
+                                                                                                    'noTitle',
                                                                                                   ),
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontSize: 16.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                      ),
                                                                                                 ),
-                                                                                              );
-                                                                                            }
-                                                                                            List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
-                                                                                            final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
-                                                                                            return ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                                              child: Image.network(
-                                                                                                imageHostedSubsRow!.thumbnail!,
-                                                                                                width: 140.0,
-                                                                                                height: 240.0,
-                                                                                                fit: BoxFit.cover,
-                                                                                              ),
+                                                                                              ].divide(const SizedBox(height: 6.0)),
                                                                                             );
                                                                                           },
                                                                                         ),
-                                                                                    ].divide(const SizedBox(width: 12.0)),
-                                                                                  ),
+                                                                                      ].divide(const SizedBox(width: 12.0)),
+                                                                                    ),
                                                                                 ].divide(const SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),

@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
@@ -20,6 +21,8 @@ class TriageModel extends FlutterFlowModel<TriageWidget> {
       ? pageViewController!.page!.round()
       : 0;
   Completer<List<NewSubsRow>>? requestCompleter;
+  // Stores action output result for [Backend Call - API (post to mux through fastgen)] action in Button widget.
+  ApiCallResponse? mux;
 
   @override
   void initState(BuildContext context) {

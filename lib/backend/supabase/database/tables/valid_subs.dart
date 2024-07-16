@@ -42,10 +42,6 @@ class ValidSubsRow extends SupabaseDataRow {
   String? get transcription => getField<String>('transcription');
   set transcription(String? value) => setField<String>('transcription', value);
 
-  dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
-  set transcriptionJson(dynamic value) =>
-      setField<dynamic>('transcriptionJson', value);
-
   int? get rating => getField<int>('rating');
   set rating(int? value) => setField<int>('rating', value);
 
@@ -54,4 +50,7 @@ class ValidSubsRow extends SupabaseDataRow {
 
   String? get question => getField<String>('question');
   set question(String? value) => setField<String>('question', value);
+
+  String? get playbackId => getField<String>('playback_id');
+  set playbackId(String? value) => setField<String>('playback_id', value);
 }

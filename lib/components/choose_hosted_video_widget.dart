@@ -68,6 +68,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
           );
         }
         List<HostedSubsRow> containerHostedSubsRowList = snapshot.data!;
+
         return Container(
           width: double.infinity,
           height: double.infinity,
@@ -82,6 +83,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                 Builder(
                   builder: (context) {
                     final videos = containerHostedSubsRowList.toList();
+
                     return Wrap(
                       spacing: 16.0,
                       runSpacing: 16.0,

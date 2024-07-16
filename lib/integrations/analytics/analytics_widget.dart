@@ -103,6 +103,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                               }
                               List<ListsRow> containerListsRowList =
                                   snapshot.data!;
+
                               return Container(
                                 height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: BoxDecoration(
@@ -264,6 +265,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                 List<ListsRow>
                                                     columnListsRowList =
                                                     snapshot.data!;
+
                                                 final columnListsRow =
                                                     columnListsRowList
                                                             .isNotEmpty
@@ -291,6 +293,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                         ?.selection
                                                                         .toList() ??
                                                                     [];
+
                                                             return Wrap(
                                                               spacing: 16.0,
                                                               runSpacing: 16.0,
@@ -355,6 +358,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                         containerValidSubsRowList =
                                                                         snapshot
                                                                             .data!;
+
                                                                     final containerValidSubsRow = containerValidSubsRowList
                                                                             .isNotEmpty
                                                                         ? containerValidSubsRowList

@@ -100,6 +100,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
           );
         }
         List<UsersRow> updateProfileUsersRowList = snapshot.data!;
+
         // Return an empty Container when the item does not exist.
         if (snapshot.data!.isEmpty) {
           return Container();

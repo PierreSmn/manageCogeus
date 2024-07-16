@@ -123,6 +123,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                               }
                               List<LiveFlowsRow> containerLiveFlowsRowList =
                                   snapshot.data!;
+
                               return Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).revoBG,
@@ -154,6 +155,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                     final flows =
                                                         containerLiveFlowsRowList
                                                             .toList();
+
                                                     return SingleChildScrollView(
                                                       child: Column(
                                                         mainAxisSize:
@@ -269,6 +271,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                   );
                                                                                 }
                                                                                 List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
+
                                                                                 return RichText(
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
@@ -319,6 +322,7 @@ class _SolutionWidgetState extends State<SolutionWidget>
                                                                                   );
                                                                                 }
                                                                                 List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
+
                                                                                 return RichText(
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(

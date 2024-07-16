@@ -7,11 +7,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'edit_integration_model.dart';
-export 'edit_integration_model.dart';
+import 'edit_story_model.dart';
+export 'edit_story_model.dart';
 
-class EditIntegrationWidget extends StatefulWidget {
-  const EditIntegrationWidget({
+class EditStoryWidget extends StatefulWidget {
+  const EditStoryWidget({
     super.key,
     required this.integrationEditing,
   });
@@ -19,11 +19,11 @@ class EditIntegrationWidget extends StatefulWidget {
   final int? integrationEditing;
 
   @override
-  State<EditIntegrationWidget> createState() => _EditIntegrationWidgetState();
+  State<EditStoryWidget> createState() => _EditStoryWidgetState();
 }
 
-class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
-  late EditIntegrationModel _model;
+class _EditStoryWidgetState extends State<EditStoryWidget> {
+  late EditStoryModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -34,7 +34,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EditIntegrationModel());
+    _model = createModel(context, () => EditStoryModel());
+
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textFieldFocusNode2 ??= FocusNode();
+
+    _model.textFieldFocusNode3 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -90,7 +96,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Modifier Integration',
+                  'Modifier Story',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -353,7 +359,105 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                         ),
                                     ],
                                   ),
-                                ],
+                                  Text(
+                                    'Titre Story 1',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  SizedBox(
+                                    width: 200.0,
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 16.0),
+                                      child: TextFormField(
+                                        controller: _model.textController1 ??=
+                                            TextEditingController(
+                                          text:
+                                              containerIntegrationsRow?.title1,
+                                        ),
+                                        focusNode: _model.textFieldFocusNode1,
+                                        autofocus: true,
+                                        autofillHints: const [AutofillHints.email],
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText:
+                                              containerIntegrationsRow?.title1,
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Manrope',
+                                                    color: const Color(0xFF778089),
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .revoSearchBarBg,
+                                          contentPadding: const EdgeInsets.all(16.0),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        keyboardType:
+                                            TextInputType.emailAddress,
+                                        validator: _model
+                                            .textController1Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(const SizedBox(height: 6.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -595,7 +699,103 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                         ),
                                     ],
                                   ),
-                                ],
+                                  Text(
+                                    'Titre Story 2',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  SizedBox(
+                                    width: 200.0,
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 16.0),
+                                      child: TextFormField(
+                                        controller: _model.textController2 ??=
+                                            TextEditingController(
+                                          text:
+                                              containerIntegrationsRow?.title2,
+                                        ),
+                                        focusNode: _model.textFieldFocusNode2,
+                                        autofocus: true,
+                                        autofillHints: const [AutofillHints.email],
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Manrope',
+                                                    color: const Color(0xFF778089),
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .revoSearchBarBg,
+                                          contentPadding: const EdgeInsets.all(16.0),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        keyboardType:
+                                            TextInputType.emailAddress,
+                                        validator: _model
+                                            .textController2Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(const SizedBox(height: 6.0)),
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -837,536 +1037,104 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                         ),
                                     ],
                                   ),
-                                ],
+                                  Text(
+                                    'Titre Story 3',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  SizedBox(
+                                    width: 200.0,
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 16.0),
+                                      child: TextFormField(
+                                        controller: _model.textController3 ??=
+                                            TextEditingController(
+                                          text:
+                                              containerIntegrationsRow?.title3,
+                                        ),
+                                        focusNode: _model.textFieldFocusNode3,
+                                        autofocus: true,
+                                        autofillHints: const [AutofillHints.email],
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Manrope',
+                                                    color: const Color(0xFF778089),
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(40.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .revoSearchBarBg,
+                                          contentPadding: const EdgeInsets.all(16.0),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        keyboardType:
+                                            TextInputType.emailAddress,
+                                        validator: _model
+                                            .textController3Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ].divide(const SizedBox(height: 6.0)),
                               ),
-                              if (containerIntegrationsRow?.vid4 != null)
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 140.0,
-                                      height: 300.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).revoBG,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (containerIntegrationsRow?.vid4 ==
-                                              null)
-                                            Text(
-                                              'Selectionnez une vidéo',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          if (containerIntegrationsRow?.vid4 !=
-                                              null)
-                                            FutureBuilder<List<HostedSubsRow>>(
-                                              future: HostedSubsTable()
-                                                  .querySingleRow(
-                                                queryFn: (q) => q.eq(
-                                                  'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid4,
-                                                ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitRing(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 50.0,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<HostedSubsRow>
-                                                    videoPlayerHostedSubsRowList =
-                                                    snapshot.data!;
-
-                                                final videoPlayerHostedSubsRow =
-                                                    videoPlayerHostedSubsRowList
-                                                            .isNotEmpty
-                                                        ? videoPlayerHostedSubsRowList
-                                                            .first
-                                                        : null;
-                                                return FlutterFlowVideoPlayer(
-                                                  path:
-                                                      videoPlayerHostedSubsRow!
-                                                          .mediaLink!,
-                                                  videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
-                                                  autoPlay: false,
-                                                  looping: true,
-                                                  showControls: true,
-                                                  allowFullScreen: true,
-                                                  allowPlaybackSpeedMenu: false,
-                                                );
-                                              },
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid4 ==
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid4':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid4 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Choisir',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                            ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid4 !=
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid4':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid4 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Changer',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              if (containerIntegrationsRow?.vid5 != null)
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 140.0,
-                                      height: 300.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).revoBG,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (containerIntegrationsRow?.vid5 ==
-                                              null)
-                                            Text(
-                                              'Selectionnez une vidéo',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          if (containerIntegrationsRow?.vid5 !=
-                                              null)
-                                            FutureBuilder<List<HostedSubsRow>>(
-                                              future: HostedSubsTable()
-                                                  .querySingleRow(
-                                                queryFn: (q) => q.eq(
-                                                  'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid5,
-                                                ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitRing(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 50.0,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                List<HostedSubsRow>
-                                                    videoPlayerHostedSubsRowList =
-                                                    snapshot.data!;
-
-                                                final videoPlayerHostedSubsRow =
-                                                    videoPlayerHostedSubsRowList
-                                                            .isNotEmpty
-                                                        ? videoPlayerHostedSubsRowList
-                                                            .first
-                                                        : null;
-                                                return FlutterFlowVideoPlayer(
-                                                  path:
-                                                      videoPlayerHostedSubsRow!
-                                                          .mediaLink!,
-                                                  videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
-                                                  autoPlay: false,
-                                                  looping: true,
-                                                  showControls: true,
-                                                  allowFullScreen: true,
-                                                  allowPlaybackSpeedMenu: false,
-                                                );
-                                              },
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid5 ==
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid5':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid5 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Choisir',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                            ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid5 !=
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid5':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid5 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Changer',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
                             ].divide(const SizedBox(width: 24.0)),
                           ),
                         ),
@@ -1411,11 +1179,20 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                           onPressed: ((containerIntegrationsRow?.vid1 ==
                                       null) ||
                                   (containerIntegrationsRow?.vid2 == null) ||
-                                  (containerIntegrationsRow?.vid3 == null) ||
-                                  (containerIntegrationsRow?.vid4 == null) ||
-                                  (containerIntegrationsRow?.vid5 == null))
+                                  (containerIntegrationsRow?.vid3 == null))
                               ? null
                               : () async {
+                                  await IntegrationsTable().update(
+                                    data: {
+                                      'title1': _model.textController1.text,
+                                      'title2': _model.textController2.text,
+                                      'title3': _model.textController3.text,
+                                    },
+                                    matchingRows: (rows) => rows.eq(
+                                      'id',
+                                      widget.integrationEditing,
+                                    ),
+                                  );
                                   Navigator.pop(context);
                                 },
                           text: 'Valider',
