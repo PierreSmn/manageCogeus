@@ -337,6 +337,28 @@ class SendNotificaitonOfNewUserCall {
   }
 }
 
+class MuxGetViewsCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'mux get views',
+      apiUrl: 'https://api.mux.com/data/v1/video-views',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization':
+            'Basic 90fa0ce1-e238-42c1-bea0-c1c2567f61ef:oxt00cTiTQyVvEuqOGCfLh39eFggvWB94KIIeTkTNv/aV23Ks7HscJsp8owWColkFUraoV9IN0o',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

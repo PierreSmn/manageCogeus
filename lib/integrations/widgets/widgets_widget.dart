@@ -12,25 +12,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'widgets_edit_model.dart';
-export 'widgets_edit_model.dart';
+import 'widgets_model.dart';
+export 'widgets_model.dart';
 
-class WidgetsEditWidget extends StatefulWidget {
-  const WidgetsEditWidget({super.key});
+class WidgetsWidget extends StatefulWidget {
+  const WidgetsWidget({super.key});
 
   @override
-  State<WidgetsEditWidget> createState() => _WidgetsEditWidgetState();
+  State<WidgetsWidget> createState() => _WidgetsWidgetState();
 }
 
-class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
-  late WidgetsEditModel _model;
+class _WidgetsWidgetState extends State<WidgetsWidget> {
+  late WidgetsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => WidgetsEditModel());
+    _model = createModel(context, () => WidgetsModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -53,7 +53,7 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'widgetsEdit',
+        title: 'widgets',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -225,7 +225,7 @@ class _WidgetsEditWidgetState extends State<WidgetsEditWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Text(
-                                                                                  'Intégrations de ',
+                                                                                  'Widgets de ',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Manrope',
                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,

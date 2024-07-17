@@ -206,7 +206,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('widgetsEdit');
+                            context.pushNamed('widgets');
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -241,7 +241,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Integrations',
+                                    'Widgets',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

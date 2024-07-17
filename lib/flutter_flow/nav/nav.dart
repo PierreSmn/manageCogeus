@@ -153,10 +153,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const HostLibraryWidget(),
         ),
         FFRoute(
-          name: 'widgetsEdit',
-          path: '/widgetsEdit',
+          name: 'widgets',
+          path: '/widgets',
           requireAuth: true,
-          builder: (context, params) => const WidgetsEditWidget(),
+          builder: (context, params) => const WidgetsWidget(),
         ),
         FFRoute(
           name: 'harvesters',

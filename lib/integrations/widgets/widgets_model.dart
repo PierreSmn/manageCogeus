@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
-import 'widgets_edit_widget.dart' show WidgetsEditWidget;
+import 'widgets_widget.dart' show WidgetsWidget;
 import 'package:flutter/material.dart';
 
-class WidgetsEditModel extends FlutterFlowModel<WidgetsEditWidget> {
+class WidgetsModel extends FlutterFlowModel<WidgetsWidget> {
   ///  Local state fields for this page.
 
   String? listSelect;
