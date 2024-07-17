@@ -264,7 +264,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               }),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
-                                                                                  context.pushNamed('widgetsEdit');
+                                                                                  context.pushNamed('widgets');
                                                                                 },
                                                                                 text: 'Aller aux webstories',
                                                                                 options: FFButtonOptions(

@@ -12,8 +12,7 @@ export '/trois_pages/triage/triage_widget.dart' show TriageWidget;
 export '/integrations/analytics/analytics_widget.dart' show AnalyticsWidget;
 export '/integrations/host_library/host_library_widget.dart'
     show HostLibraryWidget;
-export '/integrations/widgets_edit/widgets_edit_widget.dart'
-    show WidgetsEditWidget;
+export '/integrations/widgets/widgets_widget.dart' show WidgetsWidget;
 export '/trois_pages/harvesters/harvesters_widget.dart' show HarvestersWidget;
 export '/pages/forgotpassword/forgotpassword_widget.dart'
     show ForgotpasswordWidget;
