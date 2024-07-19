@@ -192,889 +192,997 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 140.0,
-                                    height: 300.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).revoBG,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid1 ==
-                                            null)
-                                          Text(
-                                            'Selectionnez une vidéo',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Manrope',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid1 !=
-                                            null)
-                                          FutureBuilder<List<HostedSubsRow>>(
-                                            future: HostedSubsTable()
-                                                .querySingleRow(
-                                              queryFn: (q) => q.eq(
-                                                'id',
-                                                containerIntegrationsRow?.vid1,
-                                              ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<HostedSubsRow>
-                                                  videoPlayerHostedSubsRowList =
-                                                  snapshot.data!;
-
-                                              final videoPlayerHostedSubsRow =
-                                                  videoPlayerHostedSubsRowList
-                                                          .isNotEmpty
-                                                      ? videoPlayerHostedSubsRowList
-                                                          .first
-                                                      : null;
-                                              return FlutterFlowVideoPlayer(
-                                                path: videoPlayerHostedSubsRow!
-                                                    .mediaLink!,
-                                                videoType: VideoType.network,
-                                                width: 170.0,
-                                                height: 300.0,
-                                                autoPlay: false,
-                                                looping: true,
-                                                showControls: true,
-                                                allowFullScreen: true,
-                                                allowPlaybackSpeedMenu: false,
-                                              );
-                                            },
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
+                              Flexible(
+                                child: SingleChildScrollView(
+                                  child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      if (containerIntegrationsRow?.vid1 ==
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                barrierDismissible: false,
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
-                                                    ),
+                                      Container(
+                                        width: 140.0,
+                                        height: 300.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .revoBG,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            if (containerIntegrationsRow
+                                                    ?.vid1 ==
+                                                null)
+                                              Text(
+                                                'Selectionnez une vidéo',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            if (containerIntegrationsRow
+                                                    ?.vid1 !=
+                                                null)
+                                              FutureBuilder<
+                                                  List<HostedSubsRow>>(
+                                                future: HostedSubsTable()
+                                                    .querySingleRow(
+                                                  queryFn: (q) => q.eq(
+                                                    'id',
+                                                    containerIntegrationsRow
+                                                        ?.vid1,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitRing(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<HostedSubsRow>
+                                                      videoPlayerHostedSubsRowList =
+                                                      snapshot.data!;
+
+                                                  final videoPlayerHostedSubsRow =
+                                                      videoPlayerHostedSubsRowList
+                                                              .isNotEmpty
+                                                          ? videoPlayerHostedSubsRowList
+                                                              .first
+                                                          : null;
+                                                  return FlutterFlowVideoPlayer(
+                                                    path:
+                                                        videoPlayerHostedSubsRow!
+                                                            .mediaLink!,
+                                                    videoType:
+                                                        VideoType.network,
+                                                    width: 170.0,
+                                                    height: 300.0,
+                                                    autoPlay: false,
+                                                    looping: true,
+                                                    showControls: true,
+                                                    allowFullScreen: true,
+                                                    allowPlaybackSpeedMenu:
+                                                        false,
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid1': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid1 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Choisir',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                          ),
+                                          ],
                                         ),
-                                      if (containerIntegrationsRow?.vid1 !=
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                barrierDismissible: false,
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (containerIntegrationsRow?.vid1 ==
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    barrierDismissible: false,
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid1':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
                                                     ),
                                                   );
+                                                  FFAppState().vid1 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid1': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid1 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Changer',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                text: 'Choisir',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFEEE8FC),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
                                                   ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
                                             ),
-                                          ),
-                                        ),
+                                          if (containerIntegrationsRow?.vid1 !=
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    barrierDismissible: false,
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid1':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
+                                                    ),
+                                                  );
+                                                  FFAppState().vid1 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
+                                                },
+                                                text: 'Changer',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFDBD5E7),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 140.0,
-                                    height: 300.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).revoBG,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid2 ==
-                                            null)
-                                          Text(
-                                            'Selectionnez une vidéo',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Manrope',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid2 !=
-                                            null)
-                                          FutureBuilder<List<HostedSubsRow>>(
-                                            future: HostedSubsTable()
-                                                .querySingleRow(
-                                              queryFn: (q) => q.eq(
-                                                'id',
-                                                containerIntegrationsRow?.vid2,
-                                              ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<HostedSubsRow>
-                                                  videoPlayerHostedSubsRowList =
-                                                  snapshot.data!;
-
-                                              final videoPlayerHostedSubsRow =
-                                                  videoPlayerHostedSubsRowList
-                                                          .isNotEmpty
-                                                      ? videoPlayerHostedSubsRowList
-                                                          .first
-                                                      : null;
-                                              return FlutterFlowVideoPlayer(
-                                                path: videoPlayerHostedSubsRow!
-                                                    .mediaLink!,
-                                                videoType: VideoType.network,
-                                                width: 170.0,
-                                                height: 300.0,
-                                                autoPlay: false,
-                                                looping: true,
-                                                showControls: true,
-                                                allowFullScreen: true,
-                                                allowPlaybackSpeedMenu: false,
-                                              );
-                                            },
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
+                              Flexible(
+                                child: SingleChildScrollView(
+                                  child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      if (containerIntegrationsRow?.vid2 ==
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
-                                                    ),
+                                      Container(
+                                        width: 140.0,
+                                        height: 300.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .revoBG,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            if (containerIntegrationsRow
+                                                    ?.vid2 ==
+                                                null)
+                                              Text(
+                                                'Selectionnez une vidéo',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            if (containerIntegrationsRow
+                                                    ?.vid2 !=
+                                                null)
+                                              FutureBuilder<
+                                                  List<HostedSubsRow>>(
+                                                future: HostedSubsTable()
+                                                    .querySingleRow(
+                                                  queryFn: (q) => q.eq(
+                                                    'id',
+                                                    containerIntegrationsRow
+                                                        ?.vid2,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitRing(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<HostedSubsRow>
+                                                      videoPlayerHostedSubsRowList =
+                                                      snapshot.data!;
+
+                                                  final videoPlayerHostedSubsRow =
+                                                      videoPlayerHostedSubsRowList
+                                                              .isNotEmpty
+                                                          ? videoPlayerHostedSubsRowList
+                                                              .first
+                                                          : null;
+                                                  return FlutterFlowVideoPlayer(
+                                                    path:
+                                                        videoPlayerHostedSubsRow!
+                                                            .mediaLink!,
+                                                    videoType:
+                                                        VideoType.network,
+                                                    width: 170.0,
+                                                    height: 300.0,
+                                                    autoPlay: false,
+                                                    looping: true,
+                                                    showControls: true,
+                                                    allowFullScreen: true,
+                                                    allowPlaybackSpeedMenu:
+                                                        false,
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid2': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid2 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Choisir',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                          ),
+                                          ],
                                         ),
-                                      if (containerIntegrationsRow?.vid2 !=
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (containerIntegrationsRow?.vid2 ==
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid2':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
                                                     ),
                                                   );
+                                                  FFAppState().vid2 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid2': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid2 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Changer',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                text: 'Choisir',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFEEE8FC),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
                                                   ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
                                             ),
-                                          ),
-                                        ),
+                                          if (containerIntegrationsRow?.vid2 !=
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid2':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
+                                                    ),
+                                                  );
+                                                  FFAppState().vid2 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
+                                                },
+                                                text: 'Changer',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFDBD5E7),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 140.0,
-                                    height: 300.0,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).revoBG,
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid3 ==
-                                            null)
-                                          Text(
-                                            'Selectionnez une vidéo',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Manrope',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid3 !=
-                                            null)
-                                          FutureBuilder<List<HostedSubsRow>>(
-                                            future: HostedSubsTable()
-                                                .querySingleRow(
-                                              queryFn: (q) => q.eq(
-                                                'id',
-                                                containerIntegrationsRow?.vid3,
-                                              ),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<HostedSubsRow>
-                                                  videoPlayerHostedSubsRowList =
-                                                  snapshot.data!;
-
-                                              final videoPlayerHostedSubsRow =
-                                                  videoPlayerHostedSubsRowList
-                                                          .isNotEmpty
-                                                      ? videoPlayerHostedSubsRowList
-                                                          .first
-                                                      : null;
-                                              return FlutterFlowVideoPlayer(
-                                                path: videoPlayerHostedSubsRow!
-                                                    .mediaLink!,
-                                                videoType: VideoType.network,
-                                                width: 170.0,
-                                                height: 300.0,
-                                                autoPlay: false,
-                                                looping: true,
-                                                showControls: true,
-                                                allowFullScreen: true,
-                                                allowPlaybackSpeedMenu: false,
-                                              );
-                                            },
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
+                              Flexible(
+                                child: SingleChildScrollView(
+                                  child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      if (containerIntegrationsRow?.vid3 ==
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
-                                                    ),
+                                      Container(
+                                        width: 140.0,
+                                        height: 300.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .revoBG,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            if (containerIntegrationsRow
+                                                    ?.vid3 ==
+                                                null)
+                                              Text(
+                                                'Selectionnez une vidéo',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            if (containerIntegrationsRow
+                                                    ?.vid3 !=
+                                                null)
+                                              FutureBuilder<
+                                                  List<HostedSubsRow>>(
+                                                future: HostedSubsTable()
+                                                    .querySingleRow(
+                                                  queryFn: (q) => q.eq(
+                                                    'id',
+                                                    containerIntegrationsRow
+                                                        ?.vid3,
+                                                  ),
+                                                ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitRing(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<HostedSubsRow>
+                                                      videoPlayerHostedSubsRowList =
+                                                      snapshot.data!;
+
+                                                  final videoPlayerHostedSubsRow =
+                                                      videoPlayerHostedSubsRowList
+                                                              .isNotEmpty
+                                                          ? videoPlayerHostedSubsRowList
+                                                              .first
+                                                          : null;
+                                                  return FlutterFlowVideoPlayer(
+                                                    path:
+                                                        videoPlayerHostedSubsRow!
+                                                            .mediaLink!,
+                                                    videoType:
+                                                        VideoType.network,
+                                                    width: 170.0,
+                                                    height: 300.0,
+                                                    autoPlay: false,
+                                                    looping: true,
+                                                    showControls: true,
+                                                    allowFullScreen: true,
+                                                    allowPlaybackSpeedMenu:
+                                                        false,
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid3': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid3 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Choisir',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
-                                            ),
-                                          ),
+                                          ],
                                         ),
-                                      if (containerIntegrationsRow?.vid3 !=
-                                          null)
-                                        Builder(
-                                          builder: (context) => FFButtonWidget(
-                                            onPressed: () async {
-                                              FFAppState().choiceID = 0;
-                                              setState(() {});
-                                              await showDialog(
-                                                context: context,
-                                                builder: (dialogContext) {
-                                                  return Dialog(
-                                                    elevation: 0,
-                                                    insetPadding:
-                                                        EdgeInsets.zero,
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    alignment:
-                                                        const AlignmentDirectional(
-                                                                0.0, 0.0)
-                                                            .resolve(
-                                                                Directionality.of(
-                                                                    context)),
-                                                    child: const SizedBox(
-                                                      height: 500.0,
-                                                      width: 800.0,
-                                                      child:
-                                                          ChooseHostedVideoWidget(),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (containerIntegrationsRow?.vid3 ==
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid3':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
                                                     ),
                                                   );
+                                                  FFAppState().vid3 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
-
-                                              if (FFAppState().choiceID == 0) {
-                                                return;
-                                              }
-                                              await IntegrationsTable().update(
-                                                data: {
-                                                  'vid3': FFAppState().choiceID,
-                                                },
-                                                matchingRows: (rows) => rows.eq(
-                                                  'id',
-                                                  widget.integrationEditing,
-                                                ),
-                                              );
-                                              FFAppState().vid3 =
-                                                  FFAppState().choiceID;
-                                              setState(() {});
-                                            },
-                                            text: 'Changer',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Manrope',
-                                                    color: const Color(0xFF5E35B1),
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                text: 'Choisir',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFEEE8FC),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
                                                   ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(16.0),
                                             ),
-                                          ),
-                                        ),
+                                          if (containerIntegrationsRow?.vid3 !=
+                                              null)
+                                            Builder(
+                                              builder: (context) =>
+                                                  FFButtonWidget(
+                                                onPressed: () async {
+                                                  FFAppState().choiceID = 0;
+                                                  setState(() {});
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder: (dialogContext) {
+                                                      return Dialog(
+                                                        elevation: 0,
+                                                        insetPadding:
+                                                            EdgeInsets.zero,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                        child: const SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      setState(() {}));
+
+                                                  if (FFAppState().choiceID ==
+                                                      0) {
+                                                    return;
+                                                  }
+                                                  await IntegrationsTable()
+                                                      .update(
+                                                    data: {
+                                                      'vid3':
+                                                          FFAppState().choiceID,
+                                                    },
+                                                    matchingRows: (rows) =>
+                                                        rows.eq(
+                                                      'id',
+                                                      widget
+                                                          .integrationEditing,
+                                                    ),
+                                                  );
+                                                  FFAppState().vid3 =
+                                                      FFAppState().choiceID;
+                                                  setState(() {});
+                                                },
+                                                text: 'Changer',
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: const Color(0xFFDBD5E7),
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            const Color(0xFF5E35B1),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 0.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
                               if (containerIntegrationsRow?.vid4 != null)
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 140.0,
-                                      height: 300.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).revoBG,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (containerIntegrationsRow?.vid4 ==
-                                              null)
-                                            Text(
-                                              'Selectionnez une vidéo',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                Flexible(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 140.0,
+                                          height: 300.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .revoBG,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              if (containerIntegrationsRow
+                                                      ?.vid4 ==
+                                                  null)
+                                                Text(
+                                                  'Selectionnez une vidéo',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Manrope',
                                                         letterSpacing: 0.0,
                                                       ),
-                                            ),
-                                          if (containerIntegrationsRow?.vid4 !=
-                                              null)
-                                            FutureBuilder<List<HostedSubsRow>>(
-                                              future: HostedSubsTable()
-                                                  .querySingleRow(
-                                                queryFn: (q) => q.eq(
-                                                  'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid4,
                                                 ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitRing(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 50.0,
-                                                      ),
+                                              if (containerIntegrationsRow
+                                                      ?.vid4 !=
+                                                  null)
+                                                FutureBuilder<
+                                                    List<HostedSubsRow>>(
+                                                  future: HostedSubsTable()
+                                                      .querySingleRow(
+                                                    queryFn: (q) => q.eq(
+                                                      'id',
+                                                      containerIntegrationsRow
+                                                          ?.vid4,
                                                     ),
-                                                  );
-                                                }
-                                                List<HostedSubsRow>
-                                                    videoPlayerHostedSubsRowList =
-                                                    snapshot.data!;
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child: SpinKitRing(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 50.0,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<HostedSubsRow>
+                                                        videoPlayerHostedSubsRowList =
+                                                        snapshot.data!;
 
-                                                final videoPlayerHostedSubsRow =
-                                                    videoPlayerHostedSubsRowList
-                                                            .isNotEmpty
-                                                        ? videoPlayerHostedSubsRowList
-                                                            .first
-                                                        : null;
-                                                return FlutterFlowVideoPlayer(
-                                                  path:
-                                                      videoPlayerHostedSubsRow!
-                                                          .mediaLink!,
-                                                  videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
-                                                  autoPlay: false,
-                                                  looping: true,
-                                                  showControls: true,
-                                                  allowFullScreen: true,
-                                                  allowPlaybackSpeedMenu: false,
-                                                );
-                                              },
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid4 ==
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
+                                                    final videoPlayerHostedSubsRow =
+                                                        videoPlayerHostedSubsRowList
+                                                                .isNotEmpty
+                                                            ? videoPlayerHostedSubsRowList
+                                                                .first
+                                                            : null;
+                                                    return FlutterFlowVideoPlayer(
+                                                      path:
+                                                          videoPlayerHostedSubsRow!
+                                                              .mediaLink!,
+                                                      videoType:
+                                                          VideoType.network,
+                                                      width: 170.0,
+                                                      height: 300.0,
+                                                      autoPlay: false,
+                                                      looping: true,
+                                                      showControls: true,
+                                                      allowFullScreen: true,
+                                                      allowPlaybackSpeedMenu:
+                                                          false,
+                                                    );
+                                                  },
+                                                ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if (containerIntegrationsRow
+                                                    ?.vid4 ==
+                                                null)
+                                              Builder(
+                                                builder: (context) =>
+                                                    FFButtonWidget(
+                                                  onPressed: () async {
+                                                    FFAppState().choiceID = 0;
+                                                    setState(() {});
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder: (dialogContext) {
+                                                        return Dialog(
+                                                          elevation: 0,
+                                                          insetPadding:
+                                                              EdgeInsets.zero,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                          child: const SizedBox(
+                                                            height: 500.0,
+                                                            width: 800.0,
+                                                            child:
+                                                                ChooseHostedVideoWidget(),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ).then((value) =>
+                                                        setState(() {}));
+
+                                                    if (FFAppState().choiceID ==
+                                                        0) {
+                                                      return;
+                                                    }
+                                                    await IntegrationsTable()
+                                                        .update(
+                                                      data: {
+                                                        'vid4': FFAppState()
+                                                            .choiceID,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eq(
+                                                        'id',
+                                                        widget
+                                                            .integrationEditing,
                                                       ),
                                                     );
+                                                    FFAppState().vid4 =
+                                                        FFAppState().choiceID;
+                                                    setState(() {});
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid4':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid4 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Choisir',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                  text: 'Choisir',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFEEE8FC),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily: 'Manrope',
@@ -1084,83 +1192,87 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
                                               ),
-                                            ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid4 !=
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
+                                            if (containerIntegrationsRow
+                                                    ?.vid4 !=
+                                                null)
+                                              Builder(
+                                                builder: (context) =>
+                                                    FFButtonWidget(
+                                                  onPressed: () async {
+                                                    FFAppState().choiceID = 0;
+                                                    setState(() {});
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder: (dialogContext) {
+                                                        return Dialog(
+                                                          elevation: 0,
+                                                          insetPadding:
+                                                              EdgeInsets.zero,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                          child: const SizedBox(
+                                                            height: 500.0,
+                                                            width: 800.0,
+                                                            child:
+                                                                ChooseHostedVideoWidget(),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ).then((value) =>
+                                                        setState(() {}));
+
+                                                    if (FFAppState().choiceID ==
+                                                        0) {
+                                                      return;
+                                                    }
+                                                    await IntegrationsTable()
+                                                        .update(
+                                                      data: {
+                                                        'vid4': FFAppState()
+                                                            .choiceID,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eq(
+                                                        'id',
+                                                        widget
+                                                            .integrationEditing,
                                                       ),
                                                     );
+                                                    FFAppState().vid4 =
+                                                        FFAppState().choiceID;
+                                                    setState(() {});
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid4':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid4 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Changer',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                  text: 'Changer',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFDBD5E7),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily: 'Manrope',
@@ -1170,175 +1282,187 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
                                               ),
-                                            ),
-                                          ),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               if (containerIntegrationsRow?.vid5 != null)
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      width: 140.0,
-                                      height: 300.0,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            FlutterFlowTheme.of(context).revoBG,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          if (containerIntegrationsRow?.vid5 ==
-                                              null)
-                                            Text(
-                                              'Selectionnez une vidéo',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
+                                Flexible(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 140.0,
+                                          height: 300.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .revoBG,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              if (containerIntegrationsRow
+                                                      ?.vid5 ==
+                                                  null)
+                                                Text(
+                                                  'Selectionnez une vidéo',
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Manrope',
                                                         letterSpacing: 0.0,
                                                       ),
-                                            ),
-                                          if (containerIntegrationsRow?.vid5 !=
-                                              null)
-                                            FutureBuilder<List<HostedSubsRow>>(
-                                              future: HostedSubsTable()
-                                                  .querySingleRow(
-                                                queryFn: (q) => q.eq(
-                                                  'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid5,
                                                 ),
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      child: SpinKitRing(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 50.0,
-                                                      ),
+                                              if (containerIntegrationsRow
+                                                      ?.vid5 !=
+                                                  null)
+                                                FutureBuilder<
+                                                    List<HostedSubsRow>>(
+                                                  future: HostedSubsTable()
+                                                      .querySingleRow(
+                                                    queryFn: (q) => q.eq(
+                                                      'id',
+                                                      containerIntegrationsRow
+                                                          ?.vid5,
                                                     ),
-                                                  );
-                                                }
-                                                List<HostedSubsRow>
-                                                    videoPlayerHostedSubsRowList =
-                                                    snapshot.data!;
+                                                  ),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          child: SpinKitRing(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 50.0,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<HostedSubsRow>
+                                                        videoPlayerHostedSubsRowList =
+                                                        snapshot.data!;
 
-                                                final videoPlayerHostedSubsRow =
-                                                    videoPlayerHostedSubsRowList
-                                                            .isNotEmpty
-                                                        ? videoPlayerHostedSubsRowList
-                                                            .first
-                                                        : null;
-                                                return FlutterFlowVideoPlayer(
-                                                  path:
-                                                      videoPlayerHostedSubsRow!
-                                                          .mediaLink!,
-                                                  videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
-                                                  autoPlay: false,
-                                                  looping: true,
-                                                  showControls: true,
-                                                  allowFullScreen: true,
-                                                  allowPlaybackSpeedMenu: false,
-                                                );
-                                              },
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        if (containerIntegrationsRow?.vid5 ==
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
+                                                    final videoPlayerHostedSubsRow =
+                                                        videoPlayerHostedSubsRowList
+                                                                .isNotEmpty
+                                                            ? videoPlayerHostedSubsRowList
+                                                                .first
+                                                            : null;
+                                                    return FlutterFlowVideoPlayer(
+                                                      path:
+                                                          videoPlayerHostedSubsRow!
+                                                              .mediaLink!,
+                                                      videoType:
+                                                          VideoType.network,
+                                                      width: 170.0,
+                                                      height: 300.0,
+                                                      autoPlay: false,
+                                                      looping: true,
+                                                      showControls: true,
+                                                      allowFullScreen: true,
+                                                      allowPlaybackSpeedMenu:
+                                                          false,
+                                                    );
+                                                  },
+                                                ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if (containerIntegrationsRow
+                                                    ?.vid5 ==
+                                                null)
+                                              Builder(
+                                                builder: (context) =>
+                                                    FFButtonWidget(
+                                                  onPressed: () async {
+                                                    FFAppState().choiceID = 0;
+                                                    setState(() {});
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder: (dialogContext) {
+                                                        return Dialog(
+                                                          elevation: 0,
+                                                          insetPadding:
+                                                              EdgeInsets.zero,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                          child: const SizedBox(
+                                                            height: 500.0,
+                                                            width: 800.0,
+                                                            child:
+                                                                ChooseHostedVideoWidget(),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ).then((value) =>
+                                                        setState(() {}));
+
+                                                    if (FFAppState().choiceID ==
+                                                        0) {
+                                                      return;
+                                                    }
+                                                    await IntegrationsTable()
+                                                        .update(
+                                                      data: {
+                                                        'vid5': FFAppState()
+                                                            .choiceID,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eq(
+                                                        'id',
+                                                        widget
+                                                            .integrationEditing,
                                                       ),
                                                     );
+                                                    FFAppState().vid5 =
+                                                        FFAppState().choiceID;
+                                                    setState(() {});
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid5':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid5 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Choisir',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                  text: 'Choisir',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFEEE8FC),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily: 'Manrope',
@@ -1348,83 +1472,87 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
                                               ),
-                                            ),
-                                          ),
-                                        if (containerIntegrationsRow?.vid5 !=
-                                            null)
-                                          Builder(
-                                            builder: (context) =>
-                                                FFButtonWidget(
-                                              onPressed: () async {
-                                                FFAppState().choiceID = 0;
-                                                setState(() {});
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
+                                            if (containerIntegrationsRow
+                                                    ?.vid5 !=
+                                                null)
+                                              Builder(
+                                                builder: (context) =>
+                                                    FFButtonWidget(
+                                                  onPressed: () async {
+                                                    FFAppState().choiceID = 0;
+                                                    setState(() {});
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder: (dialogContext) {
+                                                        return Dialog(
+                                                          elevation: 0,
+                                                          insetPadding:
+                                                              EdgeInsets.zero,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                          child: const SizedBox(
+                                                            height: 500.0,
+                                                            width: 800.0,
+                                                            child:
+                                                                ChooseHostedVideoWidget(),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ).then((value) =>
+                                                        setState(() {}));
+
+                                                    if (FFAppState().choiceID ==
+                                                        0) {
+                                                      return;
+                                                    }
+                                                    await IntegrationsTable()
+                                                        .update(
+                                                      data: {
+                                                        'vid5': FFAppState()
+                                                            .choiceID,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eq(
+                                                        'id',
+                                                        widget
+                                                            .integrationEditing,
                                                       ),
                                                     );
+                                                    FFAppState().vid5 =
+                                                        FFAppState().choiceID;
+                                                    setState(() {});
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
-
-                                                if (FFAppState().choiceID ==
-                                                    0) {
-                                                  return;
-                                                }
-                                                await IntegrationsTable()
-                                                    .update(
-                                                  data: {
-                                                    'vid5':
-                                                        FFAppState().choiceID,
-                                                  },
-                                                  matchingRows: (rows) =>
-                                                      rows.eq(
-                                                    'id',
-                                                    widget.integrationEditing,
-                                                  ),
-                                                );
-                                                FFAppState().vid5 =
-                                                    FFAppState().choiceID;
-                                                setState(() {});
-                                              },
-                                              text: 'Changer',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                  text: 'Changer',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFDBD5E7),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily: 'Manrope',
@@ -1434,19 +1562,22 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 0.0,
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0),
+                                                  ),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
                                               ),
-                                            ),
-                                          ),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                             ].divide(const SizedBox(width: 24.0)),
                           ),

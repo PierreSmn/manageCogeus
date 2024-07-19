@@ -536,7 +536,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 730.0,
+                                                                                                            height: 800.0,
                                                                                                             width: 800.0,
                                                                                                             child: EditStoryWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
@@ -564,8 +564,8 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 580.0,
-                                                                                                            width: 1080.0,
+                                                                                                            height: 800.0,
+                                                                                                            width: 1280.0,
                                                                                                             child: EditIntegrationWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
                                                                                                             ),
