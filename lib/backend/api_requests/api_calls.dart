@@ -341,12 +341,13 @@ class MuxGetViewsCall {
   static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(
       callName: 'mux get views',
-      apiUrl: 'https://api.mux.com/data/v1/video-views',
+      apiUrl:
+          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
         'Authorization':
-            'Basic 90fa0ce1-e238-42c1-bea0-c1c2567f61ef:oxt00cTiTQyVvEuqOGCfLh39eFggvWB94KIIeTkTNv/aV23Ks7HscJsp8owWColkFUraoV9IN0o',
+            'Basic YWViN2Q5MGMtMTcyNi00ZWQzLThjMTItMDQ3MDdhOTU5MzNlOm91TDIxTlJqUnVYU3JqUzZPNzF5SWZYYXh4U2NxNDdaQ25icVBDUVlNVFVxOGNWQVVDUUxJTzV1d1VIRFhsZDhFbUNKelRkam8yaA==',
       },
       params: {},
       returnBody: true,
