@@ -36,6 +36,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
     super.initState();
     _model = createModel(context, () => EditIntegrationModel());
 
+    _model.inteNameFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -98,6 +100,85 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
+                ),
+                Container(
+                  width: 490.0,
+                  decoration: const BoxDecoration(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        child: TextFormField(
+                          controller: _model.inteNameTextController ??=
+                              TextEditingController(
+                            text: containerIntegrationsRow?.name,
+                          ),
+                          focusNode: _model.inteNameFocusNode,
+                          autofocus: true,
+                          autofillHints: const [AutofillHints.email],
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Titre de l\'integration',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Manrope',
+                                  color: const Color(0xFF778089),
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Color(0x00000000),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(40.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(40.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(40.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(40.0),
+                            ),
+                            filled: true,
+                            fillColor:
+                                FlutterFlowTheme.of(context).revoSearchBarBg,
+                            contentPadding: const EdgeInsets.all(16.0),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Manrope',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 15.0,
+                                letterSpacing: 0.0,
+                              ),
+                          keyboardType: TextInputType.emailAddress,
+                          validator: _model.inteNameTextControllerValidator
+                              .asValidator(context),
+                        ),
+                      ),
+                    ].divide(const SizedBox(height: 12.0)),
+                  ),
                 ),
                 Expanded(
                   child: Column(
@@ -1416,6 +1497,16 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                   (containerIntegrationsRow?.vid5 == null))
                               ? null
                               : () async {
+                                  await IntegrationsTable().update(
+                                    data: {
+                                      'name':
+                                          _model.inteNameTextController.text,
+                                    },
+                                    matchingRows: (rows) => rows.eq(
+                                      'id',
+                                      widget.integrationEditing,
+                                    ),
+                                  );
                                   Navigator.pop(context);
                                 },
                           text: 'Valider',
