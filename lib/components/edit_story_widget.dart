@@ -1268,6 +1268,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                       'title1': _model.textController2.text,
                                       'title2': _model.textController3.text,
                                       'title3': _model.textController4.text,
+                                      'name':
+                                          _model.inteNameTextController.text,
                                     },
                                     matchingRows: (rows) => rows.eq(
                                       'id',
