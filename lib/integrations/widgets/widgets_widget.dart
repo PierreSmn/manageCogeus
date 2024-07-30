@@ -635,6 +635,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
 
                                                                                               final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+
                                                                                               return ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -671,6 +672,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
 
                                                                                               final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+
                                                                                               return ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -707,6 +709,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
 
                                                                                               final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+
                                                                                               return ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -743,6 +746,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
 
                                                                                               final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+
                                                                                               return ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -779,6 +783,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               List<HostedSubsRow> imageHostedSubsRowList = snapshot.data!;
 
                                                                                               final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
+
                                                                                               return ClipRRect(
                                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                                                 child: Image.network(
@@ -821,6 +826,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                             List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
 
                                                                                             final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+
                                                                                             return Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -874,6 +880,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                             List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
 
                                                                                             final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+
                                                                                             return Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -927,6 +934,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                             List<HostedSubsRow> columnHostedSubsRowList = snapshot.data!;
 
                                                                                             final columnHostedSubsRow = columnHostedSubsRowList.isNotEmpty ? columnHostedSubsRowList.first : null;
+
                                                                                             return Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [

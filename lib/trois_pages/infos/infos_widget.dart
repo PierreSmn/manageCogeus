@@ -70,6 +70,7 @@ class _InfosWidgetState extends State<InfosWidget> {
 
         final infosUsersRow =
             infosUsersRowList.isNotEmpty ? infosUsersRowList.first : null;
+
         return Title(
             title: 'infos',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

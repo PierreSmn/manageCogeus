@@ -108,6 +108,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
         final updateProfileUsersRow = updateProfileUsersRowList.isNotEmpty
             ? updateProfileUsersRowList.first
             : null;
+
         return Title(
             title: 'updateProfile',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

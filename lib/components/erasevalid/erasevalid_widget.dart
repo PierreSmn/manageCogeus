@@ -98,6 +98,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                   containerHostedSubsRowList.isNotEmpty
                       ? containerHostedSubsRowList.first
                       : null;
+
               return Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(

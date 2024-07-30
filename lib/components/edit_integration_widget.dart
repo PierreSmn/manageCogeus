@@ -78,6 +78,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
@@ -262,6 +263,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ? videoPlayerHostedSubsRowList
                                                               .first
                                                           : null;
+
                                                   return FlutterFlowVideoPlayer(
                                                     path:
                                                         videoPlayerHostedSubsRow!
@@ -539,6 +541,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ? videoPlayerHostedSubsRowList
                                                               .first
                                                           : null;
+
                                                   return FlutterFlowVideoPlayer(
                                                     path:
                                                         videoPlayerHostedSubsRow!
@@ -814,6 +817,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ? videoPlayerHostedSubsRowList
                                                               .first
                                                           : null;
+
                                                   return FlutterFlowVideoPlayer(
                                                     path:
                                                         videoPlayerHostedSubsRow!
@@ -1090,6 +1094,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                             ? videoPlayerHostedSubsRowList
                                                                 .first
                                                             : null;
+
                                                     return FlutterFlowVideoPlayer(
                                                       path:
                                                           videoPlayerHostedSubsRow!
@@ -1370,6 +1375,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                             ? videoPlayerHostedSubsRowList
                                                                 .first
                                                             : null;
+
                                                     return FlutterFlowVideoPlayer(
                                                       path:
                                                           videoPlayerHostedSubsRow!

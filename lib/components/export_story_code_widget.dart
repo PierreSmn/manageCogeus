@@ -72,6 +72,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(

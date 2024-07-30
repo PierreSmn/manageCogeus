@@ -120,6 +120,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
         final forgotpasswordUsersRow = forgotpasswordUsersRowList.isNotEmpty
             ? forgotpasswordUsersRowList.first
             : null;
+
         return Title(
             title: 'forgotpassword',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
