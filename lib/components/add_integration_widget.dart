@@ -75,6 +75,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
@@ -295,6 +296,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                       ? videoPlayerHostedSubsRowList
                                                           .first
                                                       : null;
+
                                               return FlutterFlowVideoPlayer(
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
@@ -541,6 +543,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                       ? videoPlayerHostedSubsRowList
                                                           .first
                                                       : null;
+
                                               return FlutterFlowVideoPlayer(
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
@@ -785,6 +788,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                       ? videoPlayerHostedSubsRowList
                                                           .first
                                                       : null;
+
                                               return FlutterFlowVideoPlayer(
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
@@ -1029,6 +1033,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                       ? videoPlayerHostedSubsRowList
                                                           .first
                                                       : null;
+
                                               return FlutterFlowVideoPlayer(
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
@@ -1273,6 +1278,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                       ? videoPlayerHostedSubsRowList
                                                           .first
                                                       : null;
+
                                               return FlutterFlowVideoPlayer(
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,

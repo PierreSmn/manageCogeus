@@ -326,7 +326,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                     (_model.apiResultUpload
                                                                             ?.jsonBody ??
                                                                         ''),
-                                                                  )}/animated.gif?width=320',
+                                                                  )}/animated.webp?start=2&fps=20&end=4',
                                                                   'playback_id':
                                                                       PostToMuxThroughFastgenCall
                                                                           .muxId(

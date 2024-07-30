@@ -77,6 +77,7 @@ class _EraseListWidgetState extends State<EraseListWidget> {
         final containerListsRow = containerListsRowList.isNotEmpty
             ? containerListsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(

@@ -107,6 +107,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
         final newpasswordUsersRow = newpasswordUsersRowList.isNotEmpty
             ? newpasswordUsersRowList.first
             : null;
+
         return Title(
             title: 'newpassword',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

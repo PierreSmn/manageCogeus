@@ -360,6 +360,32 @@ class MuxGetViewsCall {
   }
 }
 
+class MUXDeleteCall {
+  static Future<ApiCallResponse> call({
+    String? assetId = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "asset_id": "$assetId"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'MUX Delete',
+      apiUrl: 'https://tryinit.fastgenapp.com/muxdel',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

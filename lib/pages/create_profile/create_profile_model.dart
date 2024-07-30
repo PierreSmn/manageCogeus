@@ -18,6 +18,10 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
   FocusNode? lastNameFocusNode1;
   TextEditingController? lastNameTextController1;
   String? Function(BuildContext, String?)? lastNameTextController1Validator;
+  // State field(s) for clientName widget.
+  FocusNode? clientNameFocusNode;
+  TextEditingController? clientNameTextController;
+  String? Function(BuildContext, String?)? clientNameTextControllerValidator;
   // State field(s) for lastName widget.
   FocusNode? lastNameFocusNode2;
   TextEditingController? lastNameTextController2;
@@ -38,6 +42,9 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
 
     lastNameFocusNode1?.dispose();
     lastNameTextController1?.dispose();
+
+    clientNameFocusNode?.dispose();
+    clientNameTextController?.dispose();
 
     lastNameFocusNode2?.dispose();
     lastNameTextController2?.dispose();

@@ -84,6 +84,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
@@ -309,6 +310,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!
@@ -670,6 +672,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!
@@ -1029,6 +1032,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!

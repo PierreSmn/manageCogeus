@@ -202,6 +202,18 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                   }),
                                   child: FFButtonWidget(
                                     onPressed: () async {
+                                      var shouldSetState = false;
+                                      _model.deleteDone =
+                                          await MUXDeleteCall.call(
+                                        assetId: widget.assetID?.toString(),
+                                      );
+
+                                      shouldSetState = true;
+                                      if (!(_model.deleteDone?.succeeded ??
+                                          true)) {
+                                        if (shouldSetState) setState(() {});
+                                        return;
+                                      }
                                       await HostedSubsTable().delete(
                                         matchingRows: (rows) => rows.eq(
                                           'id',
@@ -209,6 +221,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                         ),
                                       );
                                       Navigator.pop(context);
+                                      if (shouldSetState) setState(() {});
                                     },
                                     text: 'Effacer',
                                     icon: const Icon(
@@ -223,9 +236,8 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                           const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: _model.mouseRegionHovered
-                                          ? FlutterFlowTheme.of(context)
-                                              .buttonRevHover
-                                          : const Color(0xFFFCE8F0),
+                                          ? const Color(0xFFF5E2E4)
+                                          : const Color(0xFFFCE8EC),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

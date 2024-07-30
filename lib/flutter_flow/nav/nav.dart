@@ -117,9 +117,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'signup',
           path: '/signup',
           builder: (context, params) => SignupWidget(
-            brand: params.getParam(
-              'brand',
-              ParamType.String,
+            brandId: params.getParam(
+              'brandId',
+              ParamType.int,
             ),
           ),
         ),
@@ -128,9 +128,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createProfile',
           requireAuth: true,
           builder: (context, params) => CreateProfileWidget(
-            brand: params.getParam(
-              'brand',
-              ParamType.String,
+            brandID: params.getParam(
+              'brandID',
+              ParamType.int,
             ),
           ),
         ),

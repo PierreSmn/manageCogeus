@@ -124,6 +124,7 @@ class _SigninWidgetState extends State<SigninWidget>
 
         final signinUsersRow =
             signinUsersRowList.isNotEmpty ? signinUsersRowList.first : null;
+
         return Title(
             title: 'signin',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

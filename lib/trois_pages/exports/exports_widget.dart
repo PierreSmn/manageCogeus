@@ -426,6 +426,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                         ? columnListsRowList
                                                             .first
                                                         : null;
+
                                                 return SingleChildScrollView(
                                                   child: Column(
                                                     mainAxisSize:
@@ -526,6 +527,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                           ? containerValidSubsRowList
                                                                               .first
                                                                           : null;
+
                                                                       return Container(
                                                                         width:
                                                                             360.0,

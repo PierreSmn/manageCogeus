@@ -84,6 +84,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
         final containerIntegrationsRow = containerIntegrationsRowList.isNotEmpty
             ? containerIntegrationsRowList.first
             : null;
+
         return Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
@@ -265,6 +266,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!
@@ -631,6 +633,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!
@@ -993,6 +996,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                         ? videoPlayerHostedSubsRowList
                                                             .first
                                                         : null;
+
                                                 return FlutterFlowVideoPlayer(
                                                   path:
                                                       videoPlayerHostedSubsRow!

@@ -272,6 +272,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                         ? columnListsRowList
                                                             .first
                                                         : null;
+
                                                 return SingleChildScrollView(
                                                   child: Column(
                                                     mainAxisSize:
@@ -364,6 +365,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                         ? containerValidSubsRowList
                                                                             .first
                                                                         : null;
+
                                                                     return Container(
                                                                       width:
                                                                           360.0,
