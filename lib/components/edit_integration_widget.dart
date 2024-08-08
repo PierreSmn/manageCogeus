@@ -319,8 +319,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -408,8 +407,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -596,8 +594,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -684,8 +681,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -872,8 +868,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -960,8 +955,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) =>
-                                                      setState(() {}));
+                                                  );
 
                                                   if (FFAppState().choiceID ==
                                                       0) {
@@ -1150,8 +1144,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ),
                                                         );
                                                       },
-                                                    ).then((value) =>
-                                                        setState(() {}));
+                                                    );
 
                                                     if (FFAppState().choiceID ==
                                                         0) {
@@ -1240,8 +1233,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ),
                                                         );
                                                       },
-                                                    ).then((value) =>
-                                                        setState(() {}));
+                                                    );
 
                                                     if (FFAppState().choiceID ==
                                                         0) {
@@ -1431,8 +1423,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ),
                                                         );
                                                       },
-                                                    ).then((value) =>
-                                                        setState(() {}));
+                                                    );
 
                                                     if (FFAppState().choiceID ==
                                                         0) {
@@ -1521,8 +1512,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           ),
                                                         );
                                                       },
-                                                    ).then((value) =>
-                                                        setState(() {}));
+                                                    );
 
                                                     if (FFAppState().choiceID ==
                                                         0) {

@@ -1,21 +1,16 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
-import 'exports_widget.dart' show ExportsWidget;
+import 'host_library_copy_widget.dart' show HostLibraryCopyWidget;
 import 'package:flutter/material.dart';
 
-class ExportsModel extends FlutterFlowModel<ExportsWidget> {
-  ///  Local state fields for this page.
-
-  String? listSelect;
-
+class HostLibraryCopyModel extends FlutterFlowModel<HostLibraryCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered1 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered2 = false;
+  // Stores action output result for [Backend Call - API (mux get views)] action in Button widget.
+  ApiCallResponse? apiResultb7l;
 
   @override
   void initState(BuildContext context) {

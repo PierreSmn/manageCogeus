@@ -348,8 +348,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -427,8 +426,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -594,8 +592,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -672,8 +669,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -839,8 +835,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -917,8 +912,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -1084,8 +1078,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -1162,8 +1155,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -1329,8 +1321,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;
@@ -1407,8 +1398,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     ),
                                                   );
                                                 },
-                                              ).then(
-                                                  (value) => setState(() {}));
+                                              );
 
                                               if (FFAppState().choiceID == 0) {
                                                 return;

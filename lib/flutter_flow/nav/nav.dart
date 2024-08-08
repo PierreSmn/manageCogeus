@@ -186,6 +186,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/invalids',
           requireAuth: true,
           builder: (context, params) => const InvalidsWidget(),
+        ),
+        FFRoute(
+          name: 'data',
+          path: '/data',
+          requireAuth: true,
+          builder: (context, params) => DataWidget(
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'hostLibraryCopy',
+          path: '/hostLibraryCopy',
+          requireAuth: true,
+          builder: (context, params) => const HostLibraryCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

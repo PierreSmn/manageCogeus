@@ -56,9 +56,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
         title: 'widgets',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -285,7 +283,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: GestureDetector(
-                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                             child: const SizedBox(
                                                                                               height: 330.0,
                                                                                               width: 550.0,
@@ -294,7 +292,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           ),
                                                                                         );
                                                                                       },
-                                                                                    ).then((value) => setState(() {}));
+                                                                                    );
                                                                                   },
                                                                                   text: 'Ajouter une intégration',
                                                                                   icon: const Icon(
@@ -456,7 +454,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
                                                                                                             height: 330.0,
                                                                                                             width: 550.0,
@@ -467,7 +465,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         ),
                                                                                                       );
                                                                                                     },
-                                                                                                  ).then((value) => setState(() {}));
+                                                                                                  );
                                                                                                 } else {
                                                                                                   await showDialog(
                                                                                                     context: context,
@@ -478,7 +476,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
                                                                                                             height: 330.0,
                                                                                                             width: 550.0,
@@ -489,7 +487,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         ),
                                                                                                       );
                                                                                                     },
-                                                                                                  ).then((value) => setState(() {}));
+                                                                                                  );
                                                                                                 }
                                                                                               },
                                                                                               text: 'Exporter le code',
@@ -534,7 +532,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
                                                                                                             height: 800.0,
                                                                                                             width: 800.0,
@@ -545,7 +543,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         ),
                                                                                                       );
                                                                                                     },
-                                                                                                  ).then((value) => setState(() {}));
+                                                                                                  );
                                                                                                 } else {
                                                                                                   FFAppState().vid1 = usersIntegrationsItem.vid1!;
                                                                                                   FFAppState().vid2 = usersIntegrationsItem.vid2!;
@@ -562,7 +560,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
-                                                                                                          onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
                                                                                                             height: 800.0,
                                                                                                             width: 1280.0,
@@ -573,7 +571,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         ),
                                                                                                       );
                                                                                                     },
-                                                                                                  ).then((value) => setState(() {}));
+                                                                                                  );
                                                                                                 }
                                                                                               },
                                                                                               text: 'Modifier integration',

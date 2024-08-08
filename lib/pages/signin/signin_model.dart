@@ -11,7 +11,6 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for email widget.
   final emailKey = GlobalKey();
@@ -61,7 +60,6 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     emailFocusNode?.dispose();
 
     passwordFocusNode?.dispose();

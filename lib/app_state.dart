@@ -184,6 +184,12 @@ class FFAppState extends ChangeNotifier {
     _customError = value;
   }
 
+  bool _colorChange = false;
+  bool get colorChange => _colorChange;
+  set colorChange(bool value) {
+    _colorChange = value;
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,

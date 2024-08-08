@@ -1,9 +1,11 @@
 import '/backend/supabase/supabase.dart';
+import '/components/change_color_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -74,9 +76,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
         title: 'harvesters',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -100,12 +100,15 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
                         ),
                         Expanded(
                           child: FutureBuilder<List<LiveFlowsRow>>(
-                            future: LiveFlowsTable().queryRows(
-                              queryFn: (q) => q.eq(
-                                'brand_name',
-                                FFAppState().activeBrand,
-                              ),
-                            ),
+                            future: (_model.requestCompleter ??=
+                                    Completer<List<LiveFlowsRow>>()
+                                      ..complete(LiveFlowsTable().queryRows(
+                                        queryFn: (q) => q.eq(
+                                          'brand_name',
+                                          FFAppState().activeBrand,
+                                        ),
+                                      )))
+                                .future,
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -204,188 +207,308 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
                                                                         CrossAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            60.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                      Container(
+                                                                        width:
+                                                                            380.0,
+                                                                        decoration:
+                                                                            const BoxDecoration(),
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.start,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              'Votre Harvester',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                    fontSize: 44.72,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                            ),
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                flowsItem.slug,
-                                                                                'noneFound',
-                                                                              ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                    fontSize: 24.72,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.normal,
-                                                                                    fontStyle: FontStyle.italic,
-                                                                                  ),
-                                                                            ),
-                                                                            FutureBuilder<List<WebAppActivationsRow>>(
-                                                                              future: WebAppActivationsTable().queryRows(
-                                                                                queryFn: (q) => q
-                                                                                    .eq(
-                                                                                      'brandName',
-                                                                                      FFAppState().activeBrand,
-                                                                                    )
-                                                                                    .eq(
-                                                                                      'slug',
-                                                                                      flowsItem.slug,
-                                                                                    ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: SpinKitRing(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
-
-                                                                                return RichText(
-                                                                                  textScaler: MediaQuery.of(context).textScaler,
-                                                                                  text: TextSpan(
-                                                                                    children: [
-                                                                                      const TextSpan(
-                                                                                        text: 'Démarrages : ',
-                                                                                        style: TextStyle(),
-                                                                                      ),
-                                                                                      TextSpan(
-                                                                                        text: richTextWebAppActivationsRowList.length.toString(),
-                                                                                        style: const TextStyle(
-                                                                                          fontWeight: FontWeight.w600,
-                                                                                        ),
-                                                                                      )
-                                                                                    ],
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
-                                                                                          fontSize: 18.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ),
-                                                                            FutureBuilder<List<SubmittersNewRow>>(
-                                                                              future: SubmittersNewTable().queryRows(
-                                                                                queryFn: (q) => q
-                                                                                    .eq(
-                                                                                      'brand_name',
-                                                                                      FFAppState().activeBrand,
-                                                                                    )
-                                                                                    .eq(
-                                                                                      'flow_done',
-                                                                                      flowsItem.slug,
-                                                                                    ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: SpinKitRing(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
-
-                                                                                return RichText(
-                                                                                  textScaler: MediaQuery.of(context).textScaler,
-                                                                                  text: TextSpan(
-                                                                                    children: [
-                                                                                      const TextSpan(
-                                                                                        text: 'Vidéos reçues : ',
-                                                                                        style: TextStyle(),
-                                                                                      ),
-                                                                                      TextSpan(
-                                                                                        text: richTextSubmittersNewRowList.length.toString(),
-                                                                                        style: const TextStyle(
-                                                                                          fontWeight: FontWeight.w600,
-                                                                                        ),
-                                                                                      )
-                                                                                    ],
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
-                                                                                          fontSize: 18.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                        ),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ),
-                                                                            FFButtonWidget(
-                                                                              onPressed: () async {
-                                                                                await Clipboard.setData(ClipboardData(text: 'app.cogeus.com/home?slug=${flowsItem.slug}'));
-                                                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                                                  SnackBar(
-                                                                                    content: Text(
-                                                                                      'Lien copié',
-                                                                                      style: GoogleFonts.getFont(
-                                                                                        'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      ),
-                                                                                    ),
-                                                                                    duration: const Duration(milliseconds: 4000),
-                                                                                    backgroundColor: FlutterFlowTheme.of(context).tertiary,
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                              text: 'Copier le lien',
-                                                                              options: FFButtonOptions(
-                                                                                height: 40.0,
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: const Color(0xFFEEE8FC),
-                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'Manrope',
-                                                                                      color: const Color(0xFF5E35B1),
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ),
-                                                                                elevation: 0.0,
-                                                                                borderSide: const BorderSide(
-                                                                                  color: Colors.transparent,
-                                                                                  width: 0.0,
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              60.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                valueOrDefault<String>(
+                                                                                  flowsItem.slug,
+                                                                                  'noneFound',
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(16.0),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                      fontSize: 34.72,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.normal,
+                                                                                      fontStyle: FontStyle.italic,
+                                                                                    ),
                                                                               ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                              Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                                child: FutureBuilder<List<WebAppActivationsRow>>(
+                                                                                  future: WebAppActivationsTable().queryRows(
+                                                                                    queryFn: (q) => q
+                                                                                        .eq(
+                                                                                          'brandName',
+                                                                                          FFAppState().activeBrand,
+                                                                                        )
+                                                                                        .eq(
+                                                                                          'slug',
+                                                                                          flowsItem.slug,
+                                                                                        ),
+                                                                                  ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50.0,
+                                                                                          height: 50.0,
+                                                                                          child: SpinKitRing(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 50.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                    List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
+
+                                                                                    return RichText(
+                                                                                      textScaler: MediaQuery.of(context).textScaler,
+                                                                                      text: TextSpan(
+                                                                                        children: [
+                                                                                          const TextSpan(
+                                                                                            text: 'Question :',
+                                                                                            style: TextStyle(),
+                                                                                          ),
+                                                                                          TextSpan(
+                                                                                            text: flowsItem.expla2!,
+                                                                                            style: TextStyle(
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Manrope',
+                                                                                              fontSize: 18.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                ),
+                                                                              ),
+                                                                              FutureBuilder<List<WebAppActivationsRow>>(
+                                                                                future: WebAppActivationsTable().queryRows(
+                                                                                  queryFn: (q) => q
+                                                                                      .eq(
+                                                                                        'brandName',
+                                                                                        FFAppState().activeBrand,
+                                                                                      )
+                                                                                      .eq(
+                                                                                        'slug',
+                                                                                        flowsItem.slug,
+                                                                                      ),
+                                                                                ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: SpinKitRing(
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 50.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
+
+                                                                                  return RichText(
+                                                                                    textScaler: MediaQuery.of(context).textScaler,
+                                                                                    text: TextSpan(
+                                                                                      children: [
+                                                                                        const TextSpan(
+                                                                                          text: 'Démarrages : ',
+                                                                                          style: TextStyle(),
+                                                                                        ),
+                                                                                        TextSpan(
+                                                                                          text: richTextWebAppActivationsRowList.length.toString(),
+                                                                                          style: const TextStyle(
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            fontSize: 18.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ),
+                                                                              FutureBuilder<List<SubmittersNewRow>>(
+                                                                                future: SubmittersNewTable().queryRows(
+                                                                                  queryFn: (q) => q
+                                                                                      .eq(
+                                                                                        'brand_name',
+                                                                                        FFAppState().activeBrand,
+                                                                                      )
+                                                                                      .eq(
+                                                                                        'flow_done',
+                                                                                        flowsItem.slug,
+                                                                                      ),
+                                                                                ),
+                                                                                builder: (context, snapshot) {
+                                                                                  // Customize what your widget looks like when it's loading.
+                                                                                  if (!snapshot.hasData) {
+                                                                                    return Center(
+                                                                                      child: SizedBox(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        child: SpinKitRing(
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 50.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  }
+                                                                                  List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
+
+                                                                                  return RichText(
+                                                                                    textScaler: MediaQuery.of(context).textScaler,
+                                                                                    text: TextSpan(
+                                                                                      children: [
+                                                                                        const TextSpan(
+                                                                                          text: 'Vidéos reçues : ',
+                                                                                          style: TextStyle(),
+                                                                                        ),
+                                                                                        TextSpan(
+                                                                                          text: richTextSubmittersNewRowList.length.toString(),
+                                                                                          style: const TextStyle(
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                        )
+                                                                                      ],
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            fontSize: 18.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                              ),
+                                                                              FFButtonWidget(
+                                                                                onPressed: () async {
+                                                                                  await Clipboard.setData(ClipboardData(text: 'app.cogeus.com/home?slug=${flowsItem.slug}'));
+                                                                                  ScaffoldMessenger.of(context).showSnackBar(
+                                                                                    SnackBar(
+                                                                                      content: Text(
+                                                                                        'Lien copié',
+                                                                                        style: GoogleFonts.getFont(
+                                                                                          'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        ),
+                                                                                      ),
+                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      backgroundColor: FlutterFlowTheme.of(context).tertiary,
+                                                                                    ),
+                                                                                  );
+                                                                                },
+                                                                                text: 'Copier le lien',
+                                                                                icon: const Icon(
+                                                                                  Icons.content_copy,
+                                                                                  size: 15.0,
+                                                                                ),
+                                                                                options: FFButtonOptions(
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: const Color(0xFFEEE8FC),
+                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        color: const Color(0xFF5E35B1),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                  elevation: 0.0,
+                                                                                  borderSide: const BorderSide(
+                                                                                    color: Colors.transparent,
+                                                                                    width: 0.0,
+                                                                                  ),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                              ),
+                                                                              Builder(
+                                                                                builder: (context) => FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    FFAppState().colorChange = false;
+                                                                                    setState(() {});
+                                                                                    await showDialog(
+                                                                                      context: context,
+                                                                                      builder: (dialogContext) {
+                                                                                        return Dialog(
+                                                                                          elevation: 0,
+                                                                                          insetPadding: EdgeInsets.zero,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                            child: SizedBox(
+                                                                                              height: 450.0,
+                                                                                              width: 750.0,
+                                                                                              child: ChangeColorWidget(
+                                                                                                title: flowsItem.colorTitle!,
+                                                                                                text: flowsItem.colorText!,
+                                                                                                button: flowsItem.colorButton!,
+                                                                                                buttonTxt: flowsItem.colorButtonText!,
+                                                                                                id: flowsItem.id,
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      },
+                                                                                    );
+
+                                                                                    if (FFAppState().colorChange) {
+                                                                                      setState(() => _model.requestCompleter = null);
+                                                                                      await _model.waitForRequestCompleted();
+                                                                                    } else {
+                                                                                      return;
+                                                                                    }
+                                                                                  },
+                                                                                  text: 'Modifier les couleurs',
+                                                                                  icon: const Icon(
+                                                                                    Icons.mode_edit,
+                                                                                    size: 15.0,
+                                                                                  ),
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                       Column(
@@ -431,10 +554,6 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
                                                                                         children: [
-                                                                                          const TextSpan(
-                                                                                            text: 'Gagnez ',
-                                                                                            style: TextStyle(),
-                                                                                          ),
                                                                                           TextSpan(
                                                                                             text: valueOrDefault<String>(
                                                                                               flowsItem.giftName,
@@ -455,7 +574,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
                                                                                       child: Image.network(
                                                                                         valueOrDefault<String>(
                                                                                           flowsItem.giftImageLink,
-                                                                                          'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
+                                                                                          'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1723027782863000.jpg',
                                                                                         ),
                                                                                         width: 300.0,
                                                                                         height: 250.0,
@@ -553,7 +672,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget>
                                                                                               fontFamily: 'Manrope',
                                                                                               color: flowsItem.colorButtonText != null && flowsItem.colorButtonText != ''
                                                                                                   ? colorFromCssString(
-                                                                                                      flowsItem.colorButton!,
+                                                                                                      flowsItem.colorButtonText!,
                                                                                                       defaultColor: FlutterFlowTheme.of(context).primary,
                                                                                                     )
                                                                                                   : FlutterFlowTheme.of(context).primaryBackground,

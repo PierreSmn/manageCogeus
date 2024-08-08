@@ -279,7 +279,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 ),
                               );
                             },
-                          ).then((value) => setState(() {}));
+                          );
                         } else {
                           Navigator.pop(context);
                           await showDialog(
@@ -299,7 +299,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 ),
                               );
                             },
-                          ).then((value) => setState(() {}));
+                          );
                         }
                       },
                       text: 'Commencer',

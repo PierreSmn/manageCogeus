@@ -55,9 +55,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
         title: 'exports',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -231,7 +229,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: GestureDetector(
-                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                             child: const SizedBox(
                                                                                               height: 250.0,
                                                                                               width: 500.0,
@@ -240,7 +238,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                                           ),
                                                                                         );
                                                                                       },
-                                                                                    ).then((value) => setState(() {}));
+                                                                                    );
                                                                                   },
                                                                                   text: 'Nouveau',
                                                                                   icon: const Icon(
@@ -291,14 +289,14 @@ class _ExportsWidgetState extends State<ExportsWidget> {
                                                                                             backgroundColor: Colors.transparent,
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: GestureDetector(
-                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                               child: EraseListWidget(
                                                                                                 listId: _model.listSelect!,
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
-                                                                                      ).then((value) => setState(() {}));
+                                                                                      );
                                                                                     },
                                                                                     text: 'Effacer',
                                                                                     icon: const Icon(
