@@ -9,6 +9,10 @@ class ChangeColorModel extends FlutterFlowModel<ChangeColorWidget> {
 
   ///  State fields for stateful widgets in this component.
 
+  // State field(s) for title widget.
+  FocusNode? titleFocusNode;
+  TextEditingController? titleTextController;
+  String? Function(BuildContext, String?)? titleTextControllerValidator;
   // State field(s) for colorTitle widget.
   FocusNode? colorTitleFocusNode;
   TextEditingController? colorTitleTextController;
@@ -26,12 +30,17 @@ class ChangeColorModel extends FlutterFlowModel<ChangeColorWidget> {
   TextEditingController? colorButtonTextTextController;
   String? Function(BuildContext, String?)?
       colorButtonTextTextControllerValidator;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
 
   @override
   void initState(BuildContext context) {}
 
   @override
   void dispose() {
+    titleFocusNode?.dispose();
+    titleTextController?.dispose();
+
     colorTitleFocusNode?.dispose();
     colorTitleTextController?.dispose();
 
