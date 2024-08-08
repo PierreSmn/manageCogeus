@@ -320,8 +320,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {
@@ -407,8 +406,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {
@@ -686,8 +684,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {
@@ -772,8 +769,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {
@@ -1049,8 +1045,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {
@@ -1135,8 +1130,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then(
-                                                    (value) => setState(() {}));
+                                                );
 
                                                 if (FFAppState().choiceID ==
                                                     0) {

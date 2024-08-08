@@ -12,7 +12,6 @@ class InvalidsModel extends FlutterFlowModel<InvalidsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   // State field(s) for Column widget.
@@ -33,7 +32,6 @@ class InvalidsModel extends FlutterFlowModel<InvalidsWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     navbarnavModel.dispose();
     columnController1?.dispose();
     columnController2?.dispose();

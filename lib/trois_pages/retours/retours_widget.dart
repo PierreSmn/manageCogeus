@@ -76,9 +76,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
             title: 'retours',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -435,7 +433,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                 return Material(
                                                                                                   color: Colors.transparent,
                                                                                                   child: GestureDetector(
-                                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                     child: SizedBox(
                                                                                                       height: 300.0,
                                                                                                       width: 400.0,
@@ -449,7 +447,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                   ),
                                                                                                 );
                                                                                               },
-                                                                                            ).then((value) => setState(() {}));
+                                                                                            );
                                                                                           },
                                                                                           text: 'Ajouter à un dossier',
                                                                                           icon: const Icon(

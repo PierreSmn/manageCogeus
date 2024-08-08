@@ -338,11 +338,14 @@ class SendNotificaitonOfNewUserCall {
 }
 
 class MuxGetViewsCall {
-  static Future<ApiCallResponse> call() async {
+  static Future<ApiCallResponse> call({
+    String? time = 'timeframe[]=30:days',
+    String? assetId = '',
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'mux get views',
       apiUrl:
-          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id',
+          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id&filters=asset_id:$assetId',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
@@ -358,6 +361,23 @@ class MuxGetViewsCall {
       alwaysAllowBody: false,
     );
   }
+
+  static int? views(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.data[:].views''',
+      ));
+  static int? watchTime(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.data[:].total_watch_time''',
+      ));
+  static int? playTime(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.data[:].total_playing_time''',
+      ));
+  static String? assetId(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data[:].field''',
+      ));
 }
 
 class MUXDeleteCall {

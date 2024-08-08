@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class HomeModel extends FlutterFlowModel<HomeWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   // State field(s) for MouseRegion widget.
@@ -25,7 +24,6 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     navbarnavModel.dispose();
   }
 }

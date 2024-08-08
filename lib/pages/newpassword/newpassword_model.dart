@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class NewpasswordModel extends FlutterFlowModel<NewpasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for password widget.
   final passwordKey = GlobalKey();
@@ -36,7 +35,6 @@ class NewpasswordModel extends FlutterFlowModel<NewpasswordWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     passwordFocusNode?.dispose();
   }
 }

@@ -1,36 +1,33 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/erase_asset/erase_asset_widget.dart';
 import '/components/play_video_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'host_library_model.dart';
-export 'host_library_model.dart';
+import 'host_library_copy_model.dart';
+export 'host_library_copy_model.dart';
 
-class HostLibraryWidget extends StatefulWidget {
-  const HostLibraryWidget({super.key});
+class HostLibraryCopyWidget extends StatefulWidget {
+  const HostLibraryCopyWidget({super.key});
 
   @override
-  State<HostLibraryWidget> createState() => _HostLibraryWidgetState();
+  State<HostLibraryCopyWidget> createState() => _HostLibraryCopyWidgetState();
 }
 
-class _HostLibraryWidgetState extends State<HostLibraryWidget> {
-  late HostLibraryModel _model;
+class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
+  late HostLibraryCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HostLibraryModel());
+    _model = createModel(context, () => HostLibraryCopyModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -72,10 +69,10 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
             ),
           );
         }
-        List<HostedSubsRow> hostLibraryHostedSubsRowList = snapshot.data!;
+        List<HostedSubsRow> hostLibraryCopyHostedSubsRowList = snapshot.data!;
 
         return Title(
-            title: 'hostLibrary',
+            title: 'hostLibraryCopy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
@@ -178,233 +175,6 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                         .w600,
                                                               ),
                                                         ),
-                                                        MouseRegion(
-                                                          opaque: false,
-                                                          cursor: MouseCursor
-                                                                  .defer ??
-                                                              MouseCursor.defer,
-                                                          onEnter:
-                                                              ((event) async {
-                                                            setState(() => _model
-                                                                    .mouseRegionHovered =
-                                                                true);
-                                                          }),
-                                                          onExit:
-                                                              ((event) async {
-                                                            setState(() => _model
-                                                                    .mouseRegionHovered =
-                                                                false);
-                                                          }),
-                                                          child: FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              var shouldSetState =
-                                                                  false;
-                                                              setState(() {
-                                                                _model.isDataUploading =
-                                                                    false;
-                                                                _model.uploadedLocalFile =
-                                                                    FFUploadedFile(
-                                                                        bytes: Uint8List.fromList(
-                                                                            []));
-                                                                _model.uploadedFileUrl =
-                                                                    '';
-                                                              });
-
-                                                              final selectedMedia =
-                                                                  await selectMedia(
-                                                                storageFolderPath:
-                                                                    currentUserUid,
-                                                                isVideo: true,
-                                                                mediaSource:
-                                                                    MediaSource
-                                                                        .videoGallery,
-                                                                multiImage:
-                                                                    false,
-                                                              );
-                                                              if (selectedMedia !=
-                                                                      null &&
-                                                                  selectedMedia.every((m) =>
-                                                                      validateFileFormat(
-                                                                          m.storagePath,
-                                                                          context))) {
-                                                                setState(() =>
-                                                                    _model.isDataUploading =
-                                                                        true);
-                                                                var selectedUploadedFiles =
-                                                                    <FFUploadedFile>[];
-
-                                                                var downloadUrls =
-                                                                    <String>[];
-                                                                try {
-                                                                  selectedUploadedFiles =
-                                                                      selectedMedia
-                                                                          .map((m) =>
-                                                                              FFUploadedFile(
-                                                                                name: m.storagePath.split('/').last,
-                                                                                bytes: m.bytes,
-                                                                                height: m.dimensions?.height,
-                                                                                width: m.dimensions?.width,
-                                                                                blurHash: m.blurHash,
-                                                                              ))
-                                                                          .toList();
-
-                                                                  downloadUrls =
-                                                                      await uploadSupabaseStorageFiles(
-                                                                    bucketName:
-                                                                        'hosting',
-                                                                    selectedFiles:
-                                                                        selectedMedia,
-                                                                  );
-                                                                } finally {
-                                                                  _model.isDataUploading =
-                                                                      false;
-                                                                }
-                                                                if (selectedUploadedFiles
-                                                                            .length ==
-                                                                        selectedMedia
-                                                                            .length &&
-                                                                    downloadUrls
-                                                                            .length ==
-                                                                        selectedMedia
-                                                                            .length) {
-                                                                  setState(() {
-                                                                    _model.uploadedLocalFile =
-                                                                        selectedUploadedFiles
-                                                                            .first;
-                                                                    _model.uploadedFileUrl =
-                                                                        downloadUrls
-                                                                            .first;
-                                                                  });
-                                                                } else {
-                                                                  setState(
-                                                                      () {});
-                                                                  return;
-                                                                }
-                                                              }
-
-                                                              if (!(_model.uploadedFileUrl !=
-                                                                      '')) {
-                                                                if (shouldSetState) {
-                                                                  setState(
-                                                                      () {});
-                                                                }
-                                                                return;
-                                                              }
-                                                              _model.apiResultUpload =
-                                                                  await PostToMuxThroughFastgenCall
-                                                                      .call(
-                                                                link:
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  _model
-                                                                      .uploadedFileUrl,
-                                                                  'none',
-                                                                ),
-                                                              );
-
-                                                              shouldSetState =
-                                                                  true;
-                                                              if ((_model
-                                                                      .apiResultUpload
-                                                                      ?.succeeded ??
-                                                                  true)) {
-                                                                await HostedSubsTable()
-                                                                    .insert({
-                                                                  'media_link':
-                                                                      _model
-                                                                          .uploadedFileUrl,
-                                                                  'brand_name':
-                                                                      FFAppState()
-                                                                          .activeBrand,
-                                                                  'owner':
-                                                                      currentUserUid,
-                                                                  'thumbnail':
-                                                                      'https://image.mux.com/${PostToMuxThroughFastgenCall.muxId(
-                                                                    (_model.apiResultUpload
-                                                                            ?.jsonBody ??
-                                                                        ''),
-                                                                  )}/animated.webp?start=2&fps=20&end=4',
-                                                                  'playback_id':
-                                                                      PostToMuxThroughFastgenCall
-                                                                          .muxId(
-                                                                    (_model.apiResultUpload
-                                                                            ?.jsonBody ??
-                                                                        ''),
-                                                                  ),
-                                                                  'title':
-                                                                      'Video d\'un client de ${FFAppState().activeBrand}',
-                                                                  'asset_id':
-                                                                      PostToMuxThroughFastgenCall
-                                                                          .assetId(
-                                                                    (_model.apiResultUpload
-                                                                            ?.jsonBody ??
-                                                                        ''),
-                                                                  ).toString(),
-                                                                });
-                                                              }
-                                                              if (shouldSetState) {
-                                                                setState(() {});
-                                                              }
-                                                            },
-                                                            text:
-                                                                'Upload video',
-                                                            icon: const Icon(
-                                                              Icons
-                                                                  .upload_rounded,
-                                                              size: 15.0,
-                                                            ),
-                                                            options:
-                                                                FFButtonOptions(
-                                                              height: 40.0,
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                              iconPadding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              color: _model
-                                                                      .mouseRegionHovered
-                                                                  ? const Color(
-                                                                      0xFFECE2F5)
-                                                                  : const Color(
-                                                                      0xFFF2E8FC),
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Manrope',
-                                                                        color: const Color(
-                                                                            0xFF822CE3),
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                              elevation: 0.0,
-                                                              borderSide:
-                                                                  const BorderSide(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                width: 0.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          16.0),
-                                                            ),
-                                                          ),
-                                                        ),
                                                       ].divide(const SizedBox(
                                                           height: 12.0)),
                                                     ),
@@ -459,8 +229,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                               Builder(
                                                                 builder:
                                                                     (context) {
-                                                                  final hostedVideos =
-                                                                      hostLibraryHostedSubsRowList
+                                                                  final singularHostedVideos =
+                                                                      hostLibraryCopyHostedSubsRowList
                                                                           .toList();
 
                                                                   return Wrap(
@@ -485,12 +255,12 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                     clipBehavior:
                                                                         Clip.none,
                                                                     children: List.generate(
-                                                                        hostedVideos
+                                                                        singularHostedVideos
                                                                             .length,
-                                                                        (hostedVideosIndex) {
-                                                                      final hostedVideosItem =
-                                                                          hostedVideos[
-                                                                              hostedVideosIndex];
+                                                                        (singularHostedVideosIndex) {
+                                                                      final singularHostedVideosItem =
+                                                                          singularHostedVideos[
+                                                                              singularHostedVideosIndex];
                                                                       return Container(
                                                                         width:
                                                                             250.0,
@@ -546,7 +316,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                                       height: 680.0,
                                                                                                       width: 330.0,
                                                                                                       child: PlayVideoWidget(
-                                                                                                        videoAdress: hostedVideosItem.mediaLink!,
+                                                                                                        videoAdress: singularHostedVideosItem.mediaLink!,
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -557,7 +327,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                           child: ClipRRect(
                                                                                             borderRadius: BorderRadius.circular(8.0),
                                                                                             child: Image.network(
-                                                                                              'https://image.mux.com/${hostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
+                                                                                              'https://image.mux.com/${singularHostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
                                                                                               width: 240.0,
                                                                                               height: 330.0,
                                                                                               fit: BoxFit.cover,
@@ -574,50 +344,71 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                 child: Container(
                                                                                   width: 140.0,
                                                                                   decoration: const BoxDecoration(),
-                                                                                  child: Builder(
-                                                                                    builder: (context) => FFButtonWidget(
-                                                                                      onPressed: () async {
+                                                                                  child: FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      _model.apiResultb7l = await MuxGetViewsCall.call(
+                                                                                        time: 'timeframe[]=30:days',
+                                                                                        assetId: singularHostedVideosItem.assetId,
+                                                                                      );
+
+                                                                                      if ((_model.apiResultb7l?.succeeded ?? true)) {
                                                                                         await showDialog(
                                                                                           context: context,
-                                                                                          builder: (dialogContext) {
-                                                                                            return Dialog(
-                                                                                              elevation: 0,
-                                                                                              insetPadding: EdgeInsets.zero,
-                                                                                              backgroundColor: Colors.transparent,
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                child: SizedBox(
-                                                                                                  height: 275.0,
-                                                                                                  width: 400.0,
-                                                                                                  child: EraseAssetWidget(
-                                                                                                    assetID: hostedVideosItem.id,
-                                                                                                  ),
+                                                                                          builder: (alertDialogContext) {
+                                                                                            return AlertDialog(
+                                                                                              title: Text(MuxGetViewsCall.views(
+                                                                                                (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                              )!
+                                                                                                  .toString()),
+                                                                                              content: Text(MuxGetViewsCall.assetId(
+                                                                                                (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                              )!),
+                                                                                              actions: [
+                                                                                                TextButton(
+                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                  child: const Text('Ok'),
                                                                                                 ),
-                                                                                              ),
+                                                                                              ],
                                                                                             );
                                                                                           },
                                                                                         );
-                                                                                      },
-                                                                                      text: 'Effacer l\'asset',
-                                                                                      options: FFButtonOptions(
-                                                                                        height: 40.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: const Color(0xFFEEE8FC),
-                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: const Color(0xFF5E35B1),
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                            ),
-                                                                                        elevation: 0.0,
-                                                                                        borderSide: const BorderSide(
-                                                                                          color: Colors.transparent,
-                                                                                          width: 0.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(16.0),
+                                                                                      } else {
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (alertDialogContext) {
+                                                                                            return AlertDialog(
+                                                                                              title: Text((_model.apiResultb7l?.statusCode ?? 200).toString()),
+                                                                                              content: Text((_model.apiResultb7l?.jsonBody ?? '').toString()),
+                                                                                              actions: [
+                                                                                                TextButton(
+                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                  child: const Text('Ok'),
+                                                                                                ),
+                                                                                              ],
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                      }
+
+                                                                                      setState(() {});
+                                                                                    },
+                                                                                    text: 'Request Data',
+                                                                                    options: FFButtonOptions(
+                                                                                      height: 40.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            color: Colors.white,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                      elevation: 3.0,
+                                                                                      borderSide: const BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 1.0,
                                                                                       ),
+                                                                                      borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
                                                                                 ),
