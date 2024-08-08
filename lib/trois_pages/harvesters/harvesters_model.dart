@@ -11,10 +11,6 @@ class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   Completer<List<LiveFlowsRow>>? requestCompleter;
-  // State field(s) for Checkbox widget.
-  Map<LiveFlowsRow, bool> checkboxValueMap = {};
-  List<LiveFlowsRow> get checkboxCheckedItems =>
-      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   @override
   void initState(BuildContext context) {
