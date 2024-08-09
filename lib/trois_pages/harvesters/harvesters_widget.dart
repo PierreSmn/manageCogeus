@@ -436,6 +436,8 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             Builder(
                                                                               builder: (context) => FFButtonWidget(
                                                                                 onPressed: () async {
+                                                                                  FFAppState().colorChange = false;
+                                                                                  setState(() {});
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (dialogContext) {
@@ -458,6 +460,13 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       );
                                                                                     },
                                                                                   );
+
+                                                                                  if (FFAppState().colorChange) {
+                                                                                    setState(() => _model.requestCompleter = null);
+                                                                                    await _model.waitForRequestCompleted();
+                                                                                  } else {
+                                                                                    return;
+                                                                                  }
                                                                                 },
                                                                                 text: 'Modifier question',
                                                                                 icon: const Icon(

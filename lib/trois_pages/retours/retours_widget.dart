@@ -1,13 +1,11 @@
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/addtolist/addtolist_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -373,13 +371,13 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     text: TextSpan(
                                                                                       children: [
                                                                                         const TextSpan(
-                                                                                          text: 'Repond à la question : \n',
+                                                                                          text: 'Projet concerné : \n',
                                                                                           style: TextStyle(),
                                                                                         ),
                                                                                         TextSpan(
                                                                                           text: getJsonField(
                                                                                             validItemItem,
-                                                                                            r'''$.question''',
+                                                                                            r'''$.slugDone''',
                                                                                           ).toString(),
                                                                                           style: const TextStyle(
                                                                                             fontWeight: FontWeight.w600,
@@ -420,61 +418,6 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                                                     children: [
-                                                                                      Builder(
-                                                                                        builder: (context) => FFButtonWidget(
-                                                                                          onPressed: () async {
-                                                                                            await showAlignedDialog(
-                                                                                              context: context,
-                                                                                              isGlobal: false,
-                                                                                              avoidOverflow: false,
-                                                                                              targetAnchor: const AlignmentDirectional(0.0, -1.0).resolve(Directionality.of(context)),
-                                                                                              followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              builder: (dialogContext) {
-                                                                                                return Material(
-                                                                                                  color: Colors.transparent,
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 300.0,
-                                                                                                      width: 400.0,
-                                                                                                      child: AddtolistWidget(
-                                                                                                        vidId: getJsonField(
-                                                                                                          validItemItem,
-                                                                                                          r'''$.id''',
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                          },
-                                                                                          text: 'Ajouter à un dossier',
-                                                                                          icon: const Icon(
-                                                                                            Icons.add,
-                                                                                            size: 15.0,
-                                                                                          ),
-                                                                                          options: FFButtonOptions(
-                                                                                            width: 200.0,
-                                                                                            height: 30.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: FlutterFlowTheme.of(context).cogeusNavSelected,
-                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  fontFamily: 'Manrope',
-                                                                                                  color: const Color(0xFF5E35B1),
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                ),
-                                                                                            elevation: 0.0,
-                                                                                            borderSide: const BorderSide(
-                                                                                              color: Colors.transparent,
-                                                                                              width: 0.0,
-                                                                                            ),
-                                                                                            borderRadius: BorderRadius.circular(16.0),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
                                                                                       FFButtonWidget(
                                                                                         onPressed: () async {
                                                                                           await launchURL('${getJsonField(

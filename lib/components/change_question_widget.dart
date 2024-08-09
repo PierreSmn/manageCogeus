@@ -461,10 +461,21 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  await LiveFlowsTable().update(
+                    data: {
+                      'expla2': _model.colorTitleTextController.text,
+                    },
+                    matchingRows: (rows) => rows.eq(
+                      'id',
+                      widget.id,
+                    ),
+                  );
+                  FFAppState().colorChange = true;
+                  setState(() {});
+                  Navigator.pop(context);
                 },
-                text: 'Changer de couleur',
+                text: 'Changer la question',
                 options: FFButtonOptions(
                   height: 40.0,
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),

@@ -128,6 +128,15 @@ class GetValidSubsCall {
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
+  static List<String>? slug(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].slugDone''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class GetRejectedSubsCall {
