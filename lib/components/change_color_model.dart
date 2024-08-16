@@ -17,6 +17,10 @@ class ChangeColorModel extends FlutterFlowModel<ChangeColorWidget> {
   FocusNode? colorTitleFocusNode;
   TextEditingController? colorTitleTextController;
   String? Function(BuildContext, String?)? colorTitleTextControllerValidator;
+  // State field(s) for colorBG widget.
+  FocusNode? colorBGFocusNode;
+  TextEditingController? colorBGTextController;
+  String? Function(BuildContext, String?)? colorBGTextControllerValidator;
   // State field(s) for colorText widget.
   FocusNode? colorTextFocusNode;
   TextEditingController? colorTextTextController;
@@ -43,6 +47,9 @@ class ChangeColorModel extends FlutterFlowModel<ChangeColorWidget> {
 
     colorTitleFocusNode?.dispose();
     colorTitleTextController?.dispose();
+
+    colorBGFocusNode?.dispose();
+    colorBGTextController?.dispose();
 
     colorTextFocusNode?.dispose();
     colorTextTextController?.dispose();
