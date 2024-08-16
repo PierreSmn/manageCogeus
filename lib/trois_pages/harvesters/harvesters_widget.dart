@@ -393,6 +393,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                               text: flowsItem.colorText!,
                                                                                               button: flowsItem.colorButton!,
                                                                                               buttonTxt: flowsItem.colorButtonText!,
+                                                                                              background: flowsItem.colorBG,
                                                                                               id: flowsItem.id,
                                                                                             ),
                                                                                           ),

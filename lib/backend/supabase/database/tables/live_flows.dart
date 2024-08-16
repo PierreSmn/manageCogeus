@@ -79,4 +79,7 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   String? get carouselCode => getField<String>('carousel_code');
   set carouselCode(String? value) => setField<String>('carousel_code', value);
+
+  String? get colorBG => getField<String>('colorBG');
+  set colorBG(String? value) => setField<String>('colorBG', value);
 }

@@ -19,6 +19,7 @@ class ChangeColorWidget extends StatefulWidget {
     required this.button,
     required this.buttonTxt,
     required this.id,
+    this.background,
   });
 
   final String? title;
@@ -26,6 +27,7 @@ class ChangeColorWidget extends StatefulWidget {
   final String? button;
   final String? buttonTxt;
   final int? id;
+  final String? background;
 
   @override
   State<ChangeColorWidget> createState() => _ChangeColorWidgetState();
@@ -54,6 +56,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
     _model.colorTitleTextController ??=
         TextEditingController(text: widget.title);
     _model.colorTitleFocusNode ??= FocusNode();
+
+    _model.colorBGTextController ??=
+        TextEditingController(text: widget.background);
+    _model.colorBGFocusNode ??= FocusNode();
 
     _model.colorTextTextController ??=
         TextEditingController(text: widget.text);
@@ -354,6 +360,109 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       ),
                                     ].divide(const SizedBox(width: 34.0)),
                                   ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    SizedBox(
+                                      width: 200.0,
+                                      child: TextFormField(
+                                        controller:
+                                            _model.colorBGTextController,
+                                        focusNode: _model.colorBGFocusNode,
+                                        onFieldSubmitted: (_) async {
+                                          _model.state =
+                                              _model.colorBGTextController.text;
+                                          setState(() {});
+                                        },
+                                        autofocus: false,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Couleur du Fond',
+                                          alignLabelWithHint: false,
+                                          hintText: '#7F7E83',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Manrope',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        maxLength: 7,
+                                        maxLengthEnforcement:
+                                            MaxLengthEnforcement.enforced,
+                                        buildCounter: (context,
+                                                {required currentLength,
+                                                required isFocused,
+                                                maxLength}) =>
+                                            null,
+                                        validator: _model
+                                            .colorBGTextControllerValidator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        width: 60.0,
+                                        height: 40.0,
+                                        decoration: BoxDecoration(
+                                          color: colorFromCssString(
+                                            _model.colorBGTextController.text,
+                                            defaultColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ].divide(const SizedBox(width: 34.0)),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -676,6 +785,11 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                           width: 310.0,
                           height: 640.0,
                           decoration: BoxDecoration(
+                            color: colorFromCssString(
+                              _model.colorBGTextController.text,
+                              defaultColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                            ),
                             borderRadius: BorderRadius.circular(40.0),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).primaryText,
@@ -896,6 +1010,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                             'colorButtonText':
                                 _model.colorButtonTextTextController.text,
                             'gift_name': _model.titleTextController.text,
+                            'colorBG': _model.colorBGTextController.text,
                           },
                           matchingRows: (rows) => rows.eq(
                             'id',
