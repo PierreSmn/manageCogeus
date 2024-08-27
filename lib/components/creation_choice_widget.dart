@@ -8,7 +8,12 @@ import 'creation_choice_model.dart';
 export 'creation_choice_model.dart';
 
 class CreationChoiceWidget extends StatefulWidget {
-  const CreationChoiceWidget({super.key});
+  const CreationChoiceWidget({
+    super.key,
+    required this.assets,
+  });
+
+  final int? assets;
 
   @override
   State<CreationChoiceWidget> createState() => _CreationChoiceWidgetState();
@@ -154,104 +159,105 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 ].divide(const SizedBox(height: 16.0)),
                               ),
                             ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                _model.vidsby3 = false;
-                                setState(() {});
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 50.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: _model.vidsby3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                            if (widget.assets! < 5)
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  _model.vidsby3 = false;
+                                  setState(() {});
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 50.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.vidsby3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 50.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: _model.vidsby3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          width: 50.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.vidsby3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 50.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: _model.vidsby3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          width: 50.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.vidsby3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 50.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: _model.vidsby3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          width: 50.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.vidsby3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 50.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: _model.vidsby3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .secondaryBackground
-                                              : FlutterFlowTheme.of(context)
-                                                  .alternate,
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          width: 50.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: _model.vidsby3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .secondaryBackground
+                                                : FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
-                                      ),
-                                    ].divide(const SizedBox(width: 6.0)),
-                                  ),
-                                  Text(
-                                    'Carousel',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Manrope',
-                                          fontSize:
-                                              _model.vidsby3 ? 14.0 : 18.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                  ),
-                                ].divide(const SizedBox(height: 16.0)),
+                                      ].divide(const SizedBox(width: 6.0)),
+                                    ),
+                                    Text(
+                                      'Carousel',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            fontSize:
+                                                _model.vidsby3 ? 14.0 : 18.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ].divide(const SizedBox(height: 16.0)),
+                                ),
                               ),
-                            ),
                           ].divide(const SizedBox(width: 50.0)),
                         ),
                       ),

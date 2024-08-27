@@ -256,11 +256,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                               child: Builder(
                                                                                 builder: (context) => FFButtonWidget(
                                                                                   onPressed: () async {
-                                                                                    if (containerHostedSubsRowList.length < 5) {
+                                                                                    if (containerHostedSubsRowList.length < 3) {
                                                                                       ScaffoldMessenger.of(context).showSnackBar(
                                                                                         SnackBar(
                                                                                           content: Text(
-                                                                                            'Vous devez au moins avoir 5 vidéo pour créer une intégration. ',
+                                                                                            'Vous devez au moins avoir 3 vidéo pour créer une intégration. ',
                                                                                             style: TextStyle(
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                             ),
@@ -284,10 +284,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: GestureDetector(
                                                                                             onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                            child: const SizedBox(
+                                                                                            child: SizedBox(
                                                                                               height: 330.0,
                                                                                               width: 550.0,
-                                                                                              child: CreationChoiceWidget(),
+                                                                                              child: CreationChoiceWidget(
+                                                                                                assets: containerHostedSubsRowList.length,
+                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         );
