@@ -188,17 +188,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const InvalidsWidget(),
         ),
         FFRoute(
-          name: 'data',
-          path: '/data',
-          requireAuth: true,
-          builder: (context, params) => DataWidget(
-            name: params.getParam(
-              'name',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'hostLibraryCopy',
           path: '/hostLibraryCopy',
           requireAuth: true,
