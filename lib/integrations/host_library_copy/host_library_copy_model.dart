@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class HostLibraryCopyModel extends FlutterFlowModel<HostLibraryCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   // Stores action output result for [Backend Call - API (mux get views)] action in Button widget.

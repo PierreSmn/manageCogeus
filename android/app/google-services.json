@@ -1,0 +1,178 @@
+{
+  "project_info": {
+    "project_number": "302797249174",
+    "project_id": "cogeus-d3abb",
+    "storage_bucket": "cogeus-d3abb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302797249174:android:97741d61c551c0dff1c0b7",
+        "android_client_info": {
+          "package_name": "Cogeus.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302797249174-4kbmspbq0s99qa0fmsse70u9hn3h22qt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Cogeus.com",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_XLEdhghsYM5MIHIc777u3Twt8vN15AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302797249174-361v4the00a51fbd2t63kfqdj64g93e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cogeus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302797249174:android:f11160bcf5631fbff1c0b7",
+        "android_client_info": {
+          "package_name": "com.cogeus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302797249174-9ds67088vn6lke3nfdjnvhk63gqom6sl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cogeus",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_XLEdhghsYM5MIHIc777u3Twt8vN15AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302797249174-361v4the00a51fbd2t63kfqdj64g93e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cogeus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302797249174:android:fe225efffa215001f1c0b7",
+        "android_client_info": {
+          "package_name": "com.mycompany.cogeussaas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302797249174-62slcm23cmjr1ao4oalkv7ib0nm4foi2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.cogeussaas",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_XLEdhghsYM5MIHIc777u3Twt8vN15AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302797249174-361v4the00a51fbd2t63kfqdj64g93e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cogeus"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302797249174:android:e5429cec9b73cfecf1c0b7",
+        "android_client_info": {
+          "package_name": "com.mycompany.managecogeus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_XLEdhghsYM5MIHIc777u3Twt8vN15AI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302797249174-d2rgg5gvc41gvnvu34pmmp31kpec6gds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "302797249174-361v4the00a51fbd2t63kfqdj64g93e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cogeus"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

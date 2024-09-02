@@ -1580,15 +1580,21 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () async {
-                          await IntegrationsTable().delete(
-                            matchingRows: (rows) => rows.eq(
-                              'id',
-                              widget.integrationEditing,
-                            ),
-                          );
-                          Navigator.pop(context);
-                        },
+                        onPressed: ((containerIntegrationsRow?.vid1 == null) ||
+                                (containerIntegrationsRow?.vid2 == null) ||
+                                (containerIntegrationsRow?.vid3 == null) ||
+                                (containerIntegrationsRow?.vid4 == null) ||
+                                (containerIntegrationsRow?.vid5 == null))
+                            ? null
+                            : () async {
+                                await IntegrationsTable().delete(
+                                  matchingRows: (rows) => rows.eq(
+                                    'id',
+                                    widget.integrationEditing,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
                         text: 'Effacer',
                         options: FFButtonOptions(
                           height: 40.0,

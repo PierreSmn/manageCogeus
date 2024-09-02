@@ -281,139 +281,149 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                               0.0,
                                                                               0.0),
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children:
-                                                                                [
-                                                                              Flexible(
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                  children: [
-                                                                                    Flexible(
-                                                                                      child: Builder(
-                                                                                        builder: (context) => InkWell(
-                                                                                          splashColor: Colors.transparent,
-                                                                                          focusColor: Colors.transparent,
-                                                                                          hoverColor: Colors.transparent,
-                                                                                          highlightColor: Colors.transparent,
-                                                                                          onTap: () async {
-                                                                                            await showAlignedDialog(
-                                                                                              context: context,
-                                                                                              isGlobal: false,
-                                                                                              avoidOverflow: false,
-                                                                                              targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              builder: (dialogContext) {
-                                                                                                return Material(
-                                                                                                  color: Colors.transparent,
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 680.0,
-                                                                                                      width: 330.0,
-                                                                                                      child: PlayVideoWidget(
-                                                                                                        videoAdress: singularHostedVideosItem.mediaLink!,
+                                                                              SingleChildScrollView(
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                Flexible(
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Flexible(
+                                                                                        child: Builder(
+                                                                                          builder: (context) => InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              await showAlignedDialog(
+                                                                                                context: context,
+                                                                                                isGlobal: false,
+                                                                                                avoidOverflow: false,
+                                                                                                targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                builder: (dialogContext) {
+                                                                                                  return Material(
+                                                                                                    color: Colors.transparent,
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 680.0,
+                                                                                                        width: 330.0,
+                                                                                                        child: PlayVideoWidget(
+                                                                                                          videoAdress: singularHostedVideosItem.mediaLink!,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ),
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                          },
-                                                                                          child: ClipRRect(
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                            child: Image.network(
-                                                                                              'https://image.mux.com/${singularHostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
-                                                                                              width: 240.0,
-                                                                                              height: 330.0,
-                                                                                              fit: BoxFit.cover,
+                                                                                                  );
+                                                                                                },
+                                                                                              );
+                                                                                            },
+                                                                                            child: ClipRRect(
+                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              child: Image.network(
+                                                                                                'https://image.mux.com/${singularHostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
+                                                                                                width: 240.0,
+                                                                                                height: 230.0,
+                                                                                                fit: BoxFit.cover,
+                                                                                              ),
                                                                                             ),
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                    ),
-                                                                                  ],
+                                                                                    ],
+                                                                                  ),
                                                                                 ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                                                                                child: Container(
-                                                                                  width: 140.0,
-                                                                                  decoration: const BoxDecoration(),
-                                                                                  child: FFButtonWidget(
-                                                                                    onPressed: () async {
-                                                                                      _model.apiResultb7l = await MuxGetViewsCall.call(
-                                                                                        time: 'timeframe[]=30:days',
-                                                                                        assetId: singularHostedVideosItem.assetId,
-                                                                                      );
-
-                                                                                      if ((_model.apiResultb7l?.succeeded ?? true)) {
-                                                                                        await showDialog(
-                                                                                          context: context,
-                                                                                          builder: (alertDialogContext) {
-                                                                                            return AlertDialog(
-                                                                                              title: Text(MuxGetViewsCall.views(
-                                                                                                (_model.apiResultb7l?.jsonBody ?? ''),
-                                                                                              )!
-                                                                                                  .toString()),
-                                                                                              content: Text(MuxGetViewsCall.assetId(
-                                                                                                (_model.apiResultb7l?.jsonBody ?? ''),
-                                                                                              )!),
-                                                                                              actions: [
-                                                                                                TextButton(
-                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
-                                                                                                ),
-                                                                                              ],
-                                                                                            );
-                                                                                          },
+                                                                                Padding(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                  child: Container(
+                                                                                    width: 140.0,
+                                                                                    decoration: const BoxDecoration(),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: () async {
+                                                                                        _model.apiResultb7l = await MuxGetViewsCall.call(
+                                                                                          time: 'timeframe[]=30:days',
+                                                                                          assetId: singularHostedVideosItem.assetId,
                                                                                         );
-                                                                                      } else {
-                                                                                        await showDialog(
-                                                                                          context: context,
-                                                                                          builder: (alertDialogContext) {
-                                                                                            return AlertDialog(
-                                                                                              title: Text((_model.apiResultb7l?.statusCode ?? 200).toString()),
-                                                                                              content: Text((_model.apiResultb7l?.jsonBody ?? '').toString()),
-                                                                                              actions: [
-                                                                                                TextButton(
-                                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                  child: const Text('Ok'),
-                                                                                                ),
-                                                                                              ],
-                                                                                            );
-                                                                                          },
-                                                                                        );
-                                                                                      }
 
-                                                                                      setState(() {});
-                                                                                    },
-                                                                                    text: 'Request Data',
-                                                                                    options: FFButtonOptions(
-                                                                                      height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: FlutterFlowTheme.of(context).primary,
-                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: 'Manrope',
-                                                                                            color: Colors.white,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      elevation: 3.0,
-                                                                                      borderSide: const BorderSide(
-                                                                                        color: Colors.transparent,
-                                                                                        width: 1.0,
+                                                                                        if ((_model.apiResultb7l?.succeeded ?? true)) {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (alertDialogContext) {
+                                                                                              return AlertDialog(
+                                                                                                title: Text(MuxGetViewsCall.views(
+                                                                                                  (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                                )!
+                                                                                                    .toString()),
+                                                                                                content: Text(MuxGetViewsCall.assetId(
+                                                                                                  (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                                )!),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              );
+                                                                                            },
+                                                                                          );
+                                                                                        } else {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (alertDialogContext) {
+                                                                                              return AlertDialog(
+                                                                                                title: Text((_model.apiResultb7l?.statusCode ?? 200).toString()),
+                                                                                                content: Text((_model.apiResultb7l?.jsonBody ?? '').toString()),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              );
+                                                                                            },
+                                                                                          );
+                                                                                        }
+
+                                                                                        setState(() {});
+                                                                                      },
+                                                                                      text: 'Request Data',
+                                                                                      options: FFButtonOptions(
+                                                                                        height: 40.0,
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Manrope',
+                                                                                              color: Colors.white,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        elevation: 3.0,
+                                                                                        borderSide: const BorderSide(
+                                                                                          color: Colors.transparent,
+                                                                                          width: 1.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ),
-                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                                Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    singularHostedVideosItem.assetId,
+                                                                                    'non',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                ),
+                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       );

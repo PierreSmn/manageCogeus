@@ -281,26 +281,32 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () async {
-                          await Clipboard.setData(ClipboardData(
-                              text:
-                                  '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'${widget.integrationEditing?.toString()}\',        numVideos: ${_model.vidsby3 ? '3' : '5'}      };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>'));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Code copié',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                ),
-                              ),
-                              duration: const Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
-                          Navigator.pop(context);
-                        },
+                        onPressed: ((containerIntegrationsRow?.vid1 == null) ||
+                                (containerIntegrationsRow?.vid2 == null) ||
+                                (containerIntegrationsRow?.vid3 == null) ||
+                                (containerIntegrationsRow?.vid4 == null) ||
+                                (containerIntegrationsRow?.vid5 == null))
+                            ? null
+                            : () async {
+                                await Clipboard.setData(ClipboardData(
+                                    text:
+                                        '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'${widget.integrationEditing?.toString()}\',        numVideos: ${_model.vidsby3 ? '3' : '5'}      };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>'));
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Code copié',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
                         text: 'Valider',
                         options: FFButtonOptions(
                           height: 40.0,

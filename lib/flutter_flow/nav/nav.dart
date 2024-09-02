@@ -192,6 +192,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/hostLibraryCopy',
           requireAuth: true,
           builder: (context, params) => const HostLibraryCopyWidget(),
+        ),
+        FFRoute(
+          name: 'retoursATrier',
+          path: '/retoursatrier',
+          requireAuth: true,
+          builder: (context, params) => const RetoursATrierWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

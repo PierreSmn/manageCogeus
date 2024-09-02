@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   Completer<List<LiveFlowsRow>>? requestCompleter;
