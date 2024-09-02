@@ -532,7 +532,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                               r'''$.question''',
                                                                                             ).toString(),
                                                                                           });
-                                                                                          await ValidSubsTable().delete(
+                                                                                          await NewSubsTable().delete(
                                                                                             matchingRows: (rows) => rows.eq(
                                                                                               'id',
                                                                                               getJsonField(
