@@ -9,6 +9,7 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;

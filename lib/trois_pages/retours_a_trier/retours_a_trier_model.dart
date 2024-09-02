@@ -2,10 +2,10 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/trois_pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
-import 'invalids_widget.dart' show InvalidsWidget;
+import 'retours_a_trier_widget.dart' show RetoursATrierWidget;
 import 'package:flutter/material.dart';
 
-class InvalidsModel extends FlutterFlowModel<InvalidsWidget> {
+class RetoursATrierModel extends FlutterFlowModel<RetoursATrierWidget> {
   ///  Local state fields for this page.
 
   int? pageselect = 0;

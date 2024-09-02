@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -127,6 +126,63 @@ class _TriageWidgetState extends State<TriageWidget> {
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 60.0,
+                                                                0.0, 0.0),
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        context.pushNamed(
+                                                            'retoursATrier');
+                                                      },
+                                                      text:
+                                                          'Acceder à la vue d\'ensemble',
+                                                      options: FFButtonOptions(
+                                                        height: 40.0,
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    24.0,
+                                                                    0.0,
+                                                                    24.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            const Color(0xFFEEE8FC),
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: const Color(
+                                                                      0xFF5E35B1),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderSide: const BorderSide(
+                                                          color: Colors
+                                                              .transparent,
+                                                          width: 0.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16.0),
+                                                      ),
+                                                    ),
+                                                  ),
                                                   Flexible(
                                                     child: Builder(
                                                       builder: (context) {
@@ -172,7 +228,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
-                                                                          60.0,
+                                                                          20.0,
                                                                           0.0,
                                                                           0.0),
                                                                   child:
@@ -430,30 +486,6 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                               ),
                                                                               FFButtonWidget(
                                                                                 onPressed: () async {
-                                                                                  var shouldSetState = false;
-                                                                                  _model.mux = await PostToMuxThroughFastgenCall.call(
-                                                                                    link: listSubsItem.mediaLink,
-                                                                                  );
-
-                                                                                  shouldSetState = true;
-                                                                                  if (!(_model.mux?.succeeded ?? true)) {
-                                                                                    await showDialog(
-                                                                                      context: context,
-                                                                                      builder: (alertDialogContext) {
-                                                                                        return AlertDialog(
-                                                                                          title: const Text('NOt work'),
-                                                                                          actions: [
-                                                                                            TextButton(
-                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                              child: const Text('Ok'),
-                                                                                            ),
-                                                                                          ],
-                                                                                        );
-                                                                                      },
-                                                                                    );
-                                                                                    if (shouldSetState) setState(() {});
-                                                                                    return;
-                                                                                  }
                                                                                   await ValidSubsTable().insert({
                                                                                     'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
                                                                                     'submitter_name': listSubsItem.submitterName,
@@ -466,9 +498,6 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                     'rating': listSubsItem.rating,
                                                                                     'boolMail': listSubsItem.boolMail,
                                                                                     'question': listSubsItem.question,
-                                                                                    'playback_id': PostToMuxThroughFastgenCall.muxId(
-                                                                                      (_model.mux?.jsonBody ?? ''),
-                                                                                    ),
                                                                                   });
                                                                                   await NewSubsTable().delete(
                                                                                     matchingRows: (rows) => rows.eq(
@@ -478,7 +507,6 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                   );
                                                                                   setState(() => _model.requestCompleter = null);
                                                                                   await _model.waitForRequestCompleted();
-                                                                                  if (shouldSetState) setState(() {});
                                                                                 },
                                                                                 text: 'Sélectionner',
                                                                                 options: FFButtonOptions(

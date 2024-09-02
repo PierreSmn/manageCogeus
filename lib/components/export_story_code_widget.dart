@@ -184,26 +184,32 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: () async {
-                          await Clipboard.setData(ClipboardData(
-                              text:
-                                  '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${widget.integrationEditing?.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Code copié',
-                                style: TextStyle(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                ),
-                              ),
-                              duration: const Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).secondary,
-                            ),
-                          );
-                          Navigator.pop(context);
-                        },
+                        onPressed: ((containerIntegrationsRow?.vid1 == null) ||
+                                (containerIntegrationsRow?.vid2 == null) ||
+                                (containerIntegrationsRow?.vid3 == null) ||
+                                (containerIntegrationsRow?.vid4 == null) ||
+                                (containerIntegrationsRow?.vid5 == null))
+                            ? null
+                            : () async {
+                                await Clipboard.setData(ClipboardData(
+                                    text:
+                                        '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${widget.integrationEditing?.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Code copié',
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                      ),
+                                    ),
+                                    duration: const Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).secondary,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
                         text: 'Valider',
                         options: FFButtonOptions(
                           height: 40.0,
