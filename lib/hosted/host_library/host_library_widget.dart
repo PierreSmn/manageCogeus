@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -116,7 +116,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            100.0, 0.0, 100.0, 0.0),
+                                            50.0, 0.0, 50.0, 0.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -371,12 +371,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: _model
-                                                                      .mouseRegionHovered
-                                                                  ? const Color(
-                                                                      0xFFECE2F5)
-                                                                  : const Color(
-                                                                      0xFFF2E8FC),
+                                                              color: const Color(
+                                                                  0xFFEEE8FC),
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -384,8 +380,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Manrope',
-                                                                        color: const Color(
-                                                                            0xFF822CE3),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
@@ -416,182 +412,135 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                         ),
                                       ),
                                       Expanded(
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Expanded(
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Flexible(
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.8,
-                                                      decoration:
-                                                          const BoxDecoration(),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child:
-                                                            SingleChildScrollView(
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Builder(
-                                                                builder:
-                                                                    (context) {
-                                                                  final hostedVideos =
-                                                                      hostLibraryHostedSubsRowList
-                                                                          .toList();
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  50.0, 0.0, 50.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Expanded(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Flexible(
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.9,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child:
+                                                              SingleChildScrollView(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                Builder(
+                                                                  builder:
+                                                                      (context) {
+                                                                    final hostedVideos =
+                                                                        hostLibraryHostedSubsRowList
+                                                                            .toList();
 
-                                                                  return Wrap(
-                                                                    spacing:
-                                                                        16.0,
-                                                                    runSpacing:
-                                                                        16.0,
-                                                                    alignment:
-                                                                        WrapAlignment
-                                                                            .start,
-                                                                    crossAxisAlignment:
-                                                                        WrapCrossAlignment
-                                                                            .start,
-                                                                    direction: Axis
-                                                                        .horizontal,
-                                                                    runAlignment:
-                                                                        WrapAlignment
-                                                                            .start,
-                                                                    verticalDirection:
-                                                                        VerticalDirection
-                                                                            .down,
-                                                                    clipBehavior:
-                                                                        Clip.none,
-                                                                    children: List.generate(
-                                                                        hostedVideos
-                                                                            .length,
-                                                                        (hostedVideosIndex) {
-                                                                      final hostedVideosItem =
-                                                                          hostedVideos[
-                                                                              hostedVideosIndex];
-                                                                      return Container(
-                                                                        width:
-                                                                            250.0,
-                                                                        height:
-                                                                            410.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).revoWhite,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(16.0),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              16.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                    return Wrap(
+                                                                      spacing:
+                                                                          16.0,
+                                                                      runSpacing:
+                                                                          8.0,
+                                                                      alignment:
+                                                                          WrapAlignment
+                                                                              .start,
+                                                                      crossAxisAlignment:
+                                                                          WrapCrossAlignment
+                                                                              .start,
+                                                                      direction:
+                                                                          Axis.horizontal,
+                                                                      runAlignment:
+                                                                          WrapAlignment
+                                                                              .start,
+                                                                      verticalDirection:
+                                                                          VerticalDirection
+                                                                              .down,
+                                                                      clipBehavior:
+                                                                          Clip.none,
+                                                                      children: List.generate(
+                                                                          hostedVideos
+                                                                              .length,
+                                                                          (hostedVideosIndex) {
+                                                                        final hostedVideosItem =
+                                                                            hostedVideos[hostedVideosIndex];
+                                                                        return Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 1.0,
+                                                                          height:
+                                                                              98.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).revoWhite,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(4.0),
+                                                                          ),
                                                                           child:
-                                                                              Column(
+                                                                              Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
+                                                                                MainAxisAlignment.start,
                                                                             children:
                                                                                 [
                                                                               Flexible(
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                                                  children: [
-                                                                                    Flexible(
-                                                                                      child: Builder(
-                                                                                        builder: (context) => InkWell(
-                                                                                          splashColor: Colors.transparent,
-                                                                                          focusColor: Colors.transparent,
-                                                                                          hoverColor: Colors.transparent,
-                                                                                          highlightColor: Colors.transparent,
-                                                                                          onTap: () async {
-                                                                                            await showAlignedDialog(
-                                                                                              context: context,
-                                                                                              isGlobal: false,
-                                                                                              avoidOverflow: false,
-                                                                                              targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              builder: (dialogContext) {
-                                                                                                return Material(
-                                                                                                  color: Colors.transparent,
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 680.0,
-                                                                                                      width: 330.0,
-                                                                                                      child: PlayVideoWidget(
-                                                                                                        videoAdress: hostedVideosItem.mediaLink!,
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                );
-                                                                                              },
-                                                                                            );
-                                                                                          },
-                                                                                          child: ClipRRect(
-                                                                                            borderRadius: BorderRadius.circular(8.0),
-                                                                                            child: Image.network(
-                                                                                              'https://image.mux.com/${hostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
-                                                                                              width: 240.0,
-                                                                                              height: 330.0,
-                                                                                              fit: BoxFit.cover,
-                                                                                            ),
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                 child: Container(
-                                                                                  width: 140.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).tertiary,
+                                                                                    borderRadius: BorderRadius.circular(0.0),
+                                                                                  ),
                                                                                   child: Builder(
-                                                                                    builder: (context) => FFButtonWidget(
-                                                                                      onPressed: () async {
-                                                                                        await showDialog(
+                                                                                    builder: (context) => InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        await showAlignedDialog(
                                                                                           context: context,
+                                                                                          isGlobal: false,
+                                                                                          avoidOverflow: false,
+                                                                                          targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           builder: (dialogContext) {
-                                                                                            return Dialog(
-                                                                                              elevation: 0,
-                                                                                              insetPadding: EdgeInsets.zero,
-                                                                                              backgroundColor: Colors.transparent,
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            return Material(
+                                                                                              color: Colors.transparent,
                                                                                               child: GestureDetector(
                                                                                                 onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                 child: SizedBox(
-                                                                                                  height: 275.0,
-                                                                                                  width: 400.0,
-                                                                                                  child: EraseAssetWidget(
-                                                                                                    assetID: hostedVideosItem.id,
+                                                                                                  height: 680.0,
+                                                                                                  width: 330.0,
+                                                                                                  child: PlayVideoWidget(
+                                                                                                    videoAdress: hostedVideosItem.mediaLink!,
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -599,47 +548,92 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                           },
                                                                                         );
                                                                                       },
-                                                                                      text: 'Effacer l\'asset',
-                                                                                      options: FFButtonOptions(
-                                                                                        height: 40.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: const Color(0xFFEEE8FC),
-                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: const Color(0xFF5E35B1),
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                            ),
-                                                                                        elevation: 0.0,
-                                                                                        borderSide: const BorderSide(
-                                                                                          color: Colors.transparent,
-                                                                                          width: 0.0,
+                                                                                      child: ClipRRect(
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                        child: Image.network(
+                                                                                          'https://image.mux.com/${hostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
+                                                                                          width: 140.0,
+                                                                                          height: 80.0,
+                                                                                          fit: BoxFit.contain,
                                                                                         ),
-                                                                                        borderRadius: BorderRadius.circular(16.0),
                                                                                       ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                              Flexible(
+                                                                                child: Padding(
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                  child: Container(
+                                                                                    width: 140.0,
+                                                                                    decoration: const BoxDecoration(),
+                                                                                    child: Builder(
+                                                                                      builder: (context) => FFButtonWidget(
+                                                                                        onPressed: () async {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (dialogContext) {
+                                                                                              return Dialog(
+                                                                                                elevation: 0,
+                                                                                                insetPadding: EdgeInsets.zero,
+                                                                                                backgroundColor: Colors.transparent,
+                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                  child: SizedBox(
+                                                                                                    height: 275.0,
+                                                                                                    width: 400.0,
+                                                                                                    child: EraseAssetWidget(
+                                                                                                      assetID: hostedVideosItem.id,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          );
+                                                                                        },
+                                                                                        text: 'Effacer l\'asset',
+                                                                                        options: FFButtonOptions(
+                                                                                          height: 40.0,
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: const Color(0xFFEEE8FC),
+                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: const Color(0xFF5E35B1),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
+                                                                                              ),
+                                                                                          elevation: 0.0,
+                                                                                          borderSide: const BorderSide(
+                                                                                            color: Colors.transparent,
+                                                                                            width: 0.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(const SizedBox(width: 16.0)).addToStart(const SizedBox(width: 12.0)),
                                                                           ),
-                                                                        ),
-                                                                      );
-                                                                    }),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            ],
+                                                                        );
+                                                                      }),
+                                                                    );
+                                                                  },
+                                                                ),
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],

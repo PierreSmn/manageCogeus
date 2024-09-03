@@ -1,6 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
 import 'harvesters_widget.dart' show HarvestersWidget;
 import 'package:flutter/material.dart';

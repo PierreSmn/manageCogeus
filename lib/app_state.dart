@@ -26,6 +26,10 @@ class FFAppState extends ChangeNotifier {
           prefs.getStringList('ff_userSelection')?.map(int.parse).toList() ??
               _userSelection;
     });
+    _safeInit(() {
+      _listQuantitySHow =
+          prefs.getInt('ff_listQuantitySHow') ?? _listQuantitySHow;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -188,6 +192,13 @@ class FFAppState extends ChangeNotifier {
   bool get colorChange => _colorChange;
   set colorChange(bool value) {
     _colorChange = value;
+  }
+
+  int _listQuantitySHow = 9;
+  int get listQuantitySHow => _listQuantitySHow;
+  set listQuantitySHow(int value) {
+    _listQuantitySHow = value;
+    prefs.setInt('ff_listQuantitySHow', value);
   }
 
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();

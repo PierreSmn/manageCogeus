@@ -6,30 +6,30 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'exports_model.dart';
-export 'exports_model.dart';
+import 'dossiers_model.dart';
+export 'dossiers_model.dart';
 
-class ExportsWidget extends StatefulWidget {
-  const ExportsWidget({super.key});
+class DossiersWidget extends StatefulWidget {
+  const DossiersWidget({super.key});
 
   @override
-  State<ExportsWidget> createState() => _ExportsWidgetState();
+  State<DossiersWidget> createState() => _DossiersWidgetState();
 }
 
-class _ExportsWidgetState extends State<ExportsWidget> {
-  late ExportsModel _model;
+class _DossiersWidgetState extends State<DossiersWidget> {
+  late DossiersModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ExportsModel());
+    _model = createModel(context, () => DossiersModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -52,7 +52,7 @@ class _ExportsWidgetState extends State<ExportsWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'exports',
+        title: 'dossiers',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

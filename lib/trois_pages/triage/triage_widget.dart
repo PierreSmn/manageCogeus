@@ -4,7 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/empty_list_widget/empty_list_widget_widget.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -286,7 +286,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               style: TextStyle(),
                                                                                             ),
                                                                                             TextSpan(
-                                                                                              text: containerNewSubsRowList.length.toString(),
+                                                                                              text: containerNewSubsRowList.length >= 1000 ? '+ de 1000' : containerNewSubsRowList.length.toString(),
                                                                                               style: const TextStyle(
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
@@ -419,8 +419,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                   FlutterFlowVideoPlayer(
                                                                                     path: listSubsItem.mediaLink!,
                                                                                     videoType: VideoType.network,
-                                                                                    width: 300.0,
-                                                                                    height: 500.0,
+                                                                                    width: 270.0,
+                                                                                    height: 470.0,
                                                                                     autoPlay: false,
                                                                                     looping: true,
                                                                                     showControls: true,

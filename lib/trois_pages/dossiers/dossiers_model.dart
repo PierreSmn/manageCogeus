@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
-import 'exports_widget.dart' show ExportsWidget;
+import '/pages/navbarnav/navbarnav_widget.dart';
+import 'dossiers_widget.dart' show DossiersWidget;
 import 'package:flutter/material.dart';
 
-class ExportsModel extends FlutterFlowModel<ExportsWidget> {
+class DossiersModel extends FlutterFlowModel<DossiersWidget> {
   ///  Local state fields for this page.
 
   String? listSelect;

@@ -4,7 +4,7 @@ import '/components/play_video_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -421,6 +421,40 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                         fontFamily: 'Manrope',
                                                                                         letterSpacing: 0.0,
                                                                                       ),
+                                                                                ),
+                                                                                FutureBuilder<ApiCallResponse>(
+                                                                                  future: MuxGetViewsCall.call(
+                                                                                    assetId: singularHostedVideosItem.assetId,
+                                                                                  ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50.0,
+                                                                                          height: 50.0,
+                                                                                          child: SpinKitRing(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 50.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                    final textMuxGetViewsResponse = snapshot.data!;
+
+                                                                                    return Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        MuxGetViewsCall.views(
+                                                                                          textMuxGetViewsResponse.jsonBody,
+                                                                                        )?.toString(),
+                                                                                        'No views',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    );
+                                                                                  },
                                                                                 ),
                                                                               ].divide(const SizedBox(height: 12.0)),
                                                                             ),

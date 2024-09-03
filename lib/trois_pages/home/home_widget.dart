@@ -2,8 +2,9 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
@@ -25,6 +26,9 @@ class _HomeWidgetState extends State<HomeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -219,7 +223,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           0.32,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
-                                                                          0.13,
+                                                                          0.15,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -295,7 +299,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           0.32,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
-                                                                          0.13,
+                                                                          0.15,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -417,7 +421,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   ),
                                                                             ),
                                                                             Text(
-                                                                              homeNewSubsRowList.length.toString(),
+                                                                              homeNewSubsRowList.length >= 1000 ? '+ de 1000' : homeNewSubsRowList.length.toString(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Manrope',
                                                                                     color: FlutterFlowTheme.of(context).revoCardTextColor,
