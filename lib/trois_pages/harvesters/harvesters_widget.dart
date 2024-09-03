@@ -4,13 +4,11 @@ import '/components/change_question_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'harvesters_model.dart';
 export 'harvesters_model.dart';
@@ -526,51 +524,6 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             drawText:
                                                                                 false,
                                                                           ),
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              await Clipboard.setData(ClipboardData(text: 'app.cogeus.com/home?slug=${flowsItem.slug}'));
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Lien copié',
-                                                                                    style: GoogleFonts.getFont(
-                                                                                      'Manrope',
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: const Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).tertiary,
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                            text:
-                                                                                'Copier le lien',
-                                                                            icon:
-                                                                                const Icon(
-                                                                              Icons.content_copy,
-                                                                              size: 15.0,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: const Color(0xFFEEE8FC),
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: const Color(0xFF5E35B1),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderSide: const BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 0.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
-                                                                          ),
                                                                         ].divide(const SizedBox(height: 24.0)),
                                                                       ),
                                                                     ],
@@ -581,7 +534,8 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                               ),
                                                             ),
                                                           );
-                                                        }),
+                                                        }).divide(const SizedBox(
+                                                            height: 16.0)),
                                                       ),
                                                     );
                                                   },

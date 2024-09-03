@@ -102,10 +102,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UpdateProfileWidget(),
         ),
         FFRoute(
-          name: 'exports',
-          path: '/exports',
+          name: 'dossiers',
+          path: '/dossiers',
           requireAuth: true,
-          builder: (context, params) => const ExportsWidget(),
+          builder: (context, params) => const DossiersWidget(),
         ),
         FFRoute(
           name: 'home',

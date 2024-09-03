@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/trois_pages/navbarnav/navbarnav_widget.dart';
+import '/pages/navbarnav/navbarnav_widget.dart';
 import 'infos_widget.dart' show InfosWidget;
 import 'package:flutter/material.dart';
 
