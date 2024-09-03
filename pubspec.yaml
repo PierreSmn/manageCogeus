@@ -35,7 +35,7 @@ dependencies:
   cloud_functions: 4.7.4
   cloud_functions_platform_interface: 5.5.26
   cloud_functions_web: 4.9.4
-  collection: 1.18.0
+  collection: ^1.19.0
   equatable: 2.0.5
   file_picker: 8.0.3
   firebase_core: 2.31.0
