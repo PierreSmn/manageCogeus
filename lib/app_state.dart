@@ -201,6 +201,12 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_listQuantitySHow', value);
   }
 
+  int _tagChoosen = 0;
+  int get tagChoosen => _tagChoosen;
+  set tagChoosen(int value) {
+    _tagChoosen = value;
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,

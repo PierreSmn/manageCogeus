@@ -26,7 +26,7 @@ class _InfosWidgetState extends State<InfosWidget> {
     super.initState();
     _model = createModel(context, () => InfosModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,11 +56,11 @@ class _InfosWidgetState extends State<InfosWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50.0,
+                  size: 50,
                 ),
               ),
             ),
@@ -85,14 +85,14 @@ class _InfosWidgetState extends State<InfosWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        height: MediaQuery.sizeOf(context).height * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 1,
                         decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: const NavbarnavWidget(),
                             ),
                             Expanded(
@@ -102,7 +102,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
+                                      0, 0, 0, 20),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -120,8 +120,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                             Expanded(
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 20.0, 0.0, 0.0),
+                                                    .fromSTEB(0, 20, 0, 0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -159,14 +158,14 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                   ClipRRect(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            100.0),
+                                                                            100),
                                                                     child: Image
                                                                         .network(
                                                                       'https://images.unsplash.com/photo-1525498128493-380d1990a112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxicmFuZHxlbnwwfHx8fDE3MDk3NDQxMDF8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                                                       width:
-                                                                          200.0,
+                                                                          200,
                                                                       height:
-                                                                          200.0,
+                                                                          200,
                                                                       fit: BoxFit
                                                                           .cover,
                                                                     ),
@@ -187,7 +186,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Manrope',
-                                                                              fontSize: 18.0,
+                                                                              fontSize: 18,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
                                                                             ),
@@ -227,7 +226,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                        ].divide(const SizedBox(width: 6)),
                                                                       ),
                                                                     ],
                                                                   ),
@@ -238,10 +237,10 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            20,
+                                                                            0,
+                                                                            0),
                                                                         child:
                                                                             FFButtonWidget(
                                                                           onPressed:
@@ -253,42 +252,42 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           options:
                                                                               FFButtonOptions(
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                24.0,
-                                                                                0.0,
-                                                                                24.0,
-                                                                                0.0),
+                                                                                24,
+                                                                                0,
+                                                                                24,
+                                                                                0),
                                                                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                0,
+                                                                                0),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'Manrope',
                                                                                   color: Colors.white,
-                                                                                  fontSize: 12.0,
+                                                                                  fontSize: 12,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                             elevation:
-                                                                                3.0,
+                                                                                3,
                                                                             borderSide:
                                                                                 const BorderSide(
                                                                               color: Colors.transparent,
-                                                                              width: 1.0,
+                                                                              width: 1,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8.0),
+                                                                                BorderRadius.circular(8),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            20,
+                                                                            0,
+                                                                            0),
                                                                         child:
                                                                             FFButtonWidget(
                                                                           onPressed:
@@ -305,41 +304,42 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           options:
                                                                               FFButtonOptions(
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                24.0,
-                                                                                0.0,
-                                                                                24.0,
-                                                                                0.0),
+                                                                                24,
+                                                                                0,
+                                                                                24,
+                                                                                0),
                                                                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                0,
+                                                                                0),
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'Manrope',
                                                                                   color: Colors.white,
-                                                                                  fontSize: 12.0,
+                                                                                  fontSize: 12,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
                                                                             elevation:
-                                                                                3.0,
+                                                                                3,
                                                                             borderSide:
                                                                                 const BorderSide(
                                                                               color: Colors.transparent,
-                                                                              width: 1.0,
+                                                                              width: 1,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8.0),
+                                                                                BorderRadius.circular(8),
                                                                           ),
                                                                         ),
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                ].divide(const SizedBox(
-                                                                    width:
-                                                                        30.0)),
+                                                                ].divide(
+                                                                    const SizedBox(
+                                                                        width:
+                                                                            30)),
                                                               ),
                                                             ],
                                                           ),
@@ -405,15 +405,15 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       child:
                                                                           SizedBox(
                                                                         width:
-                                                                            50.0,
+                                                                            50,
                                                                         height:
-                                                                            50.0,
+                                                                            50,
                                                                         child:
                                                                             SpinKitRing(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              50.0,
+                                                                              50,
                                                                         ),
                                                                       ),
                                                                     );
@@ -450,7 +450,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               context)
                                                                           .jo5,
                                                                       fontSize:
-                                                                          42.0,
+                                                                          42,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -471,19 +471,20 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     'Create profile',
                                                                 options:
                                                                     FFButtonOptions(
-                                                                  height: 40.0,
+                                                                  height: 40,
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          24,
+                                                                          0,
+                                                                          24,
+                                                                          0),
+                                                                  iconPadding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
@@ -498,18 +499,17 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
-                                                                  elevation:
-                                                                      3.0,
+                                                                  elevation: 3,
                                                                   borderSide:
                                                                       const BorderSide(
                                                                     color: Colors
                                                                         .transparent,
-                                                                    width: 1.0,
+                                                                    width: 1,
                                                                   ),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8.0),
+                                                                              8),
                                                                 ),
                                                               ),
                                                           ],
@@ -517,7 +517,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                       ),
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 34.0)),
+                                                      const SizedBox(height: 34)),
                                                 ),
                                               ),
                                             ),

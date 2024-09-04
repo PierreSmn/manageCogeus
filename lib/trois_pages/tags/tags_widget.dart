@@ -9,25 +9,25 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'invalids_model.dart';
-export 'invalids_model.dart';
+import 'tags_model.dart';
+export 'tags_model.dart';
 
-class InvalidsWidget extends StatefulWidget {
-  const InvalidsWidget({super.key});
+class TagsWidget extends StatefulWidget {
+  const TagsWidget({super.key});
 
   @override
-  State<InvalidsWidget> createState() => _InvalidsWidgetState();
+  State<TagsWidget> createState() => _TagsWidgetState();
 }
 
-class _InvalidsWidgetState extends State<InvalidsWidget> {
-  late InvalidsModel _model;
+class _TagsWidgetState extends State<TagsWidget> {
+  late TagsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InvalidsModel());
+    _model = createModel(context, () => TagsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -45,7 +45,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
-            ..complete(GetRejectedSubsCall.call(
+            ..complete(GetValidSubsCall.call(
               brand: FFAppState().activeBrand,
               limit: 9,
               offset: (_model.pageselect!) * 9,
@@ -68,10 +68,10 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
             ),
           );
         }
-        final invalidsGetRejectedSubsResponse = snapshot.data!;
+        final tagsGetValidSubsResponse = snapshot.data!;
 
         return Title(
-            title: 'invalids',
+            title: 'tags',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
@@ -187,7 +187,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Retours exclus',
+                                                                                    'Tags',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -198,17 +198,18 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                   ),
                                                                                   FFButtonWidget(
                                                                                     onPressed: () async {
-                                                                                      context.pushNamed('retours');
+                                                                                      context.pushNamed('invalids');
                                                                                     },
-                                                                                    text: 'Retour à la sélection',
+                                                                                    text: 'Vidéos exclues',
                                                                                     options: FFButtonOptions(
-                                                                                      height: 40,
+                                                                                      height: 26,
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                      color: const Color(0xFFD2D2D2),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Manrope',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: FlutterFlowTheme.of(context).secondary,
+                                                                                            fontSize: 13,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
@@ -256,15 +257,15 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        100,
+                                                                        50,
                                                                         0,
-                                                                        100,
+                                                                        50,
                                                                         0),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
                                                                 final validItem =
-                                                                    invalidsGetRejectedSubsResponse
+                                                                    tagsGetValidSubsResponse
                                                                         .jsonBody
                                                                         .toList();
 
@@ -333,7 +334,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                       r'''$.media_link''',
                                                                                     ).toString(),
                                                                                     videoType: VideoType.network,
-                                                                                    width: 280,
+                                                                                    width: 260,
                                                                                     height: 430,
                                                                                     autoPlay: false,
                                                                                     looping: true,
@@ -369,13 +370,13 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     text: TextSpan(
                                                                                       children: [
                                                                                         const TextSpan(
-                                                                                          text: 'Repond à la question : \n',
+                                                                                          text: 'Projet concerné : \n',
                                                                                           style: TextStyle(),
                                                                                         ),
                                                                                         TextSpan(
                                                                                           text: getJsonField(
                                                                                             validItemItem,
-                                                                                            r'''$.question''',
+                                                                                            r'''$.slugDone''',
                                                                                           ).toString(),
                                                                                           style: const TextStyle(
                                                                                             fontWeight: FontWeight.w600,
@@ -418,7 +419,42 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     children: [
                                                                                       FFButtonWidget(
                                                                                         onPressed: () async {
-                                                                                          await ValidSubsTable().insert({
+                                                                                          await launchURL('${getJsonField(
+                                                                                            validItemItem,
+                                                                                            r'''$.media_link''',
+                                                                                          ).toString()}?download=${getJsonField(
+                                                                                            validItemItem,
+                                                                                            r'''$.slugDone''',
+                                                                                          ).toString()}.mp4');
+                                                                                        },
+                                                                                        text: 'Télécharger',
+                                                                                        icon: const Icon(
+                                                                                          Icons.download_rounded,
+                                                                                          size: 15,
+                                                                                        ),
+                                                                                        options: FFButtonOptions(
+                                                                                          width: 200,
+                                                                                          height: 30,
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                          color: FlutterFlowTheme.of(context).cogeusNavSelected,
+                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
+                                                                                              ),
+                                                                                          elevation: 0,
+                                                                                          borderSide: const BorderSide(
+                                                                                            color: Colors.transparent,
+                                                                                            width: 0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(16),
+                                                                                        ),
+                                                                                      ),
+                                                                                      FFButtonWidget(
+                                                                                        onPressed: () async {
+                                                                                          await RejectedSubsTable().insert({
                                                                                             'submitter_name': getJsonField(
                                                                                               validItemItem,
                                                                                               r'''$.submitter_name''',
@@ -460,7 +496,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                               r'''$.question''',
                                                                                             ).toString(),
                                                                                           });
-                                                                                          await RejectedSubsTable().delete(
+                                                                                          await ValidSubsTable().delete(
                                                                                             matchingRows: (rows) => rows.eq(
                                                                                               'id',
                                                                                               getJsonField(
@@ -472,9 +508,9 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                           safeSetState(() => _model.apiRequestCompleter = null);
                                                                                           await _model.waitForApiRequestCompleted();
                                                                                         },
-                                                                                        text: 'Récupérer',
+                                                                                        text: 'Exclure',
                                                                                         icon: const Icon(
-                                                                                          Icons.chevron_left_sharp,
+                                                                                          Icons.close_sharp,
                                                                                           size: 15,
                                                                                         ),
                                                                                         options: FFButtonOptions(
@@ -512,167 +548,361 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                               },
                                                             ),
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0,
-                                                                        16,
-                                                                        0,
-                                                                        0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                if (_model
-                                                                        .pageselect !=
-                                                                    0)
-                                                                  FFButtonWidget(
-                                                                    onPressed:
+                                                          Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            16,
+                                                                            0,
+                                                                            0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    if (_model
+                                                                            .pageselect !=
+                                                                        0)
+                                                                      FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          _model.pageselect =
+                                                                              _model.pageselect! + -1;
+                                                                          safeSetState(
+                                                                              () {});
+                                                                          await _model
+                                                                              .scroll1
+                                                                              ?.animateTo(
+                                                                            0,
+                                                                            duration:
+                                                                                const Duration(milliseconds: 1),
+                                                                            curve:
+                                                                                Curves.ease,
+                                                                          );
+                                                                          safeSetState(() =>
+                                                                              _model.apiRequestCompleter = null);
+                                                                          await _model
+                                                                              .waitForApiRequestCompleted();
+                                                                        },
+                                                                        text:
+                                                                            'Page précedente',
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          height:
+                                                                              40,
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              24,
+                                                                              0,
+                                                                              24,
+                                                                              0),
+                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                          color:
+                                                                              const Color(0xFFEEE8FC),
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'Manrope',
+                                                                                color: const Color(0xFF5E35B1),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w600,
+                                                                              ),
+                                                                          elevation:
+                                                                              0,
+                                                                          borderSide:
+                                                                              const BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(16),
+                                                                        ),
+                                                                      ),
+                                                                    FFButtonWidget(
+                                                                      onPressed:
+                                                                          () async {
+                                                                        _model.pageselect =
+                                                                            _model.pageselect! +
+                                                                                1;
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        await _model
+                                                                            .scroll1
+                                                                            ?.animateTo(
+                                                                          0,
+                                                                          duration:
+                                                                              const Duration(milliseconds: 1),
+                                                                          curve:
+                                                                              Curves.ease,
+                                                                        );
+                                                                        safeSetState(() =>
+                                                                            _model.apiRequestCompleter =
+                                                                                null);
+                                                                        await _model
+                                                                            .waitForApiRequestCompleted();
+                                                                      },
+                                                                      text:
+                                                                          'Page suivante',
+                                                                      options:
+                                                                          FFButtonOptions(
+                                                                        height:
+                                                                            40,
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            24,
+                                                                            0,
+                                                                            24,
+                                                                            0),
+                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
+                                                                        color: const Color(
+                                                                            0xFFEEE8FC),
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .override(
+                                                                              fontFamily: 'Manrope',
+                                                                              color: const Color(0xFF5E35B1),
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FontWeight.w600,
+                                                                            ),
+                                                                        elevation:
+                                                                            0,
+                                                                        borderSide:
+                                                                            const BorderSide(
+                                                                          color:
+                                                                              Colors.transparent,
+                                                                          width:
+                                                                              0,
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
+                                                                      ),
+                                                                    ),
+                                                                  ].divide(
+                                                                      const SizedBox(
+                                                                          width:
+                                                                              16)),
+                                                                ),
+                                                              ),
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    'Affichage par : ',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Manrope',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
+                                                                  ),
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
                                                                         () async {
-                                                                      _model.pageselect =
-                                                                          _model.pageselect! +
-                                                                              -1;
+                                                                      FFAppState()
+                                                                          .listQuantitySHow = 9;
                                                                       safeSetState(
                                                                           () {});
-                                                                      await _model
-                                                                          .scroll1
-                                                                          ?.animateTo(
-                                                                        0,
-                                                                        duration:
-                                                                            const Duration(milliseconds: 1),
-                                                                        curve: Curves
-                                                                            .ease,
-                                                                      );
                                                                       safeSetState(() =>
                                                                           _model.apiRequestCompleter =
                                                                               null);
                                                                       await _model
                                                                           .waitForApiRequestCompleted();
                                                                     },
-                                                                    text:
-                                                                        'Page précedente',
-                                                                    options:
-                                                                        FFButtonOptions(
+                                                                    child:
+                                                                        Container(
+                                                                      width: FFAppState().listQuantitySHow ==
+                                                                              9
+                                                                          ? 50.0
+                                                                          : 25.0,
                                                                       height:
-                                                                          40,
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              24,
-                                                                              0,
-                                                                              24,
-                                                                              0),
-                                                                      iconPadding:
-                                                                          const EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      color: const Color(
-                                                                          0xFFEEE8FC),
-                                                                      textStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Manrope',
-                                                                            color:
-                                                                                const Color(0xFF5E35B1),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                          ),
-                                                                      elevation:
-                                                                          0,
-                                                                      borderSide:
-                                                                          const BorderSide(
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                        width:
-                                                                            0,
+                                                                          30,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .revoWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
                                                                       ),
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              16),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            '9',
+                                                                            textAlign:
+                                                                                TextAlign.start,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    _model.pageselect =
-                                                                        _model.pageselect! +
-                                                                            1;
-                                                                    safeSetState(
-                                                                        () {});
-                                                                    await _model
-                                                                        .scroll1
-                                                                        ?.animateTo(
-                                                                      0,
-                                                                      duration: const Duration(
-                                                                          milliseconds:
-                                                                              1),
-                                                                      curve: Curves
-                                                                          .ease,
-                                                                    );
-                                                                    safeSetState(() =>
-                                                                        _model.apiRequestCompleter =
-                                                                            null);
-                                                                    await _model
-                                                                        .waitForApiRequestCompleted();
-                                                                  },
-                                                                  text:
-                                                                      'Page suivante',
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    height: 40,
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            24,
-                                                                            0,
-                                                                            24,
-                                                                            0),
-                                                                    iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                    color: const Color(
-                                                                        0xFFEEE8FC),
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Manrope',
-                                                                          color:
-                                                                              const Color(0xFF5E35B1),
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                    elevation:
-                                                                        0,
-                                                                    borderSide:
-                                                                        const BorderSide(
-                                                                      color: Colors
-                                                                          .transparent,
-                                                                      width: 0,
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      FFAppState()
+                                                                          .listQuantitySHow = 18;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      safeSetState(() =>
+                                                                          _model.apiRequestCompleter =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForApiRequestCompleted();
+                                                                    },
+                                                                    child:
+                                                                        Container(
+                                                                      width: FFAppState().listQuantitySHow ==
+                                                                              18
+                                                                          ? 50.0
+                                                                          : 25.0,
+                                                                      height:
+                                                                          30,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .revoWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
+                                                                      ),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            '18',
+                                                                            textAlign:
+                                                                                TextAlign.start,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
                                                                     ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            16),
                                                                   ),
-                                                                ),
-                                                              ].divide(const SizedBox(
-                                                                  width: 16)),
-                                                            ),
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      FFAppState()
+                                                                          .listQuantitySHow = 36;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      safeSetState(() =>
+                                                                          _model.apiRequestCompleter =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForApiRequestCompleted();
+                                                                    },
+                                                                    child:
+                                                                        Container(
+                                                                      width: FFAppState().listQuantitySHow ==
+                                                                              36
+                                                                          ? 50.0
+                                                                          : 25.0,
+                                                                      height:
+                                                                          30,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .revoWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16),
+                                                                      ),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          Text(
+                                                                            '36',
+                                                                            textAlign:
+                                                                                TextAlign.start,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ].divide(
+                                                                    const SizedBox(
+                                                                        width:
+                                                                            6)),
+                                                              ),
+                                                            ],
                                                           ),
                                                         ],
                                                       ),

@@ -34,7 +34,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
     super.initState();
     _model = createModel(context, () => EraseAssetModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -49,13 +49,13 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
     return Container(
       decoration: const BoxDecoration(),
       child: Container(
-        width: MediaQuery.sizeOf(context).width * 1.0,
+        width: MediaQuery.sizeOf(context).width,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).revoWhite,
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(16),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -67,7 +67,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 36.0,
+                        fontSize: 36,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -81,11 +81,11 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
+                          width: 50,
+                          height: 50,
                           child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 50.0,
+                            size: 50,
                           ),
                         ),
                       );
@@ -95,7 +95,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
 
                     return Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -148,7 +148,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 16.0, 0.0, 0.0),
+                                        0, 16, 0, 0),
                                     child: Text(
                                       'ATTENTION : Vous devez d\'abord remplacer cette vidéo dans les listes ci-dessus avant de l\'effacer.',
                                       style: FlutterFlowTheme.of(context)
@@ -156,7 +156,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                           .override(
                                             fontFamily: 'Manrope',
                                             color: const Color(0xFFC31212),
-                                            fontSize: 16.0,
+                                            fontSize: 16,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -193,11 +193,11 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                   cursor:
                                       MouseCursor.defer ?? MouseCursor.defer,
                                   onEnter: ((event) async {
-                                    setState(
+                                    safeSetState(
                                         () => _model.mouseRegionHovered = true);
                                   }),
                                   onExit: ((event) async {
-                                    setState(() =>
+                                    safeSetState(() =>
                                         _model.mouseRegionHovered = false);
                                   }),
                                   child: FFButtonWidget(
@@ -211,7 +211,9 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                       shouldSetState = true;
                                       if (!(_model.deleteDone?.succeeded ??
                                           true)) {
-                                        if (shouldSetState) setState(() {});
+                                        if (shouldSetState) {
+                                          safeSetState(() {});
+                                        }
                                         return;
                                       }
                                       await HostedSubsTable().delete(
@@ -221,20 +223,20 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                         ),
                                       );
                                       Navigator.pop(context);
-                                      if (shouldSetState) setState(() {});
+                                      if (shouldSetState) safeSetState(() {});
                                     },
                                     text: 'Effacer',
                                     icon: const Icon(
                                       Icons.delete_outlined,
-                                      size: 15.0,
+                                      size: 15,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 40.0,
+                                      height: 40,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24, 0, 24, 0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color: _model.mouseRegionHovered
                                           ? const Color(0xFFF5E2E4)
                                           : const Color(0xFFFCE8EC),
@@ -246,12 +248,12 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
-                                      elevation: 0.0,
+                                      elevation: 0,
                                       borderSide: const BorderSide(
                                         color: Colors.transparent,
-                                        width: 0.0,
+                                        width: 0,
                                       ),
-                                      borderRadius: BorderRadius.circular(16.0),
+                                      borderRadius: BorderRadius.circular(16),
                                     ),
                                   ),
                                 ),
@@ -262,7 +264,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     );
                   },
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(const SizedBox(height: 12)),
             ),
           ),
         ),

@@ -44,7 +44,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
 
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -70,11 +70,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50.0,
+                size: 50,
               ),
             ),
           );
@@ -86,13 +86,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
             : null;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -103,21 +103,20 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 40.0,
+                        fontSize: 40,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
                 ),
                 Container(
-                  width: 490.0,
+                  width: 490,
                   decoration: const BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
                         child: TextFormField(
                           controller: _model.inteNameTextController ??=
                               TextEditingController(
@@ -134,41 +133,41 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                 .override(
                                   fontFamily: 'Manrope',
                                   color: const Color(0xFF778089),
-                                  fontSize: 16.0,
+                                  fontSize: 16,
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Color(0x00000000),
-                                width: 2.0,
+                                width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(40.0),
+                              borderRadius: BorderRadius.circular(40),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
+                                width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(40.0),
+                              borderRadius: BorderRadius.circular(40),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
+                                width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(40.0),
+                              borderRadius: BorderRadius.circular(40),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
+                                width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(40.0),
+                              borderRadius: BorderRadius.circular(40),
                             ),
                             filled: true,
                             fillColor:
                                 FlutterFlowTheme.of(context).revoSearchBarBg,
-                            contentPadding: const EdgeInsets.all(16.0),
+                            contentPadding: const EdgeInsets.all(16),
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
@@ -176,7 +175,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                 fontFamily: 'Manrope',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 15.0,
+                                fontSize: 15,
                                 letterSpacing: 0.0,
                               ),
                           keyboardType: TextInputType.emailAddress,
@@ -184,7 +183,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                               .asValidator(context),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(const SizedBox(height: 12)),
                   ),
                 ),
                 Expanded(
@@ -204,8 +203,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: 140.0,
-                                      height: 300.0,
+                                      width: 140,
+                                      height: 300,
                                       decoration: BoxDecoration(
                                         color:
                                             FlutterFlowTheme.of(context).revoBG,
@@ -244,14 +243,14 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
+                                                      width: 50,
+                                                      height: 50,
                                                       child: SpinKitRing(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 50.0,
+                                                        size: 50,
                                                       ),
                                                     ),
                                                   );
@@ -272,8 +271,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       videoPlayerHostedSubsRow!
                                                           .mediaLink!,
                                                   videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
+                                                  width: 170,
+                                                  height: 300,
                                                   autoPlay: false,
                                                   looping: true,
                                                   showControls: true,
@@ -295,7 +294,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   barrierDismissible: false,
                                                   context: context,
@@ -308,13 +307,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -340,18 +339,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid1 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Choisir',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFEEE8FC),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -364,13 +361,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -381,7 +378,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   barrierDismissible: false,
                                                   context: context,
@@ -394,13 +391,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -426,18 +423,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid1 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Changer',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFDBD5E7),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -450,13 +445,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -472,10 +467,10 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                           ),
                                     ),
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 16.0),
+                                            0, 0, 0, 16),
                                         child: TextFormField(
                                           controller: _model.textController2 ??=
                                               TextEditingController(
@@ -500,30 +495,30 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -531,17 +526,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .revoSearchBarBg,
-                                            contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                            contentPadding: const EdgeInsets.all(16),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -550,7 +544,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                fontSize: 15.0,
+                                                fontSize: 15,
                                                 letterSpacing: 0.0,
                                               ),
                                           keyboardType:
@@ -561,7 +555,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(const SizedBox(height: 6)),
                                 ),
                               ),
                               SingleChildScrollView(
@@ -569,8 +563,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: 140.0,
-                                      height: 300.0,
+                                      width: 140,
+                                      height: 300,
                                       decoration: BoxDecoration(
                                         color:
                                             FlutterFlowTheme.of(context).revoBG,
@@ -609,14 +603,14 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
+                                                      width: 50,
+                                                      height: 50,
                                                       child: SpinKitRing(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 50.0,
+                                                        size: 50,
                                                       ),
                                                     ),
                                                   );
@@ -637,8 +631,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       videoPlayerHostedSubsRow!
                                                           .mediaLink!,
                                                   videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
+                                                  width: 170,
+                                                  height: 300,
                                                   autoPlay: false,
                                                   looping: true,
                                                   showControls: true,
@@ -660,7 +654,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder: (dialogContext) {
@@ -672,13 +666,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -704,18 +698,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid2 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Choisir',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFEEE8FC),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -728,13 +720,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -745,7 +737,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder: (dialogContext) {
@@ -757,13 +749,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -789,18 +781,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid2 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Changer',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFDBD5E7),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -813,13 +803,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -835,10 +825,10 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                           ),
                                     ),
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 16.0),
+                                            0, 0, 0, 16),
                                         child: TextFormField(
                                           controller: _model.textController3 ??=
                                               TextEditingController(
@@ -861,30 +851,30 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -892,17 +882,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .revoSearchBarBg,
-                                            contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                            contentPadding: const EdgeInsets.all(16),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -911,7 +900,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                fontSize: 15.0,
+                                                fontSize: 15,
                                                 letterSpacing: 0.0,
                                               ),
                                           keyboardType:
@@ -922,7 +911,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(const SizedBox(height: 6)),
                                 ),
                               ),
                               SingleChildScrollView(
@@ -930,8 +919,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: 140.0,
-                                      height: 300.0,
+                                      width: 140,
+                                      height: 300,
                                       decoration: BoxDecoration(
                                         color:
                                             FlutterFlowTheme.of(context).revoBG,
@@ -970,14 +959,14 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50.0,
-                                                      height: 50.0,
+                                                      width: 50,
+                                                      height: 50,
                                                       child: SpinKitRing(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 50.0,
+                                                        size: 50,
                                                       ),
                                                     ),
                                                   );
@@ -998,8 +987,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                       videoPlayerHostedSubsRow!
                                                           .mediaLink!,
                                                   videoType: VideoType.network,
-                                                  width: 170.0,
-                                                  height: 300.0,
+                                                  width: 170,
+                                                  height: 300,
                                                   autoPlay: false,
                                                   looping: true,
                                                   showControls: true,
@@ -1021,7 +1010,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder: (dialogContext) {
@@ -1033,13 +1022,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -1065,18 +1054,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid3 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Choisir',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFEEE8FC),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -1089,13 +1076,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -1106,7 +1093,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 FFButtonWidget(
                                               onPressed: () async {
                                                 FFAppState().choiceID = 0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder: (dialogContext) {
@@ -1118,13 +1105,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           Colors.transparent,
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                                  0.0, 0.0)
+                                                                  0, 0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                       child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
+                                                        height: 500,
+                                                        width: 800,
                                                         child:
                                                             ChooseHostedVideoWidget(),
                                                       ),
@@ -1150,18 +1137,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 );
                                                 FFAppState().vid3 =
                                                     FFAppState().choiceID;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               text: 'Changer',
                                               options: FFButtonOptions(
-                                                height: 40.0,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFDBD5E7),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -1174,13 +1159,13 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -1196,10 +1181,10 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                           ),
                                     ),
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 16.0),
+                                            0, 0, 0, 16),
                                         child: TextFormField(
                                           controller: _model.textController4 ??=
                                               TextEditingController(
@@ -1222,30 +1207,30 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -1253,17 +1238,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 2.0,
+                                                width: 2,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(40.0),
+                                                  BorderRadius.circular(40),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .revoSearchBarBg,
-                                            contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                            contentPadding: const EdgeInsets.all(16),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1272,7 +1256,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                fontSize: 15.0,
+                                                fontSize: 15,
                                                 letterSpacing: 0.0,
                                               ),
                                           keyboardType:
@@ -1283,10 +1267,10 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(const SizedBox(height: 6)),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 24.0)),
+                            ].divide(const SizedBox(width: 24)),
                           ),
                         ),
                       ),
@@ -1308,11 +1292,10 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                               },
                         text: 'Effacer',
                         options: FFButtonOptions(
-                          height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          height: 40,
+                          padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                          iconPadding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: const Color(0xFFFCE8EA),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
@@ -1321,17 +1304,16 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
-                          elevation: 0.0,
+                          elevation: 0,
                           borderSide: const BorderSide(
                             color: Colors.transparent,
-                            width: 0.0,
+                            width: 0,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                         child: FFButtonWidget(
                           onPressed: ((containerIntegrationsRow?.vid1 ==
                                       null) ||
@@ -1356,11 +1338,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                 },
                           text: 'Valider',
                           options: FFButtonOptions(
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
+                            height: 40,
+                            padding:
+                                const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                            iconPadding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
@@ -1369,12 +1351,12 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),
-                            elevation: 3.0,
+                            elevation: 3,
                             borderSide: const BorderSide(
                               color: Colors.transparent,
-                              width: 1.0,
+                              width: 1,
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(8),
                             disabledColor: const Color(0xC55E35B1),
                             disabledTextColor: const Color(0x84FFFFFF),
                           ),
@@ -1383,7 +1365,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                     ],
                   ),
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(const SizedBox(height: 12)),
             ),
           ),
         );

@@ -42,7 +42,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget.brandID != 0) {
         _model.isBrandSet = true;
-        setState(() {});
+        safeSetState(() {});
       }
     });
 
@@ -90,7 +90,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -118,35 +118,35 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                   Expanded(
                     flex: 8,
                     child: Container(
-                      width: 100.0,
+                      width: 100,
                       height: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0, -1),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 20.0, 0.0, 0.0),
+                              padding:
+                                  const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(16.0),
-                                    bottomRight: Radius.circular(16.0),
-                                    topLeft: Radius.circular(0.0),
-                                    topRight: Radius.circular(0.0),
+                                    bottomLeft: Radius.circular(16),
+                                    bottomRight: Radius.circular(16),
+                                    topLeft: Radius.circular(0),
+                                    topRight: Radius.circular(0),
                                   ),
                                 ),
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1, 0),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: const AlignmentDirectional(-1, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -154,12 +154,11 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(8),
                                         child: Image.network(
                                           'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
-                                          width: 130.0,
-                                          height: 100.0,
+                                          width: 130,
+                                          height: 100,
                                           fit: BoxFit.contain,
                                         ),
                                       ),
@@ -181,12 +180,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
+                                        width: 50,
+                                        height: 50,
                                         child: SpinKitRing(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          size: 50.0,
+                                          size: 50,
                                         ),
                                       ),
                                     );
@@ -202,15 +201,15 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                   return Container(
                                     width: double.infinity,
                                     constraints: const BoxConstraints(
-                                      maxWidth: 579.0,
+                                      maxWidth: 579,
                                     ),
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .revoWhite,
-                                      borderRadius: BorderRadius.circular(16.0),
+                                      borderRadius: BorderRadius.circular(16),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -221,8 +220,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                             children: [
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        32.0, 24.0, 0.0, 0.0),
+                                                    .fromSTEB(32, 24, 0, 0),
                                                 child: Text(
                                                   'Completer le profile',
                                                   style: FlutterFlowTheme.of(
@@ -239,7 +237,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    32.0, 12.0, 0.0, 24.0),
+                                                    32, 12, 0, 24),
                                             child: Text(
                                               'Plus que quelques infos',
                                               style:
@@ -253,10 +251,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                           ),
                                           if (currentUserUid != '')
                                             Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  const AlignmentDirectional(0, 0),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: const EdgeInsets.all(12),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -267,10 +265,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0),
+                                                                  0, 0, 0, 16),
                                                       child: SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
@@ -304,12 +299,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -318,12 +313,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -332,12 +327,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -346,12 +341,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -359,7 +354,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .revoSearchBarBg,
                                                             contentPadding:
                                                                 const EdgeInsets.all(
-                                                                    16.0),
+                                                                    16),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -370,7 +365,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                fontSize: 15.0,
+                                                                fontSize: 15,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -388,10 +383,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0),
+                                                                  0, 0, 0, 16),
                                                       child: SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
@@ -426,12 +418,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -440,12 +432,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -454,12 +446,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -468,12 +460,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -481,7 +473,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .revoSearchBarBg,
                                                             contentPadding:
                                                                 const EdgeInsets.all(
-                                                                    16.0),
+                                                                    16),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -492,7 +484,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                fontSize: 15.0,
+                                                                fontSize: 15,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -510,11 +502,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    16.0),
+                                                                .fromSTEB(0, 0,
+                                                                    0, 16),
                                                         child: SizedBox(
                                                           width:
                                                               double.infinity,
@@ -554,12 +543,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                     const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedBorder:
                                                                   OutlineInputBorder(
@@ -568,12 +557,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               errorBorder:
                                                                   OutlineInputBorder(
@@ -582,12 +571,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
@@ -596,12 +585,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               filled: true,
                                                               fillColor: FlutterFlowTheme
@@ -609,8 +598,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   .revoSearchBarBg,
                                                               contentPadding:
                                                                   const EdgeInsets
-                                                                      .all(
-                                                                          16.0),
+                                                                      .all(16),
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -621,8 +609,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
-                                                                  fontSize:
-                                                                      15.0,
+                                                                  fontSize: 15,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -637,10 +624,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0),
+                                                                  0, 0, 0, 16),
                                                       child: SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
@@ -675,12 +659,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -689,12 +673,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -703,12 +687,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -717,12 +701,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -730,7 +714,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .revoSearchBarBg,
                                                             contentPadding:
                                                                 const EdgeInsets.all(
-                                                                    16.0),
+                                                                    16),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -741,7 +725,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                fontSize: 15.0,
+                                                                fontSize: 15,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -759,10 +743,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  16.0),
+                                                                  0, 0, 0, 16),
                                                       child: SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
@@ -800,12 +781,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -814,12 +795,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -828,12 +809,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -842,12 +823,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40.0),
+                                                                          40),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -855,7 +836,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .revoSearchBarBg,
                                                             contentPadding:
                                                                 const EdgeInsets.all(
-                                                                    16.0),
+                                                                    16),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -866,7 +847,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                fontSize: 15.0,
+                                                                fontSize: 15,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -888,7 +869,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                     Align(
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           await UsersTable()
@@ -942,7 +923,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   .activeBrand =
                                                               maxWidthClientsRow!
                                                                   .name!;
-                                                          setState(() {});
+                                                          safeSetState(() {});
 
                                                           context.pushNamed(
                                                               'home');
@@ -951,22 +932,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             'Créer mon compte',
                                                         options:
                                                             FFButtonOptions(
-                                                          width: 230.0,
-                                                          height: 40.0,
+                                                          width: 230,
+                                                          height: 40,
                                                           padding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
+                                                                  .fromSTEB(24,
+                                                                      0, 24, 0),
                                                           iconPadding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color:
                                                               const Color(0xFFEEE8FC),
                                                           textStyle:
@@ -984,17 +959,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                         FontWeight
                                                                             .w600,
                                                                   ),
-                                                          elevation: 0.0,
+                                                          elevation: 0,
                                                           borderSide:
                                                               const BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 0.0,
+                                                            width: 0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      16.0),
+                                                                  .circular(16),
                                                         ),
                                                       ),
                                                     ),
@@ -1013,14 +987,14 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                               Container(
                                 width: double.infinity,
                                 constraints: const BoxConstraints(
-                                  maxWidth: 579.0,
+                                  maxWidth: 579,
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).revoWhite,
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(16),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4.0),
+                                  padding: const EdgeInsets.all(4),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -1032,8 +1006,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                           Flexible(
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      32.0, 24.0, 0.0, 0.0),
+                                                  .fromSTEB(32, 24, 0, 0),
                                               child: Text(
                                                 'Vous n\'avez pas acces à ce service.',
                                                 style:
@@ -1050,7 +1023,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            32.0, 12.0, 0.0, 24.0),
+                                            32, 12, 0, 24),
                                         child: Text(
                                           'Demandez au support un nouveau lien de création de compte.',
                                           style: FlutterFlowTheme.of(context)

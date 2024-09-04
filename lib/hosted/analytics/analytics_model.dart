@@ -12,7 +12,6 @@ class AnalyticsModel extends FlutterFlowModel<AnalyticsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
 

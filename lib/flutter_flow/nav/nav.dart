@@ -198,6 +198,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/retoursatrier',
           requireAuth: true,
           builder: (context, params) => const RetoursATrierWidget(),
+        ),
+        FFRoute(
+          name: 'tags',
+          path: '/tags',
+          requireAuth: true,
+          builder: (context, params) => const TagsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -385,11 +391,11 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Center(
                   child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
+                    width: 50,
+                    height: 50,
                     child: SpinKitRing(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 50.0,
+                      size: 50,
                     ),
                   ),
                 )

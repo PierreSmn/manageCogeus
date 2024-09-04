@@ -31,7 +31,7 @@ class _PlayVideoWidgetState extends State<PlayVideoWidget> {
     super.initState();
     _model = createModel(context, () => PlayVideoModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,13 +44,13 @@ class _PlayVideoWidgetState extends State<PlayVideoWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width * 1.0,
+      width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoWhite,
-        borderRadius: BorderRadius.circular(16.0),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -68,8 +68,8 @@ class _PlayVideoWidgetState extends State<PlayVideoWidget> {
                       FlutterFlowVideoPlayer(
                         path: widget.videoAdress!,
                         videoType: VideoType.network,
-                        width: 290.0,
-                        height: 620.0,
+                        width: 290,
+                        height: 620,
                         autoPlay: false,
                         looping: true,
                         showControls: true,
@@ -81,7 +81,7 @@ class _PlayVideoWidgetState extends State<PlayVideoWidget> {
                 ],
               ),
             ),
-          ].divide(const SizedBox(height: 12.0)),
+          ].divide(const SizedBox(height: 12)),
         ),
       ),
     );

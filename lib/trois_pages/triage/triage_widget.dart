@@ -30,7 +30,7 @@ class _TriageWidgetState extends State<TriageWidget> {
     super.initState();
     _model = createModel(context, () => TriageModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -58,14 +58,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    height: MediaQuery.sizeOf(context).height * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 1,
                     decoration: const BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
-                          updateCallback: () => setState(() {}),
+                          updateCallback: () => safeSetState(() {}),
                           child: const NavbarnavWidget(
                             selectedIndex: 4,
                           ),
@@ -88,12 +88,12 @@ class _TriageWidgetState extends State<TriageWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
+                                    width: 50,
+                                    height: 50,
                                     child: SpinKitRing(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 50.0,
+                                      size: 50,
                                     ),
                                   ),
                                 );
@@ -107,7 +107,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      50.0, 0.0, 0.0, 20.0),
+                                      50, 0, 0, 20),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -129,8 +129,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 60.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 60, 0, 0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         context.pushNamed(
@@ -139,21 +139,15 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                       text:
                                                           'Acceder à la vue d\'ensemble',
                                                       options: FFButtonOptions(
-                                                        height: 40.0,
+                                                        height: 40,
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    24.0,
-                                                                    0.0,
-                                                                    24.0,
-                                                                    0.0),
+                                                                .fromSTEB(24, 0,
+                                                                    24, 0),
                                                         iconPadding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 0, 0, 0),
                                                         color:
                                                             const Color(0xFFEEE8FC),
                                                         textStyle:
@@ -171,15 +165,15 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                       FontWeight
                                                                           .w600,
                                                                 ),
-                                                        elevation: 0.0,
+                                                        elevation: 0,
                                                         borderSide: const BorderSide(
                                                           color: Colors
                                                               .transparent,
-                                                          width: 0.0,
+                                                          width: 0,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(16.0),
+                                                                .circular(16),
                                                       ),
                                                     ),
                                                   ),
@@ -194,15 +188,15 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                         }
 
                                                         return SizedBox(
-                                                          width: 700.0,
+                                                          width: 700,
                                                           child: Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        40.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        40),
                                                             child: PageView
                                                                 .builder(
                                                               physics:
@@ -227,14 +221,13 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                 return Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          20,
+                                                                          0,
+                                                                          0),
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        800.0,
+                                                                    width: 800,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
@@ -242,297 +235,269 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                           .revoWhite,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              16.0),
+                                                                              16),
                                                                     ),
                                                                     child:
                                                                         Padding(
                                                                       padding:
                                                                           const EdgeInsets.all(
-                                                                              32.0),
+                                                                              32),
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children:
-                                                                            [
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Container(
-                                                                                width: 300.0,
-                                                                                decoration: const BoxDecoration(),
-                                                                                child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      RichText(
-                                                                                        textScaler: MediaQuery.of(context).textScaler,
-                                                                                        text: TextSpan(
-                                                                                          children: [
-                                                                                            const TextSpan(
-                                                                                              text: 'Reste à trier: ',
-                                                                                              style: TextStyle(),
-                                                                                            ),
-                                                                                            TextSpan(
-                                                                                              text: containerNewSubsRowList.length >= 1000 ? '+ de 1000' : containerNewSubsRowList.length.toString(),
-                                                                                              style: const TextStyle(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                              ),
-                                                                                            )
-                                                                                          ],
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
-                                                                                                color: FlutterFlowTheme.of(context).secondary,
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Text(
-                                                                                        'Contenu provenant de ',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                              fontSize: 16.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w300,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          listSubsItem.submitterName,
-                                                                                          'John',
-                                                                                        ),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 46.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                            ),
-                                                                                      ),
-                                                                                      RichText(
-                                                                                        textScaler: MediaQuery.of(context).textScaler,
-                                                                                        text: TextSpan(
-                                                                                          children: [
-                                                                                            const TextSpan(
-                                                                                              text: 'Repond à la question : \n',
-                                                                                              style: TextStyle(),
-                                                                                            ),
-                                                                                            TextSpan(
-                                                                                              text: valueOrDefault<String>(
-                                                                                                listSubsItem.question,
-                                                                                                'Not set',
-                                                                                              ),
-                                                                                              style: const TextStyle(
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                fontSize: 16.0,
-                                                                                              ),
-                                                                                            )
-                                                                                          ],
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
-                                                                                                letterSpacing: 0.0,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      RatingBarIndicator(
-                                                                                        itemBuilder: (context, index) => Icon(
-                                                                                          Icons.stars_rounded,
-                                                                                          color: FlutterFlowTheme.of(context).buttonRevText,
-                                                                                        ),
-                                                                                        direction: Axis.horizontal,
-                                                                                        rating: valueOrDefault<double>(
-                                                                                          listSubsItem.rating?.toDouble(),
-                                                                                          0.0,
-                                                                                        ),
-                                                                                        unratedColor: FlutterFlowTheme.of(context).alternate,
-                                                                                        itemCount: 5,
-                                                                                        itemSize: 30.0,
-                                                                                      ),
-                                                                                      Text(
-                                                                                        'Transcription',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                              fontSize: 24.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.normal,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Container(
-                                                                                        width: 200.0,
-                                                                                        decoration: const BoxDecoration(),
-                                                                                        child: SingleChildScrollView(
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                          SingleChildScrollView(
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children:
+                                                                              [
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Container(
+                                                                                  width: 300,
+                                                                                  decoration: const BoxDecoration(),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0, 60, 0, 0),
+                                                                                    child: Column(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                      children: [
+                                                                                        RichText(
+                                                                                          textScaler: MediaQuery.of(context).textScaler,
+                                                                                          text: TextSpan(
                                                                                             children: [
-                                                                                              RichText(
-                                                                                                textScaler: MediaQuery.of(context).textScaler,
-                                                                                                text: TextSpan(
-                                                                                                  children: [
-                                                                                                    const TextSpan(
-                                                                                                      text: '\"',
-                                                                                                      style: TextStyle(),
-                                                                                                    ),
-                                                                                                    TextSpan(
-                                                                                                      text: valueOrDefault<String>(
-                                                                                                        listSubsItem.transcription,
-                                                                                                        'Indisponible.',
-                                                                                                      ),
-                                                                                                      style: const TextStyle(),
-                                                                                                    ),
-                                                                                                    const TextSpan(
-                                                                                                      text: '\"',
-                                                                                                      style: TextStyle(),
-                                                                                                    )
-                                                                                                  ],
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
-                                                                                                        letterSpacing: 0.0,
-                                                                                                      ),
-                                                                                                ),
-                                                                                                maxLines: 7,
+                                                                                              const TextSpan(
+                                                                                                text: 'Reste à trier: ',
+                                                                                                style: TextStyle(),
                                                                                               ),
+                                                                                              TextSpan(
+                                                                                                text: containerNewSubsRowList.length >= 1000 ? '+ de 1000' : containerNewSubsRowList.length.toString(),
+                                                                                                style: const TextStyle(
+                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                ),
+                                                                                              )
                                                                                             ],
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Manrope',
+                                                                                                  color: FlutterFlowTheme.of(context).secondary,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                    ].divide(const SizedBox(height: 12.0)),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                              Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  FlutterFlowVideoPlayer(
-                                                                                    path: listSubsItem.mediaLink!,
-                                                                                    videoType: VideoType.network,
-                                                                                    width: 270.0,
-                                                                                    height: 470.0,
-                                                                                    autoPlay: false,
-                                                                                    looping: true,
-                                                                                    showControls: true,
-                                                                                    allowFullScreen: true,
-                                                                                    allowPlaybackSpeedMenu: false,
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                          Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            children:
-                                                                                [
-                                                                              FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  await RejectedSubsTable().insert({
-                                                                                    'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
-                                                                                    'submitter_name': listSubsItem.submitterName,
-                                                                                    'media_link': listSubsItem.mediaLink,
-                                                                                    'brand_name': listSubsItem.brandName,
-                                                                                    'slugDone': listSubsItem.flowDone,
-                                                                                    'email': listSubsItem.email,
-                                                                                    'submitter_surname': listSubsItem.submitterSurname,
-                                                                                    'transcription': listSubsItem.transcription,
-                                                                                    'rating': listSubsItem.rating,
-                                                                                    'boolMail': listSubsItem.boolMail,
-                                                                                    'question': listSubsItem.question,
-                                                                                  });
-                                                                                  await NewSubsTable().delete(
-                                                                                    matchingRows: (rows) => rows.eq(
-                                                                                      'id',
-                                                                                      listSubsItem.id,
+                                                                                        Text(
+                                                                                          'Contenu provenant de ',
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                                fontSize: 16,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w300,
+                                                                                              ),
+                                                                                        ),
+                                                                                        Text(
+                                                                                          valueOrDefault<String>(
+                                                                                            listSubsItem.submitterName,
+                                                                                            'John',
+                                                                                          ),
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                fontSize: 46,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
+                                                                                              ),
+                                                                                        ),
+                                                                                        RatingBarIndicator(
+                                                                                          itemBuilder: (context, index) => Icon(
+                                                                                            Icons.stars_rounded,
+                                                                                            color: FlutterFlowTheme.of(context).buttonRevText,
+                                                                                          ),
+                                                                                          direction: Axis.horizontal,
+                                                                                          rating: valueOrDefault<double>(
+                                                                                            listSubsItem.rating?.toDouble(),
+                                                                                            0.0,
+                                                                                          ),
+                                                                                          unratedColor: FlutterFlowTheme.of(context).alternate,
+                                                                                          itemCount: 5,
+                                                                                          itemSize: 30,
+                                                                                        ),
+                                                                                        Text(
+                                                                                          'Transcription',
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                                fontSize: 24.72,
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.normal,
+                                                                                              ),
+                                                                                        ),
+                                                                                        Container(
+                                                                                          width: 200,
+                                                                                          decoration: const BoxDecoration(),
+                                                                                          child: SingleChildScrollView(
+                                                                                            child: Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                RichText(
+                                                                                                  textScaler: MediaQuery.of(context).textScaler,
+                                                                                                  text: TextSpan(
+                                                                                                    children: [
+                                                                                                      const TextSpan(
+                                                                                                        text: '\"',
+                                                                                                        style: TextStyle(),
+                                                                                                      ),
+                                                                                                      TextSpan(
+                                                                                                        text: valueOrDefault<String>(
+                                                                                                          listSubsItem.transcription,
+                                                                                                          'Indisponible.',
+                                                                                                        ),
+                                                                                                        style: const TextStyle(),
+                                                                                                      ),
+                                                                                                      const TextSpan(
+                                                                                                        text: '\"',
+                                                                                                        style: TextStyle(),
+                                                                                                      )
+                                                                                                    ],
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'Manrope',
+                                                                                                          letterSpacing: 0.0,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  maxLines: 7,
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ].divide(const SizedBox(height: 12)),
                                                                                     ),
-                                                                                  );
-                                                                                  setState(() => _model.requestCompleter = null);
-                                                                                  await _model.waitForRequestCompleted();
-                                                                                },
-                                                                                text: 'Exclure',
-                                                                                options: FFButtonOptions(
-                                                                                  width: 220.0,
-                                                                                  height: 60.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: FlutterFlowTheme.of(context).alternate,
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 18.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
-                                                                              ),
-                                                                              FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  await ValidSubsTable().insert({
-                                                                                    'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
-                                                                                    'submitter_name': listSubsItem.submitterName,
-                                                                                    'media_link': listSubsItem.mediaLink,
-                                                                                    'brand_name': listSubsItem.brandName,
-                                                                                    'slugDone': listSubsItem.flowDone,
-                                                                                    'email': listSubsItem.email,
-                                                                                    'submitter_surname': listSubsItem.submitterSurname,
-                                                                                    'transcription': listSubsItem.transcription,
-                                                                                    'rating': listSubsItem.rating,
-                                                                                    'boolMail': listSubsItem.boolMail,
-                                                                                    'question': listSubsItem.question,
-                                                                                  });
-                                                                                  await NewSubsTable().delete(
-                                                                                    matchingRows: (rows) => rows.eq(
-                                                                                      'id',
-                                                                                      listSubsItem.id,
+                                                                                Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    FlutterFlowVideoPlayer(
+                                                                                      path: listSubsItem.mediaLink!,
+                                                                                      videoType: VideoType.network,
+                                                                                      width: 270,
+                                                                                      height: 470,
+                                                                                      autoPlay: false,
+                                                                                      looping: true,
+                                                                                      showControls: true,
+                                                                                      allowFullScreen: true,
+                                                                                      allowPlaybackSpeedMenu: false,
                                                                                     ),
-                                                                                  );
-                                                                                  setState(() => _model.requestCompleter = null);
-                                                                                  await _model.waitForRequestCompleted();
-                                                                                },
-                                                                                text: 'Sélectionner',
-                                                                                options: FFButtonOptions(
-                                                                                  width: 220.0,
-                                                                                  height: 60.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: FlutterFlowTheme.of(context).revoCardBlueText,
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).revoWhite,
-                                                                                        fontSize: 18.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                  ],
                                                                                 ),
-                                                                              ),
-                                                                            ].divide(const SizedBox(width: 30.0)).around(const SizedBox(width: 30.0)),
-                                                                          ),
-                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                              ],
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    await RejectedSubsTable().insert({
+                                                                                      'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
+                                                                                      'submitter_name': listSubsItem.submitterName,
+                                                                                      'media_link': listSubsItem.mediaLink,
+                                                                                      'brand_name': listSubsItem.brandName,
+                                                                                      'slugDone': listSubsItem.flowDone,
+                                                                                      'email': listSubsItem.email,
+                                                                                      'submitter_surname': listSubsItem.submitterSurname,
+                                                                                      'transcription': listSubsItem.transcription,
+                                                                                      'rating': listSubsItem.rating,
+                                                                                      'boolMail': listSubsItem.boolMail,
+                                                                                      'question': listSubsItem.question,
+                                                                                    });
+                                                                                    await NewSubsTable().delete(
+                                                                                      matchingRows: (rows) => rows.eq(
+                                                                                        'id',
+                                                                                        listSubsItem.id,
+                                                                                      ),
+                                                                                    );
+                                                                                    safeSetState(() => _model.requestCompleter = null);
+                                                                                    await _model.waitForRequestCompleted();
+                                                                                  },
+                                                                                  text: 'Exclure',
+                                                                                  options: FFButtonOptions(
+                                                                                    width: 220,
+                                                                                    height: 60,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    color: FlutterFlowTheme.of(context).alternate,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                                          fontSize: 18,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16),
+                                                                                  ),
+                                                                                ),
+                                                                                FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    await ValidSubsTable().insert({
+                                                                                      'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
+                                                                                      'submitter_name': listSubsItem.submitterName,
+                                                                                      'media_link': listSubsItem.mediaLink,
+                                                                                      'brand_name': listSubsItem.brandName,
+                                                                                      'slugDone': listSubsItem.flowDone,
+                                                                                      'email': listSubsItem.email,
+                                                                                      'submitter_surname': listSubsItem.submitterSurname,
+                                                                                      'transcription': listSubsItem.transcription,
+                                                                                      'rating': listSubsItem.rating,
+                                                                                      'boolMail': listSubsItem.boolMail,
+                                                                                      'question': listSubsItem.question,
+                                                                                    });
+                                                                                    await NewSubsTable().delete(
+                                                                                      matchingRows: (rows) => rows.eq(
+                                                                                        'id',
+                                                                                        listSubsItem.id,
+                                                                                      ),
+                                                                                    );
+                                                                                    safeSetState(() => _model.requestCompleter = null);
+                                                                                    await _model.waitForRequestCompleted();
+                                                                                  },
+                                                                                  text: 'Sélectionner',
+                                                                                  options: FFButtonOptions(
+                                                                                    width: 220,
+                                                                                    height: 60,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    color: FlutterFlowTheme.of(context).revoCardBlueText,
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).revoWhite,
+                                                                                          fontSize: 18,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16),
+                                                                                  ),
+                                                                                ),
+                                                                              ].divide(const SizedBox(width: 30)).around(const SizedBox(width: 30)),
+                                                                            ),
+                                                                          ].divide(const SizedBox(height: 12)),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),

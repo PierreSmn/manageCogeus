@@ -159,7 +159,8 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
       if (_videoPlayerController!.value.isPlaying) {
         for (var otherPlayer in _videoPlayers) {
           if (otherPlayer != _videoPlayerController &&
-              otherPlayer.value.isPlaying) {
+              otherPlayer.value.isPlaying &&
+              mounted) {
             setState(() {
               otherPlayer.pause();
             });
@@ -182,8 +183,9 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
       }
       _isFullScreen = _chewieController!.isFullScreen;
     });
-
-    setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 
   @override
@@ -204,11 +206,11 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          width: 50.0,
-                          height: 50.0,
+                          width: 50,
+                          height: 50,
                           child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 50.0,
+                            size: 50,
                           ),
                         ),
                         const SizedBox(height: 20),

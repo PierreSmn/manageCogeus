@@ -30,7 +30,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
     super.initState();
     _model = createModel(context, () => HarvestersModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -58,14 +58,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    height: MediaQuery.sizeOf(context).height * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 1,
                     decoration: const BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
-                          updateCallback: () => setState(() {}),
+                          updateCallback: () => safeSetState(() {}),
                           child: const NavbarnavWidget(
                             selectedIndex: 10,
                           ),
@@ -86,12 +86,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
+                                    width: 50,
+                                    height: 50,
                                     child: SpinKitRing(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 50.0,
+                                      size: 50,
                                     ),
                                   ),
                                 );
@@ -105,7 +105,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      50.0, 0.0, 0.0, 20.0),
+                                      50, 0, 0, 20),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -123,8 +123,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                             Expanded(
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 32.0, 0.0, 0.0),
+                                                    .fromSTEB(0, 32, 0, 0),
                                                 child: Builder(
                                                   builder: (context) {
                                                     final flows =
@@ -141,7 +140,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                           final flowsItem =
                                                               flows[flowsIndex];
                                                           return Container(
-                                                            width: 800.0,
+                                                            width: 800,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -150,13 +149,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          16.0),
+                                                                          16),
                                                             ),
                                                             child: Padding(
                                                               padding:
                                                                   const EdgeInsets
-                                                                      .all(
-                                                                          32.0),
+                                                                      .all(32),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -181,7 +179,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                     children: [
                                                                       Container(
                                                                         width:
-                                                                            380.0,
+                                                                            380,
                                                                         decoration:
                                                                             const BoxDecoration(),
                                                                         child:
@@ -209,7 +207,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 24),
                                                                               child: FutureBuilder<List<WebAppActivationsRow>>(
                                                                                 future: WebAppActivationsTable().queryRows(
                                                                                   queryFn: (q) => q
@@ -227,11 +225,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
+                                                                                        width: 50,
+                                                                                        height: 50,
                                                                                         child: SpinKitRing(
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 50.0,
+                                                                                          size: 50,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -256,7 +254,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       ],
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Manrope',
-                                                                                            fontSize: 18.0,
+                                                                                            fontSize: 18,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                     ),
@@ -281,11 +279,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
+                                                                                      width: 50,
+                                                                                      height: 50,
                                                                                       child: SpinKitRing(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
+                                                                                        size: 50,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -309,7 +307,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     ],
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
-                                                                                          fontSize: 18.0,
+                                                                                          fontSize: 18,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -333,11 +331,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
+                                                                                      width: 50,
+                                                                                      height: 50,
                                                                                       child: SpinKitRing(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
+                                                                                        size: 50,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -361,7 +359,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     ],
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
-                                                                                          fontSize: 18.0,
+                                                                                          fontSize: 18,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
@@ -372,7 +370,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                               builder: (context) => FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   FFAppState().colorChange = false;
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (dialogContext) {
@@ -380,12 +378,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         elevation: 0,
                                                                                         insetPadding: EdgeInsets.zero,
                                                                                         backgroundColor: Colors.transparent,
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
                                                                                         child: GestureDetector(
                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                           child: SizedBox(
-                                                                                            height: 830.0,
-                                                                                            width: 1000.0,
+                                                                                            height: 830,
+                                                                                            width: 1000,
                                                                                             child: ChangeColorWidget(
                                                                                               title: flowsItem.colorTitle!,
                                                                                               text: flowsItem.colorText!,
@@ -401,7 +399,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   );
 
                                                                                   if (FFAppState().colorChange) {
-                                                                                    setState(() => _model.requestCompleter = null);
+                                                                                    safeSetState(() => _model.requestCompleter = null);
                                                                                     await _model.waitForRequestCompleted();
                                                                                   } else {
                                                                                     return;
@@ -410,12 +408,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 text: 'Modifier page accueil',
                                                                                 icon: const Icon(
                                                                                   Icons.mode_edit,
-                                                                                  size: 15.0,
+                                                                                  size: 15,
                                                                                 ),
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 40,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).revoSearchBarBg,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -423,12 +421,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0.0,
+                                                                                  elevation: 0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0.0,
+                                                                                    width: 0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                  borderRadius: BorderRadius.circular(16),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -436,7 +434,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                               builder: (context) => FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   FFAppState().colorChange = false;
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                   await showDialog(
                                                                                     context: context,
                                                                                     builder: (dialogContext) {
@@ -444,12 +442,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         elevation: 0,
                                                                                         insetPadding: EdgeInsets.zero,
                                                                                         backgroundColor: Colors.transparent,
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
                                                                                         child: GestureDetector(
                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                           child: SizedBox(
-                                                                                            height: 770.0,
-                                                                                            width: 750.0,
+                                                                                            height: 770,
+                                                                                            width: 750,
                                                                                             child: ChangeQuestionWidget(
                                                                                               id: flowsItem.id,
                                                                                               question: flowsItem.expla2!,
@@ -461,7 +459,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   );
 
                                                                                   if (FFAppState().colorChange) {
-                                                                                    setState(() => _model.requestCompleter = null);
+                                                                                    safeSetState(() => _model.requestCompleter = null);
                                                                                     await _model.waitForRequestCompleted();
                                                                                   } else {
                                                                                     return;
@@ -470,12 +468,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 text: 'Modifier question',
                                                                                 icon: const Icon(
                                                                                   Icons.mode_edit,
-                                                                                  size: 15.0,
+                                                                                  size: 15,
                                                                                 ),
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 40,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).revoSearchBarBg,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -483,16 +481,16 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0.0,
+                                                                                  elevation: 0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0.0,
+                                                                                    width: 0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                  borderRadius: BorderRadius.circular(16),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(const SizedBox(height: 12)),
                                                                         ),
                                                                       ),
                                                                       Column(
@@ -509,33 +507,34 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             barcode:
                                                                                 Barcode.qrCode(),
                                                                             width:
-                                                                                300.0,
+                                                                                300,
                                                                             height:
-                                                                                160.0,
+                                                                                160,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             backgroundColor:
                                                                                 Colors.transparent,
                                                                             errorBuilder: (context, error) =>
                                                                                 const SizedBox(
-                                                                              width: 300.0,
-                                                                              height: 160.0,
+                                                                              width: 300,
+                                                                              height: 160,
                                                                             ),
                                                                             drawText:
                                                                                 false,
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                        ].divide(const SizedBox(height: 24)),
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                ].divide(const SizedBox(
-                                                                    height:
-                                                                        12.0)),
+                                                                ].divide(
+                                                                    const SizedBox(
+                                                                        height:
+                                                                            12)),
                                                               ),
                                                             ),
                                                           );
                                                         }).divide(const SizedBox(
-                                                            height: 16.0)),
+                                                            height: 16)),
                                                       ),
                                                     );
                                                   },
