@@ -95,7 +95,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -119,11 +119,11 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50.0,
+                size: 50,
               ),
             ),
           );
@@ -135,16 +135,16 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
             : null;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -156,7 +156,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                             fontFamily: 'Manrope',
                             color:
                                 FlutterFlowTheme.of(context).revoCardTextColor,
-                            fontSize: 40.0,
+                            fontSize: 40,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -166,7 +166,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: 400.0,
+                          width: 400,
                           decoration: const BoxDecoration(),
                           child: SingleChildScrollView(
                             child: Column(
@@ -177,7 +177,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     SizedBox(
-                                      width: 400.0,
+                                      width: 400,
                                       child: TextFormField(
                                         controller:
                                             _model.titleTextController ??=
@@ -188,7 +188,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         onFieldSubmitted: (_) async {
                                           _model.state =
                                               _model.titleTextController.text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         autofocus: false,
                                         obscureText: false,
@@ -201,30 +201,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -232,10 +232,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -250,16 +250,16 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                             .asValidator(context),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 34.0)),
+                                  ].divide(const SizedBox(width: 34)),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 50.0, 0.0, 0.0),
+                                      0, 50, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       SizedBox(
-                                        width: 200.0,
+                                        width: 200,
                                         child: TextFormField(
                                           controller:
                                               _model.colorTitleTextController,
@@ -267,7 +267,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           onFieldSubmitted: (_) async {
                                             _model.state = _model
                                                 .colorTitleTextController.text;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           autofocus: false,
                                           obscureText: false,
@@ -280,30 +280,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -311,10 +311,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -338,8 +338,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       ),
                                       Expanded(
                                         child: Container(
-                                          width: 60.0,
-                                          height: 40.0,
+                                          width: 60,
+                                          height: 40,
                                           decoration: BoxDecoration(
                                             color: colorFromCssString(
                                               _model.colorTitleTextController
@@ -349,7 +349,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                       .primaryBackground,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -358,14 +358,14 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(const SizedBox(width: 34)),
                                   ),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: TextFormField(
                                         controller:
                                             _model.colorBGTextController,
@@ -373,7 +373,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         onFieldSubmitted: (_) async {
                                           _model.state =
                                               _model.colorBGTextController.text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         autofocus: false,
                                         obscureText: false,
@@ -386,30 +386,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -417,10 +417,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -444,8 +444,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 60.0,
-                                        height: 40.0,
+                                        width: 60,
+                                        height: 40,
                                         decoration: BoxDecoration(
                                           color: colorFromCssString(
                                             _model.colorBGTextController.text,
@@ -454,7 +454,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                     .primaryBackground,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -462,13 +462,13 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 34.0)),
+                                  ].divide(const SizedBox(width: 34)),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: TextFormField(
                                         controller:
                                             _model.colorTextTextController,
@@ -476,7 +476,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         onFieldSubmitted: (_) async {
                                           _model.state = _model
                                               .colorTextTextController.text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         autofocus: false,
                                         obscureText: false,
@@ -489,30 +489,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -520,10 +520,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -547,8 +547,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 60.0,
-                                        height: 40.0,
+                                        width: 60,
+                                        height: 40,
                                         decoration: BoxDecoration(
                                           color: colorFromCssString(
                                             _model.colorTextTextController.text,
@@ -557,7 +557,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                     .primaryBackground,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -565,13 +565,13 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 34.0)),
+                                  ].divide(const SizedBox(width: 34)),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: TextFormField(
                                         controller:
                                             _model.colorButtonTextController,
@@ -579,7 +579,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         onFieldSubmitted: (_) async {
                                           _model.state = _model
                                               .colorButtonTextController.text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         autofocus: false,
                                         obscureText: false,
@@ -592,30 +592,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -623,10 +623,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -650,8 +650,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 60.0,
-                                        height: 40.0,
+                                        width: 60,
+                                        height: 40,
                                         decoration: BoxDecoration(
                                           color: colorFromCssString(
                                             _model
@@ -661,7 +661,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                     .primaryBackground,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -669,13 +669,13 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 34.0)),
+                                  ].divide(const SizedBox(width: 34)),
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     SizedBox(
-                                      width: 200.0,
+                                      width: 200,
                                       child: TextFormField(
                                         controller: _model
                                             .colorButtonTextTextController,
@@ -685,7 +685,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           _model.state = _model
                                               .colorButtonTextTextController
                                               .text;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         autofocus: false,
                                         obscureText: false,
@@ -698,30 +698,30 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           errorBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
@@ -729,10 +729,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -756,8 +756,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 60.0,
-                                        height: 40.0,
+                                        width: 60,
+                                        height: 40,
                                         decoration: BoxDecoration(
                                           color: colorFromCssString(
                                             _model.colorButtonTextTextController
@@ -767,7 +767,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                     .primaryBackground,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
@@ -775,43 +775,43 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 34.0)),
+                                  ].divide(const SizedBox(width: 34)),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(const SizedBox(height: 12)),
                             ),
                           ),
                         ),
                         Container(
-                          width: 310.0,
-                          height: 640.0,
+                          width: 310,
+                          height: 640,
                           decoration: BoxDecoration(
                             color: colorFromCssString(
                               _model.colorBGTextController.text,
                               defaultColor: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                             ),
-                            borderRadius: BorderRadius.circular(40.0),
+                            borderRadius: BorderRadius.circular(40),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).primaryText,
-                              width: 5.0,
+                              width: 5,
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
+                            padding:
+                                const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        50.0, 0.0, 50.0, 0.0),
+                                        50, 0, 50, 0),
                                     child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                       child: Image.network(
                                         containerLiveFlowsRow!.logoUrl!,
-                                        width: 300.0,
-                                        height: 90.0,
+                                        width: 300,
+                                        height: 90,
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -835,17 +835,17 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   .text,
                                               defaultColor: Colors.black,
                                             ),
-                                            fontSize: 27.0,
+                                            fontSize: 27,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
                                   ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                     child: Image.network(
                                       'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1723027782863000.jpg',
-                                      width: 300.0,
-                                      height: 250.0,
+                                      width: 300,
+                                      height: 250,
                                       fit: BoxFit.contain,
                                     ),
                                   ),
@@ -855,7 +855,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
+                                            0, 0, 10, 0),
                                         child: Theme(
                                           data: ThemeData(
                                             checkboxTheme: CheckboxThemeData(
@@ -866,7 +866,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                       .shrinkWrap,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius.circular(4.0),
+                                                    BorderRadius.circular(4),
                                               ),
                                             ),
                                             unselectedWidgetColor:
@@ -877,7 +877,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                             value: _model.checkboxValue ??=
                                                 true,
                                             onChanged: (newValue) async {
-                                              setState(() => _model
+                                              safeSetState(() => _model
                                                   .checkboxValue = newValue!);
                                             },
                                             side: BorderSide(
@@ -942,7 +942,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
-                                                  fontSize: 13.0,
+                                                  fontSize: 13,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -956,13 +956,13 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                     },
                                     text: 'J\'enregistre ma vidéo',
                                     options: FFButtonOptions(
-                                      width: 260.0,
-                                      height: 38.0,
+                                      width: 260,
+                                      height: 38,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24, 0, 24, 0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color: colorFromCssString(
                                         _model.colorButtonTextController.text,
                                         defaultColor:
@@ -983,16 +983,16 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                             ),
                                             letterSpacing: 0.0,
                                           ),
-                                      elevation: 0.0,
+                                      elevation: 0,
                                       borderSide: const BorderSide(
                                         color: Colors.transparent,
                                       ),
-                                      borderRadius: BorderRadius.circular(7.0),
+                                      borderRadius: BorderRadius.circular(7),
                                     ),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 16.0))
-                                    .addToStart(const SizedBox(height: 12.0)),
+                                    .divide(const SizedBox(height: 16))
+                                    .addToStart(const SizedBox(height: 12)),
                               ),
                             ),
                           ),
@@ -1018,16 +1018,14 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                           ),
                         );
                         FFAppState().colorChange = true;
-                        setState(() {});
+                        safeSetState(() {});
                         Navigator.pop(context);
                       },
                       text: 'Changer de couleur',
                       options: FFButtonOptions(
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        height: 40,
+                        padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                         color: const Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -1036,15 +1034,15 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
-                        elevation: 0.0,
+                        elevation: 0,
                         borderSide: const BorderSide(
                           color: Colors.transparent,
-                          width: 0.0,
+                          width: 0,
                         ),
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                  ].divide(const SizedBox(height: 12.0)),
+                  ].divide(const SizedBox(height: 12)),
                 ),
               ),
             ],

@@ -34,7 +34,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
     super.initState();
     _model = createModel(context, () => ExportCodeModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -58,11 +58,11 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50.0,
+                size: 50,
               ),
             ),
           );
@@ -74,13 +74,13 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
             : null;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +91,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 40.0,
+                        fontSize: 40,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -115,7 +115,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   _model.vidsby3 = true;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -124,8 +124,8 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -133,12 +133,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -146,12 +146,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -159,10 +159,10 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(const SizedBox(width: 6)),
                                     ),
                                     Text(
                                       '3 vidéos dynamique',
@@ -176,7 +176,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(const SizedBox(height: 16)),
                                 ),
                               ),
                               InkWell(
@@ -186,7 +186,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   _model.vidsby3 = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -195,8 +195,8 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -204,12 +204,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -217,12 +217,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -230,12 +230,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -243,12 +243,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -256,10 +256,10 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(const SizedBox(width: 6)),
                                     ),
                                     Text(
                                       '5 vidéos dynamique',
@@ -273,10 +273,10 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(const SizedBox(height: 16)),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 50.0)),
+                            ].divide(const SizedBox(width: 50)),
                           ),
                         ),
                       ),
@@ -309,11 +309,10 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                               },
                         text: 'Valider',
                         options: FFButtonOptions(
-                          height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          height: 40,
+                          padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                          iconPadding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: const Color(0xFFEEE8FC),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
@@ -322,18 +321,18 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
-                          elevation: 0.0,
+                          elevation: 0,
                           borderSide: const BorderSide(
                             color: Colors.transparent,
-                            width: 0.0,
+                            width: 0,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
                     ],
                   ),
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(const SizedBox(height: 12)),
             ),
           ),
         );

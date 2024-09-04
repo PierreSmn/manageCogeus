@@ -234,6 +234,8 @@ dynamic deserializeParam<T>(
             return UnSelectedRow(data);
           case SubmissionsRow:
             return SubmissionsRow(data);
+          case TagsRow:
+            return TagsRow(data);
           case SelectionsRow:
             return SelectionsRow(data);
           case WebAppActivationsRow:

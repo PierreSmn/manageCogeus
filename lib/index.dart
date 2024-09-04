@@ -22,3 +22,4 @@ export '/integrations/host_library_copy/host_library_copy_widget.dart'
     show HostLibraryCopyWidget;
 export '/trois_pages/retours_a_trier/retours_a_trier_widget.dart'
     show RetoursATrierWidget;
+export '/trois_pages/tags/tags_widget.dart' show TagsWidget;

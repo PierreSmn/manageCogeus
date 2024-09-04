@@ -82,7 +82,7 @@ class _SigninWidgetState extends State<SigninWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -110,11 +110,11 @@ class _SigninWidgetState extends State<SigninWidget>
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50.0,
+                  size: 50,
                 ),
               ),
             ),
@@ -142,13 +142,13 @@ class _SigninWidgetState extends State<SigninWidget>
                       Expanded(
                         flex: 8,
                         child: Container(
-                          width: 100.0,
+                          width: 100,
                           height: double.infinity,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0, -1),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -156,23 +156,22 @@ class _SigninWidgetState extends State<SigninWidget>
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 20.0, 0.0, 0.0),
+                                      20, 20, 0, 0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(16.0),
-                                        bottomRight: Radius.circular(16.0),
-                                        topLeft: Radius.circular(0.0),
-                                        topRight: Radius.circular(0.0),
+                                        bottomLeft: Radius.circular(16),
+                                        bottomRight: Radius.circular(16),
+                                        topLeft: Radius.circular(0),
+                                        topRight: Radius.circular(0),
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1, 0),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                      alignment: const AlignmentDirectional(-1, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -182,11 +181,11 @@ class _SigninWidgetState extends State<SigninWidget>
                                         children: [
                                           ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                             child: Image.network(
                                               'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
-                                              width: 130.0,
-                                              height: 100.0,
+                                              width: 130,
+                                              height: 100,
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -198,15 +197,15 @@ class _SigninWidgetState extends State<SigninWidget>
                                 Container(
                                   width: double.infinity,
                                   constraints: const BoxConstraints(
-                                    maxWidth: 579.0,
+                                    maxWidth: 579,
                                   ),
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).revoWhite,
-                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderRadius: BorderRadius.circular(16),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(24.0),
+                                    padding: const EdgeInsets.all(24),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -228,14 +227,13 @@ class _SigninWidgetState extends State<SigninWidget>
                                           ],
                                         ),
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(0, 0),
                                           child: Form(
                                             key: _model.formKey,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Padding(
-                                              padding: const EdgeInsets.all(12.0),
+                                              padding: const EdgeInsets.all(12),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -244,8 +242,8 @@ class _SigninWidgetState extends State<SigninWidget>
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 16),
                                                     child: SizedBox(
                                                       width: double.infinity,
                                                       child:
@@ -289,7 +287,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                 const TextStyle(),
                                                             textHighlightStyle:
                                                                 const TextStyle(),
-                                                            elevation: 4.0,
+                                                            elevation: 4,
                                                             optionBackgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -298,14 +296,14 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                            maxHeight: 200.0,
+                                                            maxHeight: 200,
                                                           );
                                                         },
                                                         onSelected:
                                                             (String selection) {
-                                                          setState(() => _model
-                                                                  .emailSelectedOption =
-                                                              selection);
+                                                          safeSetState(() =>
+                                                              _model.emailSelectedOption =
+                                                                  selection);
                                                           FocusScope.of(context)
                                                               .unfocus();
                                                         },
@@ -357,12 +355,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                     const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedBorder:
                                                                   OutlineInputBorder(
@@ -371,12 +369,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               errorBorder:
                                                                   OutlineInputBorder(
@@ -385,12 +383,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
@@ -399,12 +397,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               filled: true,
                                                               fillColor: FlutterFlowTheme
@@ -412,8 +410,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   .revoSearchBarBg,
                                                               contentPadding:
                                                                   const EdgeInsets
-                                                                      .all(
-                                                                          16.0),
+                                                                      .all(16),
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -424,8 +421,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
-                                                                  fontSize:
-                                                                      15.0,
+                                                                  fontSize: 15,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -444,8 +440,8 @@ class _SigninWidgetState extends State<SigninWidget>
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 16),
                                                     child: SizedBox(
                                                       width: double.infinity,
                                                       child:
@@ -497,7 +493,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                     ),
                                                             textHighlightStyle:
                                                                 const TextStyle(),
-                                                            elevation: 4.0,
+                                                            elevation: 4,
                                                             optionBackgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -506,14 +502,14 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                            maxHeight: 200.0,
+                                                            maxHeight: 200,
                                                           );
                                                         },
                                                         onSelected:
                                                             (String selection) {
-                                                          setState(() => _model
-                                                                  .passwordSelectedOption =
-                                                              selection);
+                                                          safeSetState(() =>
+                                                              _model.passwordSelectedOption =
+                                                                  selection);
                                                           FocusScope.of(context)
                                                               .unfocus();
                                                         },
@@ -566,12 +562,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                     const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedBorder:
                                                                   OutlineInputBorder(
@@ -580,12 +576,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               errorBorder:
                                                                   OutlineInputBorder(
@@ -594,12 +590,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
@@ -608,12 +604,12 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  width: 2.0,
+                                                                  width: 2,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            40),
                                                               ),
                                                               filled: true,
                                                               fillColor: FlutterFlowTheme
@@ -621,12 +617,11 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   .revoSearchBarBg,
                                                               contentPadding:
                                                                   const EdgeInsets
-                                                                      .all(
-                                                                          16.0),
+                                                                      .all(16),
                                                               suffixIcon:
                                                                   InkWell(
                                                                 onTap: () =>
-                                                                    setState(
+                                                                    safeSetState(
                                                                   () => _model
                                                                           .passwordVisibility =
                                                                       !_model
@@ -644,7 +639,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .revoSearchIconColor,
-                                                                  size: 22.0,
+                                                                  size: 22,
                                                                 ),
                                                               ),
                                                             ),
@@ -657,8 +652,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
-                                                                  fontSize:
-                                                                      15.0,
+                                                                  fontSize: 15,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -681,18 +675,17 @@ class _SigninWidgetState extends State<SigninWidget>
                                           ),
                                         ),
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(0, 0),
                                           child: MouseRegion(
                                             opaque: false,
                                             cursor: MouseCursor.defer ??
                                                 MouseCursor.defer,
                                             onEnter: ((event) async {
-                                              setState(() => _model
+                                              safeSetState(() => _model
                                                   .mouseRegionHovered = true);
                                             }),
                                             onExit: ((event) async {
-                                              setState(() => _model
+                                              safeSetState(() => _model
                                                   .mouseRegionHovered = false);
                                             }),
                                             child: Column(
@@ -758,7 +751,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                             signinUsersRow?.companyName == '')
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0, 0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 GoRouter.of(context)
@@ -776,22 +769,20 @@ class _SigninWidgetState extends State<SigninWidget>
                                                   return;
                                                 }
 
-                                                setState(() => _model
+                                                safeSetState(() => _model
                                                     .requestCompleter = null);
                                                 await _model
                                                     .waitForRequestCompleted();
                                               },
                                               text: 'Connexion',
                                               options: FFButtonOptions(
-                                                width: 230.0,
-                                                height: 40.0,
+                                                width: 230,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFEEE8FC),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -804,13 +795,13 @@ class _SigninWidgetState extends State<SigninWidget>
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
@@ -819,10 +810,10 @@ class _SigninWidgetState extends State<SigninWidget>
                                             signinUsersRow?.companyName != '')
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0, 0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                setState(() => _model
+                                                safeSetState(() => _model
                                                     .requestCompleter = null);
                                                 await _model
                                                     .waitForRequestCompleted();
@@ -851,15 +842,13 @@ class _SigninWidgetState extends State<SigninWidget>
                                               },
                                               text: 'Connexion',
                                               options: FFButtonOptions(
-                                                width: 230.0,
-                                                height: 40.0,
+                                                width: 230,
+                                                height: 40,
                                                 padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
                                                     const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color: const Color(0xFFEAFCE8),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -872,17 +861,17 @@ class _SigninWidgetState extends State<SigninWidget>
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
-                                                elevation: 0.0,
+                                                elevation: 0,
                                                 borderSide: const BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 0.0,
+                                                  width: 0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(16.0),
+                                                    BorderRadius.circular(16),
                                               ),
                                             ),
                                           ),
-                                      ].divide(const SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 8)),
                                     ),
                                   ),
                                 ),

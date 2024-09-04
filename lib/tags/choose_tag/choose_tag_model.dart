@@ -1,26 +1,19 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/navbarnav/navbarnav_widget.dart';
+import 'choose_tag_widget.dart' show ChooseTagWidget;
 import 'dart:async';
-import 'harvesters_widget.dart' show HarvestersWidget;
 import 'package:flutter/material.dart';
 
-class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
-  ///  State fields for stateful widgets in this page.
+class ChooseTagModel extends FlutterFlowModel<ChooseTagWidget> {
+  ///  State fields for stateful widgets in this component.
 
-  // Model for navbarnav component.
-  late NavbarnavModel navbarnavModel;
-  Completer<List<LiveFlowsRow>>? requestCompleter;
+  Completer<List<TagsRow>>? requestCompleter;
 
   @override
-  void initState(BuildContext context) {
-    navbarnavModel = createModel(context, () => NavbarnavModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    navbarnavModel.dispose();
-  }
+  void dispose() {}
 
   /// Additional helper methods.
   Future waitForRequestCompleted({

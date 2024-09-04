@@ -33,7 +33,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
     super.initState();
     _model = createModel(context, () => CreationChoiceModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,13 +46,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width * 1.0,
+      width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoWhite,
-        borderRadius: BorderRadius.circular(16.0),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +63,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Manrope',
                     color: FlutterFlowTheme.of(context).revoCardTextColor,
-                    fontSize: 40.0,
+                    fontSize: 40,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -75,8 +75,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -90,7 +89,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 _model.vidsby3 = true;
-                                setState(() {});
+                                safeSetState(() {});
                               },
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -98,13 +97,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 30.0),
+                                        0, 0, 0, 30),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 50,
+                                          height: 50,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -112,12 +111,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(100.0),
+                                                BorderRadius.circular(100),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 50,
+                                          height: 50,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -125,12 +124,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(100.0),
+                                                BorderRadius.circular(100),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 50.0,
+                                          width: 50,
+                                          height: 50,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -138,10 +137,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(100.0),
+                                                BorderRadius.circular(100),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(const SizedBox(width: 6)),
                                     ),
                                   ),
                                   Text(
@@ -156,7 +155,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
-                                ].divide(const SizedBox(height: 16.0)),
+                                ].divide(const SizedBox(height: 16)),
                               ),
                             ),
                             if (widget.assets! < 5)
@@ -167,7 +166,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   _model.vidsby3 = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -177,8 +176,8 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -186,12 +185,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -199,12 +198,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -212,12 +211,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -225,12 +224,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                         Container(
-                                          width: 50.0,
-                                          height: 100.0,
+                                          width: 50,
+                                          height: 100,
                                           decoration: BoxDecoration(
                                             color: _model.vidsby3
                                                 ? FlutterFlowTheme.of(context)
@@ -238,10 +237,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 : FlutterFlowTheme.of(context)
                                                     .alternate,
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(const SizedBox(width: 6)),
                                     ),
                                     Text(
                                       'Carousel',
@@ -255,10 +254,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                             fontWeight: FontWeight.w500,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(const SizedBox(height: 16)),
                                 ),
                               ),
-                          ].divide(const SizedBox(width: 50.0)),
+                          ].divide(const SizedBox(width: 50)),
                         ),
                       ),
                     ),
@@ -276,11 +275,11 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                alignment: const AlignmentDirectional(0, 0)
                                     .resolve(Directionality.of(context)),
                                 child: const SizedBox(
-                                  height: 790.0,
-                                  width: 770.0,
+                                  height: 790,
+                                  width: 770,
                                   child: AddStoryWidget(),
                                 ),
                               );
@@ -296,11 +295,11 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                alignment: const AlignmentDirectional(0, 0)
                                     .resolve(Directionality.of(context)),
                                 child: const SizedBox(
-                                  height: 800.0,
-                                  width: 1280.0,
+                                  height: 800,
+                                  width: 1280,
                                   child: AddIntegrationWidget(),
                                 ),
                               );
@@ -310,11 +309,9 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                       },
                       text: 'Commencer',
                       options: FFButtonOptions(
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        height: 40,
+                        padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                         color: const Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -323,18 +320,18 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
-                        elevation: 0.0,
+                        elevation: 0,
                         borderSide: const BorderSide(
-                          width: 0.0,
+                          width: 0,
                         ),
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-          ].divide(const SizedBox(height: 12.0)),
+          ].divide(const SizedBox(height: 12)),
         ),
       ),
     );

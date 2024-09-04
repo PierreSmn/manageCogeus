@@ -236,105 +236,105 @@ class ThemeTypography extends Typography {
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 64.0,
+        fontSize: 64,
       );
   String get displayMediumFamily => 'Inter';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 44.0,
+        fontSize: 44,
       );
   String get displaySmallFamily => 'Inter';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 36.0,
+        fontSize: 36,
       );
   String get headlineLargeFamily => 'Inter';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
-        fontSize: 32.0,
+        fontSize: 32,
       );
   String get headlineMediumFamily => 'Inter';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get headlineSmallFamily => 'Inter';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get titleLargeFamily => 'Inter';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Inter',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 22.0,
+        fontSize: 22,
       );
   String get titleMediumFamily => 'Manrope';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Manrope',
         color: theme.info,
         fontWeight: FontWeight.normal,
-        fontSize: 18.0,
+        fontSize: 18,
       );
   String get titleSmallFamily => 'Manrope';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Manrope',
         color: theme.info,
         fontWeight: FontWeight.w500,
-        fontSize: 16.0,
+        fontSize: 16,
       );
   String get labelLargeFamily => 'Manrope';
   TextStyle get labelLarge => GoogleFonts.getFont(
         'Manrope',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 16.0,
+        fontSize: 16,
       );
   String get labelMediumFamily => 'Manrope';
   TextStyle get labelMedium => GoogleFonts.getFont(
         'Manrope',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get labelSmallFamily => 'Manrope';
   TextStyle get labelSmall => GoogleFonts.getFont(
         'Manrope',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodyLargeFamily => 'Manrope';
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Manrope',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 16.0,
+        fontSize: 16,
       );
   String get bodyMediumFamily => 'Manrope';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Manrope',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get bodySmallFamily => 'Manrope';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Manrope',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
 }
 

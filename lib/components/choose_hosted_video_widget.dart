@@ -30,7 +30,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
     super.initState();
     _model = createModel(context, () => ChooseHostedVideoModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -58,11 +58,11 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: 50,
+              height: 50,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50.0,
+                size: 50,
               ),
             ),
           );
@@ -74,7 +74,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
           height: double.infinity,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoBG,
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(16),
           ),
           child: SingleChildScrollView(
             child: Column(
@@ -85,8 +85,8 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                     final videos = containerHostedSubsRowList.toList();
 
                     return Wrap(
-                      spacing: 16.0,
-                      runSpacing: 16.0,
+                      spacing: 16,
+                      runSpacing: 16,
                       alignment: WrapAlignment.start,
                       crossAxisAlignment: WrapCrossAlignment.start,
                       direction: Axis.horizontal,
@@ -96,25 +96,25 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                       children: List.generate(videos.length, (videosIndex) {
                         final videosItem = videos[videosIndex];
                         return Container(
-                          width: 180.0,
-                          height: 380.0,
+                          width: 180,
+                          height: 380,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).revoWhite,
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 16.0, 0.0, 0.0),
+                            padding:
+                                const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.network(
                                     videosItem.thumbnail!,
                                     width: double.infinity,
-                                    height: 280.0,
+                                    height: 280,
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -124,7 +124,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 8.0),
+                                          0, 8, 0, 8),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -145,21 +145,20 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                                 : () async {
                                                     FFAppState().choiceID =
                                                         videosItem.id;
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                     Navigator.pop(context);
                                                   },
                                             text: 'Choose',
                                             icon: const Icon(
                                               Icons.check_circle,
-                                              size: 15.0,
+                                              size: 15,
                                             ),
                                             options: FFButtonOptions(
-                                              height: 40.0,
+                                              height: 40,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
+                                                  .fromSTEB(24, 0, 24, 0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -170,22 +169,22 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0.0,
+                                              elevation: 0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0.0,
+                                                width: 0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16.0),
+                                                  BorderRadius.circular(16),
                                               disabledColor: const Color(0x7F28174A),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 8.0)),
+                                  ].divide(const SizedBox(width: 8)),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(const SizedBox(height: 12)),
                             ),
                           ),
                         );

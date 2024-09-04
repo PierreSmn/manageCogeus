@@ -53,4 +53,7 @@ class ValidSubsRow extends SupabaseDataRow {
 
   String? get playbackId => getField<String>('playback_id');
   set playbackId(String? value) => setField<String>('playback_id', value);
+
+  int? get tag => getField<int>('tag');
+  set tag(int? value) => setField<int>('tag', value);
 }

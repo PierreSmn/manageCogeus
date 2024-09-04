@@ -29,7 +29,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
     super.initState();
     _model = createModel(context, () => HostLibraryCopyModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,11 +59,11 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50.0,
+                  size: 50,
                 ),
               ),
             ),
@@ -85,14 +85,14 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        height: MediaQuery.sizeOf(context).height * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 1,
                         decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: const NavbarnavWidget(
                                 selectedIndex: 5,
                               ),
@@ -104,7 +104,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 32.0, 0.0, 20.0),
+                                      0, 32, 0, 20),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +113,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            100.0, 0.0, 100.0, 0.0),
+                                            100, 0, 100, 0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -128,24 +128,20 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                 Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .revoWhite,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            16.0),
+                                                            16),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                16.0,
-                                                                28.0,
-                                                                16.0,
-                                                                16.0),
+                                                                16, 28, 16, 16),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -167,7 +163,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
-                                                                fontSize: 40.0,
+                                                                fontSize: 40,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -175,12 +171,12 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                         .w600,
                                                               ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 12.0)),
+                                                      ].divide(
+                                                          const SizedBox(height: 12)),
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(const SizedBox(height: 24.0)),
+                                              ].divide(const SizedBox(height: 24)),
                                             ),
                                           ),
                                         ),
@@ -208,11 +204,8 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 16,
+                                                                    0, 0),
                                                         child:
                                                             SingleChildScrollView(
                                                           child: Column(
@@ -234,10 +227,9 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                           .toList();
 
                                                                   return Wrap(
-                                                                    spacing:
-                                                                        16.0,
+                                                                    spacing: 16,
                                                                     runSpacing:
-                                                                        16.0,
+                                                                        16,
                                                                     alignment:
                                                                         WrapAlignment
                                                                             .start,
@@ -263,23 +255,23 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                               singularHostedVideosIndex];
                                                                       return Container(
                                                                         width:
-                                                                            250.0,
+                                                                            250,
                                                                         height:
-                                                                            410.0,
+                                                                            410,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).revoWhite,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(16.0),
+                                                                              BorderRadius.circular(16),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              16.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              16,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               SingleChildScrollView(
                                                                             child:
@@ -304,16 +296,16 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                                 context: context,
                                                                                                 isGlobal: false,
                                                                                                 avoidOverflow: false,
-                                                                                                targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                targetAnchor: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                                followerAnchor: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
                                                                                                 builder: (dialogContext) {
                                                                                                   return Material(
                                                                                                     color: Colors.transparent,
                                                                                                     child: GestureDetector(
                                                                                                       onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                       child: SizedBox(
-                                                                                                        height: 680.0,
-                                                                                                        width: 330.0,
+                                                                                                        height: 680,
+                                                                                                        width: 330,
                                                                                                         child: PlayVideoWidget(
                                                                                                           videoAdress: singularHostedVideosItem.mediaLink!,
                                                                                                         ),
@@ -324,11 +316,11 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                               );
                                                                                             },
                                                                                             child: ClipRRect(
-                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              borderRadius: BorderRadius.circular(8),
                                                                                               child: Image.network(
                                                                                                 'https://image.mux.com/${singularHostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
-                                                                                                width: 240.0,
-                                                                                                height: 230.0,
+                                                                                                width: 240,
+                                                                                                height: 230,
                                                                                                 fit: BoxFit.cover,
                                                                                               ),
                                                                                             ),
@@ -339,9 +331,9 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                                                                                   child: Container(
-                                                                                    width: 140.0,
+                                                                                    width: 140,
                                                                                     decoration: const BoxDecoration(),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
@@ -389,25 +381,25 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                           );
                                                                                         }
 
-                                                                                        setState(() {});
+                                                                                        safeSetState(() {});
                                                                                       },
                                                                                       text: 'Request Data',
                                                                                       options: FFButtonOptions(
-                                                                                        height: 40.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        height: 40,
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'Manrope',
                                                                                               color: Colors.white,
                                                                                               letterSpacing: 0.0,
                                                                                             ),
-                                                                                        elevation: 3.0,
+                                                                                        elevation: 3,
                                                                                         borderSide: const BorderSide(
                                                                                           color: Colors.transparent,
-                                                                                          width: 1.0,
+                                                                                          width: 1,
                                                                                         ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                        borderRadius: BorderRadius.circular(8),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -431,11 +423,11 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                     if (!snapshot.hasData) {
                                                                                       return Center(
                                                                                         child: SizedBox(
-                                                                                          width: 50.0,
-                                                                                          height: 50.0,
+                                                                                          width: 50,
+                                                                                          height: 50,
                                                                                           child: SpinKitRing(
                                                                                             color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 50.0,
+                                                                                            size: 50,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -456,7 +448,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                     );
                                                                                   },
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                              ].divide(const SizedBox(height: 12)),
                                                                             ),
                                                                           ),
                                                                         ),

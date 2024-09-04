@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 class TriageModel extends FlutterFlowModel<TriageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   // State field(s) for PageView widget.

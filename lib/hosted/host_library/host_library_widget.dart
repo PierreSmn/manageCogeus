@@ -32,7 +32,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
     super.initState();
     _model = createModel(context, () => HostLibraryModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -62,11 +62,11 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50.0,
-                height: 50.0,
+                width: 50,
+                height: 50,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50.0,
+                  size: 50,
                 ),
               ),
             ),
@@ -88,14 +88,14 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        height: MediaQuery.sizeOf(context).height * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 1,
                         decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: const NavbarnavWidget(
                                 selectedIndex: 5,
                               ),
@@ -107,7 +107,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 32.0, 0.0, 20.0),
+                                      0, 32, 0, 20),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +116,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            50.0, 0.0, 50.0, 0.0),
+                                            50, 0, 50, 0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -131,24 +131,20 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                 Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .revoWhite,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            16.0),
+                                                            16),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                16.0,
-                                                                28.0,
-                                                                16.0,
-                                                                16.0),
+                                                                16, 28, 16, 16),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -170,7 +166,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
-                                                                fontSize: 40.0,
+                                                                fontSize: 40,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -185,22 +181,22 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                               MouseCursor.defer,
                                                           onEnter:
                                                               ((event) async {
-                                                            setState(() => _model
-                                                                    .mouseRegionHovered =
-                                                                true);
+                                                            safeSetState(() =>
+                                                                _model.mouseRegionHovered =
+                                                                    true);
                                                           }),
                                                           onExit:
                                                               ((event) async {
-                                                            setState(() => _model
-                                                                    .mouseRegionHovered =
-                                                                false);
+                                                            safeSetState(() =>
+                                                                _model.mouseRegionHovered =
+                                                                    false);
                                                           }),
                                                           child: FFButtonWidget(
                                                             onPressed:
                                                                 () async {
                                                               var shouldSetState =
                                                                   false;
-                                                              setState(() {
+                                                              safeSetState(() {
                                                                 _model.isDataUploading =
                                                                     false;
                                                                 _model.uploadedLocalFile =
@@ -228,7 +224,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                       validateFileFormat(
                                                                           m.storagePath,
                                                                           context))) {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.isDataUploading =
                                                                         true);
                                                                 var selectedUploadedFiles =
@@ -268,7 +264,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                             .length ==
                                                                         selectedMedia
                                                                             .length) {
-                                                                  setState(() {
+                                                                  safeSetState(
+                                                                      () {
                                                                     _model.uploadedLocalFile =
                                                                         selectedUploadedFiles
                                                                             .first;
@@ -277,7 +274,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                             .first;
                                                                   });
                                                                 } else {
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                   return;
                                                                 }
@@ -286,7 +283,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                               if (!(_model.uploadedFileUrl !=
                                                                       '')) {
                                                                 if (shouldSetState) {
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 }
                                                                 return;
@@ -344,7 +341,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                 });
                                                               }
                                                               if (shouldSetState) {
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                             },
                                                             text:
@@ -352,25 +350,25 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                             icon: const Icon(
                                                               Icons
                                                                   .upload_rounded,
-                                                              size: 15.0,
+                                                              size: 15,
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              height: 40.0,
+                                                              height: 40,
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
+                                                                          24,
+                                                                          0,
+                                                                          24,
+                                                                          0),
                                                               iconPadding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               color: const Color(
                                                                   0xFFEEE8FC),
                                                               textStyle:
@@ -387,26 +385,26 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                         fontWeight:
                                                                             FontWeight.w600,
                                                                       ),
-                                                              elevation: 0.0,
+                                                              elevation: 0,
                                                               borderSide:
                                                                   const BorderSide(
                                                                 color: Colors
                                                                     .transparent,
-                                                                width: 0.0,
+                                                                width: 0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          16.0),
+                                                                          16),
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
-                                                          height: 12.0)),
+                                                      ].divide(
+                                                          const SizedBox(height: 12)),
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(const SizedBox(height: 24.0)),
+                                              ].divide(const SizedBox(height: 24)),
                                             ),
                                           ),
                                         ),
@@ -415,7 +413,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  50.0, 0.0, 50.0, 0.0),
+                                                  50, 0, 50, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -440,11 +438,8 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                         child: Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      12.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      12, 0, 0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -467,9 +462,9 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
 
                                                                     return Wrap(
                                                                       spacing:
-                                                                          16.0,
+                                                                          16,
                                                                       runSpacing:
-                                                                          8.0,
+                                                                          8,
                                                                       alignment:
                                                                           WrapAlignment
                                                                               .start,
@@ -494,15 +489,15 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                             hostedVideos[hostedVideosIndex];
                                                                         return Container(
                                                                           width:
-                                                                              MediaQuery.sizeOf(context).width * 1.0,
+                                                                              MediaQuery.sizeOf(context).width,
                                                                           height:
-                                                                              98.0,
+                                                                              98,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).revoWhite,
                                                                             borderRadius:
-                                                                                BorderRadius.circular(4.0),
+                                                                                BorderRadius.circular(4),
                                                                           ),
                                                                           child:
                                                                               Row(
@@ -516,7 +511,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                 child: Container(
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).tertiary,
-                                                                                    borderRadius: BorderRadius.circular(0.0),
+                                                                                    borderRadius: BorderRadius.circular(0),
                                                                                   ),
                                                                                   child: Builder(
                                                                                     builder: (context) => InkWell(
@@ -529,16 +524,16 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                           context: context,
                                                                                           isGlobal: false,
                                                                                           avoidOverflow: false,
-                                                                                          targetAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          followerAnchor: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          targetAnchor: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                          followerAnchor: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
                                                                                           builder: (dialogContext) {
                                                                                             return Material(
                                                                                               color: Colors.transparent,
                                                                                               child: GestureDetector(
                                                                                                 onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                 child: SizedBox(
-                                                                                                  height: 680.0,
-                                                                                                  width: 330.0,
+                                                                                                  height: 680,
+                                                                                                  width: 330,
                                                                                                   child: PlayVideoWidget(
                                                                                                     videoAdress: hostedVideosItem.mediaLink!,
                                                                                                   ),
@@ -549,11 +544,11 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                         );
                                                                                       },
                                                                                       child: ClipRRect(
-                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                        borderRadius: BorderRadius.circular(8),
                                                                                         child: Image.network(
                                                                                           'https://image.mux.com/${hostedVideosItem.playbackId}/thumbnail.png?width=240&height=330&time=5',
-                                                                                          width: 140.0,
-                                                                                          height: 80.0,
+                                                                                          width: 140,
+                                                                                          height: 80,
                                                                                           fit: BoxFit.contain,
                                                                                         ),
                                                                                       ),
@@ -563,9 +558,9 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                               ),
                                                                               Flexible(
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                                                                                   child: Container(
-                                                                                    width: 140.0,
+                                                                                    width: 140,
                                                                                     decoration: const BoxDecoration(),
                                                                                     child: Builder(
                                                                                       builder: (context) => FFButtonWidget(
@@ -577,12 +572,12 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
                                                                                                 child: GestureDetector(
                                                                                                   onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                   child: SizedBox(
-                                                                                                    height: 275.0,
-                                                                                                    width: 400.0,
+                                                                                                    height: 275,
+                                                                                                    width: 400,
                                                                                                     child: EraseAssetWidget(
                                                                                                       assetID: hostedVideosItem.id,
                                                                                                     ),
@@ -594,9 +589,9 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                         },
                                                                                         text: 'Effacer l\'asset',
                                                                                         options: FFButtonOptions(
-                                                                                          height: 40.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          height: 40,
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                           color: const Color(0xFFEEE8FC),
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: 'Manrope',
@@ -604,19 +599,19 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
-                                                                                          elevation: 0.0,
+                                                                                          elevation: 0,
                                                                                           borderSide: const BorderSide(
                                                                                             color: Colors.transparent,
-                                                                                            width: 0.0,
+                                                                                            width: 0,
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                          borderRadius: BorderRadius.circular(16),
                                                                                         ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(width: 16.0)).addToStart(const SizedBox(width: 12.0)),
+                                                                            ].divide(const SizedBox(width: 16)).addToStart(const SizedBox(width: 12)),
                                                                           ),
                                                                         );
                                                                       }),

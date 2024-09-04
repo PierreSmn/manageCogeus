@@ -1,29 +1,45 @@
-import '/backend/supabase/supabase.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
-import 'harvesters_widget.dart' show HarvestersWidget;
+import 'tags_widget.dart' show TagsWidget;
 import 'package:flutter/material.dart';
 
-class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
+class TagsModel extends FlutterFlowModel<TagsWidget> {
+  ///  Local state fields for this page.
+
+  int? pageselect = 0;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
-  Completer<List<LiveFlowsRow>>? requestCompleter;
+  // State field(s) for Column widget.
+  ScrollController? columnController1;
+  // State field(s) for Column widget.
+  ScrollController? columnController2;
+  // State field(s) for scroll1 widget.
+  ScrollController? scroll1;
+  Completer<ApiCallResponse>? apiRequestCompleter;
 
   @override
   void initState(BuildContext context) {
     navbarnavModel = createModel(context, () => NavbarnavModel());
+    columnController1 = ScrollController();
+    columnController2 = ScrollController();
+    scroll1 = ScrollController();
   }
 
   @override
   void dispose() {
     navbarnavModel.dispose();
+    columnController1?.dispose();
+    columnController2?.dispose();
+    scroll1?.dispose();
   }
 
   /// Additional helper methods.
-  Future waitForRequestCompleted({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -31,7 +47,7 @@ class HarvestersModel extends FlutterFlowModel<HarvestersWidget> {
     while (true) {
       await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
