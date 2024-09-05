@@ -69,11 +69,11 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50,
+                size: 50.0,
               ),
             ),
           );
@@ -81,13 +81,13 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
         List<ListsRow> containerListsRowList = snapshot.data!;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width,
+          width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -98,7 +98,7 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 36,
+                        fontSize: 36.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -161,7 +161,8 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
                         safeSetState(() => _model.mouseRegionHovered = false);
                       }),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             var shouldSetState = false;
@@ -200,14 +201,14 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
                           text: 'Ajouter',
                           icon: const Icon(
                             Icons.add,
-                            size: 15,
+                            size: 15.0,
                           ),
                           options: FFButtonOptions(
-                            height: 40,
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                            iconPadding:
-                                const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: _model.mouseRegionHovered
                                 ? FlutterFlowTheme.of(context).buttonRevHover
                                 : FlutterFlowTheme.of(context).buttonRevBG,
@@ -219,19 +220,19 @@ class _AddtolistWidgetState extends State<AddtolistWidget> {
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                 ),
-                            elevation: 0,
+                            elevation: 0.0,
                             borderSide: const BorderSide(
                               color: Colors.transparent,
-                              width: 0,
+                              width: 0.0,
                             ),
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ].divide(const SizedBox(height: 12)),
+              ].divide(const SizedBox(height: 12.0)),
             ),
           ),
         );

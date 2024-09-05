@@ -42,20 +42,20 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
+      width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoWhite,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -65,13 +65,14 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Manrope',
                           color: FlutterFlowTheme.of(context).revoCardTextColor,
-                          fontSize: 30,
+                          fontSize: 30.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       'Une mise à jour de la dashboard Cogeus a été faite. Rechargez la page pour en profiter.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -103,29 +104,29 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
               text: 'Recharger la page',
               icon: const Icon(
                 Icons.replay,
-                size: 15,
+                size: 15.0,
               ),
               options: FFButtonOptions(
-                height: 60,
-                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                height: 60.0,
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: const Color(0xFFEEE8FC),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Manrope',
                       color: const Color(0xFF5E35B1),
-                      fontSize: 18,
+                      fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
                     ),
-                elevation: 0,
+                elevation: 0.0,
                 borderSide: const BorderSide(
                   color: Colors.transparent,
-                  width: 0,
+                  width: 0.0,
                 ),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.0),
               ),
             ),
-          ].divide(const SizedBox(height: 12)),
+          ].divide(const SizedBox(height: 12.0)),
         ),
       ),
     );

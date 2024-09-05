@@ -61,11 +61,11 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50,
+                size: 50.0,
               ),
             ),
           );
@@ -73,10 +73,10 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
         List<TagsRow> loadTagsTagsRowList = snapshot.data!;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width,
+          width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.0),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -87,7 +87,7 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Manrope',
                       color: FlutterFlowTheme.of(context).revoCardTextColor,
-                      fontSize: 26,
+                      fontSize: 26.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w600,
                     ),
@@ -102,11 +102,11 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                           elevation: 0,
                           insetPadding: EdgeInsets.zero,
                           backgroundColor: Colors.transparent,
-                          alignment: const AlignmentDirectional(0, 0)
+                          alignment: const AlignmentDirectional(0.0, 0.0)
                               .resolve(Directionality.of(context)),
                           child: const SizedBox(
-                            height: 250,
-                            width: 250,
+                            height: 250.0,
+                            width: 250.0,
                             child: CreateTagWidget(),
                           ),
                         );
@@ -119,12 +119,14 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                   text: 'Nouveau Tag',
                   icon: const Icon(
                     Icons.add,
-                    size: 15,
+                    size: 15.0,
                   ),
                   options: FFButtonOptions(
-                    height: 40,
-                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    height: 40.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: const Color(0xFFEEE8FC),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Manrope',
@@ -132,17 +134,17 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                         ),
-                    elevation: 0,
+                    elevation: 0.0,
                     borderSide: const BorderSide(
                       color: Colors.transparent,
-                      width: 0,
+                      width: 0.0,
                     ),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                 child: Builder(
                   builder: (context) {
                     final tags = loadTagsTagsRowList.toList();
@@ -165,16 +167,16 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                               Navigator.pop(context);
                             },
                             child: Container(
-                              width: 217,
-                              height: 39,
+                              width: 217.0,
+                              height: 39.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Padding(
-                                padding:
-                                    const EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -191,7 +193,7 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                                             fontFamily: 'Manrope',
                                             color: FlutterFlowTheme.of(context)
                                                 .revoCardTextColor,
-                                            fontSize: 18,
+                                            fontSize: 18.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -199,14 +201,14 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                                     Builder(
                                       builder: (context) =>
                                           FlutterFlowIconButton(
-                                        borderRadius: 18,
-                                        borderWidth: 1,
-                                        buttonSize: 40,
+                                        borderRadius: 18.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 40.0,
                                         icon: Icon(
                                           Icons.mode,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 19,
+                                          size: 19.0,
                                         ),
                                         onPressed: () async {
                                           await showDialog(
@@ -217,14 +219,13 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,
-                                                alignment:
-                                                    const AlignmentDirectional(0, 0)
-                                                        .resolve(
-                                                            Directionality.of(
-                                                                context)),
+                                                alignment: const AlignmentDirectional(
+                                                        0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
                                                 child: SizedBox(
-                                                  height: 250,
-                                                  width: 250,
+                                                  height: 250.0,
+                                                  width: 250.0,
                                                   child: ModifyTagWidget(
                                                     tagId: tagsItem.id,
                                                   ),
@@ -245,14 +246,14 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                               ),
                             ),
                           );
-                        }).divide(const SizedBox(height: 12)),
+                        }).divide(const SizedBox(height: 12.0)),
                       ),
                     );
                   },
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 28),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 28.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -264,11 +265,11 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                     Navigator.pop(context);
                   },
                   child: Container(
-                    width: 217,
-                    height: 39,
+                    width: 217.0,
+                    height: 39.0,
                     decoration: BoxDecoration(
                       color: const Color(0xFFF8F8F8),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -281,7 +282,7 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                                     fontFamily: 'Manrope',
                                     color: FlutterFlowTheme.of(context)
                                         .revoCardTextColor,
-                                    fontSize: 18,
+                                    fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -292,9 +293,9 @@ class _ChooseTagWidgetState extends State<ChooseTagWidget> {
                 ),
               ),
             ]
-                .divide(const SizedBox(height: 12))
-                .addToStart(const SizedBox(height: 28))
-                .addToEnd(const SizedBox(height: 28)),
+                .divide(const SizedBox(height: 12.0))
+                .addToStart(const SizedBox(height: 28.0))
+                .addToEnd(const SizedBox(height: 28.0)),
           ),
         );
       },

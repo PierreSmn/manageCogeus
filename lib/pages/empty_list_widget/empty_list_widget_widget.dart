@@ -44,12 +44,12 @@ class _EmptyListWidgetWidgetState extends State<EmptyListWidgetWidget> {
       children: [
         Flexible(
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Text(
               'Pas de nouveau contenu à trier',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Manrope',
-                    fontSize: 44,
+                    fontSize: 44.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
                   ),
@@ -62,10 +62,10 @@ class _EmptyListWidgetWidgetState extends State<EmptyListWidgetWidget> {
           },
           text: 'Retour',
           options: FFButtonOptions(
-            width: 150,
-            height: 40,
-            padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-            iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+            width: 150.0,
+            height: 40.0,
+            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
             color: const Color(0xFFEEE8FC),
             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                   fontFamily: 'Manrope',
@@ -73,15 +73,15 @@ class _EmptyListWidgetWidgetState extends State<EmptyListWidgetWidget> {
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                 ),
-            elevation: 0,
+            elevation: 0.0,
             borderSide: const BorderSide(
               color: Colors.transparent,
-              width: 0,
+              width: 0.0,
             ),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.0),
           ),
         ),
-      ].divide(const SizedBox(height: 24)),
+      ].divide(const SizedBox(height: 24.0)),
     );
   }
 }

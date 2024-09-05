@@ -58,11 +58,11 @@ class _HomeWidgetState extends State<HomeWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50,
+                  size: 50.0,
                 ),
               ),
             ),
@@ -95,11 +95,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 50,
-                                height: 50,
+                                width: 50.0,
+                                height: 50.0,
                                 child: SpinKitRing(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 50,
+                                  size: 50.0,
                                 ),
                               ),
                             );
@@ -108,7 +108,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                               snapshot.data!;
 
                           return Container(
-                            height: MediaQuery.sizeOf(context).height * 1,
+                            height: MediaQuery.sizeOf(context).height * 1.0,
                             decoration: const BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -128,7 +128,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          50, 32, 50, 40),
+                                          50.0, 32.0, 50.0, 40.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -229,12 +229,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16),
+                                                                            const EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -270,9 +270,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 },
                                                                                 text: 'Aller aux webstories',
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: const Color(0xFFEEE8FC),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -280,16 +280,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0,
+                                                                                  elevation: 0.0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0,
+                                                                                    width: 0.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -305,12 +305,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16),
+                                                                            const EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -347,12 +347,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 text: 'Recolter du contenu',
                                                                                 icon: const Icon(
                                                                                   Icons.add,
-                                                                                  size: 15,
+                                                                                  size: 15.0,
                                                                                 ),
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: _model.mouseRegionHovered2 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -360,23 +360,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0,
+                                                                                  elevation: 0.0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0,
+                                                                                    width: 0.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(
-                                                                      const SizedBox(
-                                                                          width:
-                                                                              24)),
+                                                                  ].divide(const SizedBox(
+                                                                      width:
+                                                                          24.0)),
                                                                 ),
                                                                 Row(
                                                                   mainAxisSize:
@@ -395,12 +394,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16),
+                                                                            const EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -426,7 +425,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Manrope',
                                                                                     color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                    fontSize: 40,
+                                                                                    fontSize: 40.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
                                                                                   ),
@@ -446,9 +445,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 },
                                                                                 text: 'Trier',
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: const Color(0xFFEEE8FC),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -456,16 +455,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0,
+                                                                                  elevation: 0.0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0,
+                                                                                    width: 0.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -481,12 +480,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16),
+                                                                            const EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -512,7 +511,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Manrope',
                                                                                     color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                    fontSize: 40,
+                                                                                    fontSize: 40.0,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w600,
                                                                                   ),
@@ -533,12 +532,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 text: 'Voir',
                                                                                 icon: const Icon(
                                                                                   Icons.arrow_right_alt_rounded,
-                                                                                  size: 15,
+                                                                                  size: 15.0,
                                                                                 ),
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  height: 40.0,
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: _model.mouseRegionHovered4 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Manrope',
@@ -546,23 +545,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
-                                                                                  elevation: 0,
+                                                                                  elevation: 0.0,
                                                                                   borderSide: const BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 0,
+                                                                                    width: 0.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16),
+                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(
-                                                                      const SizedBox(
-                                                                          width:
-                                                                              24)),
+                                                                  ].divide(const SizedBox(
+                                                                      width:
+                                                                          24.0)),
                                                                 ),
                                                                 Container(
                                                                   width: MediaQuery.sizeOf(
@@ -576,16 +574,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         .revoWhite,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            16),
+                                                                            16.0),
                                                                   ),
                                                                   child:
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            16,
-                                                                            28,
-                                                                            16,
-                                                                            56),
+                                                                            16.0,
+                                                                            28.0,
+                                                                            16.0,
+                                                                            56.0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -606,7 +604,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               .override(
                                                                                 fontFamily: 'Manrope',
                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                fontSize: 40,
+                                                                                fontSize: 40.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
@@ -624,12 +622,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               ),
                                                                         ),
                                                                       ].divide(const SizedBox(
-                                                                              height: 12)),
+                                                                              height: 12.0)),
                                                                     ),
                                                                   ),
                                                                 ),
                                                               ].divide(const SizedBox(
-                                                                  height: 24)),
+                                                                  height:
+                                                                      24.0)),
                                                             ),
                                                           ),
                                                         ),

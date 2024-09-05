@@ -61,11 +61,11 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50,
+                size: 50.0,
               ),
             ),
           );
@@ -77,13 +77,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
             : null;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width,
+          width: MediaQuery.sizeOf(context).width * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -94,28 +94,29 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 40,
+                        fontSize: 40.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
                 ),
                 if (!FFAppState().integrationCreated)
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 150, 0, 0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).revoSearchBarBg,
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Form(
                             key: _model.formKey,
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
@@ -184,14 +185,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 text: 'Créer',
                                 icon: const Icon(
                                   Icons.add,
-                                  size: 15,
+                                  size: 15.0,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 40,
+                                  height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24, 0, 24, 0),
+                                      24.0, 0.0, 24.0, 0.0),
                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: _model.mouseRegionHovered
                                       ? FlutterFlowTheme.of(context)
                                           .buttonRevHover
@@ -205,18 +206,18 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
-                                  elevation: 0,
+                                  elevation: 0.0,
                                   borderSide: const BorderSide(
                                     color: Colors.transparent,
-                                    width: 0,
+                                    width: 0.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12)),
+                      ].divide(const SizedBox(height: 12.0)),
                     ),
                   ),
                 if (FFAppState().integrationCreated)
@@ -235,8 +236,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 140,
-                                    height: 300,
+                                    width: 140.0,
+                                    height: 300.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
@@ -273,14 +274,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 50,
+                                                      size: 50.0,
                                                     ),
                                                   ),
                                                 );
@@ -300,8 +301,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
                                                 videoType: VideoType.network,
-                                                width: 170,
-                                                height: 300,
+                                                width: 170.0,
+                                                height: 300.0,
                                                 autoPlay: false,
                                                 looping: true,
                                                 showControls: true,
@@ -335,13 +336,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -368,11 +369,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Choisir',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -383,13 +385,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -412,13 +414,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -445,11 +447,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Changer',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -460,13 +463,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -478,8 +481,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 140,
-                                    height: 300,
+                                    width: 140.0,
+                                    height: 300.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
@@ -516,14 +519,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 50,
+                                                      size: 50.0,
                                                     ),
                                                   ),
                                                 );
@@ -543,8 +546,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
                                                 videoType: VideoType.network,
-                                                width: 170,
-                                                height: 300,
+                                                width: 170.0,
+                                                height: 300.0,
                                                 autoPlay: false,
                                                 looping: true,
                                                 showControls: true,
@@ -577,13 +580,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -610,11 +613,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Choisir',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -625,13 +629,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -653,13 +657,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -686,11 +690,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Changer',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -701,13 +706,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -719,8 +724,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 140,
-                                    height: 300,
+                                    width: 140.0,
+                                    height: 300.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
@@ -757,14 +762,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 50,
+                                                      size: 50.0,
                                                     ),
                                                   ),
                                                 );
@@ -784,8 +789,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
                                                 videoType: VideoType.network,
-                                                width: 170,
-                                                height: 300,
+                                                width: 170.0,
+                                                height: 300.0,
                                                 autoPlay: false,
                                                 looping: true,
                                                 showControls: true,
@@ -818,13 +823,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -851,11 +856,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Choisir',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -866,13 +872,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -894,13 +900,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -927,11 +933,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Changer',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -942,13 +949,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -960,8 +967,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 140,
-                                    height: 300,
+                                    width: 140.0,
+                                    height: 300.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
@@ -998,14 +1005,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 50,
+                                                      size: 50.0,
                                                     ),
                                                   ),
                                                 );
@@ -1025,8 +1032,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
                                                 videoType: VideoType.network,
-                                                width: 170,
-                                                height: 300,
+                                                width: 170.0,
+                                                height: 300.0,
                                                 autoPlay: false,
                                                 looping: true,
                                                 showControls: true,
@@ -1059,13 +1066,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -1092,11 +1099,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Choisir',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -1107,13 +1115,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -1135,13 +1143,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -1168,11 +1176,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Changer',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -1183,13 +1192,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -1201,8 +1210,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 140,
-                                    height: 300,
+                                    width: 140.0,
+                                    height: 300.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
@@ -1239,14 +1248,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 50,
+                                                      size: 50.0,
                                                     ),
                                                   ),
                                                 );
@@ -1266,8 +1275,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 path: videoPlayerHostedSubsRow!
                                                     .mediaLink!,
                                                 videoType: VideoType.network,
-                                                width: 170,
-                                                height: 300,
+                                                width: 170.0,
+                                                height: 300.0,
                                                 autoPlay: false,
                                                 looping: true,
                                                 showControls: true,
@@ -1300,13 +1309,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -1333,11 +1342,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Choisir',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -1348,13 +1358,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -1376,13 +1386,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                         Colors.transparent,
                                                     alignment:
                                                         const AlignmentDirectional(
-                                                                0, 0)
+                                                                0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
                                                     child: const SizedBox(
-                                                      height: 500,
-                                                      width: 800,
+                                                      height: 500.0,
+                                                      width: 800.0,
                                                       child:
                                                           ChooseHostedVideoWidget(),
                                                     ),
@@ -1409,11 +1419,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             },
                                             text: 'Changer',
                                             options: FFButtonOptions(
-                                              height: 40,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -1424,13 +1435,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
@@ -1438,11 +1449,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                   ),
                                 ],
                               ),
-                            ].divide(const SizedBox(width: 24)),
+                            ].divide(const SizedBox(width: 24.0)),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 50.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: ((containerIntegrationsRow?.vid1 ==
                                         null) ||
@@ -1456,11 +1468,11 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                   },
                             text: 'Valider',
                             options: FFButtonOptions(
-                              height: 40,
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                              iconPadding:
-                                  const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -1469,12 +1481,12 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
-                              elevation: 3,
+                              elevation: 3.0,
                               borderSide: const BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                               disabledColor: const Color(0xC55E35B1),
                               disabledTextColor: const Color(0x84FFFFFF),
                             ),
@@ -1483,7 +1495,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                       ],
                     ),
                   ),
-              ].divide(const SizedBox(height: 12)),
+              ].divide(const SizedBox(height: 12.0)),
             ),
           ),
         );

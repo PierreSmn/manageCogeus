@@ -105,11 +105,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50,
+                  size: 50.0,
                 ),
               ),
             ),
@@ -138,13 +138,13 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                       Expanded(
                         flex: 8,
                         child: Container(
-                          width: 100,
+                          width: 100.0,
                           height: double.infinity,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          alignment: const AlignmentDirectional(0, -1),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -152,22 +152,23 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                               children: [
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 0, 0),
+                                      20.0, 20.0, 0.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(16),
-                                        bottomRight: Radius.circular(16),
-                                        topLeft: Radius.circular(0),
-                                        topRight: Radius.circular(0),
+                                        bottomLeft: Radius.circular(16.0),
+                                        bottomRight: Radius.circular(16.0),
+                                        topLeft: Radius.circular(0.0),
+                                        topRight: Radius.circular(0.0),
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(-1, 0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(-1, 0),
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -177,11 +178,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                         children: [
                                           ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                             child: Image.network(
                                               'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
-                                              width: 130,
-                                              height: 100,
+                                              width: 130.0,
+                                              height: 100.0,
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -193,15 +194,15 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                 Container(
                                   width: double.infinity,
                                   constraints: const BoxConstraints(
-                                    maxWidth: 579,
+                                    maxWidth: 579.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).revoWhite,
-                                    borderRadius: BorderRadius.circular(16),
+                                    borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(24),
+                                    padding: const EdgeInsets.all(24.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -232,7 +233,8 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                               ),
                                         ),
                                         Align(
-                                          alignment: const AlignmentDirectional(0, 0),
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Form(
                                             key: _model.formKey,
                                             autovalidateMode:
@@ -244,7 +246,8 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                               children: [
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 16),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 16.0),
                                                   child: SizedBox(
                                                     width: double.infinity,
                                                     child: Autocomplete<String>(
@@ -286,7 +289,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                               const TextStyle(),
                                                           textHighlightStyle:
                                                               const TextStyle(),
-                                                          elevation: 4,
+                                                          elevation: 4.0,
                                                           optionBackgroundColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -295,7 +298,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .secondaryBackground,
-                                                          maxHeight: 200,
+                                                          maxHeight: 200.0,
                                                         );
                                                       },
                                                       onSelected:
@@ -351,12 +354,12 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                   const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2,
+                                                                width: 2.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40),
+                                                                          40.0),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -365,12 +368,12 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2,
+                                                                width: 2.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40),
+                                                                          40.0),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -379,12 +382,12 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2,
+                                                                width: 2.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40),
+                                                                          40.0),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -393,12 +396,12 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2,
+                                                                width: 2.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          40),
+                                                                          40.0),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -406,7 +409,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 .revoSearchBarBg,
                                                             contentPadding:
                                                                 const EdgeInsets.all(
-                                                                    16),
+                                                                    16.0),
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -417,7 +420,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                fontSize: 15,
+                                                                fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -439,7 +442,8 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                           ),
                                         ),
                                         Align(
-                                          alignment: const AlignmentDirectional(0, 0),
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               if (_model.emailTextController
@@ -481,12 +485,13 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                             },
                                             text: 'Mettre à jour',
                                             options: FFButtonOptions(
-                                              width: 230,
-                                              height: 40,
+                                              width: 230.0,
+                                              height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(24, 0, 24, 0),
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: const Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
@@ -497,17 +502,17 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
-                                              elevation: 0,
+                                              elevation: 0.0,
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
-                                                width: 0,
+                                                width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(16.0),
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 8)),
+                                      ].divide(const SizedBox(height: 8.0)),
                                     ),
                                   ),
                                 ),

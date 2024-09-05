@@ -58,11 +58,11 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 50,
+                size: 50.0,
               ),
             ),
           );
@@ -83,11 +83,11 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 50,
-                    height: 50,
+                    width: 50.0,
+                    height: 50.0,
                     child: SpinKitRing(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 50,
+                      size: 50.0,
                     ),
                   ),
                 );
@@ -100,13 +100,14 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                       : null;
 
               return Container(
-                width: MediaQuery.sizeOf(context).width,
+                width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).revoWhite,
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -115,7 +116,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
@@ -151,8 +152,8 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                     () => _model.mouseRegionHovered = false);
                               }),
                               child: Padding(
-                                padding:
-                                    const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 16.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     await HostedSubsTable().delete(
@@ -166,14 +167,14 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                   text: 'Effacer',
                                   icon: const Icon(
                                     Icons.delete_outlined,
-                                    size: 15,
+                                    size: 15.0,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 40,
+                                    height: 40.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        24, 0, 24, 0),
+                                        24.0, 0.0, 24.0, 0.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: _model.mouseRegionHovered
                                         ? FlutterFlowTheme.of(context)
                                             .buttonRevHover
@@ -186,19 +187,19 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
-                                    elevation: 0,
+                                    elevation: 0.0,
                                     borderSide: const BorderSide(
                                       color: Colors.transparent,
-                                      width: 0,
+                                      width: 0.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(16),
+                                    borderRadius: BorderRadius.circular(16.0),
                                   ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12)),
+                      ].divide(const SizedBox(height: 12.0)),
                     ),
                   ),
                 ),

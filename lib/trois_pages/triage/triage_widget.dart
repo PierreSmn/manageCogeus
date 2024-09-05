@@ -58,7 +58,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Container(
-                    height: MediaQuery.sizeOf(context).height * 1,
+                    height: MediaQuery.sizeOf(context).height * 1.0,
                     decoration: const BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -88,12 +88,12 @@ class _TriageWidgetState extends State<TriageWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50,
-                                    height: 50,
+                                    width: 50.0,
+                                    height: 50.0,
                                     child: SpinKitRing(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 50,
+                                      size: 50.0,
                                     ),
                                   ),
                                 );
@@ -107,7 +107,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      50, 0, 0, 20),
+                                      50.0, 0.0, 0.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -129,8 +129,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 60, 0, 0),
+                                                            .fromSTEB(0.0, 60.0,
+                                                                0.0, 0.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         context.pushNamed(
@@ -139,15 +139,21 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                       text:
                                                           'Acceder à la vue d\'ensemble',
                                                       options: FFButtonOptions(
-                                                        height: 40,
+                                                        height: 40.0,
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(24, 0,
-                                                                    24, 0),
+                                                                .fromSTEB(
+                                                                    24.0,
+                                                                    0.0,
+                                                                    24.0,
+                                                                    0.0),
                                                         iconPadding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             const Color(0xFFEEE8FC),
                                                         textStyle:
@@ -165,15 +171,15 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                       FontWeight
                                                                           .w600,
                                                                 ),
-                                                        elevation: 0,
+                                                        elevation: 0.0,
                                                         borderSide: const BorderSide(
                                                           color: Colors
                                                               .transparent,
-                                                          width: 0,
+                                                          width: 0.0,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(16),
+                                                                .circular(16.0),
                                                       ),
                                                     ),
                                                   ),
@@ -188,15 +194,15 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                         }
 
                                                         return SizedBox(
-                                                          width: 700,
+                                                          width: 700.0,
                                                           child: Padding(
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        40),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        40.0),
                                                             child: PageView
                                                                 .builder(
                                                               physics:
@@ -221,13 +227,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                 return Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          20,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
-                                                                    width: 800,
+                                                                    width:
+                                                                        800.0,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
@@ -235,13 +242,13 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                           .revoWhite,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              16),
+                                                                              16.0),
                                                                     ),
                                                                     child:
                                                                         Padding(
                                                                       padding:
                                                                           const EdgeInsets.all(
-                                                                              32),
+                                                                              32.0),
                                                                       child:
                                                                           SingleChildScrollView(
                                                                         child:
@@ -260,10 +267,10 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Container(
-                                                                                  width: 300,
+                                                                                  width: 300.0,
                                                                                   decoration: const BoxDecoration(),
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0, 60, 0, 0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.start,
@@ -296,7 +303,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Manrope',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                                fontSize: 16,
+                                                                                                fontSize: 16.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w300,
                                                                                               ),
@@ -309,7 +316,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Manrope',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                fontSize: 46,
+                                                                                                fontSize: 46.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
@@ -326,7 +333,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           ),
                                                                                           unratedColor: FlutterFlowTheme.of(context).alternate,
                                                                                           itemCount: 5,
-                                                                                          itemSize: 30,
+                                                                                          itemSize: 30.0,
                                                                                         ),
                                                                                         Text(
                                                                                           'Transcription',
@@ -339,7 +346,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               ),
                                                                                         ),
                                                                                         Container(
-                                                                                          width: 200,
+                                                                                          width: 200.0,
                                                                                           decoration: const BoxDecoration(),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
@@ -376,7 +383,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ].divide(const SizedBox(height: 12)),
+                                                                                      ].divide(const SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -386,8 +393,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                     FlutterFlowVideoPlayer(
                                                                                       path: listSubsItem.mediaLink!,
                                                                                       videoType: VideoType.network,
-                                                                                      width: 270,
-                                                                                      height: 470,
+                                                                                      width: 270.0,
+                                                                                      height: 470.0,
                                                                                       autoPlay: false,
                                                                                       looping: true,
                                                                                       showControls: true,
@@ -428,24 +435,24 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                   },
                                                                                   text: 'Exclure',
                                                                                   options: FFButtonOptions(
-                                                                                    width: 220,
-                                                                                    height: 60,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    width: 220.0,
+                                                                                    height: 60.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).alternate,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
-                                                                                          fontSize: 18,
+                                                                                          fontSize: 18.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
-                                                                                    elevation: 0,
+                                                                                    elevation: 0.0,
                                                                                     borderSide: const BorderSide(
                                                                                       color: Colors.transparent,
-                                                                                      width: 0,
+                                                                                      width: 0.0,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(16),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
                                                                                 ),
                                                                                 FFButtonWidget(
@@ -474,29 +481,29 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                   },
                                                                                   text: 'Sélectionner',
                                                                                   options: FFButtonOptions(
-                                                                                    width: 220,
-                                                                                    height: 60,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    width: 220.0,
+                                                                                    height: 60.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: FlutterFlowTheme.of(context).revoCardBlueText,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoWhite,
-                                                                                          fontSize: 18,
+                                                                                          fontSize: 18.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
-                                                                                    elevation: 0,
+                                                                                    elevation: 0.0,
                                                                                     borderSide: const BorderSide(
                                                                                       color: Colors.transparent,
-                                                                                      width: 0,
+                                                                                      width: 0.0,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(16),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 30)).around(const SizedBox(width: 30)),
+                                                                              ].divide(const SizedBox(width: 30.0)).around(const SizedBox(width: 30.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),

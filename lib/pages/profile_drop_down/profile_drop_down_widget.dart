@@ -39,31 +39,31 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16.0),
       child: Container(
-        width: 300,
+        width: 300.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           boxShadow: const [
             BoxShadow(
-              blurRadius: 4,
+              blurRadius: 4.0,
               color: Color(0x33000000),
               offset: Offset(
-                0,
-                2,
+                0.0,
+                2.0,
               ),
             )
           ],
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 12, 0, 8),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                 child: Text(
                   'Account Infos',
                   textAlign: TextAlign.start,
@@ -74,12 +74,13 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12, 8, 12, 8),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +97,8 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentUserEmail,
                               style: FlutterFlowTheme.of(context)
@@ -109,7 +111,8 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentUserUid,
                               style: FlutterFlowTheme.of(context)
@@ -122,7 +125,8 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentJwtToken,
                               style: FlutterFlowTheme.of(context)
@@ -141,7 +145,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                 ),
               ),
               Divider(
-                thickness: 1,
+                thickness: 1.0,
                 color: FlutterFlowTheme.of(context).alternate,
               ),
               MouseRegion(
@@ -163,22 +167,23 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.account_circle_outlined,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20,
+                            size: 20.0,
                           ),
                         ),
                         Expanded(
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'My Account',
                               style: FlutterFlowTheme.of(context)
@@ -214,22 +219,23 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.settings_outlined,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20,
+                            size: 20.0,
                           ),
                         ),
                         Expanded(
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Settings',
                               style: FlutterFlowTheme.of(context)
@@ -277,23 +283,24 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                           : FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.content_cut,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 20,
+                              size: 20.0,
                             ),
                           ),
                           Expanded(
                             child: Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Disconnect',
                                 style: FlutterFlowTheme.of(context)
@@ -312,7 +319,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                 ),
               ),
               Divider(
-                thickness: 1,
+                thickness: 1.0,
                 color: FlutterFlowTheme.of(context).alternate,
               ),
               MouseRegion(
@@ -334,22 +341,23 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.login_rounded,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20,
+                            size: 20.0,
                           ),
                         ),
                         Expanded(
                           child: Padding(
-                            padding:
-                                const EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Log out',
                               style: FlutterFlowTheme.of(context)

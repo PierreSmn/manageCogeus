@@ -206,11 +206,11 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          width: 50,
-                          height: 50,
+                          width: 50.0,
+                          height: 50.0,
                           child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 50,
+                            size: 50.0,
                           ),
                         ),
                         const SizedBox(height: 20),
