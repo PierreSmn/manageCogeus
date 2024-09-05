@@ -198,12 +198,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/retoursatrier',
           requireAuth: true,
           builder: (context, params) => const RetoursATrierWidget(),
-        ),
-        FFRoute(
-          name: 'tags',
-          path: '/tags',
-          requireAuth: true,
-          builder: (context, params) => const TagsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
