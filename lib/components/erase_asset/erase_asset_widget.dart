@@ -49,13 +49,13 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
     return Container(
       decoration: const BoxDecoration(),
       child: Container(
-        width: MediaQuery.sizeOf(context).width,
+        width: MediaQuery.sizeOf(context).width * 1.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).revoWhite,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -67,7 +67,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                        fontSize: 36,
+                        fontSize: 36.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -81,11 +81,11 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 50,
-                          height: 50,
+                          width: 50.0,
+                          height: 50.0,
                           child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 50,
+                            size: 50.0,
                           ),
                         ),
                       );
@@ -95,7 +95,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
 
                     return Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -148,7 +148,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0, 16, 0, 0),
+                                        0.0, 16.0, 0.0, 0.0),
                                     child: Text(
                                       'ATTENTION : Vous devez d\'abord remplacer cette vidéo dans les listes ci-dessus avant de l\'effacer.',
                                       style: FlutterFlowTheme.of(context)
@@ -156,7 +156,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                           .override(
                                             fontFamily: 'Manrope',
                                             color: const Color(0xFFC31212),
-                                            fontSize: 16,
+                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -228,15 +228,15 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                     text: 'Effacer',
                                     icon: const Icon(
                                       Icons.delete_outlined,
-                                      size: 15,
+                                      size: 15.0,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 40,
+                                      height: 40.0,
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24, 0, 24, 0),
+                                          24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: _model.mouseRegionHovered
                                           ? const Color(0xFFF5E2E4)
                                           : const Color(0xFFFCE8EC),
@@ -248,12 +248,12 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
-                                      elevation: 0,
+                                      elevation: 0.0,
                                       borderSide: const BorderSide(
                                         color: Colors.transparent,
-                                        width: 0,
+                                        width: 0.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(16),
+                                      borderRadius: BorderRadius.circular(16.0),
                                     ),
                                   ),
                                 ),
@@ -264,7 +264,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     );
                   },
                 ),
-              ].divide(const SizedBox(height: 12)),
+              ].divide(const SizedBox(height: 12.0)),
             ),
           ),
         ),

@@ -47,10 +47,10 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.sizeOf(context).width,
+      width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoWhite,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.0),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -61,13 +61,13 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Manrope',
                   color: FlutterFlowTheme.of(context).revoCardTextColor,
-                  fontSize: 22,
+                  fontSize: 22.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w600,
                 ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
             child: TextFormField(
               controller: _model.textController,
               focusNode: _model.textFieldFocusNode,
@@ -84,39 +84,39 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
                 enabledBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
                     color: Color(0x00000000),
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).primary,
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).error,
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).error,
-                    width: 2,
+                    width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(40),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
                 filled: true,
                 fillColor: FlutterFlowTheme.of(context).revoSearchBarBg,
-                contentPadding: const EdgeInsets.all(16),
+                contentPadding: const EdgeInsets.all(16.0),
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Manrope',
                     color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 15,
+                    fontSize: 15.0,
                     letterSpacing: 0.0,
                   ),
               validator: _model.textControllerValidator.asValidator(context),
@@ -134,12 +134,12 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
             text: 'Créer le Tag',
             icon: const Icon(
               Icons.check_sharp,
-              size: 15,
+              size: 15.0,
             ),
             options: FFButtonOptions(
-              height: 40,
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-              iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+              height: 40.0,
+              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: const Color(0xFFEEE8FC),
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Manrope',
@@ -147,15 +147,15 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
-              elevation: 0,
+              elevation: 0.0,
               borderSide: const BorderSide(
                 color: Colors.transparent,
-                width: 0,
+                width: 0.0,
               ),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16.0),
             ),
           ),
-        ].addToStart(const SizedBox(height: 28)).addToEnd(const SizedBox(height: 28)),
+        ].addToStart(const SizedBox(height: 28.0)).addToEnd(const SizedBox(height: 28.0)),
       ),
     );
   }

@@ -77,11 +77,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 50,
-                            height: 50,
+                            width: 50.0,
+                            height: 50.0,
                             child: SpinKitRing(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 50,
+                              size: 50.0,
                             ),
                           ),
                         );
@@ -90,7 +90,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                           snapshot.data!;
 
                       return Container(
-                        height: MediaQuery.sizeOf(context).height * 1,
+                        height: MediaQuery.sizeOf(context).height * 1.0,
                         decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -118,12 +118,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 50,
-                                        height: 50,
+                                        width: 50.0,
+                                        height: 50.0,
                                         child: SpinKitRing(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          size: 50,
+                                          size: 50.0,
                                         ),
                                       ),
                                     );
@@ -134,14 +134,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
 
                                   return Container(
                                     height:
-                                        MediaQuery.sizeOf(context).height * 1,
+                                        MediaQuery.sizeOf(context).height * 1.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).revoBG,
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0, 32, 0, 20),
+                                          0.0, 32.0, 0.0, 20.0),
                                       child: SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -162,8 +162,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(50, 0,
-                                                                  50, 40),
+                                                              .fromSTEB(
+                                                                  50.0,
+                                                                  0.0,
+                                                                  50.0,
+                                                                  40.0),
                                                       child:
                                                           SingleChildScrollView(
                                                         child: Column(
@@ -189,23 +192,23 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Container(
-                                                                      width: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .width,
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          1.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            16,
-                                                                            28,
-                                                                            16,
-                                                                            16),
+                                                                            16.0,
+                                                                            28.0,
+                                                                            16.0,
+                                                                            16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -224,7 +227,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Manrope',
                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                        fontSize: 40,
+                                                                                        fontSize: 40.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
@@ -234,7 +237,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Manrope',
                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                        fontSize: 40,
+                                                                                        fontSize: 40.0,
                                                                                         letterSpacing: 0.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
@@ -278,12 +281,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: GestureDetector(
                                                                                             onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                             child: SizedBox(
-                                                                                              height: 330,
-                                                                                              width: 550,
+                                                                                              height: 330.0,
+                                                                                              width: 550.0,
                                                                                               child: CreationChoiceWidget(
                                                                                                 assets: containerHostedSubsRowList.length,
                                                                                               ),
@@ -296,12 +299,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                   text: 'Ajouter une intégration',
                                                                                   icon: const Icon(
                                                                                     Icons.add,
-                                                                                    size: 15,
+                                                                                    size: 15.0,
                                                                                   ),
                                                                                   options: FFButtonOptions(
-                                                                                    height: 40,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                     color: _model.mouseRegionHovered ? const Color(0xFFECE2F5) : const Color(0xFFEDE8FC),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'Manrope',
@@ -309,23 +312,23 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
-                                                                                    elevation: 0,
+                                                                                    elevation: 0.0,
                                                                                     borderSide: const BorderSide(
                                                                                       color: Colors.transparent,
-                                                                                      width: 0,
+                                                                                      width: 0.0,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(16),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   ].divide(const SizedBox(
                                                                       height:
-                                                                          24)),
+                                                                          24.0)),
                                                                 ),
                                                               ),
                                                             ),
@@ -344,8 +347,8 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                         .toList();
 
                                                 return Wrap(
-                                                  spacing: 0,
-                                                  runSpacing: 0,
+                                                  spacing: 0.0,
+                                                  runSpacing: 0.0,
                                                   alignment:
                                                       WrapAlignment.start,
                                                   crossAxisAlignment:
@@ -377,10 +380,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        50,
-                                                                        0,
-                                                                        50,
-                                                                        40),
+                                                                        50.0,
+                                                                        0.0,
+                                                                        50.0,
+                                                                        40.0),
                                                             child:
                                                                 SingleChildScrollView(
                                                               child: Column(
@@ -406,15 +409,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                             [
                                                                           Container(
                                                                             width:
-                                                                                MediaQuery.sizeOf(context).width,
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).revoWhite,
-                                                                              borderRadius: BorderRadius.circular(16),
+                                                                              borderRadius: BorderRadius.circular(16.0),
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -425,7 +428,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     children: [
                                                                                       Container(
-                                                                                        width: 180,
+                                                                                        width: 180.0,
                                                                                         decoration: const BoxDecoration(),
                                                                                         child: Text(
                                                                                           valueOrDefault<String>(
@@ -435,7 +438,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Manrope',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                fontSize: 28,
+                                                                                                fontSize: 28.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
@@ -443,7 +446,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                       ),
                                                                                       if (usersIntegrationsItem.isStory ?? true)
                                                                                         Container(
-                                                                                          width: 450,
+                                                                                          width: 450.0,
                                                                                           decoration: const BoxDecoration(),
                                                                                           child: Row(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -462,11 +465,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -480,16 +483,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     children: [
                                                                                                       if (usersIntegrationsItem.vid1 != null)
                                                                                                         ClipRRect(
-                                                                                                          borderRadius: BorderRadius.circular(100),
+                                                                                                          borderRadius: BorderRadius.circular(100.0),
                                                                                                           child: Image.network(
                                                                                                             columnHostedSubsRow!.thumbnail!,
-                                                                                                            width: 140,
-                                                                                                            height: 140,
+                                                                                                            width: 140.0,
+                                                                                                            height: 140.0,
                                                                                                             fit: BoxFit.cover,
                                                                                                           ),
                                                                                                         ),
                                                                                                       Container(
-                                                                                                        width: 120,
+                                                                                                        width: 120.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
@@ -498,13 +501,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
-                                                                                                                fontSize: 16,
+                                                                                                                fontSize: 16.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w600,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 6)),
+                                                                                                    ].divide(const SizedBox(height: 6.0)),
                                                                                                   );
                                                                                                 },
                                                                                               ),
@@ -520,11 +523,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -538,16 +541,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     children: [
                                                                                                       if (usersIntegrationsItem.vid2 != null)
                                                                                                         ClipRRect(
-                                                                                                          borderRadius: BorderRadius.circular(100),
+                                                                                                          borderRadius: BorderRadius.circular(100.0),
                                                                                                           child: Image.network(
                                                                                                             columnHostedSubsRow!.thumbnail!,
-                                                                                                            width: 140,
-                                                                                                            height: 140,
+                                                                                                            width: 140.0,
+                                                                                                            height: 140.0,
                                                                                                             fit: BoxFit.cover,
                                                                                                           ),
                                                                                                         ),
                                                                                                       Container(
-                                                                                                        width: 120,
+                                                                                                        width: 120.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
@@ -556,13 +559,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
-                                                                                                                fontSize: 16,
+                                                                                                                fontSize: 16.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w600,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 6)),
+                                                                                                    ].divide(const SizedBox(height: 6.0)),
                                                                                                   );
                                                                                                 },
                                                                                               ),
@@ -578,11 +581,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -596,16 +599,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     children: [
                                                                                                       if (usersIntegrationsItem.vid3 != null)
                                                                                                         ClipRRect(
-                                                                                                          borderRadius: BorderRadius.circular(100),
+                                                                                                          borderRadius: BorderRadius.circular(100.0),
                                                                                                           child: Image.network(
                                                                                                             columnHostedSubsRow!.thumbnail!,
-                                                                                                            width: 140,
-                                                                                                            height: 140,
+                                                                                                            width: 140.0,
+                                                                                                            height: 140.0,
                                                                                                             fit: BoxFit.cover,
                                                                                                           ),
                                                                                                         ),
                                                                                                       Container(
-                                                                                                        width: 120,
+                                                                                                        width: 120.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
@@ -614,17 +617,17 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
-                                                                                                                fontSize: 16,
+                                                                                                                fontSize: 16.0,
                                                                                                                 letterSpacing: 0.0,
                                                                                                                 fontWeight: FontWeight.w600,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 6)),
+                                                                                                    ].divide(const SizedBox(height: 6.0)),
                                                                                                   );
                                                                                                 },
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 12)),
+                                                                                            ].divide(const SizedBox(width: 12.0)),
                                                                                           ),
                                                                                         ),
                                                                                       if (!usersIntegrationsItem.isStory!)
@@ -645,11 +648,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -659,11 +662,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
 
                                                                                                   return ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8),
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                                                     child: Image.network(
                                                                                                       imageHostedSubsRow!.thumbnail!,
-                                                                                                      width: 100,
-                                                                                                      height: 200,
+                                                                                                      width: 100.0,
+                                                                                                      height: 200.0,
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   );
@@ -682,11 +685,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -696,11 +699,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
 
                                                                                                   return ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8),
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                                                     child: Image.network(
                                                                                                       imageHostedSubsRow!.thumbnail!,
-                                                                                                      width: 100,
-                                                                                                      height: 200,
+                                                                                                      width: 100.0,
+                                                                                                      height: 200.0,
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   );
@@ -719,11 +722,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -733,11 +736,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
 
                                                                                                   return ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8),
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                                                     child: Image.network(
                                                                                                       imageHostedSubsRow!.thumbnail!,
-                                                                                                      width: 100,
-                                                                                                      height: 200,
+                                                                                                      width: 100.0,
+                                                                                                      height: 200.0,
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   );
@@ -756,11 +759,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -770,11 +773,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
 
                                                                                                   return ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8),
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                                                     child: Image.network(
                                                                                                       imageHostedSubsRow!.thumbnail!,
-                                                                                                      width: 100,
-                                                                                                      height: 200,
+                                                                                                      width: 100.0,
+                                                                                                      height: 200.0,
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   );
@@ -793,11 +796,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   if (!snapshot.hasData) {
                                                                                                     return Center(
                                                                                                       child: SizedBox(
-                                                                                                        width: 50,
-                                                                                                        height: 50,
+                                                                                                        width: 50.0,
+                                                                                                        height: 50.0,
                                                                                                         child: SpinKitRing(
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          size: 50,
+                                                                                                          size: 50.0,
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -807,17 +810,17 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   final imageHostedSubsRow = imageHostedSubsRowList.isNotEmpty ? imageHostedSubsRowList.first : null;
 
                                                                                                   return ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8),
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                                                     child: Image.network(
                                                                                                       imageHostedSubsRow!.thumbnail!,
-                                                                                                      width: 100,
-                                                                                                      height: 200,
+                                                                                                      width: 100.0,
+                                                                                                      height: 200.0,
                                                                                                       fit: BoxFit.cover,
                                                                                                     ),
                                                                                                   );
                                                                                                 },
                                                                                               ),
-                                                                                          ].divide(const SizedBox(width: 6)),
+                                                                                          ].divide(const SizedBox(width: 6.0)),
                                                                                         ),
                                                                                       Column(
                                                                                         mainAxisSize: MainAxisSize.max,
@@ -833,12 +836,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 330,
-                                                                                                            width: 550,
+                                                                                                            height: 330.0,
+                                                                                                            width: 550.0,
                                                                                                             child: ExportStoryCodeWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
                                                                                                             ),
@@ -855,12 +858,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 330,
-                                                                                                            width: 550,
+                                                                                                            height: 330.0,
+                                                                                                            width: 550.0,
                                                                                                             child: ExportCodeWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
                                                                                                             ),
@@ -874,13 +877,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               text: 'Exporter le code',
                                                                                               icon: const Icon(
                                                                                                 Icons.content_copy_outlined,
-                                                                                                size: 15,
+                                                                                                size: 15.0,
                                                                                               ),
                                                                                               options: FFButtonOptions(
-                                                                                                width: 170,
-                                                                                                height: 40,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                                width: 170.0,
+                                                                                                height: 40.0,
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                 color: const Color(0xFFEEE8FC),
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'Manrope',
@@ -888,12 +891,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       letterSpacing: 0.0,
                                                                                                       fontWeight: FontWeight.w600,
                                                                                                     ),
-                                                                                                elevation: 0,
+                                                                                                elevation: 0.0,
                                                                                                 borderSide: const BorderSide(
                                                                                                   color: Colors.transparent,
-                                                                                                  width: 0,
+                                                                                                  width: 0.0,
                                                                                                 ),
-                                                                                                borderRadius: BorderRadius.circular(16),
+                                                                                                borderRadius: BorderRadius.circular(16.0),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -912,12 +915,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 800,
-                                                                                                            width: 800,
+                                                                                                            height: 800.0,
+                                                                                                            width: 800.0,
                                                                                                             child: EditStoryWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
                                                                                                             ),
@@ -940,12 +943,12 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0, 0).resolve(Directionality.of(context)),
+                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                           child: SizedBox(
-                                                                                                            height: 800,
-                                                                                                            width: 1280,
+                                                                                                            height: 800.0,
+                                                                                                            width: 1280.0,
                                                                                                             child: EditIntegrationWidget(
                                                                                                               integrationEditing: usersIntegrationsItem.id,
                                                                                                             ),
@@ -959,39 +962,39 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               text: 'Modifier ',
                                                                                               icon: const Icon(
                                                                                                 Icons.edit_rounded,
-                                                                                                size: 15,
+                                                                                                size: 15.0,
                                                                                               ),
                                                                                               options: FFButtonOptions(
-                                                                                                width: 170,
-                                                                                                height: 40,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                                width: 170.0,
+                                                                                                height: 40.0,
+                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                 color: const Color(0xFFEEE8FC),
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'Manrope',
                                                                                                       color: const Color(0xFF822CE3),
-                                                                                                      fontSize: 14,
+                                                                                                      fontSize: 14.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                       fontWeight: FontWeight.w600,
                                                                                                     ),
-                                                                                                elevation: 0,
+                                                                                                elevation: 0.0,
                                                                                                 borderSide: const BorderSide(
                                                                                                   color: Colors.transparent,
-                                                                                                  width: 0,
+                                                                                                  width: 0.0,
                                                                                                 ),
-                                                                                                borderRadius: BorderRadius.circular(16),
+                                                                                                borderRadius: BorderRadius.circular(16.0),
                                                                                               ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12)),
+                                                                                        ].divide(const SizedBox(height: 12.0)),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 11)),
+                                                                                    ].divide(const SizedBox(width: 11.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 12)),
+                                                                                ].divide(const SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24)),
+                                                                        ].divide(const SizedBox(height: 24.0)),
                                                                       ),
                                                                     ),
                                                                   ),

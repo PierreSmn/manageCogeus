@@ -53,13 +53,13 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
+      width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoWhite,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 28),
+        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +70,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Manrope',
                     color: FlutterFlowTheme.of(context).revoCardTextColor,
-                    fontSize: 40,
+                    fontSize: 40.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
@@ -80,12 +80,12 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SizedBox(
-                        width: 300,
+                        width: 300.0,
                         child: TextFormField(
                           controller: _model.colorTitleTextController,
                           focusNode: _model.colorTitleFocusNode,
@@ -103,30 +103,30 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).primary,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).error,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                           style:
@@ -140,18 +140,19 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                         ),
                       ),
                       Container(
-                        width: 310,
-                        height: 540,
+                        width: 310.0,
+                        height: 540.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
-                          borderRadius: BorderRadius.circular(40),
+                          borderRadius: BorderRadius.circular(40.0),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).primaryText,
-                            width: 5,
+                            width: 5.0,
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 24),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 24.0),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -162,28 +163,29 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Stack(
-                                      alignment: const AlignmentDirectional(0, 1),
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
                                       children: [
                                         Stack(
                                           alignment:
-                                              const AlignmentDirectional(0, -1),
+                                              const AlignmentDirectional(0.0, -1.0),
                                           children: [
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Material(
                                                   color: Colors.transparent,
-                                                  elevation: 0,
+                                                  elevation: 0.0,
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
-                                                    height: 470,
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: 470.0,
                                                     decoration: BoxDecoration(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -191,7 +193,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                               .secondary,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0),
+                                                              0.0),
                                                     ),
                                                     child: Column(
                                                       mainAxisSize:
@@ -206,8 +208,11 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(10,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -217,16 +222,18 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                                 borderColor: Colors
                                                                     .transparent,
                                                                 borderRadius:
-                                                                    20,
-                                                                borderWidth: 1,
-                                                                buttonSize: 40,
+                                                                    20.0,
+                                                                borderWidth:
+                                                                    1.0,
+                                                                buttonSize:
+                                                                    40.0,
                                                                 icon: Icon(
                                                                   Icons
                                                                       .close_rounded,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
-                                                                  size: 24,
+                                                                  size: 24.0,
                                                                 ),
                                                                 onPressed: () {
                                                                   print(
@@ -239,8 +246,11 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                         Padding(
                                                           padding:
                                                               const EdgeInsetsDirectional
-                                                                  .fromSTEB(24,
-                                                                      0, 24, 0),
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
                                                           child: Text(
                                                             _model
                                                                 .colorTitleTextController
@@ -256,7 +266,8 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
-                                                                  fontSize: 22,
+                                                                  fontSize:
+                                                                      22.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -355,7 +366,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Manrope',
-                                                                  fontSize: 2,
+                                                                  fontSize: 2.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -372,47 +383,48 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 40),
+                                                  0.0, 0.0, 0.0, 40.0),
                                           child: Stack(
                                             alignment:
-                                                const AlignmentDirectional(0, 0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             children: [
                                               Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Container(
-                                                    width: 80,
-                                                    height: 80,
+                                                    width: 80.0,
+                                                    height: 80.0,
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              100),
+                                                              100.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsets.all(4),
+                                                          const EdgeInsets.all(4.0),
                                                       child: Container(
-                                                        width: 100,
-                                                        height: 100,
+                                                        width: 100.0,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      100),
+                                                                      100.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(2),
+                                                              const EdgeInsets.all(
+                                                                  2.0),
                                                           child: Container(
-                                                            width: 100,
-                                                            height: 100,
+                                                            width: 100.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: const Color(
@@ -420,7 +432,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          100),
+                                                                          100.0),
                                                             ),
                                                           ),
                                                         ),
@@ -434,22 +446,22 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(height: 6)),
+                                  ].divide(const SizedBox(height: 6.0)),
                                 ),
                               ]
-                                  .divide(const SizedBox(height: 16))
-                                  .addToStart(const SizedBox(height: 12)),
+                                  .divide(const SizedBox(height: 16.0))
+                                  .addToStart(const SizedBox(height: 12.0)),
                             ),
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 34)),
+                    ].divide(const SizedBox(width: 34.0)),
                   ),
                 ),
-              ].divide(const SizedBox(height: 12)),
+              ].divide(const SizedBox(height: 12.0)),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   await LiveFlowsTable().update(
@@ -467,9 +479,10 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                 },
                 text: 'Changer la question',
                 options: FFButtonOptions(
-                  height: 40,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                  height: 40.0,
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  iconPadding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: const Color(0xFFEEE8FC),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Manrope',
@@ -477,16 +490,16 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),
-                  elevation: 0,
+                  elevation: 0.0,
                   borderSide: const BorderSide(
                     color: Colors.transparent,
-                    width: 0,
+                    width: 0.0,
                   ),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(16.0),
                 ),
               ),
             ),
-          ].divide(const SizedBox(height: 12)),
+          ].divide(const SizedBox(height: 12.0)),
         ),
       ),
     );

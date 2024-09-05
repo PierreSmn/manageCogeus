@@ -58,11 +58,11 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 50,
-                height: 50,
+                width: 50.0,
+                height: 50.0,
                 child: SpinKitRing(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 50,
+                  size: 50.0,
                 ),
               ),
             ),
@@ -84,7 +84,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        height: MediaQuery.sizeOf(context).height * 1,
+                        height: MediaQuery.sizeOf(context).height * 1.0,
                         decoration: const BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -117,7 +117,8 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                           Expanded(
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0, 32, 0, 20),
+                                                  .fromSTEB(
+                                                      0.0, 32.0, 0.0, 20.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -138,10 +139,10 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        50,
-                                                                        0,
-                                                                        50,
-                                                                        0),
+                                                                        50.0,
+                                                                        0.0,
+                                                                        50.0,
+                                                                        0.0),
                                                             child:
                                                                 SingleChildScrollView(
                                                               controller: _model
@@ -172,15 +173,15 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             [
                                                                           Container(
                                                                             width:
-                                                                                MediaQuery.sizeOf(context).width,
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).revoWhite,
-                                                                              borderRadius: BorderRadius.circular(16),
+                                                                              borderRadius: BorderRadius.circular(16.0),
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16, 28, 16, 16),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 16.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -191,7 +192,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                          fontSize: 40,
+                                                                                          fontSize: 40.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
@@ -202,9 +203,9 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     },
                                                                                     text: 'Retour à la sélection',
                                                                                     options: FFButtonOptions(
-                                                                                      height: 40,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                      height: 40.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: const Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Manrope',
@@ -212,19 +213,19 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                           ),
-                                                                                      elevation: 0,
+                                                                                      elevation: 0.0,
                                                                                       borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
-                                                                                        width: 0,
+                                                                                        width: 0.0,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(16),
+                                                                                      borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 12)),
+                                                                                ].divide(const SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24)),
+                                                                        ].divide(const SizedBox(height: 24.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -256,10 +257,10 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        100,
-                                                                        0,
-                                                                        100,
-                                                                        0),
+                                                                        100.0,
+                                                                        0.0,
+                                                                        100.0,
+                                                                        0.0),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -269,9 +270,9 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                         .toList();
 
                                                                 return Wrap(
-                                                                  spacing: 16,
+                                                                  spacing: 16.0,
                                                                   runSpacing:
-                                                                      16,
+                                                                      16.0,
                                                                   alignment:
                                                                       WrapAlignment
                                                                           .start,
@@ -297,23 +298,23 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             validItemIndex];
                                                                     return Container(
                                                                       width:
-                                                                          330,
+                                                                          330.0,
                                                                       height:
-                                                                          530,
+                                                                          530.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoWhite,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(16),
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            16,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -333,8 +334,8 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                       r'''$.media_link''',
                                                                                     ).toString(),
                                                                                     videoType: VideoType.network,
-                                                                                    width: 280,
-                                                                                    height: 430,
+                                                                                    width: 280.0,
+                                                                                    height: 430.0,
                                                                                     autoPlay: false,
                                                                                     looping: true,
                                                                                     showControls: true,
@@ -346,7 +347,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              width: 300,
+                                                                              width: 300.0,
                                                                               decoration: const BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
@@ -359,7 +360,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
-                                                                                          fontSize: 16,
+                                                                                          fontSize: 16.0,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
@@ -379,13 +380,13 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                           ).toString(),
                                                                                           style: const TextStyle(
                                                                                             fontWeight: FontWeight.w600,
-                                                                                            fontSize: 14,
+                                                                                            fontSize: 14.0,
                                                                                           ),
                                                                                         )
                                                                                       ],
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Manrope',
-                                                                                            fontSize: 12,
+                                                                                            fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
                                                                                           ),
                                                                                     ),
@@ -399,11 +400,11 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     maxLines: 4,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
-                                                                                          fontSize: 12,
+                                                                                          fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   )),
-                                                                                ].divide(const SizedBox(height: 12)).addToStart(const SizedBox(height: 12)),
+                                                                                ].divide(const SizedBox(height: 12.0)).addToStart(const SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                             Row(
@@ -411,7 +412,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -475,35 +476,35 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                         text: 'Récupérer',
                                                                                         icon: const Icon(
                                                                                           Icons.chevron_left_sharp,
-                                                                                          size: 15,
+                                                                                          size: 15.0,
                                                                                         ),
                                                                                         options: FFButtonOptions(
-                                                                                          width: 200,
-                                                                                          height: 25,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                          width: 200.0,
+                                                                                          height: 25.0,
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                           color: const Color(0xFFD2D2D2),
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: 'Manrope',
                                                                                                 color: FlutterFlowTheme.of(context).secondary,
-                                                                                                fontSize: 14,
+                                                                                                fontSize: 14.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
-                                                                                          elevation: 0,
+                                                                                          elevation: 0.0,
                                                                                           borderSide: const BorderSide(
                                                                                             color: Colors.transparent,
-                                                                                            width: 0,
+                                                                                            width: 0.0,
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(16),
+                                                                                          borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 8)).addToEnd(const SizedBox(height: 16)),
+                                                                                    ].divide(const SizedBox(height: 8.0)).addToEnd(const SizedBox(height: 16.0)),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 8)),
+                                                                              ].divide(const SizedBox(width: 8.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12)),
+                                                                          ].divide(const SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     );
@@ -516,10 +517,10 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        16,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -559,19 +560,17 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                     options:
                                                                         FFButtonOptions(
                                                                       height:
-                                                                          40,
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              24,
-                                                                              0,
-                                                                              24,
-                                                                              0),
-                                                                      iconPadding:
-                                                                          const EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                          40.0,
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          24.0,
+                                                                          0.0,
+                                                                          24.0,
+                                                                          0.0),
+                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       color: const Color(
                                                                           0xFFEEE8FC),
                                                                       textStyle: FlutterFlowTheme.of(
@@ -588,17 +587,17 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                 FontWeight.w600,
                                                                           ),
                                                                       elevation:
-                                                                          0,
+                                                                          0.0,
                                                                       borderSide:
                                                                           const BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
-                                                                            0,
+                                                                            0.0,
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              16),
+                                                                              16.0),
                                                                     ),
                                                                   ),
                                                                 FFButtonWidget(
@@ -629,19 +628,20 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                       'Page suivante',
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    height: 40,
+                                                                    height:
+                                                                        40.0,
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            24,
-                                                                            0,
-                                                                            24,
-                                                                            0),
+                                                                            24.0,
+                                                                            0.0,
+                                                                            24.0,
+                                                                            0.0),
                                                                     iconPadding:
                                                                         const EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     color: const Color(
                                                                         0xFFEEE8FC),
                                                                     textStyle: FlutterFlowTheme.of(
@@ -658,27 +658,29 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                               FontWeight.w600,
                                                                         ),
                                                                     elevation:
-                                                                        0,
+                                                                        0.0,
                                                                     borderSide:
                                                                         const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width: 0,
+                                                                      width:
+                                                                          0.0,
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            16),
+                                                                            16.0),
                                                                   ),
                                                                 ),
                                                               ].divide(const SizedBox(
-                                                                  width: 16)),
+                                                                  width: 16.0)),
                                                             ),
                                                           ),
                                                         ],
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(const SizedBox(height: 16)),
+                                                ].divide(
+                                                    const SizedBox(height: 16.0)),
                                               ),
                                             ),
                                           ),
