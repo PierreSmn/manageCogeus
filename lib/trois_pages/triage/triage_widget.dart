@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/empty_list_widget/empty_list_widget_widget.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/tags/choose_tag/choose_tag_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -455,50 +456,99 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                     borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
                                                                                 ),
-                                                                                FFButtonWidget(
-                                                                                  onPressed: () async {
-                                                                                    await ValidSubsTable().insert({
-                                                                                      'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
-                                                                                      'submitter_name': listSubsItem.submitterName,
-                                                                                      'media_link': listSubsItem.mediaLink,
-                                                                                      'brand_name': listSubsItem.brandName,
-                                                                                      'slugDone': listSubsItem.flowDone,
-                                                                                      'email': listSubsItem.email,
-                                                                                      'submitter_surname': listSubsItem.submitterSurname,
-                                                                                      'transcription': listSubsItem.transcription,
-                                                                                      'rating': listSubsItem.rating,
-                                                                                      'boolMail': listSubsItem.boolMail,
-                                                                                      'question': listSubsItem.question,
-                                                                                    });
-                                                                                    await NewSubsTable().delete(
-                                                                                      matchingRows: (rows) => rows.eq(
-                                                                                        'id',
-                                                                                        listSubsItem.id,
-                                                                                      ),
-                                                                                    );
-                                                                                    safeSetState(() => _model.requestCompleter = null);
-                                                                                    await _model.waitForRequestCompleted();
-                                                                                  },
-                                                                                  text: 'Sélectionner',
-                                                                                  options: FFButtonOptions(
-                                                                                    width: 220.0,
-                                                                                    height: 60.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: FlutterFlowTheme.of(context).revoCardBlueText,
-                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: 'Manrope',
-                                                                                          color: FlutterFlowTheme.of(context).revoWhite,
-                                                                                          fontSize: 18.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                Builder(
+                                                                                  builder: (context) => FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      FFAppState().tagChoosen = 0;
+                                                                                      safeSetState(() {});
+                                                                                      await showDialog(
+                                                                                        barrierDismissible: false,
+                                                                                        context: context,
+                                                                                        builder: (dialogContext) {
+                                                                                          return Dialog(
+                                                                                            elevation: 0,
+                                                                                            insetPadding: EdgeInsets.zero,
+                                                                                            backgroundColor: Colors.transparent,
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              child: const SizedBox(
+                                                                                                height: 435.0,
+                                                                                                width: 245.0,
+                                                                                                child: ChooseTagWidget(),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        },
+                                                                                      );
+
+                                                                                      if (!(FFAppState().tagChoosen != null)) {
+                                                                                        var confirmDialogResponse = await showDialog<bool>(
+                                                                                              context: context,
+                                                                                              builder: (alertDialogContext) {
+                                                                                                return AlertDialog(
+                                                                                                  title: const Text('Erreur'),
+                                                                                                  content: const Text('Vous devez choisir un Tag pour continuer'),
+                                                                                                  actions: [
+                                                                                                    TextButton(
+                                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                      child: const Text('Retour'),
+                                                                                                    ),
+                                                                                                    TextButton(
+                                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                      child: const Text('Confirmer'),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                );
+                                                                                              },
+                                                                                            ) ??
+                                                                                            false;
+                                                                                        return;
+                                                                                      }
+                                                                                      await ValidSubsTable().insert({
+                                                                                        'created_at': supaSerialize<DateTime>(listSubsItem.createdAt),
+                                                                                        'submitter_name': listSubsItem.submitterName,
+                                                                                        'media_link': listSubsItem.mediaLink,
+                                                                                        'brand_name': listSubsItem.brandName,
+                                                                                        'slugDone': listSubsItem.flowDone,
+                                                                                        'email': listSubsItem.email,
+                                                                                        'submitter_surname': listSubsItem.submitterSurname,
+                                                                                        'transcription': listSubsItem.transcription,
+                                                                                        'rating': listSubsItem.rating,
+                                                                                        'boolMail': listSubsItem.boolMail,
+                                                                                        'question': listSubsItem.question,
+                                                                                        'tag': FFAppState().tagChoosen,
+                                                                                      });
+                                                                                      await NewSubsTable().delete(
+                                                                                        matchingRows: (rows) => rows.eq(
+                                                                                          'id',
+                                                                                          listSubsItem.id,
                                                                                         ),
-                                                                                    elevation: 0.0,
-                                                                                    borderSide: const BorderSide(
-                                                                                      color: Colors.transparent,
-                                                                                      width: 0.0,
+                                                                                      );
+                                                                                      safeSetState(() => _model.requestCompleter = null);
+                                                                                      await _model.waitForRequestCompleted();
+                                                                                    },
+                                                                                    text: 'Sélectionner',
+                                                                                    options: FFButtonOptions(
+                                                                                      width: 220.0,
+                                                                                      height: 60.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).revoCardBlueText,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            color: FlutterFlowTheme.of(context).revoWhite,
+                                                                                            fontSize: 18.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                      elevation: 0.0,
+                                                                                      borderSide: const BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 0.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
                                                                                 ),
                                                                               ].divide(const SizedBox(width: 30.0)).around(const SizedBox(width: 30.0)),

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/tags/choose_tag/choose_tag_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -1372,15 +1373,11 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                 return Row(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   children: [
-                                                                                                    if (valueOrDefault<String>(
-                                                                                                              rowTagsRow?.name,
-                                                                                                              'noTag',
-                                                                                                            ) !=
-                                                                                                            '')
+                                                                                                    if (rowTagsRow?.id != 0)
                                                                                                       Text(
                                                                                                         valueOrDefault<String>(
                                                                                                           rowTagsRow?.name,
-                                                                                                          'noTag',
+                                                                                                          '...',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                               fontFamily: 'Manrope',
@@ -1388,6 +1385,99 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                               letterSpacing: 0.0,
                                                                                                               fontWeight: FontWeight.w600,
                                                                                                             ),
+                                                                                                      ),
+                                                                                                    if ((rowTagsRow?.id == null) || (rowTagsRow?.id == 0))
+                                                                                                      Builder(
+                                                                                                        builder: (context) => Padding(
+                                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                          child: FFButtonWidget(
+                                                                                                            onPressed: () async {
+                                                                                                              FFAppState().tagChoosen = 0;
+                                                                                                              safeSetState(() {});
+                                                                                                              await showDialog(
+                                                                                                                context: context,
+                                                                                                                builder: (dialogContext) {
+                                                                                                                  return Dialog(
+                                                                                                                    elevation: 0,
+                                                                                                                    insetPadding: EdgeInsets.zero,
+                                                                                                                    backgroundColor: Colors.transparent,
+                                                                                                                    alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                                    child: GestureDetector(
+                                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                                      child: const SizedBox(
+                                                                                                                        height: 435.0,
+                                                                                                                        width: 245.0,
+                                                                                                                        child: ChooseTagWidget(),
+                                                                                                                      ),
+                                                                                                                    ),
+                                                                                                                  );
+                                                                                                                },
+                                                                                                              );
+
+                                                                                                              if (!(FFAppState().tagChoosen != null)) {
+                                                                                                                var confirmDialogResponse = await showDialog<bool>(
+                                                                                                                      context: context,
+                                                                                                                      builder: (alertDialogContext) {
+                                                                                                                        return AlertDialog(
+                                                                                                                          title: const Text('Erreur'),
+                                                                                                                          content: const Text('Vous devez choisir un Tag pour continuer'),
+                                                                                                                          actions: [
+                                                                                                                            TextButton(
+                                                                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                              child: const Text('Retour'),
+                                                                                                                            ),
+                                                                                                                            TextButton(
+                                                                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                              child: const Text('Confirmer'),
+                                                                                                                            ),
+                                                                                                                          ],
+                                                                                                                        );
+                                                                                                                      },
+                                                                                                                    ) ??
+                                                                                                                    false;
+                                                                                                                return;
+                                                                                                              }
+                                                                                                              await ValidSubsTable().update(
+                                                                                                                data: {
+                                                                                                                  'tag': FFAppState().tagChoosen,
+                                                                                                                },
+                                                                                                                matchingRows: (rows) => rows.eq(
+                                                                                                                  'id',
+                                                                                                                  getJsonField(
+                                                                                                                    validItemItem,
+                                                                                                                    r'''$.id''',
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                              );
+                                                                                                              safeSetState(() => _model.apiRequestCompleter2 = null);
+                                                                                                              await _model.waitForApiRequestCompleted2();
+                                                                                                            },
+                                                                                                            text: 'Ajouter un Tag',
+                                                                                                            icon: const Icon(
+                                                                                                              Icons.add,
+                                                                                                              size: 15.0,
+                                                                                                            ),
+                                                                                                            options: FFButtonOptions(
+                                                                                                              height: 26.0,
+                                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                              color: const Color(0xFFEEE8FC),
+                                                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                                    fontFamily: 'Manrope',
+                                                                                                                    color: const Color(0xFF5E35B1),
+                                                                                                                    fontSize: 15.0,
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                                  ),
+                                                                                                              elevation: 0.0,
+                                                                                                              borderSide: const BorderSide(
+                                                                                                                color: Colors.transparent,
+                                                                                                                width: 0.0,
+                                                                                                              ),
+                                                                                                              borderRadius: BorderRadius.circular(16.0),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        ),
                                                                                                       ),
                                                                                                   ],
                                                                                                 );
