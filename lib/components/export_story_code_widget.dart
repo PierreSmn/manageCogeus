@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'export_story_code_model.dart';
 export 'export_story_code_model.dart';
 
@@ -46,11 +47,13 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.integrationEditing,
+          FFAppState().integrationEdited,
         ),
       ),
       builder: (context, snapshot) {
@@ -108,108 +111,121 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  _model.vidsby3 = false;
-                                  safeSetState(() {});
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                                : FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
-                                          ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: _model.vidsby3
+                                              ? FlutterFlowTheme.of(context)
+                                                  .secondaryBackground
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderRadius:
+                                              BorderRadius.circular(100.0),
                                         ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                                : FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
-                                          ),
+                                      ),
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: _model.vidsby3
+                                              ? FlutterFlowTheme.of(context)
+                                                  .secondaryBackground
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderRadius:
+                                              BorderRadius.circular(100.0),
                                         ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
-                                                : FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
-                                          ),
+                                      ),
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        decoration: BoxDecoration(
+                                          color: _model.vidsby3
+                                              ? FlutterFlowTheme.of(context)
+                                                  .secondaryBackground
+                                              : FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          borderRadius:
+                                              BorderRadius.circular(100.0),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
-                                    ),
-                                    Text(
-                                      '3 storys',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            fontSize:
-                                                _model.vidsby3 ? 14.0 : 18.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                    ),
-                                  ].divide(const SizedBox(height: 16.0)),
-                                ),
+                                      ),
+                                    ].divide(const SizedBox(width: 6.0)),
+                                  ),
+                                  Text(
+                                    '3 storys',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          fontSize:
+                                              _model.vidsby3 ? 14.0 : 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ].divide(const SizedBox(height: 16.0)),
                               ),
                             ].divide(const SizedBox(width: 50.0)),
                           ),
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: ((containerIntegrationsRow?.vid1 == null) ||
-                                (containerIntegrationsRow?.vid2 == null) ||
-                                (containerIntegrationsRow?.vid3 == null) ||
-                                (containerIntegrationsRow?.vid4 == null) ||
-                                (containerIntegrationsRow?.vid5 == null))
-                            ? null
-                            : () async {
-                                await Clipboard.setData(ClipboardData(
-                                    text:
-                                        '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${widget.integrationEditing?.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Code copié',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    duration: const Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).secondary,
+                        onPressed: () async {
+                          await Clipboard.setData(ClipboardData(
+                              text:
+                                  FFAppState().integrationEdited.toString()));
+                        },
+                        text: 'test',
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: const Color(0xFFEEE8FC),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Manrope',
+                                    color: const Color(0xFF5E35B1),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                );
-                                Navigator.pop(context);
-                              },
+                          elevation: 0.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 0.0,
+                          ),
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          await Clipboard.setData(ClipboardData(
+                              text:
+                                  '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${FFAppState().integrationEdited.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Code copié',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+                          Navigator.pop(context);
+                        },
                         text: 'Valider',
                         options: FFButtonOptions(
                           height: 40.0,

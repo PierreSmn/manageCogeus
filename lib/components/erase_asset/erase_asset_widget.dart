@@ -116,6 +116,18 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text(
+                                    'L\'asset est présent dans les intégrations :',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: const Color(0xFFC31212),
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                  ),
                                   Builder(
                                     builder: (context) {
                                       final listWhere =
@@ -150,7 +162,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      'ATTENTION : Vous devez d\'abord remplacer cette vidéo dans les listes ci-dessus avant de l\'effacer.',
+                                      'ATTENTION : Vous devez d\'abord vous assurez que l\'asset n\'est utilisé dans aucune intégration active pour l\'effacer.',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -264,7 +276,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                     );
                   },
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(const SizedBox(height: 8.0)),
             ),
           ),
         ),

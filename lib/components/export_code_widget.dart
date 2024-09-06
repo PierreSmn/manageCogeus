@@ -3,8 +3,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'export_code_model.dart';
 export 'export_code_model.dart';
 
@@ -34,6 +36,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
     super.initState();
     _model = createModel(context, () => ExportCodeModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.vidsby3 = true;
+      safeSetState(() {});
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -46,6 +54,8 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
@@ -281,32 +291,26 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                         ),
                       ),
                       FFButtonWidget(
-                        onPressed: ((containerIntegrationsRow?.vid1 == null) ||
-                                (containerIntegrationsRow?.vid2 == null) ||
-                                (containerIntegrationsRow?.vid3 == null) ||
-                                (containerIntegrationsRow?.vid4 == null) ||
-                                (containerIntegrationsRow?.vid5 == null))
-                            ? null
-                            : () async {
-                                await Clipboard.setData(ClipboardData(
-                                    text:
-                                        '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'${widget.integrationEditing?.toString()}\',        numVideos: ${_model.vidsby3 ? '3' : '5'}      };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>'));
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Code copié',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    duration: const Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).secondary,
-                                  ),
-                                );
-                                Navigator.pop(context);
-                              },
+                        onPressed: () async {
+                          await Clipboard.setData(ClipboardData(
+                              text:
+                                  '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'${FFAppState().integrationEdited.toString()}\',        numVideos: ${_model.vidsby3 ? '3' : '5'}      };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>'));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Code copié',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+                          Navigator.pop(context);
+                        },
                         text: 'Valider',
                         options: FFButtonOptions(
                           height: 40.0,
