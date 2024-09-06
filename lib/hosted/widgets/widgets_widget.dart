@@ -944,33 +944,63 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     },
                                                                                                   );
                                                                                                 } else {
-                                                                                                  FFAppState().vid1 = usersIntegrationsItem.vid1!;
-                                                                                                  FFAppState().vid2 = usersIntegrationsItem.vid2!;
-                                                                                                  FFAppState().vid3 = usersIntegrationsItem.vid3!;
-                                                                                                  FFAppState().vid4 = usersIntegrationsItem.vid4!;
-                                                                                                  FFAppState().vid5 = usersIntegrationsItem.vid5!;
-                                                                                                  safeSetState(() {});
-                                                                                                  await showDialog(
-                                                                                                    context: context,
-                                                                                                    builder: (dialogContext) {
-                                                                                                      return Dialog(
-                                                                                                        elevation: 0,
-                                                                                                        insetPadding: EdgeInsets.zero,
-                                                                                                        backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 800.0,
-                                                                                                            width: 1280.0,
-                                                                                                            child: EditIntegrationWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                  if ((usersIntegrationsItem.vid4 == null) && (usersIntegrationsItem.vid5 == null)) {
+                                                                                                    FFAppState().vid1 = usersIntegrationsItem.vid1!;
+                                                                                                    FFAppState().vid2 = usersIntegrationsItem.vid2!;
+                                                                                                    FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                    safeSetState(() {});
+                                                                                                    await showDialog(
+                                                                                                      context: context,
+                                                                                                      builder: (dialogContext) {
+                                                                                                        return Dialog(
+                                                                                                          elevation: 0,
+                                                                                                          insetPadding: EdgeInsets.zero,
+                                                                                                          backgroundColor: Colors.transparent,
+                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 800.0,
+                                                                                                              width: 1280.0,
+                                                                                                              child: EditIntegrationWidget(
+                                                                                                                integrationEditing: usersIntegrationsItem.id,
+                                                                                                                only3: true,
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                        ),
-                                                                                                      );
-                                                                                                    },
-                                                                                                  );
+                                                                                                        );
+                                                                                                      },
+                                                                                                    );
+                                                                                                  } else {
+                                                                                                    FFAppState().vid1 = usersIntegrationsItem.vid1!;
+                                                                                                    FFAppState().vid2 = usersIntegrationsItem.vid2!;
+                                                                                                    FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                    FFAppState().vid4 = usersIntegrationsItem.vid4!;
+                                                                                                    FFAppState().vid5 = usersIntegrationsItem.vid5!;
+                                                                                                    safeSetState(() {});
+                                                                                                    await showDialog(
+                                                                                                      context: context,
+                                                                                                      builder: (dialogContext) {
+                                                                                                        return Dialog(
+                                                                                                          elevation: 0,
+                                                                                                          insetPadding: EdgeInsets.zero,
+                                                                                                          backgroundColor: Colors.transparent,
+                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 800.0,
+                                                                                                              width: 1280.0,
+                                                                                                              child: EditIntegrationWidget(
+                                                                                                                integrationEditing: usersIntegrationsItem.id,
+                                                                                                                only3: false,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ),
+                                                                                                        );
+                                                                                                      },
+                                                                                                    );
+                                                                                                  }
                                                                                                 }
 
                                                                                                 safeSetState(() => _model.requestCompleter = null);
