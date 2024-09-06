@@ -180,35 +180,6 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                         onPressed: () async {
                           await Clipboard.setData(ClipboardData(
                               text:
-                                  FFAppState().integrationEdited.toString()));
-                        },
-                        text: 'test',
-                        options: FFButtonOptions(
-                          height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFEEE8FC),
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Manrope',
-                                    color: const Color(0xFF5E35B1),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                          elevation: 0.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 0.0,
-                          ),
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                      ),
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await Clipboard.setData(ClipboardData(
-                              text:
                                   '<div id=\"story-player-container\"></div>   <script>     window.MyVideoCarouselConfig = {       playButtonColor: \'#0000FF\',       integrationId: \'${FFAppState().integrationEdited.toString()}\',       numVideos: 3     };   </script>   <script src=\"https://stories-embed.vercel.app/story-embed.js\"></script>'));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(

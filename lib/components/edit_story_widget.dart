@@ -1327,27 +1327,21 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: ((containerIntegrationsRow?.vid1 ==
-                                      null) ||
-                                  (containerIntegrationsRow?.vid2 == null) ||
-                                  (containerIntegrationsRow?.vid3 == null))
-                              ? null
-                              : () async {
-                                  await IntegrationsTable().update(
-                                    data: {
-                                      'title1': _model.textController2.text,
-                                      'title2': _model.textController3.text,
-                                      'title3': _model.textController4.text,
-                                      'name':
-                                          _model.inteNameTextController.text,
-                                    },
-                                    matchingRows: (rows) => rows.eq(
-                                      'id',
-                                      FFAppState().integrationEdited,
-                                    ),
-                                  );
-                                  Navigator.pop(context);
-                                },
+                          onPressed: () async {
+                            await IntegrationsTable().update(
+                              data: {
+                                'title1': _model.textController2.text,
+                                'title2': _model.textController3.text,
+                                'title3': _model.textController4.text,
+                                'name': _model.inteNameTextController.text,
+                              },
+                              matchingRows: (rows) => rows.eq(
+                                'id',
+                                FFAppState().integrationEdited,
+                              ),
+                            );
+                            Navigator.pop(context);
+                          },
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 40.0,
@@ -1369,8 +1363,6 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
-                            disabledColor: const Color(0xC55E35B1),
-                            disabledTextColor: const Color(0x84FFFFFF),
                           ),
                         ),
                       ),
