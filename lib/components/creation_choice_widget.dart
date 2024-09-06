@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'creation_choice_model.dart';
 export 'creation_choice_model.dart';
 
@@ -32,6 +33,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CreationChoiceModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.vidsby3 = true;
+      safeSetState(() {});
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }

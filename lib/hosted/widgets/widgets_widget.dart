@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -86,7 +87,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                           ),
                         );
                       }
-                      List<HostedSubsRow> containerHostedSubsRowList =
+                      List<HostedSubsRow> hostedSubsHostedSubsRowList =
                           snapshot.data!;
 
                       return Container(
@@ -105,14 +106,17 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                             ),
                             Expanded(
                               child: FutureBuilder<List<IntegrationsRow>>(
-                                future: IntegrationsTable().queryRows(
-                                  queryFn: (q) => q
-                                      .eq(
-                                        'ownerBrand',
-                                        FFAppState().activeBrand,
-                                      )
-                                      .order('id'),
-                                ),
+                                future: (_model.requestCompleter ??= Completer<
+                                        List<IntegrationsRow>>()
+                                      ..complete(IntegrationsTable().queryRows(
+                                        queryFn: (q) => q
+                                            .eq(
+                                              'ownerBrand',
+                                              FFAppState().activeBrand,
+                                            )
+                                            .order('id'),
+                                      )))
+                                    .future,
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -129,7 +133,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                     );
                                   }
                                   List<IntegrationsRow>
-                                      containerIntegrationsRowList =
+                                      integrationsIntegrationsRowList =
                                       snapshot.data!;
 
                                   return Container(
@@ -256,7 +260,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                               child: Builder(
                                                                                 builder: (context) => FFButtonWidget(
                                                                                   onPressed: () async {
-                                                                                    if (containerHostedSubsRowList.length < 3) {
+                                                                                    if (hostedSubsHostedSubsRowList.length < 3) {
                                                                                       ScaffoldMessenger.of(context).showSnackBar(
                                                                                         SnackBar(
                                                                                           content: Text(
@@ -288,13 +292,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               height: 330.0,
                                                                                               width: 550.0,
                                                                                               child: CreationChoiceWidget(
-                                                                                                assets: containerHostedSubsRowList.length,
+                                                                                                assets: hostedSubsHostedSubsRowList.length,
                                                                                               ),
                                                                                             ),
                                                                                           ),
                                                                                         );
                                                                                       },
                                                                                     );
+
+                                                                                    safeSetState(() => _model.requestCompleter = null);
+                                                                                    await _model.waitForRequestCompleted();
                                                                                   },
                                                                                   text: 'Ajouter une intégration',
                                                                                   icon: const Icon(
@@ -343,7 +350,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                             Builder(
                                               builder: (context) {
                                                 final usersIntegrations =
-                                                    containerIntegrationsRowList
+                                                    integrationsIntegrationsRowList
                                                         .toList();
 
                                                 return Wrap(
@@ -499,6 +506,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                             usersIntegrationsItem.title1,
                                                                                                             'noTitle',
                                                                                                           ),
+                                                                                                          textAlign: TextAlign.center,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 fontSize: 16.0,
@@ -557,6 +565,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                             usersIntegrationsItem.title2,
                                                                                                             'noTitle',
                                                                                                           ),
+                                                                                                          textAlign: TextAlign.center,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 fontSize: 16.0,
@@ -615,6 +624,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                             usersIntegrationsItem.title3,
                                                                                                             'noTitle',
                                                                                                           ),
+                                                                                                          textAlign: TextAlign.center,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 fontSize: 16.0,
@@ -828,6 +838,8 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           Builder(
                                                                                             builder: (context) => FFButtonWidget(
                                                                                               onPressed: () async {
+                                                                                                FFAppState().integrationEdited = usersIntegrationsItem.id;
+                                                                                                safeSetState(() {});
                                                                                                 if (usersIntegrationsItem.isStory!) {
                                                                                                   await showDialog(
                                                                                                     context: context,
@@ -903,6 +915,8 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           Builder(
                                                                                             builder: (context) => FFButtonWidget(
                                                                                               onPressed: () async {
+                                                                                                FFAppState().integrationEdited = usersIntegrationsItem.id;
+                                                                                                safeSetState(() {});
                                                                                                 if (usersIntegrationsItem.isStory!) {
                                                                                                   FFAppState().vid1 = usersIntegrationsItem.vid1!;
                                                                                                   FFAppState().vid2 = usersIntegrationsItem.vid2!;
@@ -958,6 +972,9 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     },
                                                                                                   );
                                                                                                 }
+
+                                                                                                safeSetState(() => _model.requestCompleter = null);
+                                                                                                await _model.waitForRequestCompleted();
                                                                                               },
                                                                                               text: 'Modifier ',
                                                                                               icon: const Icon(
