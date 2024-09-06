@@ -207,6 +207,12 @@ class FFAppState extends ChangeNotifier {
     _tagChoosen = value;
   }
 
+  String _videoTitle = '';
+  String get videoTitle => _videoTitle;
+  set videoTitle(String value) {
+    _videoTitle = value;
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,

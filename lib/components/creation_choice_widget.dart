@@ -159,7 +159,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 ].divide(const SizedBox(height: 16.0)),
                               ),
                             ),
-                            if (widget.assets! < 5)
+                            if (widget.assets! >= 5)
                               InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -269,7 +269,6 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                         if (_model.vidsby3 == true) {
                           Navigator.pop(context);
                           await showDialog(
-                            barrierDismissible: false,
                             context: context,
                             builder: (dialogContext) {
                               return Dialog(
@@ -289,7 +288,6 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                         } else {
                           Navigator.pop(context);
                           await showDialog(
-                            barrierDismissible: false,
                             context: context,
                             builder: (dialogContext) {
                               return Dialog(

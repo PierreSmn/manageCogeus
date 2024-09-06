@@ -236,60 +236,63 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         padding:
                                                                             const EdgeInsets.all(16.0),
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.start,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              'Mes web stories',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                    fontSize: 24.72,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.normal,
+                                                                            SingleChildScrollView(
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                'Mes web stories',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                      fontSize: 24.72,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.normal,
+                                                                                    ),
+                                                                              ),
+                                                                              MouseRegion(
+                                                                                opaque: false,
+                                                                                cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                                                                onEnter: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered1 = true);
+                                                                                }),
+                                                                                onExit: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered1 = false);
+                                                                                }),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    context.pushNamed('widgets');
+                                                                                  },
+                                                                                  text: 'Aller aux webstories',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
-                                                                            ),
-                                                                            MouseRegion(
-                                                                              opaque: false,
-                                                                              cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                                                              onEnter: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered1 = true);
-                                                                              }),
-                                                                              onExit: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered1 = false);
-                                                                              }),
-                                                                              child: FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  context.pushNamed('widgets');
-                                                                                },
-                                                                                text: 'Aller aux webstories',
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: const Color(0xFFEEE8FC),
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: const Color(0xFF5E35B1),
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -312,64 +315,67 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         padding:
                                                                             const EdgeInsets.all(16.0),
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.start,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              'Mes harvesters',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                    fontSize: 24.72,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.normal,
+                                                                            SingleChildScrollView(
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                'Mes harvesters',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                      fontSize: 24.72,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.normal,
+                                                                                    ),
+                                                                              ),
+                                                                              MouseRegion(
+                                                                                opaque: false,
+                                                                                cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                                                                onEnter: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered2 = true);
+                                                                                }),
+                                                                                onExit: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered2 = false);
+                                                                                }),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    context.pushNamed('harvesters');
+                                                                                  },
+                                                                                  text: 'Recolter du contenu',
+                                                                                  icon: const Icon(
+                                                                                    Icons.add,
+                                                                                    size: 15.0,
                                                                                   ),
-                                                                            ),
-                                                                            MouseRegion(
-                                                                              opaque: false,
-                                                                              cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                                                              onEnter: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered2 = true);
-                                                                              }),
-                                                                              onExit: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered2 = false);
-                                                                              }),
-                                                                              child: FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  context.pushNamed('harvesters');
-                                                                                },
-                                                                                text: 'Recolter du contenu',
-                                                                                icon: const Icon(
-                                                                                  Icons.add,
-                                                                                  size: 15.0,
-                                                                                ),
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: _model.mouseRegionHovered2 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: const Color(0xFF5E35B1),
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: _model.mouseRegionHovered2 ? const Color(0xFFE8E2F5) : const Color(0xFFEEE8FC),
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -401,70 +407,73 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         padding:
                                                                             const EdgeInsets.all(16.0),
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.start,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              'Nouvelles vidéos à trier',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                    fontSize: 15.28,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w300,
+                                                                            SingleChildScrollView(
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                'Nouvelles vidéos à trier',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                      fontSize: 15.28,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w300,
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                homeNewSubsRowList.length >= 1000 ? '+ de 1000' : homeNewSubsRowList.length.toString(),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                      fontSize: 40.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
+                                                                              ),
+                                                                              MouseRegion(
+                                                                                opaque: false,
+                                                                                cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                                                                onEnter: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered3 = true);
+                                                                                }),
+                                                                                onExit: ((event) async {
+                                                                                  safeSetState(() => _model.mouseRegionHovered3 = false);
+                                                                                }),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    context.pushNamed('triage');
+                                                                                  },
+                                                                                  text: 'Trier',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
                                                                                   ),
-                                                                            ),
-                                                                            Text(
-                                                                              homeNewSubsRowList.length >= 1000 ? '+ de 1000' : homeNewSubsRowList.length.toString(),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                    fontSize: 40.0,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                            ),
-                                                                            MouseRegion(
-                                                                              opaque: false,
-                                                                              cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                                                              onEnter: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered3 = true);
-                                                                              }),
-                                                                              onExit: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered3 = false);
-                                                                              }),
-                                                                              child: FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  context.pushNamed('triage');
-                                                                                },
-                                                                                text: 'Trier',
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: const Color(0xFFEEE8FC),
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: const Color(0xFF5E35B1),
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                               ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
