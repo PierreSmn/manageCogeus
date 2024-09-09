@@ -8,6 +8,7 @@ import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'harvesters_model.dart';
@@ -208,6 +209,59 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     fontStyle: FontStyle.italic,
                                                                                   ),
                                                                             ),
+                                                                            FutureBuilder<List<WebAppActivationsRow>>(
+                                                                              future: WebAppActivationsTable().queryRows(
+                                                                                queryFn: (q) => q
+                                                                                    .eq(
+                                                                                      'brandName',
+                                                                                      FFAppState().activeBrand,
+                                                                                    )
+                                                                                    .eq(
+                                                                                      'slug',
+                                                                                      flowsItem.slug,
+                                                                                    ),
+                                                                              ),
+                                                                              builder: (context, snapshot) {
+                                                                                // Customize what your widget looks like when it's loading.
+                                                                                if (!snapshot.hasData) {
+                                                                                  return Center(
+                                                                                    child: SizedBox(
+                                                                                      width: 50.0,
+                                                                                      height: 50.0,
+                                                                                      child: SpinKitRing(
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        size: 50.0,
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }
+                                                                                List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
+
+                                                                                return RichText(
+                                                                                  textScaler: MediaQuery.of(context).textScaler,
+                                                                                  text: TextSpan(
+                                                                                    children: [
+                                                                                      const TextSpan(
+                                                                                        text: 'Question :',
+                                                                                        style: TextStyle(),
+                                                                                      ),
+                                                                                      TextSpan(
+                                                                                        text: flowsItem.expla2!,
+                                                                                        style: TextStyle(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                        ),
+                                                                                      )
+                                                                                    ],
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          fontSize: 18.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ),
                                                                             Padding(
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                                                                               child: FutureBuilder<List<WebAppActivationsRow>>(
@@ -243,11 +297,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     text: TextSpan(
                                                                                       children: [
                                                                                         const TextSpan(
-                                                                                          text: 'Question :',
+                                                                                          text: 'Type :',
                                                                                           style: TextStyle(),
                                                                                         ),
                                                                                         TextSpan(
-                                                                                          text: flowsItem.expla2!,
+                                                                                          text: flowsItem.isUpload! ? 'Upload' : 'Harvester Cogeus',
                                                                                           style: TextStyle(
                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
                                                                                             fontWeight: FontWeight.w500,
@@ -523,6 +577,50 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             ),
                                                                             drawText:
                                                                                 false,
+                                                                          ),
+                                                                          FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              if (flowsItem.isUpload!) {
+                                                                                await Clipboard.setData(ClipboardData(text: 'https://app.cogeus.com/upload?slug=${flowsItem.slug}'));
+                                                                              } else {
+                                                                                await Clipboard.setData(ClipboardData(text: 'https://app.cogeus.com/home?slug=${flowsItem.slug}'));
+                                                                              }
+
+                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                SnackBar(
+                                                                                  content: Text(
+                                                                                    'Lien copié',
+                                                                                    style: TextStyle(
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    ),
+                                                                                  ),
+                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                            text:
+                                                                                'Copier le lien',
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              height: 40.0,
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: const Color(0xFFEEE8FC),
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: 'Manrope',
+                                                                                    color: const Color(0xFF5E35B1),
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
+                                                                              elevation: 0.0,
+                                                                              borderSide: const BorderSide(
+                                                                                color: Colors.transparent,
+                                                                                width: 0.0,
+                                                                              ),
+                                                                              borderRadius: BorderRadius.circular(16.0),
+                                                                            ),
                                                                           ),
                                                                         ].divide(const SizedBox(height: 24.0)),
                                                                       ),

@@ -5,7 +5,6 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
-export 'tables/offline_flows.dart';
 export 'tables/submitters.dart';
 export 'tables/submitters_new.dart';
 export 'tables/clients.dart';
@@ -13,6 +12,7 @@ export 'tables/new_subs.dart';
 export 'tables/selected.dart';
 export 'tables/integrations.dart';
 export 'tables/un_selected.dart';
+export 'tables/off_flows.dart';
 export 'tables/submissions.dart';
 export 'tables/tags.dart';
 export 'tables/selections.dart';
