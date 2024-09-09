@@ -411,7 +411,6 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             FFAppState().tagChoosen = 0;
                                                                                             safeSetState(() {});
                                                                                             await showDialog(
-                                                                                              barrierDismissible: false,
                                                                                               context: context,
                                                                                               builder: (dialogContext) {
                                                                                                 return Dialog(
