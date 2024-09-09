@@ -49,7 +49,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
             ..complete(GetToBeDeterminedSubsCall.call(
               brand: FFAppState().activeBrand,
               limit: FFAppState().listQuantitySHow,
-              offset: (_model.pageselect!) * 9,
+              offset: (_model.pageselect!) * FFAppState().listQuantitySHow,
             )))
           .future,
       builder: (context, snapshot) {

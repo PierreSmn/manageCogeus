@@ -461,10 +461,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                             crossAxisAlignment: CrossAxisAlignment.center,
                                                                                             children: [
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid1,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.title1,
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid1,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -520,10 +523,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                 },
                                                                                               ),
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid2,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.title2,
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid2,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -579,10 +585,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                 },
                                                                                               ),
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid3,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.title3,
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid3,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -647,10 +656,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           children: [
                                                                                             if (usersIntegrationsItem.vid1 != null)
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid1,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.vid1?.toString(),
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid1,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -684,10 +696,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               ),
                                                                                             if (usersIntegrationsItem.vid2 != null)
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid2,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.vid2?.toString(),
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid2,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -721,10 +736,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               ),
                                                                                             if (usersIntegrationsItem.vid3 != null)
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid3,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.vid3?.toString(),
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid3,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -758,10 +776,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               ),
                                                                                             if (usersIntegrationsItem.vid4 != null)
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid4,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.vid4?.toString(),
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid4,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -795,10 +816,13 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               ),
                                                                                             if (usersIntegrationsItem.vid5 != null)
                                                                                               FutureBuilder<List<HostedSubsRow>>(
-                                                                                                future: HostedSubsTable().querySingleRow(
-                                                                                                  queryFn: (q) => q.eq(
-                                                                                                    'id',
-                                                                                                    usersIntegrationsItem.vid5,
+                                                                                                future: _model.hostedCache(
+                                                                                                  uniqueQueryKey: usersIntegrationsItem.vid5?.toString(),
+                                                                                                  requestFn: () => HostedSubsTable().querySingleRow(
+                                                                                                    queryFn: (q) => q.eq(
+                                                                                                      'id',
+                                                                                                      usersIntegrationsItem.vid5,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                                 builder: (context, snapshot) {
@@ -918,9 +942,18 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                 FFAppState().integrationEdited = usersIntegrationsItem.id;
                                                                                                 safeSetState(() {});
                                                                                                 if (usersIntegrationsItem.isStory!) {
-                                                                                                  FFAppState().vid1 = usersIntegrationsItem.vid1!;
-                                                                                                  FFAppState().vid2 = usersIntegrationsItem.vid2!;
-                                                                                                  FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                  FFAppState().vid1 = valueOrDefault<int>(
+                                                                                                    usersIntegrationsItem.vid1,
+                                                                                                    0,
+                                                                                                  );
+                                                                                                  FFAppState().vid2 = valueOrDefault<int>(
+                                                                                                    usersIntegrationsItem.vid2,
+                                                                                                    0,
+                                                                                                  );
+                                                                                                  FFAppState().vid3 = valueOrDefault<int>(
+                                                                                                    usersIntegrationsItem.vid3,
+                                                                                                    0,
+                                                                                                  );
                                                                                                   safeSetState(() {});
                                                                                                   await showDialog(
                                                                                                     context: context,
@@ -945,9 +978,18 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                   );
                                                                                                 } else {
                                                                                                   if ((usersIntegrationsItem.vid4 == null) && (usersIntegrationsItem.vid5 == null)) {
-                                                                                                    FFAppState().vid1 = usersIntegrationsItem.vid1!;
-                                                                                                    FFAppState().vid2 = usersIntegrationsItem.vid2!;
-                                                                                                    FFAppState().vid3 = usersIntegrationsItem.vid3!;
+                                                                                                    FFAppState().vid1 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid1,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid2 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid2,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid3 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid3,
+                                                                                                      0,
+                                                                                                    );
                                                                                                     safeSetState(() {});
                                                                                                     await showDialog(
                                                                                                       context: context,
@@ -972,11 +1014,26 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       },
                                                                                                     );
                                                                                                   } else {
-                                                                                                    FFAppState().vid1 = usersIntegrationsItem.vid1!;
-                                                                                                    FFAppState().vid2 = usersIntegrationsItem.vid2!;
-                                                                                                    FFAppState().vid3 = usersIntegrationsItem.vid3!;
-                                                                                                    FFAppState().vid4 = usersIntegrationsItem.vid4!;
-                                                                                                    FFAppState().vid5 = usersIntegrationsItem.vid5!;
+                                                                                                    FFAppState().vid1 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid1,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid2 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid2,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid3 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid3,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid4 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid4,
+                                                                                                      0,
+                                                                                                    );
+                                                                                                    FFAppState().vid5 = valueOrDefault<int>(
+                                                                                                      usersIntegrationsItem.vid5,
+                                                                                                      0,
+                                                                                                    );
                                                                                                     safeSetState(() {});
                                                                                                     await showDialog(
                                                                                                       context: context,
