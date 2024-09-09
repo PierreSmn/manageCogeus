@@ -683,6 +683,49 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
+                                                                                FutureBuilder<ApiCallResponse>(
+                                                                                  future: FFAppState().viewsMux(
+                                                                                    uniqueQueryKey: hostedVideosItem.assetId,
+                                                                                    requestFn: () => MuxGetViewsCall.call(
+                                                                                      time: 'timeframe[]=30:days',
+                                                                                      assetId: hostedVideosItem.assetId,
+                                                                                    ),
+                                                                                  ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50.0,
+                                                                                          height: 50.0,
+                                                                                          child: SpinKitRing(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 50.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                    final textMuxGetViewsResponse = snapshot.data!;
+
+                                                                                    return Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        MuxGetViewsCall.views(
+                                                                                                  textMuxGetViewsResponse.jsonBody,
+                                                                                                ) !=
+                                                                                                null
+                                                                                            ? '${MuxGetViewsCall.views(
+                                                                                                textMuxGetViewsResponse.jsonBody,
+                                                                                              )?.toString()} views'
+                                                                                            : '0 views',
+                                                                                        '0 views',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    );
+                                                                                  },
+                                                                                ),
                                                                                 Flexible(
                                                                                   child: Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),

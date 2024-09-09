@@ -1191,9 +1191,10 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                           .activeBrand,
                                                                       limit: FFAppState()
                                                                           .listQuantitySHow,
-                                                                      offset:
-                                                                          (_model.pageselect!) *
-                                                                              9,
+                                                                      offset: (_model
+                                                                              .pageselect!) *
+                                                                          FFAppState()
+                                                                              .listQuantitySHow,
                                                                     )))
                                                               .future,
                                                           builder: (context,

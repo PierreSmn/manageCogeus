@@ -1,6 +1,8 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/flutter_flow/request_manager.dart';
+
 import 'dart:async';
 import 'widgets_widget.dart' show WidgetsWidget;
 import 'package:flutter/material.dart';
@@ -20,6 +22,23 @@ class WidgetsModel extends FlutterFlowModel<WidgetsWidget> {
   bool mouseRegionHovered = false;
   Completer<List<IntegrationsRow>>? requestCompleter;
 
+  /// Query cache managers for this widget.
+
+  final _hostedCacheManager = FutureRequestManager<List<HostedSubsRow>>();
+  Future<List<HostedSubsRow>> hostedCache({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<HostedSubsRow>> Function() requestFn,
+  }) =>
+      _hostedCacheManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearHostedCacheCache() => _hostedCacheManager.clear();
+  void clearHostedCacheCacheKey(String? uniqueKey) =>
+      _hostedCacheManager.clearRequest(uniqueKey);
+
   @override
   void initState(BuildContext context) {
     navbarnavModel = createModel(context, () => NavbarnavModel());
@@ -28,6 +47,10 @@ class WidgetsModel extends FlutterFlowModel<WidgetsWidget> {
   @override
   void dispose() {
     navbarnavModel.dispose();
+
+    /// Dispose query cache managers for this widget.
+
+    clearHostedCacheCache();
   }
 
   /// Additional helper methods.
