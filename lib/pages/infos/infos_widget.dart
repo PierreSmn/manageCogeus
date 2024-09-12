@@ -301,7 +301,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                                 context.mounted);
                                                                           },
                                                                           text:
-                                                                              'log out',
+                                                                              'Se deconnecter',
                                                                           options:
                                                                               FFButtonOptions(
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(

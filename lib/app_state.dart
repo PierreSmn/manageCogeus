@@ -31,6 +31,9 @@ class FFAppState extends ChangeNotifier {
       _listQuantitySHow =
           prefs.getInt('ff_listQuantitySHow') ?? _listQuantitySHow;
     });
+    _safeInit(() {
+      _activeClientID = prefs.getInt('ff_activeClientID') ?? _activeClientID;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -212,6 +215,13 @@ class FFAppState extends ChangeNotifier {
   String get videoTitle => _videoTitle;
   set videoTitle(String value) {
     _videoTitle = value;
+  }
+
+  int _activeClientID = 0;
+  int get activeClientID => _activeClientID;
+  set activeClientID(int value) {
+    _activeClientID = value;
+    prefs.setInt('ff_activeClientID', value);
   }
 
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();

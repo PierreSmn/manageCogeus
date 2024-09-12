@@ -180,11 +180,10 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 16.0),
-                                                                              child: Column(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+                                                                              child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Text(
                                                                                     'Retours à trier',
@@ -221,7 +220,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 12.0)),
+                                                                                ],
                                                                               ),
                                                                             ),
                                                                           ),

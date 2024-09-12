@@ -128,8 +128,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createProfile',
           requireAuth: true,
           builder: (context, params) => CreateProfileWidget(
-            brandID: params.getParam(
-              'brandID',
+            clientID: params.getParam(
+              'clientID',
               ParamType.int,
             ),
           ),

@@ -28,7 +28,29 @@ class _HomeWidgetState extends State<HomeWidget> {
     _model = createModel(context, () => HomeModel());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if ((FFAppState().activeClientID == null) ||
+          (FFAppState().activeBrand == '') ||
+          (FFAppState().activeClientID == 0)) {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: const Text('Attention'),
+              content: const Text('Vous devez remettre à jour votre profil.'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: const Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+
+        context.pushNamed('updateProfile');
+      }
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
