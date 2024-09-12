@@ -16,10 +16,10 @@ export 'create_profile_model.dart';
 class CreateProfileWidget extends StatefulWidget {
   const CreateProfileWidget({
     super.key,
-    required this.brandID,
+    required this.clientID,
   });
 
-  final int? brandID;
+  final int? clientID;
 
   @override
   State<CreateProfileWidget> createState() => _CreateProfileWidgetState();
@@ -40,7 +40,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (widget.brandID != 0) {
+      if (widget.clientID != 0) {
         _model.isBrandSet = true;
         safeSetState(() {});
       }
@@ -173,7 +173,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                 future: ClientsTable().querySingleRow(
                                   queryFn: (q) => q.eq(
                                     'id',
-                                    widget.brandID,
+                                    widget.clientID,
                                   ),
                                 ),
                                 builder: (context, snapshot) {
@@ -506,7 +506,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                         ),
                                                       ),
                                                     ),
-                                                    if (widget.brandID == 0)
+                                                    if (widget.clientID == 0)
                                                       Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -909,6 +909,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               'site_url': _model
                                                                   .lastNameTextController2
                                                                   .text,
+                                                              'client_id':
+                                                                  widget
+                                                                      .clientID,
                                                             },
                                                             matchingRows:
                                                                 (rows) =>
@@ -942,6 +945,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   .activeBrand =
                                                               maxWidthClientsRow!
                                                                   .name!;
+                                                          FFAppState()
+                                                                  .activeClientID =
+                                                              widget.clientID!;
                                                           safeSetState(() {});
 
                                                           context.pushNamed(

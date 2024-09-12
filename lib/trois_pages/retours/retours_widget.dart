@@ -178,6 +178,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                 [
                                                                               Row(
                                                                                 mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Text(
                                                                                     'Retours sélectionnés',
@@ -244,98 +245,102 @@ class _RetoursWidgetState extends State<RetoursWidget> {
 
                                                                                   return Container(
                                                                                     decoration: const BoxDecoration(),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      children: [
-                                                                                        Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-                                                                                          child: InkWell(
-                                                                                            splashColor: Colors.transparent,
-                                                                                            focusColor: Colors.transparent,
-                                                                                            hoverColor: Colors.transparent,
-                                                                                            highlightColor: Colors.transparent,
-                                                                                            onTap: () async {
-                                                                                              _model.tagId = 0;
-                                                                                              safeSetState(() {});
-                                                                                              safeSetState(() => _model.apiRequestCompleter2 = null);
-                                                                                              await _model.waitForApiRequestCompleted2();
-                                                                                            },
-                                                                                            child: Container(
-                                                                                              width: 80.0,
-                                                                                              height: 36.0,
-                                                                                              decoration: BoxDecoration(
-                                                                                                color: _model.tagId == 0 ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                              ),
-                                                                                              child: Column(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                children: [
-                                                                                                  Text(
-                                                                                                    'Toute',
-                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Manrope',
-                                                                                                          letterSpacing: 0.0,
-                                                                                                        ),
-                                                                                                  ),
-                                                                                                ],
+                                                                                    child: SingleChildScrollView(
+                                                                                      scrollDirection: Axis.horizontal,
+                                                                                      controller: _model.rowController1,
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                            child: InkWell(
+                                                                                              splashColor: Colors.transparent,
+                                                                                              focusColor: Colors.transparent,
+                                                                                              hoverColor: Colors.transparent,
+                                                                                              highlightColor: Colors.transparent,
+                                                                                              onTap: () async {
+                                                                                                _model.tagId = 0;
+                                                                                                safeSetState(() {});
+                                                                                                safeSetState(() => _model.apiRequestCompleter2 = null);
+                                                                                                await _model.waitForApiRequestCompleted2();
+                                                                                              },
+                                                                                              child: Container(
+                                                                                                width: 80.0,
+                                                                                                height: 36.0,
+                                                                                                decoration: BoxDecoration(
+                                                                                                  color: _model.tagId == 0 ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                                ),
+                                                                                                child: Column(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      'Toute',
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            letterSpacing: 0.0,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
-                                                                                        ),
-                                                                                        Builder(
-                                                                                          builder: (context) {
-                                                                                            final tags = containerTagsRowList.toList();
+                                                                                          Builder(
+                                                                                            builder: (context) {
+                                                                                              final tags = containerTagsRowList.toList();
 
-                                                                                            return SingleChildScrollView(
-                                                                                              scrollDirection: Axis.horizontal,
-                                                                                              controller: _model.rowController,
-                                                                                              child: Row(
-                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                children: List.generate(tags.length, (tagsIndex) {
-                                                                                                  final tagsItem = tags[tagsIndex];
-                                                                                                  return InkWell(
-                                                                                                    splashColor: Colors.transparent,
-                                                                                                    focusColor: Colors.transparent,
-                                                                                                    hoverColor: Colors.transparent,
-                                                                                                    highlightColor: Colors.transparent,
-                                                                                                    onTap: () async {
-                                                                                                      _model.tagId = tagsItem.id;
-                                                                                                      safeSetState(() {});
-                                                                                                      safeSetState(() => _model.apiRequestCompleter1 = null);
-                                                                                                      await _model.waitForApiRequestCompleted1();
-                                                                                                    },
-                                                                                                    child: Container(
-                                                                                                      width: 80.0,
-                                                                                                      height: 36.0,
-                                                                                                      decoration: BoxDecoration(
-                                                                                                        color: _model.tagId == tagsItem.id ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                                      ),
-                                                                                                      child: Column(
-                                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                        children: [
-                                                                                                          Text(
-                                                                                                            valueOrDefault<String>(
-                                                                                                              tagsItem.name,
-                                                                                                              'name',
+                                                                                              return SingleChildScrollView(
+                                                                                                scrollDirection: Axis.horizontal,
+                                                                                                controller: _model.rowController2,
+                                                                                                child: Row(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  children: List.generate(tags.length, (tagsIndex) {
+                                                                                                    final tagsItem = tags[tagsIndex];
+                                                                                                    return InkWell(
+                                                                                                      splashColor: Colors.transparent,
+                                                                                                      focusColor: Colors.transparent,
+                                                                                                      hoverColor: Colors.transparent,
+                                                                                                      highlightColor: Colors.transparent,
+                                                                                                      onTap: () async {
+                                                                                                        _model.tagId = tagsItem.id;
+                                                                                                        safeSetState(() {});
+                                                                                                        safeSetState(() => _model.apiRequestCompleter1 = null);
+                                                                                                        await _model.waitForApiRequestCompleted1();
+                                                                                                      },
+                                                                                                      child: Container(
+                                                                                                        width: 80.0,
+                                                                                                        height: 36.0,
+                                                                                                        decoration: BoxDecoration(
+                                                                                                          color: _model.tagId == tagsItem.id ? FlutterFlowTheme.of(context).secondaryBackground : FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                                        ),
+                                                                                                        child: Column(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                          children: [
+                                                                                                            Text(
+                                                                                                              valueOrDefault<String>(
+                                                                                                                tagsItem.name,
+                                                                                                                'name',
+                                                                                                              ),
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: 'Manrope',
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                  ),
                                                                                                             ),
-                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                ),
-                                                                                                          ),
-                                                                                                        ],
+                                                                                                          ],
+                                                                                                        ),
                                                                                                       ),
-                                                                                                    ),
-                                                                                                  );
-                                                                                                }).divide(const SizedBox(width: 12.0)),
-                                                                                              ),
-                                                                                            );
-                                                                                          },
-                                                                                        ),
-                                                                                      ],
+                                                                                                    );
+                                                                                                  }).divide(const SizedBox(width: 12.0)),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
                                                                                     ),
                                                                                   );
                                                                                 },

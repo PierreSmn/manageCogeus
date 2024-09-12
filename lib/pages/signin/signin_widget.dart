@@ -833,6 +833,8 @@ class _SigninWidgetState extends State<SigninWidget>
                                                 FFAppState().activeBrand =
                                                     signinUsersRow
                                                         .companyName!;
+                                                FFAppState().activeClientID =
+                                                    signinUsersRow.clientId!;
 
                                                 context.goNamed(
                                                   'home',

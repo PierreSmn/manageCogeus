@@ -43,4 +43,10 @@ class HostedSubsRow extends SupabaseDataRow {
 
   String? get clipOriginId => getField<String>('clip_origin_id');
   set clipOriginId(String? value) => setField<String>('clip_origin_id', value);
+
+  String? get videoTitle => getField<String>('video_title');
+  set videoTitle(String? value) => setField<String>('video_title', value);
+
+  int? get clientId => getField<int>('client_id');
+  set clientId(int? value) => setField<int>('client_id', value);
 }

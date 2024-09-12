@@ -60,4 +60,7 @@ class UsersRow extends SupabaseDataRow {
 
   bool? get upToDate => getField<bool>('up_to_date');
   set upToDate(bool? value) => setField<bool>('up_to_date', value);
+
+  int? get clientId => getField<int>('client_id');
+  set clientId(int? value) => setField<int>('client_id', value);
 }

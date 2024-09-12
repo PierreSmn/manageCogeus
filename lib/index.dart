@@ -1,6 +1,6 @@
 // Export pages
 export '/pages/signin/signin_widget.dart' show SigninWidget;
-export '/trois_pages/infos/infos_widget.dart' show InfosWidget;
+export '/pages/infos/infos_widget.dart' show InfosWidget;
 export '/pages/update_profile/update_profile_widget.dart'
     show UpdateProfileWidget;
 export '/trois_pages/dossiers/dossiers_widget.dart' show DossiersWidget;

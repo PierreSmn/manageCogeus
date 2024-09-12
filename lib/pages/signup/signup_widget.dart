@@ -669,7 +669,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                         'createProfile',
                                                         context.mounted,
                                                         queryParameters: {
-                                                          'brandID':
+                                                          'clientID':
                                                               serializeParam(
                                                             widget
                                                                     .brandId ?? 0,

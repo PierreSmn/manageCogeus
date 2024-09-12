@@ -204,7 +204,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                   .fromSTEB(
                                                       32.0, 24.0, 0.0, 0.0),
                                               child: Text(
-                                                'Modifier votre compte',
+                                                'Mettre à jour votre compte',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .displaySmall
@@ -531,12 +531,16 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .activeBrand =
                                                             updateProfileUsersRow!
                                                                 .companyName!;
+                                                        FFAppState()
+                                                                .activeClientID =
+                                                            updateProfileUsersRow
+                                                                .clientId!;
                                                         safeSetState(() {});
 
                                                         context
-                                                            .pushNamed('infos');
+                                                            .pushNamed('home');
                                                       },
-                                                      text: 'Enregistrer',
+                                                      text: 'Continuer',
                                                       options: FFButtonOptions(
                                                         width: 230.0,
                                                         height: 40.0,
