@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
-import '/tags/choose_tag/choose_tag_widget.dart';
+import '/tags/choose_muti_tag/choose_muti_tag_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -93,7 +93,9 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(),
+                              child: const NavbarnavWidget(
+                                selectedIndex: 4,
+                              ),
                             ),
                             Expanded(
                               child: Container(
@@ -407,7 +409,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                       Builder(
                                                                                         builder: (context) => FFButtonWidget(
                                                                                           onPressed: () async {
-                                                                                            FFAppState().tagChoosen = 0;
+                                                                                            FFAppState().tagList = [];
                                                                                             safeSetState(() {});
                                                                                             await showDialog(
                                                                                               context: context,
@@ -422,36 +424,13 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                     child: const SizedBox(
                                                                                                       height: 435.0,
                                                                                                       width: 245.0,
-                                                                                                      child: ChooseTagWidget(),
+                                                                                                      child: ChooseMutiTagWidget(),
                                                                                                     ),
                                                                                                   ),
                                                                                                 );
                                                                                               },
                                                                                             );
 
-                                                                                            if (!(FFAppState().tagChoosen != null)) {
-                                                                                              var confirmDialogResponse = await showDialog<bool>(
-                                                                                                    context: context,
-                                                                                                    builder: (alertDialogContext) {
-                                                                                                      return AlertDialog(
-                                                                                                        title: const Text('Erreur'),
-                                                                                                        content: const Text('Vous devez choisir un Tag pour continuer'),
-                                                                                                        actions: [
-                                                                                                          TextButton(
-                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                            child: const Text('Retour'),
-                                                                                                          ),
-                                                                                                          TextButton(
-                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                            child: const Text('Confirmer'),
-                                                                                                          ),
-                                                                                                        ],
-                                                                                                      );
-                                                                                                    },
-                                                                                                  ) ??
-                                                                                                  false;
-                                                                                              return;
-                                                                                            }
                                                                                             await ValidSubsTable().insert({
                                                                                               'submitter_name': getJsonField(
                                                                                                 validItemItem,
@@ -493,7 +472,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                 validItemItem,
                                                                                                 r'''$.question''',
                                                                                               ).toString(),
-                                                                                              'tag': FFAppState().tagChoosen,
+                                                                                              'tagId': FFAppState().tagList,
                                                                                             });
                                                                                             await NewSubsTable().delete(
                                                                                               matchingRows: (rows) => rows.eq(

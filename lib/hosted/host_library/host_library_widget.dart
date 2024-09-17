@@ -391,9 +391,6 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                               ?.jsonBody ??
                                                                           ''),
                                                                     ).toString(),
-                                                                    'video_title':
-                                                                        FFAppState()
-                                                                            .videoTitle,
                                                                     'client_id':
                                                                         valueOrDefault<
                                                                             int>(

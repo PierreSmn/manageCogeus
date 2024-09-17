@@ -176,10 +176,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NewpasswordWidget(),
         ),
         FFRoute(
-          name: 'retours',
-          path: '/retours',
+          name: 'retoursOLD',
+          path: '/retoursOld',
           requireAuth: true,
-          builder: (context, params) => const RetoursWidget(),
+          builder: (context, params) => const RetoursOLDWidget(),
         ),
         FFRoute(
           name: 'invalids',
@@ -198,6 +198,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/retoursatrier',
           requireAuth: true,
           builder: (context, params) => const RetoursATrierWidget(),
+        ),
+        FFRoute(
+          name: 'retours',
+          path: '/retours',
+          requireAuth: true,
+          builder: (context, params) => const RetoursWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
