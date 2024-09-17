@@ -2,10 +2,10 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
-import 'retours_widget.dart' show RetoursWidget;
+import 'retours_o_l_d_widget.dart' show RetoursOLDWidget;
 import 'package:flutter/material.dart';
 
-class RetoursModel extends FlutterFlowModel<RetoursWidget> {
+class RetoursOLDModel extends FlutterFlowModel<RetoursOLDWidget> {
   ///  Local state fields for this page.
 
   int? pageselect = 0;
@@ -22,10 +22,10 @@ class RetoursModel extends FlutterFlowModel<RetoursWidget> {
   ScrollController? columnController2;
   // State field(s) for Row widget.
   ScrollController? rowController1;
-  Completer<ApiCallResponse>? apiRequestCompleter1;
+  Completer<ApiCallResponse>? apiRequestCompleter2;
   // State field(s) for Row widget.
   ScrollController? rowController2;
-  Completer<ApiCallResponse>? apiRequestCompleter2;
+  Completer<ApiCallResponse>? apiRequestCompleter1;
   // State field(s) for loadTags widget.
   ScrollController? loadTags;
   // State field(s) for loadall widget.
@@ -54,21 +54,6 @@ class RetoursModel extends FlutterFlowModel<RetoursWidget> {
   }
 
   /// Additional helper methods.
-  Future waitForApiRequestCompleted1({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
   Future waitForApiRequestCompleted2({
     double minWait = 0,
     double maxWait = double.infinity,
@@ -78,6 +63,21 @@ class RetoursModel extends FlutterFlowModel<RetoursWidget> {
       await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter2?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForApiRequestCompleted1({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = apiRequestCompleter1?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

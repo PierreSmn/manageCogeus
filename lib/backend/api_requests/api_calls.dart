@@ -138,9 +138,19 @@ class GetValidSubsCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List? tagId(dynamic response) => getJsonField(
+        response,
+        r'''$[:].tagId''',
+        true,
+      ) as List?;
+  static List? tag(dynamic response) => getJsonField(
+        response,
+        r'''$[:].tag''',
+        true,
+      ) as List?;
 }
 
-class GetTagsCall {
+class GetTagCall {
   static Future<ApiCallResponse> call({
     String? brand = '',
     int? limit,
@@ -148,9 +158,75 @@ class GetTagsCall {
     int? tagid,
   }) async {
     return ApiManager.instance.makeApiCall(
-      callName: 'get tags ',
+      callName: 'get tag',
       apiUrl:
           'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc&tag=eq.$tagid',
+      callType: ApiCallType.GET,
+      headers: {
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpZmN4bHF3ZmZkcnFjd2dnb3FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzMyNjY2NTYsImV4cCI6MTk4ODg0MjY1Nn0.lha9G8j7lPLVGv0IU1sAT4SzrJb0I87LfhhvQV8Tc2Q',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpZmN4bHF3ZmZkcnFjd2dnb3FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzMyNjY2NTYsImV4cCI6MTk4ODg0MjY1Nn0.lha9G8j7lPLVGv0IU1sAT4SzrJb0I87LfhhvQV8Tc2Q',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? video(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].media_link''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? name(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].submitter_name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? ids(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? slug(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].slugDone''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class GetTagzzzCall {
+  static Future<ApiCallResponse> call({
+    String? brand = '',
+    int? limit,
+    int? offset,
+    int? tagid,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'get tagzzz',
+      apiUrl:
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc&tagId=cs.{$tagid}',
       callType: ApiCallType.GET,
       headers: {
         'apikey':

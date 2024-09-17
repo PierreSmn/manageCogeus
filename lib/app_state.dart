@@ -224,6 +224,35 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_activeClientID', value);
   }
 
+  List<int> _tagList = [];
+  List<int> get tagList => _tagList;
+  set tagList(List<int> value) {
+    _tagList = value;
+  }
+
+  void addToTagList(int value) {
+    tagList.add(value);
+  }
+
+  void removeFromTagList(int value) {
+    tagList.remove(value);
+  }
+
+  void removeAtIndexFromTagList(int index) {
+    tagList.removeAt(index);
+  }
+
+  void updateTagListAtIndex(
+    int index,
+    int Function(int) updateFn,
+  ) {
+    tagList[index] = updateFn(_tagList[index]);
+  }
+
+  void insertAtIndexInTagList(int index, int value) {
+    tagList.insert(index, value);
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,
@@ -270,6 +299,21 @@ class FFAppState extends ChangeNotifier {
   void clearViewsMuxCache() => _viewsMuxManager.clear();
   void clearViewsMuxCacheKey(String? uniqueKey) =>
       _viewsMuxManager.clearRequest(uniqueKey);
+
+  final _usersSpeTagsManager = FutureRequestManager<List<TagsRow>>();
+  Future<List<TagsRow>> usersSpeTags({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<TagsRow>> Function() requestFn,
+  }) =>
+      _usersSpeTagsManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearUsersSpeTagsCache() => _usersSpeTagsManager.clear();
+  void clearUsersSpeTagsCacheKey(String? uniqueKey) =>
+      _usersSpeTagsManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

@@ -56,4 +56,7 @@ class ValidSubsRow extends SupabaseDataRow {
 
   int? get tag => getField<int>('tag');
   set tag(int? value) => setField<int>('tag', value);
+
+  List<int> get tagId => getListField<int>('tagId');
+  set tagId(List<int>? value) => setListField<int>('tagId', value);
 }

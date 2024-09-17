@@ -507,7 +507,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             usersIntegrationsItem.title1,
-                                                                                                            'noTitle',
+                                                                                                            'Titre',
                                                                                                           ),
                                                                                                           textAlign: TextAlign.center,
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
