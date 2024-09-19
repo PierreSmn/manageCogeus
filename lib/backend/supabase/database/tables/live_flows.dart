@@ -88,4 +88,7 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   bool? get isUpload => getField<bool>('isUpload');
   set isUpload(bool? value) => setField<bool>('isUpload', value);
+
+  String? get title => getField<String>('title');
+  set title(String? value) => setField<String>('title', value);
 }
