@@ -59,7 +59,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: SafeArea(
               top: true,
               child: Column(
@@ -277,7 +277,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                                   children: [
                                                                                                     Text(
-                                                                                                      'Toute',
+                                                                                                      'Toutes',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: 'Manrope',
                                                                                                             letterSpacing: 0.0,
@@ -503,7 +503,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                           r'''$.media_link''',
                                                                                         ).toString(),
                                                                                         videoType: VideoType.network,
-                                                                                        width: 260.0,
+                                                                                        width: 230.0,
                                                                                         height: 200.0,
                                                                                         autoPlay: false,
                                                                                         looping: true,
@@ -629,7 +629,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                     safeSetState(() => _model.apiRequestCompleter1 = null);
                                                                                                     await _model.waitForApiRequestCompleted1();
                                                                                                   },
-                                                                                                  text: 'Changer de Tag',
+                                                                                                  text: 'Ajouter un Tag',
                                                                                                   options: FFButtonOptions(
                                                                                                     height: 26.0,
                                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),

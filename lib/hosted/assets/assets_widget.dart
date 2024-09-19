@@ -15,25 +15,25 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'host_library_model.dart';
-export 'host_library_model.dart';
+import 'assets_model.dart';
+export 'assets_model.dart';
 
-class HostLibraryWidget extends StatefulWidget {
-  const HostLibraryWidget({super.key});
+class AssetsWidget extends StatefulWidget {
+  const AssetsWidget({super.key});
 
   @override
-  State<HostLibraryWidget> createState() => _HostLibraryWidgetState();
+  State<AssetsWidget> createState() => _AssetsWidgetState();
 }
 
-class _HostLibraryWidgetState extends State<HostLibraryWidget> {
-  late HostLibraryModel _model;
+class _AssetsWidgetState extends State<AssetsWidget> {
+  late AssetsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HostLibraryModel());
+    _model = createModel(context, () => AssetsModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -64,7 +64,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -77,16 +77,16 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
             ),
           );
         }
-        List<HostedSubsRow> hostLibraryHostedSubsRowList = snapshot.data!;
+        List<HostedSubsRow> assetsHostedSubsRowList = snapshot.data!;
 
         return Title(
-            title: 'hostLibrary',
+            title: 'assets',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
-                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                backgroundColor: FlutterFlowTheme.of(context).revoBG,
                 body: SafeArea(
                   top: true,
                   child: Column(
@@ -521,7 +521,7 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                   builder:
                                                                       (context) {
                                                                     final hostedVideos =
-                                                                        hostLibraryHostedSubsRowList
+                                                                        assetsHostedSubsRowList
                                                                             .toList();
 
                                                                     return Wrap(
@@ -689,49 +689,6 @@ class _HostLibraryWidgetState extends State<HostLibraryWidget> {
                                                                                         fontFamily: 'Manrope',
                                                                                         letterSpacing: 0.0,
                                                                                       ),
-                                                                                ),
-                                                                                FutureBuilder<ApiCallResponse>(
-                                                                                  future: FFAppState().viewsMux(
-                                                                                    uniqueQueryKey: hostedVideosItem.assetId,
-                                                                                    requestFn: () => MuxGetViewsCall.call(
-                                                                                      time: 'timeframe[]=30:days',
-                                                                                      assetId: hostedVideosItem.assetId,
-                                                                                    ),
-                                                                                  ),
-                                                                                  builder: (context, snapshot) {
-                                                                                    // Customize what your widget looks like when it's loading.
-                                                                                    if (!snapshot.hasData) {
-                                                                                      return Center(
-                                                                                        child: SizedBox(
-                                                                                          width: 50.0,
-                                                                                          height: 50.0,
-                                                                                          child: SpinKitRing(
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 50.0,
-                                                                                          ),
-                                                                                        ),
-                                                                                      );
-                                                                                    }
-                                                                                    final textMuxGetViewsResponse = snapshot.data!;
-
-                                                                                    return Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        MuxGetViewsCall.views(
-                                                                                                  textMuxGetViewsResponse.jsonBody,
-                                                                                                ) !=
-                                                                                                null
-                                                                                            ? '${MuxGetViewsCall.views(
-                                                                                                textMuxGetViewsResponse.jsonBody,
-                                                                                              )?.toString()} views'
-                                                                                            : '0 views',
-                                                                                        '0 views',
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    );
-                                                                                  },
                                                                                 ),
                                                                                 Flexible(
                                                                                   child: Padding(

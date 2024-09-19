@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
-import 'backend/api_requests/api_manager.dart';
 import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -284,21 +283,6 @@ class FFAppState extends ChangeNotifier {
       _brandActiveFlowsCacheManager.clear();
   void clearBrandActiveFlowsCacheCacheKey(String? uniqueKey) =>
       _brandActiveFlowsCacheManager.clearRequest(uniqueKey);
-
-  final _viewsMuxManager = FutureRequestManager<ApiCallResponse>();
-  Future<ApiCallResponse> viewsMux({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<ApiCallResponse> Function() requestFn,
-  }) =>
-      _viewsMuxManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearViewsMuxCache() => _viewsMuxManager.clear();
-  void clearViewsMuxCacheKey(String? uniqueKey) =>
-      _viewsMuxManager.clearRequest(uniqueKey);
 
   final _usersSpeTagsManager = FutureRequestManager<List<TagsRow>>();
   Future<List<TagsRow>> usersSpeTags({

@@ -147,10 +147,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AnalyticsWidget(),
         ),
         FFRoute(
-          name: 'hostLibrary',
-          path: '/hostLibrary',
+          name: 'assets',
+          path: '/assets',
           requireAuth: true,
-          builder: (context, params) => const HostLibraryWidget(),
+          builder: (context, params) => const AssetsWidget(),
         ),
         FFRoute(
           name: 'widgets',

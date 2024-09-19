@@ -60,7 +60,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: SafeArea(
               top: true,
               child: Column(

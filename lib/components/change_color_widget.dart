@@ -1023,7 +1023,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                         onPressed: () async {
                           await LiveFlowsTable().update(
                             data: {
-                              'colorTitle': _model.titleTextController.text,
+                              'colorTitle': valueOrDefault<String>(
+                                _model.colorTitleTextController.text,
+                                '#FFFFFF',
+                              ),
                               'colorText': _model.colorTextTextController.text,
                               'colorButton':
                                   _model.colorButtonTextController.text,

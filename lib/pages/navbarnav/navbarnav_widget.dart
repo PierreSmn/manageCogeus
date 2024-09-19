@@ -83,7 +83,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         child: Image.network(
                           'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
                           width: 130.0,
-                          height: 100.0,
+                          height: 60.0,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -278,7 +278,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('hostLibrary');
+                            context.pushNamed('assets');
                           },
                           child: Container(
                             decoration: BoxDecoration(
