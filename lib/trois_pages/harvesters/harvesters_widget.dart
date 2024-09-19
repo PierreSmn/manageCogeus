@@ -1,6 +1,8 @@
 import '/backend/supabase/supabase.dart';
 import '/components/change_color_widget.dart';
 import '/components/change_question_widget.dart';
+import '/components/choose_title_harvester_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -99,7 +101,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                   ),
                                 );
                               }
-                              List<LiveFlowsRow> containerLiveFlowsRowList =
+                              List<LiveFlowsRow> harvesterssLiveFlowsRowList =
                                   snapshot.data!;
 
                               return Container(
@@ -131,7 +133,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                 child: Builder(
                                                   builder: (context) {
                                                     final flows =
-                                                        containerLiveFlowsRowList
+                                                        harvesterssLiveFlowsRowList
                                                             .toList();
 
                                                     return SingleChildScrollView(
@@ -182,64 +184,123 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                         CrossAxisAlignment
                                                                             .center,
                                                                     children: [
-                                                                      Container(
-                                                                        width:
-                                                                            380.0,
-                                                                        decoration:
-                                                                            const BoxDecoration(),
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.start,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children:
-                                                                              [
-                                                                            Text(
-                                                                              valueOrDefault<String>(
+                                                                      FutureBuilder<
+                                                                          List<
+                                                                              WebAppActivationsRow>>(
+                                                                        future:
+                                                                            WebAppActivationsTable().queryRows(
+                                                                          queryFn: (q) => q
+                                                                              .eq(
+                                                                                'brandName',
+                                                                                FFAppState().activeBrand,
+                                                                              )
+                                                                              .eq(
+                                                                                'slug',
                                                                                 flowsItem.slug,
-                                                                                'noneFound',
                                                                               ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                    fontSize: 34.72,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.normal,
-                                                                                    fontStyle: FontStyle.italic,
-                                                                                  ),
-                                                                            ),
-                                                                            FutureBuilder<List<WebAppActivationsRow>>(
-                                                                              future: WebAppActivationsTable().queryRows(
-                                                                                queryFn: (q) => q
-                                                                                    .eq(
-                                                                                      'brandName',
-                                                                                      FFAppState().activeBrand,
-                                                                                    )
-                                                                                    .eq(
-                                                                                      'slug',
-                                                                                      flowsItem.slug,
+                                                                        ),
+                                                                        builder:
+                                                                            (context,
+                                                                                snapshot) {
+                                                                          // Customize what your widget looks like when it's loading.
+                                                                          if (!snapshot
+                                                                              .hasData) {
+                                                                            return Center(
+                                                                              child: SizedBox(
+                                                                                width: 50.0,
+                                                                                height: 50.0,
+                                                                                child: SpinKitRing(
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 50.0,
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          }
+                                                                          List<WebAppActivationsRow>
+                                                                              containerWebAppActivationsRowList =
+                                                                              snapshot.data!;
+
+                                                                          return Container(
+                                                                            width:
+                                                                                380.0,
+                                                                            decoration:
+                                                                                const BoxDecoration(),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        flowsItem.title,
+                                                                                        'Choisir un titre',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            fontSize: 26.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.normal,
+                                                                                          ),
                                                                                     ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: SpinKitRing(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
+                                                                                    Builder(
+                                                                                      builder: (context) => FlutterFlowIconButton(
+                                                                                        borderRadius: 8.0,
+                                                                                        buttonSize: 40.0,
+                                                                                        icon: Icon(
+                                                                                          Icons.edit,
+                                                                                          color: FlutterFlowTheme.of(context).tertiary,
+                                                                                          size: 20.0,
+                                                                                        ),
+                                                                                        onPressed: () async {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (dialogContext) {
+                                                                                              return Dialog(
+                                                                                                elevation: 0,
+                                                                                                insetPadding: EdgeInsets.zero,
+                                                                                                backgroundColor: Colors.transparent,
+                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                  child: SizedBox(
+                                                                                                    height: 250.0,
+                                                                                                    width: 250.0,
+                                                                                                    child: ChooseTitleHarvesterWidget(
+                                                                                                      harbesterID: flowsItem.id,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          );
+
+                                                                                          safeSetState(() => _model.requestCompleter = null);
+                                                                                          await _model.waitForRequestCompleted();
+                                                                                        },
                                                                                       ),
                                                                                     ),
-                                                                                  );
-                                                                                }
-                                                                                List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
-
-                                                                                return RichText(
+                                                                                  ],
+                                                                                ),
+                                                                                Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    flowsItem.slug,
+                                                                                    'noneFound',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                        fontSize: 18.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.normal,
+                                                                                        fontStyle: FontStyle.italic,
+                                                                                      ),
+                                                                                ),
+                                                                                RichText(
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
                                                                                     children: [
@@ -261,94 +322,31 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
-                                                                                );
-                                                                              },
-                                                                            ),
-                                                                            Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
-                                                                              child: FutureBuilder<List<WebAppActivationsRow>>(
-                                                                                future: WebAppActivationsTable().queryRows(
-                                                                                  queryFn: (q) => q
-                                                                                      .eq(
-                                                                                        'brandName',
-                                                                                        FFAppState().activeBrand,
-                                                                                      )
-                                                                                      .eq(
-                                                                                        'slug',
-                                                                                        flowsItem.slug,
-                                                                                      ),
                                                                                 ),
-                                                                                builder: (context, snapshot) {
-                                                                                  // Customize what your widget looks like when it's loading.
-                                                                                  if (!snapshot.hasData) {
-                                                                                    return Center(
-                                                                                      child: SizedBox(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
-                                                                                        child: SpinKitRing(
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 50.0,
-                                                                                        ),
+                                                                                RichText(
+                                                                                  textScaler: MediaQuery.of(context).textScaler,
+                                                                                  text: TextSpan(
+                                                                                    children: [
+                                                                                      const TextSpan(
+                                                                                        text: 'Type :',
+                                                                                        style: TextStyle(),
                                                                                       ),
-                                                                                    );
-                                                                                  }
-                                                                                  List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
-
-                                                                                  return RichText(
-                                                                                    textScaler: MediaQuery.of(context).textScaler,
-                                                                                    text: TextSpan(
-                                                                                      children: [
-                                                                                        const TextSpan(
-                                                                                          text: 'Type :',
-                                                                                          style: TextStyle(),
+                                                                                      TextSpan(
+                                                                                        text: flowsItem.isUpload! ? 'Upload' : 'Harvester Cogeus',
+                                                                                        style: TextStyle(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                          fontWeight: FontWeight.w500,
                                                                                         ),
-                                                                                        TextSpan(
-                                                                                          text: flowsItem.isUpload! ? 'Upload' : 'Harvester Cogeus',
-                                                                                          style: TextStyle(
-                                                                                            color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            fontWeight: FontWeight.w500,
-                                                                                          ),
-                                                                                        )
-                                                                                      ],
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
-                                                                                            fontSize: 18.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              ),
-                                                                            ),
-                                                                            FutureBuilder<List<WebAppActivationsRow>>(
-                                                                              future: WebAppActivationsTable().queryRows(
-                                                                                queryFn: (q) => q
-                                                                                    .eq(
-                                                                                      'brandName',
-                                                                                      FFAppState().activeBrand,
-                                                                                    )
-                                                                                    .eq(
-                                                                                      'slug',
-                                                                                      flowsItem.slug,
-                                                                                    ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: SpinKitRing(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<WebAppActivationsRow> richTextWebAppActivationsRowList = snapshot.data!;
-
-                                                                                return RichText(
+                                                                                      )
+                                                                                    ],
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          fontSize: 18.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                                RichText(
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
                                                                                     children: [
@@ -357,7 +355,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         style: TextStyle(),
                                                                                       ),
                                                                                       TextSpan(
-                                                                                        text: richTextWebAppActivationsRowList.length.toString(),
+                                                                                        text: containerWebAppActivationsRowList.length.toString(),
                                                                                         style: const TextStyle(
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
@@ -369,187 +367,182 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                           letterSpacing: 0.0,
                                                                                         ),
                                                                                   ),
-                                                                                );
-                                                                              },
-                                                                            ),
-                                                                            FutureBuilder<List<SubmittersNewRow>>(
-                                                                              future: SubmittersNewTable().queryRows(
-                                                                                queryFn: (q) => q
-                                                                                    .eq(
-                                                                                      'brand_name',
-                                                                                      FFAppState().activeBrand,
-                                                                                    )
-                                                                                    .eq(
-                                                                                      'flow_done',
-                                                                                      flowsItem.slug,
-                                                                                    ),
-                                                                              ),
-                                                                              builder: (context, snapshot) {
-                                                                                // Customize what your widget looks like when it's loading.
-                                                                                if (!snapshot.hasData) {
-                                                                                  return Center(
-                                                                                    child: SizedBox(
-                                                                                      width: 50.0,
-                                                                                      height: 50.0,
-                                                                                      child: SpinKitRing(
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 50.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                }
-                                                                                List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
-
-                                                                                return RichText(
-                                                                                  textScaler: MediaQuery.of(context).textScaler,
-                                                                                  text: TextSpan(
-                                                                                    children: [
-                                                                                      const TextSpan(
-                                                                                        text: 'Vidéos reçues : ',
-                                                                                        style: TextStyle(),
-                                                                                      ),
-                                                                                      TextSpan(
-                                                                                        text: richTextSubmittersNewRowList.length.toString(),
-                                                                                        style: const TextStyle(
-                                                                                          fontWeight: FontWeight.w600,
-                                                                                        ),
-                                                                                      )
-                                                                                    ],
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
-                                                                                          fontSize: 18.0,
-                                                                                          letterSpacing: 0.0,
+                                                                                ),
+                                                                                FutureBuilder<List<SubmittersNewRow>>(
+                                                                                  future: SubmittersNewTable().queryRows(
+                                                                                    queryFn: (q) => q
+                                                                                        .eq(
+                                                                                          'brand_name',
+                                                                                          FFAppState().activeBrand,
+                                                                                        )
+                                                                                        .eq(
+                                                                                          'flow_done',
+                                                                                          flowsItem.slug,
                                                                                         ),
                                                                                   ),
-                                                                                );
-                                                                              },
-                                                                            ),
-                                                                            Builder(
-                                                                              builder: (context) => FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  FFAppState().colorChange = false;
-                                                                                  safeSetState(() {});
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (dialogContext) {
-                                                                                      return Dialog(
-                                                                                        elevation: 0,
-                                                                                        insetPadding: EdgeInsets.zero,
-                                                                                        backgroundColor: Colors.transparent,
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                        child: GestureDetector(
-                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                          child: SizedBox(
-                                                                                            height: 830.0,
-                                                                                            width: 1000.0,
-                                                                                            child: ChangeColorWidget(
-                                                                                              title: flowsItem.colorTitle!,
-                                                                                              text: flowsItem.colorText!,
-                                                                                              button: flowsItem.colorButton!,
-                                                                                              buttonTxt: flowsItem.colorButtonText!,
-                                                                                              background: flowsItem.colorBG,
-                                                                                              id: flowsItem.id,
-                                                                                            ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50.0,
+                                                                                          height: 50.0,
+                                                                                          child: SpinKitRing(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 50.0,
                                                                                           ),
                                                                                         ),
                                                                                       );
-                                                                                    },
-                                                                                  );
+                                                                                    }
+                                                                                    List<SubmittersNewRow> richTextSubmittersNewRowList = snapshot.data!;
 
-                                                                                  if (FFAppState().colorChange) {
-                                                                                    safeSetState(() => _model.requestCompleter = null);
-                                                                                    await _model.waitForRequestCompleted();
-                                                                                  } else {
-                                                                                    return;
-                                                                                  }
-                                                                                },
-                                                                                text: 'Modifier page accueil',
-                                                                                icon: const Icon(
-                                                                                  Icons.mode_edit,
-                                                                                  size: 15.0,
-                                                                                ),
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: FlutterFlowTheme.of(context).revoSearchBarBg,
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: const Color(0xFF5E35B1),
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                            Builder(
-                                                                              builder: (context) => FFButtonWidget(
-                                                                                onPressed: () async {
-                                                                                  FFAppState().colorChange = false;
-                                                                                  safeSetState(() {});
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (dialogContext) {
-                                                                                      return Dialog(
-                                                                                        elevation: 0,
-                                                                                        insetPadding: EdgeInsets.zero,
-                                                                                        backgroundColor: Colors.transparent,
-                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                        child: GestureDetector(
-                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                          child: SizedBox(
-                                                                                            height: 770.0,
-                                                                                            width: 750.0,
-                                                                                            child: ChangeQuestionWidget(
-                                                                                              id: flowsItem.id,
-                                                                                              question: flowsItem.expla2!,
-                                                                                            ),
+                                                                                    return RichText(
+                                                                                      textScaler: MediaQuery.of(context).textScaler,
+                                                                                      text: TextSpan(
+                                                                                        children: [
+                                                                                          const TextSpan(
+                                                                                            text: 'Vidéos reçues : ',
+                                                                                            style: TextStyle(),
                                                                                           ),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  );
-
-                                                                                  if (FFAppState().colorChange) {
-                                                                                    safeSetState(() => _model.requestCompleter = null);
-                                                                                    await _model.waitForRequestCompleted();
-                                                                                  } else {
-                                                                                    return;
-                                                                                  }
-                                                                                },
-                                                                                text: 'Modifier question',
-                                                                                icon: const Icon(
-                                                                                  Icons.mode_edit,
-                                                                                  size: 15.0,
-                                                                                ),
-                                                                                options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  color: FlutterFlowTheme.of(context).revoSearchBarBg,
-                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: const Color(0xFF5E35B1),
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
+                                                                                          TextSpan(
+                                                                                            text: richTextSubmittersNewRowList.length.toString(),
+                                                                                            style: const TextStyle(
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'Manrope',
+                                                                                              fontSize: 18.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
                                                                                       ),
-                                                                                  elevation: 0.0,
-                                                                                  borderSide: const BorderSide(
-                                                                                    color: Colors.transparent,
-                                                                                    width: 0.0,
-                                                                                  ),
-                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                    );
+                                                                                  },
                                                                                 ),
-                                                                              ),
+                                                                                Builder(
+                                                                                  builder: (context) => Padding(
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: () async {
+                                                                                        FFAppState().colorChange = false;
+                                                                                        safeSetState(() {});
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (dialogContext) {
+                                                                                            return Dialog(
+                                                                                              elevation: 0,
+                                                                                              insetPadding: EdgeInsets.zero,
+                                                                                              backgroundColor: Colors.transparent,
+                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              child: GestureDetector(
+                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                child: SizedBox(
+                                                                                                  height: 830.0,
+                                                                                                  width: 1000.0,
+                                                                                                  child: ChangeColorWidget(
+                                                                                                    title: flowsItem.colorTitle!,
+                                                                                                    text: flowsItem.colorText!,
+                                                                                                    button: flowsItem.colorButton!,
+                                                                                                    buttonTxt: flowsItem.colorButtonText!,
+                                                                                                    background: flowsItem.colorBG,
+                                                                                                    id: flowsItem.id,
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        );
+
+                                                                                        if (FFAppState().colorChange) {
+                                                                                          safeSetState(() => _model.requestCompleter = null);
+                                                                                          await _model.waitForRequestCompleted();
+                                                                                        } else {
+                                                                                          return;
+                                                                                        }
+                                                                                      },
+                                                                                      text: 'Modifier page accueil',
+                                                                                      options: FFButtonOptions(
+                                                                                        height: 40.0,
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: FlutterFlowTheme.of(context).revoSearchBarBg,
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Manrope',
+                                                                                              color: const Color(0xFF5E35B1),
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                            ),
+                                                                                        elevation: 0.0,
+                                                                                        borderSide: const BorderSide(
+                                                                                          color: Colors.transparent,
+                                                                                          width: 0.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(16.0),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Builder(
+                                                                                  builder: (context) => FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      FFAppState().colorChange = false;
+                                                                                      safeSetState(() {});
+                                                                                      await showDialog(
+                                                                                        context: context,
+                                                                                        builder: (dialogContext) {
+                                                                                          return Dialog(
+                                                                                            elevation: 0,
+                                                                                            insetPadding: EdgeInsets.zero,
+                                                                                            backgroundColor: Colors.transparent,
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              child: SizedBox(
+                                                                                                height: 770.0,
+                                                                                                width: 750.0,
+                                                                                                child: ChangeQuestionWidget(
+                                                                                                  id: flowsItem.id,
+                                                                                                  question: flowsItem.expla2!,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        },
+                                                                                      );
+
+                                                                                      if (FFAppState().colorChange) {
+                                                                                        safeSetState(() => _model.requestCompleter = null);
+                                                                                        await _model.waitForRequestCompleted();
+                                                                                      } else {
+                                                                                        return;
+                                                                                      }
+                                                                                    },
+                                                                                    text: 'Modifier question',
+                                                                                    options: FFButtonOptions(
+                                                                                      height: 40.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).revoSearchBarBg,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                      elevation: 0.0,
+                                                                                      borderSide: const BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 0.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ].divide(const SizedBox(height: 12.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
-                                                                        ),
+                                                                          );
+                                                                        },
                                                                       ),
                                                                       Column(
                                                                         mainAxisSize:
