@@ -50,7 +50,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
       visible: widget.parameter2 != null,
       child: Builder(
         builder: (context) {
-          final tagIdd = widget.parameter2?.toList() ?? [];
+          final tagIdd = widget.parameter1?.toList() ?? [];
 
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -60,10 +60,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                 final tagIddItem = tagIdd[tagIddIndex];
                 return FutureBuilder<List<TagsRow>>(
                   future: FFAppState().usersSpeTags(
-                    uniqueQueryKey: valueOrDefault<String>(
-                      widget.parameter2?.toString(),
-                      'n',
-                    ),
+                    uniqueQueryKey: tagIddItem.toString(),
                     requestFn: () => TagsTable().querySingleRow(
                       queryFn: (q) => q.eq(
                         'id',
@@ -102,7 +99,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                         child: Text(
                           valueOrDefault<String>(
                             containerTagsRow?.name,
-                            'n',
+                            'tag',
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

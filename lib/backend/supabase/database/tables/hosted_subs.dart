@@ -58,4 +58,7 @@ class HostedSubsRow extends SupabaseDataRow {
 
   bool? get linkBool => getField<bool>('link_bool');
   set linkBool(bool? value) => setField<bool>('link_bool', value);
+
+  List<int> get tagId => getListField<int>('tagId');
+  set tagId(List<int>? value) => setListField<int>('tagId', value);
 }

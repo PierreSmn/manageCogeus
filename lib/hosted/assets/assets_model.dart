@@ -2,11 +2,11 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import 'assets_widget.dart' show AssetsWidget;
 import 'dart:async';
-import 'host_library_widget.dart' show HostLibraryWidget;
 import 'package:flutter/material.dart';
 
-class HostLibraryModel extends FlutterFlowModel<HostLibraryWidget> {
+class AssetsModel extends FlutterFlowModel<AssetsWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for navbarnav component.

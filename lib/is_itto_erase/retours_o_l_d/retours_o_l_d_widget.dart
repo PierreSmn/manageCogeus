@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
-import '/tags/choose_tag/choose_tag_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -181,7 +180,7 @@ class _RetoursOLDWidgetState extends State<RetoursOLDWidget> {
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Retours sélectionnés',
+                                                                                    'ANCIEN EFFACER',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -276,7 +275,7 @@ class _RetoursOLDWidgetState extends State<RetoursOLDWidget> {
                                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                                   children: [
                                                                                                     Text(
-                                                                                                      'Toute',
+                                                                                                      'Toutes',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: 'Manrope',
                                                                                                             letterSpacing: 0.0,
@@ -1356,139 +1355,27 @@ class _RetoursOLDWidgetState extends State<RetoursOLDWidget> {
                                                                                                     ),
                                                                                               ),
                                                                                             ),
-                                                                                            FutureBuilder<List<TagsRow>>(
-                                                                                              future: TagsTable().querySingleRow(
-                                                                                                queryFn: (q) => q.eq(
-                                                                                                  'id',
-                                                                                                  getJsonField(
-                                                                                                    validItemItem,
-                                                                                                    r'''$.tag''',
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                              builder: (context, snapshot) {
-                                                                                                // Customize what your widget looks like when it's loading.
-                                                                                                if (!snapshot.hasData) {
-                                                                                                  return Center(
-                                                                                                    child: SizedBox(
-                                                                                                      width: 50.0,
-                                                                                                      height: 50.0,
-                                                                                                      child: SpinKitRing(
-                                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                                        size: 50.0,
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  );
-                                                                                                }
-                                                                                                List<TagsRow> rowTagsRowList = snapshot.data!;
-
-                                                                                                final rowTagsRow = rowTagsRowList.isNotEmpty ? rowTagsRowList.first : null;
+                                                                                            Builder(
+                                                                                              builder: (context) {
+                                                                                                final taglist = getJsonField(
+                                                                                                  validItemItem,
+                                                                                                  r'''$.tagId''',
+                                                                                                ).toList();
 
                                                                                                 return Row(
                                                                                                   mainAxisSize: MainAxisSize.max,
-                                                                                                  children: [
-                                                                                                    if (rowTagsRow?.id != 0)
-                                                                                                      Text(
-                                                                                                        valueOrDefault<String>(
-                                                                                                          rowTagsRow?.name,
-                                                                                                          '...',
-                                                                                                        ),
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
-                                                                                                              fontSize: 16.0,
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              fontWeight: FontWeight.w600,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    Builder(
-                                                                                                      builder: (context) => Padding(
-                                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                                        child: FFButtonWidget(
-                                                                                                          onPressed: () async {
-                                                                                                            FFAppState().tagChoosen = 0;
-                                                                                                            safeSetState(() {});
-                                                                                                            await showDialog(
-                                                                                                              context: context,
-                                                                                                              builder: (dialogContext) {
-                                                                                                                return Dialog(
-                                                                                                                  elevation: 0,
-                                                                                                                  insetPadding: EdgeInsets.zero,
-                                                                                                                  backgroundColor: Colors.transparent,
-                                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                                  child: GestureDetector(
-                                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                                    child: const SizedBox(
-                                                                                                                      height: 435.0,
-                                                                                                                      width: 245.0,
-                                                                                                                      child: ChooseTagWidget(),
-                                                                                                                    ),
-                                                                                                                  ),
-                                                                                                                );
-                                                                                                              },
-                                                                                                            );
-
-                                                                                                            if (!(FFAppState().tagChoosen != null)) {
-                                                                                                              var confirmDialogResponse = await showDialog<bool>(
-                                                                                                                    context: context,
-                                                                                                                    builder: (alertDialogContext) {
-                                                                                                                      return AlertDialog(
-                                                                                                                        title: const Text('Erreur'),
-                                                                                                                        content: const Text('Vous devez choisir un Tag pour continuer'),
-                                                                                                                        actions: [
-                                                                                                                          TextButton(
-                                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                            child: const Text('Retour'),
-                                                                                                                          ),
-                                                                                                                          TextButton(
-                                                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                            child: const Text('Confirmer'),
-                                                                                                                          ),
-                                                                                                                        ],
-                                                                                                                      );
-                                                                                                                    },
-                                                                                                                  ) ??
-                                                                                                                  false;
-                                                                                                              return;
-                                                                                                            }
-                                                                                                            await ValidSubsTable().update(
-                                                                                                              data: {
-                                                                                                                'tag': FFAppState().tagChoosen,
-                                                                                                              },
-                                                                                                              matchingRows: (rows) => rows.eq(
-                                                                                                                'id',
-                                                                                                                getJsonField(
-                                                                                                                  validItemItem,
-                                                                                                                  r'''$.id''',
-                                                                                                                ),
-                                                                                                              ),
-                                                                                                            );
-                                                                                                            safeSetState(() => _model.apiRequestCompleter2 = null);
-                                                                                                            await _model.waitForApiRequestCompleted2();
-                                                                                                          },
-                                                                                                          text: 'Changer de Tag',
-                                                                                                          options: FFButtonOptions(
-                                                                                                            height: 26.0,
-                                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                            color: const Color(0xFFEEE8FC),
-                                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                                  fontFamily: 'Manrope',
-                                                                                                                  color: const Color(0xFF5E35B1),
-                                                                                                                  fontSize: 15.0,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                                ),
-                                                                                                            elevation: 0.0,
-                                                                                                            borderSide: const BorderSide(
-                                                                                                              color: Colors.transparent,
-                                                                                                              width: 0.0,
-                                                                                                            ),
-                                                                                                            borderRadius: BorderRadius.circular(16.0),
+                                                                                                  children: List.generate(taglist.length, (taglistIndex) {
+                                                                                                    final taglistItem = taglist[taglistIndex];
+                                                                                                    return Text(
+                                                                                                      taglistItem.toString(),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
                                                                                                           ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ],
+                                                                                                    );
+                                                                                                  }),
                                                                                                 );
                                                                                               },
                                                                                             ),

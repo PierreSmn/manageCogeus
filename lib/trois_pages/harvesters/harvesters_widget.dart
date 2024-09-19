@@ -52,7 +52,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: SafeArea(
               top: true,
               child: Column(
@@ -76,10 +76,12 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                             future: (_model.requestCompleter ??=
                                     Completer<List<LiveFlowsRow>>()
                                       ..complete(LiveFlowsTable().queryRows(
-                                        queryFn: (q) => q.eq(
-                                          'brand_name',
-                                          FFAppState().activeBrand,
-                                        ),
+                                        queryFn: (q) => q
+                                            .eq(
+                                              'brand_name',
+                                              FFAppState().activeBrand,
+                                            )
+                                            .order('created_at'),
                                       )))
                                 .future,
                             builder: (context, snapshot) {

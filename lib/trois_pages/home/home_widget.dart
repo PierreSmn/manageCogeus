@@ -77,7 +77,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -99,7 +99,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
-                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                backgroundColor: FlutterFlowTheme.of(context).revoBG,
                 body: SafeArea(
                   top: true,
                   child: Column(
@@ -270,7 +270,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             children:
                                                                                 [
                                                                               Text(
-                                                                                'Mes web stories',
+                                                                                'Web stories',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Manrope',
                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
@@ -349,7 +349,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             children:
                                                                                 [
                                                                               Text(
-                                                                                'Mes harvesters',
+                                                                                'Harvesters',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Manrope',
                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,

@@ -52,7 +52,7 @@ class _TriageWidgetState extends State<TriageWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            backgroundColor: FlutterFlowTheme.of(context).revoBG,
             body: SafeArea(
               top: true,
               child: Column(
@@ -407,7 +407,6 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                         FFAppState().tagList = [];
                                                                                         safeSetState(() {});
                                                                                         await showDialog(
-                                                                                          barrierDismissible: false,
                                                                                           context: context,
                                                                                           builder: (dialogContext) {
                                                                                             return Dialog(

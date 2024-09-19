@@ -223,15 +223,6 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                             ),
                                           ],
                                         ),
-                                        Text(
-                                          'Entrez votre email pour retrouver votre compte. ',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
                                         Align(
                                           alignment:
                                               const AlignmentDirectional(0.0, 0.0),
@@ -462,25 +453,6 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                 email: _model
                                                     .emailTextController.text,
                                                 context: context,
-                                              );
-                                              await showDialog(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return AlertDialog(
-                                                    title:
-                                                        const Text('Demande envoyée'),
-                                                    content: const Text(
-                                                        'Vous devriez recevoir un email pour mettre à jour votre mot de passe. '),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  );
-                                                },
                                               );
                                             },
                                             text: 'Mettre à jour',
