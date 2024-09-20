@@ -111,74 +111,77 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                        child: TextFormField(
-                          controller: _model.inteNameTextController ??=
-                              TextEditingController(
-                            text: containerIntegrationsRow?.name,
-                          ),
-                          focusNode: _model.inteNameFocusNode,
-                          autofocus: true,
-                          autofillHints: const [AutofillHints.email],
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: 'Titre de l\'integration',
-                            labelStyle: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Manrope',
-                                  color: const Color(0xFF778089),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Color(0x00000000),
-                                width: 2.0,
+                      TextFormField(
+                        controller: _model.inteNameTextController ??=
+                            TextEditingController(
+                          text: containerIntegrationsRow?.name,
+                        ),
+                        focusNode: _model.inteNameFocusNode,
+                        autofocus: false,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Titre de l\'integration',
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: 'Manrope',
+                                color:
+                                    FlutterFlowTheme.of(context).inputTitleGrey,
+                                fontSize: 16.0,
+                                letterSpacing: 0.0,
                               ),
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).error,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(40.0),
-                            ),
-                            filled: true,
-                            fillColor:
-                                FlutterFlowTheme.of(context).revoSearchBarBg,
-                            contentPadding: const EdgeInsets.all(16.0),
-                          ),
-                          style: FlutterFlowTheme.of(context)
+                          hintStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
                                 fontFamily: 'Manrope',
                                 color:
-                                    FlutterFlowTheme.of(context).secondaryText,
+                                    FlutterFlowTheme.of(context).inputTitleGrey,
                                 fontSize: 15.0,
                                 letterSpacing: 0.0,
                               ),
-                          keyboardType: TextInputType.emailAddress,
-                          validator: _model.inteNameTextControllerValidator
-                              .asValidator(context),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Color(0x00000000),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context)
+                                  .inputNoGoodClicked,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context)
+                                  .inputNoGoodClicked,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          filled: true,
+                          fillColor: FlutterFlowTheme.of(context).inputBg,
+                          contentPadding: const EdgeInsets.all(16.0),
                         ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Manrope',
+                              color:
+                                  FlutterFlowTheme.of(context).inputTitleGrey,
+                              fontSize: 15.0,
+                              letterSpacing: 0.0,
+                            ),
+                        validator: _model.inteNameTextControllerValidator
+                            .asValidator(context),
                       ),
                     ].divide(const SizedBox(height: 12.0)),
                   ),

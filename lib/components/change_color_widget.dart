@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'change_color_model.dart';
@@ -197,57 +196,85 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Titre',
-                                            alignLabelWithHint: false,
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText: '#0E0E10',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .inputBg,
+                                            contentPadding:
+                                                const EdgeInsets.all(16.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .inputTitleGrey,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          maxLines: null,
                                           validator: _model
                                               .titleTextControllerValidator
                                               .asValidator(context),
@@ -278,64 +305,85 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Couleur du Titre',
-                                              alignLabelWithHint: false,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .inputTitleGrey,
+                                                        fontSize: 14.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               hintText: '#0E0E10',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .inputTitleGrey,
+                                                        fontSize: 15.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  width: 1.0,
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(12.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  width: 1.0,
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(12.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .error,
-                                                  width: 1.0,
+                                                      .inputNoGoodClicked,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(12.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .error,
-                                                  width: 1.0,
+                                                      .inputNoGoodClicked,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(12.0),
                                               ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .inputBg,
+                                              contentPadding:
+                                                  const EdgeInsets.all(16.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Manrope',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .inputTitleGrey,
+                                                  fontSize: 15.0,
                                                   letterSpacing: 0.0,
                                                 ),
-                                            maxLength: 7,
-                                            maxLengthEnforcement:
-                                                MaxLengthEnforcement.enforced,
-                                            buildCounter: (context,
-                                                    {required currentLength,
-                                                    required isFocused,
-                                                    maxLength}) =>
-                                                null,
                                             validator: _model
                                                 .colorTitleTextControllerValidator
                                                 .asValidator(context),
@@ -384,64 +432,85 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Couleur du Fond',
-                                            alignLabelWithHint: false,
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText: '#7F7E83',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .inputBg,
+                                            contentPadding:
+                                                const EdgeInsets.all(16.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .inputTitleGrey,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          maxLength: 7,
-                                          maxLengthEnforcement:
-                                              MaxLengthEnforcement.enforced,
-                                          buildCounter: (context,
-                                                  {required currentLength,
-                                                  required isFocused,
-                                                  maxLength}) =>
-                                              null,
                                           validator: _model
                                               .colorBGTextControllerValidator
                                               .asValidator(context),
@@ -488,64 +557,85 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Couleur du Texte',
-                                            alignLabelWithHint: false,
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText: '#7F7E83',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .inputBg,
+                                            contentPadding:
+                                                const EdgeInsets.all(16.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .inputTitleGrey,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          maxLength: 7,
-                                          maxLengthEnforcement:
-                                              MaxLengthEnforcement.enforced,
-                                          buildCounter: (context,
-                                                  {required currentLength,
-                                                  required isFocused,
-                                                  maxLength}) =>
-                                              null,
                                           validator: _model
                                               .colorTextTextControllerValidator
                                               .asValidator(context),
@@ -593,65 +683,86 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Couleur fond du Bouton',
-                                            alignLabelWithHint: false,
+                                            labelText: 'Couleur du Bouton',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText: '#0071E3',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .inputBg,
+                                            contentPadding:
+                                                const EdgeInsets.all(16.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .inputTitleGrey,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          maxLength: 7,
-                                          maxLengthEnforcement:
-                                              MaxLengthEnforcement.enforced,
-                                          buildCounter: (context,
-                                                  {required currentLength,
-                                                  required isFocused,
-                                                  maxLength}) =>
-                                              null,
                                           validator: _model
                                               .colorButtonTextControllerValidator
                                               .asValidator(context),
@@ -700,65 +811,87 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Texte du Bouton',
-                                            alignLabelWithHint: false,
+                                            labelText:
+                                                'Couleur du texte du Bouton',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             hintText: '#FFFFFF',
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .inputTitleGrey,
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
+                                                        .inputNoGoodClicked,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(12.0),
                                             ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .inputBg,
+                                            contentPadding:
+                                                const EdgeInsets.all(16.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .inputTitleGrey,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          maxLength: 7,
-                                          maxLengthEnforcement:
-                                              MaxLengthEnforcement.enforced,
-                                          buildCounter: (context,
-                                                  {required currentLength,
-                                                  required isFocused,
-                                                  maxLength}) =>
-                                              null,
                                           validator: _model
                                               .colorButtonTextTextControllerValidator
                                               .asValidator(context),
@@ -789,7 +922,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       ),
                                     ].divide(const SizedBox(width: 34.0)),
                                   ),
-                                ].divide(const SizedBox(height: 12.0)),
+                                ].divide(const SizedBox(height: 16.0)),
                               ),
                             ),
                           ),

@@ -13,35 +13,25 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
 
   final formKey = GlobalKey<FormState>();
   // State field(s) for email widget.
-  final emailKey = GlobalKey();
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
-  String? emailSelectedOption;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
-    }
-    if (val != emailSelectedOption) {
-      return 'Please choose an option from the dropdown';
     }
 
     return null;
   }
 
   // State field(s) for password widget.
-  final passwordKey = GlobalKey();
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
-  String? passwordSelectedOption;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
-    }
-    if (val != passwordSelectedOption) {
-      return 'Please choose an option from the dropdown';
     }
 
     return null;
@@ -61,8 +51,10 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
   @override
   void dispose() {
     emailFocusNode?.dispose();
+    emailTextController?.dispose();
 
     passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
   }
 
   /// Additional helper methods.

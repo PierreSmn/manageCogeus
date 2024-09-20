@@ -84,7 +84,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: 384.0,
+                  height: 383.0,
                   decoration: const BoxDecoration(),
                   child: SingleChildScrollView(
                     child: Column(

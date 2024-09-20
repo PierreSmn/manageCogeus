@@ -338,8 +338,8 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Manrope',
-                                                                        color: const Color(
-                                                                            0xFF778089),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .inputTitleGrey,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -354,21 +354,20 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            12.0),
                                                               ),
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                    const BorderSide(
+                                                                  color: Color(
+                                                                      0x00000000),
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            12.0),
                                                               ),
                                                               errorBorder:
                                                                   OutlineInputBorder(
@@ -376,13 +375,13 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                     BorderSide(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .error,
+                                                                      .inputNoGoodClicked,
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            12.0),
                                                               ),
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
@@ -390,18 +389,19 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                     BorderSide(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .error,
+                                                                      .inputNoGoodClicked,
                                                                   width: 2.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            40.0),
+                                                                            12.0),
                                                               ),
                                                               filled: true,
-                                                              fillColor: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .revoSearchBarBg,
+                                                              fillColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .inputBg,
                                                               contentPadding:
                                                                   const EdgeInsets
                                                                       .all(
@@ -426,8 +426,8 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                           .visibility_off_outlined,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .revoSearchIconColor,
-                                                                  size: 22.0,
+                                                                      .inputTitleGrey,
+                                                                  size: 20.0,
                                                                 ),
                                                               ),
                                                             ),
@@ -439,7 +439,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                       'Manrope',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryText,
+                                                                      .revoCardTextColor,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:

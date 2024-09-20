@@ -3,7 +3,6 @@ export '/pages/signin/signin_widget.dart' show SigninWidget;
 export '/pages/infos/infos_widget.dart' show InfosWidget;
 export '/pages/update_profile/update_profile_widget.dart'
     show UpdateProfileWidget;
-export '/is_itto_erase/dossiers/dossiers_widget.dart' show DossiersWidget;
 export '/trois_pages/home/home_widget.dart' show HomeWidget;
 export '/pages/signup/signup_widget.dart' show SignupWidget;
 export '/pages/create_profile/create_profile_widget.dart'
@@ -16,8 +15,6 @@ export '/trois_pages/harvesters/harvesters_widget.dart' show HarvestersWidget;
 export '/pages/forgotpassword/forgotpassword_widget.dart'
     show ForgotpasswordWidget;
 export '/pages/newpassword/newpassword_widget.dart' show NewpasswordWidget;
-export '/is_itto_erase/retours_o_l_d/retours_o_l_d_widget.dart'
-    show RetoursOLDWidget;
 export '/trois_pages/invalids/invalids_widget.dart' show InvalidsWidget;
 export '/integrations/host_library_copy/host_library_copy_widget.dart'
     show HostLibraryCopyWidget;
