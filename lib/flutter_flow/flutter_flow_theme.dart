@@ -39,15 +39,6 @@ abstract class FlutterFlowTheme {
   late Color jo4;
   late Color jo5;
   late Color vu2;
-  late Color seasalt;
-  late Color antiflashWhite;
-  late Color platinum;
-  late Color frenchGray;
-  late Color frenchGray2;
-  late Color slateGray;
-  late Color outerSpace;
-  late Color onyx;
-  late Color eerieBlack;
   late Color revoBG;
   late Color revoNavSelected;
   late Color revoHooverBlue;
@@ -67,6 +58,11 @@ abstract class FlutterFlowTheme {
   late Color buttonRevText;
   late Color cogeusNavSelected;
   late Color cogeusHoverPurple;
+  late Color inputBg;
+  late Color inputBgClicked;
+  late Color inputNoGood;
+  late Color inputNoGoodClicked;
+  late Color inputTitleGrey;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -163,15 +159,6 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color jo4 = const Color(0xFFFF7900);
   late Color jo5 = const Color(0xFFFF6D00);
   late Color vu2 = const Color(0xFF3C096C);
-  late Color seasalt = const Color(0xFFF8F9FA);
-  late Color antiflashWhite = const Color(0xFFE9ECEF);
-  late Color platinum = const Color(0xFFDEE2E6);
-  late Color frenchGray = const Color(0xFFCED4DA);
-  late Color frenchGray2 = const Color(0xFFADB5BD);
-  late Color slateGray = const Color(0xFF6C757D);
-  late Color outerSpace = const Color(0xFF495057);
-  late Color onyx = const Color(0xFF343A40);
-  late Color eerieBlack = const Color(0xFF212529);
   late Color revoBG = const Color(0xFFF7F7F7);
   late Color revoNavSelected = const Color(0xFFF4F7FE);
   late Color revoHooverBlue = const Color(0xFF95B1F1);
@@ -191,6 +178,11 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color buttonRevText = const Color(0xFF2C64E3);
   late Color cogeusNavSelected = const Color(0xFFF6F4FE);
   late Color cogeusHoverPurple = const Color(0xFFA795F1);
+  late Color inputBg = const Color(0xFFEBEBF0);
+  late Color inputBgClicked = const Color(0xFFE2E2E7);
+  late Color inputNoGood = const Color(0xFFFBEEEC);
+  late Color inputNoGoodClicked = const Color(0xFFF9E6E4);
+  late Color inputTitleGrey = const Color(0xFF717173);
 }
 
 abstract class Typography {

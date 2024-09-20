@@ -102,12 +102,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UpdateProfileWidget(),
         ),
         FFRoute(
-          name: 'dossiers',
-          path: '/dossiers',
-          requireAuth: true,
-          builder: (context, params) => const DossiersWidget(),
-        ),
-        FFRoute(
           name: 'home',
           path: '/home',
           requireAuth: true,
@@ -174,12 +168,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/updatePassword',
           requireAuth: true,
           builder: (context, params) => const NewpasswordWidget(),
-        ),
-        FFRoute(
-          name: 'retoursOLD',
-          path: '/retoursOld',
-          requireAuth: true,
-          builder: (context, params) => const RetoursOLDWidget(),
         ),
         FFRoute(
           name: 'invalids',
