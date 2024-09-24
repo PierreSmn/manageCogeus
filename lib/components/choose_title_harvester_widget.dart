@@ -125,7 +125,7 @@ class _ChooseTitleHarvesterWidgetState
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Manrope',
-                    color: FlutterFlowTheme.of(context).inputTitleGrey,
+                    color: FlutterFlowTheme.of(context).revoCardTextColor,
                     fontSize: 15.0,
                     letterSpacing: 0.0,
                   ),

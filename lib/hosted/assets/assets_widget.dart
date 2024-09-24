@@ -400,6 +400,11 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                     ),
                                                                   });
                                                                 }
+                                                                safeSetState(() =>
+                                                                    _model.requestCompleter =
+                                                                        null);
+                                                                await _model
+                                                                    .waitForRequestCompleted();
                                                                 if (shouldSetState) {
                                                                   safeSetState(
                                                                       () {});
@@ -721,7 +726,7 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                               },
                                                                                             );
                                                                                           },
-                                                                                          text: 'Effacer l\'asset',
+                                                                                          text: 'Effacer',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
                                                                                             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),

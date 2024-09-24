@@ -224,237 +224,226 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 16.0),
-                                                    child: SizedBox(
-                                                      width: double.infinity,
-                                                      child:
-                                                          Autocomplete<String>(
-                                                        initialValue:
-                                                            const TextEditingValue(),
-                                                        optionsBuilder:
-                                                            (textEditingValue) {
-                                                          if (textEditingValue
-                                                                  .text ==
-                                                              '') {
-                                                            return const Iterable<
-                                                                String>.empty();
-                                                          }
-                                                          return ['Option 1']
-                                                              .where((option) {
-                                                            final lowercaseOption =
-                                                                option
-                                                                    .toLowerCase();
-                                                            return lowercaseOption
-                                                                .contains(
-                                                                    textEditingValue
-                                                                        .text
-                                                                        .toLowerCase());
-                                                          });
-                                                        },
-                                                        optionsViewBuilder:
-                                                            (context,
-                                                                onSelected,
-                                                                options) {
-                                                          return AutocompleteOptionsList(
-                                                            textFieldKey: _model
-                                                                .passwordKey,
-                                                            textController: _model
-                                                                .passwordTextController!,
-                                                            options: options
-                                                                .toList(),
-                                                            onSelected:
-                                                                onSelected,
-                                                            textStyle:
+                                                  SizedBox(
+                                                    width: double.infinity,
+                                                    child: Autocomplete<String>(
+                                                      initialValue:
+                                                          const TextEditingValue(),
+                                                      optionsBuilder:
+                                                          (textEditingValue) {
+                                                        if (textEditingValue
+                                                                .text ==
+                                                            '') {
+                                                          return const Iterable<
+                                                              String>.empty();
+                                                        }
+                                                        return ['Option 1']
+                                                            .where((option) {
+                                                          final lowercaseOption =
+                                                              option
+                                                                  .toLowerCase();
+                                                          return lowercaseOption
+                                                              .contains(
+                                                                  textEditingValue
+                                                                      .text
+                                                                      .toLowerCase());
+                                                        });
+                                                      },
+                                                      optionsViewBuilder:
+                                                          (context, onSelected,
+                                                              options) {
+                                                        return AutocompleteOptionsList(
+                                                          textFieldKey: _model
+                                                              .passwordKey,
+                                                          textController: _model
+                                                              .passwordTextController!,
+                                                          options:
+                                                              options.toList(),
+                                                          onSelected:
+                                                              onSelected,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Manrope',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          textHighlightStyle:
+                                                              const TextStyle(),
+                                                          elevation: 4.0,
+                                                          optionBackgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                          optionHighlightColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryBackground,
+                                                          maxHeight: 200.0,
+                                                        );
+                                                      },
+                                                      onSelected:
+                                                          (String selection) {
+                                                        safeSetState(() => _model
+                                                                .passwordSelectedOption =
+                                                            selection);
+                                                        FocusScope.of(context)
+                                                            .unfocus();
+                                                      },
+                                                      fieldViewBuilder: (
+                                                        context,
+                                                        textEditingController,
+                                                        focusNode,
+                                                        onEditingComplete,
+                                                      ) {
+                                                        _model.passwordFocusNode =
+                                                            focusNode;
+
+                                                        _model.passwordTextController =
+                                                            textEditingController;
+                                                        return TextFormField(
+                                                          key: _model
+                                                              .passwordKey,
+                                                          controller:
+                                                              textEditingController,
+                                                          focusNode: focusNode,
+                                                          onEditingComplete:
+                                                              onEditingComplete,
+                                                          autofocus: false,
+                                                          autofillHints: const [
+                                                            AutofillHints
+                                                                .password
+                                                          ],
+                                                          obscureText: !_model
+                                                              .passwordVisibility,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            labelText:
+                                                                'Mot de passe',
+                                                            labelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
+                                                                    .labelMedium
                                                                     .override(
                                                                       fontFamily:
                                                                           'Manrope',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .inputTitleGrey,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
-                                                            textHighlightStyle:
-                                                                const TextStyle(),
-                                                            elevation: 4.0,
-                                                            optionBackgroundColor:
+                                                            enabledBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  const BorderSide(
+                                                                color: Color(
+                                                                    0x00000000),
+                                                                width: 2.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                            ),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  const BorderSide(
+                                                                color: Color(
+                                                                    0x00000000),
+                                                                width: 2.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                            ),
+                                                            errorBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .inputNoGoodClicked,
+                                                                width: 2.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                            ),
+                                                            focusedErrorBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .inputNoGoodClicked,
+                                                                width: 2.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                            ),
+                                                            filled: true,
+                                                            fillColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
-                                                            optionHighlightColor:
-                                                                FlutterFlowTheme.of(
+                                                                    .inputBg,
+                                                            contentPadding:
+                                                                const EdgeInsets.all(
+                                                                    16.0),
+                                                            suffixIcon: InkWell(
+                                                              onTap: () =>
+                                                                  safeSetState(
+                                                                () => _model
+                                                                        .passwordVisibility =
+                                                                    !_model
+                                                                        .passwordVisibility,
+                                                              ),
+                                                              focusNode: FocusNode(
+                                                                  skipTraversal:
+                                                                      true),
+                                                              child: Icon(
+                                                                _model.passwordVisibility
+                                                                    ? Icons
+                                                                        .visibility_outlined
+                                                                    : Icons
+                                                                        .visibility_off_outlined,
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
-                                                            maxHeight: 200.0,
-                                                          );
-                                                        },
-                                                        onSelected:
-                                                            (String selection) {
-                                                          safeSetState(() =>
-                                                              _model.passwordSelectedOption =
-                                                                  selection);
-                                                          FocusScope.of(context)
-                                                              .unfocus();
-                                                        },
-                                                        fieldViewBuilder: (
-                                                          context,
-                                                          textEditingController,
-                                                          focusNode,
-                                                          onEditingComplete,
-                                                        ) {
-                                                          _model.passwordFocusNode =
-                                                              focusNode;
-
-                                                          _model.passwordTextController =
-                                                              textEditingController;
-                                                          return TextFormField(
-                                                            key: _model
-                                                                .passwordKey,
-                                                            controller:
-                                                                textEditingController,
-                                                            focusNode:
-                                                                focusNode,
-                                                            onEditingComplete:
-                                                                onEditingComplete,
-                                                            autofocus: false,
-                                                            autofillHints: const [
-                                                              AutofillHints
-                                                                  .password
-                                                            ],
-                                                            obscureText: !_model
-                                                                .passwordVisibility,
-                                                            decoration:
-                                                                InputDecoration(
-                                                              labelText:
-                                                                  'Mot de passe',
-                                                              labelStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Manrope',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .inputTitleGrey,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                              enabledBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide:
-                                                                    const BorderSide(
-                                                                  color: Color(
-                                                                      0x00000000),
-                                                                  width: 2.0,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                              ),
-                                                              focusedBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide:
-                                                                    const BorderSide(
-                                                                  color: Color(
-                                                                      0x00000000),
-                                                                  width: 2.0,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                              ),
-                                                              errorBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide:
-                                                                    BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .inputNoGoodClicked,
-                                                                  width: 2.0,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                              ),
-                                                              focusedErrorBorder:
-                                                                  OutlineInputBorder(
-                                                                borderSide:
-                                                                    BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .inputNoGoodClicked,
-                                                                  width: 2.0,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                              ),
-                                                              filled: true,
-                                                              fillColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .inputBg,
-                                                              contentPadding:
-                                                                  const EdgeInsets
-                                                                      .all(
-                                                                          16.0),
-                                                              suffixIcon:
-                                                                  InkWell(
-                                                                onTap: () =>
-                                                                    safeSetState(
-                                                                  () => _model
-                                                                          .passwordVisibility =
-                                                                      !_model
-                                                                          .passwordVisibility,
-                                                                ),
-                                                                focusNode: FocusNode(
-                                                                    skipTraversal:
-                                                                        true),
-                                                                child: Icon(
-                                                                  _model.passwordVisibility
-                                                                      ? Icons
-                                                                          .visibility_outlined
-                                                                      : Icons
-                                                                          .visibility_off_outlined,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .inputTitleGrey,
-                                                                  size: 20.0,
-                                                                ),
+                                                                    .inputTitleGrey,
+                                                                size: 20.0,
                                                               ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Manrope',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .revoCardTextColor,
-                                                                  fontSize:
-                                                                      15.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                            keyboardType:
-                                                                TextInputType
-                                                                    .visiblePassword,
-                                                            validator: _model
-                                                                .passwordTextControllerValidator
-                                                                .asValidator(
-                                                                    context),
-                                                          );
-                                                        },
-                                                      ),
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .revoCardTextColor,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .visiblePassword,
+                                                          validator: _model
+                                                              .passwordTextControllerValidator
+                                                              .asValidator(
+                                                                  context),
+                                                        );
+                                                      },
                                                     ),
                                                   ),
                                                 ],

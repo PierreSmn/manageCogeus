@@ -422,7 +422,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                       'Manrope',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .inputTitleGrey,
+                                                                      .revoCardTextColor,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
