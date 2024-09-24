@@ -13,10 +13,6 @@ class ChangeQuestionModel extends FlutterFlowModel<ChangeQuestionWidget> {
   FocusNode? colorTitleFocusNode;
   TextEditingController? colorTitleTextController;
   String? Function(BuildContext, String?)? colorTitleTextControllerValidator;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

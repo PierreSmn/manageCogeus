@@ -179,8 +179,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Manrope',
-                              color:
-                                  FlutterFlowTheme.of(context).inputTitleGrey,
+                              color: FlutterFlowTheme.of(context)
+                                  .revoCardTextColor,
                               fontSize: 15.0,
                               letterSpacing: 0.0,
                             ),
@@ -559,7 +559,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -924,7 +924,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -1289,7 +1289,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),

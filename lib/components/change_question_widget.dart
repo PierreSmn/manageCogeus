@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'change_question_model.dart';
 export 'change_question_model.dart';
@@ -66,16 +65,6 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'Changement de question',
-                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Manrope',
-                      color: FlutterFlowTheme.of(context).revoCardTextColor,
-                      fontSize: 40.0,
-                      letterSpacing: 0.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-              ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -100,42 +89,66 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Question',
-                              alignLabelWithHint: false,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .inputTitleGrey,
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                  ),
                               hintText: '#0E0E10',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .inputTitleGrey,
+                                    fontSize: 15.0,
+                                    letterSpacing: 0.0,
+                                  ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  width: 1.0,
+                                borderSide: const BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 1.0,
+                                borderSide: const BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .inputNoGoodClicked,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
+                                  color: FlutterFlowTheme.of(context)
+                                      .inputNoGoodClicked,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context).inputBg,
+                              contentPadding: const EdgeInsets.all(16.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
                                   fontFamily: 'Manrope',
+                                  color: FlutterFlowTheme.of(context)
+                                      .revoCardTextColor,
+                                  fontSize: 15.0,
                                   letterSpacing: 0.0,
                                 ),
                             maxLines: 10,
@@ -282,105 +295,6 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              final selectedMedia =
-                                                                  await selectMedia(
-                                                                storageFolderPath:
-                                                                    'new',
-                                                                isVideo: true,
-                                                                mediaSource:
-                                                                    MediaSource
-                                                                        .videoGallery,
-                                                                multiImage:
-                                                                    false,
-                                                              );
-                                                              if (selectedMedia !=
-                                                                      null &&
-                                                                  selectedMedia.every((m) =>
-                                                                      validateFileFormat(
-                                                                          m.storagePath,
-                                                                          context))) {
-                                                                safeSetState(() =>
-                                                                    _model.isDataUploading =
-                                                                        true);
-                                                                var selectedUploadedFiles =
-                                                                    <FFUploadedFile>[];
-
-                                                                var downloadUrls =
-                                                                    <String>[];
-                                                                try {
-                                                                  selectedUploadedFiles =
-                                                                      selectedMedia
-                                                                          .map((m) =>
-                                                                              FFUploadedFile(
-                                                                                name: m.storagePath.split('/').last,
-                                                                                bytes: m.bytes,
-                                                                                height: m.dimensions?.height,
-                                                                                width: m.dimensions?.width,
-                                                                                blurHash: m.blurHash,
-                                                                              ))
-                                                                          .toList();
-
-                                                                  downloadUrls =
-                                                                      await uploadSupabaseStorageFiles(
-                                                                    bucketName:
-                                                                        'submissions',
-                                                                    selectedFiles:
-                                                                        selectedMedia,
-                                                                  );
-                                                                } finally {
-                                                                  _model.isDataUploading =
-                                                                      false;
-                                                                }
-                                                                if (selectedUploadedFiles
-                                                                            .length ==
-                                                                        selectedMedia
-                                                                            .length &&
-                                                                    downloadUrls
-                                                                            .length ==
-                                                                        selectedMedia
-                                                                            .length) {
-                                                                  safeSetState(
-                                                                      () {
-                                                                    _model.uploadedLocalFile =
-                                                                        selectedUploadedFiles
-                                                                            .first;
-                                                                    _model.uploadedFileUrl =
-                                                                        downloadUrls
-                                                                            .first;
-                                                                  });
-                                                                } else {
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  return;
-                                                                }
-                                                              }
-                                                            },
-                                                            child: Text(
-                                                              '  ',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Manrope',
-                                                                    fontSize:
-                                                                        2.0,
-                                                                    letterSpacing:
-                                                                        0.0,
                                                                   ),
                                                             ),
                                                           ),

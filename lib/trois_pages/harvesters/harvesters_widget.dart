@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/change_color_widget.dart';
 import '/components/change_question_widget.dart';
 import '/components/choose_title_harvester_widget.dart';
+import '/components/duplicate_harvester_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -438,7 +439,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                               child: GestureDetector(
                                                                                                 onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                                 child: SizedBox(
-                                                                                                  height: 830.0,
+                                                                                                  height: 750.0,
                                                                                                   width: 1000.0,
                                                                                                   child: ChangeColorWidget(
                                                                                                     title: flowsItem.colorTitle!,
@@ -499,7 +500,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                             child: GestureDetector(
                                                                                               onTap: () => FocusScope.of(dialogContext).unfocus(),
                                                                                               child: SizedBox(
-                                                                                                height: 770.0,
+                                                                                                height: 700.0,
                                                                                                 width: 750.0,
                                                                                                 child: ChangeQuestionWidget(
                                                                                                   id: flowsItem.id,
@@ -524,6 +525,57 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).revoSearchBarBg,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: 'Manrope',
+                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                      elevation: 0.0,
+                                                                                      borderSide: const BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 0.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Builder(
+                                                                                  builder: (context) => FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      await showDialog(
+                                                                                        context: context,
+                                                                                        builder: (dialogContext) {
+                                                                                          return Dialog(
+                                                                                            elevation: 0,
+                                                                                            insetPadding: EdgeInsets.zero,
+                                                                                            backgroundColor: Colors.transparent,
+                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              child: SizedBox(
+                                                                                                height: 695.0,
+                                                                                                width: 750.0,
+                                                                                                child: DuplicateHarvesterWidget(
+                                                                                                  id: flowsItem.id,
+                                                                                                  question: flowsItem.expla2!,
+                                                                                                  slug: flowsItem.slug!,
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          );
+                                                                                        },
+                                                                                      );
+
+                                                                                      safeSetState(() => _model.requestCompleter = null);
+                                                                                      await _model.waitForRequestCompleted();
+                                                                                    },
+                                                                                    text: 'Dupliquer',
+                                                                                    options: FFButtonOptions(
+                                                                                      height: 40.0,
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Manrope',
                                                                                             color: const Color(0xFF5E35B1),

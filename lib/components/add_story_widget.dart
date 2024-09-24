@@ -597,7 +597,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -959,7 +959,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -1321,7 +1321,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               fontFamily: 'Manrope',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                             ),

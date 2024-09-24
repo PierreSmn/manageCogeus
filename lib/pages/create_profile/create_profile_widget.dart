@@ -488,7 +488,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                       'Manrope',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .inputTitleGrey,
+                                                                      .revoCardTextColor,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
@@ -618,7 +618,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                     'Manrope',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .inputTitleGrey,
+                                                                    .revoCardTextColor,
                                                                 fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -747,7 +747,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                       'Manrope',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .inputTitleGrey,
+                                                                      .revoCardTextColor,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:
@@ -877,7 +877,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                       'Manrope',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .inputTitleGrey,
+                                                                      .revoCardTextColor,
                                                                   fontSize:
                                                                       15.0,
                                                                   letterSpacing:

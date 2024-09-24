@@ -153,7 +153,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Manrope',
-                        color: FlutterFlowTheme.of(context).inputTitleGrey,
+                        color: FlutterFlowTheme.of(context).revoCardTextColor,
                         fontSize: 15.0,
                         letterSpacing: 0.0,
                       ),

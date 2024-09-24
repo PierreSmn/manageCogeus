@@ -151,17 +151,6 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Changement page acceuil',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Manrope',
-                              color: FlutterFlowTheme.of(context)
-                                  .revoCardTextColor,
-                              fontSize: 40.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                      ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -271,7 +260,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 fontFamily: 'Manrope',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .inputTitleGrey,
+                                                        .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -380,7 +369,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   fontFamily: 'Manrope',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .inputTitleGrey,
+                                                      .revoCardTextColor,
                                                   fontSize: 15.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -507,7 +496,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 fontFamily: 'Manrope',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .inputTitleGrey,
+                                                        .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -632,7 +621,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 fontFamily: 'Manrope',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .inputTitleGrey,
+                                                        .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -759,7 +748,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 fontFamily: 'Manrope',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .inputTitleGrey,
+                                                        .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -888,7 +877,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 fontFamily: 'Manrope',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .inputTitleGrey,
+                                                        .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                               ),
