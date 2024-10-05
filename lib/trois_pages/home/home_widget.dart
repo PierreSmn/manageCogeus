@@ -348,15 +348,24 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 CrossAxisAlignment.start,
                                                                             children:
                                                                                 [
-                                                                              Text(
-                                                                                'Harvesters',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Manrope',
-                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                      fontSize: 24.72,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.normal,
-                                                                                    ),
+                                                                              InkWell(
+                                                                                splashColor: Colors.transparent,
+                                                                                focusColor: Colors.transparent,
+                                                                                hoverColor: Colors.transparent,
+                                                                                highlightColor: Colors.transparent,
+                                                                                onTap: () async {
+                                                                                  context.pushNamed('copyharvestdata');
+                                                                                },
+                                                                                child: Text(
+                                                                                  'Harvesters',
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Manrope',
+                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                        fontSize: 24.72,
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.normal,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                               MouseRegion(
                                                                                 opaque: false,

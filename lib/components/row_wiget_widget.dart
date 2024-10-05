@@ -99,7 +99,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                         child: Text(
                           valueOrDefault<String>(
                             containerTagsRow?.name,
-                            'tag',
+                            'Pas de Tag',
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

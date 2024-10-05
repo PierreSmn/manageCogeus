@@ -3,36 +3,35 @@ import '/components/change_color_widget.dart';
 import '/components/change_question_widget.dart';
 import '/components/choose_title_harvester_widget.dart';
 import '/components/duplicate_harvester_widget.dart';
+import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import 'dart:async';
-import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'harvesters_model.dart';
-export 'harvesters_model.dart';
+import 'copyharvestdata_model.dart';
+export 'copyharvestdata_model.dart';
 
-class HarvestersWidget extends StatefulWidget {
-  const HarvestersWidget({super.key});
+class CopyharvestdataWidget extends StatefulWidget {
+  const CopyharvestdataWidget({super.key});
 
   @override
-  State<HarvestersWidget> createState() => _HarvestersWidgetState();
+  State<CopyharvestdataWidget> createState() => _CopyharvestdataWidgetState();
 }
 
-class _HarvestersWidgetState extends State<HarvestersWidget> {
-  late HarvestersModel _model;
+class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
+  late CopyharvestdataModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HarvestersModel());
+    _model = createModel(context, () => CopyharvestdataModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -49,7 +48,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'harvesters',
+        title: 'copyharvestdata',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -421,6 +420,61 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     );
                                                                                   },
                                                                                 ),
+                                                                                FutureBuilder<List<DailySlugActivationsCompleteRow>>(
+                                                                                  future: DailySlugActivationsCompleteTable().queryRows(
+                                                                                    queryFn: (q) => q.eq(
+                                                                                      'slug',
+                                                                                      flowsItem.slug,
+                                                                                    ),
+                                                                                  ),
+                                                                                  builder: (context, snapshot) {
+                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                    if (!snapshot.hasData) {
+                                                                                      return Center(
+                                                                                        child: SizedBox(
+                                                                                          width: 50.0,
+                                                                                          height: 50.0,
+                                                                                          child: SpinKitRing(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 50.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    }
+                                                                                    List<DailySlugActivationsCompleteRow> chartDailySlugActivationsCompleteRowList = snapshot.data!;
+
+                                                                                    return SizedBox(
+                                                                                      width: 370.0,
+                                                                                      height: 230.0,
+                                                                                      child: FlutterFlowBarChart(
+                                                                                        barData: [
+                                                                                          FFBarChartData(
+                                                                                            yData: chartDailySlugActivationsCompleteRowList.map((e) => e.activationCount).withoutNulls.toList(),
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                          )
+                                                                                        ],
+                                                                                        xLabels: chartDailySlugActivationsCompleteRowList.map((e) => e.activationDate).withoutNulls.toList().map((e) => e.toString()).toList(),
+                                                                                        barWidth: 16.0,
+                                                                                        barBorderRadius: BorderRadius.circular(8.0),
+                                                                                        groupSpace: 8.0,
+                                                                                        alignment: BarChartAlignment.spaceAround,
+                                                                                        chartStylingInfo: ChartStylingInfo(
+                                                                                          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          showBorder: false,
+                                                                                        ),
+                                                                                        axisBounds: const AxisBounds(),
+                                                                                        xAxisLabelInfo: const AxisLabelInfo(
+                                                                                          reservedSize: 28.0,
+                                                                                        ),
+                                                                                        yAxisLabelInfo: const AxisLabelInfo(
+                                                                                          showLabels: true,
+                                                                                          labelInterval: 10.0,
+                                                                                          reservedSize: 42.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                ),
                                                                                 Builder(
                                                                                   builder: (context) => Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
@@ -595,112 +649,6 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             ),
                                                                           );
                                                                         },
-                                                                      ),
-                                                                      Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children:
-                                                                            [
-                                                                          BarcodeWidget(
-                                                                            data:
-                                                                                valueOrDefault<String>(
-                                                                              'app.cogeus.com/home?slug=${flowsItem.slug}',
-                                                                              'nocode',
-                                                                            ),
-                                                                            barcode:
-                                                                                Barcode.qrCode(),
-                                                                            width:
-                                                                                100.0,
-                                                                            height:
-                                                                                160.0,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryText,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            errorBuilder: (context, error) =>
-                                                                                const SizedBox(
-                                                                              width: 100.0,
-                                                                              height: 160.0,
-                                                                            ),
-                                                                            drawText:
-                                                                                false,
-                                                                          ),
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              if (flowsItem.isUpload!) {
-                                                                                await launchURL('http://api.qrserver.com/v1/create-qr-code/?data=https://app.cogeus.com/upload?slug=${flowsItem.slug}&size=300x300');
-                                                                              } else {
-                                                                                await launchURL('http://api.qrserver.com/v1/create-qr-code/?data=https://app.cogeus.com/home?slug=${flowsItem.slug}&size=300x300');
-                                                                              }
-                                                                            },
-                                                                            text:
-                                                                                'Télécharger le QR Code',
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: const Color(0xFFEEE8FC),
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: const Color(0xFF5E35B1),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderSide: const BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 0.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
-                                                                          ),
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              if (flowsItem.isUpload!) {
-                                                                                await Clipboard.setData(ClipboardData(text: 'https://app.cogeus.com/upload?slug=${flowsItem.slug}'));
-                                                                              } else {
-                                                                                await Clipboard.setData(ClipboardData(text: 'https://app.cogeus.com/home?slug=${flowsItem.slug}'));
-                                                                              }
-
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Lien copié',
-                                                                                    style: TextStyle(
-                                                                                      color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: const Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                            text:
-                                                                                'Copier le lien',
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: const Color(0xFFEEE8FC),
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Manrope',
-                                                                                    color: const Color(0xFF5E35B1),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.w600,
-                                                                                  ),
-                                                                              elevation: 0.0,
-                                                                              borderSide: const BorderSide(
-                                                                                color: Colors.transparent,
-                                                                                width: 0.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
-                                                                          ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
                                                                       ),
                                                                     ],
                                                                   ),
