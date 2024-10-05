@@ -192,6 +192,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/retours',
           requireAuth: true,
           builder: (context, params) => const RetoursWidget(),
+        ),
+        FFRoute(
+          name: 'copyharvestdata',
+          path: '/copyjarrvestdata',
+          requireAuth: true,
+          builder: (context, params) => const CopyharvestdataWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

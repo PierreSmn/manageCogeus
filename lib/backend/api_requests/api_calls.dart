@@ -1,5 +1,4 @@
 import 'dart:convert';
-import '../cloud_functions/cloud_functions.dart';
 
 import 'package:flutter/foundation.dart';
 
@@ -280,6 +279,11 @@ class GetTagzzzCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List? tagId(dynamic response) => getJsonField(
+        response,
+        r'''$[:].tagId''',
+        true,
+      ) as List?;
 }
 
 class GetToBeDeterminedSubsCall {
@@ -608,17 +612,25 @@ class MuxGetViewsCall {
     String? time = 'timeframe[]=30:days',
     String? assetId = '',
   }) async {
-    final response = await makeCloudCall(
-      _kPrivateApiFunctionName,
-      {
-        'callName': 'MuxGetViewsCall',
-        'variables': {
-          'time': time,
-          'assetId': assetId,
-        },
+    return ApiManager.instance.makeApiCall(
+      callName: 'mux get views',
+      apiUrl:
+          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id&filters=asset_id:$assetId',
+      callType: ApiCallType.GET,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization':
+            'Basic YWViN2Q5MGMtMTcyNi00ZWQzLThjMTItMDQ3MDdhOTU5MzNlOm91TDIxTlJqUnVYU3JqUzZPNzF5SWZYYXh4U2NxNDdaQ25icVBDUVlNVFVxOGNWQVVDUUxJTzV1d1VIRFhsZDhFbUNKelRkam8yaA==',
+        'Access-Control-Allow-Origin': '*',
       },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
     );
-    return ApiCallResponse.fromCloudCallResponse(response);
   }
 
   static int? views(dynamic response) => castToType<int>(getJsonField(

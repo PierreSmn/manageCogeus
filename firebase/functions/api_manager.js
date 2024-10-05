@@ -1,38 +1,13 @@
 const axios = require("axios").default;
 const qs = require("qs");
 
-async function _muxGetViewsCall(context, ffVariables) {
-  var time = ffVariables["time"];
-  var assetId = ffVariables["assetId"];
-
-  var url = `https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id&filters=asset_id:${assetId}`;
-  var headers = {
-    "Content-Type": `application/json`,
-    Authorization: `Basic YWViN2Q5MGMtMTcyNi00ZWQzLThjMTItMDQ3MDdhOTU5MzNlOm91TDIxTlJqUnVYU3JqUzZPNzF5SWZYYXh4U2NxNDdaQ25icVBDUVlNVFVxOGNWQVVDUUxJTzV1d1VIRFhsZDhFbUNKelRkam8yaA==`,
-    "Access-Control-Allow-Origin": `*`,
-  };
-  var params = {};
-  var ffApiRequestBody = undefined;
-
-  return makeApiRequest({
-    method: "get",
-    url,
-    headers,
-    params,
-    returnBody: true,
-    isStreamingApi: false,
-  });
-}
-
 /// Helper functions to route to the appropriate API Call.
 
 async function makeApiCall(context, data) {
   var callName = data["callName"] || "";
   var variables = data["variables"] || {};
 
-  const callMap = {
-    MuxGetViewsCall: _muxGetViewsCall,
-  };
+  const callMap = {};
 
   if (!(callName in callMap)) {
     return {
