@@ -92,7 +92,8 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Choisir le(s) tag(s)',
+                          'Ajouter à une collection',
+                          textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Manrope',
@@ -128,7 +129,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                   () => _model.requestCompleter = null);
                               await _model.waitForRequestCompleted();
                             },
-                            text: 'Nouveau Tag',
+                            text: 'Nouvelle Collection',
                             icon: const Icon(
                               Icons.add,
                               size: 15.0,
@@ -212,7 +213,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   tagsItem.name,
-                                                  'nameOfTag',
+                                                  'collectionName',
                                                 ),
                                                 style: FlutterFlowTheme.of(
                                                         context)

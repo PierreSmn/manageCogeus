@@ -638,7 +638,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       children:
                                                                           [
                                                                         Text(
-                                                                          'Analytics',
+                                                                          'Comprendre',
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -649,17 +649,45 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
-                                                                        Text(
-                                                                          'Coming soon',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Manrope',
-                                                                                color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                fontSize: 24.72,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.normal,
-                                                                              ),
+                                                                        FFButtonWidget(
+                                                                          onPressed:
+                                                                              () {
+                                                                            print('Button pressed ...');
+                                                                          },
+                                                                          text:
+                                                                              'Setup',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                const Color(0xFFEEE8FC),
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 0.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(16.0),
+                                                                          ),
                                                                         ),
                                                                       ].divide(const SizedBox(
                                                                               height: 12.0)),
