@@ -602,11 +602,15 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                         children:
                                                                             [
                                                                           BarcodeWidget(
-                                                                            data:
-                                                                                valueOrDefault<String>(
-                                                                              'app.cogeus.com/home?slug=${flowsItem.slug}',
-                                                                              'nocode',
-                                                                            ),
+                                                                            data: flowsItem.isUpload!
+                                                                                ? valueOrDefault<String>(
+                                                                                    'app.cogeus.com/upload?slug=${flowsItem.slug}',
+                                                                                    'nocode',
+                                                                                  )
+                                                                                : valueOrDefault<String>(
+                                                                                    'app.cogeus.com/home?slug=${flowsItem.slug}',
+                                                                                    'nocode',
+                                                                                  ),
                                                                             barcode:
                                                                                 Barcode.qrCode(),
                                                                             width:

@@ -198,6 +198,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/copyjarrvestdata',
           requireAuth: true,
           builder: (context, params) => const CopyharvestdataWidget(),
+        ),
+        FFRoute(
+          name: 'assetsCopy',
+          path: '/assetsCopy',
+          requireAuth: true,
+          builder: (context, params) => const AssetsCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

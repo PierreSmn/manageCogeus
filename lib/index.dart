@@ -23,3 +23,4 @@ export '/trois_pages/retours_a_trier/retours_a_trier_widget.dart'
 export '/trois_pages/retours/retours_widget.dart' show RetoursWidget;
 export '/trois_pages/copyharvestdata/copyharvestdata_widget.dart'
     show CopyharvestdataWidget;
+export '/hosted/assets_copy/assets_copy_widget.dart' show AssetsCopyWidget;

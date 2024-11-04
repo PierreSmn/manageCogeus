@@ -1,3 +1,6 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/add_founder_widget.dart';
 import '/components/add_integration_widget.dart';
 import '/components/add_story_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:provider/provider.dart';
 import 'creation_choice_model.dart';
 export 'creation_choice_model.dart';
 
@@ -36,7 +40,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.vidsby3 = true;
+      _model.isStory = true;
       safeSetState(() {});
     });
 
@@ -52,6 +56,8 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
@@ -90,82 +96,163 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                _model.vidsby3 = true;
-                                safeSetState(() {});
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 30.0),
-                                    child: Row(
+                            if (widget.assets! >= 1)
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  _model.isVidFounder = true;
+                                  _model.isStory = false;
+                                  safeSetState(() {});
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
                                           width: 50.0,
-                                          height: 50.0,
+                                          height: 70.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        true)
                                                 ? FlutterFlowTheme.of(context)
                                                     .alternate
                                                 : FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(100.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .alternate
-                                                : FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: _model.vidsby3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .alternate
-                                                : FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(100.0),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                       ].divide(const SizedBox(width: 6.0)),
                                     ),
-                                  ),
+                                    Text(
+                                      'Mot du foundateur',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            fontSize: _model.isVidFounder
+                                                ? 18.0
+                                                : 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ].divide(const SizedBox(height: 16.0)),
+                                ),
+                              ),
+                            if (widget.assets == 0)
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
                                   Text(
-                                    'Stories',
+                                    'Vous devez ajouter des vidéos à vos assets pour créer des intégrations.',
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
                                           fontSize:
-                                              _model.vidsby3 ? 18.0 : 14.0,
+                                              _model.isVidFounder ? 18.0 : 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                 ].divide(const SizedBox(height: 16.0)),
                               ),
-                            ),
+                            if (widget.assets! >= 3)
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  _model.isStory = true;
+                                  _model.isVidFounder = false;
+                                  safeSetState(() {});
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 30.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            decoration: BoxDecoration(
+                                              color: (_model.isStory == true) &&
+                                                      (_model.isVidFounder ==
+                                                          false)
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .alternate
+                                                  : FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.0),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            decoration: BoxDecoration(
+                                              color: (_model.isStory == true) &&
+                                                      (_model.isVidFounder ==
+                                                          false)
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .alternate
+                                                  : FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.0),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            decoration: BoxDecoration(
+                                              color: (_model.isStory == true) &&
+                                                      (_model.isVidFounder ==
+                                                          false)
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .alternate
+                                                  : FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.0),
+                                            ),
+                                          ),
+                                        ].divide(const SizedBox(width: 6.0)),
+                                      ),
+                                    ),
+                                    Text(
+                                      'Stories',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            fontSize:
+                                                _model.isStory ? 18.0 : 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                  ].divide(const SizedBox(height: 16.0)),
+                                ),
+                              ),
                             if (widget.assets! >= 5)
                               InkWell(
                                 splashColor: Colors.transparent,
@@ -173,7 +260,8 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  _model.vidsby3 = false;
+                                  _model.isStory = false;
+                                  _model.isVidFounder = false;
                                   safeSetState(() {});
                                 },
                                 child: Column(
@@ -187,11 +275,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           width: 50.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        false)
                                                 ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
+                                                    .alternate
                                                 : FlutterFlowTheme.of(context)
-                                                    .alternate,
+                                                    .secondaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
@@ -200,11 +290,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           width: 50.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        false)
                                                 ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
+                                                    .alternate
                                                 : FlutterFlowTheme.of(context)
-                                                    .alternate,
+                                                    .secondaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
@@ -213,11 +305,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           width: 50.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        false)
                                                 ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
+                                                    .alternate
                                                 : FlutterFlowTheme.of(context)
-                                                    .alternate,
+                                                    .secondaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
@@ -226,11 +320,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           width: 50.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        false)
                                                 ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
+                                                    .alternate
                                                 : FlutterFlowTheme.of(context)
-                                                    .alternate,
+                                                    .secondaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
@@ -239,11 +335,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           width: 50.0,
                                           height: 100.0,
                                           decoration: BoxDecoration(
-                                            color: _model.vidsby3
+                                            color: (_model.isStory == false) &&
+                                                    (_model.isVidFounder ==
+                                                        false)
                                                 ? FlutterFlowTheme.of(context)
-                                                    .secondaryBackground
+                                                    .alternate
                                                 : FlutterFlowTheme.of(context)
-                                                    .alternate,
+                                                    .secondaryBackground,
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
@@ -256,8 +354,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Manrope',
-                                            fontSize:
-                                                _model.vidsby3 ? 14.0 : 18.0,
+                                            fontSize: !_model.isStory &&
+                                                    !_model.isVidFounder
+                                                ? 14.0
+                                                : 18.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -273,7 +373,8 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                   Builder(
                     builder: (context) => FFButtonWidget(
                       onPressed: () async {
-                        if (_model.vidsby3 == true) {
+                        if ((_model.isStory == true) &&
+                            (_model.isVidFounder == false)) {
                           Navigator.pop(context);
                           await showDialog(
                             context: context,
@@ -288,6 +389,39 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                   height: 790.0,
                                   width: 770.0,
                                   child: AddStoryWidget(),
+                                ),
+                              );
+                            },
+                          );
+                        } else if ((_model.isStory == false) &&
+                            (_model.isVidFounder == true)) {
+                          Navigator.pop(context);
+                          _model.founderCreated =
+                              await IntegrationsTable().insert({
+                            'uuid': currentUserUid,
+                            'ownerBrand': FFAppState().activeBrand,
+                            'is_story': false,
+                            'is_founder': true,
+                            'name': 'Mot du foundateur',
+                          });
+                          FFAppState().integrationEdited =
+                              _model.founderCreated!.id;
+                          safeSetState(() {});
+                          await showDialog(
+                            context: context,
+                            builder: (dialogContext) {
+                              return Dialog(
+                                elevation: 0,
+                                insetPadding: EdgeInsets.zero,
+                                backgroundColor: Colors.transparent,
+                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                    .resolve(Directionality.of(context)),
+                                child: SizedBox(
+                                  height: 790.0,
+                                  width: 770.0,
+                                  child: AddFounderWidget(
+                                    founderId: _model.founderCreated!.id,
+                                  ),
                                 ),
                               );
                             },
@@ -312,6 +446,8 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                             },
                           );
                         }
+
+                        safeSetState(() {});
                       },
                       text: 'Commencer',
                       options: FFButtonOptions(

@@ -57,7 +57,7 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Créer un Tag',
+            'Créer une Collection',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
                   fontFamily: 'Manrope',
                   color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -75,7 +75,7 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
               textCapitalization: TextCapitalization.sentences,
               obscureText: false,
               decoration: InputDecoration(
-                labelText: 'Nom du Tag',
+                labelText: 'Nom de la Collection',
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Manrope',
                       color: FlutterFlowTheme.of(context).inputTitleGrey,
@@ -138,7 +138,7 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
               });
               Navigator.pop(context);
             },
-            text: 'Créer le Tag',
+            text: 'Créer',
             icon: const Icon(
               Icons.check_sharp,
               size: 15.0,
