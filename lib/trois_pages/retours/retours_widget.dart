@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'retours_model.dart';
 export 'retours_model.dart';
 
@@ -628,12 +629,14 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
                                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                          child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                            child: const SizedBox(
-                                                                                                              height: 435.0,
-                                                                                                              width: 245.0,
-                                                                                                              child: ChooseMutiTagWidget(),
+                                                                                                          child: WebViewAware(
+                                                                                                            child: GestureDetector(
+                                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                              child: const SizedBox(
+                                                                                                                height: 435.0,
+                                                                                                                width: 245.0,
+                                                                                                                child: ChooseMutiTagWidget(),
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         );
@@ -699,9 +702,11 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: const ChooseMutiTagWidget(),
+                                                                                                  child: WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: const ChooseMutiTagWidget(),
+                                                                                                    ),
                                                                                                   ),
                                                                                                 );
                                                                                               },
@@ -1499,12 +1504,14 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: const SizedBox(
-                                                                                                            height: 435.0,
-                                                                                                            width: 245.0,
-                                                                                                            child: ChooseMutiTagWidget(),
+                                                                                                        child: WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: const SizedBox(
+                                                                                                              height: 435.0,
+                                                                                                              width: 245.0,
+                                                                                                              child: ChooseMutiTagWidget(),
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
                                                                                                       );
@@ -1515,19 +1522,21 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                     var confirmDialogResponse = await showDialog<bool>(
                                                                                                           context: context,
                                                                                                           builder: (alertDialogContext) {
-                                                                                                            return AlertDialog(
-                                                                                                              title: const Text('Erreur'),
-                                                                                                              content: const Text('Vous devez choisir un Tag pour continuer'),
-                                                                                                              actions: [
-                                                                                                                TextButton(
-                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                                  child: const Text('Retour'),
-                                                                                                                ),
-                                                                                                                TextButton(
-                                                                                                                  onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                                  child: const Text('Confirmer'),
-                                                                                                                ),
-                                                                                                              ],
+                                                                                                            return WebViewAware(
+                                                                                                              child: AlertDialog(
+                                                                                                                title: const Text('Erreur'),
+                                                                                                                content: const Text('Vous devez choisir un Tag pour continuer'),
+                                                                                                                actions: [
+                                                                                                                  TextButton(
+                                                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                                                    child: const Text('Retour'),
+                                                                                                                  ),
+                                                                                                                  TextButton(
+                                                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                                                    child: const Text('Confirmer'),
+                                                                                                                  ),
+                                                                                                                ],
+                                                                                                              ),
                                                                                                             );
                                                                                                           },
                                                                                                         ) ??

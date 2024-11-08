@@ -265,7 +265,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                                           context)
                                                                       .inputTitleGrey,
                                                                   fontSize:
-                                                                      14.0,
+                                                                      16.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),

@@ -24,3 +24,4 @@ export '/trois_pages/retours/retours_widget.dart' show RetoursWidget;
 export '/trois_pages/copyharvestdata/copyharvestdata_widget.dart'
     show CopyharvestdataWidget;
 export '/hosted/assets_copy/assets_copy_widget.dart' show AssetsCopyWidget;
+export '/dataviz/dataviz_widget.dart' show DatavizWidget;

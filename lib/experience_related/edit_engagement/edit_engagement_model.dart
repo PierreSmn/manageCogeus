@@ -1,0 +1,45 @@
+import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
+import 'edit_engagement_widget.dart' show EditEngagementWidget;
+import 'package:flutter/material.dart';
+
+class EditEngagementModel extends FlutterFlowModel<EditEngagementWidget> {
+  ///  State fields for stateful widgets in this component.
+
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered1 = false;
+  Completer<List<ClientsRow>>? requestCompleter;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered2 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered3 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered4 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered5 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered6 = false;
+
+  @override
+  void initState(BuildContext context) {}
+
+  @override
+  void dispose() {}
+
+  /// Additional helper methods.
+  Future waitForRequestCompleted({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+}

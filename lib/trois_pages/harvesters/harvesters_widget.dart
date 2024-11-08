@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'harvesters_model.dart';
 export 'harvesters_model.dart';
 
@@ -266,13 +267,15 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                  child: SizedBox(
-                                                                                                    height: 250.0,
-                                                                                                    width: 250.0,
-                                                                                                    child: ChooseTitleHarvesterWidget(
-                                                                                                      harbesterID: flowsItem.id,
+                                                                                                child: WebViewAware(
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    child: SizedBox(
+                                                                                                      height: 250.0,
+                                                                                                      width: 250.0,
+                                                                                                      child: ChooseTitleHarvesterWidget(
+                                                                                                        harbesterID: flowsItem.id,
+                                                                                                      ),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -436,18 +439,20 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
                                                                                               alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                child: SizedBox(
-                                                                                                  height: 750.0,
-                                                                                                  width: 1000.0,
-                                                                                                  child: ChangeColorWidget(
-                                                                                                    title: flowsItem.colorTitle!,
-                                                                                                    text: flowsItem.colorText!,
-                                                                                                    button: flowsItem.colorButton!,
-                                                                                                    buttonTxt: flowsItem.colorButtonText!,
-                                                                                                    background: flowsItem.colorBG,
-                                                                                                    id: flowsItem.id,
+                                                                                              child: WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                  child: SizedBox(
+                                                                                                    height: 750.0,
+                                                                                                    width: 1000.0,
+                                                                                                    child: ChangeColorWidget(
+                                                                                                      title: flowsItem.colorTitle!,
+                                                                                                      text: flowsItem.colorText!,
+                                                                                                      button: flowsItem.colorButton!,
+                                                                                                      buttonTxt: flowsItem.colorButtonText!,
+                                                                                                      background: flowsItem.colorBG,
+                                                                                                      id: flowsItem.id,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
                                                                                               ),
@@ -497,14 +502,16 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                            child: GestureDetector(
-                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                              child: SizedBox(
-                                                                                                height: 700.0,
-                                                                                                width: 750.0,
-                                                                                                child: ChangeQuestionWidget(
-                                                                                                  id: flowsItem.id,
-                                                                                                  question: flowsItem.expla2!,
+                                                                                            child: WebViewAware(
+                                                                                              child: GestureDetector(
+                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                child: SizedBox(
+                                                                                                  height: 700.0,
+                                                                                                  width: 750.0,
+                                                                                                  child: ChangeQuestionWidget(
+                                                                                                    id: flowsItem.id,
+                                                                                                    question: flowsItem.expla2!,
+                                                                                                  ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -551,15 +558,17 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                            child: GestureDetector(
-                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                              child: SizedBox(
-                                                                                                height: 695.0,
-                                                                                                width: 750.0,
-                                                                                                child: DuplicateHarvesterWidget(
-                                                                                                  id: flowsItem.id,
-                                                                                                  question: flowsItem.expla2!,
-                                                                                                  slug: flowsItem.slug!,
+                                                                                            child: WebViewAware(
+                                                                                              child: GestureDetector(
+                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                child: SizedBox(
+                                                                                                  height: 695.0,
+                                                                                                  width: 750.0,
+                                                                                                  child: DuplicateHarvesterWidget(
+                                                                                                    id: flowsItem.id,
+                                                                                                    question: flowsItem.expla2!,
+                                                                                                    slug: flowsItem.slug!,
+                                                                                                  ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),

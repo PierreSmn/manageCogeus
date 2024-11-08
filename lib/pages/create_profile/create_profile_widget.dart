@@ -270,7 +270,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                     color: const Color(
                                                                         0xFF778089),
                                                                     fontSize:
-                                                                        14.0,
+                                                                        16.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -397,7 +397,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                             context)
                                                                         .inputTitleGrey,
                                                                     fontSize:
-                                                                        14.0,
+                                                                        16.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -528,7 +528,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                               context)
                                                                           .inputTitleGrey,
                                                                       fontSize:
-                                                                          14.0,
+                                                                          16.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -656,7 +656,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                             context)
                                                                         .inputTitleGrey,
                                                                     fontSize:
-                                                                        14.0,
+                                                                        16.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
@@ -786,7 +786,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                             context)
                                                                         .inputTitleGrey,
                                                                     fontSize:
-                                                                        14.0,
+                                                                        16.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),

@@ -95,7 +95,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                     fontFamily: 'Manrope',
                                     color: FlutterFlowTheme.of(context)
                                         .inputTitleGrey,
-                                    fontSize: 14.0,
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                   ),
                               hintText: '#0E0E10',

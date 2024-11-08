@@ -111,7 +111,7 @@ class _ModifyVideoTitleWidgetState extends State<ModifyVideoTitleWidget> {
                         .override(
                           fontFamily: 'Manrope',
                           color: FlutterFlowTheme.of(context).inputTitleGrey,
-                          fontSize: 14.0,
+                          fontSize: 16.0,
                           letterSpacing: 0.0,
                         ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(

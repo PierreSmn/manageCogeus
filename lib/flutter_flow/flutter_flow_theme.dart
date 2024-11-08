@@ -63,6 +63,9 @@ abstract class FlutterFlowTheme {
   late Color inputNoGood;
   late Color inputNoGoodClicked;
   late Color inputTitleGrey;
+  late Color cogeusButtonBG;
+  late Color cogeHoverFromWhite;
+  late Color vertSympa;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -183,6 +186,9 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color inputNoGood = const Color(0xFFFBEEEC);
   late Color inputNoGoodClicked = const Color(0xFFF9E6E4);
   late Color inputTitleGrey = const Color(0xFF717173);
+  late Color cogeusButtonBG = const Color(0xFFEEE8FC);
+  late Color cogeHoverFromWhite = const Color(0xFFF8F4FE);
+  late Color vertSympa = const Color(0xFF52B58E);
 }
 
 abstract class Typography {

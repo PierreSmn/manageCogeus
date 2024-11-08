@@ -15,6 +15,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'assets_copy_model.dart';
 export 'assets_copy_model.dart';
 
@@ -285,19 +286,20 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                         context,
                                                                     builder:
                                                                         (alertDialogContext) {
-                                                                      return AlertDialog(
-                                                                        title: const Text(
-                                                                            'file title'),
-                                                                        content:
-                                                                            Text(_model.uploadedFileUrls[_model.retries!]),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                            child:
-                                                                                const Text('Ok'),
-                                                                          ),
-                                                                        ],
+                                                                      return WebViewAware(
+                                                                        child:
+                                                                            AlertDialog(
+                                                                          title:
+                                                                              const Text('file title'),
+                                                                          content:
+                                                                              Text(_model.uploadedFileUrls[_model.retries!]),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: const Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                       );
                                                                     },
                                                                   );
@@ -328,9 +330,9 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                       _model
                                                                           .uploadedFileUrls
                                                                           .length) {
-                                                                    if (functions.newCustomFunction(_model.uploadedFileUrls[_model.retries!]) !=
+                                                                    if (functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls[_model.retries!]) !=
                                                                             null &&
-                                                                        functions.newCustomFunction(_model.uploadedFileUrls[_model.retries!]) !=
+                                                                        functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls[_model.retries!]) !=
                                                                             '') {
                                                                       _model.apiResultUploadIndex =
                                                                           await PostToMuxThroughFastgenCall
@@ -611,13 +613,15 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                  child: SizedBox(
-                                                                                                    height: 630.0,
-                                                                                                    width: 300.0,
-                                                                                                    child: PlayVideoWidget(
-                                                                                                      videoAdress: hostedVideosItem.mediaLink!,
+                                                                                                child: WebViewAware(
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    child: SizedBox(
+                                                                                                      height: 630.0,
+                                                                                                      width: 300.0,
+                                                                                                      child: PlayVideoWidget(
+                                                                                                        videoAdress: hostedVideosItem.mediaLink!,
+                                                                                                      ),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -676,13 +680,15 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 250.0,
-                                                                                                      width: 500.0,
-                                                                                                      child: ModifyVideoTitleWidget(
-                                                                                                        assetId: hostedVideosItem.id,
+                                                                                                  child: WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 250.0,
+                                                                                                        width: 500.0,
+                                                                                                        child: ModifyVideoTitleWidget(
+                                                                                                          assetId: hostedVideosItem.id,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -722,13 +728,15 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 275.0,
-                                                                                                      width: 400.0,
-                                                                                                      child: EraseAssetWidget(
-                                                                                                        assetID: hostedVideosItem.id,
+                                                                                                  child: WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 275.0,
+                                                                                                        width: 400.0,
+                                                                                                        child: EraseAssetWidget(
+                                                                                                          assetID: hostedVideosItem.id,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),

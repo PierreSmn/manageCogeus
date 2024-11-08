@@ -252,6 +252,12 @@ class FFAppState extends ChangeNotifier {
     tagList.insert(index, value);
   }
 
+  String _themaEdited = '';
+  String get themaEdited => _themaEdited;
+  set themaEdited(String value) {
+    _themaEdited = value;
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,

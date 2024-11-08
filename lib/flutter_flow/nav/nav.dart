@@ -204,6 +204,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/assetsCopy',
           requireAuth: true,
           builder: (context, params) => const AssetsCopyWidget(),
+        ),
+        FFRoute(
+          name: 'dataviz',
+          path: '/dataviz',
+          requireAuth: true,
+          builder: (context, params) => const DatavizWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

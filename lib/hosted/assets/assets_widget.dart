@@ -15,6 +15,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'assets_model.dart';
 export 'assets_model.dart';
 
@@ -324,17 +325,20 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                           .resolve(
                                                                               Directionality.of(context)),
                                                                       child:
-                                                                          GestureDetector(
-                                                                        onTap: () =>
-                                                                            FocusScope.of(dialogContext).unfocus(),
+                                                                          WebViewAware(
                                                                         child:
-                                                                            const SizedBox(
-                                                                          height:
-                                                                              250.0,
-                                                                          width:
-                                                                              500.0,
+                                                                            GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(dialogContext).unfocus(),
                                                                           child:
-                                                                              VideoTitleWidget(),
+                                                                              const SizedBox(
+                                                                            height:
+                                                                                250.0,
+                                                                            width:
+                                                                                500.0,
+                                                                            child:
+                                                                                VideoTitleWidget(),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     );
@@ -601,13 +605,15 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                child: GestureDetector(
-                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                  child: SizedBox(
-                                                                                                    height: 630.0,
-                                                                                                    width: 300.0,
-                                                                                                    child: PlayVideoWidget(
-                                                                                                      videoAdress: hostedVideosItem.mediaLink!,
+                                                                                                child: WebViewAware(
+                                                                                                  child: GestureDetector(
+                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    child: SizedBox(
+                                                                                                      height: 630.0,
+                                                                                                      width: 300.0,
+                                                                                                      child: PlayVideoWidget(
+                                                                                                        videoAdress: hostedVideosItem.mediaLink!,
+                                                                                                      ),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -666,13 +672,15 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 250.0,
-                                                                                                      width: 500.0,
-                                                                                                      child: ModifyVideoTitleWidget(
-                                                                                                        assetId: hostedVideosItem.id,
+                                                                                                  child: WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 250.0,
+                                                                                                        width: 500.0,
+                                                                                                        child: ModifyVideoTitleWidget(
+                                                                                                          assetId: hostedVideosItem.id,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
@@ -712,13 +720,15 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                  child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                    child: SizedBox(
-                                                                                                      height: 275.0,
-                                                                                                      width: 400.0,
-                                                                                                      child: EraseAssetWidget(
-                                                                                                        assetID: hostedVideosItem.id,
+                                                                                                  child: WebViewAware(
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 275.0,
+                                                                                                        width: 400.0,
+                                                                                                        child: EraseAssetWidget(
+                                                                                                          assetID: hostedVideosItem.id,
+                                                                                                        ),
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
