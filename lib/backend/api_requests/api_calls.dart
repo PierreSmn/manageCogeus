@@ -677,6 +677,86 @@ class MUXDeleteCall {
   }
 }
 
+class PlaceIdRequestCall {
+  static Future<ApiCallResponse> call({
+    String? lat = '40.714224,-73.961452',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'placeIdRequest',
+      apiUrl:
+          'https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? placeId(dynamic response) => (getJsonField(
+        response,
+        r'''$.results[:].place_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class PlaceIdRequestCopyCall {
+  static Future<ApiCallResponse> call({
+    String? lat = '40.714224,-73.961452',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'placeIdRequest Copy',
+      apiUrl:
+          'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$lat&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? name(dynamic response) => (getJsonField(
+        response,
+        r'''$.predictions[:].structured_formatting.main_text''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? loca(dynamic response) => (getJsonField(
+        response,
+        r'''$.predictions[:].structured_formatting.secondary_text''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? placeId(dynamic response) => (getJsonField(
+        response,
+        r'''$.predictions[:].place_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

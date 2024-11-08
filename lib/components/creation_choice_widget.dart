@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'creation_choice_model.dart';
 export 'creation_choice_model.dart';
 
@@ -385,10 +386,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 backgroundColor: Colors.transparent,
                                 alignment: const AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: const SizedBox(
-                                  height: 790.0,
-                                  width: 770.0,
-                                  child: AddStoryWidget(),
+                                child: const WebViewAware(
+                                  child: SizedBox(
+                                    height: 790.0,
+                                    width: 770.0,
+                                    child: AddStoryWidget(),
+                                  ),
                                 ),
                               );
                             },
@@ -416,11 +419,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 backgroundColor: Colors.transparent,
                                 alignment: const AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: SizedBox(
-                                  height: 790.0,
-                                  width: 770.0,
-                                  child: AddFounderWidget(
-                                    founderId: _model.founderCreated!.id,
+                                child: WebViewAware(
+                                  child: SizedBox(
+                                    height: 790.0,
+                                    width: 770.0,
+                                    child: AddFounderWidget(
+                                      founderId: _model.founderCreated!.id,
+                                    ),
                                   ),
                                 ),
                               );
@@ -437,10 +442,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 backgroundColor: Colors.transparent,
                                 alignment: const AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: const SizedBox(
-                                  height: 800.0,
-                                  width: 1280.0,
-                                  child: AddIntegrationWidget(),
+                                child: const WebViewAware(
+                                  child: SizedBox(
+                                    height: 800.0,
+                                    width: 1280.0,
+                                    child: AddIntegrationWidget(),
+                                  ),
                                 ),
                               );
                             },

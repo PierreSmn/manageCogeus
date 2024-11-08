@@ -79,7 +79,7 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Manrope',
                       color: FlutterFlowTheme.of(context).inputTitleGrey,
-                      fontSize: 14.0,
+                      fontSize: 16.0,
                       letterSpacing: 0.0,
                     ),
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(

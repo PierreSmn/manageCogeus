@@ -64,30 +64,39 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                width: 300.0,
-                height: 90.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).revoWhite,
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
-                          width: 130.0,
-                          height: 60.0,
-                          fit: BoxFit.contain,
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('home');
+                },
+                child: Container(
+                  width: 300.0,
+                  height: 90.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).revoWhite,
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
+                            width: 130.0,
+                            height: 50.0,
+                            fit: BoxFit.contain,
+                          ),
                         ),
-                      ),
-                    ].divide(const SizedBox(height: 24.0)),
+                      ].divide(const SizedBox(height: 24.0)),
+                    ),
                   ),
                 ),
               ),
@@ -154,7 +163,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Accueil',
+                                    'Dashboard',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -208,11 +217,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('widgets');
+                            context.pushNamed('harvesters');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 7
+                              color: widget.selectedIndex == 10
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -234,8 +243,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.checklist_rtl_rounded,
-                                      color: widget.selectedIndex == 7
+                                      Icons.qr_code_rounded,
+                                      color: widget.selectedIndex == 10
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -243,12 +252,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Widgets',
+                                    'Harvesters',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 7
+                                          color: widget.selectedIndex == 10
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -278,11 +287,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('assets');
+                            context.pushNamed('triage');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 5
+                              color: widget.selectedIndex == 4
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -304,8 +313,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.filter,
-                                      color: widget.selectedIndex == 5
+                                      Icons.directions_outlined,
+                                      color: widget.selectedIndex == 4
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -313,12 +322,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Assets',
+                                    'Tri',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 5
+                                          color: widget.selectedIndex == 4
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -348,11 +357,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('analytics');
+                            context.pushNamed('retours');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 6
+                              color: widget.selectedIndex == 2
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -374,8 +383,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.analytics_outlined,
-                                      color: widget.selectedIndex == 6
+                                      Icons.checklist_rtl,
+                                      color: widget.selectedIndex == 2
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -383,12 +392,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Analytics',
+                                    'Sélection',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 6
+                                          color: widget.selectedIndex == 2
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -437,11 +446,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('harvesters');
+                            context.pushNamed('widgets');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 10
+                              color: widget.selectedIndex == 7
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -463,8 +472,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.qr_code_rounded,
-                                      color: widget.selectedIndex == 10
+                                      Icons.checklist_rtl_rounded,
+                                      color: widget.selectedIndex == 7
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -472,12 +481,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Harvesters',
+                                    'Widgets',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 10
+                                          color: widget.selectedIndex == 7
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -507,11 +516,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('triage');
+                            context.pushNamed('assets');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 4
+                              color: widget.selectedIndex == 5
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -533,8 +542,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.directions_outlined,
-                                      color: widget.selectedIndex == 4
+                                      Icons.filter,
+                                      color: widget.selectedIndex == 5
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -542,12 +551,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Tri',
+                                    'Assets',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 4
+                                          color: widget.selectedIndex == 5
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -577,11 +586,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('retours');
+                            context.pushNamed('analytics');
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: widget.selectedIndex == 2
+                              color: widget.selectedIndex == 6
                                   ? FlutterFlowTheme.of(context)
                                       .cogeusNavSelected
                                   : FlutterFlowTheme.of(context).revoWhite,
@@ -603,8 +612,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.checklist_rtl,
-                                      color: widget.selectedIndex == 2
+                                      Icons.analytics_outlined,
+                                      color: widget.selectedIndex == 6
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
@@ -612,12 +621,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Sélection',
+                                    'Analytics',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 2
+                                          color: widget.selectedIndex == 6
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)

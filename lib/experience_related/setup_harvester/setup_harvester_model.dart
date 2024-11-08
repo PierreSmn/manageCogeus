@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'setup_comprendre_widget.dart' show SetupComprendreWidget;
+import 'setup_harvester_widget.dart' show SetupHarvesterWidget;
 import 'package:flutter/material.dart';
 
-class SetupComprendreModel extends FlutterFlowModel<SetupComprendreWidget> {
+class SetupHarvesterModel extends FlutterFlowModel<SetupHarvesterWidget> {
   @override
   void initState(BuildContext context) {}
 

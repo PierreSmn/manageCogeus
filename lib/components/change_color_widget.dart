@@ -194,7 +194,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
-                                                      fontSize: 14.0,
+                                                      fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: '#0E0E10',
@@ -303,7 +303,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .inputTitleGrey,
-                                                        fontSize: 14.0,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                               hintText: '#0E0E10',
@@ -430,7 +430,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
-                                                      fontSize: 14.0,
+                                                      fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: '#7F7E83',
@@ -555,7 +555,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
-                                                      fontSize: 14.0,
+                                                      fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: '#7F7E83',
@@ -682,7 +682,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
-                                                      fontSize: 14.0,
+                                                      fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: '#0071E3',
@@ -811,7 +811,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
-                                                      fontSize: 14.0,
+                                                      fontSize: 16.0,
                                                       letterSpacing: 0.0,
                                                     ),
                                             hintText: '#FFFFFF',

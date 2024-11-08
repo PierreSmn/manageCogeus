@@ -140,7 +140,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                             fontFamily: 'Manrope',
                                             color: FlutterFlowTheme.of(context)
                                                 .inputTitleGrey,
-                                            fontSize: 14.0,
+                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
                                           ),
                                       hintText: 'Titre',
@@ -256,7 +256,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .inputTitleGrey,
-                                              fontSize: 14.0,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
@@ -351,7 +351,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .inputTitleGrey,
-                                              fontSize: 14.0,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
                                             ),
                                         hintText: '#0E0E10',

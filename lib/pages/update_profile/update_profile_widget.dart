@@ -272,7 +272,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                           context)
                                                                       .inputTitleGrey,
                                                                   fontSize:
-                                                                      14.0,
+                                                                      16.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -402,7 +402,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                           context)
                                                                       .inputTitleGrey,
                                                                   fontSize:
-                                                                      14.0,
+                                                                      16.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),

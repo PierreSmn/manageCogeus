@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_story_model.dart';
 export 'add_story_model.dart';
 
@@ -356,11 +357,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -443,11 +446,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -534,7 +539,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .inputTitleGrey,
-                                                fontSize: 14.0,
+                                                fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
                                           hintStyle: FlutterFlowTheme.of(
@@ -719,11 +724,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -805,11 +812,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -896,7 +905,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .inputTitleGrey,
-                                                fontSize: 14.0,
+                                                fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
                                           hintStyle: FlutterFlowTheme.of(
@@ -1081,11 +1090,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1167,11 +1178,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
+                                                      child: const WebViewAware(
+                                                        child: SizedBox(
+                                                          height: 500.0,
+                                                          width: 800.0,
+                                                          child:
+                                                              ChooseHostedVideoWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1258,7 +1271,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .inputTitleGrey,
-                                                fontSize: 14.0,
+                                                fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
                                           hintStyle: FlutterFlowTheme.of(
