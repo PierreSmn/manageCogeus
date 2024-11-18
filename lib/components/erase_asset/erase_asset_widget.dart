@@ -231,7 +231,7 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                       await HostedSubsTable().delete(
                                         matchingRows: (rows) => rows.eq(
                                           'id',
-                                          widget.assetID,
+                                          widget.assetID!,
                                         ),
                                       );
                                       Navigator.pop(context);

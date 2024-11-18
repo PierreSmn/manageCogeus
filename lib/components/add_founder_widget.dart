@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'add_founder_model.dart';
 export 'add_founder_model.dart';
 
@@ -55,7 +54,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.founderId,
+          widget.founderId!,
         ),
       ),
       builder: (context, snapshot) {
@@ -149,7 +148,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow?.vid1,
+                                                containerIntegrationsRow!.vid1!,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -223,13 +222,11 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
+                                                    child: const SizedBox(
+                                                      height: 500.0,
+                                                      width: 800.0,
+                                                      child:
+                                                          ChooseHostedVideoWidget(),
                                                     ),
                                                   );
                                                 },
@@ -303,13 +300,11 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
-                                                        height: 500.0,
-                                                        width: 800.0,
-                                                        child:
-                                                            ChooseHostedVideoWidget(),
-                                                      ),
+                                                    child: const SizedBox(
+                                                      height: 500.0,
+                                                      width: 800.0,
+                                                      child:
+                                                          ChooseHostedVideoWidget(),
                                                     ),
                                                   );
                                                 },

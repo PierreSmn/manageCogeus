@@ -517,8 +517,9 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .validate()) {
                                                           return;
                                                         }
-                                                        await UsersTable()
-                                                            .update(
+                                                        _model.userRow =
+                                                            await UsersTable()
+                                                                .update(
                                                           data: {
                                                             'first_name': _model
                                                                 .firstNameTextController
@@ -532,6 +533,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                             'id',
                                                             currentUserUid,
                                                           ),
+                                                          returnRows: true,
                                                         );
                                                         FFAppState()
                                                                 .activeBrand =
@@ -541,10 +543,17 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .activeClientID =
                                                             updateProfileUsersRow
                                                                 .clientId!;
+                                                        FFAppState().activeSub =
+                                                            _model
+                                                                .userRow!
+                                                                .first
+                                                                .activeSub!;
                                                         safeSetState(() {});
 
                                                         context
                                                             .pushNamed('home');
+
+                                                        safeSetState(() {});
                                                       },
                                                       text: 'Continuer',
                                                       options: FFButtonOptions(

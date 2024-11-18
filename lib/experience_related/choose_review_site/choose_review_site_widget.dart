@@ -1,12 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/experience_related/edit_review_link/edit_review_link_widget.dart';
+import '/experience_related/edit_review_link_google/edit_review_link_google_widget.dart';
+import '/experience_related/edit_review_trustpilot/edit_review_trustpilot_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'choose_review_site_model.dart';
 export 'choose_review_site_model.dart';
 
@@ -200,13 +201,10 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: WebViewAware(
-                                                      child:
-                                                          EditReviewLinkWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
-                                                        isGoogle: false,
-                                                      ),
+                                                    child: EditReviewLinkWidget(
+                                                      id: FFAppState()
+                                                          .activeClientID,
+                                                      isGoogle: false,
                                                     ),
                                                   );
                                                 },
@@ -337,27 +335,28 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
-                              MouseRegion(
-                                opaque: false,
-                                cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                onEnter: ((event) async {
-                                  safeSetState(
-                                      () => _model.mouseRegionHovered2 = true);
-                                }),
-                                onExit: ((event) async {
-                                  safeSetState(
-                                      () => _model.mouseRegionHovered2 = false);
-                                }),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Builder(
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    MouseRegion(
+                                      opaque: false,
+                                      cursor: MouseCursor.defer ??
+                                          MouseCursor.defer,
+                                      onEnter: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered2 = true);
+                                      }),
+                                      onExit: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered2 = false);
+                                      }),
+                                      child: Builder(
                                         builder: (context) => Padding(
                                           padding: const EdgeInsets.all(3.0),
                                           child: InkWell(
@@ -381,14 +380,8 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: WebViewAware(
-                                                      child:
-                                                          EditReviewLinkWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
-                                                        isGoogle: true,
-                                                      ),
-                                                    ),
+                                                    child:
+                                                        const EditReviewLinkGoogleWidget(),
                                                   );
                                                 },
                                               );
@@ -491,8 +484,149 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    MouseRegion(
+                                      opaque: false,
+                                      cursor: MouseCursor.defer ??
+                                          MouseCursor.defer,
+                                      onEnter: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered3 = true);
+                                      }),
+                                      onExit: ((event) async {
+                                        safeSetState(() =>
+                                            _model.mouseRegionHovered3 = false);
+                                      }),
+                                      child: Builder(
+                                        builder: (context) => Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        const AlignmentDirectional(
+                                                                0.0, 0.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child:
+                                                        const EditReviewTrustpilotWidget(),
+                                                  );
+                                                },
+                                              );
+
+                                              Navigator.pop(context);
+                                            },
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: 70.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    _model.mouseRegionHovered3
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .cogeHoverFromWhite
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .revoWhite,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Container(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            const Color(0xFF51B37F),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                                    100.0),
+                                                      ),
+                                                      child: Icon(
+                                                        Icons.star,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(12.0),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            'Lien avis Trustpilot',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                ),
+                                                          ),
+                                                          Text(
+                                                            'Cherchez votre lieu',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ].divide(const SizedBox(
+                                                            height: 2.0)),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ].divide(const SizedBox(height: 8.0)),

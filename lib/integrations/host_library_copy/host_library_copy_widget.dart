@@ -9,7 +9,6 @@ import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'host_library_copy_model.dart';
 export 'host_library_copy_model.dart';
 
@@ -310,15 +309,13 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                                 builder: (dialogContext) {
                                                                                                   return Material(
                                                                                                     color: Colors.transparent,
-                                                                                                    child: WebViewAware(
-                                                                                                      child: GestureDetector(
-                                                                                                        onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                        child: SizedBox(
-                                                                                                          height: 680.0,
-                                                                                                          width: 330.0,
-                                                                                                          child: PlayVideoWidget(
-                                                                                                            videoAdress: singularHostedVideosItem.mediaLink!,
-                                                                                                          ),
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      child: SizedBox(
+                                                                                                        height: 680.0,
+                                                                                                        width: 330.0,
+                                                                                                        child: PlayVideoWidget(
+                                                                                                          videoAdress: singularHostedVideosItem.mediaLink!,
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -357,22 +354,20 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                           await showDialog(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return WebViewAware(
-                                                                                                child: AlertDialog(
-                                                                                                  title: Text(MuxGetViewsCall.views(
-                                                                                                    (_model.apiResultb7l?.jsonBody ?? ''),
-                                                                                                  )!
-                                                                                                      .toString()),
-                                                                                                  content: Text(MuxGetViewsCall.assetId(
-                                                                                                    (_model.apiResultb7l?.jsonBody ?? ''),
-                                                                                                  )!),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: const Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                ),
+                                                                                              return AlertDialog(
+                                                                                                title: Text(MuxGetViewsCall.views(
+                                                                                                  (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                                )!
+                                                                                                    .toString()),
+                                                                                                content: Text(MuxGetViewsCall.assetId(
+                                                                                                  (_model.apiResultb7l?.jsonBody ?? ''),
+                                                                                                )!),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
                                                                                               );
                                                                                             },
                                                                                           );
@@ -380,17 +375,15 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                           await showDialog(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
-                                                                                              return WebViewAware(
-                                                                                                child: AlertDialog(
-                                                                                                  title: Text((_model.apiResultb7l?.statusCode ?? 200).toString()),
-                                                                                                  content: Text((_model.apiResultb7l?.jsonBody ?? '').toString()),
-                                                                                                  actions: [
-                                                                                                    TextButton(
-                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: const Text('Ok'),
-                                                                                                    ),
-                                                                                                  ],
-                                                                                                ),
+                                                                                              return AlertDialog(
+                                                                                                title: Text((_model.apiResultb7l?.statusCode ?? 200).toString()),
+                                                                                                content: Text((_model.apiResultb7l?.jsonBody ?? '').toString()),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: const Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
                                                                                               );
                                                                                             },
                                                                                           );

@@ -75,7 +75,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
             future: HostedSubsTable().querySingleRow(
               queryFn: (q) => q.eq(
                 'id',
-                widget.assetID,
+                widget.assetID!,
               ),
             ),
             builder: (context, snapshot) {
@@ -159,7 +159,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                     await HostedSubsTable().delete(
                                       matchingRows: (rows) => rows.eq(
                                         'id',
-                                        containerHostedSubsRow?.id,
+                                        containerHostedSubsRow!.id,
                                       ),
                                     );
                                     Navigator.pop(context);

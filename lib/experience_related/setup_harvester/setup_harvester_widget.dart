@@ -193,7 +193,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                                     matchingRows: (rows) =>
                                                         rows.eq(
                                                       'id',
-                                                      widget.id,
+                                                      widget.id!,
                                                     ),
                                                   );
                                                   Navigator.pop(context);

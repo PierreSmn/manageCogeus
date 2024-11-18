@@ -60,7 +60,7 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.integrationEditing,
+          widget.integrationEditing!,
         ),
       ),
       builder: (context, snapshot) {

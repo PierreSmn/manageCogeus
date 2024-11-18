@@ -1,9 +1,10 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'create_profile_widget.dart' show CreateProfileWidget;
+import 'create_profile_client_widget.dart' show CreateProfileClientWidget;
 import 'package:flutter/material.dart';
 
-class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
+class CreateProfileClientModel
+    extends FlutterFlowModel<CreateProfileClientWidget> {
   ///  Local state fields for this page.
 
   bool isBrandSet = false;
@@ -18,14 +19,10 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
   FocusNode? lastNameFocusNode;
   TextEditingController? lastNameTextController;
   String? Function(BuildContext, String?)? lastNameTextControllerValidator;
-  // State field(s) for phone widget.
-  FocusNode? phoneFocusNode;
-  TextEditingController? phoneTextController;
-  String? Function(BuildContext, String?)? phoneTextControllerValidator;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsRow>? clientRow;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ClientsRow? clientNewRow;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsersRow>? updatedUser1;
+  List<UsersRow>? updatedUser;
 
   @override
   void initState(BuildContext context) {}
@@ -37,8 +34,5 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
 
     lastNameFocusNode?.dispose();
     lastNameTextController?.dispose();
-
-    phoneFocusNode?.dispose();
-    phoneTextController?.dispose();
   }
 }

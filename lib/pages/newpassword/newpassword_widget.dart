@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'newpassword_model.dart';
 export 'newpassword_model.dart';
 
@@ -470,20 +469,17 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                   context: context,
                                                   builder:
                                                       (alertDialogContext) {
-                                                    return WebViewAware(
-                                                      child: AlertDialog(
-                                                        content: Text(
-                                                            FFAppState()
-                                                                .customError),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: const Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      ),
+                                                    return AlertDialog(
+                                                      content: Text(FFAppState()
+                                                          .customError),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
                                                     );
                                                   },
                                                 );

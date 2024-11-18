@@ -1,14 +1,15 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -37,17 +38,15 @@ class _HomeWidgetState extends State<HomeWidget> {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return WebViewAware(
-              child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
-                  ),
-                ],
-              ),
+            return AlertDialog(
+              title: const Text('Attention'),
+              content: const Text('Vous devez remettre à jour votre profil.'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: const Text('Ok'),
+                ),
+              ],
             );
           },
         );
@@ -273,13 +272,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   insetPadding: EdgeInsets.zero,
                                                                                   backgroundColor: Colors.transparent,
                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                  child: WebViewAware(
-                                                                                    child: GestureDetector(
-                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                      child: EditEngagementWidget(
-                                                                                        id: FFAppState().activeClientID,
-                                                                                      ),
-                                                                                    ),
+                                                                                  child: GestureDetector(
+                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                    child: const EditEngagementWidget(),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -290,122 +285,156 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     ),
                                                                   ],
                                                                 ),
-                                                                Container(
-                                                                  width: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .width *
-                                                                      0.66,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .revoWhite,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            16.0),
-                                                                  ),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            16.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .start,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children:
-                                                                          [
-                                                                        Text(
-                                                                          'Engagement Client',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Manrope',
-                                                                                color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                fontSize: 40.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w600,
-                                                                              ),
+                                                                Builder(
+                                                                  builder:
+                                                                      (context) {
+                                                                    if (FFAppState()
+                                                                        .activeSub) {
+                                                                      return Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.66,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).revoWhite,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(16.0),
                                                                         ),
-                                                                        Text(
-                                                                          'Score NPS',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Manrope',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
-                                                                        Text(
-                                                                          '15',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Manrope',
-                                                                                color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                fontSize: 30.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w600,
-                                                                              ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              6.0),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.all(16.0),
                                                                           child:
-                                                                              Row(
+                                                                              Column(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
-                                                                            children: [
-                                                                              Container(
-                                                                                width: 100.0,
-                                                                                height: 30.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  borderRadius: const BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(2.0),
-                                                                                    bottomRight: Radius.circular(0.0),
-                                                                                    topLeft: Radius.circular(2.0),
-                                                                                    topRight: Radius.circular(0.0),
-                                                                                  ),
-                                                                                ),
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                'Engagement Client',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                      fontSize: 40.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
                                                                               ),
-                                                                              Container(
-                                                                                width: 600.0,
-                                                                                height: 30.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                ),
+                                                                              Text(
+                                                                                'Score NPS',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
                                                                               ),
-                                                                              Container(
-                                                                                width: 200.0,
-                                                                                height: 30.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  borderRadius: const BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(0.0),
-                                                                                    bottomRight: Radius.circular(2.0),
-                                                                                    topLeft: Radius.circular(0.0),
-                                                                                    topRight: Radius.circular(2.0),
-                                                                                  ),
-                                                                                ),
+                                                                              Text(
+                                                                                '100',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                      fontSize: 30.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
                                                                               ),
-                                                                            ],
+                                                                            ].divide(const SizedBox(height: 12.0)),
                                                                           ),
                                                                         ),
-                                                                      ].divide(const SizedBox(
-                                                                              height: 12.0)),
-                                                                    ),
-                                                                  ),
+                                                                      );
+                                                                    } else {
+                                                                      return Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.66,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).revoWhite,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(16.0),
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              const EdgeInsets.all(16.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children:
+                                                                                [
+                                                                              Text(
+                                                                                'Votre abonnement n\'est pas actif !',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                      fontSize: 40.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
+                                                                              ),
+                                                                              Text(
+                                                                                'Abonnez-vous pour accéder à vos données !',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Manrope',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                                                                                child: FFButtonWidget(
+                                                                                  onPressed: () async {
+                                                                                    _model.userRow = await UsersTable().queryRows(
+                                                                                      queryFn: (q) => q.eq(
+                                                                                        'id',
+                                                                                        currentUserUid,
+                                                                                      ),
+                                                                                    );
+                                                                                    if (_model.userRow!.first.activeSub!) {
+                                                                                      FFAppState().activeSub = true;
+                                                                                      safeSetState(() {});
+
+                                                                                      context.pushNamed('home');
+                                                                                    } else {
+                                                                                      await launchURL('https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=$currentUserEmail');
+                                                                                    }
+
+                                                                                    safeSetState(() {});
+                                                                                  },
+                                                                                  text: 'S\'abonner',
+                                                                                  options: FFButtonOptions(
+                                                                                    height: 40.0,
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                    elevation: 0.0,
+                                                                                    borderSide: const BorderSide(
+                                                                                      color: Colors.transparent,
+                                                                                      width: 0.0,
+                                                                                    ),
+                                                                                    borderRadius: BorderRadius.circular(16.0),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                  },
                                                                 ),
                                                                 Row(
                                                                   mainAxisSize:

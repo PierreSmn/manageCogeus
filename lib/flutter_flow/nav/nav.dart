@@ -115,6 +115,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'brandId',
               ParamType.int,
             ),
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -122,8 +126,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createProfile',
           requireAuth: true,
           builder: (context, params) => CreateProfileWidget(
-            clientID: params.getParam(
-              'clientID',
+            clid: params.getParam(
+              'clid',
               ParamType.int,
             ),
           ),
@@ -206,10 +210,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AssetsCopyWidget(),
         ),
         FFRoute(
-          name: 'dataviz',
-          path: '/dataviz',
+          name: 'engagement',
+          path: '/engagement',
           requireAuth: true,
-          builder: (context, params) => const DatavizWidget(),
+          builder: (context, params) => const EngagementWidget(),
+        ),
+        FFRoute(
+          name: 'createProfileClient',
+          path: '/createClient',
+          requireAuth: true,
+          builder: (context, params) => const CreateProfileClientWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
