@@ -1,6 +1,5 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
 import 'signin_widget.dart' show SigninWidget;
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,8 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
 
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered = false;
-  Completer<List<UsersRow>>? requestCompleter;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<UsersRow>? userInfos;
 
   @override
   void initState(BuildContext context) {
@@ -55,21 +55,5 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
-  }
-
-  /// Additional helper methods.
-  Future waitForRequestCompleted({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
   }
 }

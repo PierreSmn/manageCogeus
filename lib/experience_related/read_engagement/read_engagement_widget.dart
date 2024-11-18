@@ -1,26 +1,28 @@
 import '/backend/supabase/supabase.dart';
-import '/experience_related/choose_question/choose_question_widget.dart';
-import '/experience_related/choose_review_site/choose_review_site_widget.dart';
-import '/experience_related/setup_harvester/setup_harvester_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'edit_engagement_model.dart';
-export 'edit_engagement_model.dart';
+import 'read_engagement_model.dart';
+export 'read_engagement_model.dart';
 
-class EditEngagementWidget extends StatefulWidget {
-  const EditEngagementWidget({super.key});
+class ReadEngagementWidget extends StatefulWidget {
+  const ReadEngagementWidget({
+    super.key,
+    required this.id,
+  });
+
+  final int? id;
 
   @override
-  State<EditEngagementWidget> createState() => _EditEngagementWidgetState();
+  State<ReadEngagementWidget> createState() => _ReadEngagementWidgetState();
 }
 
-class _EditEngagementWidgetState extends State<EditEngagementWidget> {
-  late EditEngagementModel _model;
+class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
+  late ReadEngagementModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -31,7 +33,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EditEngagementModel());
+    _model = createModel(context, () => ReadEngagementModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -81,7 +83,17 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
           height: MediaQuery.sizeOf(context).height * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoBG,
-            borderRadius: BorderRadius.circular(0.0),
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 2.0,
+                color: Color(0x33000000),
+                offset: Offset(
+                  0.0,
+                  0.0,
+                ),
+              )
+            ],
+            borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
@@ -98,25 +110,13 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        FlutterFlowIconButton(
-                          borderRadius: 8.0,
-                          buttonSize: 40.0,
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            size: 24.0,
-                          ),
-                          onPressed: () async {
-                            Navigator.pop(context);
-                          },
-                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Editer Engagement Harvester',
+                              'Engagement Harvester',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -127,15 +127,37 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                     lineHeight: 1.2,
                                   ),
                             ),
-                            Text(
-                              'Modifier le questionnaire qui sera envoyé a vos clients pour mesurer leur engagement. ',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    letterSpacing: 0.0,
+                            if (clientIdClientsRow?.theme4 != null &&
+                                clientIdClientsRow?.theme4 != '')
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .vertSympa,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Icon(
+                                      Icons.check_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      size: 24.0,
+                                    ),
                                   ),
-                            ),
+                                  Text(
+                                    'Pret à envoyer',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ].divide(const SizedBox(width: 8.0)),
+                              ),
                           ].divide(const SizedBox(height: 12.0)),
                         ),
                         SingleChildScrollView(
@@ -174,90 +196,57 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                       .primaryBackground,
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    MouseRegion(
-                                      opaque: false,
-                                      cursor: MouseCursor.defer ??
-                                          MouseCursor.defer,
-                                      onEnter: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered1 = true);
-                                      }),
-                                      onExit: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered1 = false);
-                                      }),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (clientIdClientsRow?.theme1 ==
-                                                  null ||
-                                              clientIdClientsRow?.theme1 == '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
+                                child: Builder(
+                                  builder: (context) => InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: const AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: const EditEngagementWidget(),
+                                          );
+                                        },
+                                      );
 
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme1': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                      safeSetState(
+                                          () => _model.requestCompleter = null);
+                                      await _model.waitForRequestCompleted();
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered1 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered1 = false);
+                                          }),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (clientIdClientsRow?.theme1 ==
+                                                      null ||
+                                                  clientIdClientsRow?.theme1 ==
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -380,74 +369,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                          if (clientIdClientsRow?.theme1 !=
-                                                  null &&
-                                              clientIdClientsRow?.theme1 != '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme1': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                              if (clientIdClientsRow?.theme1 !=
+                                                      null &&
+                                                  clientIdClientsRow?.theme1 !=
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -575,92 +502,30 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    MouseRegion(
-                                      opaque: false,
-                                      cursor: MouseCursor.defer ??
-                                          MouseCursor.defer,
-                                      onEnter: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered2 = true);
-                                      }),
-                                      onExit: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered2 = false);
-                                      }),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (clientIdClientsRow?.theme2 ==
-                                                  null ||
-                                              clientIdClientsRow?.theme2 == '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme2': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                            ],
+                                          ),
+                                        ),
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered2 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered2 = false);
+                                          }),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (clientIdClientsRow?.theme2 ==
+                                                      null ||
+                                                  clientIdClientsRow?.theme2 ==
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -783,74 +648,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                          if (clientIdClientsRow?.theme2 !=
-                                                  null &&
-                                              clientIdClientsRow?.theme2 != '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme2': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                              if (clientIdClientsRow?.theme2 !=
+                                                      null &&
+                                                  clientIdClientsRow?.theme2 !=
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -978,92 +781,30 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    MouseRegion(
-                                      opaque: false,
-                                      cursor: MouseCursor.defer ??
-                                          MouseCursor.defer,
-                                      onEnter: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered3 = true);
-                                      }),
-                                      onExit: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered3 = false);
-                                      }),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (clientIdClientsRow?.theme3 ==
-                                                  null ||
-                                              clientIdClientsRow?.theme3 == '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme3': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                            ],
+                                          ),
+                                        ),
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered3 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered3 = false);
+                                          }),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (clientIdClientsRow?.theme3 ==
+                                                      null ||
+                                                  clientIdClientsRow?.theme3 ==
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -1186,74 +927,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                          if (clientIdClientsRow?.theme3 !=
-                                                  null &&
-                                              clientIdClientsRow?.theme3 != '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme3': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                              if (clientIdClientsRow?.theme3 !=
+                                                      null &&
+                                                  clientIdClientsRow?.theme3 !=
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -1381,92 +1060,30 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                    MouseRegion(
-                                      opaque: false,
-                                      cursor: MouseCursor.defer ??
-                                          MouseCursor.defer,
-                                      onEnter: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered4 = true);
-                                      }),
-                                      onExit: ((event) async {
-                                        safeSetState(() =>
-                                            _model.mouseRegionHovered4 = false);
-                                      }),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          if (clientIdClientsRow?.theme4 ==
-                                                  null ||
-                                              clientIdClientsRow?.theme4 == '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme4': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                            ],
+                                          ),
+                                        ),
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered4 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered4 = false);
+                                          }),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (clientIdClientsRow?.theme4 ==
+                                                      null ||
+                                                  clientIdClientsRow?.theme4 ==
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -1589,74 +1206,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                          if (clientIdClientsRow?.theme4 !=
-                                                  null &&
-                                              clientIdClientsRow?.theme4 != '')
-                                            Builder(
-                                              builder: (context) => Padding(
-                                                padding: const EdgeInsets.all(3.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    FFAppState().themaEdited =
-                                                        '';
-                                                    safeSetState(() {});
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-
-                                                    if (FFAppState()
-                                                                .themaEdited !=
-                                                            '') {
-                                                      await ClientsTable()
-                                                          .update(
-                                                        data: {
-                                                          'theme4': FFAppState()
-                                                              .themaEdited,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          FFAppState()
-                                                              .activeClientID,
-                                                        ),
-                                                      );
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted();
-                                                  },
+                                              if (clientIdClientsRow?.theme4 !=
+                                                      null &&
+                                                  clientIdClientsRow?.theme4 !=
+                                                      '')
+                                                Padding(
+                                                  padding: const EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: 75.0,
@@ -1784,12 +1339,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -1829,51 +1384,44 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                         .primaryBackground,
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      if (clientIdClientsRow?.reviewLink ==
-                                              null ||
-                                          clientIdClientsRow?.reviewLink == '')
-                                        Builder(
-                                          builder: (context) => Padding(
-                                            padding: const EdgeInsets.all(3.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
+                                  child: Builder(
+                                    builder: (context) => InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
                                                   Colors.transparent,
-                                              onTap: () async {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child:
-                                                          ChooseReviewSiteWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
-                                                      ),
-                                                    );
-                                                  },
-                                                );
+                                              alignment:
+                                                  const AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: const EditEngagementWidget(),
+                                            );
+                                          },
+                                        );
 
-                                                safeSetState(() => _model
-                                                    .requestCompleter = null);
-                                                await _model
-                                                    .waitForRequestCompleted();
-                                              },
+                                        safeSetState(() =>
+                                            _model.requestCompleter = null);
+                                        await _model.waitForRequestCompleted();
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if (clientIdClientsRow?.reviewLink ==
+                                                  null ||
+                                              clientIdClientsRow?.reviewLink ==
+                                                  '')
+                                            Padding(
+                                              padding: const EdgeInsets.all(3.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 height: 100.0,
@@ -1971,50 +1519,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                      if (clientIdClientsRow?.reviewLink !=
-                                              null &&
-                                          clientIdClientsRow?.reviewLink != '')
-                                        Builder(
-                                          builder: (context) => Padding(
-                                            padding: const EdgeInsets.all(3.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder: (dialogContext) {
-                                                    return Dialog(
-                                                      elevation: 0,
-                                                      insetPadding:
-                                                          EdgeInsets.zero,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                      child:
-                                                          ChooseReviewSiteWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-
-                                                safeSetState(() => _model
-                                                    .requestCompleter = null);
-                                                await _model
-                                                    .waitForRequestCompleted();
-                                              },
+                                          if (clientIdClientsRow?.reviewLink !=
+                                                  null &&
+                                              clientIdClientsRow?.reviewLink !=
+                                                  '')
+                                            Padding(
+                                              padding: const EdgeInsets.all(3.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 height: 100.0,
@@ -2142,9 +1652,9 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                    ],
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -2187,56 +1697,46 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                           .primaryBackground,
                                       borderRadius: BorderRadius.circular(16.0),
                                     ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        if (clientIdClientsRow?.slugHarvester ==
-                                                null ||
-                                            clientIdClientsRow?.slugHarvester ==
-                                                '')
-                                          Builder(
-                                            builder: (context) => Padding(
-                                              padding: const EdgeInsets.all(3.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
+                                    child: Builder(
+                                      builder: (context) => InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (dialogContext) {
+                                              return Dialog(
+                                                elevation: 0,
+                                                insetPadding: EdgeInsets.zero,
+                                                backgroundColor:
                                                     Colors.transparent,
-                                                onTap: () async {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder: (dialogContext) {
-                                                      return Dialog(
-                                                        elevation: 0,
-                                                        insetPadding:
-                                                            EdgeInsets.zero,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                    0.0, 0.0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                        child: SizedBox(
-                                                          height: 400.0,
-                                                          width: 350.0,
-                                                          child:
-                                                              SetupHarvesterWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
+                                                alignment: const AlignmentDirectional(
+                                                        0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                                child: const EditEngagementWidget(),
+                                              );
+                                            },
+                                          );
 
-                                                  safeSetState(() => _model
-                                                      .requestCompleter = null);
-                                                  await _model
-                                                      .waitForRequestCompleted();
-                                                },
+                                          safeSetState(() =>
+                                              _model.requestCompleter = null);
+                                          await _model
+                                              .waitForRequestCompleted();
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            if (clientIdClientsRow
+                                                        ?.slugHarvester ==
+                                                    null ||
+                                                clientIdClientsRow
+                                                        ?.slugHarvester ==
+                                                    '')
+                                              Padding(
+                                                padding: const EdgeInsets.all(3.0),
                                                 child: Container(
                                                   width: double.infinity,
                                                   height: 100.0,
@@ -2338,55 +1838,14 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                        if (clientIdClientsRow?.slugHarvester !=
-                                                null &&
-                                            clientIdClientsRow?.slugHarvester !=
-                                                '')
-                                          Builder(
-                                            builder: (context) => Padding(
-                                              padding: const EdgeInsets.all(3.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder: (dialogContext) {
-                                                      return Dialog(
-                                                        elevation: 0,
-                                                        insetPadding:
-                                                            EdgeInsets.zero,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        alignment:
-                                                            const AlignmentDirectional(
-                                                                    0.0, 0.0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                        child: SizedBox(
-                                                          height: 400.0,
-                                                          width: 350.0,
-                                                          child:
-                                                              SetupHarvesterWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
-                                                          ),
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-
-                                                  safeSetState(() => _model
-                                                      .requestCompleter = null);
-                                                  await _model
-                                                      .waitForRequestCompleted();
-                                                },
+                                            if (clientIdClientsRow
+                                                        ?.slugHarvester !=
+                                                    null &&
+                                                clientIdClientsRow
+                                                        ?.slugHarvester !=
+                                                    '')
+                                              Padding(
+                                                padding: const EdgeInsets.all(3.0),
                                                 child: Container(
                                                   width: double.infinity,
                                                   height: 100.0,
@@ -2493,9 +1952,9 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                      ],
+                                          ],
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),

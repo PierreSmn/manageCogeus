@@ -1,13 +1,9 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'edit_review_link_model.dart';
 export 'edit_review_link_model.dart';
 
@@ -117,132 +113,6 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                         ),
                       ].divide(const SizedBox(height: 12.0)),
                     ),
-                    if (widget.isGoogle ?? true)
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          FlutterFlowPlacePicker(
-                            iOSGoogleMapsApiKey: '',
-                            androidGoogleMapsApiKey: '',
-                            webGoogleMapsApiKey:
-                                'AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
-                            onSelect: (place) async {
-                              safeSetState(
-                                  () => _model.placePickerValue = place);
-                            },
-                            defaultText: 'Trouver mon lieu',
-                            icon: Icon(
-                              Icons.place,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 16.0,
-                            ),
-                            buttonOptions: FFButtonOptions(
-                              width: 200.0,
-                              height: 40.0,
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FFButtonWidget(
-                                onPressed: () async {
-                                  var shouldSetState = false;
-                                  _model.apiResultxcr =
-                                      await PlaceIdRequestCall.call(
-                                    lat: functions.getLongLat(_model
-                                        .placePickerValue.latLng
-                                        .toString()),
-                                  );
-
-                                  shouldSetState = true;
-                                  if ((_model.apiResultxcr?.succeeded ??
-                                      true)) {
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Not worke',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                    if (shouldSetState) safeSetState(() {});
-                                    return;
-                                  }
-
-                                  await Clipboard.setData(ClipboardData(
-                                      text:
-                                          'https://search.google.com/local/writereview?placeid=${PlaceIdRequestCall.placeId(
-                                    (_model.apiResultxcr?.jsonBody ?? ''),
-                                  )?.first}'));
-                                  await ClientsTable().update(
-                                    data: {
-                                      'review_site': 'Google',
-                                      'review_link':
-                                          'https://search.google.com/local/writereview?placeid=${PlaceIdRequestCall.placeId(
-                                        (_model.apiResultxcr?.jsonBody ?? ''),
-                                      )?.first}',
-                                    },
-                                    matchingRows: (rows) => rows.eq(
-                                      'id',
-                                      widget.id,
-                                    ),
-                                  );
-                                  Navigator.pop(context);
-                                  if (shouldSetState) safeSetState(() {});
-                                },
-                                text: 'Confirmer',
-                                options: FFButtonOptions(
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0xFFEEE8FC),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Manrope',
-                                        color: const Color(0xFF5E35B1),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(16.0),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ].divide(const SizedBox(height: 24.0)),
-                      ),
                     if (!widget.isGoogle!)
                       Column(
                         mainAxisSize: MainAxisSize.max,
@@ -421,33 +291,23 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                               FFButtonWidget(
                                 onPressed: () async {
                                   var shouldSetState = false;
-                                  _model.allset = true;
+                                  _model.allsettest = true;
                                   if (_model.formKey.currentState == null ||
                                       !_model.formKey.currentState!
                                           .validate()) {
-                                    _model.allset = false;
+                                    _model.allsettest = false;
                                   }
                                   shouldSetState = true;
-                                  if (!_model.allset!) {
+                                  if (!_model.allsettest!) {
                                     if (shouldSetState) safeSetState(() {});
                                     return;
                                   }
-                                  await ClientsTable().update(
-                                    data: {
-                                      'review_site':
-                                          _model.textController1.text,
-                                      'review_link':
-                                          _model.textController2.text,
-                                    },
-                                    matchingRows: (rows) => rows.eq(
-                                      'id',
-                                      widget.id,
-                                    ),
-                                  );
-                                  Navigator.pop(context);
+                                  await launchURL(_model.textController2.text);
+                                  _model.confirmed = true;
+                                  safeSetState(() {});
                                   if (shouldSetState) safeSetState(() {});
                                 },
-                                text: 'Confirmer',
+                                text: 'Vérifier le lien',
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -459,7 +319,8 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Manrope',
-                                        color: const Color(0xFF5E35B1),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -471,9 +332,63 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
-                            ],
+                              if (_model.confirmed)
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    var shouldSetState = false;
+                                    _model.allset = true;
+                                    if (_model.formKey.currentState == null ||
+                                        !_model.formKey.currentState!
+                                            .validate()) {
+                                      _model.allset = false;
+                                    }
+                                    shouldSetState = true;
+                                    if (!_model.allset!) {
+                                      if (shouldSetState) safeSetState(() {});
+                                      return;
+                                    }
+                                    await ClientsTable().update(
+                                      data: {
+                                        'review_site':
+                                            _model.textController1.text,
+                                        'review_link':
+                                            _model.textController2.text,
+                                      },
+                                      matchingRows: (rows) => rows.eq(
+                                        'id',
+                                        widget.id!,
+                                      ),
+                                    );
+                                    Navigator.pop(context);
+                                    if (shouldSetState) safeSetState(() {});
+                                  },
+                                  text: 'Confirmer',
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFFEEE8FC),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: const Color(0xFF5E35B1),
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 0.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                ),
+                            ].divide(const SizedBox(width: 16.0)),
                           ),
-                        ],
+                        ].divide(const SizedBox(height: 24.0)),
                       ),
                   ].divide(const SizedBox(height: 26.0)),
                 ),

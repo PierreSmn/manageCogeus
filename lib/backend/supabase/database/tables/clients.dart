@@ -29,9 +29,6 @@ class ClientsRow extends SupabaseDataRow {
   String? get logoUrl => getField<String>('logo_url');
   set logoUrl(String? value) => setField<String>('logo_url', value);
 
-  List<dynamic> get sondage => getListField<dynamic>('sondage');
-  set sondage(List<dynamic>? value) => setListField<dynamic>('sondage', value);
-
   String? get reviewLink => getField<String>('review_link');
   set reviewLink(String? value) => setField<String>('review_link', value);
 
@@ -52,4 +49,7 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get reviewSite => getField<String>('review_site');
   set reviewSite(String? value) => setField<String>('review_site', value);
+
+  String? get siteUrl => getField<String>('site_url');
+  set siteUrl(String? value) => setField<String>('site_url', value);
 }

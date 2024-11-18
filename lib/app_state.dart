@@ -33,6 +33,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _activeClientID = prefs.getInt('ff_activeClientID') ?? _activeClientID;
     });
+    _safeInit(() {
+      _activeSub = prefs.getBool('ff_activeSub') ?? _activeSub;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -256,6 +259,13 @@ class FFAppState extends ChangeNotifier {
   String get themaEdited => _themaEdited;
   set themaEdited(String value) {
     _themaEdited = value;
+  }
+
+  bool _activeSub = false;
+  bool get activeSub => _activeSub;
+  set activeSub(bool value) {
+    _activeSub = value;
+    prefs.setBool('ff_activeSub', value);
   }
 
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();

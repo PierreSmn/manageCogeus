@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'update_profile_widget.dart' show UpdateProfileWidget;
 import 'package:flutter/material.dart';
@@ -29,6 +30,9 @@ class UpdateProfileModel extends FlutterFlowModel<UpdateProfileWidget> {
 
     return null;
   }
+
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<UsersRow>? userRow;
 
   @override
   void initState(BuildContext context) {

@@ -154,7 +154,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Icon(
-                                      Icons.cottage_outlined,
+                                      Icons.home_outlined,
                                       color: widget.selectedIndex == 1
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
@@ -217,6 +217,95 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            context.pushNamed('engagement');
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: widget.selectedIndex == 3
+                                  ? FlutterFlowTheme.of(context)
+                                      .cogeusNavSelected
+                                  : FlutterFlowTheme.of(context).revoWhite,
+                              borderRadius: BorderRadius.circular(10.0),
+                              border: Border.all(
+                                color: _model.mouseRegionHovered2
+                                    ? FlutterFlowTheme.of(context)
+                                        .cogeusHoverPurple
+                                    : FlutterFlowTheme.of(context).revoWhite,
+                                width: 2.0,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Icon(
+                                      Icons.people,
+                                      color: widget.selectedIndex == 3
+                                          ? FlutterFlowTheme.of(context).primary
+                                          : FlutterFlowTheme.of(context)
+                                              .revoCardTextColor,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Engagement',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: widget.selectedIndex == 10
+                                              ? FlutterFlowTheme.of(context)
+                                                  .primary
+                                              : FlutterFlowTheme.of(context)
+                                                  .revoCardTextColor,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]
+                        .divide(const SizedBox(height: 12.0))
+                        .addToStart(const SizedBox(height: 12.0))
+                        .addToEnd(const SizedBox(height: 16.0)),
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).revoWhite,
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      MouseRegion(
+                        opaque: false,
+                        cursor: MouseCursor.defer ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered3 = false);
+                        }),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
                             context.pushNamed('harvesters');
                           },
                           child: Container(
@@ -227,7 +316,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered2
+                                color: _model.mouseRegionHovered3
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -275,11 +364,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                          safeSetState(() => _model.mouseRegionHovered4 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered3 = false);
+                              () => _model.mouseRegionHovered4 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -297,7 +386,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered3
+                                color: _model.mouseRegionHovered4
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -345,11 +434,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered4 = true);
+                          safeSetState(() => _model.mouseRegionHovered5 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered4 = false);
+                              () => _model.mouseRegionHovered5 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -367,7 +456,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered4
+                                color: _model.mouseRegionHovered5
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -434,11 +523,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered5 = true);
+                          safeSetState(() => _model.mouseRegionHovered6 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered5 = false);
+                              () => _model.mouseRegionHovered6 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -456,7 +545,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered5
+                                color: _model.mouseRegionHovered6
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -504,11 +593,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered6 = true);
+                          safeSetState(() => _model.mouseRegionHovered7 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered6 = false);
+                              () => _model.mouseRegionHovered7 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -526,7 +615,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered6
+                                color: _model.mouseRegionHovered7
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -574,11 +663,11 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered7 = true);
+                          safeSetState(() => _model.mouseRegionHovered8 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered7 = false);
+                              () => _model.mouseRegionHovered8 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -596,7 +685,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered7
+                                color: _model.mouseRegionHovered8
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,

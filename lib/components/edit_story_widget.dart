@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'edit_story_model.dart';
 export 'edit_story_model.dart';
 
@@ -63,7 +62,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.integrationEditing,
+          widget.integrationEditing!,
         ),
       ),
       builder: (context, snapshot) {
@@ -239,8 +238,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid1,
+                                                  containerIntegrationsRow!
+                                                      .vid1!,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -316,13 +315,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -341,7 +338,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid1 =
@@ -404,13 +401,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -429,7 +424,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid1 =
@@ -612,8 +607,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid2,
+                                                  containerIntegrationsRow!
+                                                      .vid2!,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -688,13 +683,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -713,7 +706,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid2 =
@@ -775,13 +768,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -800,7 +791,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid2 =
@@ -981,8 +972,8 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow
-                                                      ?.vid3,
+                                                  containerIntegrationsRow!
+                                                      .vid3!,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -1057,13 +1048,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -1082,7 +1071,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid3 =
@@ -1144,13 +1133,11 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
-                                                          height: 500.0,
-                                                          width: 800.0,
-                                                          child:
-                                                              ChooseHostedVideoWidget(),
-                                                        ),
+                                                      child: const SizedBox(
+                                                        height: 500.0,
+                                                        width: 800.0,
+                                                        child:
+                                                            ChooseHostedVideoWidget(),
                                                       ),
                                                     );
                                                   },
@@ -1169,7 +1156,7 @@ class _EditStoryWidgetState extends State<EditStoryWidget> {
                                                   matchingRows: (rows) =>
                                                       rows.eq(
                                                     'id',
-                                                    widget.integrationEditing,
+                                                    widget.integrationEditing!,
                                                   ),
                                                 );
                                                 FFAppState().vid3 =

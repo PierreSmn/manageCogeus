@@ -1,16 +1,15 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'edit_review_link_widget.dart' show EditReviewLinkWidget;
 import 'package:flutter/material.dart';
 
 class EditReviewLinkModel extends FlutterFlowModel<EditReviewLinkWidget> {
+  ///  Local state fields for this component.
+
+  bool confirmed = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
-  // Stores action output result for [Backend Call - API (placeIdRequest)] action in Button widget.
-  ApiCallResponse? apiResultxcr;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -35,6 +34,8 @@ class EditReviewLinkModel extends FlutterFlowModel<EditReviewLinkWidget> {
     return null;
   }
 
+  // Stores action output result for [Validate Form] action in Button widget.
+  bool? allsettest;
   // Stores action output result for [Validate Form] action in Button widget.
   bool? allset;
 
