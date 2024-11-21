@@ -472,7 +472,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid1!,
+                                                                                                            usersIntegrationsItem.vid1,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -534,7 +534,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid2!,
+                                                                                                            usersIntegrationsItem.vid2,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -596,7 +596,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid3!,
+                                                                                                            usersIntegrationsItem.vid3,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -671,7 +671,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                         queryFn: (q) => q.eq(
                                                                                                           'id',
-                                                                                                          usersIntegrationsItem.vid1!,
+                                                                                                          usersIntegrationsItem.vid1,
                                                                                                         ),
                                                                                                       ),
                                                                                                     ),
@@ -727,7 +727,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid1!,
+                                                                                                            usersIntegrationsItem.vid1,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -767,7 +767,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid2!,
+                                                                                                            usersIntegrationsItem.vid2,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -807,7 +807,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid3!,
+                                                                                                            usersIntegrationsItem.vid3,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -847,7 +847,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid4!,
+                                                                                                            usersIntegrationsItem.vid4,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
@@ -887,7 +887,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
                                                                                                           queryFn: (q) => q.eq(
                                                                                                             'id',
-                                                                                                            usersIntegrationsItem.vid5!,
+                                                                                                            usersIntegrationsItem.vid5,
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),

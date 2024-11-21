@@ -140,7 +140,7 @@ class _ChooseTitleHarvesterWidgetState
                 },
                 matchingRows: (rows) => rows.eq(
                   'id',
-                  widget.harbesterID!,
+                  widget.harbesterID,
                 ),
               );
               Navigator.pop(context);

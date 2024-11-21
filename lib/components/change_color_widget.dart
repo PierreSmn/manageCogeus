@@ -110,7 +110,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
       future: LiveFlowsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.id!,
+          widget.id,
         ),
       ),
       builder: (context, snapshot) {
@@ -1159,7 +1159,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                             },
                             matchingRows: (rows) => rows.eq(
                               'id',
-                              widget.id!,
+                              widget.id,
                             ),
                           );
                           FFAppState().colorChange = true;

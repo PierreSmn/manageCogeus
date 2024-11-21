@@ -53,7 +53,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          _model.integrationEdited!.id,
+          _model.integrationEdited?.id,
         ),
       ),
       builder: (context, snapshot) {
@@ -266,7 +266,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid1!,
+                                                containerIntegrationsRow?.vid1,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -511,7 +511,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid2!,
+                                                containerIntegrationsRow?.vid2,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -754,7 +754,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid3!,
+                                                containerIntegrationsRow?.vid3,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -997,7 +997,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid4!,
+                                                containerIntegrationsRow?.vid4,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -1240,7 +1240,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid5!,
+                                                containerIntegrationsRow?.vid5,
                                               ),
                                             ),
                                             builder: (context, snapshot) {

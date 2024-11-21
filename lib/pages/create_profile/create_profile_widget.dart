@@ -525,7 +525,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               .queryRows(
                                                         queryFn: (q) => q.eq(
                                                           'id',
-                                                          widget.clid!,
+                                                          widget.clid,
                                                         ),
                                                       );
                                                       _model.updatedUser1 =

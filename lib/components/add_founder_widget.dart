@@ -54,7 +54,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.founderId!,
+          widget.founderId,
         ),
       ),
       builder: (context, snapshot) {
@@ -148,7 +148,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                 .querySingleRow(
                                               queryFn: (q) => q.eq(
                                                 'id',
-                                                containerIntegrationsRow!.vid1!,
+                                                containerIntegrationsRow?.vid1,
                                               ),
                                             ),
                                             builder: (context, snapshot) {

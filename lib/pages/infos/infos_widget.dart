@@ -391,8 +391,8 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         (q) => q
                                                                             .eq(
                                                                       'brand_name',
-                                                                      infosUsersRow!
-                                                                          .companyName!,
+                                                                      infosUsersRow
+                                                                          ?.companyName,
                                                                     ),
                                                                   ),
                                                                 ),

@@ -66,7 +66,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
       future: LiveFlowsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.id!,
+          widget.id,
         ),
       ),
       builder: (context, snapshot) {
