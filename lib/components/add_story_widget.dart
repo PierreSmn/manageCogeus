@@ -62,7 +62,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          _model.integrationEdited!.id,
+          _model.integrationEdited?.id,
         ),
       ),
       builder: (context, snapshot) {
@@ -279,8 +279,8 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow!
-                                                      .vid1!,
+                                                  containerIntegrationsRow
+                                                      ?.vid1,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -643,8 +643,8 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow!
-                                                      .vid2!,
+                                                  containerIntegrationsRow
+                                                      ?.vid2,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {
@@ -1005,8 +1005,8 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                   .querySingleRow(
                                                 queryFn: (q) => q.eq(
                                                   'id',
-                                                  containerIntegrationsRow!
-                                                      .vid3!,
+                                                  containerIntegrationsRow
+                                                      ?.vid3,
                                                 ),
                                               ),
                                               builder: (context, snapshot) {

@@ -356,7 +356,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'id',
-                                        widget.id!,
+                                        widget.id,
                                       ),
                                     );
                                     Navigator.pop(context);

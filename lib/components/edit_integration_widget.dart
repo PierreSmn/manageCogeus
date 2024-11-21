@@ -58,7 +58,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
       future: IntegrationsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.integrationEditing!,
+          widget.integrationEditing,
         ),
       ),
       builder: (context, snapshot) {
@@ -238,8 +238,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     .querySingleRow(
                                                   queryFn: (q) => q.eq(
                                                     'id',
-                                                    containerIntegrationsRow!
-                                                        .vid1!,
+                                                    containerIntegrationsRow
+                                                        ?.vid1,
                                                   ),
                                                 ),
                                                 builder: (context, snapshot) {
@@ -340,7 +340,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid1 =
@@ -428,7 +428,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid1 =
@@ -514,8 +514,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     .querySingleRow(
                                                   queryFn: (q) => q.eq(
                                                     'id',
-                                                    containerIntegrationsRow!
-                                                        .vid2!,
+                                                    containerIntegrationsRow
+                                                        ?.vid2,
                                                   ),
                                                 ),
                                                 builder: (context, snapshot) {
@@ -615,7 +615,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid2 =
@@ -702,7 +702,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid2 =
@@ -788,8 +788,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     .querySingleRow(
                                                   queryFn: (q) => q.eq(
                                                     'id',
-                                                    containerIntegrationsRow!
-                                                        .vid3!,
+                                                    containerIntegrationsRow
+                                                        ?.vid3,
                                                   ),
                                                 ),
                                                 builder: (context, snapshot) {
@@ -889,7 +889,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid3 =
@@ -976,7 +976,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         rows.eq(
                                                       'id',
                                                       widget
-                                                          .integrationEditing!,
+                                                          .integrationEditing,
                                                     ),
                                                   );
                                                   FFAppState().vid3 =
@@ -1075,8 +1075,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                 .querySingleRow(
                                                           queryFn: (q) => q.eq(
                                                             'id',
-                                                            containerIntegrationsRow!
-                                                                .vid4!,
+                                                            containerIntegrationsRow
+                                                                ?.vid4,
                                                           ),
                                                         ),
                                                         builder: (context,
@@ -1189,7 +1189,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                     rows.eq(
                                                               'id',
                                                               widget
-                                                                  .integrationEditing!,
+                                                                  .integrationEditing,
                                                             ),
                                                           );
                                                           FFAppState().vid4 =
@@ -1302,7 +1302,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                     rows.eq(
                                                               'id',
                                                               widget
-                                                                  .integrationEditing!,
+                                                                  .integrationEditing,
                                                             ),
                                                           );
                                                           FFAppState().vid4 =
@@ -1412,8 +1412,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                 .querySingleRow(
                                                           queryFn: (q) => q.eq(
                                                             'id',
-                                                            containerIntegrationsRow!
-                                                                .vid5!,
+                                                            containerIntegrationsRow
+                                                                ?.vid5,
                                                           ),
                                                         ),
                                                         builder: (context,
@@ -1526,7 +1526,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                     rows.eq(
                                                               'id',
                                                               widget
-                                                                  .integrationEditing!,
+                                                                  .integrationEditing,
                                                             ),
                                                           );
                                                           FFAppState().vid5 =
@@ -1639,7 +1639,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                     rows.eq(
                                                               'id',
                                                               widget
-                                                                  .integrationEditing!,
+                                                                  .integrationEditing,
                                                             ),
                                                           );
                                                           FFAppState().vid5 =
@@ -1713,7 +1713,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                           await IntegrationsTable().delete(
                             matchingRows: (rows) => rows.eq(
                               'id',
-                              widget.integrationEditing!,
+                              widget.integrationEditing,
                             ),
                           );
                           Navigator.pop(context);
@@ -1752,7 +1752,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                               },
                               matchingRows: (rows) => rows.eq(
                                 'id',
-                                widget.integrationEditing!,
+                                widget.integrationEditing,
                               ),
                             );
                             Navigator.pop(context);

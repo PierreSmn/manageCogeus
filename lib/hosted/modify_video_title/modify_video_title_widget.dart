@@ -51,7 +51,7 @@ class _ModifyVideoTitleWidgetState extends State<ModifyVideoTitleWidget> {
       future: HostedSubsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.assetId!,
+          widget.assetId,
         ),
       ),
       builder: (context, snapshot) {
@@ -170,7 +170,7 @@ class _ModifyVideoTitleWidgetState extends State<ModifyVideoTitleWidget> {
                     },
                     matchingRows: (rows) => rows.eq(
                       'id',
-                      widget.assetId!,
+                      widget.assetId,
                     ),
                   );
                   Navigator.pop(context);

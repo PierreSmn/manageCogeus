@@ -51,7 +51,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
       future: TagsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.tagId!,
+          widget.tagId,
         ),
       ),
       builder: (context, snapshot) {
@@ -173,7 +173,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                     },
                     matchingRows: (rows) => rows.eq(
                       'id',
-                      widget.tagId!,
+                      widget.tagId,
                     ),
                   );
                   Navigator.pop(context);

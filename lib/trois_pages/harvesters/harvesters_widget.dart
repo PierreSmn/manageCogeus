@@ -197,7 +197,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                               )
                                                                               .eq(
                                                                                 'slug',
-                                                                                flowsItem.slug!,
+                                                                                flowsItem.slug,
                                                                               ),
                                                                         ),
                                                                         builder:
@@ -378,7 +378,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                         )
                                                                                         .eq(
                                                                                           'flow_done',
-                                                                                          flowsItem.slug!,
+                                                                                          flowsItem.slug,
                                                                                         ),
                                                                                   ),
                                                                                   builder: (context, snapshot) {

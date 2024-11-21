@@ -196,7 +196,7 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                               )
                                                                               .eq(
                                                                                 'slug',
-                                                                                flowsItem.slug!,
+                                                                                flowsItem.slug,
                                                                               ),
                                                                         ),
                                                                         builder:
@@ -377,7 +377,7 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                         )
                                                                                         .eq(
                                                                                           'flow_done',
-                                                                                          flowsItem.slug!,
+                                                                                          flowsItem.slug,
                                                                                         ),
                                                                                   ),
                                                                                   builder: (context, snapshot) {
@@ -424,7 +424,7 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                   future: DailySlugActivationsCompleteTable().queryRows(
                                                                                     queryFn: (q) => q.eq(
                                                                                       'slug',
-                                                                                      flowsItem.slug!,
+                                                                                      flowsItem.slug,
                                                                                     ),
                                                                                   ),
                                                                                   builder: (context, snapshot) {
