@@ -538,7 +538,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 child: SingleChildScrollView(
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Column(
@@ -571,70 +571,29 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                           ),
                                                                                         ],
                                                                                       ),
-                                                                                      Row(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        children: [
-                                                                                          Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                'Promoters',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                                      fontSize: 15.28,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w300,
-                                                                                                    ),
+                                                                                      FFButtonWidget(
+                                                                                        onPressed: () async {
+                                                                                          context.pushNamed('experiences');
+                                                                                        },
+                                                                                        text: 'Voir les retours',
+                                                                                        options: FFButtonOptions(
+                                                                                          height: 40.0,
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: const Color(0xFFEEE8FC),
+                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                fontFamily: 'Manrope',
+                                                                                                color: const Color(0xFF5E35B1),
+                                                                                                letterSpacing: 0.0,
+                                                                                                fontWeight: FontWeight.w600,
                                                                                               ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  promotExperiencesRowList.length.toString(),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                      fontSize: 30.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
+                                                                                          elevation: 0.0,
+                                                                                          borderSide: const BorderSide(
+                                                                                            color: Colors.transparent,
+                                                                                            width: 0.0,
                                                                                           ),
-                                                                                          Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.start,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                'Detracteurs',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                                      fontSize: 15.28,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w300,
-                                                                                                    ),
-                                                                                              ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  detracExperiencesRowList.length.toString(),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                      fontSize: 30.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ].divide(const SizedBox(width: 16.0)),
+                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                        ),
                                                                                       ),
                                                                                     ].divide(const SizedBox(height: 12.0)),
                                                                                   ),
