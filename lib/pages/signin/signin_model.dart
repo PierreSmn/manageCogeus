@@ -36,6 +36,8 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
     return null;
   }
 
+  // Stores action output result for [Backend Call - Query Rows] action in password widget.
+  List<UsersRow>? userInfosCopy;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered = false;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.

@@ -314,6 +314,62 @@ class _SigninWidgetState extends State<SigninWidget>
                                                       .passwordTextController,
                                                   focusNode:
                                                       _model.passwordFocusNode,
+                                                  onFieldSubmitted: (_) async {
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent(true);
+
+                                                    final user =
+                                                        await authManager
+                                                            .signInWithEmail(
+                                                      context,
+                                                      _model.emailTextController
+                                                          .text,
+                                                      _model
+                                                          .passwordTextController
+                                                          .text,
+                                                    );
+                                                    if (user == null) {
+                                                      return;
+                                                    }
+
+                                                    _model.userInfosCopy =
+                                                        await UsersTable()
+                                                            .queryRows(
+                                                      queryFn: (q) => q.eq(
+                                                        'id',
+                                                        currentUserUid,
+                                                      ),
+                                                    );
+                                                    FFAppState().activeBrand =
+                                                        _model.userInfosCopy!
+                                                            .first.companyName!;
+                                                    FFAppState()
+                                                            .activeClientID =
+                                                        _model.userInfosCopy!
+                                                            .first.clientId!;
+                                                    FFAppState().activeSub =
+                                                        _model.userInfosCopy!
+                                                            .first.activeSub!;
+
+                                                    context.goNamedAuth(
+                                                      'home',
+                                                      context.mounted,
+                                                      extra: <String, dynamic>{
+                                                        kTransitionInfoKey:
+                                                            const TransitionInfo(
+                                                          hasTransition: true,
+                                                          transitionType:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
+                                                        ),
+                                                      },
+                                                      ignoreRedirect: true,
+                                                    );
+
+                                                    safeSetState(() {});
+                                                  },
                                                   autofocus: false,
                                                   autofillHints: const [
                                                     AutofillHints.password

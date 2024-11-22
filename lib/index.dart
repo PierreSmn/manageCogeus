@@ -27,3 +27,6 @@ export '/hosted/assets_copy/assets_copy_widget.dart' show AssetsCopyWidget;
 export '/trois_pages/engagement/engagement_widget.dart' show EngagementWidget;
 export '/pages/create_profile_client/create_profile_client_widget.dart'
     show CreateProfileClientWidget;
+export '/trois_pages/experience/experience_widget.dart' show ExperienceWidget;
+export '/trois_pages/experiences/experiences_widget.dart'
+    show ExperiencesWidget;

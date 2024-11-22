@@ -220,6 +220,39 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createClient',
           requireAuth: true,
           builder: (context, params) => const CreateProfileClientWidget(),
+        ),
+        FFRoute(
+          name: 'experience',
+          path: '/experience',
+          requireAuth: true,
+          builder: (context, params) => ExperienceWidget(
+            xid: params.getParam(
+              'xid',
+              ParamType.int,
+            ),
+            t1: params.getParam(
+              't1',
+              ParamType.String,
+            ),
+            t2: params.getParam(
+              't2',
+              ParamType.String,
+            ),
+            t3: params.getParam(
+              't3',
+              ParamType.String,
+            ),
+            t4: params.getParam(
+              't4',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'experiences',
+          path: '/experiences',
+          requireAuth: true,
+          builder: (context, params) => const ExperiencesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
