@@ -341,6 +341,60 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     width:
                                                                         30.0)),
                                                               ),
+                                                              FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  await authManager
+                                                                      .refreshUser();
+                                                                  await launchURL(
+                                                                      'https://billing.stripe.com/p/login/6oE2bufgTds39IQ144?prefilled_email=${currentUserEmailVerified.toString()}');
+                                                                },
+                                                                text:
+                                                                    'Facturation',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          24.0,
+                                                                          0.0,
+                                                                          24.0,
+                                                                          0.0),
+                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  color: const Color(
+                                                                      0xFFEEE8FC),
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Manrope',
+                                                                        color: const Color(
+                                                                            0xFF5E35B1),
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                      ),
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderSide:
+                                                                      const BorderSide(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    width: 0.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              16.0),
+                                                                ),
+                                                              ),
                                                             ],
                                                           ),
                                                         ),

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'choose_question_model.dart';
 export 'choose_question_model.dart';
 
@@ -200,9 +201,11 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: EditQuestionWidget(
-                                                      id: FFAppState()
-                                                          .activeClientID,
+                                                    child: WebViewAware(
+                                                      child: EditQuestionWidget(
+                                                        id: FFAppState()
+                                                            .activeClientID,
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -398,13 +401,15 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                        child:
-                                                            EditQuestionWidget(
-                                                          id: FFAppState()
-                                                              .activeClientID,
-                                                          thematiqueTitle:
-                                                              thematiquItem
-                                                                  .titre,
+                                                        child: WebViewAware(
+                                                          child:
+                                                              EditQuestionWidget(
+                                                            id: FFAppState()
+                                                                .activeClientID,
+                                                            thematiqueTitle:
+                                                                thematiquItem
+                                                                    .titre,
+                                                          ),
                                                         ),
                                                       );
                                                     },

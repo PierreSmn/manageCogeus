@@ -6,10 +6,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/trois_pages/infos_nps/infos_nps_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -38,15 +40,17 @@ class _HomeWidgetState extends State<HomeWidget> {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
-              title: const Text('Attention'),
-              content: const Text('Vous devez remettre à jour votre profil.'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: const Text('Ok'),
-                ),
-              ],
+            return WebViewAware(
+              child: AlertDialog(
+                title: const Text('Attention'),
+                content: const Text('Vous devez remettre à jour votre profil.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: const Text('Ok'),
+                  ),
+                ],
+              ),
             );
           },
         );
@@ -306,9 +310,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          child: GestureDetector(
-                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                            child: const EditEngagementWidget(),
+                                                                                          child: WebViewAware(
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              child: const EditEngagementWidget(),
+                                                                                            ),
                                                                                           ),
                                                                                         );
                                                                                       },
@@ -337,7 +343,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
                                                                                       Text(
-                                                                                        'Engagement Client',
+                                                                                        'Score NPS',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Manrope',
                                                                                               color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -352,13 +358,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                           Column(
                                                                                             mainAxisSize: MainAxisSize.max,
                                                                                             children: [
-                                                                                              Text(
-                                                                                                'Score NPS',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
-                                                                                              ),
                                                                                               Text(
                                                                                                 valueOrDefault<String>(
                                                                                                   formatNumber(
@@ -379,61 +378,39 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                               ),
                                                                                             ],
                                                                                           ),
-                                                                                          Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                'Promoters %',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
+                                                                                          Builder(
+                                                                                            builder: (context) => FlutterFlowIconButton(
+                                                                                              borderRadius: 8.0,
+                                                                                              buttonSize: 40.0,
+                                                                                              icon: Icon(
+                                                                                                Icons.info_outline,
+                                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                                size: 24.0,
                                                                                               ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  formatNumber(
-                                                                                                    (promotExperiencesRowList.length / containerExperiencesRowList.length),
-                                                                                                    formatType: FormatType.percent,
-                                                                                                  ),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                      fontSize: 30.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                'Detracteurs %',
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                    ),
-                                                                                              ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  formatNumber(
-                                                                                                    (detracExperiencesRowList.length / containerExperiencesRowList.length),
-                                                                                                    formatType: FormatType.percent,
-                                                                                                  ),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
-                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                      fontSize: 30.0,
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
+                                                                                              onPressed: () async {
+                                                                                                await showDialog(
+                                                                                                  context: context,
+                                                                                                  builder: (dialogContext) {
+                                                                                                    return Dialog(
+                                                                                                      elevation: 0,
+                                                                                                      insetPadding: EdgeInsets.zero,
+                                                                                                      backgroundColor: Colors.transparent,
+                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      child: WebViewAware(
+                                                                                                        child: GestureDetector(
+                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                          child: const SizedBox(
+                                                                                                            height: 400.0,
+                                                                                                            width: 490.0,
+                                                                                                            child: InfosNpsWidget(),
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    );
+                                                                                                  },
+                                                                                                );
+                                                                                              },
+                                                                                            ),
                                                                                           ),
                                                                                         ].divide(const SizedBox(width: 16.0)),
                                                                                       ),
@@ -488,7 +465,13 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                                               context.pushNamed('home');
                                                                                             } else {
-                                                                                              await launchURL('https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=$currentUserEmail');
+                                                                                              _model.clientRow = await ClientsTable().queryRows(
+                                                                                                queryFn: (q) => q.eq(
+                                                                                                  'id',
+                                                                                                  _model.userRow?.first.clientId,
+                                                                                                ),
+                                                                                              );
+                                                                                              await launchURL('${_model.clientRow?.first.stripeLink != null && _model.clientRow?.first.stripeLink != '' ? _model.clientRow?.first.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
                                                                                             }
 
                                                                                             safeSetState(() {});
@@ -541,58 +524,130 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
-                                                                                      Column(
+                                                                                      Row(
                                                                                         mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
                                                                                         children: [
-                                                                                          Text(
-                                                                                            'Participants',
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Manrope',
-                                                                                                  color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                                  fontSize: 15.28,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w300,
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.start,
+                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                'Participants',
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoSearchTxtColor,
+                                                                                                      fontSize: 16.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w300,
+                                                                                                    ),
+                                                                                              ),
+                                                                                              Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  containerExperiencesRowList.length.toString(),
+                                                                                                  '0',
                                                                                                 ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                      fontSize: 30.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ],
                                                                                           ),
-                                                                                          Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              containerExperiencesRowList.length.toString(),
-                                                                                              '0',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                'Promoters %',
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                                      fontSize: 16.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w300,
+                                                                                                    ),
+                                                                                              ),
+                                                                                              Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  formatNumber(
+                                                                                                    (promotExperiencesRowList.length / containerExperiencesRowList.length),
+                                                                                                    formatType: FormatType.percent,
+                                                                                                  ),
+                                                                                                  '0',
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                      fontSize: 30.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                'Detracteurs %',
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoSearchTxtColor,
+                                                                                                      fontSize: 16.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w300,
+                                                                                                    ),
+                                                                                              ),
+                                                                                              Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  formatNumber(
+                                                                                                    (detracExperiencesRowList.length / containerExperiencesRowList.length),
+                                                                                                    formatType: FormatType.percent,
+                                                                                                  ),
+                                                                                                  '0',
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Manrope',
+                                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                      fontSize: 30.0,
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ].divide(const SizedBox(width: 20.0)),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                        child: FFButtonWidget(
+                                                                                          onPressed: () async {
+                                                                                            context.pushNamed('experiences');
+                                                                                          },
+                                                                                          text: 'Voir les retours',
+                                                                                          options: FFButtonOptions(
+                                                                                            height: 40.0,
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            color: const Color(0xFFEEE8FC),
+                                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'Manrope',
-                                                                                                  color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                  fontSize: 30.0,
+                                                                                                  color: const Color(0xFF5E35B1),
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w600,
                                                                                                 ),
+                                                                                            elevation: 0.0,
+                                                                                            borderSide: const BorderSide(
+                                                                                              color: Colors.transparent,
+                                                                                              width: 0.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
-                                                                                        ],
-                                                                                      ),
-                                                                                      FFButtonWidget(
-                                                                                        onPressed: () async {
-                                                                                          context.pushNamed('experiences');
-                                                                                        },
-                                                                                        text: 'Voir les retours',
-                                                                                        options: FFButtonOptions(
-                                                                                          height: 40.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: const Color(0xFFEEE8FC),
-                                                                                          textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: 'Manrope',
-                                                                                                color: const Color(0xFF5E35B1),
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                              ),
-                                                                                          elevation: 0.0,
-                                                                                          borderSide: const BorderSide(
-                                                                                            color: Colors.transparent,
-                                                                                            width: 0.0,
-                                                                                          ),
-                                                                                          borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                       ),
                                                                                     ].divide(const SizedBox(height: 12.0)),
@@ -696,9 +751,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                     List<ExperiencesRow> textExperiencesRowList = snapshot.data!;
 
                                                                                                     return Text(
-                                                                                                      '0',
+                                                                                                      valueOrDefault<String>(
+                                                                                                        textExperiencesRowList.length.toString(),
+                                                                                                        '0',
+                                                                                                      ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                           ),
                                                                                                     );
@@ -723,12 +782,46 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                 ),
-                                                                                                Text(
-                                                                                                  '0',
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
-                                                                                                        letterSpacing: 0.0,
+                                                                                                FutureBuilder<List<ExperiencesRow>>(
+                                                                                                  future: ExperiencesTable().queryRows(
+                                                                                                    queryFn: (q) => q
+                                                                                                        .eq(
+                                                                                                          'client_id',
+                                                                                                          FFAppState().activeClientID,
+                                                                                                        )
+                                                                                                        .eq(
+                                                                                                          'theme',
+                                                                                                          containerClientsRow?.theme2,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  builder: (context, snapshot) {
+                                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                                    if (!snapshot.hasData) {
+                                                                                                      return Center(
+                                                                                                        child: SizedBox(
+                                                                                                          width: 50.0,
+                                                                                                          height: 50.0,
+                                                                                                          child: SpinKitRing(
+                                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                                            size: 50.0,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    List<ExperiencesRow> textExperiencesRowList = snapshot.data!;
+
+                                                                                                    return Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        textExperiencesRowList.length.toString(),
+                                                                                                        '0',
                                                                                                       ),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                          ),
+                                                                                                    );
+                                                                                                  },
                                                                                                 ),
                                                                                               ],
                                                                                             ),
@@ -749,12 +842,46 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                 ),
-                                                                                                Text(
-                                                                                                  '0',
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
-                                                                                                        letterSpacing: 0.0,
+                                                                                                FutureBuilder<List<ExperiencesRow>>(
+                                                                                                  future: ExperiencesTable().queryRows(
+                                                                                                    queryFn: (q) => q
+                                                                                                        .eq(
+                                                                                                          'client_id',
+                                                                                                          FFAppState().activeClientID,
+                                                                                                        )
+                                                                                                        .eq(
+                                                                                                          'theme',
+                                                                                                          containerClientsRow?.theme3,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  builder: (context, snapshot) {
+                                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                                    if (!snapshot.hasData) {
+                                                                                                      return Center(
+                                                                                                        child: SizedBox(
+                                                                                                          width: 50.0,
+                                                                                                          height: 50.0,
+                                                                                                          child: SpinKitRing(
+                                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                                            size: 50.0,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    List<ExperiencesRow> textExperiencesRowList = snapshot.data!;
+
+                                                                                                    return Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        textExperiencesRowList.length.toString(),
+                                                                                                        '0',
                                                                                                       ),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                          ),
+                                                                                                    );
+                                                                                                  },
                                                                                                 ),
                                                                                               ],
                                                                                             ),
@@ -775,12 +902,103 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
                                                                                                 ),
+                                                                                                FutureBuilder<List<ExperiencesRow>>(
+                                                                                                  future: ExperiencesTable().queryRows(
+                                                                                                    queryFn: (q) => q
+                                                                                                        .eq(
+                                                                                                          'client_id',
+                                                                                                          FFAppState().activeClientID,
+                                                                                                        )
+                                                                                                        .eq(
+                                                                                                          'theme',
+                                                                                                          containerClientsRow?.theme4,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  builder: (context, snapshot) {
+                                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                                    if (!snapshot.hasData) {
+                                                                                                      return Center(
+                                                                                                        child: SizedBox(
+                                                                                                          width: 50.0,
+                                                                                                          height: 50.0,
+                                                                                                          child: SpinKitRing(
+                                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                                            size: 50.0,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    List<ExperiencesRow> textExperiencesRowList = snapshot.data!;
+
+                                                                                                    return Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        textExperiencesRowList.length.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                          ),
+                                                                                                    );
+                                                                                                  },
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                              children: [
                                                                                                 Text(
-                                                                                                  '0',
+                                                                                                  'Autre',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'Manrope',
                                                                                                         letterSpacing: 0.0,
                                                                                                       ),
+                                                                                                ),
+                                                                                                FutureBuilder<List<ExperiencesRow>>(
+                                                                                                  future: ExperiencesTable().queryRows(
+                                                                                                    queryFn: (q) => q
+                                                                                                        .eq(
+                                                                                                          'client_id',
+                                                                                                          FFAppState().activeClientID,
+                                                                                                        )
+                                                                                                        .eq(
+                                                                                                          'theme',
+                                                                                                          'Autre',
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  builder: (context, snapshot) {
+                                                                                                    // Customize what your widget looks like when it's loading.
+                                                                                                    if (!snapshot.hasData) {
+                                                                                                      return Center(
+                                                                                                        child: SizedBox(
+                                                                                                          width: 50.0,
+                                                                                                          height: 50.0,
+                                                                                                          child: SpinKitRing(
+                                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                                            size: 50.0,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      );
+                                                                                                    }
+                                                                                                    List<ExperiencesRow> textExperiencesRowList = snapshot.data!;
+
+                                                                                                    return Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        textExperiencesRowList.length.toString(),
+                                                                                                        '0',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                          ),
+                                                                                                    );
+                                                                                                  },
                                                                                                 ),
                                                                                               ],
                                                                                             ),
@@ -799,63 +1017,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               MainAxisSize.max,
                                                                           children:
                                                                               [
-                                                                            Container(
-                                                                              width: MediaQuery.sizeOf(context).width * 0.32,
-                                                                              height: MediaQuery.sizeOf(context).height * 0.18,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).revoWhite,
-                                                                                borderRadius: BorderRadius.circular(16.0),
-                                                                              ),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsets.all(16.0),
-                                                                                child: SingleChildScrollView(
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        'Redirections',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 40.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Column(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.start,
-                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                        children: [
-                                                                                          Text(
-                                                                                            'Avis Google',
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Manrope',
-                                                                                                  color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                                  fontSize: 15.28,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w300,
-                                                                                                ),
-                                                                                          ),
-                                                                                          Text(
-                                                                                            '0',
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Manrope',
-                                                                                                  color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                  fontSize: 30.0,
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w600,
-                                                                                                ),
-                                                                                          ),
-                                                                                        ],
-                                                                                      ),
-                                                                                    ].divide(const SizedBox(height: 12.0)),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
                                                                             Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.32,
                                                                               height: MediaQuery.sizeOf(context).height * 0.18,

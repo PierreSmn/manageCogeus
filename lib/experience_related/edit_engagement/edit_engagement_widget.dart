@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'edit_engagement_model.dart';
 export 'edit_engagement_model.dart';
 
@@ -226,10 +227,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -416,10 +419,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -629,10 +634,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -819,10 +826,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1032,10 +1041,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1222,10 +1233,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1435,10 +1448,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1625,10 +1640,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                          child:
-                                                              ChooseQuestionWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                          child: WebViewAware(
+                                                            child:
+                                                                ChooseQuestionWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         );
                                                       },
@@ -1860,10 +1877,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child:
-                                                          ChooseReviewSiteWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
+                                                      child: WebViewAware(
+                                                        child:
+                                                            ChooseReviewSiteWidget(
+                                                          id: FFAppState()
+                                                              .activeClientID,
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -2001,10 +2020,12 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child:
-                                                          ChooseReviewSiteWidget(
-                                                        id: FFAppState()
-                                                            .activeClientID,
+                                                      child: WebViewAware(
+                                                        child:
+                                                            ChooseReviewSiteWidget(
+                                                          id: FFAppState()
+                                                              .activeClientID,
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -2219,13 +2240,15 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                        child: SizedBox(
-                                                          height: 400.0,
-                                                          width: 350.0,
-                                                          child:
-                                                              SetupHarvesterWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                        child: WebViewAware(
+                                                          child: SizedBox(
+                                                            height: 400.0,
+                                                            width: 350.0,
+                                                            child:
+                                                                SetupHarvesterWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         ),
                                                       );
@@ -2369,13 +2392,15 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                        child: SizedBox(
-                                                          height: 400.0,
-                                                          width: 350.0,
-                                                          child:
-                                                              SetupHarvesterWidget(
-                                                            id: FFAppState()
-                                                                .activeClientID,
+                                                        child: WebViewAware(
+                                                          child: SizedBox(
+                                                            height: 400.0,
+                                                            width: 350.0,
+                                                            child:
+                                                                SetupHarvesterWidget(
+                                                              id: FFAppState()
+                                                                  .activeClientID,
+                                                            ),
                                                           ),
                                                         ),
                                                       );

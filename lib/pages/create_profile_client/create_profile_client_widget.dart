@@ -1,12 +1,14 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_profile_client_model.dart';
 export 'create_profile_client_model.dart';
 
@@ -400,103 +402,152 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                               Align(
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    _model.clientNewRow =
-                                                        await ClientsTable()
-                                                            .insert({
-                                                      'name': _model
-                                                          .nameTextController
-                                                          .text,
-                                                      'site_url': _model
-                                                          .lastNameTextController
-                                                          .text,
-                                                      'admin': currentUserUid,
-                                                    });
-                                                    await UsersTable().update(
-                                                      data: {
-                                                        'company_name': _model
+                                                child: Builder(
+                                                  builder: (context) =>
+                                                      FFButtonWidget(
+                                                    onPressed: () async {
+                                                      _model.clientNewRow =
+                                                          await ClientsTable()
+                                                              .insert({
+                                                        'name': _model
                                                             .nameTextController
                                                             .text,
                                                         'site_url': _model
                                                             .lastNameTextController
                                                             .text,
-                                                        'id': _model
-                                                            .clientNewRow?.id
-                                                            .toString(),
-                                                      },
-                                                      matchingRows: (rows) =>
-                                                          rows.eq(
-                                                        'id',
-                                                        currentUserUid,
-                                                      ),
-                                                    );
-                                                    await SendNotificaitonOfNewUserCall
-                                                        .call(
-                                                      companyName: _model
-                                                          .updatedUser
-                                                          ?.first
-                                                          .companyName,
-                                                      name: _model.updatedUser
-                                                          ?.first.firstName,
-                                                      surname: _model
-                                                          .updatedUser
-                                                          ?.first
-                                                          .lastName,
-                                                      email: _model.updatedUser
-                                                          ?.first.email,
-                                                      phone: _model.updatedUser
-                                                          ?.first.phoneNumber,
-                                                      siteUrl: _model
-                                                          .updatedUser
-                                                          ?.first
-                                                          .siteUrl,
-                                                    );
-
-                                                    FFAppState().activeBrand =
-                                                        _model.clientNewRow!
-                                                            .name!;
-                                                    FFAppState()
-                                                            .activeClientID =
-                                                        _model.clientNewRow!.id;
-                                                    safeSetState(() {});
-
-                                                    context.pushNamed('home');
-
-                                                    safeSetState(() {});
-                                                  },
-                                                  text: 'Continuer',
-                                                  options: FFButtonOptions(
-                                                    width: 230.0,
-                                                    height: 40.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: const Color(0xFFEEE8FC),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
+                                                        'admin': currentUserUid,
+                                                      });
+                                                      await UsersTable().update(
+                                                        data: {
+                                                          'company_name': _model
+                                                              .nameTextController
+                                                              .text,
+                                                          'site_url': _model
+                                                              .lastNameTextController
+                                                              .text,
+                                                          'id': _model
+                                                              .clientNewRow?.id
+                                                              .toString(),
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eq(
+                                                          'id',
+                                                          currentUserUid,
                                                         ),
-                                                    elevation: 0.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 0.0,
+                                                      );
+                                                      await SendNotificaitonOfNewUserCall
+                                                          .call(
+                                                        companyName: _model
+                                                            .updatedUser
+                                                            ?.first
+                                                            .companyName,
+                                                        name: _model.updatedUser
+                                                            ?.first.firstName,
+                                                        surname: _model
+                                                            .updatedUser
+                                                            ?.first
+                                                            .lastName,
+                                                        email: _model
+                                                            .updatedUser
+                                                            ?.first
+                                                            .email,
+                                                        phone: _model
+                                                            .updatedUser
+                                                            ?.first
+                                                            .phoneNumber,
+                                                        siteUrl: _model
+                                                            .updatedUser
+                                                            ?.first
+                                                            .siteUrl,
+                                                      );
+
+                                                      FFAppState().activeBrand =
+                                                          _model.clientNewRow!
+                                                              .name!;
+                                                      FFAppState()
+                                                              .activeClientID =
+                                                          _model
+                                                              .clientNewRow!.id;
+                                                      safeSetState(() {});
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: const AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child: WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () =>
+                                                                    FocusScope.of(
+                                                                            dialogContext)
+                                                                        .unfocus(),
+                                                                child:
+                                                                    const EditEngagementWidget(),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+
+                                                      context.goNamed('home');
+
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: 'Continuer',
+                                                    options: FFButtonOptions(
+                                                      width: 230.0,
+                                                      height: 40.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: const Color(0xFFEEE8FC),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: const Color(
+                                                                    0xFF5E35B1),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 0.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16.0),
                                                   ),
                                                 ),
                                               ),

@@ -66,6 +66,7 @@ abstract class FlutterFlowTheme {
   late Color cogeusButtonBG;
   late Color cogeHoverFromWhite;
   late Color vertSympa;
+  late Color joliGrisPourTexteLeger;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -189,6 +190,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color cogeusButtonBG = const Color(0xFFEEE8FC);
   late Color cogeHoverFromWhite = const Color(0xFFF8F4FE);
   late Color vertSympa = const Color(0xFF52B58E);
+  late Color joliGrisPourTexteLeger = const Color(0xFF778089);
 }
 
 abstract class Typography {

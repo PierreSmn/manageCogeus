@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'choose_review_site_model.dart';
 export 'choose_review_site_model.dart';
 
@@ -201,10 +202,13 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: EditReviewLinkWidget(
-                                                      id: FFAppState()
-                                                          .activeClientID,
-                                                      isGoogle: false,
+                                                    child: WebViewAware(
+                                                      child:
+                                                          EditReviewLinkWidget(
+                                                        id: FFAppState()
+                                                            .activeClientID,
+                                                        isGoogle: false,
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -380,8 +384,10 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child:
-                                                        const EditReviewLinkGoogleWidget(),
+                                                    child: const WebViewAware(
+                                                      child:
+                                                          EditReviewLinkGoogleWidget(),
+                                                    ),
                                                   );
                                                 },
                                               );
@@ -521,8 +527,10 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child:
-                                                        const EditReviewTrustpilotWidget(),
+                                                    child: const WebViewAware(
+                                                      child:
+                                                          EditReviewTrustpilotWidget(),
+                                                    ),
                                                   );
                                                 },
                                               );

@@ -248,6 +248,8 @@ dynamic deserializeParam<T>(
             return WebAppActivationsRow(data);
           case UsersRow:
             return UsersRow(data);
+          case OptinsRow:
+            return OptinsRow(data);
           case RejectedSubsRow:
             return RejectedSubsRow(data);
           case HostedSubsRow:

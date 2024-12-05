@@ -8,9 +8,9 @@ import '/pages/navbarnav/navbarnav_widget.dart';
 import '/tags/choose_muti_tag/choose_muti_tag_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'triage_model.dart';
 export 'triage_model.dart';
 
@@ -265,20 +265,6 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                                 fontWeight: FontWeight.w600,
                                                                                               ),
                                                                                         ),
-                                                                                        RatingBarIndicator(
-                                                                                          itemBuilder: (context, index) => Icon(
-                                                                                            Icons.stars_rounded,
-                                                                                            color: FlutterFlowTheme.of(context).buttonRevText,
-                                                                                          ),
-                                                                                          direction: Axis.horizontal,
-                                                                                          rating: valueOrDefault<double>(
-                                                                                            listSubsItem.rating?.toDouble(),
-                                                                                            0.0,
-                                                                                          ),
-                                                                                          unratedColor: FlutterFlowTheme.of(context).alternate,
-                                                                                          itemCount: 5,
-                                                                                          itemSize: 30.0,
-                                                                                        ),
                                                                                         Text(
                                                                                           'Transcription',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -414,12 +400,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
                                                                                               alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                child: const SizedBox(
-                                                                                                  height: 435.0,
-                                                                                                  width: 245.0,
-                                                                                                  child: ChooseMutiTagWidget(),
+                                                                                              child: WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                  child: const SizedBox(
+                                                                                                    height: 435.0,
+                                                                                                    width: 245.0,
+                                                                                                    child: ChooseMutiTagWidget(),
+                                                                                                  ),
                                                                                                 ),
                                                                                               ),
                                                                                             );

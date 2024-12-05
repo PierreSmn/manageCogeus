@@ -11,6 +11,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'experience_model.dart';
 export 'experience_model.dart';
 
@@ -52,15 +53,17 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
-              title: const Text('Attention'),
-              content: const Text('Vous devez remettre à jour votre profil.'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: const Text('Ok'),
-                ),
-              ],
+            return WebViewAware(
+              child: AlertDialog(
+                title: const Text('Attention'),
+                content: const Text('Vous devez remettre à jour votre profil.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: const Text('Ok'),
+                  ),
+                ],
+              ),
             );
           },
         );
@@ -281,9 +284,11 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   insetPadding: EdgeInsets.zero,
                                                                                   backgroundColor: Colors.transparent,
                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                  child: GestureDetector(
-                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                    child: const EditEngagementWidget(),
+                                                                                  child: WebViewAware(
+                                                                                    child: GestureDetector(
+                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                      child: const EditEngagementWidget(),
+                                                                                    ),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -610,91 +615,97 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                     ),
                                                                   ),
                                                                 ),
-                                                                Container(
-                                                                  width: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .width *
-                                                                      0.32,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .revoWhite,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            16.0),
-                                                                  ),
+                                                                Visibility(
+                                                                  visible: (containerExperiencesRow?.videoDone == true) ||
+                                                                      (containerExperiencesRow
+                                                                              ?.reviewDone ==
+                                                                          true) ||
+                                                                      (containerExperiencesRow
+                                                                              ?.feedbackAnswer ==
+                                                                          true),
                                                                   child:
-                                                                      Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            16.0),
+                                                                      Container(
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.32,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .revoWhite,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16.0),
+                                                                    ),
                                                                     child:
-                                                                        SingleChildScrollView(
+                                                                        Padding(
+                                                                      padding:
+                                                                          const EdgeInsets.all(
+                                                                              16.0),
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.start,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children:
-                                                                            [
-                                                                          Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Text(
-                                                                                'Redirections',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Manrope',
-                                                                                      color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
-                                                                                      fontSize: 15.28,
-                                                                                      letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.w300,
-                                                                                    ),
-                                                                              ),
-                                                                              if (containerExperiencesRow?.videoDone ?? true)
+                                                                          SingleChildScrollView(
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children:
+                                                                              [
+                                                                            Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
                                                                                 Text(
-                                                                                  'Video',
+                                                                                  'Redirections',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                        fontSize: 30.0,
+                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
+                                                                                        fontSize: 15.28,
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
+                                                                                        fontWeight: FontWeight.w300,
                                                                                       ),
                                                                                 ),
-                                                                              if (containerExperiencesRow?.reviewDone ?? true)
-                                                                                Text(
-                                                                                  'Avis',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                        fontSize: 30.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                ),
-                                                                              if (containerExperiencesRow?.feedbackAnswer ?? true)
-                                                                                Text(
-                                                                                  'Feedback',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Manrope',
-                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                        fontSize: 30.0,
-                                                                                        letterSpacing: 0.0,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                ),
-                                                                            ],
-                                                                          ),
-                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                if (containerExperiencesRow?.videoDone == true)
+                                                                                  Text(
+                                                                                    'Video',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                          fontSize: 30.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                  ),
+                                                                                if (containerExperiencesRow?.reviewDone == true)
+                                                                                  Text(
+                                                                                    'Avis',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                          fontSize: 30.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                  ),
+                                                                                if (containerExperiencesRow?.feedbackAnswer == true)
+                                                                                  Text(
+                                                                                    'Feedback',
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                          fontFamily: 'Manrope',
+                                                                                          color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                          fontSize: 30.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                  ),
+                                                                              ],
+                                                                            ),
+                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -702,7 +713,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                 Visibility(
                                                                   visible:
                                                                       containerExperiencesRow
-                                                                              ?.feedbackAnswer ??
+                                                                              ?.feedbackAnswer ==
                                                                           true,
                                                                   child:
                                                                       Container(
@@ -940,7 +951,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                 Visibility(
                                                                   visible:
                                                                       containerExperiencesRow
-                                                                              ?.wantsContact ??
+                                                                              ?.wantsContact ==
                                                                           true,
                                                                   child:
                                                                       Container(
