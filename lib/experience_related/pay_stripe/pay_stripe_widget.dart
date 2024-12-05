@@ -1,9 +1,11 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'pay_stripe_model.dart';
 export 'pay_stripe_model.dart';
 
@@ -40,6 +42,8 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: 400.0,
       decoration: BoxDecoration(
@@ -104,8 +108,16 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                         const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        _model.clientRow = await ClientsTable().queryRows(
+                          queryFn: (q) => q.eq(
+                            'id',
+                            FFAppState().activeClientID,
+                          ),
+                        );
                         await launchURL(
-                            'https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=$currentUserEmail');
+                            '${_model.clientRow?.first.stripeLink != null && _model.clientRow?.first.stripeLink != '' ? _model.clientRow?.first.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
+
+                        safeSetState(() {});
                       },
                       text: 'S\'abonner',
                       options: FFButtonOptions(

@@ -15,6 +15,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'widgets_model.dart';
 export 'widgets_model.dart';
 
@@ -288,13 +289,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          child: GestureDetector(
-                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                            child: SizedBox(
-                                                                                              height: 330.0,
-                                                                                              width: 800.0,
-                                                                                              child: CreationChoiceWidget(
-                                                                                                assets: hostedSubsHostedSubsRowList.length,
+                                                                                          child: WebViewAware(
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              child: SizedBox(
+                                                                                                height: 330.0,
+                                                                                                width: 800.0,
+                                                                                                child: CreationChoiceWidget(
+                                                                                                  assets: hostedSubsHostedSubsRowList.length,
+                                                                                                ),
                                                                                               ),
                                                                                             ),
                                                                                           ),
@@ -943,13 +946,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 330.0,
-                                                                                                            width: 550.0,
-                                                                                                            child: ExportStoryCodeWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                        child: WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 330.0,
+                                                                                                              width: 550.0,
+                                                                                                              child: ExportStoryCodeWidget(
+                                                                                                                integrationEditing: usersIntegrationsItem.id,
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -979,13 +984,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 330.0,
-                                                                                                            width: 550.0,
-                                                                                                            child: ExportCodeWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                        child: WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 330.0,
+                                                                                                              width: 550.0,
+                                                                                                              child: ExportCodeWidget(
+                                                                                                                integrationEditing: usersIntegrationsItem.id,
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -1047,13 +1054,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 800.0,
-                                                                                                            width: 800.0,
-                                                                                                            child: EditStoryWidget(
-                                                                                                              integrationEditing: usersIntegrationsItem.id,
+                                                                                                        child: WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 800.0,
+                                                                                                              width: 800.0,
+                                                                                                              child: EditStoryWidget(
+                                                                                                                integrationEditing: usersIntegrationsItem.id,
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -1069,13 +1078,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                        child: GestureDetector(
-                                                                                                          onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                          child: SizedBox(
-                                                                                                            height: 800.0,
-                                                                                                            width: 800.0,
-                                                                                                            child: AddFounderWidget(
-                                                                                                              founderId: usersIntegrationsItem.id,
+                                                                                                        child: WebViewAware(
+                                                                                                          child: GestureDetector(
+                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            child: SizedBox(
+                                                                                                              height: 800.0,
+                                                                                                              width: 800.0,
+                                                                                                              child: AddFounderWidget(
+                                                                                                                founderId: usersIntegrationsItem.id,
+                                                                                                              ),
                                                                                                             ),
                                                                                                           ),
                                                                                                         ),
@@ -1105,14 +1116,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
                                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                          child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                            child: SizedBox(
-                                                                                                              height: 800.0,
-                                                                                                              width: 1280.0,
-                                                                                                              child: EditIntegrationWidget(
-                                                                                                                integrationEditing: usersIntegrationsItem.id,
-                                                                                                                only3: true,
+                                                                                                          child: WebViewAware(
+                                                                                                            child: GestureDetector(
+                                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                              child: SizedBox(
+                                                                                                                height: 800.0,
+                                                                                                                width: 1280.0,
+                                                                                                                child: EditIntegrationWidget(
+                                                                                                                  integrationEditing: usersIntegrationsItem.id,
+                                                                                                                  only3: true,
+                                                                                                                ),
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),
@@ -1149,14 +1162,16 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
                                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                                          child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                                                            child: SizedBox(
-                                                                                                              height: 800.0,
-                                                                                                              width: 1280.0,
-                                                                                                              child: EditIntegrationWidget(
-                                                                                                                integrationEditing: usersIntegrationsItem.id,
-                                                                                                                only3: false,
+                                                                                                          child: WebViewAware(
+                                                                                                            child: GestureDetector(
+                                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                              child: SizedBox(
+                                                                                                                height: 800.0,
+                                                                                                                width: 1280.0,
+                                                                                                                child: EditIntegrationWidget(
+                                                                                                                  integrationEditing: usersIntegrationsItem.id,
+                                                                                                                  only3: false,
+                                                                                                                ),
                                                                                                               ),
                                                                                                             ),
                                                                                                           ),

@@ -1,11 +1,8 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'edit_review_link_google_model.dart';
@@ -33,6 +30,9 @@ class _EditReviewLinkGoogleWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => EditReviewLinkGoogleModel());
+
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -99,38 +99,37 @@ class _EditReviewLinkGoogleWidgetState
                                   ),
                         ),
                         Text(
-                          'Trouvez votre lieu avec l\'API Google Maps',
+                          'Trouvez votre lieu avec l\'API Google Maps.\n\n1- Rechercher votre lieu\n2- Copiez son Place ID',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Manrope',
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        FlutterFlowPlacePicker(
-                          iOSGoogleMapsApiKey: '',
-                          androidGoogleMapsApiKey: '',
-                          webGoogleMapsApiKey:
-                              'AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
-                          onSelect: (place) async {
-                            safeSetState(() => _model.placePickerValue = place);
-                          },
-                          defaultText: 'Trouver mon lieu',
-                          icon: Icon(
-                            Icons.place,
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            size: 16.0,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.asset(
+                            'assets/images/placeIdExplainer.png',
+                            width: 260.0,
+                            height: 140.0,
+                            fit: BoxFit.contain,
                           ),
-                          buttonOptions: FFButtonOptions(
-                            width: 200.0,
+                        ),
+                        FFButtonWidget(
+                          onPressed: () async {
+                            await launchURL(
+                                'https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder#maps_places_placeid_finder-typescript');
+                            _model.placeIded = true;
+                            safeSetState(() {});
+                          },
+                          text: 'Trouver mon Place ID',
+                          options: FFButtonOptions(
                             height: 40.0,
-                            color: FlutterFlowTheme.of(context).primary,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: const Color(0xFF4285F4),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -138,58 +137,114 @@ class _EditReviewLinkGoogleWidgetState
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w600,
                                 ),
                             elevation: 0.0,
                             borderSide: const BorderSide(
                               color: Colors.transparent,
-                              width: 1.0,
+                              width: 0.0,
                             ),
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                         ),
-                        if (_model.placePickerValue.address != '')
+                        if (_model.placeIded)
+                          SizedBox(
+                            width: 200.0,
+                            child: TextFormField(
+                              controller: _model.textController,
+                              focusNode: _model.textFieldFocusNode,
+                              onFieldSubmitted: (_) async {
+                                await launchURL(
+                                    'https://search.google.com/local/writereview?placeid=${_model.textController.text}');
+                                _model.confirmed = true;
+                                safeSetState(() {});
+                              },
+                              autofocus: false,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Manrope',
+                                      color: FlutterFlowTheme.of(context)
+                                          .inputTitleGrey,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintText: 'Place ID',
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Manrope',
+                                      color: FlutterFlowTheme.of(context)
+                                          .inputTitleGrey,
+                                      fontSize: 15.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .inputNoGoodClicked,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .inputNoGoodClicked,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context).inputBg,
+                                contentPadding: const EdgeInsets.all(16.0),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Manrope',
+                                    color: FlutterFlowTheme.of(context)
+                                        .revoCardTextColor,
+                                    fontSize: 15.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                              validator: _model.textControllerValidator
+                                  .asValidator(context),
+                            ),
+                          ),
+                      ].divide(const SizedBox(height: 12.0)),
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (_model.placeIded)
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  var shouldSetState = false;
-                                  _model.apiResultxcr =
-                                      await PlaceIdRequestCall.call(
-                                    lat: functions.getLongLat(_model
-                                        .placePickerValue.latLng
-                                        .toString()),
-                                  );
-
-                                  shouldSetState = true;
-                                  if (!(_model.apiResultxcr?.succeeded ??
-                                      true)) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Not worke',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                    if (shouldSetState) safeSetState(() {});
-                                    return;
-                                  }
                                   await launchURL(
-                                      'https://search.google.com/local/writereview?placeid=${PlaceIdRequestCall.placeId(
-                                    (_model.apiResultxcr?.jsonBody ?? ''),
-                                  )?.first}');
+                                      'https://search.google.com/local/writereview?placeid=${_model.textController.text}');
                                   _model.confirmed = true;
                                   safeSetState(() {});
-                                  if (shouldSetState) safeSetState(() {});
                                 },
                                 text: 'Vérifier le lien',
                                 options: FFButtonOptions(
@@ -222,9 +277,7 @@ class _EditReviewLinkGoogleWidgetState
                                       data: {
                                         'review_site': 'Google',
                                         'review_link':
-                                            'https://search.google.com/local/writereview?placeid=${PlaceIdRequestCall.placeId(
-                                          (_model.apiResultxcr?.jsonBody ?? ''),
-                                        )?.first}',
+                                            'https://search.google.com/local/writereview?placeid=${_model.textController.text}',
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'id',

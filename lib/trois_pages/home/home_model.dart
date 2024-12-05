@@ -11,6 +11,8 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   late NavbarnavModel navbarnavModel;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<UsersRow>? userRow;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ClientsRow>? clientRow;
 
   @override
   void initState(BuildContext context) {

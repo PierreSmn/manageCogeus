@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_profile_model.dart';
 export 'create_profile_model.dart';
 
@@ -517,148 +519,200 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                               Align(
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    if (widget.clid != null) {
-                                                      _model.clientRow =
-                                                          await ClientsTable()
-                                                              .queryRows(
-                                                        queryFn: (q) => q.eq(
-                                                          'id',
-                                                          widget.clid,
-                                                        ),
-                                                      );
-                                                      _model.updatedUser1 =
-                                                          await UsersTable()
-                                                              .update(
-                                                        data: {
-                                                          'company_name': _model
-                                                              .clientRow
+                                                child: Builder(
+                                                  builder: (context) =>
+                                                      FFButtonWidget(
+                                                    onPressed: () async {
+                                                      if (widget.clid !=
+                                                          null) {
+                                                        _model.clientRow =
+                                                            await ClientsTable()
+                                                                .queryRows(
+                                                          queryFn: (q) => q.eq(
+                                                            'id',
+                                                            widget.clid,
+                                                          ),
+                                                        );
+                                                        _model.updatedUser1 =
+                                                            await UsersTable()
+                                                                .update(
+                                                          data: {
+                                                            'company_name':
+                                                                _model
+                                                                    .clientRow
+                                                                    ?.first
+                                                                    .name,
+                                                            'site_url': _model
+                                                                .clientRow
+                                                                ?.first
+                                                                .siteUrl,
+                                                            'client_id': _model
+                                                                .clientRow
+                                                                ?.first
+                                                                .id,
+                                                            'phone_number': _model
+                                                                .phoneTextController
+                                                                .text,
+                                                            'first_name': _model
+                                                                .nameTextController
+                                                                .text,
+                                                            'last_name': _model
+                                                                .lastNameTextController
+                                                                .text,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) => rows.eq(
+                                                            'id',
+                                                            currentUserUid,
+                                                          ),
+                                                          returnRows: true,
+                                                        );
+                                                        await SendNotificaitonOfNewUserCall
+                                                            .call(
+                                                          companyName: _model
+                                                              .updatedUser1
                                                               ?.first
-                                                              .name,
-                                                          'site_url': _model
-                                                              .clientRow
+                                                              .companyName,
+                                                          name: _model
+                                                              .updatedUser1
+                                                              ?.first
+                                                              .firstName,
+                                                          surname: _model
+                                                              .updatedUser1
+                                                              ?.first
+                                                              .lastName,
+                                                          email: _model
+                                                              .updatedUser1
+                                                              ?.first
+                                                              .email,
+                                                          phone: _model
+                                                              .updatedUser1
+                                                              ?.first
+                                                              .phoneNumber,
+                                                          siteUrl: _model
+                                                              .updatedUser1
                                                               ?.first
                                                               .siteUrl,
-                                                          'client_id': _model
-                                                              .clientRow
-                                                              ?.first
-                                                              .id,
-                                                          'phone_number': _model
-                                                              .phoneTextController
-                                                              .text,
-                                                          'first_name': _model
-                                                              .nameTextController
-                                                              .text,
-                                                          'last_name': _model
-                                                              .lastNameTextController
-                                                              .text,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          currentUserUid,
-                                                        ),
-                                                        returnRows: true,
-                                                      );
-                                                      await SendNotificaitonOfNewUserCall
-                                                          .call(
-                                                        companyName: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .companyName,
-                                                        name: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .firstName,
-                                                        surname: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .lastName,
-                                                        email: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .email,
-                                                        phone: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .phoneNumber,
-                                                        siteUrl: _model
-                                                            .updatedUser1
-                                                            ?.first
-                                                            .siteUrl,
-                                                      );
+                                                        );
 
-                                                      FFAppState().activeBrand =
-                                                          _model
-                                                              .updatedUser1!
-                                                              .first
-                                                              .companyName!;
-                                                      FFAppState()
-                                                              .activeClientID =
-                                                          _model.updatedUser1!
-                                                              .first.clientId!;
+                                                        FFAppState()
+                                                                .activeBrand =
+                                                            _model
+                                                                .updatedUser1!
+                                                                .first
+                                                                .companyName!;
+                                                        FFAppState()
+                                                                .activeClientID =
+                                                            _model
+                                                                .updatedUser1!
+                                                                .first
+                                                                .clientId!;
+                                                        safeSetState(() {});
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (dialogContext) {
+                                                            return Dialog(
+                                                              elevation: 0,
+                                                              insetPadding:
+                                                                  EdgeInsets
+                                                                      .zero,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              alignment: const AlignmentDirectional(
+                                                                      0.0, 0.0)
+                                                                  .resolve(
+                                                                      Directionality.of(
+                                                                          context)),
+                                                              child:
+                                                                  WebViewAware(
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () =>
+                                                                      FocusScope.of(
+                                                                              dialogContext)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      const EditEngagementWidget(),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+
+                                                        context.goNamed('home');
+                                                      } else {
+                                                        await UsersTable()
+                                                            .update(
+                                                          data: {
+                                                            'first_name': _model
+                                                                .nameTextController
+                                                                .text,
+                                                            'last_name': _model
+                                                                .lastNameTextController
+                                                                .text,
+                                                            'phone_number': _model
+                                                                .phoneTextController
+                                                                .text,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) => rows.eq(
+                                                            'id',
+                                                            currentUserUid,
+                                                          ),
+                                                        );
+
+                                                        context.pushNamed(
+                                                            'createProfileClient');
+                                                      }
+
                                                       safeSetState(() {});
-
-                                                      context.pushNamed('home');
-                                                    } else {
-                                                      await UsersTable().update(
-                                                        data: {
-                                                          'first_name': _model
-                                                              .nameTextController
-                                                              .text,
-                                                          'last_name': _model
-                                                              .lastNameTextController
-                                                              .text,
-                                                          'phone_number': _model
-                                                              .phoneTextController
-                                                              .text,
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eq(
-                                                          'id',
-                                                          currentUserUid,
-                                                        ),
-                                                      );
-
-                                                      context.pushNamed(
-                                                          'createProfileClient');
-                                                    }
-
-                                                    safeSetState(() {});
-                                                  },
-                                                  text: 'Continuer',
-                                                  options: FFButtonOptions(
-                                                    width: 230.0,
-                                                    height: 40.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: const Color(0xFFEEE8FC),
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color:
-                                                              const Color(0xFF5E35B1),
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                    elevation: 0.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
-                                                      width: 0.0,
+                                                    },
+                                                    text: 'Continuer',
+                                                    options: FFButtonOptions(
+                                                      width: 230.0,
+                                                      height: 40.0,
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: const Color(0xFFEEE8FC),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: const Color(
+                                                                    0xFF5E35B1),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 0.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
                                                     ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            16.0),
                                                   ),
                                                 ),
                                               ),

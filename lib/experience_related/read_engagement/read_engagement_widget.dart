@@ -6,6 +6,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'read_engagement_model.dart';
 export 'read_engagement_model.dart';
 
@@ -214,7 +215,9 @@ class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                            child: const EditEngagementWidget(),
+                                            child: const WebViewAware(
+                                              child: EditEngagementWidget(),
+                                            ),
                                           );
                                         },
                                       );
@@ -1404,7 +1407,9 @@ class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: const EditEngagementWidget(),
+                                              child: const WebViewAware(
+                                                child: EditEngagementWidget(),
+                                              ),
                                             );
                                           },
                                         );
@@ -1716,7 +1721,9 @@ class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
-                                                child: const EditEngagementWidget(),
+                                                child: const WebViewAware(
+                                                  child: EditEngagementWidget(),
+                                                ),
                                               );
                                             },
                                           );

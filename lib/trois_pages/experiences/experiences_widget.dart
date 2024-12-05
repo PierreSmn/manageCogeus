@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'experiences_model.dart';
 export 'experiences_model.dart';
 
@@ -34,15 +35,17 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
-              title: const Text('Attention'),
-              content: const Text('Vous devez remettre à jour votre profil.'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: const Text('Ok'),
-                ),
-              ],
+            return WebViewAware(
+              child: AlertDialog(
+                title: const Text('Attention'),
+                content: const Text('Vous devez remettre à jour votre profil.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: const Text('Ok'),
+                  ),
+                ],
+              ),
             );
           },
         );
@@ -264,7 +267,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                         .max,
                                                                 children: [
                                                                   Container(
-                                                                    width: 60.0,
+                                                                    width: 50.0,
                                                                     decoration:
                                                                         const BoxDecoration(),
                                                                     child: Text(
@@ -322,25 +325,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                     decoration:
                                                                         const BoxDecoration(),
                                                                     child: Text(
-                                                                      'Commentaire raison',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Manrope',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    width:
-                                                                        150.0,
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                    child: Text(
-                                                                      'Feedback',
+                                                                      'Redirection',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -355,7 +340,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                 ]
                                                                     .divide(const SizedBox(
                                                                         width:
-                                                                            60.0))
+                                                                            20.0))
                                                                     .addToStart(
                                                                         const SizedBox(
                                                                             width:
@@ -456,7 +441,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                           children:
                                                                               [
                                                                             Container(
-                                                                              width: 60.0,
+                                                                              width: 50.0,
                                                                               decoration: const BoxDecoration(),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
@@ -514,7 +499,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   experienceItem.theme,
-                                                                                  'Inconnu',
+                                                                                  '-',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Manrope',
@@ -526,25 +511,24 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                               width: 150.0,
                                                                               decoration: const BoxDecoration(),
                                                                               child: Text(
-                                                                                experienceItem.feedback != null && experienceItem.feedback != '' ? 'Voir plus' : ' ',
+                                                                                () {
+                                                                                  if (experienceItem.reviewDone == true) {
+                                                                                    return 'Avis';
+                                                                                  } else if (experienceItem.videoDone == true) {
+                                                                                    return 'Vidéo';
+                                                                                  } else if (experienceItem.feedbackAnswer == true) {
+                                                                                    return 'Feedback';
+                                                                                  } else {
+                                                                                    return '-';
+                                                                                  }
+                                                                                }(),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Manrope',
                                                                                       letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
                                                                             ),
-                                                                            Container(
-                                                                              width: 150.0,
-                                                                              decoration: const BoxDecoration(),
-                                                                              child: Text(
-                                                                                experienceItem.feedbackCustomText != null && experienceItem.feedbackCustomText != '' ? 'Voir plus' : ' ',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Manrope',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          ].divide(const SizedBox(width: 60.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                          ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
                                                                         ),
                                                                       ),
                                                                     );
