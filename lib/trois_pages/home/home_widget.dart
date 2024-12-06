@@ -443,7 +443,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                             ),
                                                                                       ),
                                                                                       Text(
-                                                                                        'Abonnez-vous pour accéder à vos données !',
+                                                                                        'Vous devez être abonné pour accéder à vos données !\nSi vous l\'êtes déjà, mettez à jour le système en cliquant en dessous.',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Manrope',
                                                                                               letterSpacing: 0.0,
@@ -476,7 +476,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                                             safeSetState(() {});
                                                                                           },
-                                                                                          text: 'S\'abonner',
+                                                                                          text: 'Mettre à jour',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
                                                                                             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
