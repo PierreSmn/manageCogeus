@@ -70,10 +70,12 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
 
     return FutureBuilder<List<ExperiencesRow>>(
       future: ExperiencesTable().queryRows(
-        queryFn: (q) => q.eq(
-          'client_id',
-          FFAppState().activeClientID,
-        ),
+        queryFn: (q) => q
+            .eq(
+              'client_id',
+              FFAppState().activeClientID,
+            )
+            .order('created_at'),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
