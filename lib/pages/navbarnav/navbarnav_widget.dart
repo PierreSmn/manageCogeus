@@ -1,6 +1,9 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/choose_clientor_np/choose_clientor_np_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'navbarnav_model.dart';
 export 'navbarnav_model.dart';
 
@@ -42,6 +45,8 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: 240.0,
       height: double.infinity,
@@ -201,76 +206,79 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      MouseRegion(
-                        opaque: false,
-                        cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered2 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered2 = false);
-                        }),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('engagement');
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: widget.selectedIndex == 3
-                                  ? FlutterFlowTheme.of(context)
-                                      .cogeusNavSelected
-                                  : FlutterFlowTheme.of(context).revoWhite,
-                              borderRadius: BorderRadius.circular(10.0),
-                              border: Border.all(
-                                color: _model.mouseRegionHovered2
+                      if (!FFAppState().isNp1)
+                        MouseRegion(
+                          opaque: false,
+                          cursor: MouseCursor.defer ?? MouseCursor.defer,
+                          onEnter: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered2 = true);
+                          }),
+                          onExit: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered2 = false);
+                          }),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('engagement');
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: widget.selectedIndex == 3
                                     ? FlutterFlowTheme.of(context)
-                                        .cogeusHoverPurple
+                                        .cogeusNavSelected
                                     : FlutterFlowTheme.of(context).revoWhite,
-                                width: 2.0,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                  color: _model.mouseRegionHovered2
+                                      ? FlutterFlowTheme.of(context)
+                                          .cogeusHoverPurple
+                                      : FlutterFlowTheme.of(context).revoWhite,
+                                  width: 2.0,
+                                ),
                               ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Icon(
-                                      Icons.people,
-                                      color: widget.selectedIndex == 3
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .revoCardTextColor,
-                                      size: 24.0,
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Icon(
+                                        Icons.people,
+                                        color: widget.selectedIndex == 3
+                                            ? FlutterFlowTheme.of(context)
+                                                .primary
+                                            : FlutterFlowTheme.of(context)
+                                                .revoCardTextColor,
+                                        size: 24.0,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Engagement',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 3
-                                              ? FlutterFlowTheme.of(context)
-                                                  .primary
-                                              : FlutterFlowTheme.of(context)
-                                                  .revoCardTextColor,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
+                                    Text(
+                                      'Engagement',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: widget.selectedIndex == 3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .primary
+                                                : FlutterFlowTheme.of(context)
+                                                    .revoCardTextColor,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
@@ -773,17 +781,48 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                           Expanded(
-                            child: Text(
-                              'Mon compte',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    color: FlutterFlowTheme.of(context)
-                                        .revoCardTextColor,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w300,
-                                  ),
+                            child: Builder(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: const WebViewAware(
+                                          child: SizedBox(
+                                            height: 450.0,
+                                            width: 250.0,
+                                            child: ChooseClientorNpWidget(),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Text(
+                                  'Mon compte',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Manrope',
+                                        color: FlutterFlowTheme.of(context)
+                                            .revoCardTextColor,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                ),
+                              ),
                             ),
                           ),
                         ].divide(const SizedBox(width: 16.0)),

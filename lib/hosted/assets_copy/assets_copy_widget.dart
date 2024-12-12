@@ -84,7 +84,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
             title: 'assetsCopy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -291,8 +294,9 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                             AlertDialog(
                                                                           title:
                                                                               const Text('file title'),
-                                                                          content:
-                                                                              Text(_model.uploadedFileUrls[_model.retries!]),
+                                                                          content: Text(_model
+                                                                              .uploadedFileUrls
+                                                                              .elementAtOrNull(_model.retries!)!),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
@@ -330,15 +334,16 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                       _model
                                                                           .uploadedFileUrls
                                                                           .length) {
-                                                                    if (functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls[_model.retries!]) !=
+                                                                    if (functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls.elementAtOrNull(_model.retries!)!) !=
                                                                             null &&
-                                                                        functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls[_model.retries!]) !=
+                                                                        functions.checkIsMp4ForMultiUpload(_model.uploadedFileUrls.elementAtOrNull(_model.retries!)!) !=
                                                                             '') {
                                                                       _model.apiResultUploadIndex =
                                                                           await PostToMuxThroughFastgenCall
                                                                               .call(
                                                                         link: _model
-                                                                            .uploadedFileUrls[_model.retries!],
+                                                                            .uploadedFileUrls
+                                                                            .elementAtOrNull(_model.retries!),
                                                                       );
 
                                                                       shouldSetState =
@@ -348,8 +353,9 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                           200) {
                                                                         await HostedSubsTable()
                                                                             .insert({
-                                                                          'media_link':
-                                                                              _model.uploadedFileUrls[_model.retries!],
+                                                                          'media_link': _model
+                                                                              .uploadedFileUrls
+                                                                              .elementAtOrNull(_model.retries!),
                                                                           'brand_name':
                                                                               FFAppState().activeBrand,
                                                                           'owner':
@@ -378,8 +384,8 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                           ),
                                                                           'logo_url': _model
                                                                               .clientInfos
-                                                                              ?.first
-                                                                              .logoUrl,
+                                                                              ?.firstOrNull
+                                                                              ?.logoUrl,
                                                                         });
                                                                       }
                                                                       _model.retries =
@@ -615,7 +621,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    onTap: () {
+                                                                                                      FocusScope.of(dialogContext).unfocus();
+                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                    },
                                                                                                     child: SizedBox(
                                                                                                       height: 630.0,
                                                                                                       width: 300.0,
@@ -682,7 +691,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
-                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      onTap: () {
+                                                                                                        FocusScope.of(dialogContext).unfocus();
+                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                      },
                                                                                                       child: SizedBox(
                                                                                                         height: 250.0,
                                                                                                         width: 500.0,
@@ -730,7 +742,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
-                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      onTap: () {
+                                                                                                        FocusScope.of(dialogContext).unfocus();
+                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                      },
                                                                                                       child: SizedBox(
                                                                                                         height: 275.0,
                                                                                                         width: 400.0,

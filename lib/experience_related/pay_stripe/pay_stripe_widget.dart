@@ -115,7 +115,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                           ),
                         );
                         await launchURL(
-                            '${_model.clientRow?.first.stripeLink != null && _model.clientRow?.first.stripeLink != '' ? _model.clientRow?.first.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
+                            '${_model.clientRow?.firstOrNull?.stripeLink != null && _model.clientRow?.firstOrNull?.stripeLink != '' ? _model.clientRow?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
 
                         safeSetState(() {});
                       },

@@ -97,7 +97,10 @@ class _SigninWidgetState extends State<SigninWidget>
         title: 'signin',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -332,7 +335,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                       return;
                                                     }
 
-                                                    _model.userInfosCopy =
+                                                    _model.userInfoscopy =
                                                         await UsersTable()
                                                             .queryRows(
                                                       queryFn: (q) => q.eq(
@@ -340,16 +343,58 @@ class _SigninWidgetState extends State<SigninWidget>
                                                         currentUserUid,
                                                       ),
                                                     );
-                                                    FFAppState().activeBrand =
-                                                        _model.userInfosCopy!
-                                                            .first.companyName!;
-                                                    FFAppState()
-                                                            .activeClientID =
-                                                        _model.userInfosCopy!
-                                                            .first.clientId!;
-                                                    FFAppState().activeSub =
-                                                        _model.userInfosCopy!
-                                                            .first.activeSub!;
+                                                    if ((_model
+                                                                .userInfoscopy
+                                                                ?.firstOrNull
+                                                                ?.np1Id !=
+                                                            null) &&
+                                                        (_model
+                                                                .userInfoscopy
+                                                                ?.firstOrNull
+                                                                ?.np1Id !=
+                                                            0)) {
+                                                      FFAppState().activeSub =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .activeSub!;
+                                                      FFAppState().isNp1 = true;
+                                                      FFAppState().activeNp1 =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .np1Id!;
+                                                      FFAppState().activeBrand =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .companyName!;
+                                                      FFAppState()
+                                                              .activeClientID =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .clientId!;
+                                                    } else {
+                                                      FFAppState().activeBrand =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .companyName!;
+                                                      FFAppState()
+                                                              .activeClientID =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .clientId!;
+                                                      FFAppState().activeSub =
+                                                          _model
+                                                              .userInfoscopy!
+                                                              .firstOrNull!
+                                                              .activeSub!;
+                                                      FFAppState().isNp1 =
+                                                          false;
+                                                    }
 
                                                     context.goNamedAuth(
                                                       'home',
@@ -579,12 +624,42 @@ class _SigninWidgetState extends State<SigninWidget>
                                               currentUserUid,
                                             ),
                                           );
-                                          FFAppState().activeBrand = _model
-                                              .userInfos!.first.companyName!;
-                                          FFAppState().activeClientID =
-                                              _model.userInfos!.first.clientId!;
-                                          FFAppState().activeSub = _model
-                                              .userInfos!.first.activeSub!;
+                                          if ((_model.userInfos?.firstOrNull
+                                                      ?.np1Id !=
+                                                  null) &&
+                                              (_model.userInfos?.firstOrNull
+                                                      ?.np1Id !=
+                                                  0)) {
+                                            FFAppState().activeSub = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .activeSub!;
+                                            FFAppState().isNp1 = true;
+                                            FFAppState().activeNp1 = _model
+                                                .userInfos!.firstOrNull!.np1Id!;
+                                            FFAppState().activeClientID = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .clientId!;
+                                            FFAppState().activeBrand = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .companyName!;
+                                          } else {
+                                            FFAppState().activeBrand = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .companyName!;
+                                            FFAppState().activeClientID = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .clientId!;
+                                            FFAppState().activeSub = _model
+                                                .userInfos!
+                                                .firstOrNull!
+                                                .activeSub!;
+                                            FFAppState().isNp1 = false;
+                                          }
 
                                           context.goNamedAuth(
                                             'home',

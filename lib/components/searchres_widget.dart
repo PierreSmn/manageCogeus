@@ -99,14 +99,16 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                                         children: [
                                           TextSpan(
                                             text: valueOrDefault<String>(
-                                              widget.name?[resIndex],
+                                              widget.name
+                                                  ?.elementAtOrNull(resIndex),
                                               'no',
                                             ),
                                             style: const TextStyle(),
                                           ),
                                           TextSpan(
                                             text: valueOrDefault<String>(
-                                              widget.place?[resIndex],
+                                              widget.place
+                                                  ?.elementAtOrNull(resIndex),
                                               'no',
                                             ),
                                             style: const TextStyle(),

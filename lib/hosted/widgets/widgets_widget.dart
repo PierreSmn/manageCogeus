@@ -60,7 +60,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
         title: 'widgets',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -291,7 +294,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
-                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                              onTap: () {
+                                                                                                FocusScope.of(dialogContext).unfocus();
+                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                              },
                                                                                               child: SizedBox(
                                                                                                 height: 330.0,
                                                                                                 width: 800.0,
@@ -948,7 +954,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
                                                                                                             child: SizedBox(
                                                                                                               height: 330.0,
                                                                                                               width: 550.0,
@@ -986,7 +995,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
                                                                                                             child: SizedBox(
                                                                                                               height: 330.0,
                                                                                                               width: 550.0,
@@ -1056,7 +1068,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
                                                                                                             child: SizedBox(
                                                                                                               height: 800.0,
                                                                                                               width: 800.0,
@@ -1080,7 +1095,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
-                                                                                                            onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                            onTap: () {
+                                                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                            },
                                                                                                             child: SizedBox(
                                                                                                               height: 800.0,
                                                                                                               width: 800.0,
@@ -1118,7 +1136,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
-                                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                              onTap: () {
+                                                                                                                FocusScope.of(dialogContext).unfocus();
+                                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                              },
                                                                                                               child: SizedBox(
                                                                                                                 height: 800.0,
                                                                                                                 width: 1280.0,
@@ -1164,7 +1185,10 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
-                                                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                              onTap: () {
+                                                                                                                FocusScope.of(dialogContext).unfocus();
+                                                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                              },
                                                                                                               child: SizedBox(
                                                                                                                 height: 800.0,
                                                                                                                 width: 1280.0,

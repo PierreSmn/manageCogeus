@@ -76,7 +76,10 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
             title: 'hostLibraryCopy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -312,7 +315,10 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                                     color: Colors.transparent,
                                                                                                     child: WebViewAware(
                                                                                                       child: GestureDetector(
-                                                                                                        onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                        onTap: () {
+                                                                                                          FocusScope.of(dialogContext).unfocus();
+                                                                                                          FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                        },
                                                                                                         child: SizedBox(
                                                                                                           height: 680.0,
                                                                                                           width: 330.0,

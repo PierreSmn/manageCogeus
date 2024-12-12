@@ -119,6 +119,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'clid',
               ParamType.int,
             ),
+            np1: params.getParam(
+              'np1',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -128,6 +132,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CreateProfileWidget(
             clid: params.getParam(
               'clid',
+              ParamType.int,
+            ),
+            np1: params.getParam(
+              'np1',
               ParamType.int,
             ),
           ),

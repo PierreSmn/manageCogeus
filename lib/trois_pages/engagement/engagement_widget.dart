@@ -83,7 +83,10 @@ class _EngagementWidgetState extends State<EngagementWidget> {
         title: 'engagement',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -248,7 +251,10 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                               alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
-                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(dialogContext).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
                                                                                   child: const EditEngagementWidget(),
                                                                                 ),
                                                                               ),
@@ -408,7 +414,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                             currentUserUid,
                                                                                           ),
                                                                                         );
-                                                                                        if (_model.userRow!.first.activeSub!) {
+                                                                                        if (_model.userRow!.firstOrNull!.activeSub!) {
                                                                                           _model.npsLink = 'https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}&nps=';
                                                                                           safeSetState(() {});
                                                                                           await Clipboard.setData(ClipboardData(
@@ -469,7 +475,10 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    onTap: () {
+                                                                                                      FocusScope.of(dialogContext).unfocus();
+                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                    },
                                                                                                     child: const SizedBox(
                                                                                                       height: 230.0,
                                                                                                       width: 360.0,

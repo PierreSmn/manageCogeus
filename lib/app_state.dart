@@ -36,6 +36,12 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _activeSub = prefs.getBool('ff_activeSub') ?? _activeSub;
     });
+    _safeInit(() {
+      _isNp1 = prefs.getBool('ff_isNp1') ?? _isNp1;
+    });
+    _safeInit(() {
+      _activeNp1 = prefs.getInt('ff_activeNp1') ?? _activeNp1;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -266,6 +272,20 @@ class FFAppState extends ChangeNotifier {
   set activeSub(bool value) {
     _activeSub = value;
     prefs.setBool('ff_activeSub', value);
+  }
+
+  bool _isNp1 = false;
+  bool get isNp1 => _isNp1;
+  set isNp1(bool value) {
+    _isNp1 = value;
+    prefs.setBool('ff_isNp1', value);
+  }
+
+  int _activeNp1 = 0;
+  int get activeNp1 => _activeNp1;
+  set activeNp1(int value) {
+    _activeNp1 = value;
+    prefs.setInt('ff_activeNp1', value);
   }
 
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();

@@ -90,7 +90,10 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
         title: 'experience',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -286,7 +289,10 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                   child: WebViewAware(
                                                                                     child: GestureDetector(
-                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                      onTap: () {
+                                                                                        FocusScope.of(dialogContext).unfocus();
+                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                      },
                                                                                       child: const EditEngagementWidget(),
                                                                                     ),
                                                                                   ),
@@ -476,7 +482,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                         currentUserUid,
                                                                                       ),
                                                                                     );
-                                                                                    if (_model.userRow!.first.activeSub!) {
+                                                                                    if (_model.userRow!.firstOrNull!.activeSub!) {
                                                                                       FFAppState().activeSub = true;
                                                                                       safeSetState(() {});
 
