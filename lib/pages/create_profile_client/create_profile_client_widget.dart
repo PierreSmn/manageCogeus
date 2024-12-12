@@ -84,7 +84,10 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
         title: 'createProfileClient',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -439,26 +442,28 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                           .call(
                                                         companyName: _model
                                                             .updatedUser
-                                                            ?.first
-                                                            .companyName,
-                                                        name: _model.updatedUser
-                                                            ?.first.firstName,
+                                                            ?.firstOrNull
+                                                            ?.companyName,
+                                                        name: _model
+                                                            .updatedUser
+                                                            ?.firstOrNull
+                                                            ?.firstName,
                                                         surname: _model
                                                             .updatedUser
-                                                            ?.first
-                                                            .lastName,
+                                                            ?.firstOrNull
+                                                            ?.lastName,
                                                         email: _model
                                                             .updatedUser
-                                                            ?.first
-                                                            .email,
+                                                            ?.firstOrNull
+                                                            ?.email,
                                                         phone: _model
                                                             .updatedUser
-                                                            ?.first
-                                                            .phoneNumber,
+                                                            ?.firstOrNull
+                                                            ?.phoneNumber,
                                                         siteUrl: _model
                                                             .updatedUser
-                                                            ?.first
-                                                            .siteUrl,
+                                                            ?.firstOrNull
+                                                            ?.siteUrl,
                                                       );
 
                                                       FFAppState().activeBrand =
@@ -488,10 +493,15 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                             child: WebViewAware(
                                                               child:
                                                                   GestureDetector(
-                                                                onTap: () =>
-                                                                    FocusScope.of(
-                                                                            dialogContext)
-                                                                        .unfocus(),
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          dialogContext)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
                                                                 child:
                                                                     const EditEngagementWidget(),
                                                               ),

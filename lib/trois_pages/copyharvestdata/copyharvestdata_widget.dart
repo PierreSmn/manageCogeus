@@ -52,7 +52,10 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
         title: 'copyharvestdata',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -268,7 +271,10 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                                 alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
-                                                                                                    onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                    onTap: () {
+                                                                                                      FocusScope.of(dialogContext).unfocus();
+                                                                                                      FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                    },
                                                                                                     child: SizedBox(
                                                                                                       height: 250.0,
                                                                                                       width: 250.0,
@@ -495,7 +501,10 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                               alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                               child: WebViewAware(
                                                                                                 child: GestureDetector(
-                                                                                                  onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(dialogContext).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
                                                                                                   child: SizedBox(
                                                                                                     height: 750.0,
                                                                                                     width: 1000.0,
@@ -558,7 +567,10 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
-                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                onTap: () {
+                                                                                                  FocusScope.of(dialogContext).unfocus();
+                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                },
                                                                                                 child: SizedBox(
                                                                                                   height: 700.0,
                                                                                                   width: 750.0,
@@ -614,7 +626,10 @@ class _CopyharvestdataWidgetState extends State<CopyharvestdataWidget> {
                                                                                             alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
-                                                                                                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                onTap: () {
+                                                                                                  FocusScope.of(dialogContext).unfocus();
+                                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                },
                                                                                                 child: SizedBox(
                                                                                                   height: 695.0,
                                                                                                   width: 750.0,

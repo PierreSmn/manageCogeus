@@ -17,9 +17,11 @@ class CreateProfileWidget extends StatefulWidget {
   const CreateProfileWidget({
     super.key,
     this.clid,
+    this.np1,
   });
 
   final int? clid;
+  final int? np1;
 
   @override
   State<CreateProfileWidget> createState() => _CreateProfileWidgetState();
@@ -92,7 +94,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
         title: 'createProfile',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -540,16 +545,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             'company_name':
                                                                 _model
                                                                     .clientRow
-                                                                    ?.first
-                                                                    .name,
+                                                                    ?.firstOrNull
+                                                                    ?.name,
                                                             'site_url': _model
                                                                 .clientRow
-                                                                ?.first
-                                                                .siteUrl,
+                                                                ?.firstOrNull
+                                                                ?.siteUrl,
                                                             'client_id': _model
                                                                 .clientRow
-                                                                ?.first
-                                                                .id,
+                                                                ?.firstOrNull
+                                                                ?.id,
                                                             'phone_number': _model
                                                                 .phoneTextController
                                                                 .text,
@@ -571,41 +576,41 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             .call(
                                                           companyName: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .companyName,
+                                                              ?.firstOrNull
+                                                              ?.companyName,
                                                           name: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .firstName,
+                                                              ?.firstOrNull
+                                                              ?.firstName,
                                                           surname: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .lastName,
+                                                              ?.firstOrNull
+                                                              ?.lastName,
                                                           email: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .email,
+                                                              ?.firstOrNull
+                                                              ?.email,
                                                           phone: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .phoneNumber,
+                                                              ?.firstOrNull
+                                                              ?.phoneNumber,
                                                           siteUrl: _model
                                                               .updatedUser1
-                                                              ?.first
-                                                              .siteUrl,
+                                                              ?.firstOrNull
+                                                              ?.siteUrl,
                                                         );
 
                                                         FFAppState()
                                                                 .activeBrand =
                                                             _model
                                                                 .updatedUser1!
-                                                                .first
+                                                                .firstOrNull!
                                                                 .companyName!;
                                                         FFAppState()
                                                                 .activeClientID =
                                                             _model
                                                                 .updatedUser1!
-                                                                .first
+                                                                .firstOrNull!
                                                                 .clientId!;
                                                         safeSetState(() {});
                                                         await showDialog(
@@ -629,10 +634,15 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   WebViewAware(
                                                                 child:
                                                                     GestureDetector(
-                                                                  onTap: () =>
-                                                                      FocusScope.of(
-                                                                              dialogContext)
-                                                                          .unfocus(),
+                                                                  onTap: () {
+                                                                    FocusScope.of(
+                                                                            dialogContext)
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
                                                                       const EditEngagementWidget(),
                                                                 ),
@@ -643,28 +653,167 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
 
                                                         context.goNamed('home');
                                                       } else {
-                                                        await UsersTable()
-                                                            .update(
-                                                          data: {
-                                                            'first_name': _model
-                                                                .nameTextController
-                                                                .text,
-                                                            'last_name': _model
-                                                                .lastNameTextController
-                                                                .text,
-                                                            'phone_number': _model
-                                                                .phoneTextController
-                                                                .text,
-                                                          },
-                                                          matchingRows:
-                                                              (rows) => rows.eq(
-                                                            'id',
-                                                            currentUserUid,
-                                                          ),
-                                                        );
+                                                        if (widget.np1 !=
+                                                            null) {
+                                                          _model.clientRow2 =
+                                                              await ClientsNp1Table()
+                                                                  .queryRows(
+                                                            queryFn: (q) =>
+                                                                q.eq(
+                                                              'id',
+                                                              widget.np1,
+                                                            ),
+                                                          );
+                                                          _model.updatedUser2 =
+                                                              await UsersTable()
+                                                                  .update(
+                                                            data: {
+                                                              'company_name': _model
+                                                                  .clientRow2
+                                                                  ?.firstOrNull
+                                                                  ?.name,
+                                                              'site_url': _model
+                                                                  .clientRow2
+                                                                  ?.firstOrNull
+                                                                  ?.siteUrl,
+                                                              'phone_number': _model
+                                                                  .phoneTextController
+                                                                  .text,
+                                                              'first_name': _model
+                                                                  .nameTextController
+                                                                  .text,
+                                                              'last_name': _model
+                                                                  .lastNameTextController
+                                                                  .text,
+                                                              'np1_id': _model
+                                                                  .clientRow2
+                                                                  ?.firstOrNull
+                                                                  ?.id,
+                                                              'client_id': _model
+                                                                  .clientRow2
+                                                                  ?.firstOrNull
+                                                                  ?.clientPrincipalId,
+                                                            },
+                                                            matchingRows:
+                                                                (rows) =>
+                                                                    rows.eq(
+                                                              'id',
+                                                              currentUserUid,
+                                                            ),
+                                                            returnRows: true,
+                                                          );
+                                                          await SendNotificaitonOfNewUserCall
+                                                              .call(
+                                                            companyName: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.companyName,
+                                                            name: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.firstName,
+                                                            surname: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.lastName,
+                                                            email: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.email,
+                                                            phone: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.phoneNumber,
+                                                            siteUrl: _model
+                                                                .updatedUser1
+                                                                ?.firstOrNull
+                                                                ?.siteUrl,
+                                                          );
 
-                                                        context.pushNamed(
-                                                            'createProfileClient');
+                                                          FFAppState().isNp1 =
+                                                              true;
+                                                          FFAppState()
+                                                                  .activeNp1 =
+                                                              widget.np1!;
+                                                          FFAppState()
+                                                                  .activeClientID =
+                                                              _model
+                                                                  .clientRow2!
+                                                                  .firstOrNull!
+                                                                  .clientPrincipalId!;
+                                                          FFAppState()
+                                                                  .activeBrand =
+                                                              _model
+                                                                  .clientRow2!
+                                                                  .firstOrNull!
+                                                                  .name!;
+                                                          safeSetState(() {});
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (dialogContext) {
+                                                              return Dialog(
+                                                                elevation: 0,
+                                                                insetPadding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                alignment: const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0)
+                                                                    .resolve(
+                                                                        Directionality.of(
+                                                                            context)),
+                                                                child:
+                                                                    WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
+                                                                      FocusScope.of(
+                                                                              dialogContext)
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
+                                                                    child:
+                                                                        const EditEngagementWidget(),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+
+                                                          context
+                                                              .goNamed('home');
+                                                        } else {
+                                                          await UsersTable()
+                                                              .update(
+                                                            data: {
+                                                              'first_name': _model
+                                                                  .nameTextController
+                                                                  .text,
+                                                              'last_name': _model
+                                                                  .lastNameTextController
+                                                                  .text,
+                                                              'phone_number': _model
+                                                                  .phoneTextController
+                                                                  .text,
+                                                            },
+                                                            matchingRows:
+                                                                (rows) =>
+                                                                    rows.eq(
+                                                              'id',
+                                                              currentUserUid,
+                                                            ),
+                                                          );
+
+                                                          context.pushNamed(
+                                                              'createProfileClient');
+                                                        }
                                                       }
 
                                                       safeSetState(() {});

@@ -14,10 +14,12 @@ class SignupWidget extends StatefulWidget {
     super.key,
     required this.brandId,
     this.clid,
+    this.np1,
   });
 
   final int? brandId;
   final int? clid;
+  final int? np1;
 
   @override
   State<SignupWidget> createState() => _SignupWidgetState();
@@ -110,7 +112,10 @@ class _SignupWidgetState extends State<SignupWidget>
         title: 'signup',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -596,6 +601,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       queryParameters: {
                                                         'clid': serializeParam(
                                                           widget.clid,
+                                                          ParamType.int,
+                                                        ),
+                                                        'np1': serializeParam(
+                                                          widget.np1,
                                                           ParamType.int,
                                                         ),
                                                       }.withoutNulls,

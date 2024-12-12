@@ -113,7 +113,10 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
             title: 'updateProfile',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor:
@@ -535,20 +538,61 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           ),
                                                           returnRows: true,
                                                         );
-                                                        FFAppState()
-                                                                .activeBrand =
-                                                            updateProfileUsersRow!
-                                                                .companyName!;
-                                                        FFAppState()
-                                                                .activeClientID =
-                                                            updateProfileUsersRow
-                                                                .clientId!;
-                                                        FFAppState().activeSub =
-                                                            _model
-                                                                .userRow!
-                                                                .first
-                                                                .activeSub!;
-                                                        safeSetState(() {});
+                                                        if ((_model
+                                                                    .userRow
+                                                                    ?.firstOrNull
+                                                                    ?.np1Id !=
+                                                                null) &&
+                                                            (_model
+                                                                    .userRow
+                                                                    ?.firstOrNull
+                                                                    ?.np1Id !=
+                                                                0)) {
+                                                          FFAppState()
+                                                                  .activeSub =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .activeSub!;
+                                                          FFAppState().isNp1 =
+                                                              true;
+                                                          FFAppState()
+                                                                  .activeNp1 =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .np1Id!;
+                                                          FFAppState()
+                                                                  .activeClientID =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .clientId!;
+                                                          FFAppState()
+                                                                  .activeBrand =
+                                                              'Super';
+                                                        } else {
+                                                          FFAppState()
+                                                                  .activeBrand =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .companyName!;
+                                                          FFAppState()
+                                                                  .activeClientID =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .clientId!;
+                                                          FFAppState()
+                                                                  .activeSub =
+                                                              _model
+                                                                  .userRow!
+                                                                  .firstOrNull!
+                                                                  .activeSub!;
+                                                          FFAppState().isNp1 =
+                                                              false;
+                                                        }
 
                                                         context
                                                             .pushNamed('home');

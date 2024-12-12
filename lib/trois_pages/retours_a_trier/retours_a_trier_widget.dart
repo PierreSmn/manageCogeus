@@ -76,7 +76,10 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
             title: 'retoursATrier',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).revoBG,
@@ -422,7 +425,10 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                   alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
-                                                                                                      onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                                                      onTap: () {
+                                                                                                        FocusScope.of(dialogContext).unfocus();
+                                                                                                        FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                      },
                                                                                                       child: const SizedBox(
                                                                                                         height: 435.0,
                                                                                                         width: 245.0,
