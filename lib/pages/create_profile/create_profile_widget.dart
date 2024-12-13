@@ -530,7 +530,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                     onPressed: () async {
                                                       if (widget.clid !=
                                                           null) {
-                                                        _model.clientRow =
+                                                        _model.clientRowclassic =
                                                             await ClientsTable()
                                                                 .queryRows(
                                                           queryFn: (q) => q.eq(
@@ -538,21 +538,20 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             widget.clid,
                                                           ),
                                                         );
-                                                        _model.updatedUser1 =
+                                                        _model.updatedUserclassic =
                                                             await UsersTable()
                                                                 .update(
                                                           data: {
-                                                            'company_name':
-                                                                _model
-                                                                    .clientRow
-                                                                    ?.firstOrNull
-                                                                    ?.name,
+                                                            'company_name': _model
+                                                                .clientRowclassic
+                                                                ?.firstOrNull
+                                                                ?.name,
                                                             'site_url': _model
-                                                                .clientRow
+                                                                .clientRowclassic
                                                                 ?.firstOrNull
                                                                 ?.siteUrl,
                                                             'client_id': _model
-                                                                .clientRow
+                                                                .clientRowclassic
                                                                 ?.firstOrNull
                                                                 ?.id,
                                                             'phone_number': _model
@@ -575,27 +574,27 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                         await SendNotificaitonOfNewUserCall
                                                             .call(
                                                           companyName: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.companyName,
                                                           name: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.firstName,
                                                           surname: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.lastName,
                                                           email: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.email,
                                                           phone: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.phoneNumber,
                                                           siteUrl: _model
-                                                              .updatedUser1
+                                                              .updatedUserclassic
                                                               ?.firstOrNull
                                                               ?.siteUrl,
                                                         );
@@ -603,13 +602,13 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                         FFAppState()
                                                                 .activeBrand =
                                                             _model
-                                                                .updatedUser1!
+                                                                .updatedUserclassic!
                                                                 .firstOrNull!
                                                                 .companyName!;
                                                         FFAppState()
                                                                 .activeClientID =
                                                             _model
-                                                                .updatedUser1!
+                                                                .updatedUserclassic!
                                                                 .firstOrNull!
                                                                 .clientId!;
                                                         safeSetState(() {});
@@ -655,7 +654,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                       } else {
                                                         if (widget.np1 !=
                                                             null) {
-                                                          _model.clientRow2 =
+                                                          _model.clientRownp1Set =
                                                               await ClientsNp1Table()
                                                                   .queryRows(
                                                             queryFn: (q) =>
@@ -664,16 +663,16 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               widget.np1,
                                                             ),
                                                           );
-                                                          _model.updatedUser2 =
+                                                          _model.updatedUsernp1set =
                                                               await UsersTable()
                                                                   .update(
                                                             data: {
                                                               'company_name': _model
-                                                                  .clientRow2
+                                                                  .clientRownp1Set
                                                                   ?.firstOrNull
                                                                   ?.name,
                                                               'site_url': _model
-                                                                  .clientRow2
+                                                                  .clientRownp1Set
                                                                   ?.firstOrNull
                                                                   ?.siteUrl,
                                                               'phone_number': _model
@@ -686,11 +685,11 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                   .lastNameTextController
                                                                   .text,
                                                               'np1_id': _model
-                                                                  .clientRow2
+                                                                  .clientRownp1Set
                                                                   ?.firstOrNull
                                                                   ?.id,
                                                               'client_id': _model
-                                                                  .clientRow2
+                                                                  .clientRownp1Set
                                                                   ?.firstOrNull
                                                                   ?.clientPrincipalId,
                                                             },
@@ -705,27 +704,27 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                           await SendNotificaitonOfNewUserCall
                                                               .call(
                                                             companyName: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.companyName,
                                                             name: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.firstName,
                                                             surname: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.lastName,
                                                             email: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.email,
                                                             phone: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.phoneNumber,
                                                             siteUrl: _model
-                                                                .updatedUser1
+                                                                .updatedUsernp1set
                                                                 ?.firstOrNull
                                                                 ?.siteUrl,
                                                           );
@@ -738,13 +737,13 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                           FFAppState()
                                                                   .activeClientID =
                                                               _model
-                                                                  .clientRow2!
+                                                                  .clientRownp1Set!
                                                                   .firstOrNull!
                                                                   .clientPrincipalId!;
                                                           FFAppState()
                                                                   .activeBrand =
                                                               _model
-                                                                  .clientRow2!
+                                                                  .clientRownp1Set!
                                                                   .firstOrNull!
                                                                   .name!;
                                                           safeSetState(() {});

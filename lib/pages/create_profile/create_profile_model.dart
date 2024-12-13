@@ -23,13 +23,13 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
   TextEditingController? phoneTextController;
   String? Function(BuildContext, String?)? phoneTextControllerValidator;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsRow>? clientRow;
+  List<ClientsRow>? clientRowclassic;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsersRow>? updatedUser1;
+  List<UsersRow>? updatedUserclassic;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsNp1Row>? clientRow2;
+  List<ClientsNp1Row>? clientRownp1Set;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsersRow>? updatedUser2;
+  List<UsersRow>? updatedUsernp1set;
 
   @override
   void initState(BuildContext context) {}
