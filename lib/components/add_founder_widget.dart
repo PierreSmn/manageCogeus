@@ -53,7 +53,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
 
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.founderId,
         ),
@@ -147,7 +147,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid1,
                                               ),
@@ -242,7 +242,8 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                 data: {
                                                   'vid1': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -322,7 +323,8 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                 data: {
                                                   'vid1': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,

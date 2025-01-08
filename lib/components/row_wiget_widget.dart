@@ -62,7 +62,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                   future: FFAppState().usersSpeTags(
                     uniqueQueryKey: tagIddItem.toString(),
                     requestFn: () => TagsTable().querySingleRow(
-                      queryFn: (q) => q.eq(
+                      queryFn: (q) => q.eqOrNull(
                         'id',
                         tagIddItem,
                       ),

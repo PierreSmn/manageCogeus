@@ -51,7 +51,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
 
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           FFAppState().integrationEdited,
         ),

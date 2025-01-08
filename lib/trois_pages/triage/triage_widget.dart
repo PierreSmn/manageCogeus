@@ -80,7 +80,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                     Completer<List<NewSubsRow>>()
                                       ..complete(NewSubsTable().queryRows(
                                         queryFn: (q) => q
-                                            .eq(
+                                            .eqOrNull(
                                               'brand_name',
                                               FFAppState().activeBrand,
                                             )
@@ -360,7 +360,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                         'question': listSubsItem.question,
                                                                                       });
                                                                                       await NewSubsTable().delete(
-                                                                                        matchingRows: (rows) => rows.eq(
+                                                                                        matchingRows: (rows) => rows.eqOrNull(
                                                                                           'id',
                                                                                           listSubsItem.id,
                                                                                         ),
@@ -435,7 +435,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           'tagId': FFAppState().tagList,
                                                                                         });
                                                                                         await NewSubsTable().delete(
-                                                                                          matchingRows: (rows) => rows.eq(
+                                                                                          matchingRows: (rows) => rows.eqOrNull(
                                                                                             'id',
                                                                                             listSubsItem.id,
                                                                                           ),

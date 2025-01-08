@@ -64,7 +64,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<LiveFlowsRow>>(
       future: LiveFlowsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.id,
         ),
@@ -680,7 +680,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                           _model.validSlug = false;
                         }
                         _model.matchSlug = await LiveFlowsTable().queryRows(
-                          queryFn: (q) => q.eq(
+                          queryFn: (q) => q.eqOrNull(
                             'slug',
                             _model.slugTextController.text,
                           ),

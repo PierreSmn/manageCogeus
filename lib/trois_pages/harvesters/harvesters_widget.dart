@@ -84,7 +84,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                     Completer<List<LiveFlowsRow>>()
                                       ..complete(LiveFlowsTable().queryRows(
                                         queryFn: (q) => q
-                                            .eq(
+                                            .eqOrNull(
                                               'brand_name',
                                               FFAppState().activeBrand,
                                             )
@@ -195,11 +195,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                         future:
                                                                             WebAppActivationsTable().queryRows(
                                                                           queryFn: (q) => q
-                                                                              .eq(
+                                                                              .eqOrNull(
                                                                                 'brandName',
                                                                                 FFAppState().activeBrand,
                                                                               )
-                                                                              .eq(
+                                                                              .eqOrNull(
                                                                                 'slug',
                                                                                 flowsItem.slug,
                                                                               ),
@@ -381,11 +381,11 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 FutureBuilder<List<SubmittersNewRow>>(
                                                                                   future: SubmittersNewTable().queryRows(
                                                                                     queryFn: (q) => q
-                                                                                        .eq(
+                                                                                        .eqOrNull(
                                                                                           'brand_name',
                                                                                           FFAppState().activeBrand,
                                                                                         )
-                                                                                        .eq(
+                                                                                        .eqOrNull(
                                                                                           'flow_done',
                                                                                           flowsItem.slug,
                                                                                         ),

@@ -49,7 +49,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<TagsRow>>(
       future: TagsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.tagId,
         ),
@@ -171,7 +171,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                     data: {
                       'name': _model.textController.text,
                     },
-                    matchingRows: (rows) => rows.eq(
+                    matchingRows: (rows) => rows.eqOrNull(
                       'id',
                       widget.tagId,
                     ),

@@ -17,11 +17,11 @@ class CreateProfileWidget extends StatefulWidget {
   const CreateProfileWidget({
     super.key,
     this.clid,
-    this.np1,
+    this.type,
   });
 
   final int? clid;
-  final int? np1;
+  final String? type;
 
   @override
   State<CreateProfileWidget> createState() => _CreateProfileWidgetState();
@@ -533,7 +533,8 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                         _model.clientRowclassic =
                                                             await ClientsTable()
                                                                 .queryRows(
-                                                          queryFn: (q) => q.eq(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
                                                             'id',
                                                             widget.clid,
                                                           ),
@@ -563,9 +564,17 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             'last_name': _model
                                                                 .lastNameTextController
                                                                 .text,
+                                                            'account_type': widget
+                                                                            .type !=
+                                                                        null &&
+                                                                    widget.type !=
+                                                                        ''
+                                                                ? widget.type
+                                                                : 'cli',
                                                           },
                                                           matchingRows:
-                                                              (rows) => rows.eq(
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
                                                             'id',
                                                             currentUserUid,
                                                           ),
@@ -611,6 +620,12 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .updatedUserclassic!
                                                                 .firstOrNull!
                                                                 .clientId!;
+                                                        FFAppState().isBrand =
+                                                            true;
+                                                        FFAppState().isBU =
+                                                            false;
+                                                        FFAppState().isLoc =
+                                                            false;
                                                         safeSetState(() {});
                                                         await showDialog(
                                                           context: context,
@@ -652,167 +667,29 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
 
                                                         context.goNamed('home');
                                                       } else {
-                                                        if (widget.np1 !=
-                                                            null) {
-                                                          _model.clientRownp1Set =
-                                                              await ClientsNp1Table()
-                                                                  .queryRows(
-                                                            queryFn: (q) =>
-                                                                q.eq(
-                                                              'id',
-                                                              widget.np1,
-                                                            ),
-                                                          );
-                                                          _model.updatedUsernp1set =
-                                                              await UsersTable()
-                                                                  .update(
-                                                            data: {
-                                                              'company_name': _model
-                                                                  .clientRownp1Set
-                                                                  ?.firstOrNull
-                                                                  ?.name,
-                                                              'site_url': _model
-                                                                  .clientRownp1Set
-                                                                  ?.firstOrNull
-                                                                  ?.siteUrl,
-                                                              'phone_number': _model
-                                                                  .phoneTextController
-                                                                  .text,
-                                                              'first_name': _model
-                                                                  .nameTextController
-                                                                  .text,
-                                                              'last_name': _model
-                                                                  .lastNameTextController
-                                                                  .text,
-                                                              'np1_id': _model
-                                                                  .clientRownp1Set
-                                                                  ?.firstOrNull
-                                                                  ?.id,
-                                                              'client_id': _model
-                                                                  .clientRownp1Set
-                                                                  ?.firstOrNull
-                                                                  ?.clientPrincipalId,
-                                                            },
-                                                            matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
-                                                              'id',
-                                                              currentUserUid,
-                                                            ),
-                                                            returnRows: true,
-                                                          );
-                                                          await SendNotificaitonOfNewUserCall
-                                                              .call(
-                                                            companyName: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.companyName,
-                                                            name: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.firstName,
-                                                            surname: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.lastName,
-                                                            email: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.email,
-                                                            phone: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.phoneNumber,
-                                                            siteUrl: _model
-                                                                .updatedUsernp1set
-                                                                ?.firstOrNull
-                                                                ?.siteUrl,
-                                                          );
+                                                        await UsersTable()
+                                                            .update(
+                                                          data: {
+                                                            'first_name': _model
+                                                                .nameTextController
+                                                                .text,
+                                                            'last_name': _model
+                                                                .lastNameTextController
+                                                                .text,
+                                                            'phone_number': _model
+                                                                .phoneTextController
+                                                                .text,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            currentUserUid,
+                                                          ),
+                                                        );
 
-                                                          FFAppState().isNp1 =
-                                                              true;
-                                                          FFAppState()
-                                                                  .activeNp1 =
-                                                              widget.np1!;
-                                                          FFAppState()
-                                                                  .activeClientID =
-                                                              _model
-                                                                  .clientRownp1Set!
-                                                                  .firstOrNull!
-                                                                  .clientPrincipalId!;
-                                                          FFAppState()
-                                                                  .activeBrand =
-                                                              _model
-                                                                  .clientRownp1Set!
-                                                                  .firstOrNull!
-                                                                  .name!;
-                                                          safeSetState(() {});
-                                                          await showDialog(
-                                                            context: context,
-                                                            builder:
-                                                                (dialogContext) {
-                                                              return Dialog(
-                                                                elevation: 0,
-                                                                insetPadding:
-                                                                    EdgeInsets
-                                                                        .zero,
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                alignment: const AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0)
-                                                                    .resolve(
-                                                                        Directionality.of(
-                                                                            context)),
-                                                                child:
-                                                                    WebViewAware(
-                                                                  child:
-                                                                      GestureDetector(
-                                                                    onTap: () {
-                                                                      FocusScope.of(
-                                                                              dialogContext)
-                                                                          .unfocus();
-                                                                      FocusManager
-                                                                          .instance
-                                                                          .primaryFocus
-                                                                          ?.unfocus();
-                                                                    },
-                                                                    child:
-                                                                        const EditEngagementWidget(),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            },
-                                                          );
-
-                                                          context
-                                                              .goNamed('home');
-                                                        } else {
-                                                          await UsersTable()
-                                                              .update(
-                                                            data: {
-                                                              'first_name': _model
-                                                                  .nameTextController
-                                                                  .text,
-                                                              'last_name': _model
-                                                                  .lastNameTextController
-                                                                  .text,
-                                                              'phone_number': _model
-                                                                  .phoneTextController
-                                                                  .text,
-                                                            },
-                                                            matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
-                                                              'id',
-                                                              currentUserUid,
-                                                            ),
-                                                          );
-
-                                                          context.pushNamed(
-                                                              'createProfileClient');
-                                                        }
+                                                        context.pushNamed(
+                                                            'createProfileClient');
                                                       }
 
                                                       safeSetState(() {});

@@ -42,6 +42,15 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _activeNp1 = prefs.getInt('ff_activeNp1') ?? _activeNp1;
     });
+    _safeInit(() {
+      _isBrand = prefs.getBool('ff_isBrand') ?? _isBrand;
+    });
+    _safeInit(() {
+      _isBU = prefs.getBool('ff_isBU') ?? _isBU;
+    });
+    _safeInit(() {
+      _isLoc = prefs.getBool('ff_isLoc') ?? _isLoc;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -288,6 +297,27 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_activeNp1', value);
   }
 
+  bool _isBrand = false;
+  bool get isBrand => _isBrand;
+  set isBrand(bool value) {
+    _isBrand = value;
+    prefs.setBool('ff_isBrand', value);
+  }
+
+  bool _isBU = false;
+  bool get isBU => _isBU;
+  set isBU(bool value) {
+    _isBU = value;
+    prefs.setBool('ff_isBU', value);
+  }
+
+  bool _isLoc = false;
+  bool get isLoc => _isLoc;
+  set isLoc(bool value) {
+    _isLoc = value;
+    prefs.setBool('ff_isLoc', value);
+  }
+
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();
   Future<List<UsersRow>> userCache({
     String? uniqueQueryKey,
@@ -302,23 +332,6 @@ class FFAppState extends ChangeNotifier {
   void clearUserCacheCache() => _userCacheManager.clear();
   void clearUserCacheCacheKey(String? uniqueKey) =>
       _userCacheManager.clearRequest(uniqueKey);
-
-  final _brandActiveFlowsCacheManager =
-      FutureRequestManager<List<LiveFlowsRow>>();
-  Future<List<LiveFlowsRow>> brandActiveFlowsCache({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<List<LiveFlowsRow>> Function() requestFn,
-  }) =>
-      _brandActiveFlowsCacheManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearBrandActiveFlowsCacheCache() =>
-      _brandActiveFlowsCacheManager.clear();
-  void clearBrandActiveFlowsCacheCacheKey(String? uniqueKey) =>
-      _brandActiveFlowsCacheManager.clearRequest(uniqueKey);
 
   final _usersSpeTagsManager = FutureRequestManager<List<TagsRow>>();
   Future<List<TagsRow>> usersSpeTags({

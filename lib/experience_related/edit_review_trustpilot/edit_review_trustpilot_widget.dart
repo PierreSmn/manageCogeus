@@ -48,7 +48,7 @@ class _EditReviewTrustpilotWidgetState
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           FFAppState().activeClientID,
         ),
@@ -183,7 +183,7 @@ class _EditReviewTrustpilotWidgetState
                                           'review_link':
                                               'https://fr.trustpilot.com/evaluate/${clientIdClientsRow?.siteUrl}',
                                         },
-                                        matchingRows: (rows) => rows.eq(
+                                        matchingRows: (rows) => rows.eqOrNull(
                                           'id',
                                           FFAppState().activeClientID,
                                         ),

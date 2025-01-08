@@ -15,11 +15,13 @@ class SignupWidget extends StatefulWidget {
     required this.brandId,
     this.clid,
     this.np1,
+    required this.type,
   });
 
   final int? brandId;
   final int? clid;
   final int? np1;
+  final String? type;
 
   @override
   State<SignupWidget> createState() => _SignupWidgetState();
@@ -603,9 +605,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           widget.clid,
                                                           ParamType.int,
                                                         ),
-                                                        'np1': serializeParam(
-                                                          widget.np1,
-                                                          ParamType.int,
+                                                        'type': serializeParam(
+                                                          widget.type,
+                                                          ParamType.String,
                                                         ),
                                                       }.withoutNulls,
                                                     );

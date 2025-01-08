@@ -54,7 +54,7 @@ class _AssetsWidgetState extends State<AssetsWidget> {
       future: (_model.requestCompleter ??= Completer<List<HostedSubsRow>>()
             ..complete(HostedSubsTable().queryRows(
               queryFn: (q) => q
-                  .eq(
+                  .eqOrNull(
                     'brand_name',
                     FFAppState().activeBrand,
                   )

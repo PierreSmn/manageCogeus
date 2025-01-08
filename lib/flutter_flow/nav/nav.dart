@@ -18,6 +18,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -75,6 +77,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? const HomeWidget() : const SigninWidget(),
       routes: [
@@ -123,6 +126,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'np1',
               ParamType.int,
             ),
+            type: params.getParam(
+              'type',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -134,9 +141,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'clid',
               ParamType.int,
             ),
-            np1: params.getParam(
-              'np1',
-              ParamType.int,
+            type: params.getParam(
+              'type',
+              ParamType.String,
             ),
           ),
         ),
@@ -261,6 +268,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/experiences',
           requireAuth: true,
           builder: (context, params) => const ExperiencesWidget(),
+        ),
+        FFRoute(
+          name: 'recontact',
+          path: '/recontact',
+          requireAuth: true,
+          builder: (context, params) => const RecontactWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

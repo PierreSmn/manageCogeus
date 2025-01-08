@@ -54,7 +54,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
       future: (_model.requestCompleter ??= Completer<List<HostedSubsRow>>()
             ..complete(HostedSubsTable().queryRows(
               queryFn: (q) => q
-                  .eq(
+                  .eqOrNull(
                     'brand_name',
                     FFAppState().activeBrand,
                   )
@@ -310,9 +310,8 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                   _model.clientInfos =
                                                                       await ClientsTable()
                                                                           .queryRows(
-                                                                    queryFn:
-                                                                        (q) => q
-                                                                            .eq(
+                                                                    queryFn: (q) =>
+                                                                        q.eqOrNull(
                                                                       'id',
                                                                       FFAppState()
                                                                           .activeClientID,

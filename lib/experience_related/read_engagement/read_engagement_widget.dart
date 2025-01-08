@@ -53,7 +53,7 @@ class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
     return FutureBuilder<List<ClientsRow>>(
       future: (_model.requestCompleter ??= Completer<List<ClientsRow>>()
             ..complete(ClientsTable().querySingleRow(
-              queryFn: (q) => q.eq(
+              queryFn: (q) => q.eqOrNull(
                 'id',
                 FFAppState().activeClientID,
               ),

@@ -47,7 +47,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
     return FutureBuilder<List<HostedSubsRow>>(
       future: HostedSubsTable().queryRows(
         queryFn: (q) => q
-            .eq(
+            .eqOrNull(
               'brand_name',
               FFAppState().activeBrand,
             )

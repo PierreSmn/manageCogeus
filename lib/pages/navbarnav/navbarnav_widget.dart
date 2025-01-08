@@ -1,7 +1,9 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/choose_clientor_np/choose_clientor_np_widget.dart';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'navbarnav_model.dart';
@@ -158,13 +160,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
-                                    child: Icon(
-                                      Icons.home_outlined,
+                                    child: FaIcon(
+                                      FontAwesomeIcons.home,
                                       color: widget.selectedIndex == 1
                                           ? FlutterFlowTheme.of(context).primary
                                           : FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
-                                      size: 24.0,
+                                      size: 20.0,
                                     ),
                                   ),
                                   Text(
@@ -206,88 +208,15 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      if (!FFAppState().isNp1)
-                        MouseRegion(
-                          opaque: false,
-                          cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          onEnter: ((event) async {
-                            safeSetState(
-                                () => _model.mouseRegionHovered2 = true);
-                          }),
-                          onExit: ((event) async {
-                            safeSetState(
-                                () => _model.mouseRegionHovered2 = false);
-                          }),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed('engagement');
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: widget.selectedIndex == 3
-                                    ? FlutterFlowTheme.of(context)
-                                        .cogeusNavSelected
-                                    : FlutterFlowTheme.of(context).revoWhite,
-                                borderRadius: BorderRadius.circular(10.0),
-                                border: Border.all(
-                                  color: _model.mouseRegionHovered2
-                                      ? FlutterFlowTheme.of(context)
-                                          .cogeusHoverPurple
-                                      : FlutterFlowTheme.of(context).revoWhite,
-                                  width: 2.0,
-                                ),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Icon(
-                                        Icons.people,
-                                        color: widget.selectedIndex == 3
-                                            ? FlutterFlowTheme.of(context)
-                                                .primary
-                                            : FlutterFlowTheme.of(context)
-                                                .revoCardTextColor,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                    Text(
-                                      'Engagement',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            color: widget.selectedIndex == 3
-                                                ? FlutterFlowTheme.of(context)
-                                                    .primary
-                                                : FlutterFlowTheme.of(context)
-                                                    .revoCardTextColor,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
                         onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                          safeSetState(() => _model.mouseRegionHovered2 = true);
                         }),
                         onExit: ((event) async {
                           safeSetState(
-                              () => _model.mouseRegionHovered3 = false);
+                              () => _model.mouseRegionHovered2 = false);
                         }),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -305,7 +234,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   : FlutterFlowTheme.of(context).revoWhite,
                               borderRadius: BorderRadius.circular(10.0),
                               border: Border.all(
-                                color: _model.mouseRegionHovered3
+                                color: _model.mouseRegionHovered2
                                     ? FlutterFlowTheme.of(context)
                                         .cogeusHoverPurple
                                     : FlutterFlowTheme.of(context).revoWhite,
@@ -330,12 +259,82 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Experiences',
+                                    'Retours',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Manrope',
                                           color: widget.selectedIndex == 6
+                                              ? FlutterFlowTheme.of(context)
+                                                  .primary
+                                              : FlutterFlowTheme.of(context)
+                                                  .revoCardTextColor,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      MouseRegion(
+                        opaque: false,
+                        cursor: MouseCursor.defer ?? MouseCursor.defer,
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered3 = false);
+                        }),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('recontact');
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: widget.selectedIndex == 5
+                                  ? FlutterFlowTheme.of(context)
+                                      .cogeusNavSelected
+                                  : FlutterFlowTheme.of(context).revoWhite,
+                              borderRadius: BorderRadius.circular(10.0),
+                              border: Border.all(
+                                color: _model.mouseRegionHovered3
+                                    ? FlutterFlowTheme.of(context)
+                                        .cogeusHoverPurple
+                                    : FlutterFlowTheme.of(context).revoWhite,
+                                width: 2.0,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Icon(
+                                      Icons.phone_enabled,
+                                      color: widget.selectedIndex == 5
+                                          ? FlutterFlowTheme.of(context).primary
+                                          : FlutterFlowTheme.of(context)
+                                              .revoCardTextColor,
+                                      size: 20.0,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Recontact',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: widget.selectedIndex == 5
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
@@ -585,233 +584,161 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                   ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).revoWhite,
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      MouseRegion(
-                        opaque: false,
-                        cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered7 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered7 = false);
-                        }),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('widgets');
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: widget.selectedIndex == 7
-                                  ? FlutterFlowTheme.of(context)
-                                      .cogeusNavSelected
-                                  : FlutterFlowTheme.of(context).revoWhite,
-                              borderRadius: BorderRadius.circular(10.0),
-                              border: Border.all(
-                                color: _model.mouseRegionHovered7
-                                    ? FlutterFlowTheme.of(context)
-                                        .cogeusHoverPurple
-                                    : FlutterFlowTheme.of(context).revoWhite,
-                                width: 2.0,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Icon(
-                                      Icons.checklist_rtl_rounded,
-                                      color: widget.selectedIndex == 7
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .revoCardTextColor,
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Widgets',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 7
-                                              ? FlutterFlowTheme.of(context)
-                                                  .primary
-                                              : FlutterFlowTheme.of(context)
-                                                  .revoCardTextColor,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      MouseRegion(
-                        opaque: false,
-                        cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered8 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered8 = false);
-                        }),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('assets');
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: widget.selectedIndex == 5
-                                  ? FlutterFlowTheme.of(context)
-                                      .cogeusNavSelected
-                                  : FlutterFlowTheme.of(context).revoWhite,
-                              borderRadius: BorderRadius.circular(10.0),
-                              border: Border.all(
-                                color: _model.mouseRegionHovered8
-                                    ? FlutterFlowTheme.of(context)
-                                        .cogeusHoverPurple
-                                    : FlutterFlowTheme.of(context).revoWhite,
-                                width: 2.0,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Icon(
-                                      Icons.filter,
-                                      color: widget.selectedIndex == 5
-                                          ? FlutterFlowTheme.of(context).primary
-                                          : FlutterFlowTheme.of(context)
-                                              .revoCardTextColor,
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Assets',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Manrope',
-                                          color: widget.selectedIndex == 5
-                                              ? FlutterFlowTheme.of(context)
-                                                  .primary
-                                              : FlutterFlowTheme.of(context)
-                                                  .revoCardTextColor,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ]
-                        .divide(const SizedBox(height: 12.0))
-                        .addToStart(const SizedBox(height: 12.0))
-                        .addToEnd(const SizedBox(height: 16.0)),
+              if (!FFAppState().isNp1)
+                Container(
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).revoWhite,
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).revoWhite,
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          InkWell(
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        MouseRegion(
+                          opaque: false,
+                          cursor: MouseCursor.defer ?? MouseCursor.defer,
+                          onEnter: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered7 = true);
+                          }),
+                          onExit: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered7 = false);
+                          }),
+                          child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('infos');
+                              context.pushNamed('engagement');
                             },
                             child: Container(
-                              width: 40.0,
-                              height: 40.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
+                              decoration: BoxDecoration(
+                                color: widget.selectedIndex == 3
+                                    ? FlutterFlowTheme.of(context)
+                                        .cogeusNavSelected
+                                    : FlutterFlowTheme.of(context).revoWhite,
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                  color: _model.mouseRegionHovered7
+                                      ? FlutterFlowTheme.of(context)
+                                          .cogeusHoverPurple
+                                      : FlutterFlowTheme.of(context).revoWhite,
+                                  width: 2.0,
+                                ),
                               ),
-                              child: Image.network(
-                                'https://picsum.photos/seed/857/600',
-                                fit: BoxFit.cover,
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Icon(
+                                        Icons.settings_rounded,
+                                        color: widget.selectedIndex == 3
+                                            ? FlutterFlowTheme.of(context)
+                                                .primary
+                                            : FlutterFlowTheme.of(context)
+                                                .revoCardTextColor,
+                                        size: 22.0,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Reglages',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            color: widget.selectedIndex == 3
+                                                ? FlutterFlowTheme.of(context)
+                                                    .primary
+                                                : FlutterFlowTheme.of(context)
+                                                    .revoCardTextColor,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Builder(
-                              builder: (context) => InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (dialogContext) {
-                                      return Dialog(
-                                        elevation: 0,
-                                        insetPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                        child: const WebViewAware(
-                                          child: SizedBox(
-                                            height: 450.0,
-                                            width: 250.0,
-                                            child: ChooseClientorNpWidget(),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
+                        ),
+                      ]
+                          .divide(const SizedBox(height: 12.0))
+                          .addToStart(const SizedBox(height: 12.0))
+                          .addToEnd(const SizedBox(height: 16.0)),
+                    ),
+                  ),
+                ),
+              Builder(
+                builder: (context) => InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await showAlignedDialog(
+                      context: context,
+                      isGlobal: false,
+                      avoidOverflow: true,
+                      targetAnchor: const AlignmentDirectional(0.0, 0.0)
+                          .resolve(Directionality.of(context)),
+                      followerAnchor: const AlignmentDirectional(0.0, 0.0)
+                          .resolve(Directionality.of(context)),
+                      builder: (dialogContext) {
+                        return const Material(
+                          color: Colors.transparent,
+                          child: WebViewAware(
+                            child: SizedBox(
+                              height: 330.0,
+                              width: 216.0,
+                              child: ChooseClientorNpWidget(),
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).revoWhite,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Image.network(
+                                  'https://picsum.photos/seed/857/600',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Expanded(
                                 child: Text(
-                                  'Mon compte',
+                                  valueOrDefault<String>(
+                                    FFAppState().activeBrand,
+                                    'Mon compte',
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -823,14 +750,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                       ),
                                 ),
                               ),
-                            ),
+                            ].divide(const SizedBox(width: 16.0)),
                           ),
-                        ].divide(const SizedBox(width: 16.0)),
+                        ]
+                            .divide(const SizedBox(height: 24.0))
+                            .addToStart(const SizedBox(height: 16.0))
+                            .addToEnd(const SizedBox(height: 18.0)),
                       ),
-                    ]
-                        .divide(const SizedBox(height: 24.0))
-                        .addToStart(const SizedBox(height: 16.0))
-                        .addToEnd(const SizedBox(height: 18.0)),
+                    ),
                   ),
                 ),
               ),

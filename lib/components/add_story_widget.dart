@@ -61,7 +61,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
 
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           _model.integrationEdited?.id,
         ),
@@ -278,7 +278,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             FutureBuilder<List<HostedSubsRow>>(
                                               future: HostedSubsTable()
                                                   .querySingleRow(
-                                                queryFn: (q) => q.eq(
+                                                queryFn: (q) => q.eqOrNull(
                                                   'id',
                                                   containerIntegrationsRow
                                                       ?.vid1,
@@ -380,7 +380,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -469,7 +469,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -646,7 +646,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             FutureBuilder<List<HostedSubsRow>>(
                                               future: HostedSubsTable()
                                                   .querySingleRow(
-                                                queryFn: (q) => q.eq(
+                                                queryFn: (q) => q.eqOrNull(
                                                   'id',
                                                   containerIntegrationsRow
                                                       ?.vid2,
@@ -747,7 +747,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -835,7 +835,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -1012,7 +1012,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             FutureBuilder<List<HostedSubsRow>>(
                                               future: HostedSubsTable()
                                                   .querySingleRow(
-                                                queryFn: (q) => q.eq(
+                                                queryFn: (q) => q.eqOrNull(
                                                   'id',
                                                   containerIntegrationsRow
                                                       ?.vid3,
@@ -1113,7 +1113,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -1201,7 +1201,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                         FFAppState().choiceID,
                                                   },
                                                   matchingRows: (rows) =>
-                                                      rows.eq(
+                                                      rows.eqOrNull(
                                                     'id',
                                                     FFAppState()
                                                         .integrationEdited,
@@ -1370,7 +1370,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                         'title2': _model.textController3.text,
                                         'title3': _model.textController4.text,
                                       },
-                                      matchingRows: (rows) => rows.eq(
+                                      matchingRows: (rows) => rows.eqOrNull(
                                         'id',
                                         FFAppState().integrationEdited,
                                       ),

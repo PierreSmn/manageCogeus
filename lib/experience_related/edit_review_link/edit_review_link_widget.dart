@@ -354,7 +354,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                         'review_link':
                                             _model.textController2.text,
                                       },
-                                      matchingRows: (rows) => rows.eq(
+                                      matchingRows: (rows) => rows.eqOrNull(
                                         'id',
                                         widget.id,
                                       ),

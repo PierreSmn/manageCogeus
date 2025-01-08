@@ -48,7 +48,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().queryRows(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'uuid',
           currentUserUid,
         ),
@@ -73,7 +73,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
           decoration: const BoxDecoration(),
           child: FutureBuilder<List<HostedSubsRow>>(
             future: HostedSubsTable().querySingleRow(
-              queryFn: (q) => q.eq(
+              queryFn: (q) => q.eqOrNull(
                 'id',
                 widget.assetID,
               ),
@@ -157,7 +157,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     await HostedSubsTable().delete(
-                                      matchingRows: (rows) => rows.eq(
+                                      matchingRows: (rows) => rows.eqOrNull(
                                         'id',
                                         containerHostedSubsRow?.id,
                                       ),

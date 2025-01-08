@@ -52,7 +52,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
 
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           _model.integrationEdited?.id,
         ),
@@ -265,7 +265,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid1,
                                               ),
@@ -360,7 +360,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid1': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -440,7 +441,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid1': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -514,7 +516,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid2,
                                               ),
@@ -608,7 +610,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid2': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -687,7 +690,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid2': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -761,7 +765,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid3,
                                               ),
@@ -855,7 +859,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid3': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -934,7 +939,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid3': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -1008,7 +1014,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid4,
                                               ),
@@ -1102,7 +1108,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid4': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -1181,7 +1188,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid4': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -1255,7 +1263,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                           FutureBuilder<List<HostedSubsRow>>(
                                             future: HostedSubsTable()
                                                 .querySingleRow(
-                                              queryFn: (q) => q.eq(
+                                              queryFn: (q) => q.eqOrNull(
                                                 'id',
                                                 containerIntegrationsRow?.vid5,
                                               ),
@@ -1349,7 +1357,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid5': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,
@@ -1428,7 +1437,8 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                 data: {
                                                   'vid5': FFAppState().choiceID,
                                                 },
-                                                matchingRows: (rows) => rows.eq(
+                                                matchingRows: (rows) =>
+                                                    rows.eqOrNull(
                                                   'id',
                                                   FFAppState()
                                                       .integrationEdited,

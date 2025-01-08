@@ -227,7 +227,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                               ),
                                                                               FutureBuilder<List<TagsRow>>(
                                                                                 future: TagsTable().queryRows(
-                                                                                  queryFn: (q) => q.eq(
+                                                                                  queryFn: (q) => q.eqOrNull(
                                                                                     'brand_name',
                                                                                     FFAppState().activeBrand,
                                                                                   ),
@@ -653,7 +653,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                       data: {
                                                                                                         'tagId': FFAppState().tagList,
                                                                                                       },
-                                                                                                      matchingRows: (rows) => rows.eq(
+                                                                                                      matchingRows: (rows) => rows.eqOrNull(
                                                                                                         'id',
                                                                                                         getJsonField(
                                                                                                           validItemItem,
@@ -855,7 +855,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                 ).toString(),
                                                                                               });
                                                                                               await ValidSubsTable().delete(
-                                                                                                matchingRows: (rows) => rows.eq(
+                                                                                                matchingRows: (rows) => rows.eqOrNull(
                                                                                                   'id',
                                                                                                   getJsonField(
                                                                                                     validItemItem,
@@ -1559,7 +1559,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                     data: {
                                                                                                       'tagId': FFAppState().tagList,
                                                                                                     },
-                                                                                                    matchingRows: (rows) => rows.eq(
+                                                                                                    matchingRows: (rows) => rows.eqOrNull(
                                                                                                       'id',
                                                                                                       getJsonField(
                                                                                                         validItemItem,
@@ -1731,7 +1731,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                 ).toString(),
                                                                                               });
                                                                                               await ValidSubsTable().delete(
-                                                                                                matchingRows: (rows) => rows.eq(
+                                                                                                matchingRows: (rows) => rows.eqOrNull(
                                                                                                   'id',
                                                                                                   getJsonField(
                                                                                                     validItemItem,

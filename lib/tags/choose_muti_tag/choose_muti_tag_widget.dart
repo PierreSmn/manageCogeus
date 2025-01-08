@@ -51,7 +51,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
     return FutureBuilder<List<TagsRow>>(
       future: (_model.requestCompleter ??= Completer<List<TagsRow>>()
             ..complete(TagsTable().queryRows(
-              queryFn: (q) => q.eq(
+              queryFn: (q) => q.eqOrNull(
                 'brand_name',
                 FFAppState().activeBrand,
               ),

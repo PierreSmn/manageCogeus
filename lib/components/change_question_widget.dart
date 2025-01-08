@@ -396,7 +396,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                       data: {
                         'expla2': _model.colorTitleTextController.text,
                       },
-                      matchingRows: (rows) => rows.eq(
+                      matchingRows: (rows) => rows.eqOrNull(
                         'id',
                         widget.id,
                       ),

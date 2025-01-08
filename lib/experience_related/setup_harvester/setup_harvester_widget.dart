@@ -50,7 +50,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           FFAppState().activeClientID,
         ),
@@ -128,7 +128,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                             FutureBuilder<List<LiveFlowsRow>>(
                               future: LiveFlowsTable().queryRows(
                                 queryFn: (q) => q
-                                    .eq(
+                                    .eqOrNull(
                                       'brand_name',
                                       FFAppState().activeBrand,
                                     )
@@ -191,7 +191,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                                           containerVarItem.slug,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget.id,
                                                     ),

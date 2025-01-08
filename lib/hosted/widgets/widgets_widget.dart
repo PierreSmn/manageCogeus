@@ -74,7 +74,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                 children: [
                   FutureBuilder<List<HostedSubsRow>>(
                     future: HostedSubsTable().queryRows(
-                      queryFn: (q) => q.eq(
+                      queryFn: (q) => q.eqOrNull(
                         'brand_name',
                         FFAppState().activeBrand,
                       ),
@@ -116,7 +116,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                         List<IntegrationsRow>>()
                                       ..complete(IntegrationsTable().queryRows(
                                         queryFn: (q) => q
-                                            .eq(
+                                            .eqOrNull(
                                               'ownerBrand',
                                               FFAppState().activeBrand,
                                             )
@@ -479,7 +479,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.title1,
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid1,
                                                                                                           ),
@@ -541,7 +541,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.title2,
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid2,
                                                                                                           ),
@@ -603,7 +603,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.title3,
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid3,
                                                                                                           ),
@@ -678,7 +678,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                     future: _model.hostedCache(
                                                                                                       uniqueQueryKey: usersIntegrationsItem.title1,
                                                                                                       requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                        queryFn: (q) => q.eq(
+                                                                                                        queryFn: (q) => q.eqOrNull(
                                                                                                           'id',
                                                                                                           usersIntegrationsItem.vid1,
                                                                                                         ),
@@ -734,7 +734,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.vid1?.toString(),
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid1,
                                                                                                           ),
@@ -774,7 +774,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.vid2?.toString(),
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid2,
                                                                                                           ),
@@ -814,7 +814,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.vid3?.toString(),
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid3,
                                                                                                           ),
@@ -854,7 +854,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.vid4?.toString(),
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid4,
                                                                                                           ),
@@ -894,7 +894,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                       future: _model.hostedCache(
                                                                                                         uniqueQueryKey: usersIntegrationsItem.vid5?.toString(),
                                                                                                         requestFn: () => HostedSubsTable().querySingleRow(
-                                                                                                          queryFn: (q) => q.eq(
+                                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                                             'id',
                                                                                                             usersIntegrationsItem.vid5,
                                                                                                           ),

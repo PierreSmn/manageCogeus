@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'choose_clientor_np_widget.dart' show ChooseClientorNpWidget;
+import 'b_uchoice_widget.dart' show BUchoiceWidget;
 import 'package:flutter/material.dart';
 
-class ChooseClientorNpModel extends FlutterFlowModel<ChooseClientorNpWidget> {
+class BUchoiceModel extends FlutterFlowModel<BUchoiceWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for MouseRegion widget.
