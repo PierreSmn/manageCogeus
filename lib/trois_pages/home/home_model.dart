@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import 'home_widget.dart' show HomeWidget;
@@ -9,10 +8,6 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
 
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<UsersRow>? userRow21;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsRow>? clientRow2;
 
   @override
   void initState(BuildContext context) {

@@ -53,7 +53,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           FFAppState().activeClientID,
         ),

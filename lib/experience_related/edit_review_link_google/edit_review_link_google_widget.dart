@@ -279,7 +279,7 @@ class _EditReviewLinkGoogleWidgetState
                                         'review_link':
                                             'https://search.google.com/local/writereview?placeid=${_model.textController.text}',
                                       },
-                                      matchingRows: (rows) => rows.eq(
+                                      matchingRows: (rows) => rows.eqOrNull(
                                         'id',
                                         FFAppState().activeClientID,
                                       ),

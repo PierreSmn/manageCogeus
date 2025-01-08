@@ -30,3 +30,4 @@ export '/pages/create_profile_client/create_profile_client_widget.dart'
 export '/trois_pages/experience/experience_widget.dart' show ExperienceWidget;
 export '/trois_pages/experiences/experiences_widget.dart'
     show ExperiencesWidget;
+export '/trois_pages/recontact/recontact_widget.dart' show RecontactWidget;

@@ -138,7 +138,7 @@ class _ChooseTitleHarvesterWidgetState
                 data: {
                   'title': _model.textController.text,
                 },
-                matchingRows: (rows) => rows.eq(
+                matchingRows: (rows) => rows.eqOrNull(
                   'id',
                   widget.harbesterID,
                 ),

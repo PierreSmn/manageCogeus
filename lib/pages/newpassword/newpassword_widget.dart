@@ -81,7 +81,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
 
     return FutureBuilder<List<UsersRow>>(
       future: UsersTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           currentUserUid,
         ),
@@ -241,7 +241,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                           return const Iterable<
                                                               String>.empty();
                                                         }
-                                                        return ['Option 1']
+                                                        return <String>[]
                                                             .where((option) {
                                                           final lowercaseOption =
                                                               option

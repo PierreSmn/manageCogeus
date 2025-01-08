@@ -51,7 +51,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
     return FutureBuilder<List<ClientsRow>>(
       future: (_model.requestCompleter ??= Completer<List<ClientsRow>>()
             ..complete(ClientsTable().querySingleRow(
-              queryFn: (q) => q.eq(
+              queryFn: (q) => q.eqOrNull(
                 'id',
                 FFAppState().activeClientID,
               ),
@@ -248,7 +248,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -440,7 +440,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -655,7 +655,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -847,7 +847,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -1062,7 +1062,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -1254,7 +1254,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -1469,7 +1469,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,
@@ -1661,7 +1661,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                               .themaEdited,
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           FFAppState()
                                                               .activeClientID,

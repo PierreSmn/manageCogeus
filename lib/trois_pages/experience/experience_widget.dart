@@ -118,7 +118,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                         Expanded(
                           child: FutureBuilder<List<ExperiencesRow>>(
                             future: ExperiencesTable().querySingleRow(
-                              queryFn: (q) => q.eq(
+                              queryFn: (q) => q.eqOrNull(
                                 'id',
                                 widget.xid,
                               ),
@@ -477,7 +477,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.userRow = await UsersTable().queryRows(
-                                                                                      queryFn: (q) => q.eq(
+                                                                                      queryFn: (q) => q.eqOrNull(
                                                                                         'id',
                                                                                         currentUserUid,
                                                                                       ),
@@ -994,7 +994,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Text(
-                                                                                  'Recontactage',
+                                                                                  'Demande de contact',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Manrope',
                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,

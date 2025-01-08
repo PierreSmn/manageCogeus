@@ -484,7 +484,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                               'tagId': FFAppState().tagList,
                                                                                             });
                                                                                             await NewSubsTable().delete(
-                                                                                              matchingRows: (rows) => rows.eq(
+                                                                                              matchingRows: (rows) => rows.eqOrNull(
                                                                                                 'id',
                                                                                                 getJsonField(
                                                                                                   validItemItem,
@@ -567,7 +567,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             ).toString(),
                                                                                           });
                                                                                           await NewSubsTable().delete(
-                                                                                            matchingRows: (rows) => rows.eq(
+                                                                                            matchingRows: (rows) => rows.eqOrNull(
                                                                                               'id',
                                                                                               getJsonField(
                                                                                                 validItemItem,

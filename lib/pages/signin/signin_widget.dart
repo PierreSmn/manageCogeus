@@ -335,66 +335,34 @@ class _SigninWidgetState extends State<SigninWidget>
                                                       return;
                                                     }
 
-                                                    _model.userInfoscopy =
+                                                    _model.userInfosCopy =
                                                         await UsersTable()
                                                             .queryRows(
-                                                      queryFn: (q) => q.eq(
+                                                      queryFn: (q) =>
+                                                          q.eqOrNull(
                                                         'id',
                                                         currentUserUid,
                                                       ),
                                                     );
-                                                    if ((_model
-                                                                .userInfoscopy
-                                                                ?.firstOrNull
-                                                                ?.np1Id !=
-                                                            null) &&
-                                                        (_model
-                                                                .userInfoscopy
-                                                                ?.firstOrNull
-                                                                ?.np1Id !=
-                                                            0)) {
-                                                      FFAppState().activeSub =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .activeSub!;
-                                                      FFAppState().isNp1 = true;
-                                                      FFAppState().activeNp1 =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .np1Id!;
-                                                      FFAppState().activeBrand =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .companyName!;
-                                                      FFAppState()
-                                                              .activeClientID =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .clientId!;
-                                                    } else {
-                                                      FFAppState().activeBrand =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .companyName!;
-                                                      FFAppState()
-                                                              .activeClientID =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .clientId!;
-                                                      FFAppState().activeSub =
-                                                          _model
-                                                              .userInfoscopy!
-                                                              .firstOrNull!
-                                                              .activeSub!;
-                                                      FFAppState().isNp1 =
-                                                          false;
-                                                    }
+                                                    FFAppState().activeSub =
+                                                        _model
+                                                            .userInfosCopy!
+                                                            .firstOrNull!
+                                                            .activeSub!;
+                                                    FFAppState()
+                                                            .activeClientID =
+                                                        _model
+                                                            .userInfosCopy!
+                                                            .firstOrNull!
+                                                            .clientId!;
+                                                    FFAppState().activeBrand =
+                                                        _model
+                                                            .userInfosCopy!
+                                                            .firstOrNull!
+                                                            .companyName!;
+                                                    FFAppState().isBrand = true;
+                                                    FFAppState().isBU = false;
+                                                    FFAppState().isLoc = false;
 
                                                     context.goNamedAuth(
                                                       'home',
@@ -619,47 +587,26 @@ class _SigninWidgetState extends State<SigninWidget>
 
                                           _model.userInfos =
                                               await UsersTable().queryRows(
-                                            queryFn: (q) => q.eq(
+                                            queryFn: (q) => q.eqOrNull(
                                               'id',
                                               currentUserUid,
                                             ),
                                           );
-                                          if ((_model.userInfos?.firstOrNull
-                                                      ?.np1Id !=
-                                                  null) &&
-                                              (_model.userInfos?.firstOrNull
-                                                      ?.np1Id !=
-                                                  0)) {
-                                            FFAppState().activeSub = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .activeSub!;
-                                            FFAppState().isNp1 = true;
-                                            FFAppState().activeNp1 = _model
-                                                .userInfos!.firstOrNull!.np1Id!;
-                                            FFAppState().activeClientID = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .clientId!;
-                                            FFAppState().activeBrand = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .companyName!;
-                                          } else {
-                                            FFAppState().activeBrand = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .companyName!;
-                                            FFAppState().activeClientID = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .clientId!;
-                                            FFAppState().activeSub = _model
-                                                .userInfos!
-                                                .firstOrNull!
-                                                .activeSub!;
-                                            FFAppState().isNp1 = false;
-                                          }
+                                          FFAppState().activeSub = _model
+                                              .userInfos!
+                                              .firstOrNull!
+                                              .activeSub!;
+                                          FFAppState().activeClientID = _model
+                                              .userInfos!
+                                              .firstOrNull!
+                                              .clientId!;
+                                          FFAppState().activeBrand = _model
+                                              .userInfos!
+                                              .firstOrNull!
+                                              .companyName!;
+                                          FFAppState().isBrand = true;
+                                          FFAppState().isBU = false;
+                                          FFAppState().isLoc = false;
 
                                           context.goNamedAuth(
                                             'home',

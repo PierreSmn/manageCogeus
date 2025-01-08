@@ -95,7 +95,7 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                   data: {
                     'up_to_date': true,
                   },
-                  matchingRows: (rows) => rows.eq(
+                  matchingRows: (rows) => rows.eqOrNull(
                     'id',
                     currentUserUid,
                   ),

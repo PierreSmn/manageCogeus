@@ -49,7 +49,7 @@ class _ModifyVideoTitleWidgetState extends State<ModifyVideoTitleWidget> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<HostedSubsRow>>(
       future: HostedSubsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.assetId,
         ),
@@ -168,7 +168,7 @@ class _ModifyVideoTitleWidgetState extends State<ModifyVideoTitleWidget> {
                     data: {
                       'title': _model.textController.text,
                     },
-                    matchingRows: (rows) => rows.eq(
+                    matchingRows: (rows) => rows.eqOrNull(
                       'id',
                       widget.assetId,
                     ),

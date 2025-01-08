@@ -47,7 +47,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
     return FutureBuilder<List<HostedSubsRow>>(
       future: HostedSubsTable().queryRows(
         queryFn: (q) => q
-            .eq(
+            .eqOrNull(
               'brand_name',
               FFAppState().activeBrand,
             )

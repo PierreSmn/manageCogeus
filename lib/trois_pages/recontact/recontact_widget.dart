@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/empty_recontact_widget.dart';
 import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,25 +10,25 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
-import 'experiences_model.dart';
-export 'experiences_model.dart';
+import 'recontact_model.dart';
+export 'recontact_model.dart';
 
-class ExperiencesWidget extends StatefulWidget {
-  const ExperiencesWidget({super.key});
+class RecontactWidget extends StatefulWidget {
+  const RecontactWidget({super.key});
 
   @override
-  State<ExperiencesWidget> createState() => _ExperiencesWidgetState();
+  State<RecontactWidget> createState() => _RecontactWidgetState();
 }
 
-class _ExperiencesWidgetState extends State<ExperiencesWidget> {
-  late ExperiencesModel _model;
+class _RecontactWidgetState extends State<RecontactWidget> {
+  late RecontactModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ExperiencesModel());
+    _model = createModel(context, () => RecontactModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -71,7 +72,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'experiences',
+        title: 'recontact',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -96,7 +97,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
                           child: const NavbarnavWidget(
-                            selectedIndex: 6,
+                            selectedIndex: 5,
                           ),
                         ),
                         Expanded(
@@ -107,8 +108,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                   (FFAppState().isLoc == false)) {
                                 return Container(
                                   decoration: const BoxDecoration(),
-                                  child: FutureBuilder<List<ExperiencesRow>>(
-                                    future: ExperiencesTable().queryRows(
+                                  child: FutureBuilder<List<RecontactRow>>(
+                                    future: RecontactTable().queryRows(
                                       queryFn: (q) => q
                                           .eqOrNull(
                                             'client_id',
@@ -132,8 +133,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           ),
                                         );
                                       }
-                                      List<ExperiencesRow>
-                                          containerExperiencesRowList =
+                                      List<RecontactRow>
+                                          containerRecontactRowList =
                                           snapshot.data!;
 
                                       return Container(
@@ -240,7 +241,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Experiences Globale -',
+                                                                                    'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -305,17 +306,6 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Container(
-                                                                                            width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
-                                                                                            child: Text(
-                                                                                              'Score',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
                                                                                             width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
@@ -327,10 +317,21 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           Container(
-                                                                                            width: 150.0,
+                                                                                            width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Raison',
+                                                                                              'Prénom',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 250.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -341,7 +342,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             width: 150.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Redirection',
+                                                                                              'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -353,13 +354,16 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
-                                                                                        final experience = containerExperiencesRowList.toList();
+                                                                                        final recontactages = containerRecontactRowList.toList();
+                                                                                        if (recontactages.isEmpty) {
+                                                                                          return const EmptyRecontactWidget();
+                                                                                        }
 
                                                                                         return SingleChildScrollView(
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
-                                                                                            children: List.generate(experience.length, (experienceIndex) {
-                                                                                              final experienceItem = experience[experienceIndex];
+                                                                                            children: List.generate(recontactages.length, (recontactagesIndex) {
+                                                                                              final recontactagesItem = recontactages[recontactagesIndex];
                                                                                               return InkWell(
                                                                                                 splashColor: Colors.transparent,
                                                                                                 focusColor: Colors.transparent,
@@ -367,7 +371,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                 highlightColor: Colors.transparent,
                                                                                                 onTap: () async {
                                                                                                   _model.showExperience = true;
-                                                                                                  _model.xid = experienceItem.id;
+                                                                                                  _model.xid = recontactagesItem.expId;
                                                                                                   _model.t1 = containerClientsRow?.theme1;
                                                                                                   _model.t2 = containerClientsRow?.theme2;
                                                                                                   _model.t3 = containerClientsRow?.theme3;
@@ -393,52 +397,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     children: [
                                                                                                       Container(
-                                                                                                        width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          children: [
-                                                                                                            Container(
-                                                                                                              width: 30.0,
-                                                                                                              height: 30.0,
-                                                                                                              decoration: BoxDecoration(
-                                                                                                                color: () {
-                                                                                                                  if (experienceItem.nps! > 8) {
-                                                                                                                    return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                  } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
-                                                                                                                  } else {
-                                                                                                                    return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                  }
-                                                                                                                }(),
-                                                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                                              ),
-                                                                                                              child: Column(
-                                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                children: [
-                                                                                                                  Text(
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      experienceItem.nps?.toString(),
-                                                                                                                      'unknown',
-                                                                                                                    ),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Manrope',
-                                                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ],
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ],
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Container(
                                                                                                         width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          dateTimeFormat("d/M H:mm", experienceItem.createdAt),
+                                                                                                          dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -446,11 +408,25 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Container(
-                                                                                                        width: 150.0,
+                                                                                                        width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
-                                                                                                            experienceItem.theme,
+                                                                                                            recontactagesItem.firstName,
+                                                                                                            '-',
+                                                                                                          ),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Manrope',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 250.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.email != null && recontactagesItem.email != '' ? recontactagesItem.email : '-',
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -463,17 +439,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         width: 150.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          () {
-                                                                                                            if (experienceItem.reviewDone == true) {
-                                                                                                              return 'Avis';
-                                                                                                            } else if (experienceItem.videoDone == true) {
-                                                                                                              return 'Vidéo';
-                                                                                                            } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                              return 'Feedback';
-                                                                                                            } else {
-                                                                                                              return '-';
-                                                                                                            }
-                                                                                                          }(),
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
+                                                                                                            '-',
+                                                                                                          ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -509,7 +478,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             width:
                                                                                 350.0,
                                                                             height:
-                                                                                560.0,
+                                                                                620.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -530,6 +499,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                   Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
+                                                                                      borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
                                                                                       buttonSize: 40.0,
                                                                                       icon: Icon(
@@ -554,7 +524,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -583,8 +553,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                   (FFAppState().isLoc == false)) {
                                 return Container(
                                   decoration: const BoxDecoration(),
-                                  child: FutureBuilder<List<ExperiencesRow>>(
-                                    future: ExperiencesTable().queryRows(
+                                  child: FutureBuilder<List<RecontactRow>>(
+                                    future: RecontactTable().queryRows(
                                       queryFn: (q) => q
                                           .eqOrNull(
                                             'bu_id',
@@ -608,8 +578,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           ),
                                         );
                                       }
-                                      List<ExperiencesRow>
-                                          containerExperiencesRowList =
+                                      List<RecontactRow>
+                                          containerRecontactRowList =
                                           snapshot.data!;
 
                                       return Container(
@@ -716,7 +686,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Experiences -',
+                                                                                    'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -781,17 +751,6 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Container(
-                                                                                            width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
-                                                                                            child: Text(
-                                                                                              'Score',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
                                                                                             width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
@@ -803,10 +762,21 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           Container(
-                                                                                            width: 150.0,
+                                                                                            width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Raison',
+                                                                                              'Prénom',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 250.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -817,18 +787,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             width: 150.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Redirection',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
-                                                                                            width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
-                                                                                            child: Text(
-                                                                                              'Recontact',
+                                                                                              'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -840,13 +799,16 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
-                                                                                        final experience = containerExperiencesRowList.toList();
+                                                                                        final recontactages = containerRecontactRowList.toList();
+                                                                                        if (recontactages.isEmpty) {
+                                                                                          return const EmptyRecontactWidget();
+                                                                                        }
 
                                                                                         return SingleChildScrollView(
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
-                                                                                            children: List.generate(experience.length, (experienceIndex) {
-                                                                                              final experienceItem = experience[experienceIndex];
+                                                                                            children: List.generate(recontactages.length, (recontactagesIndex) {
+                                                                                              final recontactagesItem = recontactages[recontactagesIndex];
                                                                                               return InkWell(
                                                                                                 splashColor: Colors.transparent,
                                                                                                 focusColor: Colors.transparent,
@@ -854,7 +816,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                 highlightColor: Colors.transparent,
                                                                                                 onTap: () async {
                                                                                                   _model.showExperience = true;
-                                                                                                  _model.xid = experienceItem.id;
+                                                                                                  _model.xid = recontactagesItem.expId;
                                                                                                   _model.t1 = containerClientsRow?.theme1;
                                                                                                   _model.t2 = containerClientsRow?.theme2;
                                                                                                   _model.t3 = containerClientsRow?.theme3;
@@ -880,52 +842,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     children: [
                                                                                                       Container(
-                                                                                                        width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          children: [
-                                                                                                            Container(
-                                                                                                              width: 30.0,
-                                                                                                              height: 30.0,
-                                                                                                              decoration: BoxDecoration(
-                                                                                                                color: () {
-                                                                                                                  if (experienceItem.nps! > 8) {
-                                                                                                                    return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                  } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
-                                                                                                                  } else {
-                                                                                                                    return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                  }
-                                                                                                                }(),
-                                                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                                              ),
-                                                                                                              child: Column(
-                                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                children: [
-                                                                                                                  Text(
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      experienceItem.nps?.toString(),
-                                                                                                                      'unknown',
-                                                                                                                    ),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Manrope',
-                                                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ],
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ],
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Container(
                                                                                                         width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          dateTimeFormat("d/M H:mm", experienceItem.createdAt),
+                                                                                                          dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -933,11 +853,25 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Container(
-                                                                                                        width: 150.0,
+                                                                                                        width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
-                                                                                                            experienceItem.theme,
+                                                                                                            recontactagesItem.firstName,
+                                                                                                            '-',
+                                                                                                          ),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Manrope',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 250.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.email != null && recontactagesItem.email != '' ? recontactagesItem.email : '-',
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -950,28 +884,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         width: 150.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          () {
-                                                                                                            if (experienceItem.reviewDone == true) {
-                                                                                                              return 'Avis';
-                                                                                                            } else if (experienceItem.videoDone == true) {
-                                                                                                              return 'Vidéo';
-                                                                                                            } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                              return 'Feedback';
-                                                                                                            } else {
-                                                                                                              return '-';
-                                                                                                            }
-                                                                                                          }(),
-                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
-                                                                                                                letterSpacing: 0.0,
-                                                                                                              ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Container(
-                                                                                                        width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
-                                                                                                        child: Text(
-                                                                                                          experienceItem.wantsContact == true ? 'Demande' : '-',
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
+                                                                                                            '-',
+                                                                                                          ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -1080,8 +996,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                               } else {
                                 return Container(
                                   decoration: const BoxDecoration(),
-                                  child: FutureBuilder<List<ExperiencesRow>>(
-                                    future: ExperiencesTable().queryRows(
+                                  child: FutureBuilder<List<RecontactRow>>(
+                                    future: RecontactTable().queryRows(
                                       queryFn: (q) => q
                                           .eqOrNull(
                                             'loc_id',
@@ -1105,8 +1021,8 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           ),
                                         );
                                       }
-                                      List<ExperiencesRow>
-                                          containerExperiencesRowList =
+                                      List<RecontactRow>
+                                          containerRecontactRowList =
                                           snapshot.data!;
 
                                       return Container(
@@ -1213,7 +1129,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Experiences Globale -',
+                                                                                    'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Manrope',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -1278,17 +1194,6 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Container(
-                                                                                            width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
-                                                                                            child: Text(
-                                                                                              'Score',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
                                                                                             width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
@@ -1300,10 +1205,21 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           Container(
-                                                                                            width: 150.0,
+                                                                                            width: 100.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Raison',
+                                                                                              'Prénom',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 250.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -1314,7 +1230,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                             width: 150.0,
                                                                                             decoration: const BoxDecoration(),
                                                                                             child: Text(
-                                                                                              'Redirection',
+                                                                                              'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Manrope',
                                                                                                     letterSpacing: 0.0,
@@ -1326,13 +1242,16 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
-                                                                                        final experience = containerExperiencesRowList.toList();
+                                                                                        final recontactages = containerRecontactRowList.toList();
+                                                                                        if (recontactages.isEmpty) {
+                                                                                          return const EmptyRecontactWidget();
+                                                                                        }
 
                                                                                         return SingleChildScrollView(
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
-                                                                                            children: List.generate(experience.length, (experienceIndex) {
-                                                                                              final experienceItem = experience[experienceIndex];
+                                                                                            children: List.generate(recontactages.length, (recontactagesIndex) {
+                                                                                              final recontactagesItem = recontactages[recontactagesIndex];
                                                                                               return InkWell(
                                                                                                 splashColor: Colors.transparent,
                                                                                                 focusColor: Colors.transparent,
@@ -1340,7 +1259,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                 highlightColor: Colors.transparent,
                                                                                                 onTap: () async {
                                                                                                   _model.showExperience = true;
-                                                                                                  _model.xid = experienceItem.id;
+                                                                                                  _model.xid = recontactagesItem.expId;
                                                                                                   _model.t1 = containerClientsRow?.theme1;
                                                                                                   _model.t2 = containerClientsRow?.theme2;
                                                                                                   _model.t3 = containerClientsRow?.theme3;
@@ -1366,52 +1285,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     children: [
                                                                                                       Container(
-                                                                                                        width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          children: [
-                                                                                                            Container(
-                                                                                                              width: 30.0,
-                                                                                                              height: 30.0,
-                                                                                                              decoration: BoxDecoration(
-                                                                                                                color: () {
-                                                                                                                  if (experienceItem.nps! > 8) {
-                                                                                                                    return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                  } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
-                                                                                                                  } else {
-                                                                                                                    return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                  }
-                                                                                                                }(),
-                                                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                                              ),
-                                                                                                              child: Column(
-                                                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                children: [
-                                                                                                                  Text(
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      experienceItem.nps?.toString(),
-                                                                                                                      'unknown',
-                                                                                                                    ),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'Manrope',
-                                                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ],
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ],
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                      Container(
                                                                                                         width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          dateTimeFormat("d/M H:mm", experienceItem.createdAt),
+                                                                                                          dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -1419,11 +1296,25 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Container(
-                                                                                                        width: 150.0,
+                                                                                                        width: 100.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
-                                                                                                            experienceItem.theme,
+                                                                                                            recontactagesItem.firstName,
+                                                                                                            '-',
+                                                                                                          ),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'Manrope',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 250.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.email != null && recontactagesItem.email != '' ? recontactagesItem.email : '-',
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1436,17 +1327,10 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                         width: 150.0,
                                                                                                         decoration: const BoxDecoration(),
                                                                                                         child: Text(
-                                                                                                          () {
-                                                                                                            if (experienceItem.reviewDone == true) {
-                                                                                                              return 'Avis';
-                                                                                                            } else if (experienceItem.videoDone == true) {
-                                                                                                              return 'Vidéo';
-                                                                                                            } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                              return 'Feedback';
-                                                                                                            } else {
-                                                                                                              return '-';
-                                                                                                            }
-                                                                                                          }(),
+                                                                                                          valueOrDefault<String>(
+                                                                                                            recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
+                                                                                                            '-',
+                                                                                                          ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
@@ -1482,7 +1366,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             width:
                                                                                 350.0,
                                                                             height:
-                                                                                560.0,
+                                                                                620.0,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -1528,7 +1412,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),

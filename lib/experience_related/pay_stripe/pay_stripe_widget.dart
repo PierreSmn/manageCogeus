@@ -109,7 +109,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.clientRow = await ClientsTable().queryRows(
-                          queryFn: (q) => q.eq(
+                          queryFn: (q) => q.eqOrNull(
                             'id',
                             FFAppState().activeClientID,
                           ),

@@ -465,7 +465,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                             ).toString(),
                                                                                           });
                                                                                           await RejectedSubsTable().delete(
-                                                                                            matchingRows: (rows) => rows.eq(
+                                                                                            matchingRows: (rows) => rows.eqOrNull(
                                                                                               'id',
                                                                                               getJsonField(
                                                                                                 validItemItem,

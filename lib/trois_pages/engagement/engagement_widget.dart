@@ -99,7 +99,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                     future: (_model.requestCompleter ??=
                             Completer<List<ClientsRow>>()
                               ..complete(ClientsTable().querySingleRow(
-                                queryFn: (q) => q.eq(
+                                queryFn: (q) => q.eqOrNull(
                                   'id',
                                   FFAppState().activeClientID,
                                 ),
@@ -409,7 +409,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                     builder: (context) => FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         _model.userRow = await UsersTable().queryRows(
-                                                                                          queryFn: (q) => q.eq(
+                                                                                          queryFn: (q) => q.eqOrNull(
                                                                                             'id',
                                                                                             currentUserUid,
                                                                                           ),
@@ -650,7 +650,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                               data: {
                                                                                                                 'color': '#1c4494',
                                                                                                               },
-                                                                                                              matchingRows: (rows) => rows.eq(
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
                                                                                                                 'id',
                                                                                                                 FFAppState().activeClientID,
                                                                                                               ),
@@ -682,7 +682,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                               data: {
                                                                                                                 'color': '#000000',
                                                                                                               },
-                                                                                                              matchingRows: (rows) => rows.eq(
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
                                                                                                                 'id',
                                                                                                                 FFAppState().activeClientID,
                                                                                                               ),
@@ -714,7 +714,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                               data: {
                                                                                                                 'color': '#666666',
                                                                                                               },
-                                                                                                              matchingRows: (rows) => rows.eq(
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
                                                                                                                 'id',
                                                                                                                 FFAppState().activeClientID,
                                                                                                               ),
@@ -746,7 +746,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                               data: {
                                                                                                                 'color': '#52b58e',
                                                                                                               },
-                                                                                                              matchingRows: (rows) => rows.eq(
+                                                                                                              matchingRows: (rows) => rows.eqOrNull(
                                                                                                                 'id',
                                                                                                                 FFAppState().activeClientID,
                                                                                                               ),
@@ -824,7 +824,7 @@ class _EngagementWidgetState extends State<EngagementWidget> {
                                                                                                                 data: {
                                                                                                                   'color': _model.textController.text,
                                                                                                                 },
-                                                                                                                matchingRows: (rows) => rows.eq(
+                                                                                                                matchingRows: (rows) => rows.eqOrNull(
                                                                                                                   'id',
                                                                                                                   FFAppState().activeClientID,
                                                                                                                 ),

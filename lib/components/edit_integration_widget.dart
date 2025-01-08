@@ -57,7 +57,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
 
     return FutureBuilder<List<IntegrationsRow>>(
       future: IntegrationsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.integrationEditing,
         ),
@@ -237,7 +237,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   List<HostedSubsRow>>(
                                                 future: HostedSubsTable()
                                                     .querySingleRow(
-                                                  queryFn: (q) => q.eq(
+                                                  queryFn: (q) => q.eqOrNull(
                                                     'id',
                                                     containerIntegrationsRow
                                                         ?.vid1,
@@ -340,7 +340,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -430,7 +430,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -517,7 +517,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   List<HostedSubsRow>>(
                                                 future: HostedSubsTable()
                                                     .querySingleRow(
-                                                  queryFn: (q) => q.eq(
+                                                  queryFn: (q) => q.eqOrNull(
                                                     'id',
                                                     containerIntegrationsRow
                                                         ?.vid2,
@@ -619,7 +619,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -708,7 +708,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -795,7 +795,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   List<HostedSubsRow>>(
                                                 future: HostedSubsTable()
                                                     .querySingleRow(
-                                                  queryFn: (q) => q.eq(
+                                                  queryFn: (q) => q.eqOrNull(
                                                     'id',
                                                     containerIntegrationsRow
                                                         ?.vid3,
@@ -897,7 +897,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -986,7 +986,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           FFAppState().choiceID,
                                                     },
                                                     matchingRows: (rows) =>
-                                                        rows.eq(
+                                                        rows.eqOrNull(
                                                       'id',
                                                       widget
                                                           .integrationEditing,
@@ -1086,7 +1086,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         future:
                                                             HostedSubsTable()
                                                                 .querySingleRow(
-                                                          queryFn: (q) => q.eq(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
                                                             'id',
                                                             containerIntegrationsRow
                                                                 ?.vid4,
@@ -1203,8 +1204,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                       .choiceID,
                                                             },
                                                             matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
+                                                                (rows) => rows
+                                                                    .eqOrNull(
                                                               'id',
                                                               widget
                                                                   .integrationEditing,
@@ -1321,8 +1322,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                       .choiceID,
                                                             },
                                                             matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
+                                                                (rows) => rows
+                                                                    .eqOrNull(
                                                               'id',
                                                               widget
                                                                   .integrationEditing,
@@ -1433,7 +1434,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                         future:
                                                             HostedSubsTable()
                                                                 .querySingleRow(
-                                                          queryFn: (q) => q.eq(
+                                                          queryFn: (q) =>
+                                                              q.eqOrNull(
                                                             'id',
                                                             containerIntegrationsRow
                                                                 ?.vid5,
@@ -1550,8 +1552,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                       .choiceID,
                                                             },
                                                             matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
+                                                                (rows) => rows
+                                                                    .eqOrNull(
                                                               'id',
                                                               widget
                                                                   .integrationEditing,
@@ -1668,8 +1670,8 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                       .choiceID,
                                                             },
                                                             matchingRows:
-                                                                (rows) =>
-                                                                    rows.eq(
+                                                                (rows) => rows
+                                                                    .eqOrNull(
                                                               'id',
                                                               widget
                                                                   .integrationEditing,
@@ -1744,7 +1746,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                       FFButtonWidget(
                         onPressed: () async {
                           await IntegrationsTable().delete(
-                            matchingRows: (rows) => rows.eq(
+                            matchingRows: (rows) => rows.eqOrNull(
                               'id',
                               widget.integrationEditing,
                             ),
@@ -1783,7 +1785,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                               data: {
                                 'name': _model.inteNameTextController.text,
                               },
-                              matchingRows: (rows) => rows.eq(
+                              matchingRows: (rows) => rows.eqOrNull(
                                 'id',
                                 widget.integrationEditing,
                               ),

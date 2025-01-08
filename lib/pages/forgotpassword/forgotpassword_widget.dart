@@ -93,7 +93,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
   Widget build(BuildContext context) {
     return FutureBuilder<List<UsersRow>>(
       future: UsersTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           currentUserUid,
         ),

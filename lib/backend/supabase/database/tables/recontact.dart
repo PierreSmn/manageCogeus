@@ -1,18 +1,18 @@
 import '../database.dart';
 
-class ExperiencesTable extends SupabaseTable<ExperiencesRow> {
+class RecontactTable extends SupabaseTable<RecontactRow> {
   @override
-  String get tableName => 'experiences';
+  String get tableName => 'recontact';
 
   @override
-  ExperiencesRow createRow(Map<String, dynamic> data) => ExperiencesRow(data);
+  RecontactRow createRow(Map<String, dynamic> data) => RecontactRow(data);
 }
 
-class ExperiencesRow extends SupabaseDataRow {
-  ExperiencesRow(super.data);
+class RecontactRow extends SupabaseDataRow {
+  RecontactRow(super.data);
 
   @override
-  SupabaseTable get table => ExperiencesTable();
+  SupabaseTable get table => RecontactTable();
 
   int get id => getField<int>('id')!;
   set id(int value) => setField<int>('id', value);
@@ -87,6 +87,9 @@ class ExperiencesRow extends SupabaseDataRow {
 
   int? get np2Id => getField<int>('np2_id');
   set np2Id(int? value) => setField<int>('np2_id', value);
+
+  int? get expId => getField<int>('exp_id');
+  set expId(int? value) => setField<int>('exp_id', value);
 
   int? get buId => getField<int>('bu_id');
   set buId(int? value) => setField<int>('bu_id', value);

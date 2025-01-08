@@ -26,10 +26,6 @@ class CreateProfileModel extends FlutterFlowModel<CreateProfileWidget> {
   List<ClientsRow>? clientRowclassic;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<UsersRow>? updatedUserclassic;
-  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
-  List<ClientsNp1Row>? clientRownp1Set;
-  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
-  List<UsersRow>? updatedUsernp1set;
 
   @override
   void initState(BuildContext context) {}

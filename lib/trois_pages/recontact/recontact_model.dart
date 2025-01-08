@@ -1,10 +1,10 @@
 import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
-import 'experiences_widget.dart' show ExperiencesWidget;
+import 'recontact_widget.dart' show RecontactWidget;
 import 'package:flutter/material.dart';
 
-class ExperiencesModel extends FlutterFlowModel<ExperiencesWidget> {
+class RecontactModel extends FlutterFlowModel<RecontactWidget> {
   ///  Local state fields for this page.
 
   bool showExperience = false;

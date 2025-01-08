@@ -433,7 +433,7 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                               .toString(),
                                                         },
                                                         matchingRows: (rows) =>
-                                                            rows.eq(
+                                                            rows.eqOrNull(
                                                           'id',
                                                           currentUserUid,
                                                         ),

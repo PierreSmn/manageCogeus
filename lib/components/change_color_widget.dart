@@ -108,7 +108,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
   Widget build(BuildContext context) {
     return FutureBuilder<List<LiveFlowsRow>>(
       future: LiveFlowsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.id,
         ),
@@ -1157,7 +1157,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                               'gift_name': _model.titleTextController.text,
                               'colorBG': _model.colorBGTextController.text,
                             },
-                            matchingRows: (rows) => rows.eq(
+                            matchingRows: (rows) => rows.eqOrNull(
                               'id',
                               widget.id,
                             ),

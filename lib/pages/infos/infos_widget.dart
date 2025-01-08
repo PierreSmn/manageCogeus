@@ -43,7 +43,7 @@ class _InfosWidgetState extends State<InfosWidget> {
         uniqueQueryKey: currentUserUid,
         overrideCache: loggedIn,
         requestFn: () => UsersTable().querySingleRow(
-          queryFn: (q) => q.eq(
+          queryFn: (q) => q.eqOrNull(
             'id',
             currentUserUid,
           ),
@@ -159,21 +159,6 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            100.0),
-                                                                    child: Image
-                                                                        .network(
-                                                                      'https://images.unsplash.com/photo-1525498128493-380d1990a112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw5fHxicmFuZHxlbnwwfHx8fDE3MDk3NDQxMDF8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                                      width:
-                                                                          200.0,
-                                                                      height:
-                                                                          200.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
                                                                   Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -398,103 +383,147 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               16.0),
                                                                 ),
                                                               ),
-                                                            ],
+                                                              Padding(
+                                                                padding: const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        100.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Archives',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Manrope',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      children:
+                                                                          [
+                                                                        FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            context.pushNamed('widgets');
+                                                                          },
+                                                                          text:
+                                                                              'Widget',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                const Color(0xFFEEE8FC),
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 0.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(16.0),
+                                                                          ),
+                                                                        ),
+                                                                        FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            context.pushNamed('assets');
+                                                                          },
+                                                                          text:
+                                                                              'Asset',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                const Color(0xFFEEE8FC),
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Manrope',
+                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 0.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(16.0),
+                                                                          ),
+                                                                        ),
+                                                                      ].divide(const SizedBox(
+                                                                              width: 16.0)),
+                                                                    ),
+                                                                  ].divide(const SizedBox(
+                                                                      height:
+                                                                          16.0)),
+                                                                ),
+                                                              ),
+                                                            ].divide(const SizedBox(
+                                                                height: 24.0)),
                                                           ),
                                                         ),
                                                       ),
                                                     ),
-                                                    Flexible(
-                                                      child: Container(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.9,
-                                                        decoration:
-                                                            const BoxDecoration(),
-                                                      ),
-                                                    ),
-                                                    Flexible(
-                                                      child:
-                                                          SingleChildScrollView(
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            if (infosUsersRow
-                                                                        ?.companyName !=
-                                                                    null &&
-                                                                infosUsersRow
-                                                                        ?.companyName !=
-                                                                    '')
-                                                              FutureBuilder<
-                                                                  List<
-                                                                      LiveFlowsRow>>(
-                                                                future: FFAppState()
-                                                                    .brandActiveFlowsCache(
-                                                                  uniqueQueryKey:
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                    infosUsersRow
-                                                                        ?.companyName,
-                                                                    'null',
-                                                                  ),
-                                                                  overrideCache:
-                                                                      loggedIn,
-                                                                  requestFn: () =>
-                                                                      LiveFlowsTable()
-                                                                          .queryRows(
-                                                                    queryFn:
-                                                                        (q) => q
-                                                                            .eq(
-                                                                      'brand_name',
-                                                                      infosUsersRow
-                                                                          ?.companyName,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            SpinKitRing(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          size:
-                                                                              50.0,
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  List<LiveFlowsRow>
-                                                                      containerLiveFlowsRowList =
-                                                                      snapshot
-                                                                          .data!;
-
-                                                                  return Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.9,
-                                                                    decoration:
-                                                                        const BoxDecoration(),
-                                                                  );
-                                                                },
-                                                              ),
-                                                            if (infosUsersRow
-                                                                        ?.companyName ==
-                                                                    null ||
-                                                                infosUsersRow
-                                                                        ?.companyName ==
-                                                                    '')
+                                                    if (infosUsersRow
+                                                                ?.companyName ==
+                                                            null ||
+                                                        infosUsersRow
+                                                                ?.companyName ==
+                                                            '')
+                                                      Flexible(
+                                                        child:
+                                                            SingleChildScrollView(
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
                                                               Text(
                                                                 'Set a Company in your profile !',
                                                                 style: FlutterFlowTheme.of(
@@ -505,19 +534,13 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           'Manrope',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .jo5,
+                                                                          .primaryText,
                                                                       fontSize:
                                                                           42.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
                                                               ),
-                                                            if (infosUsersRow
-                                                                        ?.companyName ==
-                                                                    null ||
-                                                                infosUsersRow
-                                                                        ?.companyName ==
-                                                                    '')
                                                               FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
@@ -569,10 +592,11 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               8.0),
                                                                 ),
                                                               ),
-                                                          ],
+                                                            ].divide(const SizedBox(
+                                                                height: 12.0)),
+                                                          ),
                                                         ),
                                                       ),
-                                                    ),
                                                   ].divide(
                                                       const SizedBox(height: 34.0)),
                                                 ),

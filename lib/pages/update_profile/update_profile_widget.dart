@@ -77,7 +77,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
   Widget build(BuildContext context) {
     return FutureBuilder<List<UsersRow>>(
       future: UsersTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           currentUserUid,
         ),
@@ -532,67 +532,30 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .text,
                                                           },
                                                           matchingRows:
-                                                              (rows) => rows.eq(
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
                                                             'id',
                                                             currentUserUid,
                                                           ),
                                                           returnRows: true,
                                                         );
-                                                        if ((_model
-                                                                    .userRow
-                                                                    ?.firstOrNull
-                                                                    ?.np1Id !=
-                                                                null) &&
-                                                            (_model
-                                                                    .userRow
-                                                                    ?.firstOrNull
-                                                                    ?.np1Id !=
-                                                                0)) {
-                                                          FFAppState()
-                                                                  .activeSub =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .activeSub!;
-                                                          FFAppState().isNp1 =
-                                                              true;
-                                                          FFAppState()
-                                                                  .activeNp1 =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .np1Id!;
-                                                          FFAppState()
-                                                                  .activeClientID =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .clientId!;
-                                                          FFAppState()
-                                                                  .activeBrand =
-                                                              'Super';
-                                                        } else {
-                                                          FFAppState()
-                                                                  .activeBrand =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .companyName!;
-                                                          FFAppState()
-                                                                  .activeClientID =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .clientId!;
-                                                          FFAppState()
-                                                                  .activeSub =
-                                                              _model
-                                                                  .userRow!
-                                                                  .firstOrNull!
-                                                                  .activeSub!;
-                                                          FFAppState().isNp1 =
-                                                              false;
-                                                        }
+                                                        FFAppState().activeSub =
+                                                            _model
+                                                                .userRow!
+                                                                .firstOrNull!
+                                                                .activeSub!;
+                                                        FFAppState()
+                                                                .activeClientID =
+                                                            _model
+                                                                .userRow!
+                                                                .firstOrNull!
+                                                                .clientId!;
+                                                        FFAppState()
+                                                                .activeBrand =
+                                                            updateProfileUsersRow!
+                                                                .companyName!;
+                                                        FFAppState().isBrand =
+                                                            true;
 
                                                         context
                                                             .pushNamed('home');
