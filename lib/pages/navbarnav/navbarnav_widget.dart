@@ -418,7 +418,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     ),
                                   ),
                                   Text(
-                                    'Harvesters',
+                                    'Vidéos',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -650,7 +650,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Reglages',
+                                      'Parametres',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
