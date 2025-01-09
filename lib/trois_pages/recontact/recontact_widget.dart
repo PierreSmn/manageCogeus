@@ -349,6 +349,17 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Recontacté ?',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
                                                                                         ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
@@ -447,6 +458,59 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Theme(
+                                                                                                              data: ThemeData(
+                                                                                                                checkboxTheme: CheckboxThemeData(
+                                                                                                                  visualDensity: VisualDensity.compact,
+                                                                                                                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                                                                                  shape: RoundedRectangleBorder(
+                                                                                                                    borderRadius: BorderRadius.circular(4.0),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                                unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                              ),
+                                                                                                              child: Checkbox(
+                                                                                                                value: _model.checkboxValueMap1[recontactagesItem] ??= recontactagesItem.contacted!,
+                                                                                                                onChanged: (newValue) async {
+                                                                                                                  safeSetState(() => _model.checkboxValueMap1[recontactagesItem] = newValue!);
+                                                                                                                  if (newValue!) {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': true,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  } else {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': false,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                side: BorderSide(
+                                                                                                                  width: 2,
+                                                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                                                ),
+                                                                                                                activeColor: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ],
                                                                                                         ),
                                                                                                       ),
                                                                                                     ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
@@ -794,6 +858,17 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Recontacté ?',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
                                                                                         ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
@@ -892,6 +967,59 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Theme(
+                                                                                                              data: ThemeData(
+                                                                                                                checkboxTheme: CheckboxThemeData(
+                                                                                                                  visualDensity: VisualDensity.compact,
+                                                                                                                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                                                                                  shape: RoundedRectangleBorder(
+                                                                                                                    borderRadius: BorderRadius.circular(4.0),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                                unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                              ),
+                                                                                                              child: Checkbox(
+                                                                                                                value: _model.checkboxValueMap2[recontactagesItem] ??= recontactagesItem.contacted!,
+                                                                                                                onChanged: (newValue) async {
+                                                                                                                  safeSetState(() => _model.checkboxValueMap2[recontactagesItem] = newValue!);
+                                                                                                                  if (newValue!) {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': true,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  } else {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': false,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                side: BorderSide(
+                                                                                                                  width: 2,
+                                                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                                                ),
+                                                                                                                activeColor: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ],
                                                                                                         ),
                                                                                                       ),
                                                                                                     ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
@@ -1237,6 +1365,17 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: const BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Recontacté ?',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Manrope',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
                                                                                         ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
@@ -1335,6 +1474,59 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                                 fontFamily: 'Manrope',
                                                                                                                 letterSpacing: 0.0,
                                                                                                               ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Theme(
+                                                                                                              data: ThemeData(
+                                                                                                                checkboxTheme: CheckboxThemeData(
+                                                                                                                  visualDensity: VisualDensity.compact,
+                                                                                                                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                                                                                                  shape: RoundedRectangleBorder(
+                                                                                                                    borderRadius: BorderRadius.circular(4.0),
+                                                                                                                  ),
+                                                                                                                ),
+                                                                                                                unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
+                                                                                                              ),
+                                                                                                              child: Checkbox(
+                                                                                                                value: _model.checkboxValueMap3[recontactagesItem] ??= recontactagesItem.contacted!,
+                                                                                                                onChanged: (newValue) async {
+                                                                                                                  safeSetState(() => _model.checkboxValueMap3[recontactagesItem] = newValue!);
+                                                                                                                  if (newValue!) {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': true,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  } else {
+                                                                                                                    await RecontactTable().update(
+                                                                                                                      data: {
+                                                                                                                        'contacted': false,
+                                                                                                                      },
+                                                                                                                      matchingRows: (rows) => rows.eqOrNull(
+                                                                                                                        'id',
+                                                                                                                        recontactagesItem.id,
+                                                                                                                      ),
+                                                                                                                    );
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                side: BorderSide(
+                                                                                                                  width: 2,
+                                                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                                                ),
+                                                                                                                activeColor: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                              ),
+                                                                                                            ),
+                                                                                                          ],
                                                                                                         ),
                                                                                                       ),
                                                                                                     ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
