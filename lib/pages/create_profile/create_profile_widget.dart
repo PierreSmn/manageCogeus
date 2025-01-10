@@ -590,6 +590,13 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               currentUserUid,
                                                             ),
                                                           );
+                                                          FFAppState().isBrand =
+                                                              false;
+                                                          FFAppState().isBU =
+                                                              true;
+                                                          FFAppState().isLoc =
+                                                              false;
+                                                          safeSetState(() {});
                                                         } else if (widget
                                                                 .type ==
                                                             'loc') {
@@ -608,6 +615,21 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                               currentUserUid,
                                                             ),
                                                           );
+                                                          FFAppState().isBrand =
+                                                              false;
+                                                          FFAppState().isBU =
+                                                              false;
+                                                          FFAppState().isLoc =
+                                                              true;
+                                                          safeSetState(() {});
+                                                        } else {
+                                                          FFAppState().isBrand =
+                                                              true;
+                                                          FFAppState().isBU =
+                                                              false;
+                                                          FFAppState().isLoc =
+                                                              false;
+                                                          safeSetState(() {});
                                                         }
 
                                                         await SendNotificaitonOfNewUserCall
@@ -650,12 +672,6 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                                 .updatedUserclassic!
                                                                 .firstOrNull!
                                                                 .clientId!;
-                                                        FFAppState().isBrand =
-                                                            true;
-                                                        FFAppState().isBU =
-                                                            false;
-                                                        FFAppState().isLoc =
-                                                            false;
                                                         safeSetState(() {});
                                                         await showDialog(
                                                           context: context,
