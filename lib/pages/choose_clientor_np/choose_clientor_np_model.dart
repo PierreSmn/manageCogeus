@@ -6,7 +6,9 @@ class ChooseClientorNpModel extends FlutterFlowModel<ChooseClientorNpWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered = false;
+  bool mouseRegionHovered1 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered2 = false;
 
   @override
   void initState(BuildContext context) {}

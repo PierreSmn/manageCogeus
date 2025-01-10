@@ -335,7 +335,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                       return;
                                                     }
 
-                                                    _model.userInfosCopy =
+                                                    _model.userInfosTextField =
                                                         await UsersTable()
                                                             .queryRows(
                                                       queryFn: (q) =>
@@ -346,23 +346,44 @@ class _SigninWidgetState extends State<SigninWidget>
                                                     );
                                                     FFAppState().activeSub =
                                                         _model
-                                                            .userInfosCopy!
+                                                            .userInfosTextField!
                                                             .firstOrNull!
                                                             .activeSub!;
                                                     FFAppState()
                                                             .activeClientID =
                                                         _model
-                                                            .userInfosCopy!
+                                                            .userInfosTextField!
                                                             .firstOrNull!
                                                             .clientId!;
                                                     FFAppState().activeBrand =
                                                         _model
-                                                            .userInfosCopy!
+                                                            .userInfosTextField!
                                                             .firstOrNull!
                                                             .companyName!;
-                                                    FFAppState().isBrand = true;
-                                                    FFAppState().isBU = false;
-                                                    FFAppState().isLoc = false;
+                                                    if (_model
+                                                        .userInfosTextField!
+                                                        .firstOrNull!
+                                                        .limitedToBu!) {
+                                                      FFAppState().isBrand =
+                                                          false;
+                                                      FFAppState().isBU = true;
+                                                      FFAppState().isLoc =
+                                                          false;
+                                                    } else if (_model
+                                                        .userInfosTextField!
+                                                        .firstOrNull!
+                                                        .limitedToLoc!) {
+                                                      FFAppState().isBrand =
+                                                          false;
+                                                      FFAppState().isBU = false;
+                                                      FFAppState().isLoc = true;
+                                                    } else {
+                                                      FFAppState().isBrand =
+                                                          true;
+                                                      FFAppState().isBU = false;
+                                                      FFAppState().isLoc =
+                                                          false;
+                                                    }
 
                                                     context.goNamedAuth(
                                                       'home',
@@ -604,9 +625,21 @@ class _SigninWidgetState extends State<SigninWidget>
                                               .userInfos!
                                               .firstOrNull!
                                               .companyName!;
-                                          FFAppState().isBrand = true;
-                                          FFAppState().isBU = false;
-                                          FFAppState().isLoc = false;
+                                          if (_model.userInfos!.firstOrNull!
+                                              .limitedToBu!) {
+                                            FFAppState().isBrand = false;
+                                            FFAppState().isBU = true;
+                                            FFAppState().isLoc = false;
+                                          } else if (_model.userInfos!
+                                              .firstOrNull!.limitedToLoc!) {
+                                            FFAppState().isBrand = false;
+                                            FFAppState().isBU = false;
+                                            FFAppState().isLoc = true;
+                                          } else {
+                                            FFAppState().isBrand = true;
+                                            FFAppState().isBU = false;
+                                            FFAppState().isLoc = false;
+                                          }
 
                                           context.goNamedAuth(
                                             'home',

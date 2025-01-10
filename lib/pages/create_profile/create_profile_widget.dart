@@ -564,13 +564,6 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                             'last_name': _model
                                                                 .lastNameTextController
                                                                 .text,
-                                                            'account_type': widget
-                                                                            .type !=
-                                                                        null &&
-                                                                    widget.type !=
-                                                                        ''
-                                                                ? widget.type
-                                                                : 'cli',
                                                           },
                                                           matchingRows:
                                                               (rows) =>
@@ -580,6 +573,43 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget>
                                                           ),
                                                           returnRows: true,
                                                         );
+                                                        if (widget.type ==
+                                                            'bu') {
+                                                          await UsersTable()
+                                                              .update(
+                                                            data: {
+                                                              'limitedToBu':
+                                                                  true,
+                                                              'limitedToLoc':
+                                                                  false,
+                                                            },
+                                                            matchingRows:
+                                                                (rows) => rows
+                                                                    .eqOrNull(
+                                                              'id',
+                                                              currentUserUid,
+                                                            ),
+                                                          );
+                                                        } else if (widget
+                                                                .type ==
+                                                            'loc') {
+                                                          await UsersTable()
+                                                              .update(
+                                                            data: {
+                                                              'limitedToBu':
+                                                                  false,
+                                                              'limitedToLoc':
+                                                                  true,
+                                                            },
+                                                            matchingRows:
+                                                                (rows) => rows
+                                                                    .eqOrNull(
+                                                              'id',
+                                                              currentUserUid,
+                                                            ),
+                                                          );
+                                                        }
+
                                                         await SendNotificaitonOfNewUserCall
                                                             .call(
                                                           companyName: _model

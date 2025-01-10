@@ -142,275 +142,636 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                       ),
                     ),
                   ),
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FutureBuilder<List<ClientsRow>>(
-                        future: ClientsTable().queryRows(
-                          queryFn: (q) => q
-                              .eqOrNull(
-                                'brand_id',
-                                containerUsersRow?.clientId,
-                              )
-                              .not(
-                                'bu_id',
-                                'is',
-                                null,
-                              )
-                              .isFilter(
-                                'loc_id',
-                                null,
+                  Builder(
+                    builder: (context) {
+                      if ((containerUsersRow?.limitedToBu == false) &&
+                          (containerUsersRow?.limitedToLoc == true)) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            FutureBuilder<List<ClientsRow>>(
+                              future: ClientsTable().queryRows(
+                                queryFn: (q) => q
+                                    .eqOrNull(
+                                      'brand_id',
+                                      containerUsersRow?.clientId,
+                                    )
+                                    .not(
+                                      'bu_id',
+                                      'is',
+                                      null,
+                                    )
+                                    .isFilter(
+                                      'loc_id',
+                                      null,
+                                    ),
                               ),
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: SpinKitRing(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 50.0,
-                                ),
-                              ),
-                            );
-                          }
-                          List<ClientsRow> containerClientsRowList =
-                              snapshot.data!;
-
-                          return Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              borderRadius: BorderRadius.circular(16.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  MouseRegion(
-                                    opaque: false,
-                                    cursor:
-                                        MouseCursor.defer ?? MouseCursor.defer,
-                                    onEnter: ((event) async {
-                                      safeSetState(() =>
-                                          _model.mouseRegionHovered = true);
-                                    }),
-                                    onExit: ((event) async {
-                                      safeSetState(() =>
-                                          _model.mouseRegionHovered = false);
-                                    }),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: _model.mouseRegionHovered
-                                            ? FlutterFlowTheme.of(context)
-                                                .cogeHoverFromWhite
-                                            : const Color(0x00000000),
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                      ),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          FFAppState().activeSub = true;
-                                          FFAppState().isNp1 = false;
-                                          FFAppState().activeBrand =
-                                              containerUsersRow!.companyName!;
-                                          FFAppState().activeClientID =
-                                              containerUsersRow.clientId!;
-                                          FFAppState().isBrand = true;
-                                          FFAppState().isBU = false;
-                                          FFAppState().isLoc = false;
-                                          safeSetState(() {});
-
-                                          context.pushNamed('home');
-                                        },
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            containerUsersRow?.companyName,
-                                            'Brand Name',
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                fontSize: 24.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: SpinKitRing(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 50.0,
                                       ),
                                     ),
-                                  ),
-                                  Builder(
-                                    builder: (context) {
-                                      final businessUnit =
-                                          containerClientsRowList.toList();
+                                  );
+                                }
+                                List<ClientsRow> containerClientsRowList =
+                                    snapshot.data!;
 
-                                      return SingleChildScrollView(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children:
-                                              List.generate(businessUnit.length,
-                                                  (businessUnitIndex) {
-                                            final businessUnitItem =
-                                                businessUnit[businessUnitIndex];
-                                            return Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 0.0, 0.0),
-                                              child: Container(
-                                                width: double.infinity,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16.0),
+                                return Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered1 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered1 = false);
+                                          }),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: _model.mouseRegionHovered1
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .cogeHoverFromWhite
+                                                  : const Color(0x00000000),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                            ),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                FFAppState().activeSub = true;
+                                                FFAppState().isNp1 = false;
+                                                FFAppState().activeBrand =
+                                                    containerUsersRow!
+                                                        .companyName!;
+                                                FFAppState().activeClientID =
+                                                    containerUsersRow
+                                                        .clientId!;
+                                                FFAppState().isBrand = false;
+                                                FFAppState().isBU = false;
+                                                FFAppState().isLoc = true;
+                                                safeSetState(() {});
+
+                                                context.pushNamed('home');
+                                              },
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  containerUsersRow
+                                                      ?.companyName,
+                                                  'Brand Name',
                                                 ),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(1.0),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      BUchoiceWidget(
-                                                        key: Key(
-                                                            'Keyh0c_${businessUnitIndex}_of_${businessUnit.length}'),
-                                                        buName: valueOrDefault<
-                                                            String>(
-                                                          businessUnitItem.name,
-                                                          'np1',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
                                                         ),
-                                                        buId:
-                                                            businessUnitItem.id,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                      } else if ((containerUsersRow?.limitedToBu == true) &&
+                          (containerUsersRow?.limitedToLoc == false)) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            FutureBuilder<List<ClientsRow>>(
+                              future: ClientsTable().queryRows(
+                                queryFn: (q) => q
+                                    .eqOrNull(
+                                      'bu_id',
+                                      containerUsersRow?.clientId,
+                                    )
+                                    .isFilter(
+                                      'loc_id',
+                                      null,
+                                    ),
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: SpinKitRing(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 50.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<ClientsRow> containerClientsRowList =
+                                    snapshot.data!;
+
+                                return Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Builder(
+                                          builder: (context) {
+                                            final businessUnit =
+                                                containerClientsRowList
+                                                    .toList();
+
+                                            return SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: List.generate(
+                                                    businessUnit.length,
+                                                    (businessUnitIndex) {
+                                                  final businessUnitItem =
+                                                      businessUnit[
+                                                          businessUnitIndex];
+                                                  return Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16.0),
                                                       ),
-                                                      Padding(
+                                                      child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: FutureBuilder<
-                                                            List<ClientsRow>>(
-                                                          future: ClientsTable()
-                                                              .queryRows(
-                                                            queryFn: (q) => q
-                                                                .eqOrNull(
-                                                                  'brand_id',
-                                                                  businessUnitItem
-                                                                      .brandId,
-                                                                )
-                                                                .eqOrNull(
-                                                                  'bu_id',
+                                                            const EdgeInsets.all(1.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            BUchoiceWidget(
+                                                              key: Key(
+                                                                  'Keyvwd_${businessUnitIndex}_of_${businessUnit.length}'),
+                                                              buName:
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                businessUnitItem
+                                                                    .name,
+                                                                'np1',
+                                                              ),
+                                                              buId:
                                                                   businessUnitItem
                                                                       .id,
-                                                                )
-                                                                .not(
-                                                                  'loc_id',
-                                                                  'is',
-                                                                  null,
-                                                                ),
-                                                          ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      SpinKitRing(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 50.0,
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            List<ClientsRow>
-                                                                containerClientsRowList =
-                                                                snapshot.data!;
-
-                                                            return Container(
-                                                              decoration:
-                                                                  const BoxDecoration(),
-                                                              child: Builder(
-                                                                builder:
-                                                                    (context) {
-                                                                  final location =
-                                                                      containerClientsRowList
-                                                                          .toList();
-
-                                                                  return Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: List.generate(
-                                                                        location
-                                                                            .length,
-                                                                        (locationIndex) {
-                                                                      final locationItem =
-                                                                          location[
-                                                                              locationIndex];
-                                                                      return LocationChoiceWidget(
-                                                                        key: Key(
-                                                                            'Keye11_${locationIndex}_of_${location.length}'),
-                                                                        locName:
-                                                                            valueOrDefault<String>(
-                                                                          locationItem
-                                                                              .name,
-                                                                          'client',
-                                                                        ),
-                                                                        locId: locationItem
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: FutureBuilder<
+                                                                  List<
+                                                                      ClientsRow>>(
+                                                                future:
+                                                                    ClientsTable()
+                                                                        .queryRows(
+                                                                  queryFn: (q) => q
+                                                                      .eqOrNull(
+                                                                        'brand_id',
+                                                                        businessUnitItem
+                                                                            .brandId,
+                                                                      )
+                                                                      .eqOrNull(
+                                                                        'bu_id',
+                                                                        businessUnitItem
                                                                             .id,
-                                                                      );
-                                                                    }),
+                                                                      )
+                                                                      .not(
+                                                                        'loc_id',
+                                                                        'is',
+                                                                        null,
+                                                                      ),
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitRing(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<ClientsRow>
+                                                                      containerClientsRowList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Container(
+                                                                    decoration:
+                                                                        const BoxDecoration(),
+                                                                    child:
+                                                                        Builder(
+                                                                      builder:
+                                                                          (context) {
+                                                                        final location =
+                                                                            containerClientsRowList.toList();
+
+                                                                        return Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: List.generate(
+                                                                              location.length,
+                                                                              (locationIndex) {
+                                                                            final locationItem =
+                                                                                location[locationIndex];
+                                                                            return LocationChoiceWidget(
+                                                                              key: Key('Keyu1o_${locationIndex}_of_${location.length}'),
+                                                                              locName: valueOrDefault<String>(
+                                                                                locationItem.name,
+                                                                                'client',
+                                                                              ),
+                                                                              locId: locationItem.id,
+                                                                            );
+                                                                          }),
+                                                                        );
+                                                                      },
+                                                                    ),
                                                                   );
                                                                 },
                                                               ),
-                                                            );
-                                                          },
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
-                                                    ],
-                                                  ),
-                                                ),
+                                                    ),
+                                                  );
+                                                }),
                                               ),
                                             );
-                                          }),
+                                          },
                                         ),
-                                      );
-                                    },
+                                      ],
+                                    ),
                                   ),
-                                ],
-                              ),
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
-                    ],
+                          ],
+                        );
+                      } else {
+                        return Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            FutureBuilder<List<ClientsRow>>(
+                              future: ClientsTable().queryRows(
+                                queryFn: (q) => q
+                                    .eqOrNull(
+                                      'brand_id',
+                                      containerUsersRow?.clientId,
+                                    )
+                                    .not(
+                                      'bu_id',
+                                      'is',
+                                      null,
+                                    )
+                                    .isFilter(
+                                      'loc_id',
+                                      null,
+                                    ),
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: SpinKitRing(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 50.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<ClientsRow> containerClientsRowList =
+                                    snapshot.data!;
+
+                                return Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        MouseRegion(
+                                          opaque: false,
+                                          cursor: MouseCursor.defer ??
+                                              MouseCursor.defer,
+                                          onEnter: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered2 = true);
+                                          }),
+                                          onExit: ((event) async {
+                                            safeSetState(() => _model
+                                                .mouseRegionHovered2 = false);
+                                          }),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: _model.mouseRegionHovered2
+                                                  ? FlutterFlowTheme.of(context)
+                                                      .cogeHoverFromWhite
+                                                  : const Color(0x00000000),
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                            ),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                FFAppState().activeSub = true;
+                                                FFAppState().isNp1 = false;
+                                                FFAppState().activeBrand =
+                                                    containerUsersRow!
+                                                        .companyName!;
+                                                FFAppState().activeClientID =
+                                                    containerUsersRow
+                                                        .clientId!;
+                                                FFAppState().isBrand = true;
+                                                FFAppState().isBU = false;
+                                                FFAppState().isLoc = false;
+                                                safeSetState(() {});
+
+                                                context.pushNamed('home');
+                                              },
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  containerUsersRow
+                                                      ?.companyName,
+                                                  'Brand Name',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Builder(
+                                          builder: (context) {
+                                            final businessUnit =
+                                                containerClientsRowList
+                                                    .toList();
+
+                                            return SingleChildScrollView(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: List.generate(
+                                                    businessUnit.length,
+                                                    (businessUnitIndex) {
+                                                  final businessUnitItem =
+                                                      businessUnit[
+                                                          businessUnitIndex];
+                                                  return Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Container(
+                                                      width: double.infinity,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets.all(1.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            BUchoiceWidget(
+                                                              key: Key(
+                                                                  'Keys4r_${businessUnitIndex}_of_${businessUnit.length}'),
+                                                              buName:
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                businessUnitItem
+                                                                    .name,
+                                                                'np1',
+                                                              ),
+                                                              buId:
+                                                                  businessUnitItem
+                                                                      .id,
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: FutureBuilder<
+                                                                  List<
+                                                                      ClientsRow>>(
+                                                                future:
+                                                                    ClientsTable()
+                                                                        .queryRows(
+                                                                  queryFn: (q) => q
+                                                                      .eqOrNull(
+                                                                        'brand_id',
+                                                                        businessUnitItem
+                                                                            .brandId,
+                                                                      )
+                                                                      .eqOrNull(
+                                                                        'bu_id',
+                                                                        businessUnitItem
+                                                                            .id,
+                                                                      )
+                                                                      .not(
+                                                                        'loc_id',
+                                                                        'is',
+                                                                        null,
+                                                                      ),
+                                                                ),
+                                                                builder: (context,
+                                                                    snapshot) {
+                                                                  // Customize what your widget looks like when it's loading.
+                                                                  if (!snapshot
+                                                                      .hasData) {
+                                                                    return Center(
+                                                                      child:
+                                                                          SizedBox(
+                                                                        width:
+                                                                            50.0,
+                                                                        height:
+                                                                            50.0,
+                                                                        child:
+                                                                            SpinKitRing(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          size:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                  List<ClientsRow>
+                                                                      containerClientsRowList =
+                                                                      snapshot
+                                                                          .data!;
+
+                                                                  return Container(
+                                                                    decoration:
+                                                                        const BoxDecoration(),
+                                                                    child:
+                                                                        Builder(
+                                                                      builder:
+                                                                          (context) {
+                                                                        final location =
+                                                                            containerClientsRowList.toList();
+
+                                                                        return Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: List.generate(
+                                                                              location.length,
+                                                                              (locationIndex) {
+                                                                            final locationItem =
+                                                                                location[locationIndex];
+                                                                            return LocationChoiceWidget(
+                                                                              key: Key('Keyvu5_${locationIndex}_of_${location.length}'),
+                                                                              locName: valueOrDefault<String>(
+                                                                                locationItem.name,
+                                                                                'client',
+                                                                              ),
+                                                                              locId: locationItem.id,
+                                                                            );
+                                                                          }),
+                                                                        );
+                                                                      },
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                      }
+                    },
                   ),
                 ].divide(const SizedBox(height: 16.0)),
               ),
