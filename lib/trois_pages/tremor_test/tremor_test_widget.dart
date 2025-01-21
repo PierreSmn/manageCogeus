@@ -287,7 +287,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Text(
-                                                                                      'Dashboard -',
+                                                                                      'Dashboard Tremor-',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Manrope',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
