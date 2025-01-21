@@ -2,10 +2,8 @@ import '/backend/supabase/supabase.dart';
 import '/experience_related/edit_question/edit_question_widget.dart';
 import '/experience_related/thematique/thematique_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
-    as shadcn_u_i_kit_v48jv9_app_state;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -52,7 +50,6 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(

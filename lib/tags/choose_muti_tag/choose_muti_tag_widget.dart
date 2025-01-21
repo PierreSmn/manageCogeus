@@ -1,13 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/tags/create_tag/create_tag_widget.dart';
 import '/tags/modify_tag/modify_tag_widget.dart';
 import 'dart:async';
-import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
-    as shadcn_u_i_kit_v48jv9_app_state;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -49,7 +47,6 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return FutureBuilder<List<TagsRow>>(
       future: (_model.requestCompleter ??= Completer<List<TagsRow>>()

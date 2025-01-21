@@ -2,11 +2,9 @@ import '/backend/supabase/supabase.dart';
 import '/components/empty_recontact_widget.dart';
 import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
-import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
-    as shadcn_u_i_kit_v48jv9_app_state;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -72,7 +70,6 @@ class _RecontactWidgetState extends State<RecontactWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return Title(
         title: 'recontact',

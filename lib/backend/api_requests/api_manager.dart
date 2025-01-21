@@ -11,9 +11,10 @@ import 'package:equatable/equatable.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:mime_type/mime_type.dart';
 
-import 'package:ff_commons/flutter_flow/uploaded_file.dart';
+import '/flutter_flow/uploaded_file.dart';
 
 import 'get_streamed_response.dart';
+
 enum ApiCallType {
   GET,
   POST,
@@ -45,7 +46,6 @@ class ApiCallOptions extends Equatable {
     this.alwaysAllowBody = false,
     this.cache = false,
     this.isStreamingApi = false,
-
   });
 
   final String callName;
@@ -379,7 +379,8 @@ class ApiManager {
   Future<ApiCallResponse> call(
     ApiCallOptions options, {
     http.Client? client,
-  }) => makeApiCall(
+  }) =>
+      makeApiCall(
         callName: options.callName,
         apiUrl: options.apiUrl,
         callType: options.callType,
