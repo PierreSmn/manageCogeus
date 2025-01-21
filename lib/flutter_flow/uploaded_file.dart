@@ -66,4 +66,3 @@ class FFUploadedFile {
       width == other.width &&
       blurHash == other.blurHash;
 }
-

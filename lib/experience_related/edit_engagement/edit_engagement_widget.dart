@@ -4,11 +4,9 @@ import '/experience_related/choose_review_site/choose_review_site_widget.dart';
 import '/experience_related/edit_notif_email/edit_notif_email_widget.dart';
 import '/experience_related/setup_harvester/setup_harvester_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
-import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
-    as shadcn_u_i_kit_v48jv9_app_state;
-import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +48,6 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return FutureBuilder<List<ClientsRow>>(
       future: (_model.requestCompleter ??= Completer<List<ClientsRow>>()

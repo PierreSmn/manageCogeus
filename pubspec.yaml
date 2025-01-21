@@ -40,10 +40,6 @@ dependencies:
   csslib: 0.17.3
   easy_debounce: 2.0.1
   equatable: 2.0.5
-  ff_commons:
-    path: ./dependencies/ff_commons # 1.0.0+1
-  ff_theme:
-    path: ./dependencies/ff_theme # 1.0.0+1
   file_picker: 8.1.2
   firebase_core: 3.8.0
   firebase_core_platform_interface: 5.3.0
@@ -93,8 +89,6 @@ dependencies:
   provider: 6.1.2
   realtime_client: 2.2.1
   rxdart: 0.27.7
-  shadcn_u_i_kit_v48jv9:
-    path: ./dependencies/shadcn_u_i_kit_v48jv9 # 0.1.19
   shared_preferences: 2.3.2
   shared_preferences_android: 2.3.2
   shared_preferences_foundation: 2.5.2
@@ -138,12 +132,12 @@ dependencies:
 
 dependency_overrides:
   http: 1.2.2
-  uuid: ^4.0.0
   pointer_interceptor: 0.10.1+2
   pointer_interceptor_ios: 0.10.1
   pointer_interceptor_platform_interface: 0.10.0+1
   pointer_interceptor_web: 0.10.2+1
   rxdart: 0.27.7
+  uuid: ^4.0.0
   win32: 5.5.1
 
 dev_dependencies:
@@ -172,13 +166,6 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
     - assets/jsons/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/fonts/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/images/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/videos/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/audios/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/rive_animations/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/pdfs/
-    - dependencies/shadcn_u_i_kit_v48jv9/assets/jsons/
 
 
 
