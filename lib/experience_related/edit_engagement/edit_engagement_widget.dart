@@ -1,11 +1,14 @@
 import '/backend/supabase/supabase.dart';
 import '/experience_related/choose_question/choose_question_widget.dart';
 import '/experience_related/choose_review_site/choose_review_site_widget.dart';
+import '/experience_related/edit_notif_email/edit_notif_email_widget.dart';
 import '/experience_related/setup_harvester/setup_harvester_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
+import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
+    as shadcn_u_i_kit_v48jv9_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +50,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return FutureBuilder<List<ClientsRow>>(
       future: (_model.requestCompleter ??= Completer<List<ClientsRow>>()
@@ -2179,7 +2183,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Vidéos',
+                                'Notifications',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -2199,6 +2203,373 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                 onExit: ((event) async {
                                   safeSetState(
                                       () => _model.mouseRegionHovered6 = false);
+                                }),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (clientIdClientsRow
+                                                  ?.notificationEmail ==
+                                              null ||
+                                          clientIdClientsRow
+                                                  ?.notificationEmail ==
+                                              '')
+                                        Builder(
+                                          builder: (context) => Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder: (dialogContext) {
+                                                    return Dialog(
+                                                      elevation: 0,
+                                                      insetPadding:
+                                                          EdgeInsets.zero,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                                  0.0, 0.0)
+                                                              .resolve(
+                                                                  Directionality.of(
+                                                                      context)),
+                                                      child: WebViewAware(
+                                                        child:
+                                                            EditNotifEmailWidget(
+                                                          id: clientIdClientsRow!
+                                                              .id,
+                                                          email: clientIdClientsRow
+                                                              .notificationEmail,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+
+                                                safeSetState(() => _model
+                                                    .requestCompleter = null);
+                                                await _model
+                                                    .waitForRequestCompleted();
+                                              },
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: _model
+                                                          .mouseRegionHovered6
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .cogeHoverFromWhite
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .revoWhite,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Container(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .cogeusButtonBG,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100.0),
+                                                        ),
+                                                        child: Icon(
+                                                          Icons
+                                                              .notifications_active,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 24.0,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsets.all(
+                                                            12.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Parametrer une adresse email de notification',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Manrope',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                            ),
+                                                            Text(
+                                                              'Recommandé',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Manrope',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ].divide(const SizedBox(
+                                                              height: 2.0)),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (clientIdClientsRow
+                                                  ?.notificationEmail !=
+                                              null &&
+                                          clientIdClientsRow
+                                                  ?.notificationEmail !=
+                                              '')
+                                        Builder(
+                                          builder: (context) => Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder: (dialogContext) {
+                                                    return Dialog(
+                                                      elevation: 0,
+                                                      insetPadding:
+                                                          EdgeInsets.zero,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                                  0.0, 0.0)
+                                                              .resolve(
+                                                                  Directionality.of(
+                                                                      context)),
+                                                      child: WebViewAware(
+                                                        child:
+                                                            EditNotifEmailWidget(
+                                                          id: clientIdClientsRow!
+                                                              .id,
+                                                          email: clientIdClientsRow
+                                                              .notificationEmail,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+
+                                                safeSetState(() => _model
+                                                    .requestCompleter = null);
+                                                await _model
+                                                    .waitForRequestCompleted();
+                                              },
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: _model
+                                                          .mouseRegionHovered6
+                                                      ? FlutterFlowTheme.of(
+                                                              context)
+                                                          .cogeHoverFromWhite
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .revoWhite,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          16.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Container(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .cogeusButtonBG,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      100.0),
+                                                        ),
+                                                        child: Icon(
+                                                          Icons
+                                                              .notifications_active,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 24.0,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsets.all(
+                                                            12.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Container(
+                                                              width: 300.0,
+                                                              decoration:
+                                                                  const BoxDecoration(),
+                                                              child:
+                                                                  SingleChildScrollView(
+                                                                scrollDirection:
+                                                                    Axis.horizontal,
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    SelectionArea(
+                                                                        child:
+                                                                            Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        clientIdClientsRow
+                                                                            ?.notificationEmail,
+                                                                        'no',
+                                                                      ),
+                                                                      maxLines:
+                                                                          1,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Manrope',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                          ),
+                                                                    )),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              'Email',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Manrope',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ].divide(const SizedBox(
+                                                              height: 2.0)),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ].divide(const SizedBox(height: 8.0)),
+                          ),
+                        ),
+                        SingleChildScrollView(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Vidéos',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Manrope',
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                              MouseRegion(
+                                opaque: false,
+                                cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                onEnter: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered7 = true);
+                                }),
+                                onExit: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered7 = false);
                                 }),
                                 child: Padding(
                                   padding: const EdgeInsets.all(3.0),
@@ -2265,7 +2636,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                   height: 100.0,
                                                   decoration: BoxDecoration(
                                                     color: _model
-                                                            .mouseRegionHovered6
+                                                            .mouseRegionHovered7
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .cogeHoverFromWhite
@@ -2417,7 +2788,7 @@ class _EditEngagementWidgetState extends State<EditEngagementWidget> {
                                                   height: 100.0,
                                                   decoration: BoxDecoration(
                                                     color: _model
-                                                            .mouseRegionHovered6
+                                                            .mouseRegionHovered7
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .cogeHoverFromWhite

@@ -10,7 +10,7 @@ import '/backend/schema/structs/index.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -225,10 +225,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AssetsCopyWidget(),
         ),
         FFRoute(
-          name: 'engagement',
+          name: 'redirections',
           path: '/engagement',
           requireAuth: true,
-          builder: (context, params) => const EngagementWidget(),
+          builder: (context, params) => const RedirectionsWidget(),
         ),
         FFRoute(
           name: 'createProfileClient',
@@ -274,6 +274,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/recontact',
           requireAuth: true,
           builder: (context, params) => const RecontactWidget(),
+        ),
+        FFRoute(
+          name: 'tremorTest',
+          path: '/tremor',
+          requireAuth: true,
+          builder: (context, params) => const TremorTestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

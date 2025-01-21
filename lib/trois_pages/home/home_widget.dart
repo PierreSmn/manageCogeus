@@ -1,11 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/trois_pages/infos_nps/infos_nps_widget.dart';
+import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
+    as shadcn_u_i_kit_v48jv9_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -71,6 +73,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return Title(
         title: 'home',
@@ -941,6 +944,89 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         ),
                                                                                       );
                                                                                     },
+                                                                                  ),
+                                                                                ].divide(const SizedBox(width: 24.0)),
+                                                                              ),
+                                                                              Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Container(
+                                                                                    width: MediaQuery.sizeOf(context).width * 0.32,
+                                                                                    height: MediaQuery.sizeOf(context).height * 0.22,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).revoWhite,
+                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      child: SingleChildScrollView(
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                              children: [
+                                                                                                Column(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      'Avis positifs reçu',
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w300,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                    Text(
+                                                                                                      containerExperiencesRowList.where((e) => e.reviewDone == true).toList().length.toString(),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                            fontSize: 30.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                                Column(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                  children: [
+                                                                                                    Text(
+                                                                                                      'Avis négatifs evité',
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                                            fontSize: 16.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w300,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                    Text(
+                                                                                                      containerExperiencesRowList.where((e) => e.feedbackAnswer == true).toList().length.toString(),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'Manrope',
+                                                                                                            color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                            fontSize: 30.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                ),
+                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                            ),
+                                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
                                                                                   ),
                                                                                 ].divide(const SizedBox(width: 24.0)),
                                                                               ),

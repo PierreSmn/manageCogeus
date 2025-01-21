@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import '/backend/schema/structs/index.dart';
-
+import '/backend/schema/enums/enums.dart';
 import '/backend/supabase/supabase.dart';
 
-import '../../flutter_flow/place.dart';
-import '../../flutter_flow/uploaded_file.dart';
+import 'package:ff_commons/flutter_flow/place.dart';
+import 'package:ff_commons/flutter_flow/uploaded_file.dart';
 
 /// SERIALIZATION HELPERS
 
@@ -74,6 +74,9 @@ String? serializeParam(
 
       case ParamType.DataStruct:
         data = param is BaseStruct ? param.serialize() : null;
+
+      case ParamType.Enum:
+        data = (param is Enum) ? param.serialize() : null;
 
       case ParamType.SupabaseRow:
         return json.encode((param as SupabaseDataRow).data);
@@ -155,6 +158,7 @@ enum ParamType {
   JSON,
 
   DataStruct,
+  Enum,
   SupabaseRow,
 }
 
@@ -275,6 +279,9 @@ dynamic deserializeParam<T>(
       case ParamType.DataStruct:
         final data = json.decode(param) as Map<String, dynamic>? ?? {};
         return structBuilder != null ? structBuilder(data) : null;
+
+      case ParamType.Enum:
+        return deserializeEnum<T>(param);
 
       default:
         return null;

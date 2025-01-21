@@ -1,8 +1,10 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
+    as shadcn_u_i_kit_v48jv9_app_state;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'create_tag_model.dart';
@@ -45,6 +47,7 @@ class _CreateTagWidgetState extends State<CreateTagWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,

@@ -1,7 +1,9 @@
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/choose_clientor_np/choose_clientor_np_widget.dart';
+import 'package:shadcn_u_i_kit_v48jv9/app_state.dart'
+    as shadcn_u_i_kit_v48jv9_app_state;
 import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +50,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
+    context.watch<shadcn_u_i_kit_v48jv9_app_state.FFAppState>();
 
     return Container(
       width: 240.0,
@@ -614,7 +617,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('engagement');
+                              context.pushNamed('redirections');
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -695,11 +698,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         return const Material(
                           color: Colors.transparent,
                           child: WebViewAware(
-                            child: SizedBox(
-                              height: 330.0,
-                              width: 216.0,
-                              child: ChooseClientorNpWidget(),
-                            ),
+                            child: ChooseClientorNpWidget(),
                           ),
                         );
                       },
