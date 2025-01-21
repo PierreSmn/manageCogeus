@@ -20,6 +20,8 @@ class EditEngagementModel extends FlutterFlowModel<EditEngagementWidget> {
   bool mouseRegionHovered5 = false;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered6 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered7 = false;
 
   @override
   void initState(BuildContext context) {}
