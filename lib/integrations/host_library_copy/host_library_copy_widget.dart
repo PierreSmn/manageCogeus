@@ -167,7 +167,7 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
@@ -176,7 +176,9 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w600,
+                                                                        .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ].divide(const SizedBox(
@@ -411,9 +413,10 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                         iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: FlutterFlowTheme.of(context).primary,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: Colors.white,
                                                                                               letterSpacing: 0.0,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 3.0,
                                                                                         borderSide: const BorderSide(
@@ -431,8 +434,9 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                     'non',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Manrope',
+                                                                                        fontFamily: 'GeistSans',
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                                 FutureBuilder<ApiCallResponse>(
@@ -463,8 +467,9 @@ class _HostLibraryCopyWidgetState extends State<HostLibraryCopyWidget> {
                                                                                         'No views',
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     );
                                                                                   },

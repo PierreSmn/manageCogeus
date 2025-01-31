@@ -131,8 +131,9 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -182,17 +183,18 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: const Color(0xFFE32C61),
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: false,
                                         ),
                                     elevation: 0.0,
                                     borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ),

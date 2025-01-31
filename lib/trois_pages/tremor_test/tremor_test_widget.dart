@@ -105,7 +105,15 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).revoBG,
+                              gradient: LinearGradient(
+                                colors: [
+                                  FlutterFlowTheme.of(context).primary,
+                                  const Color(0xFF020C18)
+                                ],
+                                stops: const [0.0, 0.15],
+                                begin: const AlignmentDirectional(-1.0, -1.0),
+                                end: const AlignmentDirectional(1.0, 1.0),
+                              ),
                             ),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -289,21 +297,23 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                     Text(
                                                                                       'Dashboard Tremor-',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Text(
                                                                                       FFAppState().activeBrand,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Builder(
@@ -363,11 +373,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       Text(
                                                                                         'Score NPS',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                               fontSize: 40.0,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                       Row(
@@ -387,11 +398,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   '0',
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
+                                                                                                      fontFamily: 'GeistSans',
                                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                       fontSize: 30.0,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                      fontWeight: FontWeight.w500,
+                                                                                                      useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -468,11 +480,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Participants',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -481,11 +494,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -497,11 +511,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Promoters %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchIconColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -513,11 +528,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -529,11 +545,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Detracteurs %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -545,11 +562,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -569,17 +587,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                   color: const Color(0xFFEEE8FC),
                                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: const Color(0xFF5E35B1),
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                   elevation: 0.0,
                                                                                                   borderSide: const BorderSide(
                                                                                                     color: Colors.transparent,
                                                                                                     width: 0.0,
                                                                                                   ),
-                                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -631,11 +650,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                 Text(
                                                                                                   'Raisons exprimés',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                         fontSize: 40.0,
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Padding(
@@ -650,8 +670,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 1 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -689,9 +710,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -711,8 +733,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 2 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -749,9 +772,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -771,8 +795,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 3 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -809,9 +834,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -831,8 +857,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 4 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -869,9 +896,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -888,8 +916,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       Text(
                                                                                                         'Autre',
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -926,9 +955,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -950,12 +980,11 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 ),
                                                                                 child: const FlutterFlowWebView(
-                                                                                  content: '<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Bar Chart Demo</title>\n    <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            height: 100vh;\n            margin: 0;\n        }\n        #chart-container {\n            width: 80%;\n            max-width: 600px;\n        }\n    </style>\n</head>\n<body>\n    <div id=\"chart-container\">\n        <canvas id=\"myBarChart\"></canvas>\n    </div>\n\n    <script>\n        document.addEventListener(\'DOMContentLoaded\', function () {\n            const data = {\n                labels: [\'Sunny\', \'Snowy\', \'Cloudy\', \'Rainy\', \'Foggy\'],\n                datasets: [{\n                    label: \'Classmates\',\n                    data: [10, 5, 4, 2, 1],\n                    backgroundColor: \'rgba(75, 192, 192, 0.2)\',\n                    borderColor: \'rgba(75, 192, 192, 1)\',\n                    borderWidth: 1\n                }]\n            };\n\n            const config = {\n                type: \'bar\',\n                data: data,\n                options: {\n                    scales: {\n                        y: {\n                            beginAtZero: true\n                        }\n                    }\n                }\n            };\n\n            new Chart(document.getElementById(\'myBarChart\'), config);\n        });\n    </script>\n</body>\n</html>\n',
+                                                                                  content: 'https://kzmq9eg4z0uk494gd08p.lite.vusercontent.net/',
                                                                                   width: 460.0,
                                                                                   height: 260.0,
                                                                                   verticalScroll: false,
                                                                                   horizontalScroll: false,
-                                                                                  html: true,
                                                                                 ),
                                                                               ),
                                                                             ].divide(const SizedBox(height: 24.0)),
@@ -1136,21 +1165,23 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                     Text(
                                                                                       'Dashboard -',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Text(
                                                                                       FFAppState().activeBrand,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Builder(
@@ -1210,11 +1241,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       Text(
                                                                                         'Score NPS',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                               fontSize: 40.0,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                       Row(
@@ -1234,11 +1266,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   '0',
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
+                                                                                                      fontFamily: 'GeistSans',
                                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                       fontSize: 30.0,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                      fontWeight: FontWeight.w500,
+                                                                                                      useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -1316,11 +1349,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Participants',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -1329,11 +1363,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -1345,11 +1380,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Promoters %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchIconColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -1361,11 +1397,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -1377,11 +1414,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Detracteurs %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -1393,11 +1431,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -1417,17 +1456,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                   color: const Color(0xFFEEE8FC),
                                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: const Color(0xFF5E35B1),
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                   elevation: 0.0,
                                                                                                   borderSide: const BorderSide(
                                                                                                     color: Colors.transparent,
                                                                                                     width: 0.0,
                                                                                                   ),
-                                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -1479,11 +1519,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                 Text(
                                                                                                   'Raisons exprimés',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                         fontSize: 40.0,
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Padding(
@@ -1498,8 +1539,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 1 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -1537,9 +1579,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -1559,8 +1602,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 2 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -1597,9 +1641,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -1619,8 +1664,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 3 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -1657,9 +1703,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -1679,8 +1726,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 4 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -1717,9 +1765,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -1736,8 +1785,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       Text(
                                                                                                         'Autre',
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -1774,9 +1824,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -1966,21 +2017,23 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                     Text(
                                                                                       'Dashboard -',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Text(
                                                                                       FFAppState().activeBrand,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                             fontSize: 44.72,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                     Builder(
@@ -2040,11 +2093,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       Text(
                                                                                         'Score NPS',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                               fontSize: 40.0,
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                       ),
                                                                                       Row(
@@ -2064,11 +2118,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   '0',
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'Manrope',
+                                                                                                      fontFamily: 'GeistSans',
                                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                       fontSize: 30.0,
                                                                                                       letterSpacing: 0.0,
-                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                      fontWeight: FontWeight.w500,
+                                                                                                      useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
                                                                                             ],
@@ -2146,11 +2201,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Participants',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -2159,11 +2215,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -2175,11 +2232,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Promoters %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchIconColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -2191,11 +2249,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -2207,11 +2266,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     Text(
                                                                                                       'Detracteurs %',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoSearchTxtColor,
                                                                                                             fontSize: 16.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w300,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                     Text(
@@ -2223,11 +2283,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         '0',
                                                                                                       ),
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'Manrope',
+                                                                                                            fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                             fontSize: 30.0,
                                                                                                             letterSpacing: 0.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
+                                                                                                            useGoogleFonts: false,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ],
@@ -2247,17 +2308,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                                   color: const Color(0xFFEEE8FC),
                                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: const Color(0xFF5E35B1),
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                   elevation: 0.0,
                                                                                                   borderSide: const BorderSide(
                                                                                                     color: Colors.transparent,
                                                                                                     width: 0.0,
                                                                                                   ),
-                                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                                  borderRadius: BorderRadius.circular(8.0),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -2309,11 +2371,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                 Text(
                                                                                                   'Raisons exprimés',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: 'Manrope',
+                                                                                                        fontFamily: 'GeistSans',
                                                                                                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                         fontSize: 40.0,
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Padding(
@@ -2328,8 +2391,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 1 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -2367,9 +2431,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -2389,8 +2454,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 2 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -2427,9 +2493,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -2449,8 +2516,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 3 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -2487,9 +2555,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -2509,8 +2578,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           'Theme 4 non défini',
                                                                                                         ),
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -2547,9 +2617,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },
@@ -2566,8 +2637,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       Text(
                                                                                                         'Autre',
                                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'Manrope',
+                                                                                                              fontFamily: 'GeistSans',
                                                                                                               letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
                                                                                                       FutureBuilder<List<ExperiencesRow>>(
@@ -2604,9 +2676,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                               '0',
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   fontSize: 16.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           );
                                                                                                         },

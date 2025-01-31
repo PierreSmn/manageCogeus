@@ -90,9 +90,10 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
                       Text(
                         'Que signifie votre NPS ?',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Manrope',
+                              fontFamily: 'GeistSans',
                               fontSize: 20.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: false,
                             ),
                       ),
                     ].divide(const SizedBox(width: 8.0)),
@@ -126,8 +127,9 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
                         )
                       ],
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Manrope',
+                            fontFamily: 'GeistSans',
                             letterSpacing: 0.0,
+                            useGoogleFonts: false,
                           ),
                     ),
                   ),

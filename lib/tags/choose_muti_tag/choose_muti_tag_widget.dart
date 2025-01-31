@@ -97,12 +97,13 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context)
                                         .revoCardTextColor,
                                     fontSize: 22.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                         Builder(
@@ -147,18 +148,19 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: const Color(0xFF5E35B1),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                               elevation: 0.0,
                               borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 0.0,
                               ),
-                              borderRadius: BorderRadius.circular(16.0),
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
                         ),
@@ -222,7 +224,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                                         context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color: FFAppState()
                                                               .tagList
                                                               .contains(
@@ -236,7 +238,8 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                                       fontSize: 18.0,
                                                       letterSpacing: 0.0,
                                                       fontWeight:
-                                                          FontWeight.w600,
+                                                          FontWeight.w500,
+                                                      useGoogleFonts: false,
                                                     ),
                                               ),
                                               Builder(
@@ -331,12 +334,13 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: FlutterFlowTheme.of(context)
                                               .revoCardTextColor,
                                           fontSize: 18.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -367,18 +371,19 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                       color: const Color(0xFFEEE8FC),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Manrope',
+                                fontFamily: 'GeistSans',
                                 color: const Color(0xFF5E35B1),
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
                               ),
                       elevation: 0.0,
                       borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 0.0,
                       ),
-                      borderRadius: BorderRadius.circular(16.0),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),

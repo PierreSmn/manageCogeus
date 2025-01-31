@@ -220,8 +220,12 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
+                                                        fontSize: 26.0,
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -329,7 +333,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                   .labelMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .inputTitleGrey,
@@ -337,6 +341,8 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                         16.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           hintStyle:
                                                               FlutterFlowTheme.of(
@@ -344,7 +350,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .inputTitleGrey,
@@ -352,19 +358,21 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                         15.0,
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           enabledBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
                                                                 const BorderSide(
                                                               color: Color(
-                                                                  0x00000000),
+                                                                  0xFFE4E5E6),
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12.0),
+                                                                        8.0),
                                                           ),
                                                           focusedBorder:
                                                               OutlineInputBorder(
@@ -377,7 +385,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12.0),
+                                                                        8.0),
                                                           ),
                                                           errorBorder:
                                                               OutlineInputBorder(
@@ -391,7 +399,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12.0),
+                                                                        8.0),
                                                           ),
                                                           focusedErrorBorder:
                                                               OutlineInputBorder(
@@ -405,16 +413,19 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12.0),
+                                                                        8.0),
                                                           ),
                                                           filled: true,
-                                                          fillColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .inputBg,
+                                                          fillColor: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
                                                           contentPadding:
-                                                              const EdgeInsets.all(
-                                                                  16.0),
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      16.0,
+                                                                      8.0,
+                                                                      16.0,
+                                                                      8.0),
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -422,7 +433,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .revoCardTextColor,
@@ -430,6 +441,8 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         validator: _model
                                                             .emailTextControllerValidator
@@ -469,7 +482,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                             },
                                             text: 'Mettre à jour',
                                             options: FFButtonOptions(
-                                              width: 230.0,
+                                              width: double.infinity,
                                               height: 40.0,
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -481,10 +494,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Manrope',
+                                                    fontFamily: 'GeistSans',
                                                     color: const Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
                                               borderSide: const BorderSide(
@@ -492,11 +506,11 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                 width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 8.0)),
+                                      ].divide(const SizedBox(height: 16.0)),
                                     ),
                                   ),
                                 ),

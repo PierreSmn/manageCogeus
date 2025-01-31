@@ -213,12 +213,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const RetoursWidget(),
         ),
         FFRoute(
-          name: 'copyharvestdata',
-          path: '/copyjarrvestdata',
-          requireAuth: true,
-          builder: (context, params) => const CopyharvestdataWidget(),
-        ),
-        FFRoute(
           name: 'assetsCopy',
           path: '/assetsCopy',
           requireAuth: true,
@@ -280,6 +274,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/tremor',
           requireAuth: true,
           builder: (context, params) => const TremorTestWidget(),
+        ),
+        FFRoute(
+          name: 'onboard',
+          path: '/onboard',
+          requireAuth: true,
+          builder: (context, params) => const OnboardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

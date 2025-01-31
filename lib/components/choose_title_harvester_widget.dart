@@ -62,11 +62,12 @@ class _ChooseTitleHarvesterWidgetState
           Text(
             'Choisir un titre',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Manrope',
+                  fontFamily: 'GeistSans',
                   color: FlutterFlowTheme.of(context).revoCardTextColor,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
+                  useGoogleFonts: false,
                 ),
           ),
           Padding(
@@ -80,54 +81,58 @@ class _ChooseTitleHarvesterWidgetState
               decoration: InputDecoration(
                 labelText: 'Nom du Harvester',
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Manrope',
+                      fontFamily: 'GeistSans',
                       color: FlutterFlowTheme.of(context).inputTitleGrey,
                       fontSize: 16.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: false,
                     ),
                 hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Manrope',
+                      fontFamily: 'GeistSans',
                       color: FlutterFlowTheme.of(context).inputTitleGrey,
                       fontSize: 15.0,
                       letterSpacing: 0.0,
+                      useGoogleFonts: false,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
-                    color: Color(0x00000000),
+                    color: Color(0xFFE4E5E6),
                     width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: const BorderSide(
                     color: Color(0x00000000),
                     width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).inputNoGoodClicked,
                     width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).inputNoGoodClicked,
                     width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 filled: true,
-                fillColor: FlutterFlowTheme.of(context).inputBg,
-                contentPadding: const EdgeInsets.all(16.0),
+                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                contentPadding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Manrope',
+                    fontFamily: 'GeistSans',
                     color: FlutterFlowTheme.of(context).revoCardTextColor,
                     fontSize: 15.0,
                     letterSpacing: 0.0,
+                    useGoogleFonts: false,
                   ),
               validator: _model.textControllerValidator.asValidator(context),
             ),
@@ -156,17 +161,18 @@ class _ChooseTitleHarvesterWidgetState
               iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: const Color(0xFFEEE8FC),
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Manrope',
+                    fontFamily: 'GeistSans',
                     color: const Color(0xFF5E35B1),
                     letterSpacing: 0.0,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
+                    useGoogleFonts: false,
                   ),
               elevation: 0.0,
               borderSide: const BorderSide(
                 color: Colors.transparent,
                 width: 0.0,
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(8.0),
             ),
           ),
         ].addToStart(const SizedBox(height: 28.0)).addToEnd(const SizedBox(height: 28.0)),

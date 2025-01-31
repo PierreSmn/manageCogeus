@@ -63,11 +63,12 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                   Text(
                     'Nouvelle version disponible !',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Manrope',
+                          fontFamily: 'GeistSans',
                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                           fontSize: 30.0,
                           letterSpacing: 0.0,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
+                          useGoogleFonts: false,
                         ),
                   ),
                   Padding(
@@ -76,12 +77,13 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                     child: Text(
                       'Une mise à jour de la dashboard Cogeus a été faite. Rechargez la page pour en profiter.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Manrope',
+                            fontFamily: 'GeistSans',
                             color: FlutterFlowTheme.of(context)
                                 .revoCardTextColorUnselected,
                             fontSize: 24.72,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.normal,
+                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -112,18 +114,19 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                 iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: const Color(0xFFEEE8FC),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Manrope',
+                      fontFamily: 'GeistSans',
                       color: const Color(0xFF5E35B1),
                       fontSize: 18.0,
                       letterSpacing: 0.0,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
+                      useGoogleFonts: false,
                     ),
                 elevation: 0.0,
                 borderSide: const BorderSide(
                   color: Colors.transparent,
                   width: 0.0,
                 ),
-                borderRadius: BorderRadius.circular(16.0),
+                borderRadius: BorderRadius.circular(8.0),
               ),
             ),
           ].divide(const SizedBox(height: 12.0)),

@@ -94,12 +94,13 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                       ],
@@ -119,9 +120,10 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                         Text(
@@ -132,10 +134,11 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Manrope',
+                                fontFamily: 'GeistSans',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: false,
                               ),
                         ),
                       ].divide(const SizedBox(height: 2.0)),

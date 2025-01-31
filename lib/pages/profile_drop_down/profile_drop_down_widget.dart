@@ -68,8 +68,9 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                   'Account Infos',
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Manrope',
+                        fontFamily: 'GeistSans',
                         letterSpacing: 0.0,
+                        useGoogleFonts: false,
                       ),
                 ),
               ),
@@ -91,9 +92,10 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Manrope',
+                                  fontFamily: 'GeistSans',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
                                 ),
                           ),
                           Padding(
@@ -104,9 +106,10 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -118,9 +121,10 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -132,9 +136,10 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -189,8 +194,9 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -241,8 +247,9 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),
@@ -306,8 +313,9 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Manrope',
+                                      fontFamily: 'GeistSans',
                                       letterSpacing: 0.0,
+                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),
@@ -363,8 +371,9 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),

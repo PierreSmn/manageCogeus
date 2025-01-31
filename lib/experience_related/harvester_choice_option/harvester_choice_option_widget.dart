@@ -67,8 +67,9 @@ class _HarvesterChoiceOptionWidgetState
           child: Text(
             widget.parameter1!,
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Manrope',
+                  fontFamily: 'GeistSans',
                   letterSpacing: 0.0,
+                  useGoogleFonts: false,
                 ),
           ),
         ),

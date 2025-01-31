@@ -47,7 +47,6 @@ dependencies:
   firebase_performance: 0.10.0+10
   firebase_performance_platform_interface: 0.1.4+46
   firebase_performance_web: 0.1.7+4
-  fl_chart: 0.68.0
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
   flutter_plugin_android_lifecycle: 2.0.20
@@ -167,6 +166,26 @@ flutter:
     - assets/pdfs/
     - assets/jsons/
 
+  fonts:
+    - family: 'GeistSans'
+      fonts:
+        - asset: assets/fonts/Geist-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Geist-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Geist-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Geist-Regular.ttf
+        - asset: assets/fonts/Geist-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Geist-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Geist-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Geist-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Geist-Black.ttf
+          weight: 900
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

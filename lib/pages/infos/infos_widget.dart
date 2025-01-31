@@ -174,10 +174,11 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Manrope',
+                                                                              fontFamily: 'GeistSans',
                                                                               fontSize: 18.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
+                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                       Row(
@@ -191,8 +192,9 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               'noName',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                           Text(
@@ -201,8 +203,9 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               'noName',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                           Text(
@@ -211,8 +214,9 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               'noName',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   letterSpacing: 0.0,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ].divide(const SizedBox(width: 6.0)),
@@ -253,11 +257,12 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   color: Colors.white,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.normal,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                             elevation:
                                                                                 3.0,
@@ -305,11 +310,12 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).error,
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   color: Colors.white,
                                                                                   fontSize: 12.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.normal,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                             elevation:
                                                                                 3.0,
@@ -361,13 +367,15 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         color: const Color(
                                                                             0xFF5E35B1),
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
-                                                                            FontWeight.w600,
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -380,7 +388,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              16.0),
+                                                                              8.0),
                                                                 ),
                                                               ),
                                                               Padding(
@@ -402,9 +410,11 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Manrope',
+                                                                                'GeistSans',
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                false,
                                                                           ),
                                                                     ),
                                                                     Row(
@@ -440,10 +450,11 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             color:
                                                                                 const Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   color: const Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                             elevation:
                                                                                 0.0,
@@ -453,7 +464,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               width: 0.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(16.0),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                         FFButtonWidget(
@@ -480,10 +491,11 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             color:
                                                                                 const Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   color: const Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                             elevation:
                                                                                 0.0,
@@ -493,7 +505,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               width: 0.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(16.0),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                       ].divide(const SizedBox(
@@ -531,7 +543,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Manrope',
+                                                                          'GeistSans',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
@@ -539,6 +551,8 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                           42.0,
                                                                       letterSpacing:
                                                                           0.0,
+                                                                      useGoogleFonts:
+                                                                          false,
                                                                     ),
                                                               ),
                                                               FFButtonWidget(
@@ -572,11 +586,13 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                   elevation:
                                                                       3.0,

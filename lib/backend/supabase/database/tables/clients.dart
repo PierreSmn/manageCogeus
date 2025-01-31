@@ -91,4 +91,10 @@ class ClientsRow extends SupabaseDataRow {
   String? get notificationEmail => getField<String>('notification_email');
   set notificationEmail(String? value) =>
       setField<String>('notification_email', value);
+
+  String? get medium => getField<String>('medium');
+  set medium(String? value) => setField<String>('medium', value);
+
+  String? get emailTool => getField<String>('email_tool');
+  set emailTool(String? value) => setField<String>('email_tool', value);
 }

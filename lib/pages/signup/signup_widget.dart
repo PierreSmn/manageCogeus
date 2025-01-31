@@ -200,15 +200,18 @@ class _SignupWidgetState extends State<SignupWidget>
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  32.0, 24.0, 0.0, 0.0),
+                                                  12.0, 24.0, 0.0, 0.0),
                                           child: Text(
                                             'Créer un compte',
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall
                                                 .override(
-                                                  fontFamily: 'Manrope',
-                                                  fontSize: 46.0,
+                                                  fontFamily: 'GeistSans',
+                                                  fontSize: 26.0,
                                                   letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                  lineHeight: 1.618,
                                                 ),
                                           ),
                                         ),
@@ -243,34 +246,38 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .inputTitleGrey,
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .inputTitleGrey,
                                                           fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: const BorderSide(
                                                         color:
-                                                            Color(0x00000000),
+                                                            Color(0xFFE4E5E6),
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
@@ -281,7 +288,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     errorBorder:
                                                         OutlineInputBorder(
@@ -293,7 +300,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
@@ -305,26 +312,29 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     filled: true,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .inputBg,
+                                                            .primaryBackground,
                                                     contentPadding:
-                                                        const EdgeInsets.all(16.0),
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 8.0,
+                                                                16.0, 8.0),
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .revoCardTextColor,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .emailTextControllerValidator
@@ -347,22 +357,24 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .inputTitleGrey,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: const BorderSide(
                                                         color:
-                                                            Color(0x00000000),
+                                                            Color(0xFFE4E5E6),
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
@@ -373,7 +385,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     errorBorder:
                                                         OutlineInputBorder(
@@ -385,7 +397,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
@@ -397,15 +409,17 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     filled: true,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .inputBg,
+                                                            .primaryBackground,
                                                     contentPadding:
-                                                        const EdgeInsets.all(16.0),
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 8.0,
+                                                                16.0, 8.0),
                                                     suffixIcon: InkWell(
                                                       onTap: () => safeSetState(
                                                         () => _model
@@ -433,12 +447,13 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .revoCardTextColor,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .passwordTextControllerValidator
@@ -462,22 +477,24 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             .of(context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .inputTitleGrey,
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: const BorderSide(
                                                         color:
-                                                            Color(0x00000000),
+                                                            Color(0xFFE4E5E6),
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
@@ -488,7 +505,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     errorBorder:
                                                         OutlineInputBorder(
@@ -500,7 +517,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
@@ -512,15 +529,17 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              8.0),
                                                     ),
                                                     filled: true,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .inputBg,
+                                                            .primaryBackground,
                                                     contentPadding:
-                                                        const EdgeInsets.all(16.0),
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 8.0,
+                                                                16.0, 8.0),
                                                     suffixIcon: InkWell(
                                                       onTap: () => safeSetState(
                                                         () => _model
@@ -547,12 +566,13 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .revoCardTextColor,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .confirmPasswordTextControllerValidator
@@ -614,7 +634,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   },
                                                   text: 'Continuer',
                                                   options: FFButtonOptions(
-                                                    width: 230.0,
+                                                    width: double.infinity,
                                                     height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
@@ -629,12 +649,14 @@ class _SignupWidgetState extends State<SignupWidget>
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color:
                                                               const Color(0xFF5E35B1),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     elevation: 0.0,
                                                     borderSide: const BorderSide(
@@ -643,7 +665,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            16.0),
+                                                            8.0),
                                                   ),
                                                 ),
                                               ),

@@ -152,7 +152,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoCardTextColor,
                                                                         fontSize:
@@ -160,7 +160,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
-                                                                            FontWeight.w600,
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Text(
@@ -170,9 +172,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                 ),
                                                               ].divide(const SizedBox(

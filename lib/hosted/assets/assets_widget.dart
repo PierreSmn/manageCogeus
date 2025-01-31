@@ -175,7 +175,7 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
@@ -184,7 +184,9 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w600,
+                                                                        .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                         MouseRegion(
@@ -450,7 +452,7 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Manrope',
+                                                                          'GeistSans',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -458,7 +460,9 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                           0.0,
                                                                       fontWeight:
                                                                           FontWeight
-                                                                              .w600,
+                                                                              .w500,
+                                                                      useGoogleFonts:
+                                                                          false,
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
@@ -470,7 +474,7 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            16.0),
+                                                                            8.0),
                                                               ),
                                                             ),
                                                           ),
@@ -656,10 +660,11 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                             'no',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 fontSize: 16.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -711,8 +716,9 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                 Text(
                                                                                   dateTimeFormat("d/M h:mm a", hostedVideosItem.createdAt),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Manrope',
+                                                                                        fontFamily: 'GeistSans',
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                                 Flexible(
@@ -758,17 +764,18 @@ class _AssetsWidgetState extends State<AssetsWidget> {
                                                                                             iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: const Color(0xFFEEE8FC),
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  fontFamily: 'Manrope',
+                                                                                                  fontFamily: 'GeistSans',
                                                                                                   color: const Color(0xFF5E35B1),
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                  useGoogleFonts: false,
                                                                                                 ),
                                                                                             elevation: 0.0,
                                                                                             borderSide: const BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 0.0,
                                                                                             ),
-                                                                                            borderRadius: BorderRadius.circular(16.0),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
                                                                                         ),
                                                                                       ),

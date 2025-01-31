@@ -103,10 +103,11 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                       ),

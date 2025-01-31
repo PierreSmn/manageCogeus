@@ -104,8 +104,9 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                           'Faites une liste des thématiques qui reviennent le plus souvent chez vos clients.',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                         ),
                       ].divide(const SizedBox(height: 12.0)),
@@ -130,35 +131,37 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context)
                                         .inputTitleGrey,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                               hintText: 'Nom affiché',
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: FlutterFlowTheme.of(context)
                                         .inputTitleGrey,
                                     fontSize: 15.0,
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Color(0xFFE4E5E6),
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -166,7 +169,7 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                                       .inputNoGoodClicked,
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -174,20 +177,23 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                                       .inputNoGoodClicked,
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                               filled: true,
-                              fillColor: FlutterFlowTheme.of(context).inputBg,
-                              contentPadding: const EdgeInsets.all(16.0),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 8.0, 16.0, 8.0),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Manrope',
+                                  fontFamily: 'GeistSans',
                                   color: FlutterFlowTheme.of(context)
                                       .revoCardTextColor,
                                   fontSize: 15.0,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: false,
                                 ),
                             validator: _model.textControllerValidator
                                 .asValidator(context),
@@ -217,17 +223,18 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Manrope',
+                                  fontFamily: 'GeistSans',
                                   color: const Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
                             elevation: 0.0,
                             borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 0.0,
                             ),
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ],

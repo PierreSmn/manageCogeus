@@ -21,8 +21,6 @@ export '/integrations/host_library_copy/host_library_copy_widget.dart'
 export '/trois_pages/retours_a_trier/retours_a_trier_widget.dart'
     show RetoursATrierWidget;
 export '/trois_pages/retours/retours_widget.dart' show RetoursWidget;
-export '/trois_pages/copyharvestdata/copyharvestdata_widget.dart'
-    show CopyharvestdataWidget;
 export '/hosted/assets_copy/assets_copy_widget.dart' show AssetsCopyWidget;
 export '/trois_pages/redirections/redirections_widget.dart'
     show RedirectionsWidget;
@@ -33,3 +31,4 @@ export '/trois_pages/experiences/experiences_widget.dart'
     show ExperiencesWidget;
 export '/trois_pages/recontact/recontact_widget.dart' show RecontactWidget;
 export '/trois_pages/tremor_test/tremor_test_widget.dart' show TremorTestWidget;
+export '/pages/onboard/onboard_widget.dart' show OnboardWidget;

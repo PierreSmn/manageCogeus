@@ -243,21 +243,23 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   Text(
                                                                                     'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     FFAppState().activeBrand,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -311,8 +313,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -322,8 +325,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -333,8 +337,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -344,8 +349,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -355,8 +361,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -413,8 +420,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -427,8 +435,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -441,8 +450,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -455,8 +465,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -752,21 +763,23 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   Text(
                                                                                     'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     FFAppState().activeBrand,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -820,8 +833,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -831,8 +845,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -842,8 +857,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -853,8 +869,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -864,8 +881,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -922,8 +940,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -936,8 +955,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -950,8 +970,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -964,8 +985,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -1259,21 +1281,23 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   Text(
                                                                                     'Recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   Text(
                                                                                     FFAppState().activeBrand,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 44.72,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                 ],
@@ -1327,8 +1351,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1338,8 +1363,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1349,8 +1375,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1360,8 +1387,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1371,8 +1399,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'Manrope',
+                                                                                                    fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
                                                                                           ),
@@ -1429,8 +1458,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -1443,8 +1473,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
@@ -1458,8 +1489,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         )),
                                                                                                       ),
@@ -1472,8 +1504,9 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                             '-',
                                                                                                           ),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: 'Manrope',
+                                                                                                                fontFamily: 'GeistSans',
                                                                                                                 letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
