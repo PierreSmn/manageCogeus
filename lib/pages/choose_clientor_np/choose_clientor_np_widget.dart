@@ -128,12 +128,14 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .revoCardTextColor,
+                                              fontSize: 20.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w300,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),
@@ -170,7 +172,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         .isFilter(
                                           'loc_id',
                                           null,
-                                        ),
+                                        )
+                                        .order('id', ascending: true),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -268,11 +271,13 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -302,7 +307,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         .isFilter(
                                           'loc_id',
                                           null,
-                                        ),
+                                        )
+                                        .order('id', ascending: true),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -427,7 +433,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                                             'loc_id',
                                                                             'is',
                                                                             null,
-                                                                          ),
+                                                                          )
+                                                                          .order('id', ascending: true),
                                                                     ),
                                                                     builder:
                                                                         (context,
@@ -524,7 +531,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         .isFilter(
                                           'loc_id',
                                           null,
-                                        ),
+                                        )
+                                        .order('id', ascending: true),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -621,11 +629,13 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -722,7 +732,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                                             'loc_id',
                                                                             'is',
                                                                             null,
-                                                                          ),
+                                                                          )
+                                                                          .order('id', ascending: true),
                                                                     ),
                                                                     builder:
                                                                         (context,

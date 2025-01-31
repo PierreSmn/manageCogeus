@@ -175,7 +175,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
@@ -184,7 +184,9 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w600,
+                                                                        .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                         MouseRegion(
@@ -457,13 +459,15 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
-                                                                            FontWeight.w600,
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                   elevation:
                                                                       0.0,
@@ -476,7 +480,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              16.0),
+                                                                              8.0),
                                                                 ),
                                                               ),
                                                             ],
@@ -663,10 +667,11 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                             'no',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 fontSize: 16.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                       ),
@@ -718,8 +723,9 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                 Text(
                                                                                   dateTimeFormat("d/M h:mm a", hostedVideosItem.createdAt),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                        fontFamily: 'Manrope',
+                                                                                        fontFamily: 'GeistSans',
                                                                                         letterSpacing: 0.0,
+                                                                                        useGoogleFonts: false,
                                                                                       ),
                                                                                 ),
                                                                                 Flexible(
@@ -768,17 +774,18 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                             iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: const Color(0xFFEEE8FC),
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  fontFamily: 'Manrope',
+                                                                                                  fontFamily: 'GeistSans',
                                                                                                   color: const Color(0xFF5E35B1),
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                  useGoogleFonts: false,
                                                                                                 ),
                                                                                             elevation: 0.0,
                                                                                             borderSide: const BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 0.0,
                                                                                             ),
-                                                                                            borderRadius: BorderRadius.circular(16.0),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
                                                                                         ),
                                                                                       ),

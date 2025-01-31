@@ -82,10 +82,11 @@ class _BUchoiceWidgetState extends State<BUchoiceWidget> {
             child: Text(
               widget.buName!,
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Manrope',
+                    fontFamily: 'GeistSans',
                     fontSize: 20.0,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.w500,
+                    useGoogleFonts: false,
                   ),
             ),
           ),

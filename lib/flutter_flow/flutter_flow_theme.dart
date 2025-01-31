@@ -67,6 +67,7 @@ abstract class FlutterFlowTheme {
   late Color cogeHoverFromWhite;
   late Color vertSympa;
   late Color joliGrisPourTexteLeger;
+  late Color shadcnCardBorderGrey;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -191,6 +192,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color cogeHoverFromWhite = const Color(0xFFF8F4FE);
   late Color vertSympa = const Color(0xFF52B58E);
   late Color joliGrisPourTexteLeger = const Color(0xFF778089);
+  late Color shadcnCardBorderGrey = const Color(0xFFE4E5E6);
 }
 
 abstract class Typography {
@@ -231,107 +233,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Inter';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Inter',
+  String get displayLargeFamily => 'GeistSans';
+  TextStyle get displayLarge => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Inter';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Inter',
+  String get displayMediumFamily => 'GeistSans';
+  TextStyle get displayMedium => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Inter';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Inter',
+  String get displaySmallFamily => 'GeistSans';
+  TextStyle get displaySmall => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Inter';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Inter',
+  String get headlineLargeFamily => 'GeistSans';
+  TextStyle get headlineLarge => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Inter';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Inter',
+  String get headlineMediumFamily => 'GeistSans';
+  TextStyle get headlineMedium => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Inter';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Inter',
+  String get headlineSmallFamily => 'GeistSans';
+  TextStyle get headlineSmall => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Inter';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Inter',
+  String get titleLargeFamily => 'GeistSans';
+  TextStyle get titleLarge => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Manrope';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Manrope',
+  String get titleMediumFamily => 'GeistSans';
+  TextStyle get titleMedium => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Manrope';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Manrope',
+  String get titleSmallFamily => 'GeistSans';
+  TextStyle get titleSmall => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Manrope';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Manrope',
+  String get labelLargeFamily => 'GeistSans';
+  TextStyle get labelLarge => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Manrope';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Manrope',
+  String get labelMediumFamily => 'GeistSans';
+  TextStyle get labelMedium => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Manrope';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Manrope',
+  String get labelSmallFamily => 'GeistSans';
+  TextStyle get labelSmall => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Manrope';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Manrope',
+  String get bodyLargeFamily => 'GeistSans';
+  TextStyle get bodyLarge => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Manrope';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Manrope',
+  String get bodyMediumFamily => 'GeistSans';
+  TextStyle get bodyMedium => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Manrope';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Manrope',
+  String get bodySmallFamily => 'GeistSans';
+  TextStyle get bodySmall => TextStyle(
+        fontFamily: 'GeistSans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

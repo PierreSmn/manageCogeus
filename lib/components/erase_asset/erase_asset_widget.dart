@@ -65,11 +65,12 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                 Text(
                   'Effacer l\'asset ?',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Manrope',
+                        fontFamily: 'GeistSans',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                         fontSize: 36.0,
                         letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
+                        useGoogleFonts: false,
                       ),
                 ),
                 FutureBuilder<ApiCallResponse>(
@@ -121,11 +122,12 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: const Color(0xFFC31212),
                                           fontSize: 16.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Builder(
@@ -148,10 +150,11 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
                                                   color: const Color(0xFFC31212),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
+                                                  useGoogleFonts: false,
                                                 ),
                                           );
                                         }),
@@ -166,11 +169,12 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             color: const Color(0xFFC31212),
                                             fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -196,8 +200,9 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Manrope',
+                                        fontFamily: 'GeistSans',
                                         letterSpacing: 0.0,
+                                        useGoogleFonts: false,
                                       ),
                                 ),
                                 MouseRegion(
@@ -255,17 +260,18 @@ class _EraseAssetWidgetState extends State<EraseAssetWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             color: const Color(0xFFE32C61),
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 0.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(16.0),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                                 ),

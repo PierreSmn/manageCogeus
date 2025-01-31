@@ -195,7 +195,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Manrope',
+                                                                            'GeistSans',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .revoCardTextColor,
                                                                         fontSize:
@@ -203,7 +203,9 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
-                                                                            FontWeight.w600,
+                                                                            FontWeight.w500,
+                                                                        useGoogleFonts:
+                                                                            false,
                                                                       ),
                                                                 ),
                                                                 Builder(
@@ -395,11 +397,12 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                               Text(
                                                                                 'Branding',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Manrope',
+                                                                                      fontFamily: 'GeistSans',
                                                                                       color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                       fontSize: 28.0,
                                                                                       letterSpacing: 0.0,
-                                                                                      fontWeight: FontWeight.w600,
+                                                                                      fontWeight: FontWeight.w500,
+                                                                                      useGoogleFonts: false,
                                                                                     ),
                                                                               ),
                                                                               Column(
@@ -500,17 +503,18 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                         iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: const Color(0xFFEEE8FC),
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: const Color(0xFF5E35B1),
                                                                                               letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 0.0,
                                                                                         borderSide: const BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 0.0,
                                                                                         ),
-                                                                                        borderRadius: BorderRadius.circular(16.0),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -525,17 +529,18 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: const Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: const Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
                                                                                       borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                      borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
                                                                                   FFButtonWidget(
@@ -561,17 +566,18 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: const Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: const Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
                                                                                       borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                      borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
                                                                                 ].divide(const SizedBox(height: 7.0)),
@@ -860,17 +866,19 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                             obscureText: false,
                                                                                                             decoration: InputDecoration(
                                                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                                    fontFamily: 'Manrope',
+                                                                                                                    fontFamily: 'GeistSans',
                                                                                                                     color: FlutterFlowTheme.of(context).tertiary,
                                                                                                                     fontSize: 16.0,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: false,
                                                                                                                   ),
                                                                                                               hintText: 'TextField',
                                                                                                               hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                    fontFamily: 'Manrope',
+                                                                                                                    fontFamily: 'GeistSans',
                                                                                                                     color: FlutterFlowTheme.of(context).inputTitleGrey,
                                                                                                                     fontSize: 15.0,
                                                                                                                     letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: false,
                                                                                                                   ),
                                                                                                               enabledBorder: InputBorder.none,
                                                                                                               focusedBorder: InputBorder.none,
@@ -878,13 +886,14 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                               focusedErrorBorder: InputBorder.none,
                                                                                                               filled: true,
                                                                                                               fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                              contentPadding: const EdgeInsets.all(16.0),
+                                                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: 'Manrope',
+                                                                                                                  fontFamily: 'GeistSans',
                                                                                                                   color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                                   fontSize: 15.0,
                                                                                                                   letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
                                                                                                                 ),
                                                                                                             maxLength: 7,
                                                                                                             validator: _model.textControllerValidator.asValidator(context),

@@ -174,13 +174,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 1
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -263,13 +264,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 6
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -333,13 +335,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 5
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -422,13 +425,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 10
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -492,13 +496,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 4
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -562,13 +567,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: widget.selectedIndex == 2
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
                                               : FlutterFlowTheme.of(context)
                                                   .revoCardTextColor,
                                           letterSpacing: 0.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -654,13 +660,14 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             color: widget.selectedIndex == 3
                                                 ? FlutterFlowTheme.of(context)
                                                     .primary
                                                 : FlutterFlowTheme.of(context)
                                                     .revoCardTextColor,
                                             letterSpacing: 0.0,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ],
@@ -738,11 +745,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Manrope',
+                                        fontFamily: 'GeistSans',
                                         color: FlutterFlowTheme.of(context)
                                             .revoCardTextColor,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w300,
+                                        useGoogleFonts: false,
                                       ),
                                 ),
                               ),

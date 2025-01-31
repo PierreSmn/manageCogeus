@@ -189,34 +189,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintText: '#0E0E10',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 15.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFFE4E5E6),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
@@ -224,7 +226,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -234,7 +236,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -245,24 +247,26 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .inputBg,
+                                                    .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                fontFamily: 'GeistSans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .titleTextControllerValidator
@@ -298,34 +302,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .inputTitleGrey,
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                               hintText: '#0E0E10',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .inputTitleGrey,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
-                                                  color: Color(0x00000000),
+                                                  color: Color(0xFFE4E5E6),
                                                   width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -333,7 +339,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -343,7 +349,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedErrorBorder:
                                                   OutlineInputBorder(
@@ -354,24 +360,27 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   width: 2.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .inputBg,
+                                                      .primaryBackground,
                                               contentPadding:
-                                                  const EdgeInsets.all(16.0),
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 8.0, 16.0, 8.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .revoCardTextColor,
                                                   fontSize: 15.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: false,
                                                 ),
                                             validator: _model
                                                 .colorTitleTextControllerValidator
@@ -425,34 +434,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintText: '#7F7E83',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 15.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFFE4E5E6),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
@@ -460,7 +471,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -470,7 +481,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -481,24 +492,26 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .inputBg,
+                                                    .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                fontFamily: 'GeistSans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .colorBGTextControllerValidator
@@ -550,34 +563,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintText: '#7F7E83',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 15.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFFE4E5E6),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
@@ -585,7 +600,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -595,7 +610,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -606,24 +621,26 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .inputBg,
+                                                    .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                fontFamily: 'GeistSans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .colorTextTextControllerValidator
@@ -677,34 +694,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintText: '#0071E3',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 15.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFFE4E5E6),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
@@ -712,7 +731,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -722,7 +741,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -733,24 +752,26 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .inputBg,
+                                                    .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                fontFamily: 'GeistSans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .colorButtonTextControllerValidator
@@ -806,34 +827,36 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 16.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintText: '#FFFFFF',
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      fontFamily: 'GeistSans',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .inputTitleGrey,
                                                       fontSize: 15.0,
                                                       letterSpacing: 0.0,
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
-                                                color: Color(0x00000000),
+                                                color: Color(0xFFE4E5E6),
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
@@ -841,7 +864,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -851,7 +874,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -862,24 +885,26 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 width: 2.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(12.0),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .inputBg,
+                                                    .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsets.all(16.0),
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                fontFamily: 'GeistSans',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .revoCardTextColor,
                                                 fontSize: 15.0,
                                                 letterSpacing: 0.0,
+                                                useGoogleFonts: false,
                                               ),
                                           validator: _model
                                               .colorButtonTextTextControllerValidator
@@ -965,7 +990,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               color: colorFromCssString(
                                                 _model.colorTitleTextController
                                                     .text,
@@ -973,6 +998,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               ),
                                               fontSize: 27.0,
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),
@@ -1078,13 +1104,14 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
                                                         fontSize: 13.0,
                                                         letterSpacing: 0.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -1113,7 +1140,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               color: colorFromCssString(
                                                 _model
                                                     .colorButtonTextTextController
@@ -1123,6 +1150,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                         .primaryBackground,
                                               ),
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                         elevation: 0.0,
                                         borderSide: const BorderSide(
@@ -1176,17 +1204,18 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                           color: const Color(0xFFEEE8FC),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: const Color(0xFF5E35B1),
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
                           borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ].divide(const SizedBox(height: 12.0)),

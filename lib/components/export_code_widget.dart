@@ -99,11 +99,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                 Text(
                   'Exporter votre intégration',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Manrope',
+                        fontFamily: 'GeistSans',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                         fontSize: 40.0,
                         letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
+                        useGoogleFonts: false,
                       ),
                 ),
                 Expanded(
@@ -179,11 +180,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             fontSize:
                                                 _model.vidsby3 ? 18.0 : 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(const SizedBox(height: 16.0)),
@@ -276,11 +278,12 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             fontSize:
                                                 _model.vidsby3 ? 14.0 : 18.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(const SizedBox(height: 16.0)),
@@ -321,17 +324,18 @@ class _ExportCodeWidgetState extends State<ExportCodeWidget> {
                           color: const Color(0xFFEEE8FC),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: const Color(0xFF5E35B1),
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
                           borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ],

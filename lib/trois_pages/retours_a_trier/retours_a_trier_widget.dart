@@ -194,11 +194,12 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                   Text(
                                                                                     'Retours à trier',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                           fontSize: 40.0,
                                                                                           letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w600,
+                                                                                          fontWeight: FontWeight.w500,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
                                                                                   FFButtonWidget(
@@ -212,18 +213,19 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: const Color(0xFFD2D2D2),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).secondary,
                                                                                             fontSize: 13.0,
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FontWeight.w600,
+                                                                                            fontWeight: FontWeight.w500,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
                                                                                       borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(16.0),
+                                                                                      borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
                                                                                 ],
@@ -378,9 +380,10 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                         )
                                                                                       ],
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             fontSize: 12.0,
                                                                                             letterSpacing: 0.0,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -392,9 +395,10 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                     ).toString(),
                                                                                     maxLines: 4,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Manrope',
+                                                                                          fontFamily: 'GeistSans',
                                                                                           fontSize: 12.0,
                                                                                           letterSpacing: 0.0,
+                                                                                          useGoogleFonts: false,
                                                                                         ),
                                                                                   )),
                                                                                 ].divide(const SizedBox(height: 12.0)).addToStart(const SizedBox(height: 12.0)),
@@ -507,18 +511,19 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                             color: const Color(0xFFEAFCE8),
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                  fontFamily: 'Manrope',
+                                                                                                  fontFamily: 'GeistSans',
                                                                                                   color: const Color(0xFF67E32C),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                  useGoogleFonts: false,
                                                                                                 ),
                                                                                             elevation: 0.0,
                                                                                             borderSide: const BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 0.0,
                                                                                             ),
-                                                                                            borderRadius: BorderRadius.circular(16.0),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -590,18 +595,19 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                           iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                           color: const Color(0xFFD2D2D2),
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                                 fontSize: 14.0,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
+                                                                                                fontWeight: FontWeight.w500,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                           elevation: 0.0,
                                                                                           borderSide: const BorderSide(
                                                                                             color: Colors.transparent,
                                                                                             width: 0.0,
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                       ),
                                                                                     ].divide(const SizedBox(height: 8.0)).addToEnd(const SizedBox(height: 16.0)),
@@ -674,10 +680,11 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             color:
                                                                                 const Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Manrope',
+                                                                                  fontFamily: 'GeistSans',
                                                                                   color: const Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.w600,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                             elevation:
                                                                                 0.0,
@@ -687,7 +694,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               width: 0.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(16.0),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                       FFButtonWidget(
@@ -732,10 +739,11 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                fontFamily: 'Manrope',
+                                                                                fontFamily: 'GeistSans',
                                                                                 color: const Color(0xFF5E35B1),
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.w600,
+                                                                                fontWeight: FontWeight.w500,
+                                                                                useGoogleFonts: false,
                                                                               ),
                                                                           elevation:
                                                                               0.0,
@@ -747,7 +755,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                 0.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(16.0),
+                                                                              BorderRadius.circular(8.0),
                                                                         ),
                                                                       ),
                                                                     ].divide(const SizedBox(
@@ -767,9 +775,11 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Manrope',
+                                                                                'GeistSans',
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            useGoogleFonts:
+                                                                                false,
                                                                           ),
                                                                     ),
                                                                     InkWell(
@@ -823,8 +833,9 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               '9',
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
+                                                                                    fontFamily: 'GeistSans',
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: false,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -882,8 +893,9 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               '18',
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
+                                                                                    fontFamily: 'GeistSans',
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: false,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -941,8 +953,9 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               '36',
                                                                               textAlign: TextAlign.start,
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Manrope',
+                                                                                    fontFamily: 'GeistSans',
                                                                                     letterSpacing: 0.0,
+                                                                                    useGoogleFonts: false,
                                                                                   ),
                                                                             ),
                                                                           ],

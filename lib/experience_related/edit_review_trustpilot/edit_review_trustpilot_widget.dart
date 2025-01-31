@@ -129,8 +129,9 @@ class _EditReviewTrustpilotWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ].divide(const SizedBox(height: 12.0)),
@@ -160,18 +161,19 @@ class _EditReviewTrustpilotWidgetState
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: false,
                                         ),
                                     elevation: 0.0,
                                     borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                                 if (_model.confirmed)
@@ -202,17 +204,18 @@ class _EditReviewTrustpilotWidgetState
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             color: const Color(0xFF5E35B1),
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                       elevation: 0.0,
                                       borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 0.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(16.0),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                               ].divide(const SizedBox(width: 16.0)),

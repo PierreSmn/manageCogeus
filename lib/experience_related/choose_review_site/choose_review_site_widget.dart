@@ -119,7 +119,7 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Lien de redirection',
+                              'Redirection',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -131,12 +131,13 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                   ),
                             ),
                             Text(
-                              'Faites une liste des thématiques qui reviennent le plus souvent chez vos clients.',
+                              'Choissisez le site d\'avis où rediriger vos clients',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     letterSpacing: 0.0,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ].divide(const SizedBox(height: 12.0)),
@@ -281,12 +282,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -296,12 +299,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ].divide(const SizedBox(
@@ -456,12 +461,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -471,12 +478,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ].divide(const SizedBox(
@@ -599,12 +608,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                           Text(
@@ -614,12 +625,14 @@ class _ChooseReviewSiteWidgetState extends State<ChooseReviewSiteWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ].divide(const SizedBox(

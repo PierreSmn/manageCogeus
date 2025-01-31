@@ -165,10 +165,11 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Manrope',
+                                                    fontFamily: 'GeistSans',
                                                     color: const Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
                                               borderSide: const BorderSide(
@@ -176,7 +177,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                                 width: 0.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(16.0),
+                                                  BorderRadius.circular(8.0),
                                               disabledColor: const Color(0x7F28174A),
                                             ),
                                           ),

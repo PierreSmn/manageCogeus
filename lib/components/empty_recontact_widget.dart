@@ -59,9 +59,10 @@ class _EmptyRecontactWidgetState extends State<EmptyRecontactWidget> {
           'Vous retrouverez ici les demandes de contact. Vous n\'en avez pas encore reçu.',
           textAlign: TextAlign.start,
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Manrope',
+                fontFamily: 'GeistSans',
                 fontSize: 21.0,
                 letterSpacing: 0.0,
+                useGoogleFonts: false,
               ),
         ),
       ),

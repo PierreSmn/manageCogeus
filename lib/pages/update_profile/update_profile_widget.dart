@@ -199,37 +199,38 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      32.0, 24.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Mettre à jour votre compte',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displaySmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 24.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Mise à jour du compte',
+                                            style: FlutterFlowTheme.of(context)
+                                                .displaySmall
+                                                .override(
+                                                  fontFamily: 'GeistSans',
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  useGoogleFonts: false,
+                                                ),
+                                          ),
                                         ),
                                         Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  32.0, 12.0, 0.0, 24.0),
+                                                  12.0, 12.0, 0.0, 24.0),
                                           child: Text(
                                             'Modifiez les informations desiré.',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .inputTitleGrey,
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
+                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ),
@@ -270,7 +271,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .labelMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .inputTitleGrey,
@@ -278,6 +279,8 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                       16.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
@@ -285,7 +288,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .inputTitleGrey,
@@ -293,19 +296,21 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
                                                               const BorderSide(
                                                             color: Color(
-                                                                0x00000000),
+                                                                0xFFE4E5E6),
                                                             width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         focusedBorder:
                                                             OutlineInputBorder(
@@ -318,7 +323,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         errorBorder:
                                                             OutlineInputBorder(
@@ -332,7 +337,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         focusedErrorBorder:
                                                             OutlineInputBorder(
@@ -346,16 +351,20 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         filled: true,
                                                         fillColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .inputBg,
+                                                                .primaryBackground,
                                                         contentPadding:
-                                                            const EdgeInsets.all(
-                                                                16.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    8.0,
+                                                                    16.0,
+                                                                    8.0),
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -363,13 +372,15 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
                                                                 fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       validator: _model
                                                           .firstNameTextControllerValidator
@@ -400,7 +411,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .labelMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .inputTitleGrey,
@@ -408,6 +419,8 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                       16.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
@@ -415,7 +428,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .inputTitleGrey,
@@ -423,19 +436,21 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                       15.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         enabledBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
                                                               const BorderSide(
                                                             color: Color(
-                                                                0x00000000),
+                                                                0xFFE4E5E6),
                                                             width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         focusedBorder:
                                                             OutlineInputBorder(
@@ -448,7 +463,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         errorBorder:
                                                             OutlineInputBorder(
@@ -462,7 +477,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         focusedErrorBorder:
                                                             OutlineInputBorder(
@@ -476,16 +491,20 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      12.0),
+                                                                      8.0),
                                                         ),
                                                         filled: true,
                                                         fillColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .inputBg,
+                                                                .primaryBackground,
                                                         contentPadding:
-                                                            const EdgeInsets.all(
-                                                                16.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    8.0,
+                                                                    16.0,
+                                                                    8.0),
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -493,13 +512,15 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .revoCardTextColor,
                                                                 fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       validator: _model
                                                           .lastNameTextControllerValidator
@@ -564,7 +585,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                       },
                                                       text: 'Continuer',
                                                       options: FFButtonOptions(
-                                                        width: 230.0,
+                                                        width: double.infinity,
                                                         height: 40.0,
                                                         padding:
                                                             const EdgeInsetsDirectional
@@ -588,14 +609,16 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                                 .titleSmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   color: const Color(
                                                                       0xFF5E35B1),
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w600,
+                                                                          .w500,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                         elevation: 0.0,
                                                         borderSide: const BorderSide(
@@ -605,7 +628,7 @@ class _UpdateProfileWidgetState extends State<UpdateProfileWidget>
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(16.0),
+                                                                .circular(8.0),
                                                       ),
                                                     ),
                                                   ),

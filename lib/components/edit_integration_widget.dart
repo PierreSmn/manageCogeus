@@ -98,11 +98,12 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                 Text(
                   'Modifier Integration',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Manrope',
+                        fontFamily: 'GeistSans',
                         color: FlutterFlowTheme.of(context).revoCardTextColor,
                         fontSize: 40.0,
                         letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
+                        useGoogleFonts: false,
                       ),
                 ),
                 Container(
@@ -125,34 +126,36 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
-                                fontFamily: 'Manrope',
+                                fontFamily: 'GeistSans',
                                 color:
                                     FlutterFlowTheme.of(context).inputTitleGrey,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: false,
                               ),
                           hintStyle: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(
-                                fontFamily: 'Manrope',
+                                fontFamily: 'GeistSans',
                                 color:
                                     FlutterFlowTheme.of(context).inputTitleGrey,
                                 fontSize: 15.0,
                                 letterSpacing: 0.0,
+                                useGoogleFonts: false,
                               ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
-                              color: Color(0x00000000),
+                              color: Color(0xFFE4E5E6),
                               width: 2.0,
                             ),
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Color(0x00000000),
                               width: 2.0,
                             ),
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -160,7 +163,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                   .inputNoGoodClicked,
                               width: 2.0,
                             ),
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -168,18 +171,21 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                   .inputNoGoodClicked,
                               width: 2.0,
                             ),
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                           filled: true,
-                          fillColor: FlutterFlowTheme.of(context).inputBg,
-                          contentPadding: const EdgeInsets.all(16.0),
+                          fillColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 8.0, 16.0, 8.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Manrope',
+                              fontFamily: 'GeistSans',
                               color: FlutterFlowTheme.of(context)
                                   .revoCardTextColor,
                               fontSize: 15.0,
                               letterSpacing: 0.0,
+                              useGoogleFonts: false,
                             ),
                         validator: _model.inteNameTextControllerValidator
                             .asValidator(context),
@@ -226,8 +232,10 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             if (containerIntegrationsRow
@@ -365,12 +373,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -379,7 +388,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -455,12 +464,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -469,7 +479,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -506,8 +516,10 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             if (containerIntegrationsRow
@@ -644,12 +656,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -658,7 +671,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -733,12 +746,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -747,7 +761,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -784,8 +798,10 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           letterSpacing: 0.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             if (containerIntegrationsRow
@@ -922,12 +938,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -936,7 +953,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -1011,12 +1028,13 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             const Color(0xFF5E35B1),
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: const BorderSide(
@@ -1025,7 +1043,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                               ),
                                             ),
@@ -1073,9 +1091,11 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                       ),
                                                     if (containerIntegrationsRow
@@ -1242,14 +1262,16 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: const Color(
                                                                         0xFF5E35B1),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
@@ -1261,7 +1283,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      16.0),
+                                                                      8.0),
                                                         ),
                                                       ),
                                                     ),
@@ -1360,14 +1382,16 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: const Color(
                                                                         0xFF5E35B1),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
@@ -1379,7 +1403,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      16.0),
+                                                                      8.0),
                                                         ),
                                                       ),
                                                     ),
@@ -1421,9 +1445,11 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                       ),
                                                     if (containerIntegrationsRow
@@ -1590,14 +1616,16 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: const Color(
                                                                         0xFF5E35B1),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
@@ -1609,7 +1637,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      16.0),
+                                                                      8.0),
                                                         ),
                                                       ),
                                                     ),
@@ -1708,14 +1736,16 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                                   .titleSmall
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Manrope',
+                                                                        'GeistSans',
                                                                     color: const Color(
                                                                         0xFF5E35B1),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w600,
+                                                                            .w500,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
@@ -1727,7 +1757,7 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      16.0),
+                                                                      8.0),
                                                         ),
                                                       ),
                                                     ),
@@ -1763,17 +1793,18 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                           color: const Color(0xFFFCE8EA),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Manrope',
+                                    fontFamily: 'GeistSans',
                                     color: const Color(0xFFE32C58),
                                     letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
                           borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
-                          borderRadius: BorderRadius.circular(16.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                       Padding(
@@ -1803,9 +1834,10 @@ class _EditIntegrationWidgetState extends State<EditIntegrationWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Manrope',
+                                  fontFamily: 'GeistSans',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
+                                  useGoogleFonts: false,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(

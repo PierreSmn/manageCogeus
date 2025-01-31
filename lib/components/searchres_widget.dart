@@ -117,8 +117,9 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),

@@ -75,11 +75,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
             Text(
               'Créer une intégration',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Manrope',
+                    fontFamily: 'GeistSans',
                     color: FlutterFlowTheme.of(context).revoCardTextColor,
                     fontSize: 40.0,
                     letterSpacing: 0.0,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
+                    useGoogleFonts: false,
                   ),
             ),
             Expanded(
@@ -137,12 +138,13 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             fontSize: _model.isVidFounder
                                                 ? 18.0
                                                 : 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(const SizedBox(height: 16.0)),
@@ -159,13 +161,14 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          fontFamily: 'GeistSans',
                                           color: FlutterFlowTheme.of(context)
                                               .error,
                                           fontSize:
                                               _model.isVidFounder ? 18.0 : 14.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
+                                          fontWeight: FontWeight.normal,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ].divide(const SizedBox(height: 16.0)),
@@ -244,11 +247,12 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             fontSize:
                                                 _model.isStory ? 18.0 : 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(const SizedBox(height: 16.0)),
@@ -354,13 +358,14 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            fontFamily: 'GeistSans',
                                             fontSize: !_model.isStory &&
                                                     !_model.isVidFounder
                                                 ? 14.0
                                                 : 18.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ].divide(const SizedBox(height: 16.0)),
@@ -466,16 +471,17 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                         color: const Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Manrope',
+                                  fontFamily: 'GeistSans',
                                   color: const Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
                         borderSide: const BorderSide(
                           width: 0.0,
                         ),
-                        borderRadius: BorderRadius.circular(16.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),

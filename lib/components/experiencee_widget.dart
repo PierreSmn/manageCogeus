@@ -173,14 +173,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .revoCardTextColor,
                                                           fontSize: 40.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ],
@@ -210,12 +212,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -241,12 +245,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -272,12 +278,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -295,8 +303,9 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                       Text(
@@ -305,8 +314,9 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              fontFamily: 'GeistSans',
                                               letterSpacing: 0.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ].divide(const SizedBox(height: 4.0)),
@@ -339,13 +349,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .revoCardTextColorUnselected,
                                                   fontSize: 15.28,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
+                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           SingleChildScrollView(
@@ -372,14 +383,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily:
-                                                                'Manrope',
+                                                                'GeistSans',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .revoCardTextColor,
                                                             fontSize: 18.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
-                                                                FontWeight.w600,
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                false,
                                                           ),
                                                     )),
                                                     SelectionArea(
@@ -394,14 +407,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily:
-                                                                'Manrope',
+                                                                'GeistSans',
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .revoCardTextColor,
                                                             fontSize: 18.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
-                                                                FontWeight.w600,
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                false,
                                                           ),
                                                     )),
                                                   ].divide(
@@ -418,7 +433,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -427,6 +442,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 )),
                                                 SelectionArea(
@@ -440,7 +456,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -449,6 +465,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 )),
                                               ],
@@ -492,9 +509,11 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                       )),
                                                     ),
@@ -533,13 +552,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .revoCardTextColorUnselected,
                                                   fontSize: 15.28,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w300,
+                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           Text(
@@ -550,13 +570,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  fontFamily: 'GeistSans',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .revoCardTextColor,
                                                   fontSize: 20.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                           if (containerExperiencesRow.theme ==
@@ -596,9 +617,11 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Manrope',
+                                                                      'GeistSans',
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                       )),
                                                     ),
@@ -654,7 +677,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .revoCardTextColorUnselected,
@@ -662,6 +685,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 if (containerExperiencesRow
@@ -673,14 +697,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .revoCardTextColor,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 if (containerExperiencesRow
@@ -692,14 +718,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .revoCardTextColor,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 if (containerExperiencesRow
@@ -711,14 +739,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .revoCardTextColor,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                               ].divide(const SizedBox(height: 12.0)),
@@ -745,7 +775,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .revoCardTextColorUnselected,
@@ -753,6 +783,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 if (!((containerExperiencesRow
@@ -770,14 +801,16 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          fontFamily:
+                                                              'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .revoCardTextColor,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                               ].divide(const SizedBox(height: 12.0)),
@@ -818,13 +851,14 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    fontFamily: 'Manrope',
+                                                    fontFamily: 'GeistSans',
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .revoCardTextColorUnselected,
                                                     fontSize: 15.28,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w300,
+                                                    useGoogleFonts: false,
                                                   ),
                                             ),
                                             Column(
@@ -838,11 +872,12 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 RatingBarIndicator(
@@ -884,11 +919,12 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 RatingBarIndicator(
@@ -930,11 +966,12 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 RatingBarIndicator(
@@ -976,11 +1013,12 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 RatingBarIndicator(
@@ -1022,11 +1060,12 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        fontFamily: 'GeistSans',
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                                 RatingBarIndicator(
@@ -1095,9 +1134,11 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 letterSpacing:
                                                                     0.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         )),
                                                       ),

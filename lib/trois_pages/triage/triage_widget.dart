@@ -239,20 +239,22 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               )
                                                                                             ],
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Manrope',
+                                                                                                  fontFamily: 'GeistSans',
                                                                                                   color: FlutterFlowTheme.of(context).secondary,
                                                                                                   letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: false,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
                                                                                         Text(
                                                                                           'Contenu provenant de ',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
                                                                                                 fontSize: 16.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w300,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                         Text(
@@ -261,21 +263,23 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                             'John',
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColor,
                                                                                                 fontSize: 46.0,
                                                                                                 letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
+                                                                                                fontWeight: FontWeight.w500,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                         Text(
                                                                                           'Transcription',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'Manrope',
+                                                                                                fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColorUnselected,
                                                                                                 fontSize: 24.72,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.normal,
+                                                                                                useGoogleFonts: false,
                                                                                               ),
                                                                                         ),
                                                                                         Container(
@@ -306,8 +310,9 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                                       )
                                                                                                     ],
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                          fontFamily: 'Manrope',
+                                                                                                          fontFamily: 'GeistSans',
                                                                                                           letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: false,
                                                                                                         ),
                                                                                                   ),
                                                                                                   maxLines: 7,
@@ -376,11 +381,12 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                       iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).alternate,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            fontFamily: 'Manrope',
+                                                                                            fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
                                                                                             fontSize: 18.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
+                                                                                            useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
                                                                                       borderSide: const BorderSide(
@@ -451,11 +457,12 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                         iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: FlutterFlowTheme.of(context).revoCardBlueText,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Manrope',
+                                                                                              fontFamily: 'GeistSans',
                                                                                               color: FlutterFlowTheme.of(context).revoWhite,
                                                                                               fontSize: 18.0,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w600,
+                                                                                              useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 0.0,
                                                                                         borderSide: const BorderSide(
@@ -512,14 +519,16 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Manrope',
+                                                                    'GeistSans',
                                                                 color: const Color(
                                                                     0xFF5E35B1),
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w600,
+                                                                        .w500,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       elevation: 0.0,
                                                       borderSide: const BorderSide(
@@ -529,7 +538,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              16.0),
+                                                              8.0),
                                                     ),
                                                   ),
                                                 ],
