@@ -270,9 +270,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0xFFE4E5E6),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnCardBorderGrey,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -281,9 +282,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -378,9 +380,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -435,10 +438,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                                 .visibility_outlined
                                                             : Icons
                                                                 .visibility_off_outlined,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .inputTitleGrey,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         size: 20.0,
                                                       ),
                                                     ),
@@ -498,9 +500,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:

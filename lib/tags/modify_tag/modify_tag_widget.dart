@@ -127,15 +127,16 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                           useGoogleFonts: false,
                         ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Color(0xFFE4E5E6),
+                      borderSide: BorderSide(
+                        color:
+                            FlutterFlowTheme.of(context).shadcnCardBorderGrey,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Color(0x00000000),
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).shadcnInputSelected,
                         width: 2.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
