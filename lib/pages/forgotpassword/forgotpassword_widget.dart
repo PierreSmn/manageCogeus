@@ -364,9 +364,10 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                           enabledBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
-                                                              color: Color(
-                                                                  0xFFE4E5E6),
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .shadcnCardBorderGrey,
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
@@ -377,9 +378,10 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .shadcnInputSelected,
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:

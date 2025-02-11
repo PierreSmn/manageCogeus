@@ -248,6 +248,8 @@ dynamic deserializeParam<T>(
             return OffFlowsRow(data);
           case SubmissionsRow:
             return SubmissionsRow(data);
+          case ScoreHistoryRow:
+            return ScoreHistoryRow(data);
           case TagsRow:
             return TagsRow(data);
           case WebAppActivationsRow:

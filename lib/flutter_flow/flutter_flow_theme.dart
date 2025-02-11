@@ -68,6 +68,7 @@ abstract class FlutterFlowTheme {
   late Color vertSympa;
   late Color joliGrisPourTexteLeger;
   late Color shadcnCardBorderGrey;
+  late Color shadcnInputSelected;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -193,6 +194,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color vertSympa = const Color(0xFF52B58E);
   late Color joliGrisPourTexteLeger = const Color(0xFF778089);
   late Color shadcnCardBorderGrey = const Color(0xFFE4E5E6);
+  late Color shadcnInputSelected = const Color(0xFFA1A1A9);
 }
 
 abstract class Typography {

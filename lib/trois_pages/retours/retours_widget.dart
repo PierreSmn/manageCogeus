@@ -569,18 +569,39 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
-                                                                                      Text(
-                                                                                        getJsonField(
-                                                                                          validItemItem,
-                                                                                          r'''$.submitter_name''',
-                                                                                        ).toString(),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              fontSize: 16.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.submitter_name''',
+                                                                                            ).toString(),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  fontSize: 16.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          ),
+                                                                                          SelectionArea(
+                                                                                              child: Text(
+                                                                                            getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.email''',
+                                                                                            ).toString(),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  fontSize: 14.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w300,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          )),
+                                                                                        ],
                                                                                       ),
                                                                                       if (_model.tagId != null)
                                                                                         Column(
@@ -1458,18 +1479,39 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                                                     children: [
-                                                                                      Text(
-                                                                                        getJsonField(
-                                                                                          validItemItem,
-                                                                                          r'''$.submitter_name''',
-                                                                                        ).toString(),
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              fontSize: 16.0,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w600,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
+                                                                                      Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.submitter_name''',
+                                                                                            ).toString(),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  fontSize: 16.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          ),
+                                                                                          SelectionArea(
+                                                                                              child: Text(
+                                                                                            getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.email''',
+                                                                                            ).toString(),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  fontSize: 14.0,
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w300,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          )),
+                                                                                        ],
                                                                                       ),
                                                                                       Column(
                                                                                         mainAxisSize: MainAxisSize.max,

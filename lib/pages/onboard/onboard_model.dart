@@ -33,10 +33,14 @@ class OnboardModel extends FlutterFlowModel<OnboardWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
+  // State field(s) for lienLogo widget.
+  FocusNode? lienLogoFocusNode;
+  TextEditingController? lienLogoTextController;
+  String? Function(BuildContext, String?)? lienLogoTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  TextEditingController? textController2;
+  String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered4 = false;
   Completer<List<ClientsRow>>? requestCompleter1;
@@ -76,8 +80,11 @@ class OnboardModel extends FlutterFlowModel<OnboardWidget> {
 
   @override
   void dispose() {
+    lienLogoFocusNode?.dispose();
+    lienLogoTextController?.dispose();
+
     textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textController2?.dispose();
   }
 
   /// Additional helper methods.

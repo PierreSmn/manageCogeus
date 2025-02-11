@@ -359,9 +359,10 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
+                                                                BorderSide(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .shadcnInputSelected,
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
@@ -427,7 +428,7 @@ class _NewpasswordWidgetState extends State<NewpasswordWidget>
                                                                       .visibility_off_outlined,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .inputTitleGrey,
+                                                                  .shadcnInputSelected,
                                                               size: 20.0,
                                                             ),
                                                           ),

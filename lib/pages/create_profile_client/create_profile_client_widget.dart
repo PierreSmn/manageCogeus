@@ -1,14 +1,12 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_profile_client_model.dart';
 export 'create_profile_client_model.dart';
 
@@ -236,9 +234,10 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0xFFE4E5E6),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnCardBorderGrey,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -247,9 +246,10 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -347,9 +347,10 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0xFFE4E5E6),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnCardBorderGrey,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -358,9 +359,10 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Color(0x00000000),
+                                                      borderSide: BorderSide(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .shadcnInputSelected,
                                                         width: 2.0,
                                                       ),
                                                       borderRadius:
@@ -423,161 +425,111 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                               Align(
                                                 alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
-                                                child: Builder(
-                                                  builder: (context) =>
-                                                      FFButtonWidget(
-                                                    onPressed: () async {
-                                                      _model.clientNewRow =
-                                                          await ClientsTable()
-                                                              .insert({
-                                                        'name': _model
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    _model.clientNewRow =
+                                                        await ClientsTable()
+                                                            .insert({
+                                                      'name': _model
+                                                          .nameTextController
+                                                          .text,
+                                                      'site_url': _model
+                                                          .lastNameTextController
+                                                          .text,
+                                                    });
+                                                    _model.updatedUser =
+                                                        await UsersTable()
+                                                            .update(
+                                                      data: {
+                                                        'company_name': _model
                                                             .nameTextController
                                                             .text,
                                                         'site_url': _model
                                                             .lastNameTextController
                                                             .text,
-                                                        'admin': currentUserUid,
-                                                      });
-                                                      await UsersTable().update(
-                                                        data: {
-                                                          'company_name': _model
-                                                              .nameTextController
-                                                              .text,
-                                                          'site_url': _model
-                                                              .lastNameTextController
-                                                              .text,
-                                                          'id': _model
-                                                              .clientNewRow?.id
-                                                              .toString(),
-                                                        },
-                                                        matchingRows: (rows) =>
-                                                            rows.eqOrNull(
-                                                          'id',
-                                                          currentUserUid,
-                                                        ),
-                                                      );
-                                                      await SendNotificaitonOfNewUserCall
-                                                          .call(
-                                                        companyName: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.companyName,
-                                                        name: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.firstName,
-                                                        surname: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.lastName,
-                                                        email: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.email,
-                                                        phone: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.phoneNumber,
-                                                        siteUrl: _model
-                                                            .updatedUser
-                                                            ?.firstOrNull
-                                                            ?.siteUrl,
-                                                      );
-
-                                                      FFAppState().activeBrand =
-                                                          _model.clientNewRow!
-                                                              .name!;
-                                                      FFAppState()
-                                                              .activeClientID =
-                                                          _model
-                                                              .clientNewRow!.id;
-                                                      safeSetState(() {});
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (dialogContext) {
-                                                          return Dialog(
-                                                            elevation: 0,
-                                                            insetPadding:
-                                                                EdgeInsets.zero,
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            alignment: const AlignmentDirectional(
-                                                                    0.0, 0.0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                            child: WebViewAware(
-                                                              child:
-                                                                  GestureDetector(
-                                                                onTap: () {
-                                                                  FocusScope.of(
-                                                                          dialogContext)
-                                                                      .unfocus();
-                                                                  FocusManager
-                                                                      .instance
-                                                                      .primaryFocus
-                                                                      ?.unfocus();
-                                                                },
-                                                                child:
-                                                                    const EditEngagementWidget(),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-
-                                                      context.goNamed('home');
-
-                                                      safeSetState(() {});
-                                                    },
-                                                    text: 'Continuer',
-                                                    options: FFButtonOptions(
-                                                      width: double.infinity,
-                                                      height: 40.0,
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color: const Color(0xFFEEE8FC),
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'GeistSans',
-                                                                color: const Color(
-                                                                    0xFF5E35B1),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                useGoogleFonts:
-                                                                    false,
-                                                              ),
-                                                      elevation: 0.0,
-                                                      borderSide: const BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 0.0,
+                                                        'client_id': _model
+                                                            .clientNewRow?.id,
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows.eqOrNull(
+                                                        'id',
+                                                        currentUserUid,
                                                       ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
+                                                      returnRows: true,
+                                                    );
+                                                    await SendNotificaitonOfNewUserCall
+                                                        .call(
+                                                      companyName: _model
+                                                          .updatedUser
+                                                          ?.firstOrNull
+                                                          ?.companyName,
+                                                      name: _model
+                                                          .updatedUser
+                                                          ?.firstOrNull
+                                                          ?.firstName,
+                                                      surname: _model
+                                                          .updatedUser
+                                                          ?.firstOrNull
+                                                          ?.lastName,
+                                                      email: _model.updatedUser
+                                                          ?.firstOrNull?.email,
+                                                      phone: _model
+                                                          .updatedUser
+                                                          ?.firstOrNull
+                                                          ?.phoneNumber,
+                                                      siteUrl: _model
+                                                          .updatedUser
+                                                          ?.firstOrNull
+                                                          ?.siteUrl,
+                                                    );
+
+                                                    FFAppState().activeBrand =
+                                                        _model.clientNewRow!
+                                                            .name!;
+                                                    FFAppState()
+                                                            .activeClientID =
+                                                        _model.clientNewRow!.id;
+                                                    safeSetState(() {});
+
+                                                    context
+                                                        .pushNamed('onboard');
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  text: 'Continuer',
+                                                  options: FFButtonOptions(
+                                                    width: double.infinity,
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFEEE8FC),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'GeistSans',
+                                                          color:
+                                                              const Color(0xFF5E35B1),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
                                                     ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
                                                 ),
                                               ),

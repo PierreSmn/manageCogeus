@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -33,7 +34,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
     super.initState();
     _model = createModel(context, () => OnboardModel());
 
-    _model.textController ??= TextEditingController(text: currentUserEmail);
+    _model.lienLogoTextController ??= TextEditingController();
+    _model.lienLogoFocusNode ??= FocusNode();
+
+    _model.textController2 ??= TextEditingController(text: currentUserEmail);
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -293,7 +297,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                             ],
                                           ),
                                           Text(
-                                            'Step ${_model.step?.toString()} of 6',
+                                            'Etape ${_model.step?.toString()} sur 7',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -386,13 +390,13 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                   );
                                                 }
                                                 List<ClientsRow>
-                                                    clientIdClientsRowList =
+                                                    redirectionClientsRowList =
                                                     snapshot.data!;
 
-                                                final clientIdClientsRow =
-                                                    clientIdClientsRowList
+                                                final redirectionClientsRow =
+                                                    redirectionClientsRowList
                                                             .isNotEmpty
-                                                        ? clientIdClientsRowList
+                                                        ? redirectionClientsRowList
                                                             .first
                                                         : null;
 
@@ -487,7 +491,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   ),
                                                                 ].divide(const SizedBox(
                                                                     height:
-                                                                        12.0)),
+                                                                        8.0)),
                                                               ),
                                                               SingleChildScrollView(
                                                                 child: Column(
@@ -550,8 +554,8 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            if (clientIdClientsRow?.reviewLink == null ||
-                                                                                clientIdClientsRow?.reviewLink == '')
+                                                                            if (redirectionClientsRow?.reviewLink == null ||
+                                                                                redirectionClientsRow?.reviewLink == '')
                                                                               Builder(
                                                                                 builder: (context) => Padding(
                                                                                   padding: const EdgeInsets.all(3.0),
@@ -648,8 +652,8 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            if (clientIdClientsRow?.reviewLink != null &&
-                                                                                clientIdClientsRow?.reviewLink != '')
+                                                                            if (redirectionClientsRow?.reviewLink != null &&
+                                                                                redirectionClientsRow?.reviewLink != '')
                                                                               Builder(
                                                                                 builder: (context) => Padding(
                                                                                   padding: const EdgeInsets.all(3.0),
@@ -676,8 +680,8 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 child: EditReviewLinkWidget(
                                                                                                   id: FFAppState().activeClientID,
                                                                                                   isGoogle: false,
-                                                                                                  name: clientIdClientsRow?.reviewSite,
-                                                                                                  link: clientIdClientsRow?.reviewLink,
+                                                                                                  name: redirectionClientsRow?.reviewSite,
+                                                                                                  link: redirectionClientsRow?.reviewLink,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -719,7 +723,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 children: [
                                                                                                   Text(
                                                                                                     valueOrDefault<String>(
-                                                                                                      clientIdClientsRow?.reviewSite,
+                                                                                                      redirectionClientsRow?.reviewSite,
                                                                                                       'Site',
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -731,7 +735,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                   Text(
                                                                                                     valueOrDefault<String>(
-                                                                                                      clientIdClientsRow?.reviewLink,
+                                                                                                      redirectionClientsRow?.reviewLink,
                                                                                                       'https://',
                                                                                                     ),
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -844,6 +848,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         );
                                                                                       },
                                                                                     );
+
+                                                                                    safeSetState(() => _model.requestCompleter2 = null);
+                                                                                    await _model.waitForRequestCompleted2();
                                                                                   },
                                                                                   child: Container(
                                                                                     width: double.infinity,
@@ -949,6 +956,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         );
                                                                                       },
                                                                                     );
+
+                                                                                    safeSetState(() => _model.requestCompleter2 = null);
+                                                                                    await _model.waitForRequestCompleted2();
                                                                                   },
                                                                                   child: Container(
                                                                                     width: double.infinity,
@@ -1093,11 +1103,35 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                             FFButtonWidget(
                                                               onPressed:
                                                                   () async {
-                                                                _model.step =
-                                                                    _model.step! +
-                                                                        1;
-                                                                safeSetState(
-                                                                    () {});
+                                                                if (redirectionClientsRow
+                                                                            ?.logoUrl !=
+                                                                        null &&
+                                                                    redirectionClientsRow
+                                                                            ?.logoUrl !=
+                                                                        '') {
+                                                                  _model.visualise =
+                                                                      true;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.lienLogoTextController
+                                                                            ?.text =
+                                                                        redirectionClientsRow!
+                                                                            .logoUrl!;
+                                                                  });
+                                                                  _model.step =
+                                                                      _model.step! +
+                                                                          1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                } else {
+                                                                  _model.step =
+                                                                      _model.step! +
+                                                                          1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
                                                               },
                                                               text: 'Suivant',
                                                               options:
@@ -1184,82 +1218,76 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
                                               ),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 28.0, 16.0, 28.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  children: [
-                                                    Container(
-                                                      width: 400.0,
-                                                      decoration:
-                                                          const BoxDecoration(),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                'Logo',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Manrope',
-                                                                      fontSize:
-                                                                          24.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      lineHeight:
-                                                                          1.2,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                'Uploader votre logo par lien ou fichier',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'GeistSans',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .inputTitleGrey,
-                                                                      fontSize:
-                                                                          15.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                              ),
-                                                            ].divide(const SizedBox(
-                                                                height: 12.0)),
-                                                          ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    width: 400.0,
+                                                    decoration: const BoxDecoration(),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Logo',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Manrope',
+                                                                    fontSize:
+                                                                        24.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    lineHeight:
+                                                                        1.2,
+                                                                  ),
+                                                            ),
+                                                            Text(
+                                                              'Uploader votre logo par lien ou fichier',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'GeistSans',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .inputTitleGrey,
+                                                                    fontSize:
+                                                                        15.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    useGoogleFonts:
+                                                                        false,
+                                                                  ),
+                                                            ),
+                                                          ].divide(const SizedBox(
+                                                              height: 12.0)),
+                                                        ),
+                                                        if (!_model.visualise)
                                                           Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1333,7 +1361,16 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         if (_model.uploadedFileUrl !=
                                                                                 '') {
                                                                           safeSetState(
+                                                                              () {
+                                                                            _model.lienLogoTextController?.text =
+                                                                                _model.uploadedFileUrl;
+                                                                          });
+                                                                          _model.visualise =
+                                                                              true;
+                                                                          safeSetState(
                                                                               () {});
+                                                                        } else {
+                                                                          return;
                                                                         }
                                                                       },
                                                                       text:
@@ -1391,9 +1428,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
-                                                                          () {
-                                                                        print(
-                                                                            'Button pressed ...');
+                                                                          () async {
+                                                                        _model.visualise =
+                                                                            true;
+                                                                        safeSetState(
+                                                                            () {});
                                                                       },
                                                                       text:
                                                                           'Utiliser un lien',
@@ -1441,17 +1480,345 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                             ].divide(const SizedBox(
                                                                 height: 16.0)),
                                                           ),
-                                                        ].divide(const SizedBox(
-                                                            height: 16.0)),
-                                                      ),
+                                                        if (_model.visualise)
+                                                          Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              TextFormField(
+                                                                controller: _model
+                                                                    .lienLogoTextController,
+                                                                focusNode: _model
+                                                                    .lienLogoFocusNode,
+                                                                onFieldSubmitted:
+                                                                    (_) async {
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.lienLogoTextController
+                                                                            ?.text =
+                                                                        _model
+                                                                            .lienLogoTextController
+                                                                            .text;
+                                                                  });
+                                                                },
+                                                                autofocus:
+                                                                    false,
+                                                                obscureText:
+                                                                    false,
+                                                                decoration:
+                                                                    InputDecoration(
+                                                                  labelStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'GeistSans',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .inputTitleGrey,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            false,
+                                                                      ),
+                                                                  hintText:
+                                                                      'Lien URL du logo',
+                                                                  hintStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'GeistSans',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .inputTitleGrey,
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            false,
+                                                                      ),
+                                                                  enabledBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .shadcnCardBorderGrey,
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  focusedBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .shadcnInputSelected,
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  errorBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .inputNoGoodClicked,
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  focusedErrorBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .inputNoGoodClicked,
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  filled: true,
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  contentPadding:
+                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          8.0,
+                                                                          16.0,
+                                                                          8.0),
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'GeistSans',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .revoCardTextColor,
+                                                                      fontSize:
+                                                                          15.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts:
+                                                                          false,
+                                                                    ),
+                                                                validator: _model
+                                                                    .lienLogoTextControllerValidator
+                                                                    .asValidator(
+                                                                        context),
+                                                              ),
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Flexible(
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          400.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Visibility(
+                                                                        visible: _model.lienLogoTextController.text !=
+                                                                                '',
+                                                                        child:
+                                                                            ClipRRect(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                          child:
+                                                                              Image.network(
+                                                                            _model.lienLogoTextController.text,
+                                                                            width:
+                                                                                180.0,
+                                                                            height:
+                                                                                180.0,
+                                                                            fit:
+                                                                                BoxFit.contain,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            await ClientsTable().update(
+                                                                              data: {
+                                                                                'logo_url': _model.lienLogoTextController.text,
+                                                                              },
+                                                                              matchingRows: (rows) => rows.eqOrNull(
+                                                                                'id',
+                                                                                FFAppState().activeClientID,
+                                                                              ),
+                                                                            );
+                                                                            _model.step =
+                                                                                _model.step! + 1;
+                                                                            safeSetState(() {});
+                                                                          },
+                                                                          text:
+                                                                              'Valider',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                const Color(0xFFEEE8FC),
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'GeistSans',
+                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.normal,
+                                                                                  useGoogleFonts: false,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 0.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            safeSetState(() {
+                                                                              _model.isDataUploading = false;
+                                                                              _model.uploadedLocalFile = FFUploadedFile(bytes: Uint8List.fromList([]));
+                                                                              _model.uploadedFileUrl = '';
+                                                                            });
+
+                                                                            safeSetState(() {
+                                                                              _model.lienLogoTextController?.clear();
+                                                                            });
+                                                                            _model.visualise =
+                                                                                false;
+                                                                            safeSetState(() {});
+                                                                          },
+                                                                          text:
+                                                                              'Modifier',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                30.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).inputBg,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'GeistSans',
+                                                                                  color: FlutterFlowTheme.of(context).inputTitleGrey,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.normal,
+                                                                                  useGoogleFonts: false,
+                                                                                ),
+                                                                            elevation:
+                                                                                0.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 0.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ].divide(const SizedBox(
+                                                                    height:
+                                                                        12.0)),
+                                                              ),
+                                                            ].divide(const SizedBox(
+                                                                height: 16.0)),
+                                                          ),
+                                                      ].divide(const SizedBox(
+                                                          height: 16.0)),
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ),
-                                      if (_model.step == 2)
+                                      if (_model.step == 3)
                                         Container(
                                           height: 500.0,
                                           decoration: const BoxDecoration(),
@@ -1558,7 +1925,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       TextFormField(
                                                                     controller:
                                                                         _model
-                                                                            .textController,
+                                                                            .textController2,
                                                                     focusNode:
                                                                         _model
                                                                             .textFieldFocusNode,
@@ -1567,7 +1934,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       FFAppState()
                                                                               .themaEdited =
                                                                           _model
-                                                                              .textController
+                                                                              .textController2
                                                                               .text;
                                                                       safeSetState(
                                                                           () {});
@@ -1615,9 +1982,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       enabledBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
-                                                                              Color(0xFFE4E5E6),
+                                                                              FlutterFlowTheme.of(context).shadcnCardBorderGrey,
                                                                           width:
                                                                               2.0,
                                                                         ),
@@ -1627,9 +1994,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
-                                                                              Color(0x00000000),
+                                                                              FlutterFlowTheme.of(context).shadcnInputSelected,
                                                                           width:
                                                                               2.0,
                                                                         ),
@@ -1687,7 +2054,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               false,
                                                                         ),
                                                                     validator: _model
-                                                                        .textControllerValidator
+                                                                        .textController2Validator
                                                                         .asValidator(
                                                                             context),
                                                                   ),
@@ -1711,7 +2078,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         .update(
                                                                       data: {
                                                                         'notification_email': _model
-                                                                            .textController
+                                                                            .textController2
                                                                             .text,
                                                                       },
                                                                       matchingRows:
@@ -1790,7 +2157,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (_model.step == 3)
+                                      if (_model.step == 4)
                                         Container(
                                           height: 500.0,
                                           decoration: const BoxDecoration(),
@@ -3150,7 +3517,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (_model.step == 4)
+                                      if (_model.step == 5)
                                         Container(
                                           height: 500.0,
                                           decoration: const BoxDecoration(),
@@ -3762,7 +4129,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (_model.step == 5)
+                                      if (_model.step == 6)
                                         Container(
                                           height: 500.0,
                                           decoration: const BoxDecoration(),
@@ -4472,7 +4839,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                             ),
                                           ),
                                         ),
-                                      if ((_model.step == 6) &&
+                                      if ((_model.step == 7) &&
                                           !_model.chooseEmailSending)
                                         Container(
                                           height: 500.0,
@@ -4610,55 +4977,78 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           padding:
                                                                               const EdgeInsets.all(3.0),
                                                                           child:
-                                                                              Container(
-                                                                            width:
-                                                                                double.infinity,
-                                                                            height:
-                                                                                70.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: _model.mouseRegionHovered15 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
+                                                                              InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              await Clipboard.setData(const ClipboardData(text: ''));
+                                                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                                                SnackBar(
+                                                                                  content: Text(
+                                                                                    'Lien copié',
+                                                                                    style: TextStyle(
+                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    ),
+                                                                                  ),
+                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                                ),
+                                                                              );
+                                                                            },
                                                                             child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Container(
-                                                                                    width: 50.0,
-                                                                                    height: 50.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).revoSearchIconColor,
-                                                                                      borderRadius: BorderRadius.circular(100.0),
+                                                                                Container(
+                                                                              width: double.infinity,
+                                                                              height: 70.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: _model.mouseRegionHovered15 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
+                                                                                borderRadius: BorderRadius.circular(16.0),
+                                                                              ),
+                                                                              child: Padding(
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                child: Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  children: [
+                                                                                    Container(
+                                                                                      width: 50.0,
+                                                                                      height: 50.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                        borderRadius: BorderRadius.circular(100.0),
+                                                                                      ),
+                                                                                      child: Icon(
+                                                                                        Icons.content_copy,
+                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        size: 24.0,
+                                                                                      ),
                                                                                     ),
-                                                                                    child: Icon(
-                                                                                      Icons.content_copy,
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      size: 24.0,
+                                                                                    Padding(
+                                                                                      padding: const EdgeInsets.all(12.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Copier le lien',
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ].divide(const SizedBox(height: 2.0)),
+                                                                                      ),
                                                                                     ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: const EdgeInsets.all(12.0),
-                                                                                    child: Column(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                      children: [
-                                                                                        Text(
-                                                                                          'Copier le lien',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: 'GeistSans',
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FontWeight.w600,
-                                                                                                useGoogleFonts: false,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ].divide(const SizedBox(height: 2.0)),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
+                                                                                  ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -4744,12 +5134,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                           ),
                                                         FFButtonWidget(
                                                           onPressed: () async {
-                                                            _model.step =
-                                                                _model.step! +
-                                                                    1;
-                                                            safeSetState(() {});
+                                                            context.pushNamed(
+                                                                'home');
                                                           },
-                                                          text: 'Suivant',
+                                                          text: 'Terminer',
                                                           options:
                                                               FFButtonOptions(
                                                             height: 40.0,
@@ -4802,13 +5190,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                       ].divide(const SizedBox(
                                                           width: 12.0)),
                                                     ),
-                                                  ],
+                                                  ].divide(
+                                                      const SizedBox(height: 16.0)),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      if ((_model.step == 6) &&
+                                      if ((_model.step == 7) &&
                                           _model.chooseEmailSending)
                                         Container(
                                           height: 500.0,
@@ -4989,12 +5378,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                           ),
                                                         FFButtonWidget(
                                                           onPressed: () async {
-                                                            _model.step =
-                                                                _model.step! +
-                                                                    1;
-                                                            safeSetState(() {});
+                                                            context.pushNamed(
+                                                                'home');
                                                           },
-                                                          text: 'Suivant',
+                                                          text: 'Terminer',
                                                           options:
                                                               FFButtonOptions(
                                                             height: 40.0,
