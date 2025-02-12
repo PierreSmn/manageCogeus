@@ -3,7 +3,6 @@ import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/trois_pages/infos_nps/infos_nps_widget.dart';
@@ -12,25 +11,25 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
-import 'tremor_test_model.dart';
-export 'tremor_test_model.dart';
+import 'home_copy2_model.dart';
+export 'home_copy2_model.dart';
 
-class TremorTestWidget extends StatefulWidget {
-  const TremorTestWidget({super.key});
+class HomeCopy2Widget extends StatefulWidget {
+  const HomeCopy2Widget({super.key});
 
   @override
-  State<TremorTestWidget> createState() => _TremorTestWidgetState();
+  State<HomeCopy2Widget> createState() => _HomeCopy2WidgetState();
 }
 
-class _TremorTestWidgetState extends State<TremorTestWidget> {
-  late TremorTestModel _model;
+class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
+  late HomeCopy2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TremorTestModel());
+    _model = createModel(context, () => HomeCopy2Model());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -74,7 +73,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'tremorTest',
+        title: 'homeCopy2',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -133,15 +132,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      FlutterFlowTheme.of(context).primary,
-                                      const Color(0xFF020C18)
-                                    ],
-                                    stops: const [0.0, 0.15],
-                                    begin: const AlignmentDirectional(-1.0, -1.0),
-                                    end: const AlignmentDirectional(1.0, 1.0),
-                                  ),
+                                  color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -318,7 +309,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Text(
-                                                                                          'Dashboard Tremor-',
+                                                                                          'OLDDDDDD',
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).revoCardTextColor,
@@ -398,7 +389,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'GeistSans',
                                                                                                   color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                  fontSize: 40.0,
+                                                                                                  fontSize: 33.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   useGoogleFonts: false,
@@ -671,11 +662,11 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                                   children: [
                                                                                                     Text(
-                                                                                                      'Raisons exprimés',
+                                                                                                      'Raisons exprimées',
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: 'GeistSans',
                                                                                                             color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                                            fontSize: 40.0,
+                                                                                                            fontSize: 26.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
@@ -998,196 +989,289 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       ),
                                                                                     ].divide(const SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                  Container(
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    ),
-                                                                                    child: const FlutterFlowWebView(
-                                                                                      content: 'https://v0-app-heuveelwg4e-npqrw3.vercel.app/experiences?clientId=272',
-                                                                                      width: 460.0,
-                                                                                      height: 260.0,
-                                                                                      verticalScroll: false,
-                                                                                      horizontalScroll: false,
-                                                                                    ),
-                                                                                  ),
-                                                                                  Container(
-                                                                                    width: 460.0,
-                                                                                    height: 260.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    ),
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
-                                                                                      child: Column(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                        children: [
-                                                                                          Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              containerClientsRow?.promotRaison4Count?.toString(),
-                                                                                              '0',
+                                                                                  Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      Container(
+                                                                                        width: MediaQuery.sizeOf(context).width * 0.32,
+                                                                                        height: MediaQuery.sizeOf(context).height * 0.22,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).revoWhite,
+                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          child: SingleChildScrollView(
+                                                                                            child: Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                              children: [
+                                                                                                Column(
+                                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                  children: [
+                                                                                                    Column(
+                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                      children: [
+                                                                                                        Text(
+                                                                                                          'Nombre de redirections pour un avis',
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                                                fontSize: 16.0,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FontWeight.w300,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                        Text(
+                                                                                                          containerExperiencesRowList.where((e) => e.reviewDone == true).toList().length.toString(),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                                fontSize: 30.0,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FontWeight.w500,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ],
+                                                                                                    ),
+                                                                                                    Column(
+                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                      children: [
+                                                                                                        Text(
+                                                                                                          'Nombre de feedback reçu',
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                color: FlutterFlowTheme.of(context).revoSearchIconColor,
+                                                                                                                fontSize: 16.0,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FontWeight.w300,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                        Text(
+                                                                                                          containerExperiencesRowList.where((e) => e.feedbackAnswer == true).toList().length.toString(),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                                fontSize: 30.0,
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                fontWeight: FontWeight.w500,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ],
+                                                                                                    ),
+                                                                                                  ].divide(const SizedBox(height: 12.0)),
+                                                                                                ),
+                                                                                              ].divide(const SizedBox(height: 12.0)),
                                                                                             ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'GeistSans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: false,
-                                                                                                ),
                                                                                           ),
-                                                                                          Text(
-                                                                                            valueOrDefault<String>(
-                                                                                              containerClientsRow?.totalPromoters?.toString(),
-                                                                                              '0',
-                                                                                            ),
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'GeistSans',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  useGoogleFonts: false,
-                                                                                                ),
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Stack(
-                                                                                                children: [
-                                                                                                  Container(
-                                                                                                    width: valueOrDefault<double>(
-                                                                                                      300 * (((containerClientsRow!.promotRaison1Count!) / (containerClientsRow.totalPromoters!))),
-                                                                                                      300.0,
-                                                                                                    ),
-                                                                                                    height: 24.0,
-                                                                                                    decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
-                                                                                                      borderRadius: BorderRadius.circular(2.0),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                  Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
-                                                                                                    child: Text(
-                                                                                                      valueOrDefault<String>(
-                                                                                                        containerClientsRow.theme1,
-                                                                                                        'them1',
-                                                                                                      ),
-                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'GeistSans',
-                                                                                                            fontSize: 12.0,
-                                                                                                            letterSpacing: 0.0,
-                                                                                                            useGoogleFonts: false,
-                                                                                                          ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  containerClientsRow.promotRaison1Count?.toString(),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'GeistSans',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: false,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Stack(
-                                                                                                children: [
-                                                                                                  Container(
-                                                                                                    width: valueOrDefault<double>(
-                                                                                                      300 * (((containerClientsRow.promotRaison2Count!) / (containerClientsRow.totalPromoters!))),
-                                                                                                      300.0,
-                                                                                                    ),
-                                                                                                    height: 24.0,
-                                                                                                    decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
-                                                                                                      borderRadius: BorderRadius.circular(2.0),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                  Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
-                                                                                                    child: Text(
-                                                                                                      valueOrDefault<String>(
-                                                                                                        containerClientsRow.theme2,
-                                                                                                        'them2',
-                                                                                                      ),
-                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'GeistSans',
-                                                                                                            fontSize: 12.0,
-                                                                                                            letterSpacing: 0.0,
-                                                                                                            useGoogleFonts: false,
-                                                                                                          ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  containerClientsRow.promotRaison2Count?.toString(),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'GeistSans',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: false,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                          Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                            children: [
-                                                                                              Stack(
-                                                                                                children: [
-                                                                                                  Container(
-                                                                                                    width: valueOrDefault<double>(
-                                                                                                      300 * (((containerClientsRow.promotRaison3Count!) / (containerClientsRow.totalPromoters!))),
-                                                                                                      300.0,
-                                                                                                    ),
-                                                                                                    height: 24.0,
-                                                                                                    decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
-                                                                                                      borderRadius: BorderRadius.circular(2.0),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                  Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
-                                                                                                    child: Text(
-                                                                                                      valueOrDefault<String>(
-                                                                                                        containerClientsRow.theme3,
-                                                                                                        'them1',
-                                                                                                      ),
-                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                            fontFamily: 'GeistSans',
-                                                                                                            fontSize: 12.0,
-                                                                                                            letterSpacing: 0.0,
-                                                                                                            useGoogleFonts: false,
-                                                                                                          ),
-                                                                                                    ),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              ),
-                                                                                              Text(
-                                                                                                valueOrDefault<String>(
-                                                                                                  containerClientsRow.promotRaison3Count?.toString(),
-                                                                                                  '0',
-                                                                                                ),
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: 'GeistSans',
-                                                                                                      letterSpacing: 0.0,
-                                                                                                      useGoogleFonts: false,
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ].divide(const SizedBox(height: 6.0)),
+                                                                                        ),
                                                                                       ),
-                                                                                    ),
+                                                                                      Container(
+                                                                                        width: MediaQuery.sizeOf(context).width * 0.32,
+                                                                                        height: MediaQuery.sizeOf(context).height * 0.22,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).revoWhite,
+                                                                                          borderRadius: BorderRadius.circular(16.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                                                                                          child: SingleChildScrollView(
+                                                                                            child: Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.start,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  'Feedbacks (${containerClientsRow?.countFeedbackAnswer?.toString()} participants)',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'GeistSans',
+                                                                                                        color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                                        fontSize: 26.0,
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.w500,
+                                                                                                        useGoogleFonts: false,
+                                                                                                      ),
+                                                                                                ),
+                                                                                                Container(
+                                                                                                  width: 290.0,
+                                                                                                  decoration: const BoxDecoration(),
+                                                                                                  child: Column(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    children: [
+                                                                                                      Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                        children: [
+                                                                                                          Text(
+                                                                                                            'Note Globale',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                          Text(
+                                                                                                            '(${formatNumber(
+                                                                                                              containerClientsRow?.moyFeedbackGeneral,
+                                                                                                              formatType: FormatType.custom,
+                                                                                                              format: '0.#',
+                                                                                                              locale: '',
+                                                                                                            )})',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  fontSize: 18.0,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                      ),
+                                                                                                      Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                        children: [
+                                                                                                          Text(
+                                                                                                            valueOrDefault<String>(
+                                                                                                              containerClientsRow?.theme1,
+                                                                                                              'Theme1',
+                                                                                                            ),
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                          Text(
+                                                                                                            '(${formatNumber(
+                                                                                                              containerClientsRow?.moyFeedback1,
+                                                                                                              formatType: FormatType.custom,
+                                                                                                              format: '0.#',
+                                                                                                              locale: '',
+                                                                                                            )})',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  fontSize: 18.0,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                      ),
+                                                                                                      Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                        children: [
+                                                                                                          Text(
+                                                                                                            valueOrDefault<String>(
+                                                                                                              containerClientsRow?.theme2,
+                                                                                                              'Theme2',
+                                                                                                            ),
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                          Text(
+                                                                                                            '(${formatNumber(
+                                                                                                              containerClientsRow?.moyFeedback2,
+                                                                                                              formatType: FormatType.custom,
+                                                                                                              format: '0.#',
+                                                                                                              locale: '',
+                                                                                                            )})',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  fontSize: 18.0,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                      ),
+                                                                                                      Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                        children: [
+                                                                                                          Text(
+                                                                                                            valueOrDefault<String>(
+                                                                                                              containerClientsRow?.theme3,
+                                                                                                              'Theme3',
+                                                                                                            ),
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                          Text(
+                                                                                                            '(${formatNumber(
+                                                                                                              containerClientsRow?.moyFeedback3,
+                                                                                                              formatType: FormatType.custom,
+                                                                                                              format: '0.#',
+                                                                                                              locale: '',
+                                                                                                            )})',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  fontSize: 18.0,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                      ),
+                                                                                                      Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                        children: [
+                                                                                                          Text(
+                                                                                                            valueOrDefault<String>(
+                                                                                                              containerClientsRow?.theme4,
+                                                                                                              'Theme4',
+                                                                                                            ),
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                          Text(
+                                                                                                            '(${formatNumber(
+                                                                                                              containerClientsRow?.moyFeedback4,
+                                                                                                              formatType: FormatType.custom,
+                                                                                                              format: '0.#',
+                                                                                                              locale: '',
+                                                                                                            )})',
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: 'GeistSans',
+                                                                                                                  fontSize: 18.0,
+                                                                                                                  letterSpacing: 0.0,
+                                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                                  useGoogleFonts: false,
+                                                                                                                ),
+                                                                                                          ),
+                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ].divide(const SizedBox(height: 3.0)),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ].divide(const SizedBox(width: 24.0)),
                                                                                   ),
                                                                                 ].divide(const SizedBox(height: 24.0)),
                                                                               ),

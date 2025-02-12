@@ -271,7 +271,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                     padding:
                                                         const EdgeInsets.all(6.0),
                                                     child: Text(
-                                                      'Indifférent',
+                                                      'Passif',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
