@@ -3,7 +3,6 @@ export '/pages/signin/signin_widget.dart' show SigninWidget;
 export '/pages/infos/infos_widget.dart' show InfosWidget;
 export '/pages/update_profile/update_profile_widget.dart'
     show UpdateProfileWidget;
-export '/trois_pages/home/home_widget.dart' show HomeWidget;
 export '/pages/signup/signup_widget.dart' show SignupWidget;
 export '/pages/create_profile/create_profile_widget.dart'
     show CreateProfileWidget;
@@ -32,3 +31,5 @@ export '/trois_pages/experiences/experiences_widget.dart'
 export '/trois_pages/recontact/recontact_widget.dart' show RecontactWidget;
 export '/trois_pages/tremor_test/tremor_test_widget.dart' show TremorTestWidget;
 export '/pages/onboard/onboard_widget.dart' show OnboardWidget;
+export '/trois_pages/home/home_widget.dart' show HomeWidget;
+export '/trois_pages/home_copy2/home_copy2_widget.dart' show HomeCopy2Widget;

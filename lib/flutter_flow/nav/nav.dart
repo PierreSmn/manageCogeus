@@ -105,12 +105,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UpdateProfileWidget(),
         ),
         FFRoute(
-          name: 'home',
-          path: '/home',
-          requireAuth: true,
-          builder: (context, params) => const HomeWidget(),
-        ),
-        FFRoute(
           name: 'signup',
           path: '/signup',
           builder: (context, params) => SignupWidget(
@@ -280,6 +274,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/onboard',
           requireAuth: true,
           builder: (context, params) => const OnboardWidget(),
+        ),
+        FFRoute(
+          name: 'home',
+          path: '/home',
+          requireAuth: true,
+          builder: (context, params) => const HomeWidget(),
+        ),
+        FFRoute(
+          name: 'homeCopy2',
+          path: '/homesaveneverknow',
+          requireAuth: true,
+          builder: (context, params) => const HomeCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

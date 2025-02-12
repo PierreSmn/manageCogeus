@@ -85,7 +85,7 @@ class _BUchoiceWidgetState extends State<BUchoiceWidget> {
                     fontFamily: 'GeistSans',
                     fontSize: 20.0,
                     letterSpacing: 0.0,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.normal,
                     useGoogleFonts: false,
                   ),
             ),

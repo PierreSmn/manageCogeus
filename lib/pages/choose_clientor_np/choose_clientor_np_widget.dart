@@ -77,7 +77,10 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
               width: 340.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                borderRadius: BorderRadius.circular(16.0),
+                borderRadius: BorderRadius.circular(8.0),
+                border: Border.all(
+                  color: FlutterFlowTheme.of(context).shadcnCardBorderGrey,
+                ),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -97,7 +100,11 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).revoWhite,
-                            borderRadius: BorderRadius.circular(16.0),
+                            borderRadius: BorderRadius.circular(8.0),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context)
+                                  .shadcnCardBorderGrey,
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -110,17 +117,11 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Container(
-                                      width: 40.0,
-                                      height: 40.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1583243552802-94ccb4200150?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMXx8cHJvZmlsZXxlbnwwfHx8fDE3MzQzMTAyMTh8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                        fit: BoxFit.cover,
-                                      ),
+                                    Icon(
+                                      Icons.person,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 34.0,
                                     ),
                                     Expanded(
                                       child: Text(
@@ -134,7 +135,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                       .revoCardTextColor,
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.normal,
                                               useGoogleFonts: false,
                                             ),
                                       ),
@@ -557,10 +558,14 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         borderRadius:
-                                            BorderRadius.circular(16.0),
+                                            BorderRadius.circular(8.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .shadcnCardBorderGrey,
+                                        ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -634,7 +639,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
+                                                              FontWeight.normal,
                                                           useGoogleFonts: false,
                                                         ),
                                                   ),

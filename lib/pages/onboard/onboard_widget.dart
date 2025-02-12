@@ -302,7 +302,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'GeistSans',
-                                                  fontSize: 18.0,
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                   useGoogleFonts: false,
@@ -325,20 +325,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).revoBG,
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(
-                                        0.0,
-                                        0.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(16.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .shadcnCardBorderGrey,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: SingleChildScrollView(
@@ -629,7 +620,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: 'GeistSans',
                                                                                                           letterSpacing: 0.0,
-                                                                                                          fontWeight: FontWeight.w600,
+                                                                                                          fontWeight: FontWeight.w500,
                                                                                                           useGoogleFonts: false,
                                                                                                         ),
                                                                                                   ),
@@ -637,7 +628,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     'Pour plus de possibilités',
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: 'GeistSans',
-                                                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                          color: FlutterFlowTheme.of(context).joliGrisPourTexteLeger,
                                                                                                           letterSpacing: 0.0,
                                                                                                           useGoogleFonts: false,
                                                                                                         ),
@@ -889,7 +880,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'GeistSans',
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
                                                                                                         useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
@@ -897,7 +888,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   'Cherchez votre lieu',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'GeistSans',
-                                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        color: FlutterFlowTheme.of(context).joliGrisPourTexteLeger,
                                                                                                         letterSpacing: 0.0,
                                                                                                         useGoogleFonts: false,
                                                                                                       ),
@@ -997,15 +988,15 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'GeistSans',
                                                                                                         letterSpacing: 0.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.w500,
                                                                                                         useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
                                                                                                 Text(
-                                                                                                  'Cherchez votre lieu',
+                                                                                                  'Cherchez votre site',
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'GeistSans',
-                                                                                                        color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                        color: FlutterFlowTheme.of(context).joliGrisPourTexteLeger,
                                                                                                         letterSpacing: 0.0,
                                                                                                         useGoogleFonts: false,
                                                                                                       ),

@@ -351,6 +351,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   focusNode:
                                                       _model.passwordFocusNode,
                                                   autofocus: false,
+                                                  autofillHints: const [
+                                                    AutofillHints.newPassword
+                                                  ],
                                                   obscureText: !_model
                                                       .passwordVisibility,
                                                   decoration: InputDecoration(
@@ -470,6 +473,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   focusNode: _model
                                                       .confirmPasswordFocusNode,
                                                   autofocus: false,
+                                                  autofillHints: const [
+                                                    AutofillHints.newPassword
+                                                  ],
                                                   obscureText: !_model
                                                       .confirmPasswordVisibility,
                                                   decoration: InputDecoration(

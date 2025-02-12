@@ -84,6 +84,7 @@ class _LocationChoiceWidgetState extends State<LocationChoiceWidget> {
                     fontFamily: 'GeistSans',
                     fontSize: 16.0,
                     letterSpacing: 0.0,
+                    fontWeight: FontWeight.w300,
                     useGoogleFonts: false,
                   ),
             ),
