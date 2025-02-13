@@ -46,12 +46,12 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -128,14 +128,14 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
 
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 3,
                               ),
                             ),
@@ -145,7 +145,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 32.0, 50.0, 40.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -173,7 +173,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                               .width *
                                                           0.7,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child:
                                                           SingleChildScrollView(
                                                         child: Column(
@@ -212,7 +212,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                   builder:
                                                                       (context) =>
                                                                           Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
@@ -250,14 +250,14 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                               elevation: 0,
                                                                               insetPadding: EdgeInsets.zero,
                                                                               backgroundColor: Colors.transparent,
-                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                               child: WebViewAware(
                                                                                 child: GestureDetector(
                                                                                   onTap: () {
                                                                                     FocusScope.of(dialogContext).unfocus();
                                                                                     FocusManager.instance.primaryFocus?.unfocus();
                                                                                   },
-                                                                                  child: const EditEngagementWidget(),
+                                                                                  child: EditEngagementWidget(),
                                                                                 ),
                                                                               ),
                                                                             );
@@ -268,7 +268,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -313,7 +313,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4000),
+                                                                              Duration(milliseconds: 4000),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -335,7 +335,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                   width: 360.0,
                                                                   height: 750.0,
                                                                   decoration:
-                                                                      const BoxDecoration(),
+                                                                      BoxDecoration(),
                                                                   child:
                                                                       wrapWithModel(
                                                                     model: _model
@@ -372,7 +372,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             16.0),
                                                                     child:
                                                                         SingleChildScrollView(
@@ -463,7 +463,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
                                                                                                 ),
                                                                                               ),
-                                                                                              duration: const Duration(milliseconds: 4000),
+                                                                                              duration: Duration(milliseconds: 4000),
                                                                                               backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                             ),
                                                                                           );
@@ -475,14 +475,14 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
                                                                                                       FocusScope.of(dialogContext).unfocus();
                                                                                                       FocusManager.instance.primaryFocus?.unfocus();
                                                                                                     },
-                                                                                                    child: const SizedBox(
+                                                                                                    child: Container(
                                                                                                       height: 230.0,
                                                                                                       width: 360.0,
                                                                                                       child: PayStripeWidget(),
@@ -499,18 +499,18 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       text: 'Exporter le code',
                                                                                       options: FFButtonOptions(
                                                                                         height: 40.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: const Color(0xFFEEE8FC),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: Color(0xFFEEE8FC),
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'GeistSans',
-                                                                                              color: const Color(0xFF5E35B1),
+                                                                                              color: Color(0xFF5E35B1),
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
                                                                                               useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 0.0,
-                                                                                        borderSide: const BorderSide(
+                                                                                        borderSide: BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 0.0,
                                                                                         ),
@@ -525,18 +525,18 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                     text: 'Télécharger QR code',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
@@ -554,7 +554,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                             ),
                                                                                           ),
-                                                                                          duration: const Duration(milliseconds: 4000),
+                                                                                          duration: Duration(milliseconds: 4000),
                                                                                           backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                         ),
                                                                                       );
@@ -562,25 +562,25 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                     text: 'Copier le lien',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 7.0)),
+                                                                                ].divide(SizedBox(height: 7.0)),
                                                                               ),
                                                                             ],
                                                                           ),
@@ -594,14 +594,8 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                 MouseRegion(
                                                                                   opaque: false,
                                                                                   cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                                                                  onEnter: ((event) async {
-                                                                                    safeSetState(() => _model.mouseRegionHovered = true);
-                                                                                  }),
-                                                                                  onExit: ((event) async {
-                                                                                    safeSetState(() => _model.mouseRegionHovered = false);
-                                                                                  }),
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsets.all(3.0),
+                                                                                    padding: EdgeInsets.all(3.0),
                                                                                     child: Container(
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -609,8 +603,14 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       ),
                                                                                     ),
                                                                                   ),
+                                                                                  onEnter: ((event) async {
+                                                                                    safeSetState(() => _model.mouseRegionHovered = true);
+                                                                                  }),
+                                                                                  onExit: ((event) async {
+                                                                                    safeSetState(() => _model.mouseRegionHovered = false);
+                                                                                  }),
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 8.0)),
+                                                                              ].divide(SizedBox(height: 8.0)),
                                                                             ),
                                                                           ),
                                                                           SingleChildScrollView(
@@ -630,7 +630,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: const EdgeInsets.all(3.0),
+                                                                                  padding: EdgeInsets.all(3.0),
                                                                                   child: Container(
                                                                                     decoration: BoxDecoration(
                                                                                       color: FlutterFlowTheme.of(context).primaryBackground,
@@ -640,7 +640,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: const EdgeInsets.all(3.0),
+                                                                                          padding: EdgeInsets.all(3.0),
                                                                                           child: Container(
                                                                                             width: double.infinity,
                                                                                             decoration: BoxDecoration(
@@ -648,7 +648,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -669,7 +669,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsets.all(3.0),
+                                                                                                        padding: EdgeInsets.all(3.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -701,7 +701,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsets.all(3.0),
+                                                                                                        padding: EdgeInsets.all(3.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -733,7 +733,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsets.all(3.0),
+                                                                                                        padding: EdgeInsets.all(3.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -765,7 +765,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsets.all(3.0),
+                                                                                                        padding: EdgeInsets.all(3.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -797,7 +797,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: const EdgeInsets.all(3.0),
+                                                                                                        padding: EdgeInsets.all(3.0),
                                                                                                         child: InkWell(
                                                                                                           splashColor: Colors.transparent,
                                                                                                           focusColor: Colors.transparent,
@@ -822,7 +822,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                           ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 16.0)),
+                                                                                                    ].divide(SizedBox(width: 16.0)),
                                                                                                   ),
                                                                                                   if (_model.customColor)
                                                                                                     Row(
@@ -839,7 +839,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                                 fontWeight: FontWeight.w500,
                                                                                                               ),
                                                                                                         ),
-                                                                                                        SizedBox(
+                                                                                                        Container(
                                                                                                           width: 100.0,
                                                                                                           child: TextFormField(
                                                                                                             controller: _model.textController ??= TextEditingController(
@@ -886,7 +886,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                                               focusedErrorBorder: InputBorder.none,
                                                                                                               filled: true,
                                                                                                               fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                              contentPadding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                                                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                                                                                                             ),
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                   fontFamily: 'GeistSans',
@@ -913,11 +913,11 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 8.0)),
+                                                                              ].divide(SizedBox(height: 8.0)),
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 30.0,
                                                                                 0.0,
                                                                                 30.0,
@@ -981,15 +981,15 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                        ].divide(SizedBox(height: 12.0)),
                                                                       ),
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   width: 34.0)),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 24.0)),
                                                         ),
                                                       ),

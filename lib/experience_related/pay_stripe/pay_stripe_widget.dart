@@ -48,7 +48,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
       width: 400.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -64,7 +64,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+        padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +79,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Icon(
                           Icons.error,
                           color: FlutterFlowTheme.of(context).primary,
@@ -95,7 +95,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                               useGoogleFonts: false,
                             ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                   Text(
                     'Vous ne pouvez pas exporter de code, votre abonnement n\'est pas actif.\n\nAbonnez-vous pour accéder à cette fonctionnalité !',
@@ -107,7 +107,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.clientRow = await ClientsTable().queryRows(
@@ -117,28 +117,28 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                           ),
                         );
                         await launchURL(
-                            '${_model.clientRow?.firstOrNull?.stripeLink != null && _model.clientRow?.firstOrNull?.stripeLink != '' ? _model.clientRow?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
+                            '${_model.clientRow?.firstOrNull?.stripeLink != null && _model.clientRow?.firstOrNull?.stripeLink != '' ? _model.clientRow?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=${currentUserEmail}');
 
                         safeSetState(() {});
                       },
                       text: 'S\'abonner',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFFEEE8FC),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'GeistSans',
-                                  color: const Color(0xFF5E35B1),
+                                  color: Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 0.0,
                         ),
@@ -146,7 +146,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
             FlutterFlowIconButton(
@@ -164,7 +164,7 @@ class _PayStripeWidgetState extends State<PayStripeWidget> {
                 print('IconButton pressed ...');
               },
             ),
-          ].divide(const SizedBox(width: 8.0)),
+          ].divide(SizedBox(width: 8.0)),
         ),
       ),
     );

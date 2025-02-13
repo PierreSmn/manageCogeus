@@ -42,7 +42,7 @@ class _EmptyRecontactWidgetState extends State<EmptyRecontactWidget> {
       height: 100.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoBG,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 0.0,
             color: Color(0x33000000),
@@ -54,7 +54,7 @@ class _EmptyRecontactWidgetState extends State<EmptyRecontactWidget> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Text(
           'Vous retrouverez ici les demandes de contact. Vous n\'en avez pas encore reçu.',
           textAlign: TextAlign.start,

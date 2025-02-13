@@ -47,7 +47,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -55,7 +55,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                     itemBuilder: (context, resIndex) {
                       final resItem = res[resIndex];
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 12.0, 12.0),
                         child: Container(
                           width: double.infinity,
@@ -83,7 +83,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +103,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                                                   ?.elementAtOrNull(resIndex),
                                               'no',
                                             ),
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           ),
                                           TextSpan(
                                             text: valueOrDefault<String>(
@@ -111,7 +111,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                                                   ?.elementAtOrNull(resIndex),
                                               'no',
                                             ),
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -125,7 +125,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                                     ),
                                   ],
                                 ),
-                              ].divide(const SizedBox(width: 12.0)),
+                              ].divide(SizedBox(width: 12.0)),
                             ),
                           ),
                         ),
@@ -134,7 +134,7 @@ class _SearchresWidgetState extends State<SearchresWidget> {
                   );
                 },
               ),
-            ].divide(const SizedBox(height: 16.0)),
+            ].divide(SizedBox(height: 16.0)),
           ),
         ),
       ),

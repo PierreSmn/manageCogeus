@@ -48,14 +48,14 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -73,7 +73,7 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                     child: Text(
                       'Une mise à jour de la dashboard Cogeus a été faite. Rechargez la page pour en profiter.',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -104,32 +104,32 @@ class _VersionNotifWidgetState extends State<VersionNotifWidget> {
                 );
               },
               text: 'Recharger la page',
-              icon: const Icon(
+              icon: Icon(
                 Icons.replay,
                 size: 15.0,
               ),
               options: FFButtonOptions(
                 height: 60.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: const Color(0xFFEEE8FC),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: Color(0xFFEEE8FC),
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'GeistSans',
-                      color: const Color(0xFF5E35B1),
+                      color: Color(0xFF5E35B1),
                       fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
                       useGoogleFonts: false,
                     ),
                 elevation: 0.0,
-                borderSide: const BorderSide(
+                borderSide: BorderSide(
                   color: Colors.transparent,
                   width: 0.0,
                 ),
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-          ].divide(const SizedBox(height: 12.0)),
+          ].divide(SizedBox(height: 12.0)),
         ),
       ),
     );

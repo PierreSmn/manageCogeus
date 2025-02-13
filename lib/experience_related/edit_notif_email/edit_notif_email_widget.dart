@@ -58,7 +58,7 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
         borderRadius: BorderRadius.circular(0.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -67,7 +67,7 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
             children: [
               Container(
                 width: 400.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,12 +109,12 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
                                     useGoogleFonts: false,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        SizedBox(
+                        Container(
                           width: double.infinity,
                           child: TextFormField(
                             controller: _model.textController,
@@ -184,7 +184,7 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -201,7 +201,7 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
                                 .asValidator(context),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 16.0)),
+                      ].divide(SizedBox(height: 16.0)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -224,22 +224,22 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
                           text: 'Enregistrer',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFFEEE8FC),
+                            color: Color(0xFFEEE8FC),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
                                   fontFamily: 'GeistSans',
-                                  color: const Color(0xFF5E35B1),
+                                  color: Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 0.0,
                             ),
@@ -248,7 +248,7 @@ class _EditNotifEmailWidgetState extends State<EditNotifEmailWidget> {
                         ),
                       ],
                     ),
-                  ].divide(const SizedBox(height: 26.0)),
+                  ].divide(SizedBox(height: 26.0)),
                 ),
               ),
             ],

@@ -84,7 +84,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -104,7 +104,7 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                 if (!FFAppState().integrationCreated)
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -117,14 +117,14 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                             key: _model.formKey,
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
                                 autofocus: false,
                                 obscureText: false,
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   labelText: 'Nom',
                                   enabledBorder: InputBorder.none,
                                   focusedBorder: InputBorder.none,
@@ -151,14 +151,6 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                             MouseRegion(
                               opaque: false,
                               cursor: MouseCursor.defer ?? MouseCursor.defer,
-                              onEnter: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = true);
-                              }),
-                              onExit: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = false);
-                              }),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   if (_model.formKey.currentState == null ||
@@ -186,15 +178,15 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                   safeSetState(() {});
                                 },
                                 text: 'Créer',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.add,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: _model.mouseRegionHovered
                                       ? FlutterFlowTheme.of(context)
@@ -205,23 +197,31 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                       .titleSmall
                                       .override(
                                         fontFamily: 'GeistSans',
-                                        color: const Color(0xFF5E35B1),
+                                        color: Color(0xFF5E35B1),
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         useGoogleFonts: false,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
+                              onEnter: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = true);
+                              }),
+                              onExit: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = false);
+                              }),
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                   ),
                 if (FFAppState().integrationCreated)
@@ -340,13 +340,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -378,24 +378,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -422,13 +422,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -460,24 +460,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -593,13 +593,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -631,24 +631,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -674,13 +674,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -712,24 +712,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -845,13 +845,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -883,24 +883,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -926,13 +926,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -964,24 +964,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -1097,13 +1097,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -1135,24 +1135,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -1178,13 +1178,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -1216,24 +1216,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -1349,13 +1349,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -1387,24 +1387,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -1430,13 +1430,13 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -1468,24 +1468,24 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -1498,11 +1498,11 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                   ),
                                 ],
                               ),
-                            ].divide(const SizedBox(width: 24.0)),
+                            ].divide(SizedBox(width: 24.0)),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 50.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: ((containerIntegrationsRow?.vid1 ==
@@ -1518,9 +1518,9 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                             text: 'Valider',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1532,20 +1532,20 @@ class _AddIntegrationWidgetState extends State<AddIntegrationWidget> {
                                     useGoogleFonts: false,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
-                              disabledColor: const Color(0xC55E35B1),
-                              disabledTextColor: const Color(0x84FFFFFF),
+                              disabledColor: Color(0xC55E35B1),
+                              disabledTextColor: Color(0x84FFFFFF),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(SizedBox(height: 12.0)),
             ),
           ),
         );

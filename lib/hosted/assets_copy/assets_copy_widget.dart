@@ -98,14 +98,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                     children: [
                       Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 5,
                               ),
                             ),
@@ -115,7 +115,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 32.0, 0.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -124,13 +124,13 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             50.0, 0.0, 50.0, 0.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   0.9,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: SingleChildScrollView(
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -152,7 +152,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 28.0,
@@ -194,18 +194,6 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                           cursor: MouseCursor
                                                                   .defer ??
                                                               MouseCursor.defer,
-                                                          onEnter:
-                                                              ((event) async {
-                                                            safeSetState(() =>
-                                                                _model.mouseRegionHovered =
-                                                                    true);
-                                                          }),
-                                                          onExit:
-                                                              ((event) async {
-                                                            safeSetState(() =>
-                                                                _model.mouseRegionHovered =
-                                                                    false);
-                                                          }),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -214,7 +202,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                               FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  var shouldSetState =
+                                                                  var _shouldSetState =
                                                                       false;
                                                                   safeSetState(
                                                                       () {
@@ -295,14 +283,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                         child:
                                                                             AlertDialog(
                                                                           title:
-                                                                              const Text('file title'),
+                                                                              Text('file title'),
                                                                           content: Text(_model
                                                                               .uploadedFileUrls
                                                                               .elementAtOrNull(_model.retries!)!),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: const Text('Ok'),
+                                                                              child: Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         ),
@@ -319,15 +307,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                           .activeClientID,
                                                                     ),
                                                                   );
-                                                                  shouldSetState =
+                                                                  _shouldSetState =
                                                                       true;
                                                                   if (!(_model
                                                                       .uploadedFileUrls
                                                                       .isNotEmpty)) {
-                                                                    if (shouldSetState) {
+                                                                    if (_shouldSetState)
                                                                       safeSetState(
                                                                           () {});
-                                                                    }
                                                                     return;
                                                                   }
                                                                   while (_model
@@ -347,7 +334,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                             .elementAtOrNull(_model.retries!),
                                                                       );
 
-                                                                      shouldSetState =
+                                                                      _shouldSetState =
                                                                           true;
                                                                       if ((_model.apiResultUploadIndex?.statusCode ??
                                                                               200) ==
@@ -408,7 +395,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4000),
+                                                                              Duration(milliseconds: 4000),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -425,14 +412,13 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                           null);
                                                                   await _model
                                                                       .waitForRequestCompleted();
-                                                                  if (shouldSetState) {
+                                                                  if (_shouldSetState)
                                                                     safeSetState(
                                                                         () {});
-                                                                  }
                                                                 },
                                                                 text:
                                                                     'Upload video',
-                                                                icon: const Icon(
+                                                                icon: Icon(
                                                                   Icons
                                                                       .upload_rounded,
                                                                   size: 15.0,
@@ -440,19 +426,19 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFFEEE8FC),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -472,7 +458,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                   elevation:
                                                                       0.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 0.0,
@@ -485,13 +471,25 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                               ),
                                                             ],
                                                           ),
+                                                          onEnter:
+                                                              ((event) async {
+                                                            safeSetState(() =>
+                                                                _model.mouseRegionHovered =
+                                                                    true);
+                                                          }),
+                                                          onExit:
+                                                              ((event) async {
+                                                            safeSetState(() =>
+                                                                _model.mouseRegionHovered =
+                                                                    false);
+                                                          }),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 12.0)),
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(const SizedBox(height: 24.0)),
+                                              ].divide(SizedBox(height: 24.0)),
                                             ),
                                           ),
                                         ),
@@ -499,7 +497,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   50.0, 0.0, 50.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -521,10 +519,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                     .width *
                                                                 0.9,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       12.0,
@@ -591,7 +589,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 0.0,
                                                                                 12.0,
@@ -621,14 +619,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
                                                                                                       FocusScope.of(dialogContext).unfocus();
                                                                                                       FocusManager.instance.primaryFocus?.unfocus();
                                                                                                     },
-                                                                                                    child: SizedBox(
+                                                                                                    child: Container(
                                                                                                       height: 630.0,
                                                                                                       width: 300.0,
                                                                                                       child: PlayVideoWidget(
@@ -656,7 +654,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                 ),
                                                                                 Container(
                                                                                   width: 400.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -692,14 +690,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   elevation: 0,
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
                                                                                                       onTap: () {
                                                                                                         FocusScope.of(dialogContext).unfocus();
                                                                                                         FocusManager.instance.primaryFocus?.unfocus();
                                                                                                       },
-                                                                                                      child: SizedBox(
+                                                                                                      child: Container(
                                                                                                         height: 250.0,
                                                                                                         width: 500.0,
                                                                                                         child: ModifyVideoTitleWidget(
@@ -717,7 +715,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                           },
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 6.0)),
+                                                                                    ].divide(SizedBox(width: 6.0)),
                                                                                   ),
                                                                                 ),
                                                                                 Text(
@@ -730,10 +728,10 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                 ),
                                                                                 Flexible(
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                     child: Container(
                                                                                       width: 140.0,
-                                                                                      decoration: const BoxDecoration(),
+                                                                                      decoration: BoxDecoration(),
                                                                                       child: Builder(
                                                                                         builder: (context) => FFButtonWidget(
                                                                                           onPressed: () async {
@@ -744,14 +742,14 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                                   elevation: 0,
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
                                                                                                       onTap: () {
                                                                                                         FocusScope.of(dialogContext).unfocus();
                                                                                                         FocusManager.instance.primaryFocus?.unfocus();
                                                                                                       },
-                                                                                                      child: SizedBox(
+                                                                                                      child: Container(
                                                                                                         height: 275.0,
                                                                                                         width: 400.0,
                                                                                                         child: EraseAssetWidget(
@@ -770,18 +768,18 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                           text: 'Effacer',
                                                                                           options: FFButtonOptions(
                                                                                             height: 40.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: const Color(0xFFEEE8FC),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            color: Color(0xFFEEE8FC),
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'GeistSans',
-                                                                                                  color: const Color(0xFF5E35B1),
+                                                                                                  color: Color(0xFF5E35B1),
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   useGoogleFonts: false,
                                                                                                 ),
                                                                                             elevation: 0.0,
-                                                                                            borderSide: const BorderSide(
+                                                                                            borderSide: BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 0.0,
                                                                                             ),
@@ -792,7 +790,7 @@ class _AssetsCopyWidgetState extends State<AssetsCopyWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 16.0)),
+                                                                              ].divide(SizedBox(width: 16.0)),
                                                                             ),
                                                                           ),
                                                                         );

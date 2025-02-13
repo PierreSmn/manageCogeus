@@ -90,14 +90,14 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                     children: [
                       Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 4,
                               ),
                             ),
@@ -121,7 +121,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 32.0, 0.0, 20.0),
                                               child: Column(
@@ -142,7 +142,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         50.0,
                                                                         0.0,
@@ -162,7 +162,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             .width *
                                                                         0.9,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         SingleChildScrollView(
                                                                       controller:
@@ -186,7 +186,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,9 +209,9 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                     text: 'Interface de tri',
                                                                                     options: FFButtonOptions(
                                                                                       height: 26.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFD2D2D2),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFD2D2D2),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
                                                                                             color: FlutterFlowTheme.of(context).secondary,
@@ -221,7 +221,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
@@ -232,7 +232,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                        ].divide(SizedBox(height: 24.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -248,7 +248,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                     flex: 12,
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   50.0,
                                                                   0.0,
@@ -317,7 +317,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             16.0,
                                                                             0.0,
@@ -355,7 +355,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             ),
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -364,7 +364,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                     text: TextSpan(
                                                                                       children: [
-                                                                                        const TextSpan(
+                                                                                        TextSpan(
                                                                                           text: 'Projet concerné : \n',
                                                                                           style: TextStyle(),
                                                                                         ),
@@ -373,7 +373,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             validItemItem,
                                                                                             r'''$.flow_done''',
                                                                                           ).toString(),
-                                                                                          style: const TextStyle(
+                                                                                          style: TextStyle(
                                                                                             fontWeight: FontWeight.w600,
                                                                                             fontSize: 14.0,
                                                                                           ),
@@ -401,7 +401,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                   )),
-                                                                                ].divide(const SizedBox(height: 12.0)).addToStart(const SizedBox(height: 12.0)),
+                                                                                ].divide(SizedBox(height: 12.0)).addToStart(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                             Row(
@@ -409,7 +409,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -426,14 +426,14 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                   elevation: 0,
                                                                                                   insetPadding: EdgeInsets.zero,
                                                                                                   backgroundColor: Colors.transparent,
-                                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                  alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                   child: WebViewAware(
                                                                                                     child: GestureDetector(
                                                                                                       onTap: () {
                                                                                                         FocusScope.of(dialogContext).unfocus();
                                                                                                         FocusManager.instance.primaryFocus?.unfocus();
                                                                                                       },
-                                                                                                      child: const SizedBox(
+                                                                                                      child: Container(
                                                                                                         height: 435.0,
                                                                                                         width: 245.0,
                                                                                                         child: ChooseMutiTagWidget(),
@@ -500,26 +500,26 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             await _model.waitForApiRequestCompleted();
                                                                                           },
                                                                                           text: 'Valider',
-                                                                                          icon: const Icon(
+                                                                                          icon: Icon(
                                                                                             Icons.check_sharp,
                                                                                             size: 15.0,
                                                                                           ),
                                                                                           options: FFButtonOptions(
                                                                                             width: 200.0,
                                                                                             height: 25.0,
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                            color: const Color(0xFFEAFCE8),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                            color: Color(0xFFEAFCE8),
                                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                   fontFamily: 'GeistSans',
-                                                                                                  color: const Color(0xFF67E32C),
+                                                                                                  color: Color(0xFF67E32C),
                                                                                                   fontSize: 14.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w500,
                                                                                                   useGoogleFonts: false,
                                                                                                 ),
                                                                                             elevation: 0.0,
-                                                                                            borderSide: const BorderSide(
+                                                                                            borderSide: BorderSide(
                                                                                               color: Colors.transparent,
                                                                                               width: 0.0,
                                                                                             ),
@@ -584,16 +584,16 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                           await _model.waitForApiRequestCompleted();
                                                                                         },
                                                                                         text: 'Exclure',
-                                                                                        icon: const Icon(
+                                                                                        icon: Icon(
                                                                                           Icons.close_sharp,
                                                                                           size: 15.0,
                                                                                         ),
                                                                                         options: FFButtonOptions(
                                                                                           width: 200.0,
                                                                                           height: 25.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: const Color(0xFFD2D2D2),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: Color(0xFFD2D2D2),
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).secondary,
@@ -603,19 +603,19 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                 useGoogleFonts: false,
                                                                                               ),
                                                                                           elevation: 0.0,
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Colors.transparent,
                                                                                             width: 0.0,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 8.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                    ].divide(SizedBox(height: 8.0)).addToEnd(SizedBox(height: 16.0)),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 8.0)),
+                                                                              ].divide(SizedBox(width: 8.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     );
@@ -629,7 +629,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           16.0,
@@ -654,7 +654,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             safeSetState(() {});
                                                                             await _model.scroll1?.animateTo(
                                                                               0,
-                                                                              duration: const Duration(milliseconds: 1),
+                                                                              duration: Duration(milliseconds: 1),
                                                                               curve: Curves.ease,
                                                                             );
                                                                             safeSetState(() =>
@@ -667,21 +667,21 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
                                                                             color:
-                                                                                const Color(0xFFEEE8FC),
+                                                                                Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'GeistSans',
-                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  color: Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
                                                                                   useGoogleFonts: false,
@@ -689,7 +689,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 0.0,
                                                                             ),
@@ -709,7 +709,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               ?.animateTo(
                                                                             0,
                                                                             duration:
-                                                                                const Duration(milliseconds: 1),
+                                                                                Duration(milliseconds: 1),
                                                                             curve:
                                                                                 Curves.ease,
                                                                           );
@@ -724,23 +724,23 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                             FFButtonOptions(
                                                                           height:
                                                                               40.0,
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               24.0,
                                                                               0.0,
                                                                               24.0,
                                                                               0.0),
-                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
                                                                               0.0),
                                                                           color:
-                                                                              const Color(0xFFEEE8FC),
+                                                                              Color(0xFFEEE8FC),
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: 'GeistSans',
-                                                                                color: const Color(0xFF5E35B1),
+                                                                                color: Color(0xFF5E35B1),
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w500,
                                                                                 useGoogleFonts: false,
@@ -748,7 +748,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                           elevation:
                                                                               0.0,
                                                                           borderSide:
-                                                                              const BorderSide(
+                                                                              BorderSide(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             width:
@@ -758,7 +758,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                               BorderRadius.circular(8.0),
                                                                         ),
                                                                       ),
-                                                                    ].divide(const SizedBox(
+                                                                    ].divide(SizedBox(
                                                                         width:
                                                                             16.0)),
                                                                   ),
@@ -962,7 +962,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       width:
                                                                           6.0)),
                                                                 ),
@@ -974,7 +974,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                     ),
                                                   ),
                                                 ].divide(
-                                                    const SizedBox(height: 16.0)),
+                                                    SizedBox(height: 16.0)),
                                               ),
                                             ),
                                           ),

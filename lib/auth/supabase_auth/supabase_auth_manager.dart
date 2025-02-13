@@ -51,7 +51,7 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
       return;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Email change confirmation email sent')),
+      SnackBar(content: Text('Email change confirmation email sent')),
     );
   }
 
@@ -74,7 +74,7 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
       return;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Password updated successfully')),
+      SnackBar(content: Text('Password updated successfully')),
     );
   }
 
@@ -95,7 +95,7 @@ class SupabaseAuthManager extends AuthManager with EmailSignInManager {
       return null;
     }
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Password reset email sent')),
+      SnackBar(content: Text('Password reset email sent')),
     );
   }
 

@@ -86,7 +86,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -95,7 +95,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                 children: [
                   Container(
                     width: 400.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +139,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                     useGoogleFonts: false,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 12.0)),
+                          ].divide(SizedBox(height: 12.0)),
                         ),
                         SingleChildScrollView(
                           child: Column(
@@ -161,14 +161,6 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                               MouseRegion(
                                 opaque: false,
                                 cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                onEnter: ((event) async {
-                                  safeSetState(
-                                      () => _model.mouseRegionHovered = true);
-                                }),
-                                onExit: ((event) async {
-                                  safeSetState(
-                                      () => _model.mouseRegionHovered = false);
-                                }),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -180,7 +172,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                     children: [
                                       Builder(
                                         builder: (context) => Padding(
-                                          padding: const EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -197,7 +189,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
@@ -230,7 +222,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                     BorderRadius.circular(16.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Row(
@@ -261,7 +253,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.all(12.0),
+                                                          EdgeInsets.all(12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -306,7 +298,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                                       false,
                                                                 ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 2.0)),
                                                       ),
                                                     ),
@@ -320,8 +312,16 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                     ],
                                   ),
                                 ),
+                                onEnter: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered = true);
+                                }),
+                                onExit: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered = false);
+                                }),
                               ),
-                            ].divide(const SizedBox(height: 8.0)),
+                            ].divide(SizedBox(height: 8.0)),
                           ),
                         ),
                         SingleChildScrollView(
@@ -401,7 +401,7 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                                         backgroundColor:
                                                             Colors.transparent,
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                     0.0, 0.0)
                                                                 .resolve(
                                                                     Directionality.of(
@@ -448,10 +448,10 @@ class _ChooseQuestionWidgetState extends State<ChooseQuestionWidget> {
                                   );
                                 },
                               ),
-                            ].divide(const SizedBox(height: 8.0)),
+                            ].divide(SizedBox(height: 8.0)),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 26.0)),
+                      ].divide(SizedBox(height: 26.0)),
                     ),
                   ),
                 ],

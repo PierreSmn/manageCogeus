@@ -84,7 +84,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                 child: Text(
                   'Modifier une\nCollection',
                   textAlign: TextAlign.center,
@@ -99,7 +99,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 16.0),
                 child: TextFormField(
                   controller: _model.textController ??= TextEditingController(
                     text: containerTagsRow?.name,
@@ -158,7 +158,7 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                     filled: true,
                     fillColor: FlutterFlowTheme.of(context).primaryBackground,
                     contentPadding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'GeistSans',
@@ -185,25 +185,25 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                   Navigator.pop(context);
                 },
                 text: 'Modifier',
-                icon: const Icon(
+                icon: Icon(
                   Icons.check_sharp,
                   size: 15.0,
                 ),
                 options: FFButtonOptions(
                   height: 40.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: const Color(0xFFEEE8FC),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: Color(0xFFEEE8FC),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'GeistSans',
-                        color: const Color(0xFF5E35B1),
+                        color: Color(0xFF5E35B1),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
                         useGoogleFonts: false,
                       ),
                   elevation: 0.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 0.0,
                   ),
@@ -211,8 +211,8 @@ class _ModifyTagWidgetState extends State<ModifyTagWidget> {
                 ),
               ),
             ]
-                .addToStart(const SizedBox(height: 28.0))
-                .addToEnd(const SizedBox(height: 28.0)),
+                .addToStart(SizedBox(height: 28.0))
+                .addToEnd(SizedBox(height: 28.0)),
           ),
         );
       },

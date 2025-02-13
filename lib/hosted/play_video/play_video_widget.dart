@@ -79,7 +79,7 @@ class _PlayVideoWidgetState extends State<PlayVideoWidget> {
               ],
             ),
           ),
-        ].divide(const SizedBox(height: 12.0)),
+        ].divide(SizedBox(height: 12.0)),
       ),
     );
   }

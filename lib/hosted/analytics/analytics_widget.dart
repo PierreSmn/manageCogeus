@@ -52,7 +52,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +60,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 6,
                           ),
                         ),
@@ -71,7 +71,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                               color: FlutterFlowTheme.of(context).revoBG,
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 32.0, 0.0, 20.0),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -89,7 +89,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       50.0, 0.0, 50.0, 40.0),
                                               child: Column(
@@ -101,7 +101,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                             .width *
                                                         0.9,
                                                     height: 280.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -128,7 +128,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         28.0,
@@ -179,13 +179,13 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                                                             false,
                                                                       ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height:
                                                                       12.0)),
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 24.0)),
                                                     ),
                                                   ),

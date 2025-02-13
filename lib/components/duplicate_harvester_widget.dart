@@ -96,7 +96,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -109,7 +109,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -127,7 +127,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                         useGoogleFonts: false,
                                       ),
                                 ),
-                                SizedBox(
+                                Container(
                                   width: 200.0,
                                   child: TextFormField(
                                     controller: _model.titreTextController,
@@ -196,7 +196,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               16.0, 8.0, 16.0, 8.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -217,7 +217,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                 RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
                                   text: TextSpan(
-                                    children: const [
+                                    children: [
                                       TextSpan(
                                         text:
                                             'Quelques regles concernant l\'URL:',
@@ -249,7 +249,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                 Form(
                                   key: _model.formKey,
                                   autovalidateMode: AutovalidateMode.disabled,
-                                  child: SizedBox(
+                                  child: Container(
                                     width: 300.0,
                                     child: TextFormField(
                                       controller: _model.slugTextController,
@@ -320,7 +320,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 16.0, 8.0, 16.0, 8.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -340,16 +340,16 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
-                                  child: SizedBox(
+                                  child: Container(
                                     width: 300.0,
                                     child: TextFormField(
                                       controller: _model.questionTextController,
                                       focusNode: _model.questionFocusNode,
                                       onChanged: (_) => EasyDebounce.debounce(
                                         '_model.questionTextController',
-                                        const Duration(milliseconds: 2000),
+                                        Duration(milliseconds: 2000),
                                         () async {
                                           _model.state = _model
                                               .questionTextController.text;
@@ -423,7 +423,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 16.0, 8.0, 16.0, 8.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -446,7 +446,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                 Container(
                                   width: 200.0,
                                 ),
-                              ].divide(const SizedBox(height: 16.0)),
+                              ].divide(SizedBox(height: 16.0)),
                             ),
                             Container(
                               width: 310.0,
@@ -461,7 +461,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 24.0),
                                 child: SingleChildScrollView(
                                   child: Column(
@@ -476,10 +476,10 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                         children: [
                                           Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 1.0),
+                                                AlignmentDirectional(0.0, 1.0),
                                             children: [
                                               Stack(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 children: [
                                                   Column(
@@ -527,7 +527,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             0.0,
@@ -567,7 +567,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -608,12 +608,12 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 40.0),
                                                 child: Stack(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   children: [
                                                     Column(
@@ -632,7 +632,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     4.0),
                                                             child: Container(
                                                               width: 100.0,
@@ -653,7 +653,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             2.0),
                                                                 child:
@@ -662,7 +662,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                                                   height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFEB4D3D),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
@@ -680,23 +680,23 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                               ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 6.0)),
+                                        ].divide(SizedBox(height: 6.0)),
                                       ),
                                     ]
-                                        .divide(const SizedBox(height: 16.0))
-                                        .addToStart(const SizedBox(height: 12.0)),
+                                        .divide(SizedBox(height: 16.0))
+                                        .addToStart(SizedBox(height: 12.0)),
                                   ),
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(width: 34.0)),
+                          ].divide(SizedBox(width: 34.0)),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(SizedBox(height: 12.0)),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.validSlug = true;
@@ -721,7 +721,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -766,21 +766,21 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                       text: 'Dupliquer',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFFEEE8FC),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'GeistSans',
-                                  color: const Color(0xFF5E35B1),
+                                  color: Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 0.0,
                         ),
@@ -788,7 +788,7 @@ class _DuplicateHarvesterWidgetState extends State<DuplicateHarvesterWidget> {
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 12.0)),
+                ].divide(SizedBox(height: 12.0)),
               ),
             ),
           ),

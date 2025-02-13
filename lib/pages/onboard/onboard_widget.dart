@@ -78,30 +78,30 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 0.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(16.0),
                                     bottomRight: Radius.circular(16.0),
                                     topLeft: Radius.circular(0.0),
                                     topRight: Radius.circular(0.0),
                                   ),
                                 ),
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -128,16 +128,16 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(16.0),
                                   bottomRight: Radius.circular(16.0),
                                   topLeft: Radius.circular(0.0),
                                   topRight: Radius.circular(0.0),
                                 ),
                               ),
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -145,7 +145,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                     Container(
                                       width: 400.0,
                                       height: 50.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -162,7 +162,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                           context)
                                                       .vertSympa,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(4.0),
                                                     bottomRight:
@@ -186,7 +186,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               context)
                                                           .inputBgClicked,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -210,7 +210,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               context)
                                                           .inputBgClicked,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -234,7 +234,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               context)
                                                           .inputBgClicked,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -258,7 +258,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               context)
                                                           .inputBgClicked,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -282,7 +282,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               context)
                                                           .inputBgClicked,
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -308,7 +308,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ],
@@ -316,11 +316,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Container(
                                 width: 460.0,
                                 height: 520.0,
-                                constraints: const BoxConstraints(
+                                constraints: BoxConstraints(
                                   maxWidth: 579.0,
                                 ),
                                 decoration: BoxDecoration(
@@ -341,10 +341,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 1)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child:
                                                 FutureBuilder<List<ClientsRow>>(
@@ -422,7 +422,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                         Container(
                                                           width: 400.0,
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -480,7 +480,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               false,
                                                                         ),
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
@@ -519,18 +519,6 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               .defer ??
                                                                           MouseCursor
                                                                               .defer,
-                                                                      onEnter:
-                                                                          ((event) async {
-                                                                        safeSetState(() =>
-                                                                            _model.mouseRegionHovered1 =
-                                                                                true);
-                                                                      }),
-                                                                      onExit:
-                                                                          ((event) async {
-                                                                        safeSetState(() =>
-                                                                            _model.mouseRegionHovered1 =
-                                                                                false);
-                                                                      }),
                                                                       child:
                                                                           Container(
                                                                         decoration:
@@ -549,7 +537,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 redirectionClientsRow?.reviewLink == '')
                                                                               Builder(
                                                                                 builder: (context) => Padding(
-                                                                                  padding: const EdgeInsets.all(3.0),
+                                                                                  padding: EdgeInsets.all(3.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -563,7 +551,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
                                                                                                 onTap: () {
@@ -591,7 +579,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         borderRadius: BorderRadius.circular(16.0),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
@@ -609,7 +597,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                               ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: const EdgeInsets.all(12.0),
+                                                                                              padding: EdgeInsets.all(12.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -633,7 +621,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                           useGoogleFonts: false,
                                                                                                         ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 2.0)),
+                                                                                                ].divide(SizedBox(height: 2.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ],
@@ -647,7 +635,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 redirectionClientsRow?.reviewLink != '')
                                                                               Builder(
                                                                                 builder: (context) => Padding(
-                                                                                  padding: const EdgeInsets.all(3.0),
+                                                                                  padding: EdgeInsets.all(3.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -661,7 +649,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
                                                                                                 onTap: () {
@@ -688,7 +676,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         borderRadius: BorderRadius.circular(16.0),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
@@ -706,7 +694,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                               ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: const EdgeInsets.all(12.0),
+                                                                                              padding: EdgeInsets.all(12.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -736,7 +724,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                           useGoogleFonts: false,
                                                                                                         ),
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(height: 2.0)),
+                                                                                                ].divide(SizedBox(height: 2.0)),
                                                                                               ),
                                                                                             ),
                                                                                           ],
@@ -749,8 +737,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           ],
                                                                         ),
                                                                       ),
+                                                                      onEnter:
+                                                                          ((event) async {
+                                                                        safeSetState(() =>
+                                                                            _model.mouseRegionHovered1 =
+                                                                                true);
+                                                                      }),
+                                                                      onExit:
+                                                                          ((event) async {
+                                                                        safeSetState(() =>
+                                                                            _model.mouseRegionHovered1 =
+                                                                                false);
+                                                                      }),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           8.0)),
                                                                 ),
@@ -801,18 +801,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered2 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered2 = false);
-                                                                            }),
                                                                             child:
                                                                                 Builder(
                                                                               builder: (context) => Padding(
-                                                                                padding: const EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3.0),
                                                                                 child: InkWell(
                                                                                   splashColor: Colors.transparent,
                                                                                   focusColor: Colors.transparent,
@@ -826,14 +818,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
                                                                                               onTap: () {
                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                               },
-                                                                                              child: const EditReviewLinkGoogleWidget(),
+                                                                                              child: EditReviewLinkGoogleWidget(),
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -851,7 +843,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -859,7 +851,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             width: 50.0,
                                                                                             height: 50.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: const Color(0xFF4285F4),
+                                                                                              color: Color(0xFF4285F4),
                                                                                               borderRadius: BorderRadius.circular(100.0),
                                                                                             ),
                                                                                             child: Icon(
@@ -869,7 +861,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: const EdgeInsets.all(12.0),
+                                                                                            padding: EdgeInsets.all(12.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               mainAxisAlignment: MainAxisAlignment.center,
@@ -893,7 +885,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                         useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 2.0)),
+                                                                                              ].divide(SizedBox(height: 2.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ],
@@ -903,24 +895,24 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered2 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered2 = false);
+                                                                            }),
                                                                           ),
                                                                           MouseRegion(
                                                                             opaque:
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered3 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered3 = false);
-                                                                            }),
                                                                             child:
                                                                                 Builder(
                                                                               builder: (context) => Padding(
-                                                                                padding: const EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3.0),
                                                                                 child: InkWell(
                                                                                   splashColor: Colors.transparent,
                                                                                   focusColor: Colors.transparent,
@@ -934,14 +926,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
                                                                                               onTap: () {
                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                               },
-                                                                                              child: const EditReviewTrustpilotWidget(),
+                                                                                              child: EditReviewTrustpilotWidget(),
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -959,7 +951,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -967,7 +959,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             width: 50.0,
                                                                                             height: 50.0,
                                                                                             decoration: BoxDecoration(
-                                                                                              color: const Color(0xFF51B37F),
+                                                                                              color: Color(0xFF51B37F),
                                                                                               borderRadius: BorderRadius.circular(100.0),
                                                                                             ),
                                                                                             child: Icon(
@@ -977,7 +969,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           Padding(
-                                                                                            padding: const EdgeInsets.all(12.0),
+                                                                                            padding: EdgeInsets.all(12.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               mainAxisAlignment: MainAxisAlignment.center,
@@ -1001,7 +993,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                         useGoogleFonts: false,
                                                                                                       ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 2.0)),
+                                                                                              ].divide(SizedBox(height: 2.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ],
@@ -1011,16 +1003,24 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered3 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered3 = false);
+                                                                            }),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           8.0)),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 26.0)),
                                                           ),
                                                         ),
@@ -1047,13 +1047,13 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1080,7 +1080,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   elevation:
                                                                       0.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 0.0,
@@ -1128,20 +1128,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFEEE8FC),
                                                                 textStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -1149,7 +1149,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'GeistSans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF5E35B1),
                                                                       letterSpacing:
                                                                           0.0,
@@ -1161,7 +1161,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 0.0,
@@ -1172,10 +1172,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             8.0),
                                                               ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               width: 12.0)),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 24.0)),
                                                     ),
                                                   ),
@@ -1187,10 +1187,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 2)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -1199,7 +1199,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   1.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 400.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -1219,7 +1219,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                 children: [
                                                   Container(
                                                     width: 400.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1275,7 +1275,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         false,
                                                                   ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 12.0)),
                                                         ),
                                                         if (!_model.visualise)
@@ -1370,23 +1370,23 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             60.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFEEE8FC),
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
                                                                               fontFamily: 'GeistSans',
-                                                                              color: const Color(0xFF5E35B1),
+                                                                              color: Color(0xFF5E35B1),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.normal,
                                                                               useGoogleFonts: false,
@@ -1394,7 +1394,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         elevation:
                                                                             0.0,
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -1431,12 +1431,12 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             40.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1468,7 +1468,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   ),
                                                                 ],
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
                                                         if (_model.visualise)
@@ -1592,7 +1592,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           context)
                                                                       .primaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsetsDirectional.fromSTEB(
+                                                                      EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           8.0,
                                                                           16.0,
@@ -1695,21 +1695,21 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
                                                                             color:
-                                                                                const Color(0xFFEEE8FC),
+                                                                                Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'GeistSans',
-                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  color: Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.normal,
                                                                                   useGoogleFonts: false,
@@ -1717,7 +1717,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 0.0,
                                                                             ),
@@ -1760,12 +1760,12 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 30.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1782,7 +1782,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 0.0,
                                                                             ),
@@ -1793,14 +1793,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         12.0)),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 16.0)),
                                                           ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 16.0)),
                                                     ),
                                                   ),
@@ -1812,10 +1812,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 3)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -1832,7 +1832,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                     BorderRadius.circular(0.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 28.0, 16.0, 28.0),
                                                 child: SingleChildScrollView(
@@ -1849,7 +1849,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                       Container(
                                                         width: 400.0,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1900,7 +1900,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             false,
                                                                       ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height:
                                                                       12.0)),
                                                             ),
@@ -1909,7 +1909,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   MainAxisSize
                                                                       .max,
                                                               children: [
-                                                                SizedBox(
+                                                                Container(
                                                                   width: double
                                                                       .infinity,
                                                                   child:
@@ -2023,7 +2023,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       fillColor:
                                                                           FlutterFlowTheme.of(context)
                                                                               .primaryBackground,
-                                                                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      contentPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           8.0,
                                                                           16.0,
@@ -2050,7 +2050,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             context),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height:
                                                                       16.0)),
                                                             ),
@@ -2092,19 +2092,19 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFEEE8FC),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -2113,7 +2113,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           fontFamily:
                                                                               'GeistSans',
                                                                           color:
-                                                                              const Color(0xFF5E35B1),
+                                                                              Color(0xFF5E35B1),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -2124,7 +2124,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     elevation:
                                                                         0.0,
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -2137,7 +2137,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 ),
                                                               ],
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 26.0)),
                                                         ),
                                                       ),
@@ -2151,10 +2151,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 4)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child:
                                                 FutureBuilder<List<ClientsRow>>(
@@ -2232,7 +2232,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                         Container(
                                                           width: 400.0,
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2272,7 +2272,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -2307,14 +2307,6 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered4 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered4 = false);
-                                                                            }),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -2322,7 +2314,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme1 == null || clientIdClientsRow?.theme1 == '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2338,7 +2330,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -2376,7 +2368,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -2406,7 +2398,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2430,7 +2422,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -2443,7 +2435,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme1 != null && clientIdClientsRow?.theme1 != '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2459,7 +2451,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -2497,7 +2489,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -2527,7 +2519,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2554,7 +2546,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -2566,20 +2558,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                               ],
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered4 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered4 = false);
+                                                                            }),
                                                                           ),
                                                                           MouseRegion(
                                                                             opaque:
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered5 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered5 = false);
-                                                                            }),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -2587,7 +2579,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme2 == null || clientIdClientsRow?.theme2 == '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2603,7 +2595,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -2641,7 +2633,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -2671,7 +2663,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2695,7 +2687,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -2708,7 +2700,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme2 != null && clientIdClientsRow?.theme2 != '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2724,7 +2716,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -2762,7 +2754,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -2792,7 +2784,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2819,7 +2811,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -2831,20 +2823,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                               ],
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered5 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered5 = false);
+                                                                            }),
                                                                           ),
                                                                           MouseRegion(
                                                                             opaque:
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered6 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered6 = false);
-                                                                            }),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -2852,7 +2844,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme3 == null || clientIdClientsRow?.theme3 == '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2868,7 +2860,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -2906,7 +2898,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -2936,7 +2928,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2960,7 +2952,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -2973,7 +2965,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme3 != null && clientIdClientsRow?.theme3 != '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -2989,7 +2981,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -3027,7 +3019,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -3057,7 +3049,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -3084,7 +3076,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -3096,20 +3088,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                               ],
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered6 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered6 = false);
+                                                                            }),
                                                                           ),
                                                                           MouseRegion(
                                                                             opaque:
                                                                                 false,
                                                                             cursor:
                                                                                 MouseCursor.defer ?? MouseCursor.defer,
-                                                                            onEnter:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered7 = true);
-                                                                            }),
-                                                                            onExit:
-                                                                                ((event) async {
-                                                                              safeSetState(() => _model.mouseRegionHovered7 = false);
-                                                                            }),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -3117,7 +3109,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme4 == null || clientIdClientsRow?.theme4 == '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -3133,7 +3125,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -3171,7 +3163,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -3201,7 +3193,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -3225,7 +3217,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -3238,7 +3230,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 if (clientIdClientsRow?.theme4 != null && clientIdClientsRow?.theme4 != '')
                                                                                   Builder(
                                                                                     builder: (context) => Padding(
-                                                                                      padding: const EdgeInsets.all(3.0),
+                                                                                      padding: EdgeInsets.all(3.0),
                                                                                       child: InkWell(
                                                                                         splashColor: Colors.transparent,
                                                                                         focusColor: Colors.transparent,
@@ -3254,7 +3246,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
@@ -3292,7 +3284,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             borderRadius: BorderRadius.circular(16.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               children: [
@@ -3322,7 +3314,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsets.all(12.0),
+                                                                                                  padding: EdgeInsets.all(12.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -3349,7 +3341,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                               useGoogleFonts: false,
                                                                                                             ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(height: 2.0)),
+                                                                                                    ].divide(SizedBox(height: 2.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               ],
@@ -3361,6 +3353,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                               ],
                                                                             ),
+                                                                            onEnter:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered7 = true);
+                                                                            }),
+                                                                            onExit:
+                                                                                ((event) async {
+                                                                              safeSetState(() => _model.mouseRegionHovered7 = false);
+                                                                            }),
                                                                           ),
                                                                         ],
                                                                       ),
@@ -3368,7 +3368,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 26.0)),
                                                           ),
                                                         ),
@@ -3395,13 +3395,13 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -3428,7 +3428,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   elevation:
                                                                       0.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 0.0,
@@ -3452,20 +3452,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFEEE8FC),
                                                                 textStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -3473,7 +3473,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'GeistSans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF5E35B1),
                                                                       letterSpacing:
                                                                           0.0,
@@ -3485,7 +3485,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     ),
                                                                 elevation: 0.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 0.0,
@@ -3496,10 +3496,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             8.0),
                                                               ),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               width: 12.0)),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 24.0)),
                                                     ),
                                                   ),
@@ -3511,10 +3511,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 5)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -3531,7 +3531,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                     BorderRadius.circular(0.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 28.0, 16.0, 28.0),
                                                 child: SingleChildScrollView(
@@ -3548,7 +3548,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                       Container(
                                                         width: 400.0,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -3599,11 +3599,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             false,
                                                                       ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height:
                                                                       12.0)),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 26.0)),
                                                         ),
                                                       ),
@@ -3641,18 +3641,6 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       .defer ??
                                                                   MouseCursor
                                                                       .defer,
-                                                              onEnter:
-                                                                  ((event) async {
-                                                                safeSetState(() =>
-                                                                    _model.mouseRegionHovered8 =
-                                                                        true);
-                                                              }),
-                                                              onExit:
-                                                                  ((event) async {
-                                                                safeSetState(() =>
-                                                                    _model.mouseRegionHovered8 =
-                                                                        false);
-                                                              }),
                                                               child: Container(
                                                                 decoration:
                                                                     BoxDecoration(
@@ -3671,7 +3659,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   children: [
                                                                     Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               3.0),
                                                                       child:
                                                                           Container(
@@ -3689,7 +3677,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               12.0,
                                                                               0.0,
                                                                               0.0,
@@ -3713,7 +3701,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsets.all(12.0),
+                                                                                padding: EdgeInsets.all(12.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -3737,7 +3725,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
-                                                                                  ].divide(const SizedBox(height: 2.0)),
+                                                                                  ].divide(SizedBox(height: 2.0)),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -3748,8 +3736,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   ],
                                                                 ),
                                                               ),
+                                                              onEnter:
+                                                                  ((event) async {
+                                                                safeSetState(() =>
+                                                                    _model.mouseRegionHovered8 =
+                                                                        true);
+                                                              }),
+                                                              onExit:
+                                                                  ((event) async {
+                                                                safeSetState(() =>
+                                                                    _model.mouseRegionHovered8 =
+                                                                        false);
+                                                              }),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                       ),
@@ -3772,7 +3772,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
-                                                                    var shouldSetState =
+                                                                    var _shouldSetState =
                                                                         false;
                                                                     _model.stripeActiveCheck =
                                                                         await ClientsTable()
@@ -3785,7 +3785,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             .activeClientID,
                                                                       ),
                                                                     );
-                                                                    shouldSetState =
+                                                                    _shouldSetState =
                                                                         true;
                                                                     if (_model
                                                                         .stripeActiveCheck!
@@ -3795,10 +3795,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           true;
                                                                       safeSetState(
                                                                           () {});
-                                                                      if (shouldSetState) {
+                                                                      if (_shouldSetState)
                                                                         safeSetState(
                                                                             () {});
-                                                                      }
                                                                       return;
                                                                     }
                                                                     _model.stripeOnce =
@@ -3816,14 +3815,13 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             .activeClientID,
                                                                       ),
                                                                     );
-                                                                    shouldSetState =
+                                                                    _shouldSetState =
                                                                         true;
                                                                     await launchURL(
-                                                                        '${_model.clientRow?.firstOrNull?.stripeLink != null && _model.clientRow?.firstOrNull?.stripeLink != '' ? _model.clientRow?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
-                                                                    if (shouldSetState) {
+                                                                        '${_model.clientRow?.firstOrNull?.stripeLink != null && _model.clientRow?.firstOrNull?.stripeLink != '' ? _model.clientRow?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=${currentUserEmail}');
+                                                                    if (_shouldSetState)
                                                                       safeSetState(
                                                                           () {});
-                                                                    }
                                                                   },
                                                                   text:
                                                                       'Démarrer l\'abonnement',
@@ -3831,19 +3829,19 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFEEE8FC),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -3852,7 +3850,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           fontFamily:
                                                                               'GeistSans',
                                                                           color:
-                                                                              const Color(0xFF5E35B1),
+                                                                              Color(0xFF5E35B1),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -3863,7 +3861,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     elevation:
                                                                         0.0,
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -3881,7 +3879,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
-                                                                    var shouldSetState =
+                                                                    var _shouldSetState =
                                                                         false;
                                                                     _model.stripeActiveCheckOnce =
                                                                         await ClientsTable()
@@ -3894,7 +3892,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             .activeClientID,
                                                                       ),
                                                                     );
-                                                                    shouldSetState =
+                                                                    _shouldSetState =
                                                                         true;
                                                                     if (_model
                                                                         .stripeActiveCheckOnce!
@@ -3904,10 +3902,9 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           true;
                                                                       safeSetState(
                                                                           () {});
-                                                                      if (shouldSetState) {
+                                                                      if (_shouldSetState)
                                                                         safeSetState(
                                                                             () {});
-                                                                      }
                                                                       return;
                                                                     }
                                                                     _model.clientRowRE =
@@ -3921,14 +3918,13 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             .activeClientID,
                                                                       ),
                                                                     );
-                                                                    shouldSetState =
+                                                                    _shouldSetState =
                                                                         true;
                                                                     await launchURL(
-                                                                        '${_model.clientRowRE?.firstOrNull?.stripeLink != null && _model.clientRowRE?.firstOrNull?.stripeLink != '' ? _model.clientRowRE?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=$currentUserEmail');
-                                                                    if (shouldSetState) {
+                                                                        '${_model.clientRowRE?.firstOrNull?.stripeLink != null && _model.clientRowRE?.firstOrNull?.stripeLink != '' ? _model.clientRowRE?.firstOrNull?.stripeLink : 'https://buy.stripe.com/4gwbIObk258E2kM7su'}?prefilled_email=${currentUserEmail}');
+                                                                    if (_shouldSetState)
                                                                       safeSetState(
                                                                           () {});
-                                                                    }
                                                                   },
                                                                   text:
                                                                       'Vérifier l\'abonnement',
@@ -3936,19 +3932,19 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFEEE8FC),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -3957,7 +3953,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           fontFamily:
                                                                               'GeistSans',
                                                                           color:
-                                                                              const Color(0xFF5E35B1),
+                                                                              Color(0xFF5E35B1),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -3968,7 +3964,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     elevation:
                                                                         0.0,
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -3996,7 +3992,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'GeistSans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF377B61),
                                                                         letterSpacing:
                                                                             0.0,
@@ -4019,19 +4015,19 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0x3052B58E),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -4040,7 +4036,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           fontFamily:
                                                                               'GeistSans',
                                                                           color:
-                                                                              const Color(0xFF377B61),
+                                                                              Color(0xFF377B61),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -4051,7 +4047,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     elevation:
                                                                         0.0,
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -4062,7 +4058,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             8.0),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height: 6.0)),
                                                             ),
                                                         ],
@@ -4109,11 +4105,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     ),
                                                               ),
                                                             ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             width: 12.0)),
                                                       ),
                                                     ].divide(
-                                                        const SizedBox(height: 24.0)),
+                                                        SizedBox(height: 24.0)),
                                                   ),
                                                 ),
                                               ),
@@ -4123,10 +4119,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                       if (_model.step == 6)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -4155,7 +4151,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                     Container(
                                                       width: 400.0,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -4207,7 +4203,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           false,
                                                                     ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 12.0)),
                                                           ),
                                                           if (!_model
@@ -4245,20 +4241,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered9 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered9 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4286,7 +4272,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4294,7 +4280,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         width: 50.0,
                                                                                         height: 50.0,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: const Color(0xFF4285F4),
+                                                                                          color: Color(0xFF4285F4),
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Icon(
@@ -4304,7 +4290,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4319,7 +4305,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4328,26 +4314,26 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered9 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered9 = false);
+                                                                          }),
                                                                         ),
                                                                         MouseRegion(
                                                                           opaque:
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered10 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered10 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4375,7 +4361,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4383,7 +4369,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         width: 50.0,
                                                                                         height: 50.0,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: const Color(0xFF51B37F),
+                                                                                          color: Color(0xFF51B37F),
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Icon(
@@ -4393,7 +4379,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4408,7 +4394,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4417,26 +4403,26 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered10 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered10 = false);
+                                                                          }),
                                                                         ),
                                                                         MouseRegion(
                                                                           opaque:
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered11 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered11 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4464,7 +4450,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4482,7 +4468,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4497,7 +4483,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4506,11 +4492,21 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered11 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered11 = false);
+                                                                          }),
                                                                         ),
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
@@ -4550,20 +4546,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered12 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered12 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4591,7 +4577,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4599,7 +4585,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         width: 50.0,
                                                                                         height: 50.0,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: const Color(0xFF4285F4),
+                                                                                          color: Color(0xFF4285F4),
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Icon(
@@ -4609,7 +4595,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4624,7 +4610,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4633,26 +4619,26 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered12 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered12 = false);
+                                                                          }),
                                                                         ),
                                                                         MouseRegion(
                                                                           opaque:
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered13 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered13 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4680,7 +4666,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4688,7 +4674,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         width: 50.0,
                                                                                         height: 50.0,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: const Color(0xFF51B37F),
+                                                                                          color: Color(0xFF51B37F),
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Icon(
@@ -4698,7 +4684,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4713,7 +4699,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4722,26 +4708,26 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered13 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered13 = false);
+                                                                          }),
                                                                         ),
                                                                         MouseRegion(
                                                                           opaque:
                                                                               false,
                                                                           cursor:
                                                                               MouseCursor.defer ?? MouseCursor.defer,
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered14 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered14 = false);
-                                                                          }),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                const EdgeInsets.all(3.0),
+                                                                                EdgeInsets.all(3.0),
                                                                             child:
                                                                                 InkWell(
                                                                               splashColor: Colors.transparent,
@@ -4769,7 +4755,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   borderRadius: BorderRadius.circular(16.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
@@ -4787,7 +4773,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsets.all(12.0),
+                                                                                        padding: EdgeInsets.all(12.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -4802,7 +4788,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                     useGoogleFonts: false,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(const SizedBox(height: 2.0)),
+                                                                                          ].divide(SizedBox(height: 2.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ],
@@ -4811,16 +4797,26 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered14 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered14 = false);
+                                                                          }),
                                                                         ),
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         8.0)),
                                                               ),
                                                             ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 26.0)),
                                                       ),
                                                     ),
@@ -4834,10 +4830,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                           !_model.chooseEmailSending)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -4866,7 +4862,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                     Container(
                                                       width: 400.0,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -4918,7 +4914,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           false,
                                                                     ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 12.0)),
                                                           ),
                                                           SingleChildScrollView(
@@ -4953,20 +4949,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             false,
                                                                         cursor: MouseCursor.defer ??
                                                                             MouseCursor.defer,
-                                                                        onEnter:
-                                                                            ((event) async {
-                                                                          safeSetState(() =>
-                                                                              _model.mouseRegionHovered15 = true);
-                                                                        }),
-                                                                        onExit:
-                                                                            ((event) async {
-                                                                          safeSetState(() =>
-                                                                              _model.mouseRegionHovered15 = false);
-                                                                        }),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(3.0),
+                                                                              EdgeInsets.all(3.0),
                                                                           child:
                                                                               InkWell(
                                                                             splashColor:
@@ -4979,7 +4965,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              await Clipboard.setData(const ClipboardData(text: ''));
+                                                                              await Clipboard.setData(ClipboardData(text: ''));
                                                                               ScaffoldMessenger.of(context).showSnackBar(
                                                                                 SnackBar(
                                                                                   content: Text(
@@ -4988,7 +4974,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                 ),
                                                                               );
@@ -5002,7 +4988,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 borderRadius: BorderRadius.circular(16.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
@@ -5020,7 +5006,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsets.all(12.0),
+                                                                                      padding: EdgeInsets.all(12.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -5035,7 +5021,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                                   useGoogleFonts: false,
                                                                                                 ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 2.0)),
+                                                                                        ].divide(SizedBox(height: 2.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ],
@@ -5044,15 +5030,25 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                             ),
                                                                           ),
                                                                         ),
+                                                                        onEnter:
+                                                                            ((event) async {
+                                                                          safeSetState(() =>
+                                                                              _model.mouseRegionHovered15 = true);
+                                                                        }),
+                                                                        onExit:
+                                                                            ((event) async {
+                                                                          safeSetState(() =>
+                                                                              _model.mouseRegionHovered15 = false);
+                                                                        }),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   height: 8.0)),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 26.0)),
                                                       ),
                                                     ),
@@ -5078,14 +5074,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -5112,7 +5108,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       ),
                                                               elevation: 0.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 0.0,
@@ -5133,20 +5129,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFFEEE8FC),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -5155,7 +5151,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'GeistSans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF5E35B1),
                                                                       letterSpacing:
                                                                           0.0,
@@ -5167,7 +5163,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     ),
                                                             elevation: 0.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 0.0,
@@ -5178,11 +5174,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         8.0),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ].divide(
-                                                      const SizedBox(height: 16.0)),
+                                                      SizedBox(height: 16.0)),
                                                 ),
                                               ),
                                             ),
@@ -5192,10 +5188,10 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                           _model.chooseEmailSending)
                                         Container(
                                           height: 500.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 28.0, 12.0, 0.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -5224,7 +5220,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                     Container(
                                                       width: 400.0,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -5276,7 +5272,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                           false,
                                                                     ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 12.0)),
                                                           ),
                                                           SingleChildScrollView(
@@ -5291,12 +5287,12 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: <Widget>[]
-                                                                  .divide(const SizedBox(
+                                                                  .divide(SizedBox(
                                                                       height:
                                                                           8.0)),
                                                             ),
                                                           ),
-                                                        ].divide(const SizedBox(
+                                                        ].divide(SizedBox(
                                                             height: 26.0)),
                                                       ),
                                                     ),
@@ -5322,14 +5318,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -5356,7 +5352,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       ),
                                                               elevation: 0.0,
                                                               borderSide:
-                                                                  const BorderSide(
+                                                                  BorderSide(
                                                                 color: Colors
                                                                     .transparent,
                                                                 width: 0.0,
@@ -5377,20 +5373,20 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFFEEE8FC),
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
@@ -5399,7 +5395,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'GeistSans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF5E35B1),
                                                                       letterSpacing:
                                                                           0.0,
@@ -5411,7 +5407,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                     ),
                                                             elevation: 0.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 0.0,
@@ -5422,7 +5418,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         8.0),
                                                           ),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           width: 12.0)),
                                                     ),
                                                   ],

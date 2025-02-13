@@ -83,7 +83,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,13 +113,13 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                     lineHeight: 1.2,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 12.0)),
+                          ].divide(SizedBox(height: 12.0)),
                         ),
                       ],
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -161,7 +161,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(12.0),
+                                    padding: EdgeInsets.all(12.0),
                                     child: Builder(
                                       builder: (context) {
                                         final containerVar =
@@ -209,7 +209,7 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                                   ),
                                                 ),
                                               );
-                                            }).divide(const SizedBox(height: 16.0)),
+                                            }).divide(SizedBox(height: 16.0)),
                                           ),
                                         );
                                       },
@@ -218,11 +218,11 @@ class _SetupHarvesterWidgetState extends State<SetupHarvesterWidget> {
                                 );
                               },
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
-                  ].divide(const SizedBox(height: 26.0)),
+                  ].divide(SizedBox(height: 26.0)),
                 ),
               ],
             ),

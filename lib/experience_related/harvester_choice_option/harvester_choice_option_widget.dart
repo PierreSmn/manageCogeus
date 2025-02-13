@@ -47,12 +47,6 @@ class _HarvesterChoiceOptionWidgetState
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
       child: Container(
         width: double.infinity,
         height: 30.0,
@@ -63,7 +57,7 @@ class _HarvesterChoiceOptionWidgetState
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: EdgeInsets.all(4.0),
           child: Text(
             widget.parameter1!,
             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -74,6 +68,12 @@ class _HarvesterChoiceOptionWidgetState
           ),
         ),
       ),
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
     );
   }
 }

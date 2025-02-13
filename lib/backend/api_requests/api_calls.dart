@@ -15,7 +15,7 @@ class QrTigerCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'qr tiger',
-      apiUrl: 'https://www.qrtiger.com/data/$qrtigerId?data',
+      apiUrl: 'https://www.qrtiger.com/data/${qrtigerId}?data',
       callType: ApiCallType.GET,
       headers: {
         'content-type': 'application/json',
@@ -45,7 +45,7 @@ class GetListCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get list',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/lists?id=eq.$id',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/lists?id=eq.${id}',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -83,7 +83,7 @@ class GetValidSubsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get Valid subs',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.${brand}&limit=${limit}&offset=${offset}&order=id.asc',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -159,7 +159,7 @@ class GetTagCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get tag',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc&tag=eq.$tagid',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.${brand}&limit=${limit}&offset=${offset}&order=id.asc&tag=eq.${tagid}',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -225,7 +225,7 @@ class GetTagzzzCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get tagzzz',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc&tagId=cs.{$tagid}',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/validSubs?brand_name=eq.${brand}&limit=${limit}&offset=${offset}&order=id.asc&tagId=cs.{${tagid}}',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -295,7 +295,7 @@ class GetToBeDeterminedSubsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get to be determined subs',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/newSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.asc',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/newSubs?brand_name=eq.${brand}&limit=${limit}&offset=${offset}&order=id.asc',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -360,7 +360,7 @@ class GetRejectedSubsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get Rejected Subs',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/rejectedSubs?brand_name=eq.$brand&limit=$limit&offset=$offset&order=id.desc',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/rejectedSubs?brand_name=eq.${brand}&limit=${limit}&offset=${offset}&order=id.desc',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -414,7 +414,7 @@ class GetUserFileCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get user file',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/users?id=eq.$id',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/users?id=eq.${id}',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -463,7 +463,7 @@ class GetMatchForIdBeforeErasingCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get match for id before erasing',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/integrations?or=(vid1.eq.$id,vid2.eq.$id,vid3.eq.$id,vid4.eq.$id,vid5.eq.$id)',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/integrations?or=(vid1.eq.${id},vid2.eq.${id},vid3.eq.${id},vid4.eq.${id},vid5.eq.${id})',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -516,7 +516,7 @@ class PostToMuxThroughFastgenCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "link": "$link"
+  "link": "${link}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post to mux through fastgen',
@@ -551,7 +551,7 @@ class RejectSubCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "id": $id
+  "id": ${id}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Reject sub',
@@ -582,12 +582,12 @@ class SendNotificaitonOfNewUserCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "company_name": "$companyName",
-  "name": "$name",
-  "surname": "$surname",
-  "email": "$email",
-  "phone": "$phone",
-  "site_url": "$siteUrl"
+  "company_name": "${companyName}",
+  "name": "${name}",
+  "surname": "${surname}",
+  "email": "${email}",
+  "phone": "${phone}",
+  "site_url": "${siteUrl}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Send notificaiton of new user',
@@ -615,7 +615,7 @@ class MuxGetViewsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'mux get views',
       apiUrl:
-          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id&filters=asset_id:$assetId',
+          'https://api.mux.com/data/v1/metrics/views/breakdown?group_by=asset_id&filters=asset_id:${assetId}',
       callType: ApiCallType.GET,
       headers: {
         'Content-Type': 'application/json',
@@ -657,7 +657,7 @@ class MUXDeleteCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "asset_id": "$assetId"
+  "asset_id": "${assetId}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'MUX Delete',
@@ -684,7 +684,7 @@ class PlaceIdRequestCall {
     return ApiManager.instance.makeApiCall(
       callName: 'placeIdRequest',
       apiUrl:
-          'https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
+          'https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat}&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -715,7 +715,7 @@ class PlaceIdRequestCopyCall {
     return ApiManager.instance.makeApiCall(
       callName: 'placeIdRequest Copy',
       apiUrl:
-          'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$lat&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
+          'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${lat}&key=AIzaSyAHf1wQ4iSLbWeiadjOWPFEiHODsGZcsTQ',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

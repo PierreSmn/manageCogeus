@@ -58,7 +58,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -71,11 +71,11 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        SizedBox(
+                        Container(
                           width: 300.0,
                           child: TextFormField(
                             controller: _model.colorTitleTextController,
@@ -145,7 +145,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 16.0, 8.0),
                             ),
                             style: FlutterFlowTheme.of(context)
@@ -175,7 +175,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 24.0, 0.0, 24.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -188,11 +188,11 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                     children: [
                                       Stack(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 1.0),
+                                            AlignmentDirectional(0.0, 1.0),
                                         children: [
                                           Stack(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0.0, -1.0),
                                             children: [
                                               Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -233,7 +233,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -273,7 +273,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -317,10 +317,10 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 40.0),
                                             child: Stack(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               children: [
                                                 Column(
@@ -338,7 +338,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child: Container(
                                                           width: 100.0,
                                                           height: 100.0,
@@ -357,14 +357,14 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     2.0),
                                                             child: Container(
                                                               width: 100.0,
                                                               height: 100.0,
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFFEB4D3D),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -383,22 +383,22 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                                           ),
                                         ],
                                       ),
-                                    ].divide(const SizedBox(height: 6.0)),
+                                    ].divide(SizedBox(height: 6.0)),
                                   ),
                                 ]
-                                    .divide(const SizedBox(height: 16.0))
-                                    .addToStart(const SizedBox(height: 12.0)),
+                                    .divide(SizedBox(height: 16.0))
+                                    .addToStart(SizedBox(height: 12.0)),
                               ),
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 34.0)),
+                      ].divide(SizedBox(width: 34.0)),
                     ),
                   ),
-                ].divide(const SizedBox(height: 12.0)),
+                ].divide(SizedBox(height: 12.0)),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await LiveFlowsTable().update(
@@ -418,19 +418,19 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFEEE8FC),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFEEE8FC),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'GeistSans',
-                          color: const Color(0xFF5E35B1),
+                          color: Color(0xFF5E35B1),
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
                           useGoogleFonts: false,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 0.0,
                     ),
@@ -438,7 +438,7 @@ class _ChangeQuestionWidgetState extends State<ChangeQuestionWidget> {
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 12.0)),
+            ].divide(SizedBox(height: 12.0)),
           ),
         ),
       ),

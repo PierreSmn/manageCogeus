@@ -66,7 +66,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +91,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -131,7 +131,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(SizedBox(width: 6.0)),
                                     ),
                                     Text(
                                       'Mot du foundateur',
@@ -147,7 +147,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
                               ),
                             if (widget.assets == 0)
@@ -171,7 +171,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                           useGoogleFonts: false,
                                         ),
                                   ),
-                                ].divide(const SizedBox(height: 16.0)),
+                                ].divide(SizedBox(height: 16.0)),
                               ),
                             if (widget.assets! >= 3)
                               InkWell(
@@ -189,7 +189,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 30.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -239,7 +239,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                   BorderRadius.circular(100.0),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 6.0)),
+                                        ].divide(SizedBox(width: 6.0)),
                                       ),
                                     ),
                                     Text(
@@ -255,7 +255,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
                               ),
                             if (widget.assets! >= 5)
@@ -351,7 +351,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(SizedBox(width: 6.0)),
                                     ),
                                     Text(
                                       'Carousel',
@@ -368,10 +368,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
                               ),
-                          ].divide(const SizedBox(width: 50.0)),
+                          ].divide(SizedBox(width: 50.0)),
                         ),
                       ),
                     ),
@@ -389,10 +389,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                alignment: AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: const WebViewAware(
-                                  child: SizedBox(
+                                child: WebViewAware(
+                                  child: Container(
                                     height: 790.0,
                                     width: 770.0,
                                     child: AddStoryWidget(),
@@ -422,10 +422,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                alignment: AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
                                 child: WebViewAware(
-                                  child: SizedBox(
+                                  child: Container(
                                     height: 790.0,
                                     width: 770.0,
                                     child: AddFounderWidget(
@@ -445,10 +445,10 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
+                                alignment: AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: const WebViewAware(
-                                  child: SizedBox(
+                                child: WebViewAware(
+                                  child: Container(
                                     height: 800.0,
                                     width: 1280.0,
                                     child: AddIntegrationWidget(),
@@ -464,21 +464,21 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                       text: 'Commencer',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFFEEE8FC),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFFEEE8FC),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'GeistSans',
-                                  color: const Color(0xFF5E35B1),
+                                  color: Color(0xFF5E35B1),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           width: 0.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -488,7 +488,7 @@ class _CreationChoiceWidgetState extends State<CreationChoiceWidget> {
                 ],
               ),
             ),
-          ].divide(const SizedBox(height: 12.0)),
+          ].divide(SizedBox(height: 12.0)),
         ),
       ),
     );

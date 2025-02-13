@@ -65,7 +65,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
         borderRadius: BorderRadius.circular(0.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -74,7 +74,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
             children: [
               Container(
                 width: 400.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,7 +116,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                     useGoogleFonts: false,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                     if (!widget.isGoogle!)
                       Column(
@@ -128,7 +128,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                SizedBox(
+                                Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.textController1,
@@ -197,7 +197,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               16.0, 8.0, 16.0, 8.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -214,7 +214,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                         .asValidator(context),
                                   ),
                                 ),
-                                SizedBox(
+                                Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.textController2,
@@ -283,7 +283,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               16.0, 8.0, 16.0, 8.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -300,7 +300,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                         .asValidator(context),
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 16.0)),
+                              ].divide(SizedBox(height: 16.0)),
                             ),
                           ),
                           Row(
@@ -309,31 +309,31 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  var shouldSetState = false;
+                                  var _shouldSetState = false;
                                   _model.allsettest = true;
                                   if (_model.formKey.currentState == null ||
                                       !_model.formKey.currentState!
                                           .validate()) {
                                     _model.allsettest = false;
                                   }
-                                  shouldSetState = true;
+                                  _shouldSetState = true;
                                   if (!_model.allsettest!) {
-                                    if (shouldSetState) safeSetState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   }
                                   await launchURL(_model.textController2.text);
                                   _model.confirmed = true;
                                   safeSetState(() {});
-                                  if (shouldSetState) safeSetState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                 },
                                 text: 'Vérifier le lien',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0xFFEEE8FC),
+                                  color: Color(0xFFEEE8FC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -345,7 +345,7 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                         useGoogleFonts: false,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
@@ -355,16 +355,16 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                               if (_model.confirmed)
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    var shouldSetState = false;
+                                    var _shouldSetState = false;
                                     _model.allset = true;
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
                                       _model.allset = false;
                                     }
-                                    shouldSetState = true;
+                                    _shouldSetState = true;
                                     if (!_model.allset!) {
-                                      if (shouldSetState) safeSetState(() {});
+                                      if (_shouldSetState) safeSetState(() {});
                                       return;
                                     }
                                     await ClientsTable().update(
@@ -380,38 +380,38 @@ class _EditReviewLinkWidgetState extends State<EditReviewLinkWidget> {
                                       ),
                                     );
                                     Navigator.pop(context);
-                                    if (shouldSetState) safeSetState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: 'Confirmer',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFFEEE8FC),
+                                    color: Color(0xFFEEE8FC),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
                                           fontFamily: 'GeistSans',
-                                          color: const Color(0xFF5E35B1),
+                                          color: Color(0xFF5E35B1),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                           useGoogleFonts: false,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
-                            ].divide(const SizedBox(width: 16.0)),
+                            ].divide(SizedBox(width: 16.0)),
                           ),
-                        ].divide(const SizedBox(height: 24.0)),
+                        ].divide(SizedBox(height: 24.0)),
                       ),
-                  ].divide(const SizedBox(height: 26.0)),
+                  ].divide(SizedBox(height: 26.0)),
                 ),
               ),
             ],

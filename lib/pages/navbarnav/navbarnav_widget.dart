@@ -13,7 +13,7 @@ class NavbarnavWidget extends StatefulWidget {
   const NavbarnavWidget({
     super.key,
     int? selectedIndex,
-  }) : selectedIndex = selectedIndex ?? 1;
+  }) : this.selectedIndex = selectedIndex ?? 1;
 
   final int selectedIndex;
 
@@ -54,7 +54,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
       height: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).revoBG,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -66,7 +66,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 0.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 0.0, 0.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -87,7 +87,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +102,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             fit: BoxFit.contain,
                           ),
                         ),
-                      ].divide(const SizedBox(height: 24.0)),
+                      ].divide(SizedBox(height: 24.0)),
                     ),
                   ),
                 ),
@@ -113,7 +113,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -122,13 +122,6 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered1 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered1 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -153,13 +146,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.home,
                                       color: widget.selectedIndex == 1
@@ -189,11 +182,18 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered1 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered1 = false);
+                        }),
                       ),
                     ]
-                        .divide(const SizedBox(height: 12.0))
-                        .addToStart(const SizedBox(height: 12.0))
-                        .addToEnd(const SizedBox(height: 16.0)),
+                        .divide(SizedBox(height: 12.0))
+                        .addToStart(SizedBox(height: 12.0))
+                        .addToEnd(SizedBox(height: 16.0)),
                   ),
                 ),
               ),
@@ -203,7 +203,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -212,13 +212,6 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered2 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered2 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -243,13 +236,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.list_rounded,
                                       color: widget.selectedIndex == 6
@@ -279,17 +272,17 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered2 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered2 = false);
+                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered3 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered3 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -314,13 +307,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.phone_enabled,
                                       color: widget.selectedIndex == 5
@@ -350,11 +343,18 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered3 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered3 = false);
+                        }),
                       ),
                     ]
-                        .divide(const SizedBox(height: 12.0))
-                        .addToStart(const SizedBox(height: 12.0))
-                        .addToEnd(const SizedBox(height: 16.0)),
+                        .divide(SizedBox(height: 12.0))
+                        .addToStart(SizedBox(height: 12.0))
+                        .addToEnd(SizedBox(height: 16.0)),
                   ),
                 ),
               ),
@@ -364,7 +364,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                   borderRadius: BorderRadius.circular(16.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -373,13 +373,6 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered4 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered4 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -404,13 +397,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.qr_code_rounded,
                                       color: widget.selectedIndex == 10
@@ -440,17 +433,17 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered4 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered4 = false);
+                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered5 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered5 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -475,13 +468,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.directions_outlined,
                                       color: widget.selectedIndex == 4
@@ -511,17 +504,17 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered5 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered5 = false);
+                        }),
                       ),
                       MouseRegion(
                         opaque: false,
                         cursor: MouseCursor.defer ?? MouseCursor.defer,
-                        onEnter: ((event) async {
-                          safeSetState(() => _model.mouseRegionHovered6 = true);
-                        }),
-                        onExit: ((event) async {
-                          safeSetState(
-                              () => _model.mouseRegionHovered6 = false);
-                        }),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -546,13 +539,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(10.0),
+                                    padding: EdgeInsets.all(10.0),
                                     child: Icon(
                                       Icons.checklist_rtl,
                                       color: widget.selectedIndex == 2
@@ -582,11 +575,18 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             ),
                           ),
                         ),
+                        onEnter: ((event) async {
+                          safeSetState(() => _model.mouseRegionHovered6 = true);
+                        }),
+                        onExit: ((event) async {
+                          safeSetState(
+                              () => _model.mouseRegionHovered6 = false);
+                        }),
                       ),
                     ]
-                        .divide(const SizedBox(height: 12.0))
-                        .addToStart(const SizedBox(height: 12.0))
-                        .addToEnd(const SizedBox(height: 16.0)),
+                        .divide(SizedBox(height: 12.0))
+                        .addToStart(SizedBox(height: 12.0))
+                        .addToEnd(SizedBox(height: 16.0)),
                   ),
                 ),
               ),
@@ -597,7 +597,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -606,14 +606,6 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                         MouseRegion(
                           opaque: false,
                           cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          onEnter: ((event) async {
-                            safeSetState(
-                                () => _model.mouseRegionHovered7 = true);
-                          }),
-                          onExit: ((event) async {
-                            safeSetState(
-                                () => _model.mouseRegionHovered7 = false);
-                          }),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -638,13 +630,13 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.all(10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Icon(
                                         Icons.settings_rounded,
                                         color: widget.selectedIndex == 3
@@ -675,11 +667,19 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                               ),
                             ),
                           ),
+                          onEnter: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered7 = true);
+                          }),
+                          onExit: ((event) async {
+                            safeSetState(
+                                () => _model.mouseRegionHovered7 = false);
+                          }),
                         ),
                       ]
-                          .divide(const SizedBox(height: 12.0))
-                          .addToStart(const SizedBox(height: 12.0))
-                          .addToEnd(const SizedBox(height: 16.0)),
+                          .divide(SizedBox(height: 12.0))
+                          .addToStart(SizedBox(height: 12.0))
+                          .addToEnd(SizedBox(height: 16.0)),
                     ),
                   ),
                 ),
@@ -694,12 +694,12 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                       context: context,
                       isGlobal: false,
                       avoidOverflow: true,
-                      targetAnchor: const AlignmentDirectional(0.0, 0.0)
+                      targetAnchor: AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
-                      followerAnchor: const AlignmentDirectional(0.0, 0.0)
+                      followerAnchor: AlignmentDirectional(0.0, 0.0)
                           .resolve(Directionality.of(context)),
                       builder: (dialogContext) {
-                        return const Material(
+                        return Material(
                           color: Colors.transparent,
                           child: WebViewAware(
                             child: ChooseClientorNpWidget(),
@@ -715,7 +715,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 8.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -728,7 +728,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                 width: 40.0,
                                 height: 40.0,
                                 clipBehavior: Clip.antiAlias,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                 ),
                                 child: Image.network(
@@ -754,18 +754,18 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                                       ),
                                 ),
                               ),
-                            ].divide(const SizedBox(width: 16.0)),
+                            ].divide(SizedBox(width: 16.0)),
                           ),
                         ]
-                            .divide(const SizedBox(height: 24.0))
-                            .addToStart(const SizedBox(height: 16.0))
-                            .addToEnd(const SizedBox(height: 18.0)),
+                            .divide(SizedBox(height: 24.0))
+                            .addToStart(SizedBox(height: 16.0))
+                            .addToEnd(SizedBox(height: 18.0)),
                       ),
                     ),
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 16.0)),
+            ].divide(SizedBox(height: 16.0)),
           ),
         ),
       ),

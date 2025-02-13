@@ -44,7 +44,7 @@ class _EmptyListWidgetWidgetState extends State<EmptyListWidgetWidget> {
       children: [
         Flexible(
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
             child: Text(
               'Pas de nouveau contenu à trier',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -64,25 +64,25 @@ class _EmptyListWidgetWidgetState extends State<EmptyListWidgetWidget> {
           options: FFButtonOptions(
             width: 150.0,
             height: 40.0,
-            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-            iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-            color: const Color(0xFFEEE8FC),
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+            color: Color(0xFFEEE8FC),
             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                   fontFamily: 'GeistSans',
-                  color: const Color(0xFF5E35B1),
+                  color: Color(0xFF5E35B1),
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                   useGoogleFonts: false,
                 ),
             elevation: 0.0,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.transparent,
               width: 0.0,
             ),
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-      ].divide(const SizedBox(height: 24.0)),
+      ].divide(SizedBox(height: 24.0)),
     );
   }
 }

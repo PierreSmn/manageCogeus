@@ -41,12 +41,12 @@ class _HomeWidgetState extends State<HomeWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -118,14 +118,14 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 1,
                               ),
                             ),
@@ -135,7 +135,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 32.0, 50.0, 40.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -155,11 +155,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   0.7,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Container(
-                                                decoration: const BoxDecoration(),
+                                                decoration: BoxDecoration(),
                                                 child: Container(
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: SingleChildScrollView(
                                                     child: Column(
                                                       mainAxisSize:
@@ -170,7 +170,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       children: [
                                                         Container(
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -188,7 +188,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               context)
                                                                           .revoCardTextColor,
                                                                       fontSize:
-                                                                          44.72,
+                                                                          28.72,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -211,7 +211,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               context)
                                                                           .revoCardTextColor,
                                                                       fontSize:
-                                                                          44.72,
+                                                                          28.72,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -225,7 +225,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 builder:
                                                                     (context) =>
                                                                         Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -267,7 +267,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             backgroundColor:
                                                                                 Colors.transparent,
                                                                             alignment:
-                                                                                const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                             child:
                                                                                 WebViewAware(
                                                                               child: GestureDetector(
@@ -275,7 +275,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   FocusScope.of(dialogContext).unfocus();
                                                                                   FocusManager.instance.primaryFocus?.unfocus();
                                                                                 },
-                                                                                child: const EditEngagementWidget(),
+                                                                                child: EditEngagementWidget(),
                                                                               ),
                                                                             ),
                                                                           );
@@ -319,7 +319,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             16.0),
                                                                 child: Column(
@@ -405,14 +405,14 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     elevation: 0,
                                                                                     insetPadding: EdgeInsets.zero,
                                                                                     backgroundColor: Colors.transparent,
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                    alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                     child: WebViewAware(
                                                                                       child: GestureDetector(
                                                                                         onTap: () {
                                                                                           FocusScope.of(dialogContext).unfocus();
                                                                                           FocusManager.instance.primaryFocus?.unfocus();
                                                                                         },
-                                                                                        child: const SizedBox(
+                                                                                        child: Container(
                                                                                           height: 400.0,
                                                                                           width: 490.0,
                                                                                           child: InfosNpsWidget(),
@@ -425,10 +425,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             },
                                                                           ),
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           0.0)),
                                                                 ),
@@ -458,7 +458,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             16.0),
                                                                 child: Row(
@@ -531,9 +531,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       useGoogleFonts: false,
                                                                                     ),
                                                                               ),
-                                                                          ].divide(const SizedBox(width: 16.0)),
+                                                                          ].divide(SizedBox(width: 16.0)),
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               height: 0.0)),
                                                                     ),
                                                                     FFButtonWidget(
@@ -548,23 +548,23 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           FFButtonOptions(
                                                                         height:
                                                                             40.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFEEE8FC),
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
                                                                               fontFamily: 'GeistSans',
-                                                                              color: const Color(0xFF5E35B1),
+                                                                              color: Color(0xFF5E35B1),
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w500,
                                                                               useGoogleFonts: false,
@@ -572,7 +572,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         elevation:
                                                                             0.0,
                                                                         borderSide:
-                                                                            const BorderSide(
+                                                                            BorderSide(
                                                                           color:
                                                                               Colors.transparent,
                                                                           width:
@@ -619,7 +619,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             16.0),
                                                                 child: Column(
@@ -695,10 +695,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   useGoogleFonts: false,
                                                                                 ),
                                                                           ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           0.0)),
                                                                 ),
@@ -728,7 +728,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             16.0),
                                                                 child: Column(
@@ -804,10 +804,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   useGoogleFonts: false,
                                                                                 ),
                                                                           ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           0.0)),
                                                                 ),
@@ -837,7 +837,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             16.0),
                                                                 child: Column(
@@ -913,10 +913,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   useGoogleFonts: false,
                                                                                 ),
                                                                           ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           0.0)),
                                                                 ),
@@ -982,7 +982,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               16.0),
                                                                       child:
                                                                           SingleChildScrollView(
@@ -1025,12 +1025,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                       height: 28.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: const Color(0xFFCAFBC4),
+                                                                                        color: Color(0xFFCAFBC4),
                                                                                         borderRadius: BorderRadius.circular(2.0),
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme1,
@@ -1072,12 +1072,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                       height: 28.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: const Color(0xFFCAFBC4),
+                                                                                        color: Color(0xFFCAFBC4),
                                                                                         borderRadius: BorderRadius.circular(2.0),
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme2,
@@ -1119,12 +1119,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                       height: 28.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: const Color(0xFFCAFBC4),
+                                                                                        color: Color(0xFFCAFBC4),
                                                                                         borderRadius: BorderRadius.circular(2.0),
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme3,
@@ -1166,12 +1166,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                       height: 28.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: const Color(0xFFCAFBC4),
+                                                                                        color: Color(0xFFCAFBC4),
                                                                                         borderRadius: BorderRadius.circular(2.0),
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme4,
@@ -1213,12 +1213,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                       height: 28.0,
                                                                                       decoration: BoxDecoration(
-                                                                                        color: const Color(0xFFCAFBC4),
+                                                                                        color: Color(0xFFCAFBC4),
                                                                                         borderRadius: BorderRadius.circular(2.0),
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         'Autre',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1244,7 +1244,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               ],
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 6.0)),
+                                                                          ].divide(SizedBox(height: 6.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -1276,7 +1276,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               16.0),
                                                                       child:
                                                                           SingleChildScrollView(
@@ -1324,7 +1324,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme1,
@@ -1371,7 +1371,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme2,
@@ -1418,7 +1418,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme3,
@@ -1465,7 +1465,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerClientsRow.theme4,
@@ -1512,7 +1512,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 6.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         'Autre',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1538,15 +1538,15 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               ],
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 6.0)),
+                                                                          ].divide(SizedBox(height: 6.0)),
                                                                         ),
                                                                       ),
                                                                     ),
                                                                   ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   width: 24.0)),
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 8.0)),
                                                         ),
                                                         Column(
@@ -1612,7 +1612,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(16.0),
+                                                                              EdgeInsets.all(16.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -1635,7 +1635,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -1654,7 +1654,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                     ),
-                                                                                  ].divide(const SizedBox(width: 16.0)),
+                                                                                  ].divide(SizedBox(width: 16.0)),
                                                                                 ),
                                                                               ),
                                                                               SingleChildScrollView(
@@ -1665,7 +1665,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   children: [
                                                                                     Container(
                                                                                       width: 290.0,
-                                                                                      decoration: const BoxDecoration(),
+                                                                                      decoration: BoxDecoration(),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -1696,7 +1696,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                                            ].divide(SizedBox(width: 6.0)),
                                                                                           ),
                                                                                           Row(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1728,7 +1728,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                                            ].divide(SizedBox(width: 6.0)),
                                                                                           ),
                                                                                           Row(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1760,7 +1760,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                                            ].divide(SizedBox(width: 6.0)),
                                                                                           ),
                                                                                           Row(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1792,7 +1792,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                                            ].divide(SizedBox(width: 6.0)),
                                                                                           ),
                                                                                           Row(
                                                                                             mainAxisSize: MainAxisSize.max,
@@ -1824,19 +1824,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 6.0)),
+                                                                                            ].divide(SizedBox(width: 6.0)),
                                                                                           ),
                                                                                         ],
                                                                                       ),
                                                                                     ),
-                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 0.0)),
+                                                                            ].divide(SizedBox(height: 0.0)),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           16.0)),
                                                                 ),
@@ -1864,7 +1864,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16.0),
+                                                                            EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -1905,9 +1905,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                   ),
-                                                                              ].divide(const SizedBox(width: 16.0)),
+                                                                              ].divide(SizedBox(width: 16.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 0.0)),
+                                                                          ].divide(SizedBox(height: 0.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -1930,7 +1930,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            const EdgeInsets.all(16.0),
+                                                                            EdgeInsets.all(16.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -1963,40 +1963,40 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   text: 'Voir',
                                                                                   options: FFButtonOptions(
                                                                                     height: 40.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: Color(0xFFEEE8FC),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'GeistSans',
-                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          color: Color(0xFF5E35B1),
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w500,
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                     elevation: 0.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 0.0,
                                                                                     ),
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 16.0)),
+                                                                              ].divide(SizedBox(width: 16.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 10.0)),
+                                                                          ].divide(SizedBox(height: 10.0)),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           16.0)),
                                                                 ),
                                                               ],
                                                             ),
-                                                          ].divide(const SizedBox(
+                                                          ].divide(SizedBox(
                                                               height: 8.0)),
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 24.0)),
                                                     ),
                                                   ),

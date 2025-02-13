@@ -39,12 +39,12 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -88,14 +88,14 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 6,
                           ),
                         ),
@@ -106,7 +106,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                   (FFAppState().isBU == false) &&
                                   (FFAppState().isLoc == false)) {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<ExperiencesRow>>(
                                     future: ExperiencesTable().queryRows(
                                       queryFn: (q) => q
@@ -137,7 +137,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -179,7 +179,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -217,15 +217,15 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -263,7 +263,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -292,7 +292,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -308,7 +308,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Score',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -320,7 +320,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -332,7 +332,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Raison',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -344,7 +344,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Redirection',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -354,7 +354,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
@@ -384,7 +384,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -400,7 +400,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -412,7 +412,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                                   if (experienceItem.nps! > 8) {
                                                                                                                     return FlutterFlowTheme.of(context).vertSympa;
                                                                                                                   } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
+                                                                                                                    return Color(0xFFB55254);
                                                                                                                   } else {
                                                                                                                     return FlutterFlowTheme.of(context).tertiary;
                                                                                                                   }
@@ -443,7 +443,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", experienceItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -455,7 +455,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             experienceItem.theme,
@@ -470,7 +470,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           () {
                                                                                                             if (experienceItem.reviewDone == true) {
@@ -490,7 +490,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -509,7 +509,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -523,7 +523,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -538,7 +538,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderRadius: 8.0,
                                                                                       buttonSize: 40.0,
@@ -564,7 +564,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -592,7 +592,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                   (FFAppState().isBU == true) &&
                                   (FFAppState().isLoc == false)) {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<ExperiencesRow>>(
                                     future: ExperiencesTable().queryRows(
                                       queryFn: (q) => q
@@ -623,7 +623,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -665,7 +665,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -703,15 +703,15 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -749,7 +749,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -778,7 +778,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -794,7 +794,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Score',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -806,7 +806,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -818,7 +818,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Raison',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -830,7 +830,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Redirection',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -842,7 +842,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Recontact',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -852,7 +852,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
@@ -882,7 +882,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -898,7 +898,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -910,7 +910,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                                   if (experienceItem.nps! > 8) {
                                                                                                                     return FlutterFlowTheme.of(context).vertSympa;
                                                                                                                   } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
+                                                                                                                    return Color(0xFFB55254);
                                                                                                                   } else {
                                                                                                                     return FlutterFlowTheme.of(context).tertiary;
                                                                                                                   }
@@ -941,7 +941,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", experienceItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -953,7 +953,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             experienceItem.theme,
@@ -968,7 +968,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           () {
                                                                                                             if (experienceItem.reviewDone == true) {
@@ -990,7 +990,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           experienceItem.wantsContact == true ? 'Demande' : '-',
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1000,7 +1000,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -1019,7 +1019,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -1033,7 +1033,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -1048,7 +1048,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
@@ -1075,7 +1075,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1101,7 +1101,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                 );
                               } else {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<ExperiencesRow>>(
                                     future: ExperiencesTable().queryRows(
                                       queryFn: (q) => q
@@ -1132,7 +1132,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -1174,7 +1174,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -1212,15 +1212,15 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -1258,7 +1258,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1287,7 +1287,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -1303,7 +1303,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 50.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Score',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1315,7 +1315,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1327,7 +1327,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Raison',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1339,7 +1339,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Redirection',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1349,7 +1349,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
@@ -1379,7 +1379,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -1395,7 +1395,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 50.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -1407,7 +1407,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                                   if (experienceItem.nps! > 8) {
                                                                                                                     return FlutterFlowTheme.of(context).vertSympa;
                                                                                                                   } else if (experienceItem.nps! < 7) {
-                                                                                                                    return const Color(0xFFB55254);
+                                                                                                                    return Color(0xFFB55254);
                                                                                                                   } else {
                                                                                                                     return FlutterFlowTheme.of(context).tertiary;
                                                                                                                   }
@@ -1438,7 +1438,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", experienceItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1450,7 +1450,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             experienceItem.theme,
@@ -1465,7 +1465,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           () {
                                                                                                             if (experienceItem.reviewDone == true) {
@@ -1485,7 +1485,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -1504,7 +1504,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -1518,7 +1518,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -1533,7 +1533,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
@@ -1560,7 +1560,7 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),

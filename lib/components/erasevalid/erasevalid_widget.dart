@@ -70,7 +70,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
         List<IntegrationsRow> containerIntegrationsRowList = snapshot.data!;
 
         return Container(
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(),
           child: FutureBuilder<List<HostedSubsRow>>(
             future: HostedSubsTable().querySingleRow(
               queryFn: (q) => q.eqOrNull(
@@ -107,7 +107,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -121,7 +121,7 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                           child: RichText(
                             textScaler: MediaQuery.of(context).textScaler,
                             text: TextSpan(
-                              children: const [
+                              children: [
                                 TextSpan(
                                   text:
                                       'Etes vous sûr de bien vouloir effacer cet asset ? \n\nIl ne pourra pas être récuperer. ',
@@ -144,16 +144,8 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                             MouseRegion(
                               opaque: false,
                               cursor: MouseCursor.defer ?? MouseCursor.defer,
-                              onEnter: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = true);
-                              }),
-                              onExit: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = false);
-                              }),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -166,31 +158,31 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                     Navigator.pop(context);
                                   },
                                   text: 'Effacer',
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.delete_outlined,
                                     size: 15.0,
                                   ),
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: _model.mouseRegionHovered
                                         ? FlutterFlowTheme.of(context)
                                             .buttonRevHover
-                                        : const Color(0xFFFCE8F0),
+                                        : Color(0xFFFCE8F0),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
                                           fontFamily: 'GeistSans',
-                                          color: const Color(0xFFE32C61),
+                                          color: Color(0xFFE32C61),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                           useGoogleFonts: false,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
@@ -198,10 +190,18 @@ class _ErasevalidWidgetState extends State<ErasevalidWidget> {
                                   ),
                                 ),
                               ),
+                              onEnter: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = true);
+                              }),
+                              onExit: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = false);
+                              }),
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                   ),
                 ),

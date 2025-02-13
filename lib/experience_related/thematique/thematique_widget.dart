@@ -51,14 +51,8 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
       child: Padding(
-        padding: const EdgeInsets.all(3.0),
+        padding: EdgeInsets.all(3.0),
         child: Container(
           width: double.infinity,
           height: 70.0,
@@ -69,7 +63,7 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -107,7 +101,7 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: EdgeInsets.all(12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +135,7 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
                                 useGoogleFonts: false,
                               ),
                         ),
-                      ].divide(const SizedBox(height: 2.0)),
+                      ].divide(SizedBox(height: 2.0)),
                     ),
                   ),
                 ],
@@ -150,6 +144,12 @@ class _ThematiqueWidgetState extends State<ThematiqueWidget> {
           ),
         ),
       ),
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
     );
   }
 }

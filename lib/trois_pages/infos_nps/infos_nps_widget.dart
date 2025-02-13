@@ -42,7 +42,7 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
       width: 500.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -58,7 +58,7 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+        padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -96,18 +96,18 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
                               useGoogleFonts: false,
                             ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                   RichText(
                     textScaler: MediaQuery.of(context).textScaler,
                     text: TextSpan(
                       children: [
-                        const TextSpan(
+                        TextSpan(
                           text:
                               'Le Net Promoter Score (NPS) est largement utilisée pour mesurer la fidélité et la satisfaction des clients, basée sur leur volonté de recommander un produit ou un service.\n\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               'Le score varie de -100 (uniquement des détracteurs) à +100 (uniquement des promoteurs). \nUn score positif est généralement considéré comme bon, et un score supérieur à 50 est excellent.\n\n',
                           style: TextStyle(),
@@ -120,7 +120,7 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
                             fontSize: 16.0,
                           ),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               'En dessous de 0 : Mauvais (nécessite une attention immédiate)\nDe 0 à 30 : Moyen (des améliorations sont nécessaires)\nDe 31 à 50 : Bon (bonne performance)\nDe 51 à 70 : Excellent (base de clients très fidèles)\nDe 71 à 100 : Classe mondiale (fidélité et promotion exceptionnelles)',
                           style: TextStyle(),
@@ -133,7 +133,7 @@ class _InfosNpsWidgetState extends State<InfosNpsWidget> {
                           ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 4.0)),
+                ].divide(SizedBox(height: 4.0)),
               ),
             ),
           ],
