@@ -284,8 +284,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                       ),
                                                       if (containerClientsRow
-                                                              ?.countNps !=
-                                                          0)
+                                                              ?.countNps ==
+                                                          null)
                                                         SingleChildScrollView(
                                                           child: Column(
                                                             mainAxisSize:
