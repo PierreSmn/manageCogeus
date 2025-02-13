@@ -83,7 +83,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -157,7 +157,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                                               BorderRadius.circular(100.0),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
                                   Text(
                                     '3 storys',
@@ -172,9 +172,9 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                                           useGoogleFonts: false,
                                         ),
                                   ),
-                                ].divide(const SizedBox(height: 16.0)),
+                                ].divide(SizedBox(height: 16.0)),
                               ),
-                            ].divide(const SizedBox(width: 50.0)),
+                            ].divide(SizedBox(width: 50.0)),
                           ),
                         ),
                       ),
@@ -192,7 +192,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -202,21 +202,21 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                         text: 'Valider',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFEEE8FC),
+                          color: Color(0xFFEEE8FC),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'GeistSans',
-                                    color: const Color(0xFF5E35B1),
+                                    color: Color(0xFF5E35B1),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
@@ -226,7 +226,7 @@ class _ExportStoryCodeWidgetState extends State<ExportStoryCodeWidget> {
                     ],
                   ),
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(SizedBox(height: 12.0)),
             ),
           ),
         );

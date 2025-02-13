@@ -98,7 +98,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
 
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +106,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 7,
                               ),
                             ),
@@ -150,7 +150,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                           FlutterFlowTheme.of(context).revoBG,
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 32.0, 0.0, 20.0),
                                       child: SingleChildScrollView(
                                         child: Column(
@@ -171,7 +171,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   50.0,
                                                                   0.0,
@@ -190,7 +190,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                       .width *
                                                                   0.9,
                                                               decoration:
-                                                                  const BoxDecoration(),
+                                                                  BoxDecoration(),
                                                               child:
                                                                   SingleChildScrollView(
                                                                 child: Column(
@@ -214,7 +214,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             28.0,
                                                                             16.0,
@@ -259,12 +259,6 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                             MouseRegion(
                                                                               opaque: false,
                                                                               cursor: MouseCursor.defer ?? MouseCursor.defer,
-                                                                              onEnter: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered = true);
-                                                                              }),
-                                                                              onExit: ((event) async {
-                                                                                safeSetState(() => _model.mouseRegionHovered = false);
-                                                                              }),
                                                                               child: Builder(
                                                                                 builder: (context) => FFButtonWidget(
                                                                                   onPressed: () async {
@@ -277,7 +271,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
                                                                                             ),
                                                                                           ),
-                                                                                          duration: const Duration(milliseconds: 4000),
+                                                                                          duration: Duration(milliseconds: 4000),
                                                                                           backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                         ),
                                                                                       );
@@ -293,14 +287,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                           elevation: 0,
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                           child: WebViewAware(
                                                                                             child: GestureDetector(
                                                                                               onTap: () {
                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                               },
-                                                                                              child: SizedBox(
+                                                                                              child: Container(
                                                                                                 height: 330.0,
                                                                                                 width: 800.0,
                                                                                                 child: CreationChoiceWidget(
@@ -317,24 +311,24 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                     await _model.waitForRequestCompleted();
                                                                                   },
                                                                                   text: 'Ajouter une intégration',
-                                                                                  icon: const Icon(
+                                                                                  icon: Icon(
                                                                                     Icons.add,
                                                                                     size: 15.0,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     height: 40.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: _model.mouseRegionHovered ? const Color(0xFFECE2F5) : const Color(0xFFEDE8FC),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: _model.mouseRegionHovered ? Color(0xFFECE2F5) : Color(0xFFEDE8FC),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'GeistSans',
-                                                                                          color: const Color(0xFF822CE3),
+                                                                                          color: Color(0xFF822CE3),
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w500,
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                     elevation: 0.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 0.0,
                                                                                     ),
@@ -342,12 +336,18 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                   ),
                                                                                 ),
                                                                               ),
+                                                                              onEnter: ((event) async {
+                                                                                safeSetState(() => _model.mouseRegionHovered = true);
+                                                                              }),
+                                                                              onExit: ((event) async {
+                                                                                safeSetState(() => _model.mouseRegionHovered = false);
+                                                                              }),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           24.0)),
                                                                 ),
@@ -399,7 +399,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         50.0,
                                                                         0.0,
@@ -417,7 +417,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                             .width *
                                                                         0.9,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         SingleChildScrollView(
                                                                       child:
@@ -438,7 +438,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -450,7 +450,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                     children: [
                                                                                       Container(
                                                                                         width: 180.0,
-                                                                                        decoration: const BoxDecoration(),
+                                                                                        decoration: BoxDecoration(),
                                                                                         child: Text(
                                                                                           valueOrDefault<String>(
                                                                                             usersIntegrationsItem.name,
@@ -473,7 +473,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               visible: usersIntegrationsItem.isStory ?? true,
                                                                                               child: Container(
                                                                                                 width: 450.0,
-                                                                                                decoration: const BoxDecoration(),
+                                                                                                decoration: BoxDecoration(),
                                                                                                 child: Row(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -522,7 +522,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                               ),
                                                                                                             Container(
                                                                                                               width: 120.0,
-                                                                                                              decoration: const BoxDecoration(),
+                                                                                                              decoration: BoxDecoration(),
                                                                                                               child: Text(
                                                                                                                 valueOrDefault<String>(
                                                                                                                   usersIntegrationsItem.title1,
@@ -538,7 +538,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                          ].divide(const SizedBox(height: 6.0)),
+                                                                                                          ].divide(SizedBox(height: 6.0)),
                                                                                                         );
                                                                                                       },
                                                                                                     ),
@@ -585,7 +585,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                               ),
                                                                                                             Container(
                                                                                                               width: 120.0,
-                                                                                                              decoration: const BoxDecoration(),
+                                                                                                              decoration: BoxDecoration(),
                                                                                                               child: Text(
                                                                                                                 valueOrDefault<String>(
                                                                                                                   usersIntegrationsItem.title2,
@@ -601,7 +601,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                          ].divide(const SizedBox(height: 6.0)),
+                                                                                                          ].divide(SizedBox(height: 6.0)),
                                                                                                         );
                                                                                                       },
                                                                                                     ),
@@ -648,7 +648,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                               ),
                                                                                                             Container(
                                                                                                               width: 120.0,
-                                                                                                              decoration: const BoxDecoration(),
+                                                                                                              decoration: BoxDecoration(),
                                                                                                               child: Text(
                                                                                                                 valueOrDefault<String>(
                                                                                                                   usersIntegrationsItem.title3,
@@ -664,18 +664,18 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ),
-                                                                                                          ].divide(const SizedBox(height: 6.0)),
+                                                                                                          ].divide(SizedBox(height: 6.0)),
                                                                                                         );
                                                                                                       },
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 12.0)),
+                                                                                                  ].divide(SizedBox(width: 12.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             );
                                                                                           } else if (usersIntegrationsItem.isFounder ?? false) {
                                                                                             return Container(
                                                                                               width: 450.0,
-                                                                                              decoration: const BoxDecoration(),
+                                                                                              decoration: BoxDecoration(),
                                                                                               child: Row(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -722,11 +722,11 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                                 fit: BoxFit.cover,
                                                                                                               ),
                                                                                                             ),
-                                                                                                        ].divide(const SizedBox(height: 6.0)),
+                                                                                                        ].divide(SizedBox(height: 6.0)),
                                                                                                       );
                                                                                                     },
                                                                                                   ),
-                                                                                                ].divide(const SizedBox(width: 12.0)),
+                                                                                                ].divide(SizedBox(width: 12.0)),
                                                                                               ),
                                                                                             );
                                                                                           } else {
@@ -936,7 +936,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         );
                                                                                                       },
                                                                                                     ),
-                                                                                                ].divide(const SizedBox(width: 6.0)),
+                                                                                                ].divide(SizedBox(width: 6.0)),
                                                                                               ),
                                                                                             );
                                                                                           }
@@ -958,14 +958,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
                                                                                                             onTap: () {
                                                                                                               FocusScope.of(dialogContext).unfocus();
                                                                                                               FocusManager.instance.primaryFocus?.unfocus();
                                                                                                             },
-                                                                                                            child: SizedBox(
+                                                                                                            child: Container(
                                                                                                               height: 330.0,
                                                                                                               width: 550.0,
                                                                                                               child: ExportStoryCodeWidget(
@@ -987,7 +987,7 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                                         ),
                                                                                                       ),
-                                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                                      duration: Duration(milliseconds: 4000),
                                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                                     ),
                                                                                                   );
@@ -999,14 +999,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
                                                                                                             onTap: () {
                                                                                                               FocusScope.of(dialogContext).unfocus();
                                                                                                               FocusManager.instance.primaryFocus?.unfocus();
                                                                                                             },
-                                                                                                            child: SizedBox(
+                                                                                                            child: Container(
                                                                                                               height: 330.0,
                                                                                                               width: 550.0,
                                                                                                               child: ExportCodeWidget(
@@ -1021,25 +1021,25 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                 }
                                                                                               },
                                                                                               text: 'Exporter le code',
-                                                                                              icon: const Icon(
+                                                                                              icon: Icon(
                                                                                                 Icons.content_copy_outlined,
                                                                                                 size: 15.0,
                                                                                               ),
                                                                                               options: FFButtonOptions(
                                                                                                 width: 170.0,
                                                                                                 height: 40.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: const Color(0xFFEEE8FC),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: Color(0xFFEEE8FC),
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'GeistSans',
-                                                                                                      color: const Color(0xFF822CE3),
+                                                                                                      color: Color(0xFF822CE3),
                                                                                                       letterSpacing: 0.0,
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                                 elevation: 0.0,
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Colors.transparent,
                                                                                                   width: 0.0,
                                                                                                 ),
@@ -1073,14 +1073,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
                                                                                                             onTap: () {
                                                                                                               FocusScope.of(dialogContext).unfocus();
                                                                                                               FocusManager.instance.primaryFocus?.unfocus();
                                                                                                             },
-                                                                                                            child: SizedBox(
+                                                                                                            child: Container(
                                                                                                               height: 800.0,
                                                                                                               width: 800.0,
                                                                                                               child: EditStoryWidget(
@@ -1100,14 +1100,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                         elevation: 0,
                                                                                                         insetPadding: EdgeInsets.zero,
                                                                                                         backgroundColor: Colors.transparent,
-                                                                                                        alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                         child: WebViewAware(
                                                                                                           child: GestureDetector(
                                                                                                             onTap: () {
                                                                                                               FocusScope.of(dialogContext).unfocus();
                                                                                                               FocusManager.instance.primaryFocus?.unfocus();
                                                                                                             },
-                                                                                                            child: SizedBox(
+                                                                                                            child: Container(
                                                                                                               height: 800.0,
                                                                                                               width: 800.0,
                                                                                                               child: AddFounderWidget(
@@ -1141,14 +1141,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 800.0,
                                                                                                                 width: 1280.0,
                                                                                                                 child: EditIntegrationWidget(
@@ -1190,14 +1190,14 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 800.0,
                                                                                                                 width: 1280.0,
                                                                                                                 child: EditIntegrationWidget(
@@ -1217,26 +1217,26 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                                 await _model.waitForRequestCompleted();
                                                                                               },
                                                                                               text: 'Modifier ',
-                                                                                              icon: const Icon(
+                                                                                              icon: Icon(
                                                                                                 Icons.edit_rounded,
                                                                                                 size: 15.0,
                                                                                               ),
                                                                                               options: FFButtonOptions(
                                                                                                 width: 170.0,
                                                                                                 height: 40.0,
-                                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                color: const Color(0xFFEEE8FC),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: Color(0xFFEEE8FC),
                                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                       fontFamily: 'GeistSans',
-                                                                                                      color: const Color(0xFF822CE3),
+                                                                                                      color: Color(0xFF822CE3),
                                                                                                       fontSize: 14.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                       fontWeight: FontWeight.w500,
                                                                                                       useGoogleFonts: false,
                                                                                                     ),
                                                                                                 elevation: 0.0,
-                                                                                                borderSide: const BorderSide(
+                                                                                                borderSide: BorderSide(
                                                                                                   color: Colors.transparent,
                                                                                                   width: 0.0,
                                                                                                 ),
@@ -1244,15 +1244,15 @@ class _WidgetsWidgetState extends State<WidgetsWidget> {
                                                                                               ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 11.0)),
+                                                                                    ].divide(SizedBox(width: 11.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 12.0)),
+                                                                                ].divide(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                        ].divide(SizedBox(height: 24.0)),
                                                                       ),
                                                                     ),
                                                                   ),

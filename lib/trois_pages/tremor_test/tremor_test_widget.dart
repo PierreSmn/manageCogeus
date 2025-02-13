@@ -42,12 +42,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -119,14 +119,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 1,
                               ),
                             ),
@@ -136,15 +136,15 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                   gradient: LinearGradient(
                                     colors: [
                                       FlutterFlowTheme.of(context).primary,
-                                      const Color(0xFF020C18)
+                                      Color(0xFF020C18)
                                     ],
-                                    stops: const [0.0, 0.15],
-                                    begin: const AlignmentDirectional(-1.0, -1.0),
-                                    end: const AlignmentDirectional(1.0, 1.0),
+                                    stops: [0.0, 0.15],
+                                    begin: AlignmentDirectional(-1.0, -1.0),
+                                    end: AlignmentDirectional(1.0, 1.0),
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 32.0, 50.0, 40.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -220,7 +220,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -266,7 +266,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -305,7 +305,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -313,7 +313,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -341,7 +341,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -360,14 +360,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -387,7 +387,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -448,14 +448,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -468,9 +468,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -485,7 +485,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -595,10 +595,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -606,18 +606,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -625,7 +625,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -663,7 +663,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -682,7 +682,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -745,7 +745,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -807,7 +807,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -869,7 +869,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -931,7 +931,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -989,20 +989,20 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
                                                                                   Container(
                                                                                     decoration: BoxDecoration(
                                                                                       color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     ),
-                                                                                    child: const FlutterFlowWebView(
+                                                                                    child: FlutterFlowWebView(
                                                                                       content: 'https://v0-app-heuveelwg4e-npqrw3.vercel.app/experiences?clientId=272',
                                                                                       width: 460.0,
                                                                                       height: 260.0,
@@ -1017,7 +1017,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1057,12 +1057,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                     height: 24.0,
                                                                                                     decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
+                                                                                                      color: Color(0xFFCAFBC4),
                                                                                                       borderRadius: BorderRadius.circular(2.0),
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       valueOrDefault<String>(
                                                                                                         containerClientsRow.theme1,
@@ -1104,12 +1104,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                     height: 24.0,
                                                                                                     decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
+                                                                                                      color: Color(0xFFCAFBC4),
                                                                                                       borderRadius: BorderRadius.circular(2.0),
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       valueOrDefault<String>(
                                                                                                         containerClientsRow.theme2,
@@ -1151,12 +1151,12 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                     height: 24.0,
                                                                                                     decoration: BoxDecoration(
-                                                                                                      color: const Color(0xFFCAFBC4),
+                                                                                                      color: Color(0xFFCAFBC4),
                                                                                                       borderRadius: BorderRadius.circular(2.0),
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
                                                                                                     child: Text(
                                                                                                       valueOrDefault<String>(
                                                                                                         containerClientsRow.theme3,
@@ -1185,11 +1185,11 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                               ),
                                                                                             ],
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 6.0)),
+                                                                                        ].divide(SizedBox(height: 6.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );
@@ -1262,7 +1262,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -1308,7 +1308,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -1347,7 +1347,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -1355,7 +1355,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -1383,7 +1383,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -1402,14 +1402,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -1429,7 +1429,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -1491,14 +1491,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -1511,9 +1511,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -1528,7 +1528,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -1638,10 +1638,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -1649,18 +1649,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -1668,7 +1668,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -1706,7 +1706,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -1725,7 +1725,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1788,7 +1788,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1850,7 +1850,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1912,7 +1912,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1974,7 +1974,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2032,16 +2032,16 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );
@@ -2108,7 +2108,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -2154,7 +2154,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -2193,7 +2193,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -2201,7 +2201,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2229,7 +2229,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -2248,14 +2248,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2275,7 +2275,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -2337,14 +2337,14 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -2357,9 +2357,9 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -2374,7 +2374,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -2484,10 +2484,10 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -2495,18 +2495,18 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -2514,7 +2514,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -2552,7 +2552,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -2571,7 +2571,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2634,7 +2634,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2696,7 +2696,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2758,7 +2758,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2820,7 +2820,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2878,16 +2878,16 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );

@@ -55,12 +55,12 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -104,14 +104,14 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 0,
                           ),
                         ),
@@ -151,7 +151,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 32.0, 50.0, 40.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -179,13 +179,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                               .width *
                                                           0.7,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Container(
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: Container(
                                                           decoration:
-                                                              const BoxDecoration(),
+                                                              BoxDecoration(),
                                                           child:
                                                               SingleChildScrollView(
                                                             scrollDirection:
@@ -258,7 +258,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                       builder:
                                                                           (context) =>
                                                                               Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             0.0,
@@ -290,14 +290,14 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   elevation: 0,
                                                                                   insetPadding: EdgeInsets.zero,
                                                                                   backgroundColor: Colors.transparent,
-                                                                                  alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                   child: WebViewAware(
                                                                                     child: GestureDetector(
                                                                                       onTap: () {
                                                                                         FocusScope.of(dialogContext).unfocus();
                                                                                         FocusManager.instance.primaryFocus?.unfocus();
                                                                                       },
-                                                                                      child: const EditEngagementWidget(),
+                                                                                      child: EditEngagementWidget(),
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -327,7 +327,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(16.0),
+                                                                              EdgeInsets.all(16.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -380,7 +380,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                             borderRadius: BorderRadius.circular(10.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsets.all(6.0),
+                                                                                            padding: EdgeInsets.all(6.0),
                                                                                             child: Text(
                                                                                               'Promoter',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -395,11 +395,11 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                       } else if (containerExperiencesRow.nps! < 7) {
                                                                                         return Container(
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0xFFB55254),
+                                                                                            color: Color(0xFFB55254),
                                                                                             borderRadius: BorderRadius.circular(10.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsets.all(6.0),
+                                                                                            padding: EdgeInsets.all(6.0),
                                                                                             child: Text(
                                                                                               'Détracteur',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -418,7 +418,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                             borderRadius: BorderRadius.circular(10.0),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsets.all(6.0),
+                                                                                            padding: EdgeInsets.all(6.0),
                                                                                             child: Text(
                                                                                               'Indifférent',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -433,9 +433,9 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                       }
                                                                                     },
                                                                                   ),
-                                                                                ].divide(const SizedBox(width: 16.0)),
+                                                                                ].divide(SizedBox(width: 16.0)),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                            ].divide(SizedBox(height: 12.0)),
                                                                           ),
                                                                         ),
                                                                       );
@@ -453,7 +453,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(16.0),
+                                                                              EdgeInsets.all(16.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -484,7 +484,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                     ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.userRow = await UsersTable().queryRows(
@@ -499,7 +499,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
 
                                                                                       context.pushNamed('home');
                                                                                     } else {
-                                                                                      await launchURL('https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=$currentUserEmail');
+                                                                                      await launchURL('https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=${currentUserEmail}');
                                                                                     }
 
                                                                                     safeSetState(() {});
@@ -507,18 +507,18 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   text: 'S\'abonner',
                                                                                   options: FFButtonOptions(
                                                                                     height: 40.0,
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: const Color(0xFFEEE8FC),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    color: Color(0xFFEEE8FC),
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: 'GeistSans',
-                                                                                          color: const Color(0xFF5E35B1),
+                                                                                          color: Color(0xFF5E35B1),
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w500,
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                     elevation: 0.0,
-                                                                                    borderSide: const BorderSide(
+                                                                                    borderSide: BorderSide(
                                                                                       color: Colors.transparent,
                                                                                       width: 0.0,
                                                                                     ),
@@ -526,7 +526,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 12.0)),
+                                                                            ].divide(SizedBox(height: 12.0)),
                                                                           ),
                                                                         ),
                                                                       );
@@ -550,7 +550,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        const EdgeInsets.all(
+                                                                        EdgeInsets.all(
                                                                             16.0),
                                                                     child:
                                                                         SingleChildScrollView(
@@ -614,7 +614,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: const EdgeInsets.all(10.0),
+                                                                                      padding: EdgeInsets.all(10.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerExperiencesRow?.feedback,
@@ -631,7 +631,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                        ].divide(SizedBox(height: 12.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -661,7 +661,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               16.0),
                                                                       child:
                                                                           SingleChildScrollView(
@@ -729,7 +729,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   ),
                                                                               ],
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -757,7 +757,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               16.0),
                                                                       child:
                                                                           SingleChildScrollView(
@@ -957,7 +957,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: const EdgeInsets.all(10.0),
+                                                                                      padding: EdgeInsets.all(10.0),
                                                                                       child: Text(
                                                                                         valueOrDefault<String>(
                                                                                           containerExperiencesRow?.feedbackCustomText,
@@ -974,7 +974,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -1010,7 +1010,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                           [
                                                                         Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(16.0),
+                                                                              EdgeInsets.all(16.0),
                                                                           child:
                                                                               SingleChildScrollView(
                                                                             child:
@@ -1111,7 +1111,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsets.all(10.0),
+                                                                                    padding: EdgeInsets.all(10.0),
                                                                                     child: Text(
                                                                                       valueOrDefault<String>(
                                                                                         containerExperiencesRow?.contactMessage,
@@ -1128,16 +1128,16 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 30.0)),
                                                                     ),
                                                                   ),
                                                                 ),
                                                               ].divide(false
-                                                                  ? const SizedBox(
+                                                                  ? SizedBox(
                                                                       width:
                                                                           20.0)
-                                                                  : const SizedBox(
+                                                                  : SizedBox(
                                                                       height:
                                                                           20.0)),
                                                             ),

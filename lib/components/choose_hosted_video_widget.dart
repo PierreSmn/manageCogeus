@@ -103,7 +103,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -123,7 +123,7 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -149,44 +149,44 @@ class _ChooseHostedVideoWidgetState extends State<ChooseHostedVideoWidget> {
                                                     Navigator.pop(context);
                                                   },
                                             text: 'Choose',
-                                            icon: const Icon(
+                                            icon: Icon(
                                               Icons.check_circle,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              disabledColor: const Color(0x7F28174A),
+                                              disabledColor: Color(0x7F28174A),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 8.0)),
+                                  ].divide(SizedBox(width: 8.0)),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                         );

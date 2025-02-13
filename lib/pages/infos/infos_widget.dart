@@ -89,14 +89,14 @@ class _InfosWidgetState extends State<InfosWidget> {
                     children: [
                       Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(),
+                              child: NavbarnavWidget(),
                             ),
                             Expanded(
                               child: Container(
@@ -104,7 +104,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -122,7 +122,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: Column(
@@ -137,7 +137,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                     .width *
                                                                 0.9,
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child:
                                                             SingleChildScrollView(
                                                           child: Column(
@@ -219,7 +219,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                                   useGoogleFonts: false,
                                                                                 ),
                                                                           ),
-                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                        ].divide(SizedBox(width: 6.0)),
                                                                       ),
                                                                     ],
                                                                   ),
@@ -229,7 +229,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             20.0,
                                                                             0.0,
@@ -244,12 +244,12 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               'Edit profile',
                                                                           options:
                                                                               FFButtonOptions(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -267,7 +267,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             elevation:
                                                                                 3.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 1.0,
                                                                             ),
@@ -277,7 +277,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             20.0,
                                                                             0.0,
@@ -297,12 +297,12 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               'Se deconnecter',
                                                                           options:
                                                                               FFButtonOptions(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -320,7 +320,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             elevation:
                                                                                 3.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 1.0,
                                                                             ),
@@ -331,7 +331,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     width:
                                                                         30.0)),
                                                               ),
@@ -348,19 +348,19 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFFEEE8FC),
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
@@ -368,7 +368,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'GeistSans',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF5E35B1),
                                                                         letterSpacing:
                                                                             0.0,
@@ -380,7 +380,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                   elevation:
                                                                       0.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 0.0,
@@ -392,7 +392,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         100.0,
@@ -437,21 +437,21 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
                                                                             color:
-                                                                                const Color(0xFFEEE8FC),
+                                                                                Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'GeistSans',
-                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  color: Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
                                                                                   useGoogleFonts: false,
@@ -459,7 +459,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 0.0,
                                                                             ),
@@ -478,21 +478,21 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 24.0,
                                                                                 0.0,
                                                                                 24.0,
                                                                                 0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
                                                                             color:
-                                                                                const Color(0xFFEEE8FC),
+                                                                                Color(0xFFEEE8FC),
                                                                             textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: 'GeistSans',
-                                                                                  color: const Color(0xFF5E35B1),
+                                                                                  color: Color(0xFF5E35B1),
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w500,
                                                                                   useGoogleFonts: false,
@@ -500,7 +500,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             elevation:
                                                                                 0.0,
                                                                             borderSide:
-                                                                                const BorderSide(
+                                                                                BorderSide(
                                                                               color: Colors.transparent,
                                                                               width: 0.0,
                                                                             ),
@@ -508,15 +508,15 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               width: 16.0)),
                                                                     ),
-                                                                  ].divide(const SizedBox(
+                                                                  ].divide(SizedBox(
                                                                       height:
                                                                           16.0)),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 24.0)),
                                                           ),
                                                         ),
@@ -566,13 +566,13 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -597,7 +597,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -608,13 +608,13 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                               8.0),
                                                                 ),
                                                               ),
-                                                            ].divide(const SizedBox(
+                                                            ].divide(SizedBox(
                                                                 height: 12.0)),
                                                           ),
                                                         ),
                                                       ),
                                                   ].divide(
-                                                      const SizedBox(height: 34.0)),
+                                                      SizedBox(height: 34.0)),
                                                 ),
                                               ),
                                             ),

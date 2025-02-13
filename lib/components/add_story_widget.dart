@@ -93,7 +93,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -113,7 +113,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                 if (!FFAppState().integrationCreated)
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -126,14 +126,14 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                             key: _model.formKey2,
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
                                 autofocus: false,
                                 obscureText: false,
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   labelText: 'Nom',
                                   enabledBorder: InputBorder.none,
                                   focusedBorder: InputBorder.none,
@@ -160,14 +160,6 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                             MouseRegion(
                               opaque: false,
                               cursor: MouseCursor.defer ?? MouseCursor.defer,
-                              onEnter: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = true);
-                              }),
-                              onExit: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = false);
-                              }),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   if (_model.formKey2.currentState == null ||
@@ -195,15 +187,15 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                   safeSetState(() {});
                                 },
                                 text: 'Créer',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.add,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: _model.mouseRegionHovered
                                       ? FlutterFlowTheme.of(context)
@@ -214,23 +206,31 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                       .titleSmall
                                       .override(
                                         fontFamily: 'GeistSans',
-                                        color: const Color(0xFF5E35B1),
+                                        color: Color(0xFF5E35B1),
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
                                         useGoogleFonts: false,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
+                              onEnter: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = true);
+                              }),
+                              onExit: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = false);
+                              }),
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 12.0)),
+                      ].divide(SizedBox(height: 12.0)),
                     ),
                   ),
                 if (FFAppState().integrationCreated)
@@ -356,13 +356,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -397,27 +397,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Choisir',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
+                                                color: Color(0xFFEEE8FC),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -445,13 +445,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -486,27 +486,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Changer',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
+                                                color: Color(0xFFDBD5E7),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -527,7 +527,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                    SizedBox(
+                                    Container(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.textController2,
@@ -606,7 +606,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primaryBackground,
                                           contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 8.0, 16.0, 8.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -625,7 +625,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             .asValidator(context),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(SizedBox(height: 6.0)),
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -734,13 +734,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -775,27 +775,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Choisir',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
+                                                color: Color(0xFFEEE8FC),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -822,13 +822,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -863,27 +863,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Changer',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
+                                                color: Color(0xFFDBD5E7),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -904,7 +904,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                    SizedBox(
+                                    Container(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.textController3,
@@ -983,7 +983,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primaryBackground,
                                           contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 8.0, 16.0, 8.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -1002,7 +1002,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             .asValidator(context),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(SizedBox(height: 6.0)),
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -1111,13 +1111,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -1152,27 +1152,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Choisir',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFEEE8FC),
+                                                color: Color(0xFFEEE8FC),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -1199,13 +1199,13 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
-                                                      child: const WebViewAware(
-                                                        child: SizedBox(
+                                                      child: WebViewAware(
+                                                        child: Container(
                                                           height: 500.0,
                                                           width: 800.0,
                                                           child:
@@ -1240,27 +1240,27 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               text: 'Changer',
                                               options: FFButtonOptions(
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: const Color(0xFFDBD5E7),
+                                                color: Color(0xFFDBD5E7),
                                                 textStyle: FlutterFlowTheme.of(
                                                         context)
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'GeistSans',
-                                                      color: const Color(0xFF5E35B1),
+                                                      color: Color(0xFF5E35B1),
                                                       letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 0.0,
                                                 ),
@@ -1281,7 +1281,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             useGoogleFonts: false,
                                           ),
                                     ),
-                                    SizedBox(
+                                    Container(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.textController4,
@@ -1360,7 +1360,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primaryBackground,
                                           contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 8.0, 16.0, 8.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -1379,14 +1379,14 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                             .asValidator(context),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 6.0)),
+                                  ].divide(SizedBox(height: 6.0)),
                                 ),
-                              ].divide(const SizedBox(width: 24.0)),
+                              ].divide(SizedBox(width: 24.0)),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 50.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: ((containerIntegrationsRow?.vid1 ==
@@ -1416,9 +1416,9 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                             text: 'Valider',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1430,20 +1430,20 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
                                     useGoogleFonts: false,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
-                              disabledColor: const Color(0xC55E35B1),
-                              disabledTextColor: const Color(0x84FFFFFF),
+                              disabledColor: Color(0xC55E35B1),
+                              disabledTextColor: Color(0x84FFFFFF),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(SizedBox(height: 12.0)),
             ),
           ),
         );

@@ -86,7 +86,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
               children: [
                 Container(
                   height: 383.0,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -116,10 +116,10 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                     elevation: 0,
                                     insetPadding: EdgeInsets.zero,
                                     backgroundColor: Colors.transparent,
-                                    alignment: const AlignmentDirectional(0.0, 0.0)
+                                    alignment: AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
-                                    child: const WebViewAware(
-                                      child: SizedBox(
+                                    child: WebViewAware(
+                                      child: Container(
                                         height: 250.0,
                                         width: 250.0,
                                         child: CreateTagWidget(),
@@ -134,29 +134,29 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                               await _model.waitForRequestCompleted();
                             },
                             text: 'Nouvelle Collection',
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.add,
                               size: 15.0,
                             ),
                             options: FFButtonOptions(
                               height: 28.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0xFFEEE8FC),
+                              color: Color(0xFFEEE8FC),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
                                     fontFamily: 'GeistSans',
-                                    color: const Color(0xFF5E35B1),
+                                    color: Color(0xFF5E35B1),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
                               elevation: 0.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 0.0,
                               ),
@@ -165,7 +165,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: Builder(
                             builder: (context) {
@@ -208,7 +208,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -266,13 +266,13 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: const AlignmentDirectional(
+                                                          alignment: AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
                                                                       context)),
                                                           child: WebViewAware(
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               height: 250.0,
                                                               width: 250.0,
                                                               child:
@@ -300,8 +300,8 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                                       ),
                                     );
                                   })
-                                          .divide(const SizedBox(height: 12.0))
-                                          .addToEnd(const SizedBox(height: 12.0)),
+                                          .divide(SizedBox(height: 12.0))
+                                          .addToEnd(SizedBox(height: 12.0)),
                                 ),
                               );
                             },
@@ -312,7 +312,7 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                             width: 217.0,
                             height: 39.0,
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF8F8F8),
+                              color: Color(0xFFF8F8F8),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: InkWell(
@@ -349,14 +349,14 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                           ),
                         ),
                       ]
-                          .divide(const SizedBox(height: 12.0))
-                          .addToStart(const SizedBox(height: 28.0))
-                          .addToEnd(const SizedBox(height: 12.0)),
+                          .divide(SizedBox(height: 12.0))
+                          .addToStart(SizedBox(height: 28.0))
+                          .addToEnd(SizedBox(height: 12.0)),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context);
@@ -365,21 +365,21 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
                     options: FFButtonOptions(
                       height: 38.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFFEEE8FC),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: Color(0xFFEEE8FC),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'GeistSans',
-                                color: const Color(0xFF5E35B1),
+                                color: Color(0xFF5E35B1),
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                                 useGoogleFonts: false,
                               ),
                       elevation: 0.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 0.0,
                       ),

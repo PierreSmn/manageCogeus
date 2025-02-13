@@ -67,14 +67,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 10,
                           ),
                         ),
@@ -114,7 +114,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 0.0, 0.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -132,7 +132,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 32.0, 0.0, 0.0),
                                                 child: Builder(
@@ -164,7 +164,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(
                                                                           32.0),
                                                               child: Column(
@@ -229,7 +229,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             width:
                                                                                 380.0,
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -270,14 +270,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                                 elevation: 0,
                                                                                                 insetPadding: EdgeInsets.zero,
                                                                                                 backgroundColor: Colors.transparent,
-                                                                                                alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                 child: WebViewAware(
                                                                                                   child: GestureDetector(
                                                                                                     onTap: () {
                                                                                                       FocusScope.of(dialogContext).unfocus();
                                                                                                       FocusManager.instance.primaryFocus?.unfocus();
                                                                                                     },
-                                                                                                    child: SizedBox(
+                                                                                                    child: Container(
                                                                                                       height: 250.0,
                                                                                                       width: 250.0,
                                                                                                       child: ChooseTitleHarvesterWidget(
@@ -316,7 +316,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
                                                                                     children: [
-                                                                                      const TextSpan(
+                                                                                      TextSpan(
                                                                                         text: 'Question :',
                                                                                         style: TextStyle(),
                                                                                       ),
@@ -340,7 +340,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
                                                                                     children: [
-                                                                                      const TextSpan(
+                                                                                      TextSpan(
                                                                                         text: 'Type :',
                                                                                         style: TextStyle(),
                                                                                       ),
@@ -364,13 +364,13 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                   text: TextSpan(
                                                                                     children: [
-                                                                                      const TextSpan(
+                                                                                      TextSpan(
                                                                                         text: 'Démarrages : ',
                                                                                         style: TextStyle(),
                                                                                       ),
                                                                                       TextSpan(
                                                                                         text: containerWebAppActivationsRowList.length.toString(),
-                                                                                        style: const TextStyle(
+                                                                                        style: TextStyle(
                                                                                           fontWeight: FontWeight.w600,
                                                                                         ),
                                                                                       )
@@ -415,13 +415,13 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       textScaler: MediaQuery.of(context).textScaler,
                                                                                       text: TextSpan(
                                                                                         children: [
-                                                                                          const TextSpan(
+                                                                                          TextSpan(
                                                                                             text: 'Vidéos reçues : ',
                                                                                             style: TextStyle(),
                                                                                           ),
                                                                                           TextSpan(
                                                                                             text: richTextSubmittersNewRowList.length.toString(),
-                                                                                            style: const TextStyle(
+                                                                                            style: TextStyle(
                                                                                               fontWeight: FontWeight.w600,
                                                                                             ),
                                                                                           )
@@ -438,7 +438,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 ),
                                                                                 Builder(
                                                                                   builder: (context) => Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         FFAppState().colorChange = false;
@@ -450,14 +450,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                               elevation: 0,
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                               child: WebViewAware(
                                                                                                 child: GestureDetector(
                                                                                                   onTap: () {
                                                                                                     FocusScope.of(dialogContext).unfocus();
                                                                                                     FocusManager.instance.primaryFocus?.unfocus();
                                                                                                   },
-                                                                                                  child: SizedBox(
+                                                                                                  child: Container(
                                                                                                     height: 750.0,
                                                                                                     width: 1000.0,
                                                                                                     child: ChangeColorWidget(
@@ -485,18 +485,18 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       text: 'Modifier page accueil',
                                                                                       options: FFButtonOptions(
                                                                                         height: 40.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: FlutterFlowTheme.of(context).revoSearchBarBg,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'GeistSans',
-                                                                                              color: const Color(0xFF5E35B1),
+                                                                                              color: Color(0xFF5E35B1),
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
                                                                                               useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 0.0,
-                                                                                        borderSide: const BorderSide(
+                                                                                        borderSide: BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 0.0,
                                                                                         ),
@@ -517,14 +517,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
                                                                                                 onTap: () {
                                                                                                   FocusScope.of(dialogContext).unfocus();
                                                                                                   FocusManager.instance.primaryFocus?.unfocus();
                                                                                                 },
-                                                                                                child: SizedBox(
+                                                                                                child: Container(
                                                                                                   height: 700.0,
                                                                                                   width: 750.0,
                                                                                                   child: ChangeQuestionWidget(
@@ -548,18 +548,18 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     text: 'Modifier question',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).revoSearchBarBg,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
@@ -577,14 +577,14 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                             elevation: 0,
                                                                                             insetPadding: EdgeInsets.zero,
                                                                                             backgroundColor: Colors.transparent,
-                                                                                            alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                            alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                             child: WebViewAware(
                                                                                               child: GestureDetector(
                                                                                                 onTap: () {
                                                                                                   FocusScope.of(dialogContext).unfocus();
                                                                                                   FocusManager.instance.primaryFocus?.unfocus();
                                                                                                 },
-                                                                                                child: SizedBox(
+                                                                                                child: Container(
                                                                                                   height: 695.0,
                                                                                                   width: 750.0,
                                                                                                   child: DuplicateHarvesterWidget(
@@ -605,18 +605,18 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     text: 'Dupliquer',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
@@ -624,7 +624,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                              ].divide(SizedBox(height: 12.0)),
                                                                             ),
                                                                           );
                                                                         },
@@ -654,8 +654,8 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             backgroundColor:
                                                                                 Colors.transparent,
-                                                                            errorBuilder: (context, error) =>
-                                                                                const SizedBox(
+                                                                            errorBuilder: (_context, _error) =>
+                                                                                SizedBox(
                                                                               width: 100.0,
                                                                               height: 160.0,
                                                                             ),
@@ -676,18 +676,18 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: const Color(0xFFEEE8FC),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: Color(0xFFEEE8FC),
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'GeistSans',
-                                                                                    color: const Color(0xFF5E35B1),
+                                                                                    color: Color(0xFF5E35B1),
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w500,
                                                                                     useGoogleFonts: false,
                                                                                   ),
                                                                               elevation: 0.0,
-                                                                              borderSide: const BorderSide(
+                                                                              borderSide: BorderSide(
                                                                                 color: Colors.transparent,
                                                                                 width: 0.0,
                                                                               ),
@@ -711,7 +711,7 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                 ),
                                                                               );
@@ -721,35 +721,35 @@ class _HarvestersWidgetState extends State<HarvestersWidget> {
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: const Color(0xFFEEE8FC),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: Color(0xFFEEE8FC),
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'GeistSans',
-                                                                                    color: const Color(0xFF5E35B1),
+                                                                                    color: Color(0xFF5E35B1),
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.w500,
                                                                                     useGoogleFonts: false,
                                                                                   ),
                                                                               elevation: 0.0,
-                                                                              borderSide: const BorderSide(
+                                                                              borderSide: BorderSide(
                                                                                 color: Colors.transparent,
                                                                                 width: 0.0,
                                                                               ),
                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                        ].divide(SizedBox(height: 24.0)),
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     height:
                                                                         12.0)),
                                                               ),
                                                             ),
                                                           );
-                                                        }).divide(const SizedBox(
+                                                        }).divide(SizedBox(
                                                             height: 16.0)),
                                                       ),
                                                     );

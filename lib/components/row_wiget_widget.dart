@@ -95,7 +95,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 4.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             containerTagsRow?.name,
@@ -114,7 +114,7 @@ class _RowWigetWidgetState extends State<RowWigetWidget> {
                     );
                   },
                 );
-              }).divide(const SizedBox(width: 3.0)),
+              }).divide(SizedBox(width: 3.0)),
             ),
           );
         },

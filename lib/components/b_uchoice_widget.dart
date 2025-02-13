@@ -47,21 +47,15 @@ class _BUchoiceWidgetState extends State<BUchoiceWidget> {
     return MouseRegion(
       opaque: false,
       cursor: MouseCursor.defer ?? MouseCursor.defer,
-      onEnter: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = true);
-      }),
-      onExit: ((event) async {
-        safeSetState(() => _model.mouseRegionHovered = false);
-      }),
       child: Container(
         decoration: BoxDecoration(
           color: _model.mouseRegionHovered
               ? FlutterFlowTheme.of(context).cogeHoverFromWhite
-              : const Color(0x00000000),
+              : Color(0x00000000),
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(6.0),
+          padding: EdgeInsets.all(6.0),
           child: InkWell(
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,
@@ -92,6 +86,12 @@ class _BUchoiceWidgetState extends State<BUchoiceWidget> {
           ),
         ),
       ),
+      onEnter: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = true);
+      }),
+      onExit: ((event) async {
+        safeSetState(() => _model.mouseRegionHovered = false);
+      }),
     );
   }
 }

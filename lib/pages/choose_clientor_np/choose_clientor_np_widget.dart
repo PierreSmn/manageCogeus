@@ -43,9 +43,9 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: EdgeInsets.all(24.0),
       child: Container(
-        decoration: const BoxDecoration(),
+        decoration: BoxDecoration(),
         child: FutureBuilder<List<UsersRow>>(
           future: UsersTable().querySingleRow(
             queryFn: (q) => q.eqOrNull(
@@ -83,7 +83,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -107,7 +107,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 8.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -140,12 +140,12 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                               ]
-                                  .divide(const SizedBox(height: 24.0))
-                                  .addToStart(const SizedBox(height: 16.0))
-                                  .addToEnd(const SizedBox(height: 18.0)),
+                                  .divide(SizedBox(height: 24.0))
+                                  .addToStart(SizedBox(height: 16.0))
+                                  .addToEnd(SizedBox(height: 18.0)),
                             ),
                           ),
                         ),
@@ -202,7 +202,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                             BorderRadius.circular(16.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
+                                        padding: EdgeInsets.all(12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -212,16 +212,6 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                               opaque: false,
                                               cursor: MouseCursor.defer ??
                                                   MouseCursor.defer,
-                                              onEnter: ((event) async {
-                                                safeSetState(() =>
-                                                    _model.mouseRegionHovered1 =
-                                                        true);
-                                              }),
-                                              onExit: ((event) async {
-                                                safeSetState(() =>
-                                                    _model.mouseRegionHovered1 =
-                                                        false);
-                                              }),
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   color: _model
@@ -229,7 +219,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                       ? FlutterFlowTheme.of(
                                                               context)
                                                           .cogeHoverFromWhite
-                                                      : const Color(0x00000000),
+                                                      : Color(0x00000000),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           16.0),
@@ -283,6 +273,16 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                   ),
                                                 ),
                                               ),
+                                              onEnter: ((event) async {
+                                                safeSetState(() =>
+                                                    _model.mouseRegionHovered1 =
+                                                        true);
+                                              }),
+                                              onExit: ((event) async {
+                                                safeSetState(() =>
+                                                    _model.mouseRegionHovered1 =
+                                                        false);
+                                              }),
                                             ),
                                           ],
                                         ),
@@ -337,7 +337,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                             BorderRadius.circular(16.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(12.0),
+                                        padding: EdgeInsets.all(12.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -364,7 +364,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                               businessUnitIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -385,7 +385,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     1.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -410,7 +410,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                                           .id,
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -465,7 +465,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
 
                                                                       return Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             Builder(
                                                                           builder:
@@ -565,7 +565,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(16.0),
+                                        padding: EdgeInsets.all(16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -575,16 +575,6 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                               opaque: false,
                                               cursor: MouseCursor.defer ??
                                                   MouseCursor.defer,
-                                              onEnter: ((event) async {
-                                                safeSetState(() =>
-                                                    _model.mouseRegionHovered2 =
-                                                        true);
-                                              }),
-                                              onExit: ((event) async {
-                                                safeSetState(() =>
-                                                    _model.mouseRegionHovered2 =
-                                                        false);
-                                              }),
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   color: _model
@@ -592,7 +582,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                       ? FlutterFlowTheme.of(
                                                               context)
                                                           .cogeHoverFromWhite
-                                                      : const Color(0x00000000),
+                                                      : Color(0x00000000),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           16.0),
@@ -645,6 +635,16 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                   ),
                                                 ),
                                               ),
+                                              onEnter: ((event) async {
+                                                safeSetState(() =>
+                                                    _model.mouseRegionHovered2 =
+                                                        true);
+                                              }),
+                                              onExit: ((event) async {
+                                                safeSetState(() =>
+                                                    _model.mouseRegionHovered2 =
+                                                        false);
+                                              }),
                                             ),
                                             Builder(
                                               builder: (context) {
@@ -667,7 +667,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                               businessUnitIndex];
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -688,7 +688,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsets.all(
+                                                                EdgeInsets.all(
                                                                     1.0),
                                                             child: Column(
                                                               mainAxisSize:
@@ -713,7 +713,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                                           .id,
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -768,7 +768,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
 
                                                                       return Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             Builder(
                                                                           builder:
@@ -818,7 +818,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                           }
                         },
                       ),
-                    ].divide(const SizedBox(height: 16.0)),
+                    ].divide(SizedBox(height: 16.0)),
                   ),
                 ),
               ),

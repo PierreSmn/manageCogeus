@@ -40,12 +40,12 @@ class _RecontactWidgetState extends State<RecontactWidget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -89,14 +89,14 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 5,
                           ),
                         ),
@@ -107,7 +107,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                   (FFAppState().isBU == false) &&
                                   (FFAppState().isLoc == false)) {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<RecontactRow>>(
                                     future: RecontactTable().queryRows(
                                       queryFn: (q) => q
@@ -138,7 +138,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -180,7 +180,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -218,15 +218,15 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -264,7 +264,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -293,7 +293,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -309,7 +309,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -321,7 +321,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -333,7 +333,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 250.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -345,7 +345,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -357,7 +357,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -367,14 +367,14 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
                                                                                         final recontactages = containerRecontactRowList.toList();
                                                                                         if (recontactages.isEmpty) {
-                                                                                          return const EmptyRecontactWidget();
+                                                                                          return EmptyRecontactWidget();
                                                                                         }
 
                                                                                         return SingleChildScrollView(
@@ -400,7 +400,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -416,7 +416,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -428,7 +428,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.firstName,
@@ -443,7 +443,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 250.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.email != null && recontactagesItem.email != '' ? recontactagesItem.email : '-',
@@ -458,7 +458,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
@@ -473,7 +473,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -524,7 +524,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                           ],
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -543,7 +543,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -557,7 +557,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -572,7 +572,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
@@ -599,7 +599,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -627,7 +627,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                   (FFAppState().isBU == true) &&
                                   (FFAppState().isLoc == false)) {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<RecontactRow>>(
                                     future: RecontactTable().queryRows(
                                       queryFn: (q) => q
@@ -658,7 +658,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -700,7 +700,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -738,15 +738,15 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -784,7 +784,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -813,7 +813,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -829,7 +829,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -841,7 +841,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -853,7 +853,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 250.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -865,7 +865,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -877,7 +877,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -887,14 +887,14 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
                                                                                         final recontactages = containerRecontactRowList.toList();
                                                                                         if (recontactages.isEmpty) {
-                                                                                          return const EmptyRecontactWidget();
+                                                                                          return EmptyRecontactWidget();
                                                                                         }
 
                                                                                         return SingleChildScrollView(
@@ -920,7 +920,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -936,7 +936,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -948,7 +948,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.firstName,
@@ -963,7 +963,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 250.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.email != null && recontactagesItem.email != '' ? recontactagesItem.email : '-',
@@ -978,7 +978,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
@@ -993,7 +993,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -1044,7 +1044,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                           ],
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -1063,7 +1063,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -1077,7 +1077,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -1092,7 +1092,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
@@ -1119,7 +1119,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1145,7 +1145,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                 );
                               } else {
                                 return Container(
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<RecontactRow>>(
                                     future: RecontactTable().queryRows(
                                       queryFn: (q) => q
@@ -1176,7 +1176,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                           snapshot.data!;
 
                                       return Container(
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: FutureBuilder<List<ClientsRow>>(
                                           future: ClientsTable().querySingleRow(
                                             queryFn: (q) => q.eqOrNull(
@@ -1218,7 +1218,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                         .revoBG,
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         50.0, 32.0, 50.0, 40.0),
                                                 child: Column(
@@ -1256,15 +1256,15 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             .width *
                                                                         0.7,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             SingleChildScrollView(
                                                                           child:
@@ -1302,7 +1302,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                   ),
                                                                                 ],
                                                                               ),
-                                                                            ].divide(const SizedBox(height: 24.0)),
+                                                                            ].divide(SizedBox(height: 24.0)),
                                                                           ),
                                                                         ),
                                                                       ),
@@ -1331,7 +1331,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 700.0,
                                                                               ),
                                                                               height: 720.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: SingleChildScrollView(
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -1347,7 +1347,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Date',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1359,7 +1359,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 100.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Prénom',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1371,7 +1371,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 250.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Email',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1383,7 +1383,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Téléphone',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1395,7 +1395,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                           ),
                                                                                           Container(
                                                                                             width: 150.0,
-                                                                                            decoration: const BoxDecoration(),
+                                                                                            decoration: BoxDecoration(),
                                                                                             child: Text(
                                                                                               'Recontacté ?',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1405,14 +1405,14 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   ),
                                                                                             ),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
                                                                                     ),
                                                                                     Builder(
                                                                                       builder: (context) {
                                                                                         final recontactages = containerRecontactRowList.toList();
                                                                                         if (recontactages.isEmpty) {
-                                                                                          return const EmptyRecontactWidget();
+                                                                                          return EmptyRecontactWidget();
                                                                                         }
 
                                                                                         return SingleChildScrollView(
@@ -1438,7 +1438,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                   height: 50.0,
                                                                                                   decoration: BoxDecoration(
                                                                                                     color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                    boxShadow: const [
+                                                                                                    boxShadow: [
                                                                                                       BoxShadow(
                                                                                                         blurRadius: 0.0,
                                                                                                         color: Color(0x33000000),
@@ -1454,7 +1454,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                     children: [
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           dateTimeFormat("d/M H:mm", recontactagesItem.createdAt),
                                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1466,7 +1466,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 100.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.firstName,
@@ -1481,7 +1481,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 250.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: SelectionArea(
                                                                                                             child: Text(
                                                                                                           valueOrDefault<String>(
@@ -1497,7 +1497,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Text(
                                                                                                           valueOrDefault<String>(
                                                                                                             recontactagesItem.phoneNumber != null && recontactagesItem.phoneNumber != '' ? recontactagesItem.phoneNumber : '-',
@@ -1512,7 +1512,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                       ),
                                                                                                       Container(
                                                                                                         width: 150.0,
-                                                                                                        decoration: const BoxDecoration(),
+                                                                                                        decoration: BoxDecoration(),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           children: [
@@ -1563,7 +1563,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                                           ],
                                                                                                         ),
                                                                                                       ),
-                                                                                                    ].divide(const SizedBox(width: 20.0)).addToStart(const SizedBox(width: 10.0)),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                                   ),
                                                                                                 ),
                                                                                               );
@@ -1582,7 +1582,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                       if (_model
                                                                           .showExperience)
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               20.0,
                                                                               20.0,
                                                                               5.0,
@@ -1596,7 +1596,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: const [
+                                                                              boxShadow: [
                                                                                 BoxShadow(
                                                                                   blurRadius: 2.0,
                                                                                   color: Color(0x33000000),
@@ -1611,7 +1611,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                     child: FlutterFlowIconButton(
                                                                                       borderColor: Colors.transparent,
                                                                                       borderRadius: 8.0,
@@ -1638,7 +1638,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                       t4: _model.t4!,
                                                                                     ),
                                                                                   ),
-                                                                                ].addToStart(const SizedBox(height: 16.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                ].addToStart(SizedBox(height: 16.0)).addToEnd(SizedBox(height: 16.0)),
                                                                               ),
                                                                             ),
                                                                           ),

@@ -85,7 +85,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -220,13 +220,13 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -258,24 +258,24 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                             text: 'Choisir',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFEEE8FC),
+                                              color: Color(0xFFEEE8FC),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -302,13 +302,13 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                                 0.0, 0.0)
                                                             .resolve(
                                                                 Directionality.of(
                                                                     context)),
-                                                    child: const WebViewAware(
-                                                      child: SizedBox(
+                                                    child: WebViewAware(
+                                                      child: Container(
                                                         height: 500.0,
                                                         width: 800.0,
                                                         child:
@@ -340,24 +340,24 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                             text: 'Changer',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: const Color(0xFFDBD5E7),
+                                              color: Color(0xFFDBD5E7),
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .titleSmall
                                                   .override(
                                                     fontFamily: 'GeistSans',
-                                                    color: const Color(0xFF5E35B1),
+                                                    color: Color(0xFF5E35B1),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 0.0,
                                               ),
@@ -371,15 +371,15 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                   Container(
                                     width: 200.0,
                                   ),
-                                ].divide(const SizedBox(height: 6.0)),
+                                ].divide(SizedBox(height: 6.0)),
                               ),
-                            ].divide(const SizedBox(width: 24.0)),
+                            ].divide(SizedBox(width: 24.0)),
                           ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             Navigator.pop(context);
@@ -387,9 +387,9 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                           text: 'Valider',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -401,7 +401,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                                   useGoogleFonts: false,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -412,7 +412,7 @@ class _AddFounderWidgetState extends State<AddFounderWidget> {
                     ],
                   ),
                 ),
-              ].divide(const SizedBox(height: 12.0)),
+              ].divide(SizedBox(height: 12.0)),
             ),
           ),
         );

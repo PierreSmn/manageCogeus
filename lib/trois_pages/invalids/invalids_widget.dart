@@ -88,14 +88,14 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                     children: [
                       Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 2,
                               ),
                             ),
@@ -119,7 +119,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 32.0, 0.0, 20.0),
                                               child: Column(
@@ -140,7 +140,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         50.0,
                                                                         0.0,
@@ -160,7 +160,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             .width *
                                                                         0.9,
                                                                     decoration:
-                                                                        const BoxDecoration(),
+                                                                        BoxDecoration(),
                                                                     child:
                                                                         SingleChildScrollView(
                                                                       controller:
@@ -184,7 +184,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 16.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 16.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -208,29 +208,29 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     text: 'Retour à la sélection',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: Color(0xFFEEE8FC),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
-                                                                                            color: const Color(0xFF5E35B1),
+                                                                                            color: Color(0xFF5E35B1),
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
                                                                                       borderRadius: BorderRadius.circular(8.0),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 12.0)),
+                                                                                ].divide(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ].divide(const SizedBox(height: 24.0)),
+                                                                        ].divide(SizedBox(height: 24.0)),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -260,7 +260,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         100.0,
                                                                         0.0,
@@ -315,7 +315,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             16.0,
                                                                             0.0,
@@ -353,7 +353,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             ),
                                                                             Container(
                                                                               width: 300.0,
-                                                                              decoration: const BoxDecoration(),
+                                                                              decoration: BoxDecoration(),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -375,7 +375,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                     text: TextSpan(
                                                                                       children: [
-                                                                                        const TextSpan(
+                                                                                        TextSpan(
                                                                                           text: 'Repond à la question : \n',
                                                                                           style: TextStyle(),
                                                                                         ),
@@ -384,7 +384,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                             validItemItem,
                                                                                             r'''$.question''',
                                                                                           ).toString(),
-                                                                                          style: const TextStyle(
+                                                                                          style: TextStyle(
                                                                                             fontWeight: FontWeight.w600,
                                                                                             fontSize: 14.0,
                                                                                           ),
@@ -412,7 +412,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                           useGoogleFonts: false,
                                                                                         ),
                                                                                   )),
-                                                                                ].divide(const SizedBox(height: 12.0)).addToStart(const SizedBox(height: 12.0)),
+                                                                                ].divide(SizedBox(height: 12.0)).addToStart(SizedBox(height: 12.0)),
                                                                               ),
                                                                             ),
                                                                             Row(
@@ -420,7 +420,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -482,16 +482,16 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                           await _model.waitForApiRequestCompleted();
                                                                                         },
                                                                                         text: 'Récupérer',
-                                                                                        icon: const Icon(
+                                                                                        icon: Icon(
                                                                                           Icons.chevron_left_sharp,
                                                                                           size: 15.0,
                                                                                         ),
                                                                                         options: FFButtonOptions(
                                                                                           width: 200.0,
                                                                                           height: 25.0,
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                          iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                          color: const Color(0xFFD2D2D2),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                          color: Color(0xFFD2D2D2),
                                                                                           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: 'GeistSans',
                                                                                                 color: FlutterFlowTheme.of(context).secondary,
@@ -501,19 +501,19 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                                 useGoogleFonts: false,
                                                                                               ),
                                                                                           elevation: 0.0,
-                                                                                          borderSide: const BorderSide(
+                                                                                          borderSide: BorderSide(
                                                                                             color: Colors.transparent,
                                                                                             width: 0.0,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(height: 8.0)).addToEnd(const SizedBox(height: 16.0)),
+                                                                                    ].divide(SizedBox(height: 8.0)).addToEnd(SizedBox(height: 16.0)),
                                                                                   ),
                                                                                 ),
-                                                                              ].divide(const SizedBox(width: 8.0)),
+                                                                              ].divide(SizedBox(width: 8.0)),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     );
@@ -524,7 +524,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -554,7 +554,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                           ?.animateTo(
                                                                         0,
                                                                         duration:
-                                                                            const Duration(milliseconds: 1),
+                                                                            Duration(milliseconds: 1),
                                                                         curve: Curves
                                                                             .ease,
                                                                       );
@@ -570,17 +570,17 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFEEE8FC),
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
@@ -589,7 +589,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             fontFamily:
                                                                                 'GeistSans',
                                                                             color:
-                                                                                const Color(0xFF5E35B1),
+                                                                                Color(0xFF5E35B1),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -600,7 +600,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                       elevation:
                                                                           0.0,
                                                                       borderSide:
-                                                                          const BorderSide(
+                                                                          BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
@@ -623,7 +623,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                         .scroll1
                                                                         ?.animateTo(
                                                                       0,
-                                                                      duration: const Duration(
+                                                                      duration: Duration(
                                                                           milliseconds:
                                                                               1),
                                                                       curve: Curves
@@ -641,19 +641,19 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
+                                                                        EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFEEE8FC),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -662,7 +662,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                           fontFamily:
                                                                               'GeistSans',
                                                                           color:
-                                                                              const Color(0xFF5E35B1),
+                                                                              Color(0xFF5E35B1),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -673,7 +673,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                     elevation:
                                                                         0.0,
                                                                     borderSide:
-                                                                        const BorderSide(
+                                                                        BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -684,7 +684,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                             8.0),
                                                                   ),
                                                                 ),
-                                                              ].divide(const SizedBox(
+                                                              ].divide(SizedBox(
                                                                   width: 16.0)),
                                                             ),
                                                           ),
@@ -693,7 +693,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                     ),
                                                   ),
                                                 ].divide(
-                                                    const SizedBox(height: 16.0)),
+                                                    SizedBox(height: 16.0)),
                                               ),
                                             ),
                                           ),

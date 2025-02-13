@@ -79,30 +79,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomeWidget() : const SigninWidget(),
+          appStateNotifier.loggedIn ? HomeWidget() : SigninWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomeWidget() : const SigninWidget(),
+              appStateNotifier.loggedIn ? HomeWidget() : SigninWidget(),
         ),
         FFRoute(
           name: 'signin',
           path: '/signin',
-          builder: (context, params) => const SigninWidget(),
+          builder: (context, params) => SigninWidget(),
         ),
         FFRoute(
           name: 'infos',
           path: '/infos',
           requireAuth: true,
-          builder: (context, params) => const InfosWidget(),
+          builder: (context, params) => InfosWidget(),
         ),
         FFRoute(
           name: 'updateProfile',
           path: '/updateProfile',
           requireAuth: true,
-          builder: (context, params) => const UpdateProfileWidget(),
+          builder: (context, params) => UpdateProfileWidget(),
         ),
         FFRoute(
           name: 'signup',
@@ -145,84 +145,84 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'triage',
           path: '/triage',
           requireAuth: true,
-          builder: (context, params) => const TriageWidget(),
+          builder: (context, params) => TriageWidget(),
         ),
         FFRoute(
           name: 'analytics',
           path: '/analytics',
           requireAuth: true,
-          builder: (context, params) => const AnalyticsWidget(),
+          builder: (context, params) => AnalyticsWidget(),
         ),
         FFRoute(
           name: 'assets',
           path: '/assets',
           requireAuth: true,
-          builder: (context, params) => const AssetsWidget(),
+          builder: (context, params) => AssetsWidget(),
         ),
         FFRoute(
           name: 'widgets',
           path: '/widgets',
           requireAuth: true,
-          builder: (context, params) => const WidgetsWidget(),
+          builder: (context, params) => WidgetsWidget(),
         ),
         FFRoute(
           name: 'harvesters',
           path: '/harvesters',
           requireAuth: true,
-          builder: (context, params) => const HarvestersWidget(),
+          builder: (context, params) => HarvestersWidget(),
         ),
         FFRoute(
           name: 'forgotpassword',
           path: '/forgotten',
-          builder: (context, params) => const ForgotpasswordWidget(),
+          builder: (context, params) => ForgotpasswordWidget(),
         ),
         FFRoute(
           name: 'newpassword',
           path: '/updatePassword',
           requireAuth: true,
-          builder: (context, params) => const NewpasswordWidget(),
+          builder: (context, params) => NewpasswordWidget(),
         ),
         FFRoute(
           name: 'invalids',
           path: '/invalids',
           requireAuth: true,
-          builder: (context, params) => const InvalidsWidget(),
+          builder: (context, params) => InvalidsWidget(),
         ),
         FFRoute(
           name: 'hostLibraryCopy',
           path: '/hostLibraryCopy',
           requireAuth: true,
-          builder: (context, params) => const HostLibraryCopyWidget(),
+          builder: (context, params) => HostLibraryCopyWidget(),
         ),
         FFRoute(
           name: 'retoursATrier',
           path: '/retoursatrier',
           requireAuth: true,
-          builder: (context, params) => const RetoursATrierWidget(),
+          builder: (context, params) => RetoursATrierWidget(),
         ),
         FFRoute(
           name: 'retours',
           path: '/retours',
           requireAuth: true,
-          builder: (context, params) => const RetoursWidget(),
+          builder: (context, params) => RetoursWidget(),
         ),
         FFRoute(
           name: 'assetsCopy',
           path: '/assetsCopy',
           requireAuth: true,
-          builder: (context, params) => const AssetsCopyWidget(),
+          builder: (context, params) => AssetsCopyWidget(),
         ),
         FFRoute(
           name: 'redirections',
           path: '/engagement',
           requireAuth: true,
-          builder: (context, params) => const RedirectionsWidget(),
+          builder: (context, params) => RedirectionsWidget(),
         ),
         FFRoute(
           name: 'createProfileClient',
           path: '/createClient',
           requireAuth: true,
-          builder: (context, params) => const CreateProfileClientWidget(),
+          builder: (context, params) => CreateProfileClientWidget(),
         ),
         FFRoute(
           name: 'experience',
@@ -255,37 +255,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'experiences',
           path: '/experiences',
           requireAuth: true,
-          builder: (context, params) => const ExperiencesWidget(),
+          builder: (context, params) => ExperiencesWidget(),
         ),
         FFRoute(
           name: 'recontact',
           path: '/recontact',
           requireAuth: true,
-          builder: (context, params) => const RecontactWidget(),
+          builder: (context, params) => RecontactWidget(),
         ),
         FFRoute(
           name: 'tremorTest',
           path: '/tremor',
           requireAuth: true,
-          builder: (context, params) => const TremorTestWidget(),
+          builder: (context, params) => TremorTestWidget(),
         ),
         FFRoute(
           name: 'onboard',
           path: '/onboard',
           requireAuth: true,
-          builder: (context, params) => const OnboardWidget(),
+          builder: (context, params) => OnboardWidget(),
         ),
         FFRoute(
           name: 'home',
           path: '/home',
           requireAuth: true,
-          builder: (context, params) => const HomeWidget(),
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'homeCopy2',
           path: '/homesaveneverknow',
           requireAuth: true,
-          builder: (context, params) => const HomeCopy2Widget(),
+          builder: (context, params) => HomeCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -523,7 +523,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(
+  static TransitionInfo appDefault() => TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.fade,
         duration: Duration(milliseconds: 0),

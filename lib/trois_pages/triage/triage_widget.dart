@@ -63,14 +63,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                 children: [
                   Container(
                     height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         wrapWithModel(
                           model: _model.navbarnavModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const NavbarnavWidget(
+                          child: NavbarnavWidget(
                             selectedIndex: 4,
                           ),
                         ),
@@ -110,7 +110,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 0.0, 0.0, 20.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -137,14 +137,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                             containerNewSubsRowList
                                                                 .toList();
                                                         if (listSubs.isEmpty) {
-                                                          return const EmptyListWidgetWidget();
+                                                          return EmptyListWidgetWidget();
                                                         }
 
-                                                        return SizedBox(
+                                                        return Container(
                                                           width: 700.0,
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -172,7 +172,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                     listSubs[
                                                                         listSubsIndex];
                                                                 return Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -194,7 +194,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding:
-                                                                          const EdgeInsets.all(
+                                                                          EdgeInsets.all(
                                                                               32.0),
                                                                       child:
                                                                           SingleChildScrollView(
@@ -215,9 +215,9 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                               children: [
                                                                                 Container(
                                                                                   width: 300.0,
-                                                                                  decoration: const BoxDecoration(),
+                                                                                  decoration: BoxDecoration(),
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.start,
@@ -227,13 +227,13 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           textScaler: MediaQuery.of(context).textScaler,
                                                                                           text: TextSpan(
                                                                                             children: [
-                                                                                              const TextSpan(
+                                                                                              TextSpan(
                                                                                                 text: 'Reste à trier: ',
                                                                                                 style: TextStyle(),
                                                                                               ),
                                                                                               TextSpan(
                                                                                                 text: containerNewSubsRowList.length >= 1000 ? '+ de 1000' : containerNewSubsRowList.length.toString(),
-                                                                                                style: const TextStyle(
+                                                                                                style: TextStyle(
                                                                                                   fontWeight: FontWeight.w600,
                                                                                                 ),
                                                                                               )
@@ -284,7 +284,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                         ),
                                                                                         Container(
                                                                                           width: 200.0,
-                                                                                          decoration: const BoxDecoration(),
+                                                                                          decoration: BoxDecoration(),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -293,7 +293,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                                   textScaler: MediaQuery.of(context).textScaler,
                                                                                                   text: TextSpan(
                                                                                                     children: [
-                                                                                                      const TextSpan(
+                                                                                                      TextSpan(
                                                                                                         text: '\"',
                                                                                                         style: TextStyle(),
                                                                                                       ),
@@ -302,9 +302,9 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                                           listSubsItem.transcription,
                                                                                                           'Indisponible.',
                                                                                                         ),
-                                                                                                        style: const TextStyle(),
+                                                                                                        style: TextStyle(),
                                                                                                       ),
-                                                                                                      const TextSpan(
+                                                                                                      TextSpan(
                                                                                                         text: '\"',
                                                                                                         style: TextStyle(),
                                                                                                       )
@@ -321,7 +321,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                             ),
                                                                                           ),
                                                                                         ),
-                                                                                      ].divide(const SizedBox(height: 12.0)),
+                                                                                      ].divide(SizedBox(height: 12.0)),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -344,7 +344,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                               ],
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -377,8 +377,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                     options: FFButtonOptions(
                                                                                       width: 220.0,
                                                                                       height: 60.0,
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).alternate,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'GeistSans',
@@ -389,7 +389,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                             useGoogleFonts: false,
                                                                                           ),
                                                                                       elevation: 0.0,
-                                                                                      borderSide: const BorderSide(
+                                                                                      borderSide: BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 0.0,
                                                                                       ),
@@ -408,14 +408,14 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               elevation: 0,
                                                                                               insetPadding: EdgeInsets.zero,
                                                                                               backgroundColor: Colors.transparent,
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                               child: WebViewAware(
                                                                                                 child: GestureDetector(
                                                                                                   onTap: () {
                                                                                                     FocusScope.of(dialogContext).unfocus();
                                                                                                     FocusManager.instance.primaryFocus?.unfocus();
                                                                                                   },
-                                                                                                  child: const SizedBox(
+                                                                                                  child: Container(
                                                                                                     height: 435.0,
                                                                                                     width: 245.0,
                                                                                                     child: ChooseMutiTagWidget(),
@@ -453,8 +453,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                       options: FFButtonOptions(
                                                                                         width: 220.0,
                                                                                         height: 60.0,
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: FlutterFlowTheme.of(context).revoCardBlueText,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'GeistSans',
@@ -465,7 +465,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                               useGoogleFonts: false,
                                                                                             ),
                                                                                         elevation: 0.0,
-                                                                                        borderSide: const BorderSide(
+                                                                                        borderSide: BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 0.0,
                                                                                         ),
@@ -473,10 +473,10 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ].divide(const SizedBox(width: 30.0)).around(const SizedBox(width: 30.0)),
+                                                                                ].divide(SizedBox(width: 30.0)).around(SizedBox(width: 30.0)),
                                                                               ),
                                                                             ),
-                                                                          ].divide(const SizedBox(height: 12.0)),
+                                                                          ].divide(SizedBox(height: 12.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -499,20 +499,20 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      color: const Color(0xFFEEE8FC),
+                                                      color: Color(0xFFEEE8FC),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -520,7 +520,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'GeistSans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF5E35B1),
                                                                 letterSpacing:
                                                                     0.0,
@@ -531,7 +531,7 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                     false,
                                                               ),
                                                       elevation: 0.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 0.0,

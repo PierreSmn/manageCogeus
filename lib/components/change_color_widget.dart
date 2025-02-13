@@ -81,8 +81,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -145,7 +145,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 16.0, 28.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -157,7 +157,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                         children: [
                           Container(
                             width: 400.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -166,7 +166,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 400.0,
                                         child: TextFormField(
                                           controller:
@@ -258,7 +258,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -277,15 +277,15 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               .asValidator(context),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(SizedBox(width: 34.0)),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 50.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller:
@@ -375,7 +375,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 8.0, 16.0, 8.0),
                                             ),
@@ -417,13 +417,13 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 34.0)),
+                                      ].divide(SizedBox(width: 34.0)),
                                     ),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller:
@@ -511,7 +511,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -551,12 +551,12 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(SizedBox(width: 34.0)),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller:
@@ -644,7 +644,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -685,12 +685,12 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(SizedBox(width: 34.0)),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller:
@@ -779,7 +779,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -820,12 +820,12 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(SizedBox(width: 34.0)),
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      SizedBox(
+                                      Container(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model
@@ -916,7 +916,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
                                             contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 8.0, 16.0, 8.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -958,9 +958,9 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           ),
                                         ),
                                       ),
-                                    ].divide(const SizedBox(width: 34.0)),
+                                    ].divide(SizedBox(width: 34.0)),
                                   ),
-                                ].divide(const SizedBox(height: 16.0)),
+                                ].divide(SizedBox(height: 16.0)),
                               ),
                             ),
                           ),
@@ -980,14 +980,14 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           50.0, 0.0, 50.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -1008,7 +1008,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                           TextSpan(
                                             text:
                                                 _model.titleTextController.text,
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -1042,7 +1042,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Theme(
                                             data: ThemeData(
@@ -1094,7 +1094,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                 .textScaler,
                                             text: TextSpan(
                                               children: [
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: 'J\'accepte les ',
                                                   style: TextStyle(),
                                                 ),
@@ -1114,12 +1114,12 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                                               'https://www.cogeus.com/terms-of-use');
                                                         },
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text:
                                                       ' et que ma vidéo apparaisse dans les communications de ',
                                                   style: TextStyle(),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: 'MARQUE',
                                                   style: TextStyle(),
                                                 )
@@ -1150,10 +1150,10 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       options: FFButtonOptions(
                                         width: 260.0,
                                         height: 38.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: colorFromCssString(
                                           _model.colorButtonTextController.text,
@@ -1177,7 +1177,7 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                               useGoogleFonts: false,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Colors.transparent,
                                         ),
                                         borderRadius:
@@ -1185,8 +1185,8 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 16.0))
-                                      .addToStart(const SizedBox(height: 12.0)),
+                                      .divide(SizedBox(height: 16.0))
+                                      .addToStart(SizedBox(height: 12.0)),
                                 ),
                               ),
                             ),
@@ -1221,28 +1221,28 @@ class _ChangeColorWidgetState extends State<ChangeColorWidget>
                         text: 'Changer de couleur',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFEEE8FC),
+                          color: Color(0xFFEEE8FC),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'GeistSans',
-                                    color: const Color(0xFF5E35B1),
+                                    color: Color(0xFF5E35B1),
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
                           elevation: 0.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 0.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(SizedBox(height: 12.0)),
                   ),
                 ),
               ],

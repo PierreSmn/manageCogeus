@@ -39,12 +39,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
       child: Container(
         width: 300.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -57,13 +57,13 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                 child: Text(
                   'Account Infos',
                   textAlign: TextAlign.start,
@@ -75,13 +75,13 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +99,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentUserEmail,
@@ -114,7 +114,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentUserUid,
@@ -129,7 +129,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               currentJwtToken,
@@ -156,14 +156,8 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
               MouseRegion(
                 opaque: false,
                 cursor: MouseCursor.defer ?? MouseCursor.defer,
-                onEnter: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered1 = true);
-                }),
-                onExit: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered1 = false);
-                }),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 150),
+                  duration: Duration(milliseconds: 150),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -172,12 +166,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.account_circle_outlined,
@@ -187,7 +181,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'My Account',
@@ -205,18 +199,18 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     ),
                   ),
                 ),
+                onEnter: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered1 = true);
+                }),
+                onExit: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered1 = false);
+                }),
               ),
               MouseRegion(
                 opaque: false,
                 cursor: SystemMouseCursors.basic ?? MouseCursor.defer,
-                onEnter: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered2 = true);
-                }),
-                onExit: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered2 = false);
-                }),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 150),
+                  duration: Duration(milliseconds: 150),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -225,12 +219,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.settings_outlined,
@@ -240,7 +234,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Settings',
@@ -258,16 +252,16 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     ),
                   ),
                 ),
+                onEnter: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered2 = true);
+                }),
+                onExit: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered2 = false);
+                }),
               ),
               MouseRegion(
                 opaque: false,
                 cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                onEnter: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered3 = true);
-                }),
-                onExit: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered3 = false);
-                }),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -281,7 +275,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     context.goNamedAuth('signin', context.mounted);
                   },
                   child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 150),
+                    duration: Duration(milliseconds: 150),
                     curve: Curves.easeInOut,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -291,12 +285,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Icon(
                               Icons.content_cut,
@@ -306,7 +300,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Disconnect',
@@ -325,6 +319,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     ),
                   ),
                 ),
+                onEnter: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered3 = true);
+                }),
+                onExit: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered3 = false);
+                }),
               ),
               Divider(
                 thickness: 1.0,
@@ -333,14 +333,8 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
               MouseRegion(
                 opaque: false,
                 cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                onEnter: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered4 = true);
-                }),
-                onExit: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered4 = false);
-                }),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 150),
+                  duration: Duration(milliseconds: 150),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -349,12 +343,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.login_rounded,
@@ -364,7 +358,7 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Log out',
@@ -382,6 +376,12 @@ class _ProfileDropDownWidgetState extends State<ProfileDropDownWidget> {
                     ),
                   ),
                 ),
+                onEnter: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered4 = true);
+                }),
+                onExit: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered4 = false);
+                }),
               ),
             ],
           ),

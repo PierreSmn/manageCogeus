@@ -41,12 +41,12 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
           builder: (alertDialogContext) {
             return WebViewAware(
               child: AlertDialog(
-                title: const Text('Attention'),
-                content: const Text('Vous devez remettre à jour votre profil.'),
+                title: Text('Attention'),
+                content: Text('Vous devez remettre à jour votre profil.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
+                    child: Text('Ok'),
                   ),
                 ],
               ),
@@ -118,14 +118,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                       return Container(
                         height: MediaQuery.sizeOf(context).height * 1.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             wrapWithModel(
                               model: _model.navbarnavModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: const NavbarnavWidget(
+                              child: NavbarnavWidget(
                                 selectedIndex: 1,
                               ),
                             ),
@@ -135,7 +135,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                   color: FlutterFlowTheme.of(context).revoBG,
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       50.0, 32.0, 50.0, 40.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -211,7 +211,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -257,7 +257,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -296,7 +296,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -304,7 +304,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -332,7 +332,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -351,14 +351,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -378,7 +378,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -439,14 +439,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -459,9 +459,9 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -476,7 +476,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -586,10 +586,10 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -597,18 +597,18 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -616,7 +616,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -654,7 +654,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -673,7 +673,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -736,7 +736,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -798,7 +798,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -860,7 +860,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -922,7 +922,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -980,14 +980,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
                                                                                   Row(
                                                                                     mainAxisSize: MainAxisSize.max,
@@ -1000,7 +1000,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -1067,9 +1067,9 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 12.0)),
+                                                                                                  ].divide(SizedBox(height: 12.0)),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -1082,7 +1082,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -1102,7 +1102,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                 ),
                                                                                                 Container(
                                                                                                   width: 290.0,
-                                                                                                  decoration: const BoxDecoration(),
+                                                                                                  decoration: BoxDecoration(),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     children: [
@@ -1133,7 +1133,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                                   useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                        ].divide(SizedBox(width: 6.0)),
                                                                                                       ),
                                                                                                       Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -1165,7 +1165,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                                   useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                        ].divide(SizedBox(width: 6.0)),
                                                                                                       ),
                                                                                                       Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -1197,7 +1197,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                                   useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                        ].divide(SizedBox(width: 6.0)),
                                                                                                       ),
                                                                                                       Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -1229,7 +1229,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                                   useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                        ].divide(SizedBox(width: 6.0)),
                                                                                                       ),
                                                                                                       Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -1261,19 +1261,19 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                                   useGoogleFonts: false,
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ].divide(const SizedBox(width: 6.0)),
+                                                                                                        ].divide(SizedBox(width: 6.0)),
                                                                                                       ),
                                                                                                     ],
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 3.0)),
+                                                                                              ].divide(SizedBox(height: 3.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );
@@ -1346,7 +1346,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -1392,7 +1392,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -1431,7 +1431,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -1439,7 +1439,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -1467,7 +1467,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -1486,14 +1486,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -1513,7 +1513,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -1575,14 +1575,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -1595,9 +1595,9 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -1612,7 +1612,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -1722,10 +1722,10 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -1733,18 +1733,18 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -1752,7 +1752,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -1790,7 +1790,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -1809,7 +1809,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1872,7 +1872,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1934,7 +1934,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1996,7 +1996,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2058,7 +2058,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2116,16 +2116,16 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );
@@ -2192,7 +2192,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                         .width *
                                                                     0.7,
                                                                 decoration:
-                                                                    const BoxDecoration(),
+                                                                    BoxDecoration(),
                                                                 child: FutureBuilder<
                                                                     List<
                                                                         ExperiencesRow>>(
@@ -2238,7 +2238,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                     return Container(
                                                                       decoration:
-                                                                          const BoxDecoration(),
+                                                                          BoxDecoration(),
                                                                       child: FutureBuilder<
                                                                           List<
                                                                               ExperiencesRow>>(
@@ -2277,7 +2277,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
 
                                                                           return Container(
                                                                             decoration:
-                                                                                const BoxDecoration(),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 SingleChildScrollView(
                                                                               child: Column(
@@ -2285,7 +2285,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Container(
-                                                                                    decoration: const BoxDecoration(),
+                                                                                    decoration: BoxDecoration(),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2313,7 +2313,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                         ),
                                                                                         Builder(
                                                                                           builder: (context) => Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                                                                                             child: FlutterFlowIconButton(
                                                                                               borderColor: Colors.transparent,
                                                                                               borderRadius: 8.0,
@@ -2332,14 +2332,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       elevation: 0,
                                                                                                       insetPadding: EdgeInsets.zero,
                                                                                                       backgroundColor: Colors.transparent,
-                                                                                                      alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                      alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                       child: WebViewAware(
                                                                                                         child: GestureDetector(
                                                                                                           onTap: () {
                                                                                                             FocusScope.of(dialogContext).unfocus();
                                                                                                             FocusManager.instance.primaryFocus?.unfocus();
                                                                                                           },
-                                                                                                          child: const EditEngagementWidget(),
+                                                                                                          child: EditEngagementWidget(),
                                                                                                         ),
                                                                                                       ),
                                                                                                     );
@@ -2359,7 +2359,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                       borderRadius: BorderRadius.circular(16.0),
                                                                                     ),
                                                                                     child: Padding(
-                                                                                      padding: const EdgeInsets.all(16.0),
+                                                                                      padding: EdgeInsets.all(16.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.start,
@@ -2421,14 +2421,14 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           elevation: 0,
                                                                                                           insetPadding: EdgeInsets.zero,
                                                                                                           backgroundColor: Colors.transparent,
-                                                                                                          alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                           child: WebViewAware(
                                                                                                             child: GestureDetector(
                                                                                                               onTap: () {
                                                                                                                 FocusScope.of(dialogContext).unfocus();
                                                                                                                 FocusManager.instance.primaryFocus?.unfocus();
                                                                                                               },
-                                                                                                              child: const SizedBox(
+                                                                                                              child: Container(
                                                                                                                 height: 400.0,
                                                                                                                 width: 490.0,
                                                                                                                 child: InfosNpsWidget(),
@@ -2441,9 +2441,9 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   },
                                                                                                 ),
                                                                                               ),
-                                                                                            ].divide(const SizedBox(width: 16.0)),
+                                                                                            ].divide(SizedBox(width: 16.0)),
                                                                                           ),
-                                                                                        ].divide(const SizedBox(height: 12.0)),
+                                                                                        ].divide(SizedBox(height: 12.0)),
                                                                                       ),
                                                                                     ),
                                                                                   ),
@@ -2458,7 +2458,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                           borderRadius: BorderRadius.circular(16.0),
                                                                                         ),
                                                                                         child: Padding(
-                                                                                          padding: const EdgeInsets.all(16.0),
+                                                                                          padding: EdgeInsets.all(16.0),
                                                                                           child: SingleChildScrollView(
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
@@ -2568,10 +2568,10 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ),
                                                                                                       ],
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(width: 20.0)),
+                                                                                                  ].divide(SizedBox(width: 20.0)),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
                                                                                                       context.pushNamed('experiences');
@@ -2579,18 +2579,18 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
                                                                                                       height: 40.0,
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                                      color: const Color(0xFFEEE8FC),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                      color: Color(0xFFEEE8FC),
                                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                             fontFamily: 'GeistSans',
-                                                                                                            color: const Color(0xFF5E35B1),
+                                                                                                            color: Color(0xFF5E35B1),
                                                                                                             letterSpacing: 0.0,
                                                                                                             fontWeight: FontWeight.w500,
                                                                                                             useGoogleFonts: false,
                                                                                                           ),
                                                                                                       elevation: 0.0,
-                                                                                                      borderSide: const BorderSide(
+                                                                                                      borderSide: BorderSide(
                                                                                                         color: Colors.transparent,
                                                                                                         width: 0.0,
                                                                                                       ),
@@ -2598,7 +2598,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ].divide(const SizedBox(height: 12.0)),
+                                                                                              ].divide(SizedBox(height: 12.0)),
                                                                                             ),
                                                                                           ),
                                                                                         ),
@@ -2636,7 +2636,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                               borderRadius: BorderRadius.circular(16.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: const EdgeInsets.all(16.0),
+                                                                                              padding: EdgeInsets.all(16.0),
                                                                                               child: SingleChildScrollView(
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -2655,7 +2655,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                           ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2718,7 +2718,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2780,7 +2780,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2842,7 +2842,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2904,7 +2904,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2962,16 +2962,16 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                         ],
                                                                                                       ),
                                                                                                     ),
-                                                                                                  ].divide(const SizedBox(height: 3.0)),
+                                                                                                  ].divide(SizedBox(height: 3.0)),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
                                                                                           );
                                                                                         },
                                                                                       ),
-                                                                                    ].divide(const SizedBox(width: 24.0)),
+                                                                                    ].divide(SizedBox(width: 24.0)),
                                                                                   ),
-                                                                                ].divide(const SizedBox(height: 24.0)),
+                                                                                ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
                                                                           );
