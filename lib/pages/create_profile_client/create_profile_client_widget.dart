@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'create_profile_client_model.dart';
@@ -12,6 +13,9 @@ export 'create_profile_client_model.dart';
 
 class CreateProfileClientWidget extends StatefulWidget {
   const CreateProfileClientWidget({super.key});
+
+  static String routeName = 'createProfileClient';
+  static String routePath = '/createClient';
 
   @override
   State<CreateProfileClientWidget> createState() =>
@@ -491,8 +495,9 @@ class _CreateProfileClientWidgetState extends State<CreateProfileClientWidget>
                                                         _model.clientNewRow!.id;
                                                     safeSetState(() {});
 
-                                                    context
-                                                        .pushNamed('onboard');
+                                                    context.pushNamed(
+                                                        OnboardWidget
+                                                            .routeName);
 
                                                     safeSetState(() {});
                                                   },

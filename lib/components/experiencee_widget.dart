@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'experiencee_model.dart';
 export 'experiencee_model.dart';
 
@@ -53,6 +54,8 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<ExperiencesRow>>(
       future: ExperiencesTable().querySingleRow(
         queryFn: (q) => q.eqOrNull(
@@ -134,7 +137,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                       decoration: BoxDecoration(),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 0.0),
+                            12.0, 0.0, 12.0, 0.0),
                         child: SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           child: Flex(
@@ -150,7 +153,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
+                                      12.0, 0.0, 12.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -323,219 +326,19 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                   ),
                                 ),
                               ),
-                              Visibility(
-                                visible:
-                                    containerExperiencesRow.wantsContact ==
-                                        true,
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 380.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .revoWhite,
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(12.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Demande de contact',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'GeistSans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .revoCardTextColorUnselected,
-                                                  fontSize: 15.28,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w300,
-                                                  useGoogleFonts: false,
-                                                ),
-                                          ),
-                                          SingleChildScrollView(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    SelectionArea(
-                                                        child: Text(
-                                                      valueOrDefault<String>(
-                                                        containerExperiencesRow
-                                                            .firstName,
-                                                        'Prenom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'GeistSans',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .revoCardTextColor,
-                                                            fontSize: 18.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            useGoogleFonts:
-                                                                false,
-                                                          ),
-                                                    )),
-                                                    SelectionArea(
-                                                        child: Text(
-                                                      valueOrDefault<String>(
-                                                        containerExperiencesRow
-                                                            .lastName,
-                                                        'Nom',
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'GeistSans',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .revoCardTextColor,
-                                                            fontSize: 18.0,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            useGoogleFonts:
-                                                                false,
-                                                          ),
-                                                    )),
-                                                  ].divide(
-                                                      SizedBox(width: 6.0)),
-                                                ),
-                                                SelectionArea(
-                                                    child: Text(
-                                                  valueOrDefault<String>(
-                                                    containerExperiencesRow
-                                                        .email,
-                                                    'Pas d\'email',
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'GeistSans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .inputTitleGrey,
-                                                        fontSize: 18.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                )),
-                                                SelectionArea(
-                                                    child: Text(
-                                                  valueOrDefault<String>(
-                                                    containerExperiencesRow
-                                                        .phoneNumber,
-                                                    'Pas de téléphone',
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'GeistSans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .inputTitleGrey,
-                                                        fontSize: 18.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                )),
-                                              ],
-                                            ),
-                                          ),
-                                          if (containerExperiencesRow
-                                                      .contactMessage !=
-                                                  null &&
-                                              containerExperiencesRow
-                                                      .contactMessage !=
-                                                  '')
-                                            Container(
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsets.all(10.0),
-                                                      child: SelectionArea(
-                                                          child: Text(
-                                                        valueOrDefault<String>(
-                                                          containerExperiencesRow
-                                                              .contactMessage,
-                                                          'Commentaire supplementaire',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'GeistSans',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
-                                                      )),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                        ].divide(SizedBox(height: 12.0)),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: Container(
                                   width: 380.0,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).revoWhite,
-                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .shadcnCardBorderGrey,
+                                    ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsets.all(12.0),
@@ -555,10 +358,10 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                   fontFamily: 'GeistSans',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .revoCardTextColorUnselected,
+                                                      .joliGrisPourTexteLeger,
                                                   fontSize: 15.28,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w300,
+                                                  fontWeight: FontWeight.normal,
                                                   useGoogleFonts: false,
                                                 ),
                                           ),
@@ -580,56 +383,67 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                           ),
-                                          if (containerExperiencesRow.theme ==
-                                              'Autre')
-                                            Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 100.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsets.all(10.0),
-                                                      child: SelectionArea(
-                                                          child: Text(
-                                                        valueOrDefault<String>(
-                                                          containerExperiencesRow
-                                                              .feedback,
-                                                          'Pas de raison donnée',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'GeistSans',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts:
-                                                                      false,
-                                                                ),
-                                                      )),
-                                                    ),
-                                                  ],
+                                          if (containerExperiencesRow
+                                                      .feedback !=
+                                                  null &&
+                                              containerExperiencesRow
+                                                      .feedback !=
+                                                  '')
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Padding(
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
+                                                        child: SelectionArea(
+                                                            child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerExperiencesRow
+                                                                .feedback,
+                                                            'Pas de raison donnée',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'GeistSans',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts:
+                                                                    false,
+                                                              ),
+                                                        )),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -637,42 +451,66 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
+                                    0.0, 12.0, 0.0, 0.0),
                                 child: Container(
                                   width: 380.0,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).revoWhite,
-                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .shadcnCardBorderGrey,
+                                    ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          if ((containerExperiencesRow
+                                    padding: EdgeInsets.all(16.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        if ((containerExperiencesRow
+                                                    .videoDone ==
+                                                true) ||
+                                            (containerExperiencesRow
+                                                    .reviewDone ==
+                                                true) ||
+                                            (containerExperiencesRow
+                                                    .feedbackAnswer ==
+                                                true))
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Redirection',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'GeistSans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .revoCardTextColorUnselected,
+                                                          fontSize: 15.28,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                              ),
+                                              if (containerExperiencesRow
                                                       .videoDone ==
-                                                  true) ||
-                                              (containerExperiencesRow
-                                                      .reviewDone ==
-                                                  true) ||
-                                              (containerExperiencesRow
-                                                      .feedbackAnswer ==
-                                                  true))
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
+                                                  true)
                                                 Text(
-                                                  'Redirection',
+                                                  'Video',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -680,97 +518,19 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
-                                                            .revoCardTextColorUnselected,
-                                                        fontSize: 15.28,
+                                                            .revoCardTextColor,
+                                                        fontSize: 20.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w300,
+                                                            FontWeight.w500,
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                if (containerExperiencesRow
-                                                        .videoDone ==
-                                                    true)
-                                                  Text(
-                                                    'Video',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'GeistSans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .revoCardTextColor,
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                  ),
-                                                if (containerExperiencesRow
-                                                        .reviewDone ==
-                                                    true)
-                                                  Text(
-                                                    'Avis',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'GeistSans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .revoCardTextColor,
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                  ),
-                                                if (containerExperiencesRow
-                                                        .feedbackAnswer ==
-                                                    true)
-                                                  Text(
-                                                    'Feedback',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'GeistSans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .revoCardTextColor,
-                                                          fontSize: 20.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                  ),
-                                              ].divide(SizedBox(height: 12.0)),
-                                            ),
-                                          if (!((containerExperiencesRow
-                                                      .videoDone ==
-                                                  true) ||
-                                              (containerExperiencesRow
+                                              if (containerExperiencesRow
                                                       .reviewDone ==
-                                                  true) ||
-                                              (containerExperiencesRow
-                                                      .feedbackAnswer ==
-                                                  true)))
-                                            Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
+                                                  true)
                                                 Text(
-                                                  'Redirection',
+                                                  'Avis',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -778,45 +538,99 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                         fontFamily: 'GeistSans',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
-                                                            .revoCardTextColorUnselected,
-                                                        fontSize: 15.28,
+                                                            .revoCardTextColor,
+                                                        fontSize: 20.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w300,
+                                                            FontWeight.w500,
                                                         useGoogleFonts: false,
                                                       ),
                                                 ),
-                                                if (!((containerExperiencesRow
-                                                            .feedbackAnswer ==
-                                                        true) &&
-                                                    (containerExperiencesRow
-                                                            .videoDone ==
-                                                        true) &&
-                                                    (containerExperiencesRow
-                                                            .reviewDone ==
-                                                        true)))
-                                                  Text(
-                                                    'Aucune',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
+                                              if (containerExperiencesRow
+                                                      .feedbackAnswer ==
+                                                  true)
+                                                Text(
+                                                  'Feedback',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'GeistSans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .revoCardTextColor,
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                        if (!((containerExperiencesRow
+                                                    .videoDone ==
+                                                true) ||
+                                            (containerExperiencesRow
+                                                    .reviewDone ==
+                                                true) ||
+                                            (containerExperiencesRow
+                                                    .feedbackAnswer ==
+                                                true)))
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Redirection',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
                                                               'GeistSans',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .revoCardTextColor,
-                                                          fontSize: 20.0,
+                                                              .joliGrisPourTexteLeger,
+                                                          fontSize: 15.28,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
+                                                              FontWeight.normal,
                                                           useGoogleFonts: false,
                                                         ),
-                                                  ),
-                                              ].divide(SizedBox(height: 12.0)),
-                                            ),
-                                        ].divide(SizedBox(height: 12.0)),
-                                      ),
+                                              ),
+                                              if (!((containerExperiencesRow
+                                                          .feedbackAnswer ==
+                                                      true) &&
+                                                  (containerExperiencesRow
+                                                          .videoDone ==
+                                                      true) &&
+                                                  (containerExperiencesRow
+                                                          .reviewDone ==
+                                                      true)))
+                                                Text(
+                                                  'Aucune',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'GeistSans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .revoCardTextColor,
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                ),
+                                            ],
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -827,13 +641,17 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                         true,
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
+                                      0.0, 12.0, 0.0, 0.0),
                                   child: Container(
                                     width: 380.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .revoWhite,
-                                      borderRadius: BorderRadius.circular(16.0),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .shadcnCardBorderGrey,
+                                      ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsets.all(12.0),
@@ -847,19 +665,20 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                           children: [
                                             Text(
                                               'Feedback',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'GeistSans',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .revoCardTextColorUnselected,
-                                                    fontSize: 15.28,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w300,
-                                                    useGoogleFonts: false,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'GeistSans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .joliGrisPourTexteLeger,
+                                                        fontSize: 15.28,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        useGoogleFonts: false,
+                                                      ),
                                             ),
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1101,14 +920,13 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                     '')
                                               Container(
                                                 width: 420.0,
-                                                height: 90.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          16.0),
+                                                          8.0),
                                                 ),
                                                 child: SingleChildScrollView(
                                                   child: Column(
@@ -1146,8 +964,216 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 6.0)),
                                         ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Visibility(
+                                visible:
+                                    containerExperiencesRow.wantsContact ==
+                                        true,
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 380.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .revoWhite,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .shadcnCardBorderGrey,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Demande de contact',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'GeistSans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .joliGrisPourTexteLeger,
+                                                  fontSize: 15.28,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  useGoogleFonts: false,
+                                                ),
+                                          ),
+                                          SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    SelectionArea(
+                                                        child: Text(
+                                                      valueOrDefault<String>(
+                                                        containerExperiencesRow
+                                                            .firstName,
+                                                        'Prenom',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'GeistSans',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .revoCardTextColor,
+                                                            fontSize: 18.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                false,
+                                                          ),
+                                                    )),
+                                                    SelectionArea(
+                                                        child: Text(
+                                                      valueOrDefault<String>(
+                                                        containerExperiencesRow
+                                                            .lastName,
+                                                        'Nom',
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'GeistSans',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .revoCardTextColor,
+                                                            fontSize: 18.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            useGoogleFonts:
+                                                                false,
+                                                          ),
+                                                    )),
+                                                  ].divide(
+                                                      SizedBox(width: 6.0)),
+                                                ),
+                                                SelectionArea(
+                                                    child: Text(
+                                                  valueOrDefault<String>(
+                                                    containerExperiencesRow
+                                                        .email,
+                                                    'Pas d\'email',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'GeistSans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .inputTitleGrey,
+                                                        fontSize: 18.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                )),
+                                                SelectionArea(
+                                                    child: Text(
+                                                  valueOrDefault<String>(
+                                                    containerExperiencesRow
+                                                        .phoneNumber,
+                                                    'Pas de téléphone',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'GeistSans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .inputTitleGrey,
+                                                        fontSize: 18.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                )),
+                                              ],
+                                            ),
+                                          ),
+                                          if (containerExperiencesRow
+                                                      .contactMessage !=
+                                                  null &&
+                                              containerExperiencesRow
+                                                      .contactMessage !=
+                                                  '')
+                                            Container(
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(10.0),
+                                                      child: SelectionArea(
+                                                          child: Text(
+                                                        valueOrDefault<String>(
+                                                          containerExperiencesRow
+                                                              .contactMessage,
+                                                          'Commentaire supplementaire',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'GeistSans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                      )),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),
@@ -1160,7 +1186,7 @@ class _ExperienceeWidgetState extends State<ExperienceeWidget> {
                     );
                   },
                 ),
-              ],
+              ].addToEnd(SizedBox(height: 12.0)),
             ),
           ),
         );

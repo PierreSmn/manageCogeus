@@ -333,6 +333,21 @@ class FFAppState extends ChangeNotifier {
   void clearUserCacheCacheKey(String? uniqueKey) =>
       _userCacheManager.clearRequest(uniqueKey);
 
+  final _clientQueryManager = FutureRequestManager<List<ClientsRow>>();
+  Future<List<ClientsRow>> clientQuery({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<ClientsRow>> Function() requestFn,
+  }) =>
+      _clientQueryManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearClientQueryCache() => _clientQueryManager.clear();
+  void clearClientQueryCacheKey(String? uniqueKey) =>
+      _clientQueryManager.clearRequest(uniqueKey);
+
   final _usersSpeTagsManager = FutureRequestManager<List<TagsRow>>();
   Future<List<TagsRow>> usersSpeTags({
     String? uniqueQueryKey,

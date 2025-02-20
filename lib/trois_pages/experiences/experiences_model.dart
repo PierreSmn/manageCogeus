@@ -1,6 +1,7 @@
 import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'experiences_widget.dart' show ExperiencesWidget;
 import 'package:flutter/material.dart';
 
@@ -24,25 +25,17 @@ class ExperiencesModel extends FlutterFlowModel<ExperiencesWidget> {
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
   // Model for experiencee component.
-  late ExperienceeModel experienceeModel1;
-  // Model for experiencee component.
-  late ExperienceeModel experienceeModel2;
-  // Model for experiencee component.
-  late ExperienceeModel experienceeModel3;
+  late ExperienceeModel experienceeModel;
 
   @override
   void initState(BuildContext context) {
     navbarnavModel = createModel(context, () => NavbarnavModel());
-    experienceeModel1 = createModel(context, () => ExperienceeModel());
-    experienceeModel2 = createModel(context, () => ExperienceeModel());
-    experienceeModel3 = createModel(context, () => ExperienceeModel());
+    experienceeModel = createModel(context, () => ExperienceeModel());
   }
 
   @override
   void dispose() {
     navbarnavModel.dispose();
-    experienceeModel1.dispose();
-    experienceeModel2.dispose();
-    experienceeModel3.dispose();
+    experienceeModel.dispose();
   }
 }

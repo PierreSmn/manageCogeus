@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'home_copy2_widget.dart' show HomeCopy2Widget;
 import 'package:flutter/material.dart';
 

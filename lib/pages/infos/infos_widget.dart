@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'infos_model.dart';
@@ -11,6 +12,9 @@ export 'infos_model.dart';
 
 class InfosWidget extends StatefulWidget {
   const InfosWidget({super.key});
+
+  static String routeName = 'infos';
+  static String routePath = '/infos';
 
   @override
   State<InfosWidget> createState() => _InfosWidgetState();
@@ -238,7 +242,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            context.pushNamed('updateProfile');
+                                                                            context.pushNamed(UpdateProfileWidget.routeName);
                                                                           },
                                                                           text:
                                                                               'Edit profile',
@@ -290,7 +294,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                             await authManager.signOut();
                                                                             GoRouter.of(context).clearRedirectLocation();
 
-                                                                            context.goNamedAuth('signin',
+                                                                            context.goNamedAuth(SigninWidget.routeName,
                                                                                 context.mounted);
                                                                           },
                                                                           text:
@@ -429,7 +433,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            context.pushNamed('widgets');
+                                                                            context.pushNamed(WidgetsWidget.routeName);
                                                                           },
                                                                           text:
                                                                               'Widget',
@@ -470,7 +474,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                         FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            context.pushNamed('assets');
+                                                                            context.pushNamed(AssetsWidget.routeName);
                                                                           },
                                                                           text:
                                                                               'Asset',
@@ -559,7 +563,8 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                                 onPressed:
                                                                     () async {
                                                                   context.pushNamed(
-                                                                      'updateProfile');
+                                                                      UpdateProfileWidget
+                                                                          .routeName);
                                                                 },
                                                                 text:
                                                                     'Create profile',

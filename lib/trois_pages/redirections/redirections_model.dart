@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/experience_related/read_engagement/read_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'redirections_widget.dart' show RedirectionsWidget;
 import 'package:flutter/material.dart';

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/trois_pages/infos_nps/infos_nps_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'home_copy2_model.dart';
 
 class HomeCopy2Widget extends StatefulWidget {
   const HomeCopy2Widget({super.key});
+
+  static String routeName = 'homeCopy2';
+  static String routePath = '/homesaveneverknow';
 
   @override
   State<HomeCopy2Widget> createState() => _HomeCopy2WidgetState();
@@ -54,7 +58,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
           },
         );
 
-        context.pushNamed('updateProfile');
+        context.pushNamed(UpdateProfileWidget.routeName);
       }
     });
 
@@ -592,7 +596,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
@@ -1728,7 +1732,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
@@ -2574,7 +2578,7 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(

@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'dart:async';
 import 'onboard_widget.dart' show OnboardWidget;
 import 'package:flutter/material.dart';

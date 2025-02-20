@@ -22,6 +22,9 @@ export 'widgets_model.dart';
 class WidgetsWidget extends StatefulWidget {
   const WidgetsWidget({super.key});
 
+  static String routeName = 'widgets';
+  static String routePath = '/widgets';
+
   @override
   State<WidgetsWidget> createState() => _WidgetsWidgetState();
 }

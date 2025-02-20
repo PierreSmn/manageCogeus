@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,6 +15,9 @@ export 'invalids_model.dart';
 
 class InvalidsWidget extends StatefulWidget {
   const InvalidsWidget({super.key});
+
+  static String routeName = 'invalids';
+  static String routePath = '/invalids';
 
   @override
   State<InvalidsWidget> createState() => _InvalidsWidgetState();
@@ -203,7 +207,7 @@ class _InvalidsWidgetState extends State<InvalidsWidget> {
                                                                                   ),
                                                                                   FFButtonWidget(
                                                                                     onPressed: () async {
-                                                                                      context.pushNamed('retours');
+                                                                                      context.pushNamed(RetoursWidget.routeName);
                                                                                     },
                                                                                     text: 'Retour à la sélection',
                                                                                     options: FFButtonOptions(

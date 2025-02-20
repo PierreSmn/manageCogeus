@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'b_uchoice_model.dart';
 export 'b_uchoice_model.dart';
@@ -71,7 +72,7 @@ class _BUchoiceWidgetState extends State<BUchoiceWidget> {
               FFAppState().activeClientID = widget.buId!;
               safeSetState(() {});
 
-              context.pushNamed('home');
+              context.pushNamed(HomeWidget.routeName);
             },
             child: Text(
               widget.buName!,

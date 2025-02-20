@@ -22,6 +22,9 @@ export 'assets_copy_model.dart';
 class AssetsCopyWidget extends StatefulWidget {
   const AssetsCopyWidget({super.key});
 
+  static String routeName = 'assetsCopy';
+  static String routePath = '/assetsCopy';
+
   @override
   State<AssetsCopyWidget> createState() => _AssetsCopyWidgetState();
 }

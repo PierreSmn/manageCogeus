@@ -1,12 +1,11 @@
-import '/backend/supabase/supabase.dart';
 import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/index.dart';
-import 'recontact_widget.dart' show RecontactWidget;
+import 'feedbacks_widget.dart' show FeedbacksWidget;
 import 'package:flutter/material.dart';
 
-class RecontactModel extends FlutterFlowModel<RecontactWidget> {
+class FeedbacksModel extends FlutterFlowModel<FeedbacksWidget> {
   ///  Local state fields for this page.
 
   bool showExperience = false;
@@ -25,33 +24,14 @@ class RecontactModel extends FlutterFlowModel<RecontactWidget> {
 
   // Model for navbarnav component.
   late NavbarnavModel navbarnavModel;
-  // State field(s) for Checkbox widget.
-  Map<RecontactRow, bool> checkboxValueMap1 = {};
-  List<RecontactRow> get checkboxCheckedItems1 => checkboxValueMap1.entries
-      .where((e) => e.value)
-      .map((e) => e.key)
-      .toList();
-
   // Model for experiencee component.
   late ExperienceeModel experienceeModel1;
-  // State field(s) for Checkbox widget.
-  Map<RecontactRow, bool> checkboxValueMap2 = {};
-  List<RecontactRow> get checkboxCheckedItems2 => checkboxValueMap2.entries
-      .where((e) => e.value)
-      .map((e) => e.key)
-      .toList();
-
   // Model for experiencee component.
   late ExperienceeModel experienceeModel2;
-  // State field(s) for Checkbox widget.
-  Map<RecontactRow, bool> checkboxValueMap3 = {};
-  List<RecontactRow> get checkboxCheckedItems3 => checkboxValueMap3.entries
-      .where((e) => e.value)
-      .map((e) => e.key)
-      .toList();
-
   // Model for experiencee component.
   late ExperienceeModel experienceeModel3;
+  // Model for experiencee component.
+  late ExperienceeModel experienceeModel4;
 
   @override
   void initState(BuildContext context) {
@@ -59,6 +39,7 @@ class RecontactModel extends FlutterFlowModel<RecontactWidget> {
     experienceeModel1 = createModel(context, () => ExperienceeModel());
     experienceeModel2 = createModel(context, () => ExperienceeModel());
     experienceeModel3 = createModel(context, () => ExperienceeModel());
+    experienceeModel4 = createModel(context, () => ExperienceeModel());
   }
 
   @override
@@ -67,5 +48,6 @@ class RecontactModel extends FlutterFlowModel<RecontactWidget> {
     experienceeModel1.dispose();
     experienceeModel2.dispose();
     experienceeModel3.dispose();
+    experienceeModel4.dispose();
   }
 }

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,6 +15,9 @@ export 'forgotpassword_model.dart';
 
 class ForgotpasswordWidget extends StatefulWidget {
   const ForgotpasswordWidget({super.key});
+
+  static String routeName = 'forgotpassword';
+  static String routePath = '/forgotten';
 
   @override
   State<ForgotpasswordWidget> createState() => _ForgotpasswordWidgetState();
@@ -36,7 +40,7 @@ class _ForgotpasswordWidgetState extends State<ForgotpasswordWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
         context.goNamed(
-          'home',
+          HomeWidget.routeName,
           extra: <String, dynamic>{
             kTransitionInfoKey: TransitionInfo(
               hasTransition: true,

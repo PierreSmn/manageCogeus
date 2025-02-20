@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'create_profile_client_widget.dart' show CreateProfileClientWidget;
 import 'package:flutter/material.dart';
 

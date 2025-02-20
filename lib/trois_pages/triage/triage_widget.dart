@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/empty_list_widget/empty_list_widget_widget.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/tags/choose_muti_tag/choose_muti_tag_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'triage_model.dart';
 
 class TriageWidget extends StatefulWidget {
   const TriageWidget({super.key});
+
+  static String routeName = 'triage';
+  static String routePath = '/triage';
 
   @override
   State<TriageWidget> createState() => _TriageWidgetState();
@@ -492,7 +496,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                   FFButtonWidget(
                                                     onPressed: () async {
                                                       context.pushNamed(
-                                                          'retoursATrier');
+                                                          RetoursATrierWidget
+                                                              .routeName);
                                                     },
                                                     text:
                                                         'Acceder à la vue d\'ensemble',

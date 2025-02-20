@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'update_profile_widget.dart' show UpdateProfileWidget;
 import 'package:flutter/material.dart';
 

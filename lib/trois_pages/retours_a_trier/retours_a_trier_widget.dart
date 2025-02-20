@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/tags/choose_muti_tag/choose_muti_tag_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,6 +17,9 @@ export 'retours_a_trier_model.dart';
 
 class RetoursATrierWidget extends StatefulWidget {
   const RetoursATrierWidget({super.key});
+
+  static String routeName = 'retoursATrier';
+  static String routePath = '/retoursatrier';
 
   @override
   State<RetoursATrierWidget> createState() => _RetoursATrierWidgetState();
@@ -204,7 +208,7 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                   ),
                                                                                   FFButtonWidget(
                                                                                     onPressed: () async {
-                                                                                      context.pushNamed('triage');
+                                                                                      context.pushNamed(TriageWidget.routeName);
                                                                                     },
                                                                                     text: 'Interface de tri',
                                                                                     options: FFButtonOptions(
