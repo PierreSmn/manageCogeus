@@ -8,6 +8,9 @@ export 'analytics_model.dart';
 class AnalyticsWidget extends StatefulWidget {
   const AnalyticsWidget({super.key});
 
+  static String routeName = 'analytics';
+  static String routePath = '/analytics';
+
   @override
   State<AnalyticsWidget> createState() => _AnalyticsWidgetState();
 }

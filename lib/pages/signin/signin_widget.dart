@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,6 +13,9 @@ export 'signin_model.dart';
 
 class SigninWidget extends StatefulWidget {
   const SigninWidget({super.key});
+
+  static String routeName = 'signin';
+  static String routePath = '/signin';
 
   @override
   State<SigninWidget> createState() => _SigninWidgetState();
@@ -34,7 +38,7 @@ class _SigninWidgetState extends State<SigninWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
         context.goNamed(
-          'home',
+          HomeWidget.routeName,
           extra: <String, dynamic>{
             kTransitionInfoKey: TransitionInfo(
               hasTransition: true,
@@ -406,7 +410,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                                 }
 
                                                 context.goNamedAuth(
-                                                  'home',
+                                                  HomeWidget.routeName,
                                                   context.mounted,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
@@ -560,7 +564,8 @@ class _SigninWidgetState extends State<SigninWidget>
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      'forgotpassword');
+                                                      ForgotpasswordWidget
+                                                          .routeName);
                                                 },
                                                 child: Text(
                                                   'Mot de passe oublié ?',
@@ -669,7 +674,7 @@ class _SigninWidgetState extends State<SigninWidget>
                                             }
 
                                             context.goNamedAuth(
-                                              'home',
+                                              HomeWidget.routeName,
                                               context.mounted,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:

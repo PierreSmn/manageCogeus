@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -22,6 +23,9 @@ class SignupWidget extends StatefulWidget {
   final int? clid;
   final int? np1;
   final String? type;
+
+  static String routeName = 'signup';
+  static String routePath = '/signup';
 
   @override
   State<SignupWidget> createState() => _SignupWidgetState();
@@ -44,7 +48,7 @@ class _SignupWidgetState extends State<SignupWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
         context.pushNamed(
-          'infos',
+          InfosWidget.routeName,
           extra: <String, dynamic>{
             kTransitionInfoKey: TransitionInfo(
               hasTransition: true,
@@ -627,7 +631,8 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                      'createProfile',
+                                                      CreateProfileWidget
+                                                          .routeName,
                                                       context.mounted,
                                                       queryParameters: {
                                                         'clid': serializeParam(

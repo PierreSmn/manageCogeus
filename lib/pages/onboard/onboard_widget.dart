@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +20,9 @@ export 'onboard_model.dart';
 
 class OnboardWidget extends StatefulWidget {
   const OnboardWidget({super.key});
+
+  static String routeName = 'onboard';
+  static String routePath = '/onboard';
 
   @override
   State<OnboardWidget> createState() => _OnboardWidgetState();
@@ -5122,7 +5126,8 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                         FFButtonWidget(
                                                           onPressed: () async {
                                                             context.pushNamed(
-                                                                'home');
+                                                                HomeWidget
+                                                                    .routeName);
                                                           },
                                                           text: 'Terminer',
                                                           options:
@@ -5366,7 +5371,8 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                         FFButtonWidget(
                                                           onPressed: () async {
                                                             context.pushNamed(
-                                                                'home');
+                                                                HomeWidget
+                                                                    .routeName);
                                                           },
                                                           text: 'Terminer',
                                                           options:

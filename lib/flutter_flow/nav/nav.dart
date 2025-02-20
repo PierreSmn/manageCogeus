@@ -9,9 +9,10 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -88,25 +89,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? HomeWidget() : SigninWidget(),
         ),
         FFRoute(
-          name: 'signin',
-          path: '/signin',
+          name: SigninWidget.routeName,
+          path: SigninWidget.routePath,
           builder: (context, params) => SigninWidget(),
         ),
         FFRoute(
-          name: 'infos',
-          path: '/infos',
+          name: InfosWidget.routeName,
+          path: InfosWidget.routePath,
           requireAuth: true,
           builder: (context, params) => InfosWidget(),
         ),
         FFRoute(
-          name: 'updateProfile',
-          path: '/updateProfile',
+          name: UpdateProfileWidget.routeName,
+          path: UpdateProfileWidget.routePath,
           requireAuth: true,
           builder: (context, params) => UpdateProfileWidget(),
         ),
         FFRoute(
-          name: 'signup',
-          path: '/signup',
+          name: SignupWidget.routeName,
+          path: SignupWidget.routePath,
           builder: (context, params) => SignupWidget(
             brandId: params.getParam(
               'brandId',
@@ -127,8 +128,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'createProfile',
-          path: '/createProfile',
+          name: CreateProfileWidget.routeName,
+          path: CreateProfileWidget.routePath,
           requireAuth: true,
           builder: (context, params) => CreateProfileWidget(
             clid: params.getParam(
@@ -142,91 +143,91 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'triage',
-          path: '/triage',
+          name: TriageWidget.routeName,
+          path: TriageWidget.routePath,
           requireAuth: true,
           builder: (context, params) => TriageWidget(),
         ),
         FFRoute(
-          name: 'analytics',
-          path: '/analytics',
+          name: AnalyticsWidget.routeName,
+          path: AnalyticsWidget.routePath,
           requireAuth: true,
           builder: (context, params) => AnalyticsWidget(),
         ),
         FFRoute(
-          name: 'assets',
-          path: '/assets',
+          name: AssetsWidget.routeName,
+          path: AssetsWidget.routePath,
           requireAuth: true,
           builder: (context, params) => AssetsWidget(),
         ),
         FFRoute(
-          name: 'widgets',
-          path: '/widgets',
+          name: WidgetsWidget.routeName,
+          path: WidgetsWidget.routePath,
           requireAuth: true,
           builder: (context, params) => WidgetsWidget(),
         ),
         FFRoute(
-          name: 'harvesters',
-          path: '/harvesters',
+          name: HarvestersWidget.routeName,
+          path: HarvestersWidget.routePath,
           requireAuth: true,
           builder: (context, params) => HarvestersWidget(),
         ),
         FFRoute(
-          name: 'forgotpassword',
-          path: '/forgotten',
+          name: ForgotpasswordWidget.routeName,
+          path: ForgotpasswordWidget.routePath,
           builder: (context, params) => ForgotpasswordWidget(),
         ),
         FFRoute(
-          name: 'newpassword',
-          path: '/updatePassword',
+          name: NewpasswordWidget.routeName,
+          path: NewpasswordWidget.routePath,
           requireAuth: true,
           builder: (context, params) => NewpasswordWidget(),
         ),
         FFRoute(
-          name: 'invalids',
-          path: '/invalids',
+          name: InvalidsWidget.routeName,
+          path: InvalidsWidget.routePath,
           requireAuth: true,
           builder: (context, params) => InvalidsWidget(),
         ),
         FFRoute(
-          name: 'hostLibraryCopy',
-          path: '/hostLibraryCopy',
+          name: HostLibraryCopyWidget.routeName,
+          path: HostLibraryCopyWidget.routePath,
           requireAuth: true,
           builder: (context, params) => HostLibraryCopyWidget(),
         ),
         FFRoute(
-          name: 'retoursATrier',
-          path: '/retoursatrier',
+          name: RetoursATrierWidget.routeName,
+          path: RetoursATrierWidget.routePath,
           requireAuth: true,
           builder: (context, params) => RetoursATrierWidget(),
         ),
         FFRoute(
-          name: 'retours',
-          path: '/retours',
+          name: RetoursWidget.routeName,
+          path: RetoursWidget.routePath,
           requireAuth: true,
           builder: (context, params) => RetoursWidget(),
         ),
         FFRoute(
-          name: 'assetsCopy',
-          path: '/assetsCopy',
+          name: AssetsCopyWidget.routeName,
+          path: AssetsCopyWidget.routePath,
           requireAuth: true,
           builder: (context, params) => AssetsCopyWidget(),
         ),
         FFRoute(
-          name: 'redirections',
-          path: '/engagement',
+          name: RedirectionsWidget.routeName,
+          path: RedirectionsWidget.routePath,
           requireAuth: true,
           builder: (context, params) => RedirectionsWidget(),
         ),
         FFRoute(
-          name: 'createProfileClient',
-          path: '/createClient',
+          name: CreateProfileClientWidget.routeName,
+          path: CreateProfileClientWidget.routePath,
           requireAuth: true,
           builder: (context, params) => CreateProfileClientWidget(),
         ),
         FFRoute(
-          name: 'experience',
-          path: '/experience',
+          name: ExperienceWidget.routeName,
+          path: ExperienceWidget.routePath,
           requireAuth: true,
           builder: (context, params) => ExperienceWidget(
             xid: params.getParam(
@@ -252,40 +253,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'experiences',
-          path: '/experiences',
+          name: ExperiencesWidget.routeName,
+          path: ExperiencesWidget.routePath,
           requireAuth: true,
           builder: (context, params) => ExperiencesWidget(),
         ),
         FFRoute(
-          name: 'recontact',
-          path: '/recontact',
+          name: RecontactWidget.routeName,
+          path: RecontactWidget.routePath,
           requireAuth: true,
           builder: (context, params) => RecontactWidget(),
         ),
         FFRoute(
-          name: 'tremorTest',
-          path: '/tremor',
+          name: TremorTestWidget.routeName,
+          path: TremorTestWidget.routePath,
           requireAuth: true,
           builder: (context, params) => TremorTestWidget(),
         ),
         FFRoute(
-          name: 'onboard',
-          path: '/onboard',
+          name: OnboardWidget.routeName,
+          path: OnboardWidget.routePath,
           requireAuth: true,
           builder: (context, params) => OnboardWidget(),
         ),
         FFRoute(
-          name: 'home',
-          path: '/home',
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
           requireAuth: true,
           builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
-          name: 'homeCopy2',
-          path: '/homesaveneverknow',
+          name: HomeCopy2Widget.routeName,
+          path: HomeCopy2Widget.routePath,
           requireAuth: true,
           builder: (context, params) => HomeCopy2Widget(),
+        ),
+        FFRoute(
+          name: FeedbacksWidget.routeName,
+          path: FeedbacksWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => FeedbacksWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

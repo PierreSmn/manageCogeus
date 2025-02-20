@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/trois_pages/infos_nps/infos_nps_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,6 +18,9 @@ export 'tremor_test_model.dart';
 
 class TremorTestWidget extends StatefulWidget {
   const TremorTestWidget({super.key});
+
+  static String routeName = 'tremorTest';
+  static String routePath = '/tremor';
 
   @override
   State<TremorTestWidget> createState() => _TremorTestWidgetState();
@@ -55,7 +59,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
           },
         );
 
-        context.pushNamed('updateProfile');
+        context.pushNamed(UpdateProfileWidget.routeName);
       }
     });
 
@@ -601,7 +605,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
@@ -1189,6 +1193,154 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                       ),
                                                                                     ),
                                                                                   ),
+                                                                                  Container(
+                                                                                    height: 260.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                      border: Border.all(
+                                                                                        color: FlutterFlowTheme.of(context).shadcnCardBorderGrey,
+                                                                                      ),
+                                                                                    ),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsets.all(16.0),
+                                                                                      child: Column(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              containerClientsRow.promotRaison4Count?.toString(),
+                                                                                              '0',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'GeistSans',
+                                                                                                  letterSpacing: 0.0,
+                                                                                                  useGoogleFonts: false,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                            children: [
+                                                                                              Stack(
+                                                                                                children: [
+                                                                                                  Container(
+                                                                                                    width: valueOrDefault<double>(
+                                                                                                      300 * (((containerClientsRow.promotRaison1Count!) / (containerClientsRow.totalPromoters!))),
+                                                                                                      300.0,
+                                                                                                    ),
+                                                                                                    height: 24.0,
+                                                                                                    decoration: BoxDecoration(
+                                                                                                      color: Color(0xFFCAFBC4),
+                                                                                                      borderRadius: BorderRadius.circular(2.0),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                  Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 3.0, 0.0, 0.0),
+                                                                                                    child: Text(
+                                                                                                      valueOrDefault<String>(
+                                                                                                        containerClientsRow.theme1,
+                                                                                                        'them1',
+                                                                                                      ),
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'GeistSans',
+                                                                                                            fontSize: 12.0,
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            useGoogleFonts: false,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              ),
+                                                                                              Text(
+                                                                                                valueOrDefault<String>(
+                                                                                                  containerClientsRow.promotRaison1Count?.toString(),
+                                                                                                  '0',
+                                                                                                ),
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'GeistSans',
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: false,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Row(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              Container(
+                                                                                                height: 28.0,
+                                                                                                decoration: BoxDecoration(
+                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                                  border: Border.all(
+                                                                                                    color: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                  ),
+                                                                                                ),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsets.all(4.0),
+                                                                                                  child: Row(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    children: [
+                                                                                                      Icon(
+                                                                                                        Icons.thumb_up_outlined,
+                                                                                                        color: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                        size: 18.0,
+                                                                                                      ),
+                                                                                                      Text(
+                                                                                                        'Promoteur',
+                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                              fontFamily: 'GeistSans',
+                                                                                                              color: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: false,
+                                                                                                            ),
+                                                                                                      ),
+                                                                                                    ].divide(SizedBox(width: 4.0)).around(SizedBox(width: 4.0)),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                          Column(
+                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                            children: [
+                                                                                              Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                                                                                                child: Container(
+                                                                                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                                  decoration: BoxDecoration(
+                                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                    boxShadow: [
+                                                                                                      BoxShadow(
+                                                                                                        color: FlutterFlowTheme.of(context).vertSympa,
+                                                                                                        offset: Offset(-2.0, 0.0),
+                                                                                                      )
+                                                                                                    ],
+                                                                                                    border: Border.all(
+                                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                  child: Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                                    child: Text(
+                                                                                                      'Hello World\nerjertzae\njrzljtlzkrzrkz\nzelk',
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: 'GeistSans',
+                                                                                                            letterSpacing: 0.0,
+                                                                                                            useGoogleFonts: false,
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ],
+                                                                                          ),
+                                                                                        ].divide(SizedBox(height: 6.0)),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
                                                                                 ].divide(SizedBox(height: 24.0)),
                                                                               ),
                                                                             ),
@@ -1644,7 +1796,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
@@ -2490,7 +2642,7 @@ class _TremorTestWidgetState extends State<TremorTestWidget> {
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
                                                                                                     onPressed: () async {
-                                                                                                      context.pushNamed('experiences');
+                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(

@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/tags/choose_muti_tag/choose_muti_tag_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -18,6 +19,9 @@ export 'retours_model.dart';
 
 class RetoursWidget extends StatefulWidget {
   const RetoursWidget({super.key});
+
+  static String routeName = 'retours';
+  static String routePath = '/retours';
 
   @override
   State<RetoursWidget> createState() => _RetoursWidgetState();
@@ -200,7 +204,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
-                                                                                        context.pushNamed('invalids');
+                                                                                        context.pushNamed(InvalidsWidget.routeName);
                                                                                       },
                                                                                       text: 'Voir les vidéos exclues',
                                                                                       options: FFButtonOptions(

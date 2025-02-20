@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,6 +16,9 @@ export 'recontact_model.dart';
 
 class RecontactWidget extends StatefulWidget {
   const RecontactWidget({super.key});
+
+  static String routeName = 'recontact';
+  static String routePath = '/recontact';
 
   @override
   State<RecontactWidget> createState() => _RecontactWidgetState();
@@ -53,7 +57,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
           },
         );
 
-        context.pushNamed('updateProfile');
+        context.pushNamed(UpdateProfileWidget.routeName);
       }
     });
 

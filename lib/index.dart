@@ -33,3 +33,4 @@ export '/trois_pages/tremor_test/tremor_test_widget.dart' show TremorTestWidget;
 export '/pages/onboard/onboard_widget.dart' show OnboardWidget;
 export '/trois_pages/home/home_widget.dart' show HomeWidget;
 export '/trois_pages/home_copy2/home_copy2_widget.dart' show HomeCopy2Widget;
+export '/trois_pages/feedbacks/feedbacks_widget.dart' show FeedbacksWidget;

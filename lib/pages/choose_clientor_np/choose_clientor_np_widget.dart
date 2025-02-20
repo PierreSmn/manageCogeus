@@ -4,6 +4,7 @@ import '/components/b_uchoice_widget.dart';
 import '/components/location_choice_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'choose_clientor_np_model.dart';
@@ -95,7 +96,7 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('infos');
+                          context.pushNamed(InfosWidget.routeName);
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -250,7 +251,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                     FFAppState().isLoc = true;
                                                     safeSetState(() {});
 
-                                                    context.pushNamed('home');
+                                                    context.pushNamed(
+                                                        HomeWidget.routeName);
                                                   },
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -612,7 +614,8 @@ class _ChooseClientorNpWidgetState extends State<ChooseClientorNpWidget> {
                                                     FFAppState().isLoc = false;
                                                     safeSetState(() {});
 
-                                                    context.pushNamed('home');
+                                                    context.pushNamed(
+                                                        HomeWidget.routeName);
                                                   },
                                                   child: Text(
                                                     valueOrDefault<String>(

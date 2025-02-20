@@ -16,6 +16,9 @@ export 'host_library_copy_model.dart';
 class HostLibraryCopyWidget extends StatefulWidget {
   const HostLibraryCopyWidget({super.key});
 
+  static String routeName = 'hostLibraryCopy';
+  static String routePath = '/hostLibraryCopy';
+
   @override
   State<HostLibraryCopyWidget> createState() => _HostLibraryCopyWidgetState();
 }

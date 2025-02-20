@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -30,6 +31,9 @@ class ExperienceWidget extends StatefulWidget {
   final String? t2;
   final String? t3;
   final String? t4;
+
+  static String routeName = 'experience';
+  static String routePath = '/experience';
 
   @override
   State<ExperienceWidget> createState() => _ExperienceWidgetState();
@@ -68,7 +72,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
           },
         );
 
-        context.pushNamed('updateProfile');
+        context.pushNamed(UpdateProfileWidget.routeName);
       }
     });
 
@@ -497,7 +501,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                                                                                       FFAppState().activeSub = true;
                                                                                       safeSetState(() {});
 
-                                                                                      context.pushNamed('home');
+                                                                                      context.pushNamed(HomeWidget.routeName);
                                                                                     } else {
                                                                                       await launchURL('https://buy.stripe.com/4gwbIObk258E2kM7su?prefilled_email=${currentUserEmail}');
                                                                                     }

@@ -21,6 +21,9 @@ export 'harvesters_model.dart';
 class HarvestersWidget extends StatefulWidget {
   const HarvestersWidget({super.key});
 
+  static String routeName = 'harvesters';
+  static String routePath = '/harvesters';
+
   @override
   State<HarvestersWidget> createState() => _HarvestersWidgetState();
 }

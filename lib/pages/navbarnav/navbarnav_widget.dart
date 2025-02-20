@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/choose_clientor_np/choose_clientor_np_widget.dart';
+import '/index.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -77,7 +78,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.pushNamed('home');
+                  context.pushNamed(HomeWidget.routeName);
                 },
                 child: Container(
                   width: 300.0,
@@ -128,7 +129,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('home');
+                            context.pushNamed(HomeWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -218,7 +219,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('experiences');
+                            context.pushNamed(ExperiencesWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -289,7 +290,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('recontact');
+                            context.pushNamed(RecontactWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -379,7 +380,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('harvesters');
+                            context.pushNamed(HarvestersWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -450,7 +451,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('triage');
+                            context.pushNamed(TriageWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -521,7 +522,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('retours');
+                            context.pushNamed(RetoursWidget.routeName);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -612,7 +613,7 @@ class _NavbarnavWidgetState extends State<NavbarnavWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('redirections');
+                              context.pushNamed(RedirectionsWidget.routeName);
                             },
                             child: Container(
                               decoration: BoxDecoration(

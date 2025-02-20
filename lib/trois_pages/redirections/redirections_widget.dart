@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -21,6 +22,9 @@ export 'redirections_model.dart';
 
 class RedirectionsWidget extends StatefulWidget {
   const RedirectionsWidget({super.key});
+
+  static String routeName = 'redirections';
+  static String routePath = '/engagement';
 
   @override
   State<RedirectionsWidget> createState() => _RedirectionsWidgetState();
@@ -59,7 +63,7 @@ class _RedirectionsWidgetState extends State<RedirectionsWidget> {
           },
         );
 
-        context.pushNamed('updateProfile');
+        context.pushNamed(UpdateProfileWidget.routeName);
       }
     });
 

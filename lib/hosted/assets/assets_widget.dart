@@ -22,6 +22,9 @@ export 'assets_model.dart';
 class AssetsWidget extends StatefulWidget {
   const AssetsWidget({super.key});
 
+  static String routeName = 'assets';
+  static String routePath = '/assets';
+
   @override
   State<AssetsWidget> createState() => _AssetsWidgetState();
 }
