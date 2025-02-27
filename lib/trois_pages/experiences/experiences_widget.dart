@@ -1,9 +1,11 @@
 import '/backend/supabase/supabase.dart';
-import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/trois_pages/choose_nps_grade/choose_nps_grade_widget.dart';
+import '/trois_pages/experiencee/experiencee_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -57,6 +59,44 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
         );
 
         context.pushNamed(UpdateProfileWidget.routeName);
+      }
+      if ((FFAppState().isBrand == true) &&
+          (FFAppState().isBU == false) &&
+          (FFAppState().isLoc == false)) {
+        _model.allExp = await ExperiencesTable().queryRows(
+          queryFn: (q) => q
+              .eqOrNull(
+                'client_id',
+                FFAppState().activeClientID,
+              )
+              .order('created_at'),
+        );
+        _model.supaQuery = _model.allExp!.toList().cast<ExperiencesRow>();
+        safeSetState(() {});
+      } else if ((FFAppState().isBrand == false) &&
+          (FFAppState().isBU == true) &&
+          (FFAppState().isLoc == false)) {
+        _model.buExp = await ExperiencesTable().queryRows(
+          queryFn: (q) => q
+              .eqOrNull(
+                'bu_id',
+                FFAppState().activeClientID,
+              )
+              .order('created_at'),
+        );
+        _model.supaQuery = _model.buExp!.toList().cast<ExperiencesRow>();
+        safeSetState(() {});
+      } else {
+        _model.locExp = await ExperiencesTable().queryRows(
+          queryFn: (q) => q
+              .eqOrNull(
+                'loc_id',
+                FFAppState().activeClientID,
+              )
+              .order('created_at'),
+        );
+        _model.supaQuery = _model.locExp!.toList().cast<ExperiencesRow>();
+        safeSetState(() {});
       }
     });
 
@@ -137,1410 +177,1288 @@ class _ExperiencesWidgetState extends State<ExperiencesWidget> {
                             Expanded(
                               child: Stack(
                                 children: [
-                                  Builder(
-                                    builder: (context) {
-                                      if ((FFAppState().isBrand == true) &&
-                                          (FFAppState().isBU == false) &&
-                                          (FFAppState().isLoc == false)) {
-                                        return Container(
-                                          decoration: BoxDecoration(),
-                                          child: FutureBuilder<
-                                              List<ExperiencesRow>>(
-                                            future:
-                                                ExperiencesTable().queryRows(
-                                              queryFn: (q) => q
-                                                  .eqOrNull(
-                                                    'client_id',
-                                                    FFAppState().activeClientID,
-                                                  )
-                                                  .order('created_at'),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<ExperiencesRow>
-                                                  containerExperiencesRowList =
-                                                  snapshot.data!;
-
-                                              return Container(
-                                                decoration: BoxDecoration(),
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .revoBG,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                50.0,
-                                                                32.0,
-                                                                50.0,
-                                                                40.0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Expanded(
+                                  Container(
+                                    decoration: BoxDecoration(),
+                                    child: Container(
+                                      decoration: BoxDecoration(),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .revoBG,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  50.0, 32.0, 50.0, 40.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Expanded(
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Expanded(
+                                                      child:
+                                                          SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  0.7,
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child: Container(
+                                                                decoration:
+                                                                    BoxDecoration(),
                                                                 child:
-                                                                    SingleChildScrollView(
-                                                                  child: Column(
+                                                                    Container(
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      SingleChildScrollView(
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children:
+                                                                          [
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Experiences Globale -',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'GeistSans',
+                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                    fontSize: 44.72,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                    useGoogleFonts: false,
+                                                                                  ),
+                                                                            ),
+                                                                            Text(
+                                                                              FFAppState().activeBrand,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'GeistSans',
+                                                                                    color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                    fontSize: 44.72,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                    useGoogleFonts: false,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Text(
+                                                                              '${_model.supaQuery.length.toString()}/${() {
+                                                                                if ((FFAppState().isBrand == true) && (FFAppState().isBU == false) && (FFAppState().isLoc == false)) {
+                                                                                  return valueOrDefault<String>(
+                                                                                    _model.allExp?.length.toString(),
+                                                                                    '0',
+                                                                                  );
+                                                                                } else if ((FFAppState().isBrand == false) && (FFAppState().isBU == true) && (FFAppState().isLoc == false)) {
+                                                                                  return valueOrDefault<String>(
+                                                                                    _model.buExp?.length.toString(),
+                                                                                    '0',
+                                                                                  );
+                                                                                } else {
+                                                                                  return valueOrDefault<String>(
+                                                                                    _model.locExp?.length.toString(),
+                                                                                    '0',
+                                                                                  );
+                                                                                }
+                                                                              }()} Experiences',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'GeistSans',
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: false,
+                                                                                  ),
+                                                                            ),
+                                                                            Builder(
+                                                                              builder: (context) => FFButtonWidget(
+                                                                                onPressed: () async {
+                                                                                  await showDialog(
+                                                                                    context: context,
+                                                                                    builder: (dialogContext) {
+                                                                                      return Dialog(
+                                                                                        elevation: 0,
+                                                                                        insetPadding: EdgeInsets.zero,
+                                                                                        backgroundColor: Colors.transparent,
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                        child: WebViewAware(
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () {
+                                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                                            },
+                                                                                            child: Container(
+                                                                                              height: 500.0,
+                                                                                              width: 430.0,
+                                                                                              child: ChooseNpsGradeWidget(),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      );
+                                                                                    },
+                                                                                  );
+
+                                                                                  if ((FFAppState().isBrand == true) && (FFAppState().isBU == false) && (FFAppState().isLoc == false)) {
+                                                                                    if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterCli1 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli1!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterCli2 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli2!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterCli3 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli3!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterCli4 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli4!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterCli5 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                          'client_id',
+                                                                                          FFAppState().activeClientID,
+                                                                                        )
+                                                                                            .lteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 10;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 8;
+                                                                                            } else {
+                                                                                              return 6;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).gteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 9;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 7;
+                                                                                            } else {
+                                                                                              return 0;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli5!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterCli6 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli6!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterCli7 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli7!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterCli8 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'client_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterCli8!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else {
+                                                                                      Navigator.pop(context);
+                                                                                    }
+                                                                                  } else if ((FFAppState().isBrand == false) && (FFAppState().isBU == true) && (FFAppState().isLoc == false)) {
+                                                                                    if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterBu1 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu1!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterBu2 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu2!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterBu3 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu3!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterBu4 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu4!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterBu5 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                          'bu_id',
+                                                                                          FFAppState().activeClientID,
+                                                                                        )
+                                                                                            .lteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 10;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 8;
+                                                                                            } else {
+                                                                                              return 6;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).gteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 9;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 7;
+                                                                                            } else {
+                                                                                              return 0;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu5!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterBu6 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu6!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterBu7 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu7!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterBu8 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'bu_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterBu8!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else {
+                                                                                      Navigator.pop(context);
+                                                                                    }
+                                                                                  } else {
+                                                                                    if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc1 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc1!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc2 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc2!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc3 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc3!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps == 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc4 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc4!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc5 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                          'loc_id',
+                                                                                          FFAppState().activeClientID,
+                                                                                        )
+                                                                                            .lteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 10;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 8;
+                                                                                            } else {
+                                                                                              return 6;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).gteOrNull(
+                                                                                          'nps',
+                                                                                          () {
+                                                                                            if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                              return 9;
+                                                                                            } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                              return 7;
+                                                                                            } else {
+                                                                                              return 0;
+                                                                                            }
+                                                                                          }(),
+                                                                                        ).order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc5!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && !(FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc6 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc6!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && !FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc7 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc7!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else if ((FFAppState().filterNps != 'Tous') && (FFAppState().filterReason.isNotEmpty) && FFAppState().filterFeedback) {
+                                                                                      _model.filterLoc8 = await ExperiencesTable().queryRows(
+                                                                                        queryFn: (q) => q
+                                                                                            .eqOrNull(
+                                                                                              'loc_id',
+                                                                                              FFAppState().activeClientID,
+                                                                                            )
+                                                                                            .lteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 10;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 8;
+                                                                                                } else {
+                                                                                                  return 6;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .gteOrNull(
+                                                                                              'nps',
+                                                                                              () {
+                                                                                                if (FFAppState().filterNps == 'Promoteurs') {
+                                                                                                  return 9;
+                                                                                                } else if (FFAppState().filterNps == 'Passifs') {
+                                                                                                  return 7;
+                                                                                                } else {
+                                                                                                  return 0;
+                                                                                                }
+                                                                                              }(),
+                                                                                            )
+                                                                                            .inFilterOrNull(
+                                                                                              'theme',
+                                                                                              FFAppState().filterReason,
+                                                                                            )
+                                                                                            .gtOrNull(
+                                                                                              'feedback_customText',
+                                                                                              ' ',
+                                                                                            )
+                                                                                            .order('created_at'),
+                                                                                      );
+                                                                                      _model.supaQuery = _model.filterLoc8!.toList().cast<ExperiencesRow>();
+                                                                                      safeSetState(() {});
+                                                                                    } else {
+                                                                                      Navigator.pop(context);
+                                                                                    }
+                                                                                  }
+
+                                                                                  safeSetState(() {});
+                                                                                },
+                                                                                text: 'Filtrer',
+                                                                                icon: Icon(
+                                                                                  Icons.filter_alt,
+                                                                                  size: 15.0,
+                                                                                ),
+                                                                                options: FFButtonOptions(
+                                                                                  height: 40.0,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  color: Color(0x00FFFFFF),
+                                                                                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                        fontFamily: 'GeistSans',
+                                                                                        color: FlutterFlowTheme.of(context).primaryText,
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FontWeight.normal,
+                                                                                        useGoogleFonts: false,
+                                                                                      ),
+                                                                                  elevation: 0.0,
+                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                ),
+                                                                                showLoadingIndicator: false,
+                                                                              ),
+                                                                            ),
+                                                                          ].divide(SizedBox(width: 16.0)),
+                                                                        ),
+                                                                      ].divide(SizedBox(
+                                                                              height: 24.0)),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Flexible(
+                                                                  child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
                                                                     children: [
                                                                       Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.7,
+                                                                        width: valueOrDefault<
+                                                                            double>(
+                                                                          _model.showExperience
+                                                                              ? 900.0
+                                                                              : 1000.0,
+                                                                          900.0,
+                                                                        ),
+                                                                        height:
+                                                                            720.0,
                                                                         decoration:
                                                                             BoxDecoration(),
                                                                         child:
-                                                                            Container(
-                                                                          decoration:
-                                                                              BoxDecoration(),
+                                                                            SingleChildScrollView(
+                                                                          scrollDirection:
+                                                                              Axis.horizontal,
                                                                           child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                SingleChildScrollView(
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        'Experiences Globale -',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children: [
+                                                                              SingleChildScrollView(
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    Container(
+                                                                                      height: 50.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).revoBG,
                                                                                       ),
-                                                                                      Text(
-                                                                                        FFAppState().activeBrand,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Container(
+                                                                                            width: 50.0,
+                                                                                            decoration: BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Score',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
                                                                                             ),
+                                                                                          ),
+                                                                                          InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              if (_model.dataDecreasing) {
+                                                                                                _model.exprDateIncre = await ExperiencesTable().queryRows(
+                                                                                                  queryFn: (q) => q
+                                                                                                      .eqOrNull(
+                                                                                                        'client_id',
+                                                                                                        FFAppState().activeClientID,
+                                                                                                      )
+                                                                                                      .order('created_at', ascending: true),
+                                                                                                );
+                                                                                                _model.supaQuery = _model.exprDateIncre!.toList().cast<ExperiencesRow>();
+                                                                                                _model.dataDecreasing = false;
+                                                                                                safeSetState(() {});
+                                                                                              } else {
+                                                                                                _model.supaQuery = _model.allExp!.toList().cast<ExperiencesRow>();
+                                                                                                _model.dataDecreasing = true;
+                                                                                                safeSetState(() {});
+                                                                                              }
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                            child: Container(
+                                                                                              width: 100.0,
+                                                                                              decoration: BoxDecoration(),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                children: [
+                                                                                                  Text(
+                                                                                                    'Date',
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: 'GeistSans',
+                                                                                                          letterSpacing: 0.0,
+                                                                                                          useGoogleFonts: false,
+                                                                                                        ),
+                                                                                                  ),
+                                                                                                  if (!_model.dataDecreasing)
+                                                                                                    Icon(
+                                                                                                      Icons.keyboard_arrow_up,
+                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      size: 24.0,
+                                                                                                    ),
+                                                                                                  if (_model.dataDecreasing)
+                                                                                                    Icon(
+                                                                                                      Icons.keyboard_arrow_down,
+                                                                                                      color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                      size: 24.0,
+                                                                                                    ),
+                                                                                                ],
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Raison',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Autre raison',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 150.0,
+                                                                                            decoration: BoxDecoration(),
+                                                                                            child: Text(
+                                                                                              'Redirection',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          InkWell(
+                                                                                            splashColor: Colors.transparent,
+                                                                                            focusColor: Colors.transparent,
+                                                                                            hoverColor: Colors.transparent,
+                                                                                            highlightColor: Colors.transparent,
+                                                                                            onTap: () async {
+                                                                                              if ((FFAppState().isBrand == true) && (FFAppState().isBU == false) && (FFAppState().isLoc == false)) {
+                                                                                                _model.clientFeed = await ExperiencesTable().queryRows(
+                                                                                                  queryFn: (q) => q
+                                                                                                      .eqOrNull(
+                                                                                                        'client_id',
+                                                                                                        FFAppState().activeClientID,
+                                                                                                      )
+                                                                                                      .gtOrNull(
+                                                                                                        'feedback_customText',
+                                                                                                        ' ',
+                                                                                                      )
+                                                                                                      .order('created_at'),
+                                                                                                );
+                                                                                                _model.supaQuery = _model.clientFeed!.toList().cast<ExperiencesRow>();
+                                                                                                safeSetState(() {});
+                                                                                              } else if ((FFAppState().isBrand == false) && (FFAppState().isBU == true) && (FFAppState().isLoc == false)) {
+                                                                                                _model.buFeed = await ExperiencesTable().queryRows(
+                                                                                                  queryFn: (q) => q
+                                                                                                      .eqOrNull(
+                                                                                                        'bu_id',
+                                                                                                        FFAppState().activeClientID,
+                                                                                                      )
+                                                                                                      .gtOrNull(
+                                                                                                        'feedback_customText',
+                                                                                                        ' ',
+                                                                                                      )
+                                                                                                      .order('created_at'),
+                                                                                                );
+                                                                                                _model.supaQuery = _model.buFeed!.toList().cast<ExperiencesRow>();
+                                                                                                safeSetState(() {});
+                                                                                              } else {
+                                                                                                _model.locFeed = await ExperiencesTable().queryRows(
+                                                                                                  queryFn: (q) => q
+                                                                                                      .eqOrNull(
+                                                                                                        'loc_id',
+                                                                                                        FFAppState().activeClientID,
+                                                                                                      )
+                                                                                                      .gtOrNull(
+                                                                                                        'feedback_customText',
+                                                                                                        ' ',
+                                                                                                      )
+                                                                                                      .order('created_at'),
+                                                                                                );
+                                                                                                _model.supaQuery = _model.locFeed!.toList().cast<ExperiencesRow>();
+                                                                                                safeSetState(() {});
+                                                                                              }
+
+                                                                                              safeSetState(() {});
+                                                                                            },
+                                                                                            child: Container(
+                                                                                              width: 150.0,
+                                                                                              decoration: BoxDecoration(),
+                                                                                              child: Text(
+                                                                                                'Feedback',
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'GeistSans',
+                                                                                                      letterSpacing: 0.0,
+                                                                                                      useGoogleFonts: false,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
                                                                                       ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ].divide(SizedBox(height: 24.0)),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Flexible(
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Container(
-                                                                                  width: valueOrDefault<double>(
-                                                                                    _model.showExperience ? 900.0 : 1000.0,
-                                                                                    900.0,
-                                                                                  ),
-                                                                                  height: 720.0,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: SingleChildScrollView(
-                                                                                    scrollDirection: Axis.horizontal,
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                      children: [
-                                                                                        SingleChildScrollView(
+                                                                                    ),
+                                                                                    Builder(
+                                                                                      builder: (context) {
+                                                                                        final expz = _model.supaQuery.toList();
+
+                                                                                        return SingleChildScrollView(
                                                                                           child: Column(
                                                                                             mainAxisSize: MainAxisSize.max,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Container(
-                                                                                                height: 50.0,
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                ),
-                                                                                                child: Row(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  children: [
-                                                                                                    Container(
-                                                                                                      width: 50.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Score',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 100.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Date',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Autre raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Redirection',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Feedback',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
-                                                                                                ),
-                                                                                              ),
-                                                                                              Builder(
-                                                                                                builder: (context) {
-                                                                                                  final experience = containerExperiencesRowList.toList();
-
-                                                                                                  return SingleChildScrollView(
-                                                                                                    child: Column(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      children: List.generate(experience.length, (experienceIndex) {
-                                                                                                        final experienceItem = experience[experienceIndex];
-                                                                                                        return InkWell(
-                                                                                                          splashColor: Colors.transparent,
-                                                                                                          focusColor: Colors.transparent,
-                                                                                                          hoverColor: Colors.transparent,
-                                                                                                          highlightColor: Colors.transparent,
-                                                                                                          onTap: () async {
-                                                                                                            _model.showExperience = true;
-                                                                                                            _model.xid = experienceItem.id;
-                                                                                                            _model.t1 = containerClientsRow?.theme1;
-                                                                                                            _model.t2 = containerClientsRow?.theme2;
-                                                                                                            _model.t3 = containerClientsRow?.theme3;
-                                                                                                            _model.t4 = containerClientsRow?.theme4;
-                                                                                                            safeSetState(() {});
-                                                                                                          },
-                                                                                                          child: Container(
-                                                                                                            height: 50.0,
-                                                                                                            decoration: BoxDecoration(
-                                                                                                              color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                              boxShadow: [
-                                                                                                                BoxShadow(
-                                                                                                                  blurRadius: 0.0,
-                                                                                                                  color: Color(0x33000000),
-                                                                                                                  offset: Offset(
-                                                                                                                    0.0,
-                                                                                                                    -1.0,
-                                                                                                                  ),
-                                                                                                                )
-                                                                                                              ],
-                                                                                                            ),
-                                                                                                            child: Row(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              children: [
-                                                                                                                Container(
-                                                                                                                  width: 50.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Container(
-                                                                                                                        width: 30.0,
-                                                                                                                        height: 30.0,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          color: () {
-                                                                                                                            if (experienceItem.nps! > 8) {
-                                                                                                                              return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                            } else if (experienceItem.nps! < 7) {
-                                                                                                                              return Color(0xFFB55254);
-                                                                                                                            } else {
-                                                                                                                              return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                            }
-                                                                                                                          }(),
-                                                                                                                          borderRadius: BorderRadius.circular(100.0),
-                                                                                                                        ),
-                                                                                                                        child: Column(
-                                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                          children: [
-                                                                                                                            Text(
-                                                                                                                              valueOrDefault<String>(
-                                                                                                                                experienceItem.nps?.toString(),
-                                                                                                                                'unknown',
-                                                                                                                              ),
-                                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                    fontFamily: 'GeistSans',
-                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                                    letterSpacing: 0.0,
-                                                                                                                                    useGoogleFonts: false,
-                                                                                                                                  ),
-                                                                                                                            ),
-                                                                                                                          ],
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 100.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    dateTimeFormat("d/M H:mm", experienceItem.createdAt),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
+                                                                                            children: List.generate(expz.length, (expzIndex) {
+                                                                                              final expzItem = expz[expzIndex];
+                                                                                              return InkWell(
+                                                                                                splashColor: Colors.transparent,
+                                                                                                focusColor: Colors.transparent,
+                                                                                                hoverColor: Colors.transparent,
+                                                                                                highlightColor: Colors.transparent,
+                                                                                                onTap: () async {
+                                                                                                  _model.showExperience = true;
+                                                                                                  _model.xid = expzItem.id;
+                                                                                                  _model.t1 = containerClientsRow?.theme1;
+                                                                                                  _model.t2 = containerClientsRow?.theme2;
+                                                                                                  _model.t3 = containerClientsRow?.theme3;
+                                                                                                  _model.t4 = containerClientsRow?.theme4;
+                                                                                                  safeSetState(() {});
+                                                                                                },
+                                                                                                child: Container(
+                                                                                                  height: 50.0,
+                                                                                                  decoration: BoxDecoration(
+                                                                                                    color: FlutterFlowTheme.of(context).revoBG,
+                                                                                                    boxShadow: [
+                                                                                                      BoxShadow(
+                                                                                                        blurRadius: 0.0,
+                                                                                                        color: Color(0x33000000),
+                                                                                                        offset: Offset(
+                                                                                                          0.0,
+                                                                                                          -1.0,
+                                                                                                        ),
+                                                                                                      )
+                                                                                                    ],
+                                                                                                  ),
+                                                                                                  child: Row(
+                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                    children: [
+                                                                                                      Container(
+                                                                                                        width: 50.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Container(
+                                                                                                              width: 30.0,
+                                                                                                              height: 30.0,
+                                                                                                              decoration: BoxDecoration(
+                                                                                                                color: () {
+                                                                                                                  if (expzItem.nps! > 8) {
+                                                                                                                    return FlutterFlowTheme.of(context).vertSympa;
+                                                                                                                  } else if (expzItem.nps! < 7) {
+                                                                                                                    return Color(0xFFB55254);
+                                                                                                                  } else {
+                                                                                                                    return FlutterFlowTheme.of(context).tertiary;
+                                                                                                                  }
+                                                                                                                }(),
+                                                                                                                borderRadius: BorderRadius.circular(100.0),
+                                                                                                              ),
+                                                                                                              child: Column(
+                                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                                children: [
+                                                                                                                  Text(
                                                                                                                     valueOrDefault<String>(
-                                                                                                                      experienceItem.theme,
-                                                                                                                      '-',
+                                                                                                                      expzItem.nps?.toString(),
+                                                                                                                      'unknown',
                                                                                                                     ),
                                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                                           fontFamily: 'GeistSans',
+                                                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                                                           letterSpacing: 0.0,
                                                                                                                           useGoogleFonts: false,
                                                                                                                         ),
                                                                                                                   ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedback,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    () {
-                                                                                                                      if (experienceItem.reviewDone == true) {
-                                                                                                                        return 'Avis';
-                                                                                                                      } else if (experienceItem.videoDone == true) {
-                                                                                                                        return 'Vidéo';
-                                                                                                                      } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                                        return 'Feedback';
-                                                                                                                      } else {
-                                                                                                                        return '-';
-                                                                                                                      }
-                                                                                                                    }(),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedbackCustomText,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
+                                                                                                                ],
+                                                                                                              ),
                                                                                                             ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 100.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          dateTimeFormat("d/M H:mm", expzItem.createdAt),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          valueOrDefault<String>(
+                                                                                                            expzItem.theme,
+                                                                                                            '-',
                                                                                                           ),
-                                                                                                        );
-                                                                                                      }),
-                                                                                                    ),
-                                                                                                  );
-                                                                                                },
-                                                                                              ),
-                                                                                            ],
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Text(
+                                                                                                              valueOrDefault<String>(
+                                                                                                                expzItem.feedback,
+                                                                                                                '-',
+                                                                                                              ).maybeHandleOverflow(
+                                                                                                                maxChars: 15,
+                                                                                                                replacement: '…',
+                                                                                                              ),
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: 'GeistSans',
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: false,
+                                                                                                                  ),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Text(
+                                                                                                          () {
+                                                                                                            if (expzItem.reviewDone == true) {
+                                                                                                              return 'Avis';
+                                                                                                            } else if (expzItem.videoDone == true) {
+                                                                                                              return 'Vidéo';
+                                                                                                            } else if (expzItem.feedbackAnswer == true) {
+                                                                                                              return 'Feedback';
+                                                                                                            } else {
+                                                                                                              return '-';
+                                                                                                            }
+                                                                                                          }(),
+                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                fontFamily: 'GeistSans',
+                                                                                                                letterSpacing: 0.0,
+                                                                                                                useGoogleFonts: false,
+                                                                                                              ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                      Container(
+                                                                                                        width: 150.0,
+                                                                                                        decoration: BoxDecoration(),
+                                                                                                        child: Row(
+                                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                                          children: [
+                                                                                                            Text(
+                                                                                                              valueOrDefault<String>(
+                                                                                                                expzItem.feedbackCustomText,
+                                                                                                                '-',
+                                                                                                              ).maybeHandleOverflow(
+                                                                                                                maxChars: 15,
+                                                                                                                replacement: '…',
+                                                                                                              ),
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: 'GeistSans',
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: false,
+                                                                                                                  ),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            }),
                                                                                           ),
-                                                                                        ),
-                                                                                      ],
+                                                                                        );
+                                                                                      },
                                                                                     ),
-                                                                                  ),
+                                                                                  ],
                                                                                 ),
-                                                                              ],
-                                                                            ),
+                                                                              ),
+                                                                            ],
                                                                           ),
-                                                                        ],
+                                                                        ),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ),
-                                                              ),
-                                                            ],
-                                                          ),
+                                                              ],
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
-                                              );
-                                            },
+                                              ),
+                                            ],
                                           ),
-                                        );
-                                      } else if ((FFAppState().isBrand ==
-                                              false) &&
-                                          (FFAppState().isBU == true) &&
-                                          (FFAppState().isLoc == false)) {
-                                        return Container(
-                                          decoration: BoxDecoration(),
-                                          child: FutureBuilder<
-                                              List<ExperiencesRow>>(
-                                            future:
-                                                ExperiencesTable().queryRows(
-                                              queryFn: (q) => q
-                                                  .eqOrNull(
-                                                    'bu_id',
-                                                    FFAppState().activeClientID,
-                                                  )
-                                                  .order('created_at'),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<ExperiencesRow>
-                                                  containerExperiencesRowList =
-                                                  snapshot.data!;
-
-                                              return Container(
-                                                decoration: BoxDecoration(),
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .revoBG,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                50.0,
-                                                                32.0,
-                                                                50.0,
-                                                                40.0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Expanded(
-                                                                child:
-                                                                    SingleChildScrollView(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.7,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Container(
-                                                                          decoration:
-                                                                              BoxDecoration(),
-                                                                          child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                SingleChildScrollView(
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        'Experiences Globale -',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Text(
-                                                                                        FFAppState().activeBrand,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ].divide(SizedBox(height: 24.0)),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Flexible(
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Container(
-                                                                                  width: valueOrDefault<double>(
-                                                                                    _model.showExperience ? 900.0 : 1000.0,
-                                                                                    900.0,
-                                                                                  ),
-                                                                                  height: 720.0,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: SingleChildScrollView(
-                                                                                    scrollDirection: Axis.horizontal,
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                      children: [
-                                                                                        SingleChildScrollView(
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Container(
-                                                                                                height: 50.0,
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                ),
-                                                                                                child: Row(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  children: [
-                                                                                                    Container(
-                                                                                                      width: 50.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Score',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 100.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Date',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Autre raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Redirection',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Feedback',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
-                                                                                                ),
-                                                                                              ),
-                                                                                              Builder(
-                                                                                                builder: (context) {
-                                                                                                  final experience = containerExperiencesRowList.toList();
-
-                                                                                                  return SingleChildScrollView(
-                                                                                                    child: Column(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      children: List.generate(experience.length, (experienceIndex) {
-                                                                                                        final experienceItem = experience[experienceIndex];
-                                                                                                        return InkWell(
-                                                                                                          splashColor: Colors.transparent,
-                                                                                                          focusColor: Colors.transparent,
-                                                                                                          hoverColor: Colors.transparent,
-                                                                                                          highlightColor: Colors.transparent,
-                                                                                                          onTap: () async {
-                                                                                                            _model.showExperience = true;
-                                                                                                            _model.xid = experienceItem.id;
-                                                                                                            _model.t1 = containerClientsRow?.theme1;
-                                                                                                            _model.t2 = containerClientsRow?.theme2;
-                                                                                                            _model.t3 = containerClientsRow?.theme3;
-                                                                                                            _model.t4 = containerClientsRow?.theme4;
-                                                                                                            safeSetState(() {});
-                                                                                                          },
-                                                                                                          child: Container(
-                                                                                                            height: 50.0,
-                                                                                                            decoration: BoxDecoration(
-                                                                                                              color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                              boxShadow: [
-                                                                                                                BoxShadow(
-                                                                                                                  blurRadius: 0.0,
-                                                                                                                  color: Color(0x33000000),
-                                                                                                                  offset: Offset(
-                                                                                                                    0.0,
-                                                                                                                    -1.0,
-                                                                                                                  ),
-                                                                                                                )
-                                                                                                              ],
-                                                                                                            ),
-                                                                                                            child: Row(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              children: [
-                                                                                                                Container(
-                                                                                                                  width: 50.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Container(
-                                                                                                                        width: 30.0,
-                                                                                                                        height: 30.0,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          color: () {
-                                                                                                                            if (experienceItem.nps! > 8) {
-                                                                                                                              return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                            } else if (experienceItem.nps! < 7) {
-                                                                                                                              return Color(0xFFB55254);
-                                                                                                                            } else {
-                                                                                                                              return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                            }
-                                                                                                                          }(),
-                                                                                                                          borderRadius: BorderRadius.circular(100.0),
-                                                                                                                        ),
-                                                                                                                        child: Column(
-                                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                          children: [
-                                                                                                                            Text(
-                                                                                                                              valueOrDefault<String>(
-                                                                                                                                experienceItem.nps?.toString(),
-                                                                                                                                'unknown',
-                                                                                                                              ),
-                                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                    fontFamily: 'GeistSans',
-                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                                    letterSpacing: 0.0,
-                                                                                                                                    useGoogleFonts: false,
-                                                                                                                                  ),
-                                                                                                                            ),
-                                                                                                                          ],
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 100.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    dateTimeFormat("d/M H:mm", experienceItem.createdAt),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      experienceItem.theme,
-                                                                                                                      '-',
-                                                                                                                    ),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedback,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    () {
-                                                                                                                      if (experienceItem.reviewDone == true) {
-                                                                                                                        return 'Avis';
-                                                                                                                      } else if (experienceItem.videoDone == true) {
-                                                                                                                        return 'Vidéo';
-                                                                                                                      } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                                        return 'Feedback';
-                                                                                                                      } else {
-                                                                                                                        return '-';
-                                                                                                                      }
-                                                                                                                    }(),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedbackCustomText,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                        );
-                                                                                                      }),
-                                                                                                    ),
-                                                                                                  );
-                                                                                                },
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        );
-                                      } else {
-                                        return Container(
-                                          decoration: BoxDecoration(),
-                                          child: FutureBuilder<
-                                              List<ExperiencesRow>>(
-                                            future:
-                                                ExperiencesTable().queryRows(
-                                              queryFn: (q) => q
-                                                  .eqOrNull(
-                                                    'loc_id',
-                                                    FFAppState().activeClientID,
-                                                  )
-                                                  .order('created_at'),
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child: SpinKitRing(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 50.0,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              List<ExperiencesRow>
-                                                  containerExperiencesRowList =
-                                                  snapshot.data!;
-
-                                              return Container(
-                                                decoration: BoxDecoration(),
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .revoBG,
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                50.0,
-                                                                32.0,
-                                                                50.0,
-                                                                40.0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Expanded(
-                                                                child:
-                                                                    SingleChildScrollView(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.7,
-                                                                        decoration:
-                                                                            BoxDecoration(),
-                                                                        child:
-                                                                            Container(
-                                                                          decoration:
-                                                                              BoxDecoration(),
-                                                                          child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(),
-                                                                            child:
-                                                                                SingleChildScrollView(
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        'Experiences Globale -',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
-                                                                                      ),
-                                                                                      Text(
-                                                                                        FFAppState().activeBrand,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'GeistSans',
-                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                              fontSize: 44.72,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FontWeight.w500,
-                                                                                              useGoogleFonts: false,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ].divide(SizedBox(height: 24.0)),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Flexible(
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Container(
-                                                                                  width: valueOrDefault<double>(
-                                                                                    _model.showExperience ? 900.0 : 1000.0,
-                                                                                    900.0,
-                                                                                  ),
-                                                                                  height: 720.0,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: SingleChildScrollView(
-                                                                                    scrollDirection: Axis.horizontal,
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                      children: [
-                                                                                        SingleChildScrollView(
-                                                                                          child: Column(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                            children: [
-                                                                                              Container(
-                                                                                                height: 50.0,
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                ),
-                                                                                                child: Row(
-                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                  children: [
-                                                                                                    Container(
-                                                                                                      width: 50.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Score',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 100.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Date',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Autre raison',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Redirection',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                    Container(
-                                                                                                      width: 150.0,
-                                                                                                      decoration: BoxDecoration(),
-                                                                                                      child: Text(
-                                                                                                        'Feedback',
-                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                              fontFamily: 'GeistSans',
-                                                                                                              letterSpacing: 0.0,
-                                                                                                              useGoogleFonts: false,
-                                                                                                            ),
-                                                                                                      ),
-                                                                                                    ),
-                                                                                                  ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
-                                                                                                ),
-                                                                                              ),
-                                                                                              Builder(
-                                                                                                builder: (context) {
-                                                                                                  final experience = containerExperiencesRowList.toList();
-
-                                                                                                  return SingleChildScrollView(
-                                                                                                    child: Column(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      children: List.generate(experience.length, (experienceIndex) {
-                                                                                                        final experienceItem = experience[experienceIndex];
-                                                                                                        return InkWell(
-                                                                                                          splashColor: Colors.transparent,
-                                                                                                          focusColor: Colors.transparent,
-                                                                                                          hoverColor: Colors.transparent,
-                                                                                                          highlightColor: Colors.transparent,
-                                                                                                          onTap: () async {
-                                                                                                            _model.showExperience = true;
-                                                                                                            _model.xid = experienceItem.id;
-                                                                                                            _model.t1 = containerClientsRow?.theme1;
-                                                                                                            _model.t2 = containerClientsRow?.theme2;
-                                                                                                            _model.t3 = containerClientsRow?.theme3;
-                                                                                                            _model.t4 = containerClientsRow?.theme4;
-                                                                                                            safeSetState(() {});
-                                                                                                          },
-                                                                                                          child: Container(
-                                                                                                            height: 50.0,
-                                                                                                            decoration: BoxDecoration(
-                                                                                                              color: FlutterFlowTheme.of(context).revoBG,
-                                                                                                              boxShadow: [
-                                                                                                                BoxShadow(
-                                                                                                                  blurRadius: 0.0,
-                                                                                                                  color: Color(0x33000000),
-                                                                                                                  offset: Offset(
-                                                                                                                    0.0,
-                                                                                                                    -1.0,
-                                                                                                                  ),
-                                                                                                                )
-                                                                                                              ],
-                                                                                                            ),
-                                                                                                            child: Row(
-                                                                                                              mainAxisSize: MainAxisSize.max,
-                                                                                                              children: [
-                                                                                                                Container(
-                                                                                                                  width: 50.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Container(
-                                                                                                                        width: 30.0,
-                                                                                                                        height: 30.0,
-                                                                                                                        decoration: BoxDecoration(
-                                                                                                                          color: () {
-                                                                                                                            if (experienceItem.nps! > 8) {
-                                                                                                                              return FlutterFlowTheme.of(context).vertSympa;
-                                                                                                                            } else if (experienceItem.nps! < 7) {
-                                                                                                                              return Color(0xFFB55254);
-                                                                                                                            } else {
-                                                                                                                              return FlutterFlowTheme.of(context).tertiary;
-                                                                                                                            }
-                                                                                                                          }(),
-                                                                                                                          borderRadius: BorderRadius.circular(100.0),
-                                                                                                                        ),
-                                                                                                                        child: Column(
-                                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                                          children: [
-                                                                                                                            Text(
-                                                                                                                              valueOrDefault<String>(
-                                                                                                                                experienceItem.nps?.toString(),
-                                                                                                                                'unknown',
-                                                                                                                              ),
-                                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                                    fontFamily: 'GeistSans',
-                                                                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                                                                    letterSpacing: 0.0,
-                                                                                                                                    useGoogleFonts: false,
-                                                                                                                                  ),
-                                                                                                                            ),
-                                                                                                                          ],
-                                                                                                                        ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 100.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    dateTimeFormat("d/M H:mm", experienceItem.createdAt),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    valueOrDefault<String>(
-                                                                                                                      experienceItem.theme,
-                                                                                                                      '-',
-                                                                                                                    ),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedback,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Text(
-                                                                                                                    () {
-                                                                                                                      if (experienceItem.reviewDone == true) {
-                                                                                                                        return 'Avis';
-                                                                                                                      } else if (experienceItem.videoDone == true) {
-                                                                                                                        return 'Vidéo';
-                                                                                                                      } else if (experienceItem.feedbackAnswer == true) {
-                                                                                                                        return 'Feedback';
-                                                                                                                      } else {
-                                                                                                                        return '-';
-                                                                                                                      }
-                                                                                                                    }(),
-                                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                          fontFamily: 'GeistSans',
-                                                                                                                          letterSpacing: 0.0,
-                                                                                                                          useGoogleFonts: false,
-                                                                                                                        ),
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                                Container(
-                                                                                                                  width: 150.0,
-                                                                                                                  decoration: BoxDecoration(),
-                                                                                                                  child: Row(
-                                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                                    children: [
-                                                                                                                      Text(
-                                                                                                                        valueOrDefault<String>(
-                                                                                                                          experienceItem.feedbackCustomText,
-                                                                                                                          '-',
-                                                                                                                        ).maybeHandleOverflow(
-                                                                                                                          maxChars: 15,
-                                                                                                                          replacement: '…',
-                                                                                                                        ),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: 'GeistSans',
-                                                                                                                              letterSpacing: 0.0,
-                                                                                                                              useGoogleFonts: false,
-                                                                                                                            ),
-                                                                                                                      ),
-                                                                                                                    ],
-                                                                                                                  ),
-                                                                                                                ),
-                                                                                                              ].divide(SizedBox(width: 20.0)).addToStart(SizedBox(width: 10.0)),
-                                                                                                            ),
-                                                                                                          ),
-                                                                                                        );
-                                                                                                      }),
-                                                                                                    ),
-                                                                                                  );
-                                                                                                },
-                                                                                              ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        ),
-                                                                                      ],
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        );
-                                      }
-                                    },
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   if (_model.showExperience)
                                     Align(

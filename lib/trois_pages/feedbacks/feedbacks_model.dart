@@ -1,6 +1,6 @@
-import '/components/experiencee_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
+import '/trois_pages/experiencee/experiencee_widget.dart';
 import '/index.dart';
 import 'feedbacks_widget.dart' show FeedbacksWidget;
 import 'package:flutter/material.dart';

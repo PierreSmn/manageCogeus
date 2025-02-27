@@ -1731,8 +1731,8 @@ class _HomeCopy2WidgetState extends State<HomeCopy2Widget> {
                                                                                                 Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                                                                                                   child: FFButtonWidget(
-                                                                                                    onPressed: () async {
-                                                                                                      context.pushNamed(ExperiencesWidget.routeName);
+                                                                                                    onPressed: () {
+                                                                                                      print('Button pressed ...');
                                                                                                     },
                                                                                                     text: 'Voir les retours',
                                                                                                     options: FFButtonOptions(
