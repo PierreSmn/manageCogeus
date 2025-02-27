@@ -19,6 +19,9 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
+      _activeClientID = prefs.getInt('ff_activeClientID') ?? _activeClientID;
+    });
+    _safeInit(() {
       _activeBrand = prefs.getString('ff_activeBrand') ?? _activeBrand;
     });
     _safeInit(() {
@@ -29,9 +32,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _listQuantitySHow =
           prefs.getInt('ff_listQuantitySHow') ?? _listQuantitySHow;
-    });
-    _safeInit(() {
-      _activeClientID = prefs.getInt('ff_activeClientID') ?? _activeClientID;
     });
     _safeInit(() {
       _activeSub = prefs.getBool('ff_activeSub') ?? _activeSub;
@@ -59,6 +59,13 @@ class FFAppState extends ChangeNotifier {
   }
 
   late SharedPreferences prefs;
+
+  int _activeClientID = 0;
+  int get activeClientID => _activeClientID;
+  set activeClientID(int value) {
+    _activeClientID = value;
+    prefs.setInt('ff_activeClientID', value);
+  }
 
   bool _searchingValidateds = false;
   bool get searchingValidateds => _searchingValidateds;
@@ -234,13 +241,6 @@ class FFAppState extends ChangeNotifier {
     _videoTitle = value;
   }
 
-  int _activeClientID = 0;
-  int get activeClientID => _activeClientID;
-  set activeClientID(int value) {
-    _activeClientID = value;
-    prefs.setInt('ff_activeClientID', value);
-  }
-
   List<int> _tagList = [];
   List<int> get tagList => _tagList;
   set tagList(List<int> value) {
@@ -316,6 +316,47 @@ class FFAppState extends ChangeNotifier {
   set isLoc(bool value) {
     _isLoc = value;
     prefs.setBool('ff_isLoc', value);
+  }
+
+  String _filterNps = '';
+  String get filterNps => _filterNps;
+  set filterNps(String value) {
+    _filterNps = value;
+  }
+
+  List<String> _filterReason = [];
+  List<String> get filterReason => _filterReason;
+  set filterReason(List<String> value) {
+    _filterReason = value;
+  }
+
+  void addToFilterReason(String value) {
+    filterReason.add(value);
+  }
+
+  void removeFromFilterReason(String value) {
+    filterReason.remove(value);
+  }
+
+  void removeAtIndexFromFilterReason(int index) {
+    filterReason.removeAt(index);
+  }
+
+  void updateFilterReasonAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    filterReason[index] = updateFn(_filterReason[index]);
+  }
+
+  void insertAtIndexInFilterReason(int index, String value) {
+    filterReason.insert(index, value);
+  }
+
+  bool _filterFeedback = false;
+  bool get filterFeedback => _filterFeedback;
+  set filterFeedback(bool value) {
+    _filterFeedback = value;
   }
 
   final _userCacheManager = FutureRequestManager<List<UsersRow>>();

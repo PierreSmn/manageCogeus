@@ -26,11 +26,11 @@ export '/trois_pages/redirections/redirections_widget.dart'
 export '/pages/create_profile_client/create_profile_client_widget.dart'
     show CreateProfileClientWidget;
 export '/trois_pages/experience/experience_widget.dart' show ExperienceWidget;
-export '/trois_pages/experiences/experiences_widget.dart'
-    show ExperiencesWidget;
 export '/trois_pages/recontact/recontact_widget.dart' show RecontactWidget;
 export '/trois_pages/tremor_test/tremor_test_widget.dart' show TremorTestWidget;
 export '/pages/onboard/onboard_widget.dart' show OnboardWidget;
 export '/trois_pages/home/home_widget.dart' show HomeWidget;
 export '/trois_pages/home_copy2/home_copy2_widget.dart' show HomeCopy2Widget;
 export '/trois_pages/feedbacks/feedbacks_widget.dart' show FeedbacksWidget;
+export '/trois_pages/experiences/experiences_widget.dart'
+    show ExperiencesWidget;

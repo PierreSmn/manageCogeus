@@ -253,12 +253,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: ExperiencesWidget.routeName,
-          path: ExperiencesWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => ExperiencesWidget(),
-        ),
-        FFRoute(
           name: RecontactWidget.routeName,
           path: RecontactWidget.routePath,
           requireAuth: true,
@@ -293,6 +287,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: FeedbacksWidget.routePath,
           requireAuth: true,
           builder: (context, params) => FeedbacksWidget(),
+        ),
+        FFRoute(
+          name: ExperiencesWidget.routeName,
+          path: ExperiencesWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => ExperiencesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
