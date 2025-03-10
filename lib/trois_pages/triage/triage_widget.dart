@@ -367,6 +367,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                         'rating': listSubsItem.rating,
                                                                                         'boolMail': listSubsItem.boolMail,
                                                                                         'question': listSubsItem.question,
+                                                                                        'club_rugby': listSubsItem.clubRugby,
+                                                                                        'instagram': listSubsItem.instagram,
                                                                                       });
                                                                                       await NewSubsTable().delete(
                                                                                         matchingRows: (rows) => rows.eqOrNull(
@@ -443,6 +445,8 @@ class _TriageWidgetState extends State<TriageWidget> {
                                                                                           'boolMail': listSubsItem.boolMail,
                                                                                           'question': listSubsItem.question,
                                                                                           'tagId': FFAppState().tagList,
+                                                                                          'club_rugby': listSubsItem.clubRugby,
+                                                                                          'instagram': listSubsItem.instagram,
                                                                                         });
                                                                                         await NewSubsTable().delete(
                                                                                           matchingRows: (rows) => rows.eqOrNull(

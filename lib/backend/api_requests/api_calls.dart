@@ -284,6 +284,16 @@ class GetTagzzzCall {
         r'''$[:].tagId''',
         true,
       ) as List?;
+  static List? clubrugby(dynamic response) => getJsonField(
+        response,
+        r'''$[:].club_rugby''',
+        true,
+      ) as List?;
+  static List? instagram(dynamic response) => getJsonField(
+        response,
+        r'''$[:].instagram''',
+        true,
+      ) as List?;
 }
 
 class GetToBeDeterminedSubsCall {
@@ -349,6 +359,16 @@ class GetToBeDeterminedSubsCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List? clubrugby(dynamic response) => getJsonField(
+        response,
+        r'''$[:].club_rugby''',
+        true,
+      ) as List?;
+  static List? instagram(dynamic response) => getJsonField(
+        response,
+        r'''$[:].instagram''',
+        true,
+      ) as List?;
 }
 
 class GetRejectedSubsCall {
