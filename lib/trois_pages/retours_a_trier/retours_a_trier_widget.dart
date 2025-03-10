@@ -196,16 +196,50 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
-                                                                                  Text(
-                                                                                    'Retours à trier',
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'GeistSans',
-                                                                                          color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                          fontSize: 40.0,
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FontWeight.w500,
-                                                                                          useGoogleFonts: false,
-                                                                                        ),
+                                                                                  Builder(
+                                                                                    builder: (context) => InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (dialogContext) {
+                                                                                            return Dialog(
+                                                                                              elevation: 0,
+                                                                                              insetPadding: EdgeInsets.zero,
+                                                                                              backgroundColor: Colors.transparent,
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              child: WebViewAware(
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(dialogContext).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Container(
+                                                                                                    height: 500.0,
+                                                                                                    width: 250.0,
+                                                                                                    child: ChooseMutiTagWidget(),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        );
+                                                                                      },
+                                                                                      child: Text(
+                                                                                        'Retours à trier',
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'GeistSans',
+                                                                                              color: FlutterFlowTheme.of(context).revoCardTextColor,
+                                                                                              fontSize: 40.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              fontWeight: FontWeight.w500,
+                                                                                              useGoogleFonts: false,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
                                                                                   ),
                                                                                   FFButtonWidget(
                                                                                     onPressed: () async {
@@ -365,6 +399,38 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
+                                                                                  if (getJsonField(
+                                                                                        validItemItem,
+                                                                                        r'''$.club_rugby''',
+                                                                                      ) !=
+                                                                                      null)
+                                                                                    RichText(
+                                                                                      textScaler: MediaQuery.of(context).textScaler,
+                                                                                      text: TextSpan(
+                                                                                        children: [
+                                                                                          TextSpan(
+                                                                                            text: 'Club :',
+                                                                                            style: TextStyle(),
+                                                                                          ),
+                                                                                          TextSpan(
+                                                                                            text: getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.club_rugby''',
+                                                                                            ).toString(),
+                                                                                            style: TextStyle(
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontSize: 14.0,
+                                                                                            ),
+                                                                                          )
+                                                                                        ],
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: 'GeistSans',
+                                                                                              fontSize: 12.0,
+                                                                                              letterSpacing: 0.0,
+                                                                                              useGoogleFonts: false,
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
                                                                                   RichText(
                                                                                     textScaler: MediaQuery.of(context).textScaler,
                                                                                     text: TextSpan(
@@ -491,6 +557,14 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                                 r'''$.question''',
                                                                                               ).toString(),
                                                                                               'tagId': FFAppState().tagList,
+                                                                                              'club_rugby': getJsonField(
+                                                                                                retoursATrierGetToBeDeterminedSubsResponse.jsonBody,
+                                                                                                r'''$.club_rugby''',
+                                                                                              ).toString(),
+                                                                                              'instagram': getJsonField(
+                                                                                                retoursATrierGetToBeDeterminedSubsResponse.jsonBody,
+                                                                                                r'''$.instagram''',
+                                                                                              ).toString(),
                                                                                             });
                                                                                             await NewSubsTable().delete(
                                                                                               matchingRows: (rows) => rows.eqOrNull(
@@ -574,6 +648,14 @@ class _RetoursATrierWidgetState extends State<RetoursATrierWidget> {
                                                                                             'question': getJsonField(
                                                                                               validItemItem,
                                                                                               r'''$.question''',
+                                                                                            ).toString(),
+                                                                                            'club_rugby': getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.club_rugby''',
+                                                                                            ).toString(),
+                                                                                            'instagram': getJsonField(
+                                                                                              validItemItem,
+                                                                                              r'''$.instagram''',
                                                                                             ).toString(),
                                                                                           });
                                                                                           await NewSubsTable().delete(

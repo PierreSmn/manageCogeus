@@ -74,7 +74,8 @@ class _ChooseMutiTagWidgetState extends State<ChooseMutiTagWidget> {
         List<TagsRow> loadTagsTagsRowList = snapshot.data!;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: 245.0,
+          height: 475.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).revoWhite,
             borderRadius: BorderRadius.circular(16.0),

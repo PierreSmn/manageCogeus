@@ -606,6 +606,46 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                   useGoogleFonts: false,
                                                                                                 ),
                                                                                           )),
+                                                                                          if (getJsonField(
+                                                                                                validItemItem,
+                                                                                                r'''$.club_rugby''',
+                                                                                              ) !=
+                                                                                              null)
+                                                                                            SelectionArea(
+                                                                                                child: Text(
+                                                                                              getJsonField(
+                                                                                                validItemItem,
+                                                                                                r'''$.club_rugby''',
+                                                                                              ).toString(),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    fontSize: 14.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w300,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            )),
+                                                                                          if (getJsonField(
+                                                                                                validItemItem,
+                                                                                                r'''$.instagram''',
+                                                                                              ) !=
+                                                                                              null)
+                                                                                            SelectionArea(
+                                                                                                child: Text(
+                                                                                              getJsonField(
+                                                                                                validItemItem,
+                                                                                                r'''$.instagram''',
+                                                                                              ).toString(),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    fontSize: 14.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w300,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            )),
                                                                                         ],
                                                                                       ),
                                                                                       if (_model.tagId != null)
@@ -1398,7 +1438,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                 child: Builder(
                                                                   builder:
                                                                       (context) {
-                                                                    final validItem =
+                                                                    final validItemTagged =
                                                                         loadAllGetValidSubsResponse
                                                                             .jsonBody
                                                                             .toList();
@@ -1425,11 +1465,11 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                       clipBehavior:
                                                                           Clip.none,
                                                                       children: List.generate(
-                                                                          validItem
+                                                                          validItemTagged
                                                                               .length,
-                                                                          (validItemIndex) {
-                                                                        final validItemItem =
-                                                                            validItem[validItemIndex];
+                                                                          (validItemTaggedIndex) {
+                                                                        final validItemTaggedItem =
+                                                                            validItemTagged[validItemTaggedIndex];
                                                                         return Container(
                                                                           width:
                                                                               330.0,
@@ -1461,7 +1501,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                     children: [
                                                                                       FlutterFlowVideoPlayer(
                                                                                         path: getJsonField(
-                                                                                          validItemItem,
+                                                                                          validItemTaggedItem,
                                                                                           r'''$.media_link''',
                                                                                         ).toString(),
                                                                                         videoType: VideoType.network,
@@ -1490,7 +1530,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                         children: [
                                                                                           Text(
                                                                                             getJsonField(
-                                                                                              validItemItem,
+                                                                                              validItemTaggedItem,
                                                                                               r'''$.submitter_name''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1504,7 +1544,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                           SelectionArea(
                                                                                               child: Text(
                                                                                             getJsonField(
-                                                                                              validItemItem,
+                                                                                              validItemTaggedItem,
                                                                                               r'''$.email''',
                                                                                             ).toString(),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1516,6 +1556,46 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                   useGoogleFonts: false,
                                                                                                 ),
                                                                                           )),
+                                                                                          if (getJsonField(
+                                                                                                validItemTaggedItem,
+                                                                                                r'''$.club_rugby''',
+                                                                                              ) !=
+                                                                                              null)
+                                                                                            SelectionArea(
+                                                                                                child: Text(
+                                                                                              getJsonField(
+                                                                                                validItemTaggedItem,
+                                                                                                r'''$.club_rugby''',
+                                                                                              ).toString(),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    fontSize: 14.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w300,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            )),
+                                                                                          if (getJsonField(
+                                                                                                validItemTaggedItem,
+                                                                                                r'''$.instagram''',
+                                                                                              ) !=
+                                                                                              null)
+                                                                                            SelectionArea(
+                                                                                                child: Text(
+                                                                                              getJsonField(
+                                                                                                validItemTaggedItem,
+                                                                                                r'''$.instagram''',
+                                                                                              ).toString(),
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                    fontSize: 14.0,
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w300,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            )),
                                                                                         ],
                                                                                       ),
                                                                                       Column(
@@ -1540,14 +1620,14 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                             ),
                                                                                           ),
                                                                                           RowWigetWidget(
-                                                                                            key: Key('Keyxb3_${validItemIndex}_of_${validItem.length}'),
+                                                                                            key: Key('Keyxb3_${validItemTaggedIndex}_of_${validItemTagged.length}'),
                                                                                             parameter1: getJsonField(
-                                                                                              validItemItem,
+                                                                                              validItemTaggedItem,
                                                                                               r'''$.tagId''',
                                                                                               true,
                                                                                             ),
                                                                                             parameter2: getJsonField(
-                                                                                              validItemItem,
+                                                                                              validItemTaggedItem,
                                                                                               r'''$.tagId''',
                                                                                             ),
                                                                                           ),
@@ -1557,12 +1637,12 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                               child: FFButtonWidget(
                                                                                                 onPressed: () async {
                                                                                                   if (getJsonField(
-                                                                                                        validItemItem,
+                                                                                                        validItemTaggedItem,
                                                                                                         r'''$.tagId''',
                                                                                                       ) !=
                                                                                                       null) {
                                                                                                     FFAppState().tagList = getJsonField(
-                                                                                                      validItemItem,
+                                                                                                      validItemTaggedItem,
                                                                                                       r'''$.tagId''',
                                                                                                       true,
                                                                                                     )!
@@ -1631,13 +1711,13 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                     matchingRows: (rows) => rows.eqOrNull(
                                                                                                       'id',
                                                                                                       getJsonField(
-                                                                                                        validItemItem,
+                                                                                                        validItemTaggedItem,
                                                                                                         r'''$.id''',
                                                                                                       ),
                                                                                                     ),
                                                                                                   );
                                                                                                   FFAppState().clearUsersSpeTagsCacheKey(getJsonField(
-                                                                                                    validItemItem,
+                                                                                                    validItemTaggedItem,
                                                                                                     r'''$.tagId''',
                                                                                                   ).toString());
                                                                                                   safeSetState(() => _model.apiRequestCompleter1 = null);
@@ -1679,7 +1759,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                             ),
                                                                                             TextSpan(
                                                                                               text: getJsonField(
-                                                                                                validItemItem,
+                                                                                                validItemTaggedItem,
                                                                                                 r'''$.slugDone''',
                                                                                               ).toString(),
                                                                                               style: TextStyle(
@@ -1699,7 +1779,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                       SelectionArea(
                                                                                           child: Text(
                                                                                         getJsonField(
-                                                                                          validItemItem,
+                                                                                          validItemTaggedItem,
                                                                                           r'''$.transcription''',
                                                                                         ).toString(),
                                                                                         maxLines: 4,
@@ -1726,10 +1806,10 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                           FFButtonWidget(
                                                                                             onPressed: () async {
                                                                                               await launchURL('${getJsonField(
-                                                                                                validItemItem,
+                                                                                                validItemTaggedItem,
                                                                                                 r'''$.media_link''',
                                                                                               ).toString()}?download=${getJsonField(
-                                                                                                validItemItem,
+                                                                                                validItemTaggedItem,
                                                                                                 r'''$.slugDone''',
                                                                                               ).toString()}.mp4');
                                                                                             },
@@ -1763,43 +1843,43 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                             onPressed: () async {
                                                                                               await RejectedSubsTable().insert({
                                                                                                 'submitter_name': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.submitter_name''',
                                                                                                 ).toString(),
                                                                                                 'media_link': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.media_link''',
                                                                                                 ).toString(),
                                                                                                 'brand_name': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.brand_name''',
                                                                                                 ).toString(),
                                                                                                 'slugDone': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.slugDone''',
                                                                                                 ).toString(),
                                                                                                 'email': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.email''',
                                                                                                 ).toString(),
                                                                                                 'submitter_surname': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.submitter_name''',
                                                                                                 ).toString(),
                                                                                                 'transcription': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.transcription''',
                                                                                                 ).toString(),
                                                                                                 'rating': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.rating''',
                                                                                                 ),
                                                                                                 'boolMail': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.boolMail''',
                                                                                                 ),
                                                                                                 'question': getJsonField(
-                                                                                                  validItemItem,
+                                                                                                  validItemTaggedItem,
                                                                                                   r'''$.question''',
                                                                                                 ).toString(),
                                                                                               });
@@ -1807,7 +1887,7 @@ class _RetoursWidgetState extends State<RetoursWidget> {
                                                                                                 matchingRows: (rows) => rows.eqOrNull(
                                                                                                   'id',
                                                                                                   getJsonField(
-                                                                                                    validItemItem,
+                                                                                                    validItemTaggedItem,
                                                                                                     r'''$.id''',
                                                                                                   ),
                                                                                                 ),
