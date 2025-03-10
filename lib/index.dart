@@ -34,3 +34,5 @@ export '/trois_pages/home_copy2/home_copy2_widget.dart' show HomeCopy2Widget;
 export '/trois_pages/feedbacks/feedbacks_widget.dart' show FeedbacksWidget;
 export '/trois_pages/experiences/experiences_widget.dart'
     show ExperiencesWidget;
+export '/trois_pages/redirections_copy/redirections_copy_widget.dart'
+    show RedirectionsCopyWidget;

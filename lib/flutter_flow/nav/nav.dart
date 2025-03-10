@@ -293,6 +293,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: ExperiencesWidget.routePath,
           requireAuth: true,
           builder: (context, params) => ExperiencesWidget(),
+        ),
+        FFRoute(
+          name: RedirectionsCopyWidget.routeName,
+          path: RedirectionsCopyWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => RedirectionsCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

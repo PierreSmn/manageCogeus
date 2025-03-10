@@ -757,6 +757,247 @@ class PlaceIdRequestCopyCall {
           .toList();
 }
 
+class GetDashboardDataCall {
+  static Future<ApiCallResponse> call({
+    int? activeId,
+    String? levelId = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "p_target_client_id": ${activeId},
+  "p_column_type": "${escapeStringForJson(levelId)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Get dashboard Data',
+      apiUrl:
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/rpc/api_get_client_metrics',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpZmN4bHF3ZmZkcnFjd2dnb3FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzMyNjY2NTYsImV4cCI6MTk4ODg0MjY1Nn0.lha9G8j7lPLVGv0IU1sAT4SzrJb0I87LfhhvQV8Tc2Q',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static double? moyfeedbackgeneral(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].moy_feedback_general''',
+      ));
+  static double? moyfeedback1(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].moy_feedback_1''',
+      ));
+  static double? moyfeedback2(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].moy_feedback_2''',
+      ));
+  static double? moyfeedback3(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].moy_feedback_3''',
+      ));
+  static double? moyfeedback4(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].moy_feedback_4''',
+      ));
+  static int? countpromoteurs(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_promoteurs''',
+      ));
+  static int? countindifferent(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_indifferent''',
+      ));
+  static int? countdettracteurs(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_dettracteurs''',
+      ));
+  static int? countnps(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_nps''',
+      ));
+  static int? countvideodone(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_video_done''',
+      ));
+  static int? countvideonotdone(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_video_not_done''',
+      ));
+  static int? countreviewdone(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_review_done''',
+      ));
+  static int? countreviewnotdone(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_review_not_done''',
+      ));
+  static int? countfeedbackanswer(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_feedback_answer''',
+      ));
+  static int? countfeedbacknotanswered(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].count_feedback_not_answered''',
+      ));
+  static double? avgnpsscore(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].avg_nps_score''',
+      ));
+  static double? repartpromot(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].repart_promot''',
+      ));
+  static double? repartindif(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].repart_indif''',
+      ));
+  static double? repartdetrac(dynamic response) =>
+      castToType<double>(getJsonField(
+        response,
+        r'''$[:].repart_detrac''',
+      ));
+  static double? npsscore(dynamic response) => castToType<double>(getJsonField(
+        response,
+        r'''$[:].nps_score''',
+      ));
+  static int? raisonconnu(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison_connu''',
+      ));
+  static int? totalpromoters(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total_promoters''',
+      ));
+  static int? totalindifferent(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].total_indifferent''',
+      ));
+  static int? totaldetractors(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].total_detractors''',
+      ));
+  static int? raison1count(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison1_count''',
+      ));
+  static int? raison2count(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison2_count''',
+      ));
+  static int? raison3count(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison3_count''',
+      ));
+  static int? raison4count(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison4_count''',
+      ));
+  static int? raison5count(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].raison5_count''',
+      ));
+  static int? promotraison1count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].promot_raison1_count''',
+      ));
+  static int? promotraison2count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].promot_raison2_count''',
+      ));
+  static int? promotraison3count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].promot_raison3_count''',
+      ));
+  static int? promotraison4count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].promot_raison4_count''',
+      ));
+  static int? promotraison5count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].promot_raison5_count''',
+      ));
+  static int? detracraison1count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].detrac_raison1_count''',
+      ));
+  static int? detracraison2count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].detrac_raison2_count''',
+      ));
+  static int? detracraison3count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].detrac_raison3_count''',
+      ));
+  static int? detracraison4count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].detrac_raison4_count''',
+      ));
+  static int? detracraison5count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].detrac_raison5_count''',
+      ));
+  static int? passiveraison1count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].passive_raison1_count''',
+      ));
+  static int? passiveraison2count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].passive_raison2_count''',
+      ));
+  static int? passiveraison3count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].passive_raison3_count''',
+      ));
+  static int? passiveraison4count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].passive_raison4_count''',
+      ));
+  static int? passiveraison5count(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:].passive_raison5_count''',
+      ));
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
@@ -799,4 +1040,15 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
     }
     return isList ? '[]' : '{}';
   }
+}
+
+String? escapeStringForJson(String? input) {
+  if (input == null) {
+    return null;
+  }
+  return input
+      .replaceAll('\\', '\\\\')
+      .replaceAll('"', '\\"')
+      .replaceAll('\n', '\\n')
+      .replaceAll('\t', '\\t');
 }
