@@ -20,6 +20,10 @@ class OnboardModel extends FlutterFlowModel<OnboardWidget> {
 
   bool visualise = false;
 
+  String? emailSendingTool;
+
+  String? npsLink;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for MouseRegion widget.
@@ -75,6 +79,10 @@ class OnboardModel extends FlutterFlowModel<OnboardWidget> {
   bool mouseRegionHovered14 = false;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered15 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered16 = false;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered17 = false;
 
   @override
   void initState(BuildContext context) {}

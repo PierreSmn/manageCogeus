@@ -182,7 +182,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color buttonRevBG = Color(0xFFE8F0FC);
   late Color buttonRevHover = Color(0xFFE2E9F5);
   late Color buttonRevText = Color(0xFF2C64E3);
-  late Color cogeusNavSelected = Color(0xFFF6F4FE);
+  late Color cogeusNavSelected = Color(0xFFF3EFFF);
   late Color cogeusHoverPurple = Color(0xFFA795F1);
   late Color inputBg = Color(0xFFEBEBF0);
   late Color inputBgClicked = Color(0xFFE2E2E7);

@@ -111,57 +111,6 @@ class _ReadEngagementWidgetState extends State<ReadEngagementWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Engagement Harvester',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    fontSize: 24.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    lineHeight: 1.2,
-                                  ),
-                            ),
-                            if (clientIdClientsRow?.theme4 != null &&
-                                clientIdClientsRow?.theme4 != '')
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .vertSympa,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Icon(
-                                      Icons.check_sharp,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Pret à envoyer',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'GeistSans',
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: false,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 8.0)),
-                              ),
-                          ].divide(SizedBox(height: 12.0)),
-                        ),
                         SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,

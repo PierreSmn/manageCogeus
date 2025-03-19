@@ -12,6 +12,7 @@ import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,12 @@ import 'onboard_model.dart';
 export 'onboard_model.dart';
 
 class OnboardWidget extends StatefulWidget {
-  const OnboardWidget({super.key});
+  const OnboardWidget({
+    super.key,
+    bool? setupmail,
+  }) : this.setupmail = setupmail ?? false;
+
+  final bool setupmail;
 
   static String routeName = 'onboard';
   static String routePath = '/onboard';
@@ -38,6 +44,16 @@ class _OnboardWidgetState extends State<OnboardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget.setupmail) {
+        _model.step = 6;
+        safeSetState(() {});
+      } else {
+        return;
+      }
+    });
 
     _model.lienLogoTextController ??= TextEditingController();
     _model.lienLogoFocusNode ??= FocusNode();
@@ -113,14 +129,28 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
-                                          width: 130.0,
-                                          height: 60.0,
-                                          fit: BoxFit.contain,
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          if (widget.setupmail) {
+                                            context.pushNamed(
+                                                ParamWidget.routeName);
+                                          } else {
+                                            return;
+                                          }
+                                        },
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1714658498448000.png',
+                                            width: 130.0,
+                                            height: 60.0,
+                                            fit: BoxFit.contain,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -307,9 +337,12 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'GeistSans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .joliGrisPourTexteLeger,
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w300,
                                                   useGoogleFonts: false,
                                                 ),
                                           ),
@@ -4508,6 +4541,96 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 _model.mouseRegionHovered11 = false);
                                                                           }),
                                                                         ),
+                                                                        MouseRegion(
+                                                                          opaque:
+                                                                              false,
+                                                                          cursor:
+                                                                              MouseCursor.defer ?? MouseCursor.defer,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                EdgeInsets.all(3.0),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                await ClientsTable().update(
+                                                                                  data: {
+                                                                                    'medium': 'Qr',
+                                                                                  },
+                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                    'id',
+                                                                                    FFAppState().activeClientID,
+                                                                                  ),
+                                                                                );
+                                                                                await launchURL('http://api.qrserver.com/v1/create-qr-code/?data=https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}');
+                                                                                _model.step = _model.step! + 1;
+                                                                                safeSetState(() {});
+                                                                              },
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 70.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: _model.mouseRegionHovered12 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      Container(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondary,
+                                                                                          borderRadius: BorderRadius.circular(100.0),
+                                                                                        ),
+                                                                                        child: Icon(
+                                                                                          Icons.qr_code,
+                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              'QR code',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(height: 2.0)),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered12 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered12 = false);
+                                                                          }),
+                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),
@@ -4564,7 +4687,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               onTap: () async {
                                                                                 await ClientsTable().update(
                                                                                   data: {
-                                                                                    'email_tool': 'Shopify',
+                                                                                    'email_tool': 'html',
                                                                                   },
                                                                                   matchingRows: (rows) => rows.eqOrNull(
                                                                                     'id',
@@ -4572,95 +4695,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                                 );
                                                                                 _model.step = _model.step! + 1;
-                                                                                safeSetState(() {});
-                                                                              },
-                                                                              child: Container(
-                                                                                width: double.infinity,
-                                                                                height: 70.0,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: _model.mouseRegionHovered12 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
-                                                                                  borderRadius: BorderRadius.circular(16.0),
-                                                                                ),
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                                                                                  child: Row(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    children: [
-                                                                                      Container(
-                                                                                        width: 50.0,
-                                                                                        height: 50.0,
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: Color(0xFF4285F4),
-                                                                                          borderRadius: BorderRadius.circular(100.0),
-                                                                                        ),
-                                                                                        child: Icon(
-                                                                                          Icons.mail,
-                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          size: 24.0,
-                                                                                        ),
-                                                                                      ),
-                                                                                      Padding(
-                                                                                        padding: EdgeInsets.all(12.0),
-                                                                                        child: Column(
-                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                          mainAxisAlignment: MainAxisAlignment.center,
-                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                          children: [
-                                                                                            Text(
-                                                                                              'Brevo',
-                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                    fontFamily: 'GeistSans',
-                                                                                                    letterSpacing: 0.0,
-                                                                                                    fontWeight: FontWeight.w600,
-                                                                                                    useGoogleFonts: false,
-                                                                                                  ),
-                                                                                            ),
-                                                                                          ].divide(SizedBox(height: 2.0)),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          onEnter:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered12 = true);
-                                                                          }),
-                                                                          onExit:
-                                                                              ((event) async {
-                                                                            safeSetState(() =>
-                                                                                _model.mouseRegionHovered12 = false);
-                                                                          }),
-                                                                        ),
-                                                                        MouseRegion(
-                                                                          opaque:
-                                                                              false,
-                                                                          cursor:
-                                                                              MouseCursor.defer ?? MouseCursor.defer,
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                EdgeInsets.all(3.0),
-                                                                            child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                await ClientsTable().update(
-                                                                                  data: {
-                                                                                    'email_tool': 'autre',
-                                                                                  },
-                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                    'id',
-                                                                                    FFAppState().activeClientID,
-                                                                                  ),
-                                                                                );
-                                                                                _model.step = _model.step! + 1;
+                                                                                _model.emailSendingTool = 'html';
                                                                                 safeSetState(() {});
                                                                               },
                                                                               child: Container(
@@ -4679,11 +4714,11 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                         width: 50.0,
                                                                                         height: 50.0,
                                                                                         decoration: BoxDecoration(
-                                                                                          color: Color(0xFF51B37F),
+                                                                                          color: FlutterFlowTheme.of(context).tertiary,
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
                                                                                         child: Icon(
-                                                                                          Icons.phone_iphone,
+                                                                                          Icons.code,
                                                                                           color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                           size: 24.0,
                                                                                         ),
@@ -4696,7 +4731,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                           crossAxisAlignment: CrossAxisAlignment.start,
                                                                                           children: [
                                                                                             Text(
-                                                                                              'Shopify',
+                                                                                              'Code Html - Outil perso',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'GeistSans',
                                                                                                     letterSpacing: 0.0,
@@ -4742,7 +4777,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               onTap: () async {
                                                                                 await ClientsTable().update(
                                                                                   data: {
-                                                                                    'email_tool': 'change',
+                                                                                    'email_tool': 'Klaviyo',
                                                                                   },
                                                                                   matchingRows: (rows) => rows.eqOrNull(
                                                                                     'id',
@@ -4750,6 +4785,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                   ),
                                                                                 );
                                                                                 _model.step = _model.step! + 1;
+                                                                                _model.emailSendingTool = 'Klaviyo';
                                                                                 safeSetState(() {});
                                                                               },
                                                                               child: Container(
@@ -4771,10 +4807,14 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                           color: FlutterFlowTheme.of(context).jo2,
                                                                                           borderRadius: BorderRadius.circular(100.0),
                                                                                         ),
-                                                                                        child: Icon(
-                                                                                          Icons.notifications,
-                                                                                          color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                          size: 24.0,
+                                                                                        child: ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(100.0),
+                                                                                          child: Image.network(
+                                                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2QjT7BSEX0QaB4k2khj-DgN7HnOMGP7LeA&s',
+                                                                                            width: 200.0,
+                                                                                            height: 200.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
@@ -4813,8 +4853,259 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 _model.mouseRegionHovered14 = false);
                                                                           }),
                                                                         ),
+                                                                        MouseRegion(
+                                                                          opaque:
+                                                                              false,
+                                                                          cursor:
+                                                                              MouseCursor.defer ?? MouseCursor.defer,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                EdgeInsets.all(3.0),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                await ClientsTable().update(
+                                                                                  data: {
+                                                                                    'email_tool': 'Shopify',
+                                                                                  },
+                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                    'id',
+                                                                                    FFAppState().activeClientID,
+                                                                                  ),
+                                                                                );
+                                                                                _model.step = _model.step! + 1;
+                                                                                _model.emailSendingTool = 'Shopify';
+                                                                                safeSetState(() {});
+                                                                              },
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 70.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: _model.mouseRegionHovered15 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      Container(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          borderRadius: BorderRadius.circular(100.0),
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsets.all(5.0),
+                                                                                          child: ClipRRect(
+                                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                                            child: Image.network(
+                                                                                              'https://cdn.iconscout.com/icon/free/png-256/free-shopify-logo-icon-download-in-svg-png-gif-file-formats--70-flat-social-icons-color-pack-logos-432540.png?f=webp&w=256',
+                                                                                              width: 200.0,
+                                                                                              height: 200.0,
+                                                                                              fit: BoxFit.contain,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              'Shopify',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(height: 2.0)),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered15 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered15 = false);
+                                                                          }),
+                                                                        ),
+                                                                        MouseRegion(
+                                                                          opaque:
+                                                                              false,
+                                                                          cursor:
+                                                                              MouseCursor.defer ?? MouseCursor.defer,
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                EdgeInsets.all(3.0),
+                                                                            child:
+                                                                                InkWell(
+                                                                              splashColor: Colors.transparent,
+                                                                              focusColor: Colors.transparent,
+                                                                              hoverColor: Colors.transparent,
+                                                                              highlightColor: Colors.transparent,
+                                                                              onTap: () async {
+                                                                                await ClientsTable().update(
+                                                                                  data: {
+                                                                                    'email_tool': 'Brevo',
+                                                                                  },
+                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                    'id',
+                                                                                    FFAppState().activeClientID,
+                                                                                  ),
+                                                                                );
+                                                                                _model.step = _model.step! + 1;
+                                                                                _model.emailSendingTool = 'Brevo';
+                                                                                safeSetState(() {});
+                                                                              },
+                                                                              child: Container(
+                                                                                width: double.infinity,
+                                                                                height: 70.0,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: _model.mouseRegionHovered16 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
+                                                                                  borderRadius: BorderRadius.circular(16.0),
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      Container(
+                                                                                        width: 50.0,
+                                                                                        height: 50.0,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          borderRadius: BorderRadius.circular(100.0),
+                                                                                        ),
+                                                                                        child: ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(100.0),
+                                                                                          child: Image.network(
+                                                                                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzivCFLO2kUG8Sse_uHUd7PMTKfLzg4yinbg&s',
+                                                                                            width: 200.0,
+                                                                                            height: 200.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsets.all(12.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Text(
+                                                                                              'Brevo',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'GeistSans',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                    fontWeight: FontWeight.w600,
+                                                                                                    useGoogleFonts: false,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(height: 2.0)),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          onEnter:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered16 = true);
+                                                                          }),
+                                                                          onExit:
+                                                                              ((event) async {
+                                                                            safeSetState(() =>
+                                                                                _model.mouseRegionHovered16 = false);
+                                                                          }),
+                                                                        ),
                                                                       ],
                                                                     ),
+                                                                  ),
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          _model.chooseEmailSending =
+                                                                              false;
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        },
+                                                                        text:
+                                                                            'Retour',
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).inputBg,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'GeistSans',
+                                                                                color: FlutterFlowTheme.of(context).inputTitleGrey,
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w500,
+                                                                                useGoogleFonts: false,
+                                                                              ),
+                                                                          elevation:
+                                                                              0.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                0.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            12.0)),
                                                                   ),
                                                                 ].divide(SizedBox(
                                                                     height:
@@ -4970,7 +5261,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              await Clipboard.setData(ClipboardData(text: ''));
+                                                                              await Clipboard.setData(ClipboardData(text: 'https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}'));
                                                                               ScaffoldMessenger.of(context).showSnackBar(
                                                                                 SnackBar(
                                                                                   content: Text(
@@ -4989,7 +5280,7 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                               width: double.infinity,
                                                                               height: 70.0,
                                                                               decoration: BoxDecoration(
-                                                                                color: _model.mouseRegionHovered15 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
+                                                                                color: _model.mouseRegionHovered17 ? FlutterFlowTheme.of(context).cogeHoverFromWhite : FlutterFlowTheme.of(context).revoWhite,
                                                                                 borderRadius: BorderRadius.circular(16.0),
                                                                               ),
                                                                               child: Padding(
@@ -5038,12 +5329,12 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         onEnter:
                                                                             ((event) async {
                                                                           safeSetState(() =>
-                                                                              _model.mouseRegionHovered15 = true);
+                                                                              _model.mouseRegionHovered17 = true);
                                                                         }),
                                                                         onExit:
                                                                             ((event) async {
                                                                           safeSetState(() =>
-                                                                              _model.mouseRegionHovered15 = false);
+                                                                              _model.mouseRegionHovered17 = false);
                                                                         }),
                                                                       ),
                                                                     ],
@@ -5126,9 +5417,16 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                           ),
                                                         FFButtonWidget(
                                                           onPressed: () async {
-                                                            context.pushNamed(
-                                                                HomeWidget
-                                                                    .routeName);
+                                                            if (widget
+                                                                .setupmail) {
+                                                              context.pushNamed(
+                                                                  ParamWidget
+                                                                      .routeName);
+                                                            } else {
+                                                              context.pushNamed(
+                                                                  HomeWidget
+                                                                      .routeName);
+                                                            }
                                                           },
                                                           text: 'Terminer',
                                                           options:
@@ -5192,156 +5490,332 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                         ),
                                       if ((_model.step == 7) &&
                                           _model.chooseEmailSending)
-                                        Container(
-                                          height: 500.0,
-                                          decoration: BoxDecoration(),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 28.0, 12.0, 0.0),
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.sizeOf(context)
-                                                      .height *
-                                                  1.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                        FutureBuilder<List<ClientsRow>>(
+                                          future: ClientsTable().querySingleRow(
+                                            queryFn: (q) => q.eqOrNull(
+                                              'id',
+                                              FFAppState().activeClientID,
+                                            ),
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  child: SpinKitRing(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 50.0,
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<ClientsRow>
+                                                implemMailClientsRowList =
+                                                snapshot.data!;
+
+                                            final implemMailClientsRow =
+                                                implemMailClientsRowList
+                                                        .isNotEmpty
+                                                    ? implemMailClientsRowList
+                                                        .first
+                                                    : null;
+
+                                            return Container(
+                                              height: 500.0,
+                                              decoration: BoxDecoration(),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 28.0, 12.0, 0.0),
+                                                child: Container(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          1.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .revoBG,
-                                                borderRadius:
-                                                    BorderRadius.circular(0.0),
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  children: [
-                                                    Container(
-                                                      width: 400.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                'Implementation : Email',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Manrope',
-                                                                      fontSize:
-                                                                          24.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      lineHeight:
-                                                                          1.2,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                'Mettez en place l\'envoi automatique des mails à vos clients ',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'GeistSans',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                              ),
-                                                            ].divide(SizedBox(
-                                                                height: 12.0)),
-                                                          ),
-                                                          SingleChildScrollView(
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: <Widget>[]
-                                                                  .divide(SizedBox(
-                                                                      height:
-                                                                          8.0)),
-                                                            ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 26.0)),
-                                                      ),
-                                                    ),
-                                                    Row(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                  ),
+                                                  child: SingleChildScrollView(
+                                                    child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
+                                                              .spaceBetween,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
                                                               .center,
                                                       children: [
-                                                        if (_model.step! >= 2)
-                                                          FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              _model.step =
-                                                                  _model.step! +
-                                                                      -1;
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                            text: 'Précédent',
-                                                            options:
-                                                                FFButtonOptions(
-                                                              height: 40.0,
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                        Container(
+                                                          width: 400.0,
+                                                          height: 380.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        24.0),
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Text(
+                                                                      'Implémentation : Email',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Manrope',
+                                                                            fontSize:
+                                                                                24.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            lineHeight:
+                                                                                1.2,
+                                                                          ),
+                                                                    ),
+                                                                    Text(
+                                                                      'Mettez en place l\'envoi automatique des mails à vos clients ',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'GeistSans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
+                                                                  ].divide(SizedBox(
+                                                                      height:
+                                                                          12.0)),
+                                                                ),
+                                                                Container(
+                                                                  width: double
+                                                                      .infinity,
+                                                                  height: 100.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .shadcnCardBorderGrey,
+                                                                    ),
+                                                                  ),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding:
+                                                                        EdgeInsets.all(
+                                                                            8.0),
+                                                                    child: Text(
+                                                                      '<div>​</div>\n<table border=\"0\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\">\n<tbody>\n<tr>\n<td style=\"padding: 30px 0;\" align=\"center\">',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'GeistSans',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).joliGrisPourTexteLeger,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            useGoogleFonts:
+                                                                                false,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                SingleChildScrollView(
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          if (_model.emailSendingTool ==
+                                                                              'html') {
+                                                                            _model.npsLink =
+                                                                                'https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}&nps=';
+                                                                            safeSetState(() {});
+                                                                          } else if (_model.emailSendingTool ==
+                                                                              'Klaviyo') {
+                                                                            _model.npsLink =
+                                                                                'https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}&email={{ email }}&name={{ first_name }}&lastname={{ last_name }}&product={{ event.extra.line_items.0.product.title }}&orderId={{ event.extra.id }}&nps=';
+                                                                            safeSetState(() {});
+                                                                          } else {
+                                                                            _model.npsLink =
+                                                                                'https://app.cogeus.com/nps?clid=${FFAppState().activeClientID.toString()}&nps=';
+                                                                            safeSetState(() {});
+                                                                          }
+
+                                                                          await Clipboard.setData(
+                                                                              ClipboardData(text: '<!DOCTYPE html><html lang=\"fr\"><head>  <meta charset=\"UTF-8\">  <title> </title></head><body>  <table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">    <tr>      <td align=\"center\" style=\"padding:30px 0;\">        <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" style=\"width: 320px; font-family: System, Helvetica, sans-serif; margin: auto;\">          <tr>            <td style=\"font-size: 20px; padding-bottom: 10px; text-align: center;\">              Sur une échelle de 0 à 10, quelle est la probabilité que vous recommandiez ${FFAppState().activeBrand} à un ami ?            </td>          </tr>          <tr>            <td height=\"10\"></td>          </tr>          <!-- Score 10 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}10\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 14px; line-height: 30px; font-family: Arial, sans-serif;\">                10 - Très probable              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 9 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}9\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                9              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 8 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}8\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                8              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 7 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}7\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                7              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 6 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}6\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                6              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 5 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}5\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                5              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 4 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}4\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                4              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 3 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}3\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                3              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 2 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}2\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                2              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 1 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}1\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 16px; line-height: 30px; font-family: Arial, sans-serif;\">                1              </a>            </td>          </tr>          <tr>            <td height=\"5\"></td>          </tr>          <!-- Score 0 -->          <tr>            <td style=\"background-color: ${implemMailClientsRow?.color}; border-radius: 4px; width: 150px; height: 30px; text-align: center; vertical-align: middle; margin: 5px 0;\">              <a href=\"${_model.npsLink}0\" style=\"display: block; width: 100%; height: 100%; text-decoration: none; color: #ffffff; font-size: 14px; line-height: 30px; font-family: Arial, sans-serif;\">                0 - Pas du tout probable              </a>            </td>          </tr>        </table>      </td>    </tr>  </table></body></html>'));
+                                                                          ScaffoldMessenger.of(context)
+                                                                              .showSnackBar(
+                                                                            SnackBar(
+                                                                              content: Text(
+                                                                                'Code copié',
+                                                                                style: TextStyle(
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                ),
+                                                                              ),
+                                                                              duration: Duration(milliseconds: 4000),
+                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                        text:
+                                                                            'Copier le code d\'intégration',
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .code,
+                                                                          size:
+                                                                              15.0,
+                                                                        ),
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              Color(0xFFEEE8FC),
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'GeistSans',
+                                                                                color: Color(0xFF5E35B1),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.w500,
+                                                                                useGoogleFonts: false,
+                                                                              ),
+                                                                          elevation:
+                                                                              0.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                0.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        height:
+                                                                            8.0)),
+                                                                  ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height:
+                                                                      26.0)),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            if (_model.step! >=
+                                                                2)
+                                                              FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  _model.step =
+                                                                      _model.step! +
+                                                                          -1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                text:
+                                                                    'Précédent',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 40.0,
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                              iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .inputBg,
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .inputBg,
+                                                                  textStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
@@ -5356,47 +5830,54 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                         useGoogleFonts:
                                                                             false,
                                                                       ),
-                                                              elevation: 0.0,
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                width: 0.0,
+                                                                  elevation:
+                                                                      0.0,
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    width: 0.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                ),
                                                               ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                            ),
-                                                          ),
-                                                        FFButtonWidget(
-                                                          onPressed: () async {
-                                                            context.pushNamed(
-                                                                HomeWidget
-                                                                    .routeName);
-                                                          },
-                                                          text: 'Terminer',
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 40.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
+                                                            FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                if (widget
+                                                                    .setupmail) {
+                                                                  context.pushNamed(
+                                                                      ParamWidget
+                                                                          .routeName);
+                                                                } else {
+                                                                  context.pushNamed(
+                                                                      HomeWidget
+                                                                          .routeName);
+                                                                }
+                                                              },
+                                                              text: 'Terminer',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: Color(
-                                                                0xFFEEE8FC),
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
+                                                                iconPadding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: Color(
+                                                                    0xFFEEE8FC),
+                                                                textStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleSmall
                                                                     .override(
@@ -5412,27 +5893,29 @@ class _OnboardWidgetState extends State<OnboardWidget> {
                                                                       useGoogleFonts:
                                                                           false,
                                                                     ),
-                                                            elevation: 0.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 0.0,
+                                                                elevation: 0.0,
+                                                                borderSide:
+                                                                    BorderSide(
+                                                                  color: Colors
+                                                                      .transparent,
+                                                                  width: 0.0,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
                                                             ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
+                                                          ].divide(SizedBox(
+                                                              width: 12.0)),
                                                         ),
-                                                      ].divide(SizedBox(
-                                                          width: 12.0)),
+                                                      ],
                                                     ),
-                                                  ],
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ),
+                                            );
+                                          },
                                         ),
                                     ],
                                   ),
