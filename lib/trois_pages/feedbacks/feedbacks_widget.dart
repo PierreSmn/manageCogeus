@@ -18,7 +18,7 @@ class FeedbacksWidget extends StatefulWidget {
   const FeedbacksWidget({super.key});
 
   static String routeName = 'feedbacks';
-  static String routePath = '/feedbacks';
+  static String routePath = '/feedb';
 
   @override
   State<FeedbacksWidget> createState() => _FeedbacksWidgetState();

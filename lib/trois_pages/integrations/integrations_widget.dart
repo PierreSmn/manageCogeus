@@ -1,4 +1,5 @@
 import '';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/experience_related/edit_engagement/edit_engagement_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -8,33 +9,35 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbarnav/navbarnav_widget.dart';
 import '/index.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
-import 'redirections_copy_model.dart';
-export 'redirections_copy_model.dart';
+import 'integrations_model.dart';
+export 'integrations_model.dart';
 
-class RedirectionsCopyWidget extends StatefulWidget {
-  const RedirectionsCopyWidget({super.key});
+class IntegrationsWidget extends StatefulWidget {
+  const IntegrationsWidget({super.key});
 
-  static String routeName = 'redirectionsCopy';
+  static String routeName = 'integrations';
   static String routePath = '/integration';
 
   @override
-  State<RedirectionsCopyWidget> createState() => _RedirectionsCopyWidgetState();
+  State<IntegrationsWidget> createState() => _IntegrationsWidgetState();
 }
 
-class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
-  late RedirectionsCopyModel _model;
+class _IntegrationsWidgetState extends State<IntegrationsWidget> {
+  late IntegrationsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => RedirectionsCopyModel());
+    _model = createModel(context, () => IntegrationsModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -80,7 +83,7 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'redirectionsCopy',
+        title: 'integrations',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
@@ -96,12 +99,15 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   FutureBuilder<List<ClientsRow>>(
-                    future: ClientsTable().querySingleRow(
-                      queryFn: (q) => q.eqOrNull(
-                        'id',
-                        FFAppState().activeClientID,
-                      ),
-                    ),
+                    future: (_model.requestCompleter ??=
+                            Completer<List<ClientsRow>>()
+                              ..complete(ClientsTable().querySingleRow(
+                                queryFn: (q) => q.eqOrNull(
+                                  'id',
+                                  FFAppState().activeClientID,
+                                ),
+                              )))
+                        .future,
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -352,7 +358,7 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
                                                                             child:
                                                                                 TextFormField(
                                                                               controller: _model.textController ??= TextEditingController(
-                                                                                text: containerClientsRow?.reviewLink,
+                                                                                text: 'https://fr.trustpilot.com/review/${containerClientsRow?.siteUrl}',
                                                                               ),
                                                                               focusNode: _model.textFieldFocusNode,
                                                                               autofocus: false,
@@ -418,11 +424,14 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
                                                                         ),
                                                                         FFButtonWidget(
                                                                           onPressed:
-                                                                              () {
-                                                                            print('Button pressed ...');
+                                                                              () async {
+                                                                            await launchURL(_model.textController.text);
+                                                                            _model.confirmed =
+                                                                                true;
+                                                                            safeSetState(() {});
                                                                           },
                                                                           text:
-                                                                              'Valider',
+                                                                              'Ouvrir',
                                                                           options:
                                                                               FFButtonOptions(
                                                                             width:
@@ -459,6 +468,75 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
                                                                                 BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
+                                                                        if (_model
+                                                                            .confirmed)
+                                                                          FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              _model.apiResult6sr = await PostOrUpdateTrustpilotScrapingForAGivenLinkCall.call(
+                                                                                link: _model.textController.text,
+                                                                              );
+
+                                                                              if ((_model.apiResult6sr?.succeeded ?? true)) {
+                                                                                await ClientsTable().update(
+                                                                                  data: {
+                                                                                    'has_widget_tp': true,
+                                                                                    'widget_tp_link': _model.textController.text,
+                                                                                  },
+                                                                                  matchingRows: (rows) => rows.eqOrNull(
+                                                                                    'id',
+                                                                                    FFAppState().activeClientID,
+                                                                                  ),
+                                                                                );
+                                                                              } else {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return WebViewAware(
+                                                                                      child: AlertDialog(
+                                                                                        title: Text((_model.apiResult6sr?.statusCode ?? 200).toString()),
+                                                                                        content: Text((_model.apiResult6sr?.jsonBody ?? '').toString()),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                            child: Text('Ok'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              }
+
+                                                                              safeSetState(() => _model.requestCompleter = null);
+                                                                              await _model.waitForRequestCompleted();
+
+                                                                              safeSetState(() {});
+                                                                            },
+                                                                            text:
+                                                                                'Valider',
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              width: 200.0,
+                                                                              height: 48.0,
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: Color(0xFFEEE8FC),
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: 'GeistSans',
+                                                                                    color: Color(0xFF5E35B1),
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                    useGoogleFonts: false,
+                                                                                  ),
+                                                                              elevation: 0.0,
+                                                                              borderSide: BorderSide(
+                                                                                color: Colors.transparent,
+                                                                                width: 0.0,
+                                                                              ),
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
+                                                                          ),
                                                                       ].divide(SizedBox(
                                                                               width: 7.0)),
                                                                     ),
@@ -468,117 +546,153 @@ class _RedirectionsCopyWidgetState extends State<RedirectionsCopyWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                            Container(
-                                                              width: MediaQuery
-                                                                          .sizeOf(
-                                                                              context)
-                                                                      .width *
-                                                                  1.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
-                                                                border:
-                                                                    Border.all(
+                                                            if (containerClientsRow
+                                                                    ?.hasWidgetTp ??
+                                                                true)
+                                                              Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    1.0,
+                                                                decoration:
+                                                                    BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .shadcnCardBorderGrey,
+                                                                      .primaryBackground,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .shadcnCardBorderGrey,
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .all(
-                                                                            16.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceBetween,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    FlutterFlowWebView(
-                                                                      content:
-                                                                          'https://v0-app-heuveelwg4e.vercel.app/?trustpilot_link=https://fr.trustpilot.com/review/www.chacunsoncafe.fr',
-                                                                      bypass:
-                                                                          false,
-                                                                      height:
-                                                                          400.0,
-                                                                      verticalScroll:
-                                                                          false,
-                                                                      horizontalScroll:
-                                                                          false,
-                                                                    ),
-                                                                    FFButtonWidget(
-                                                                      onPressed:
-                                                                          () async {
-                                                                        context.pushNamed(
-                                                                            RedirectionsWidget.routeName);
-                                                                      },
-                                                                      text:
-                                                                          'Finir le setup ',
-                                                                      icon:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .settings_sharp,
-                                                                        size:
-                                                                            15.0,
-                                                                      ),
-                                                                      options:
-                                                                          FFButtonOptions(
-                                                                        width: double
-                                                                            .infinity,
+                                                                child: Padding(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              16.0),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      FlutterFlowWebView(
+                                                                        content:
+                                                                            'https://v0-app-heuveelwg4e.vercel.app/?trustpilot_link=${_model.textController.text}',
+                                                                        bypass:
+                                                                            false,
                                                                         height:
-                                                                            40.0,
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            24.0,
-                                                                            0.0,
-                                                                            24.0,
-                                                                            0.0),
-                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        color: Color(
-                                                                            0xFFEEE8FC),
-                                                                        textStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .override(
-                                                                              fontFamily: 'GeistSans',
-                                                                              color: Color(0xFF5E35B1),
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.normal,
-                                                                              useGoogleFonts: false,
-                                                                            ),
-                                                                        elevation:
-                                                                            0.0,
-                                                                        borderSide:
-                                                                            BorderSide(
-                                                                          color:
-                                                                              Colors.transparent,
-                                                                          width:
-                                                                              0.0,
-                                                                        ),
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
+                                                                            400.0,
+                                                                        verticalScroll:
+                                                                            false,
+                                                                        horizontalScroll:
+                                                                            false,
                                                                       ),
-                                                                    ),
-                                                                  ].divide(SizedBox(
-                                                                      height:
-                                                                          16.0)),
+                                                                      Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            1.0,
+                                                                        height:
+                                                                            160.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              Color(0xFFF9FAFB),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                          border:
+                                                                              Border.all(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).shadcnCardBorderGrey,
+                                                                          ),
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              EdgeInsets.all(24.0),
+                                                                          child:
+                                                                              Text(
+                                                                            '<iframe src=\"https://cogeus-tp-widget.vercel.app/?trustpilot_link=https://fr.trustpilot.com/review/www.substanceoflight.com\" width=\"100%\" height=\"350\"   style=\"background: transparent;\" frameborder=\"0\"  allowtransparency=\"true\">></iframe>',
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'GeistSans',
+                                                                                  fontSize: 18.0,
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                  useGoogleFonts: false,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          await Clipboard.setData(
+                                                                              ClipboardData(text: '<iframe src=\"https://cogeus-tp-widget.vercel.app/?trustpilot_link=${_model.textController.text}\" width=\"100%\" height=\"350\"   style=\"background: transparent;\" frameborder=\"0\"  allowtransparency=\"true\">></iframe>'));
+                                                                        },
+                                                                        text:
+                                                                            'Copier le code d\'intégration',
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .content_copy_rounded,
+                                                                          size:
+                                                                              15.0,
+                                                                        ),
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              Color(0xFFEEE8FC),
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'GeistSans',
+                                                                                color: Color(0xFF5E35B1),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FontWeight.normal,
+                                                                                useGoogleFonts: false,
+                                                                              ),
+                                                                          elevation:
+                                                                              0.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                0.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        height:
+                                                                            16.0)),
+                                                                  ),
                                                                 ),
                                                               ),
-                                                            ),
                                                           ].divide(SizedBox(
                                                               height: 24.0)),
                                                         ),

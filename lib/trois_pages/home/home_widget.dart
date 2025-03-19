@@ -2503,7 +2503,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(RedirectionsWidget.routeName);
+                                                                              context.pushNamed(ParamWidget.routeName);
                                                                             },
                                                                             text:
                                                                                 'Finir le setup ',

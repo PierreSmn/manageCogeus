@@ -21,8 +21,7 @@ export '/trois_pages/retours_a_trier/retours_a_trier_widget.dart'
     show RetoursATrierWidget;
 export '/trois_pages/retours/retours_widget.dart' show RetoursWidget;
 export '/hosted/assets_copy/assets_copy_widget.dart' show AssetsCopyWidget;
-export '/trois_pages/redirections/redirections_widget.dart'
-    show RedirectionsWidget;
+export '/trois_pages/param/param_widget.dart' show ParamWidget;
 export '/pages/create_profile_client/create_profile_client_widget.dart'
     show CreateProfileClientWidget;
 export '/trois_pages/experience/experience_widget.dart' show ExperienceWidget;
@@ -34,5 +33,7 @@ export '/trois_pages/home_copy2/home_copy2_widget.dart' show HomeCopy2Widget;
 export '/trois_pages/feedbacks/feedbacks_widget.dart' show FeedbacksWidget;
 export '/trois_pages/experiences/experiences_widget.dart'
     show ExperiencesWidget;
-export '/trois_pages/redirections_copy/redirections_copy_widget.dart'
-    show RedirectionsCopyWidget;
+export '/trois_pages/integrations/integrations_widget.dart'
+    show IntegrationsWidget;
+export '/trois_pages/feed_anecdotes/feed_anecdotes_widget.dart'
+    show FeedAnecdotesWidget;

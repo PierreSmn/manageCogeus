@@ -214,10 +214,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AssetsCopyWidget(),
         ),
         FFRoute(
-          name: RedirectionsWidget.routeName,
-          path: RedirectionsWidget.routePath,
+          name: ParamWidget.routeName,
+          path: ParamWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RedirectionsWidget(),
+          builder: (context, params) => ParamWidget(),
         ),
         FFRoute(
           name: CreateProfileClientWidget.routeName,
@@ -268,7 +268,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: OnboardWidget.routeName,
           path: OnboardWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => OnboardWidget(),
+          builder: (context, params) => OnboardWidget(
+            setupmail: params.getParam(
+              'setupmail',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: HomeWidget.routeName,
@@ -295,10 +300,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ExperiencesWidget(),
         ),
         FFRoute(
-          name: RedirectionsCopyWidget.routeName,
-          path: RedirectionsCopyWidget.routePath,
+          name: IntegrationsWidget.routeName,
+          path: IntegrationsWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => RedirectionsCopyWidget(),
+          builder: (context, params) => IntegrationsWidget(),
+        ),
+        FFRoute(
+          name: FeedAnecdotesWidget.routeName,
+          path: FeedAnecdotesWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => FeedAnecdotesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

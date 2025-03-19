@@ -1284,11 +1284,11 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Text(
-                                                                                    'Recontact -',
+                                                                                    'Tickets : Demandes de recontact -',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                          fontSize: 44.72,
+                                                                                          fontSize: 24.72,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w500,
                                                                                           useGoogleFonts: false,
@@ -1299,7 +1299,7 @@ class _RecontactWidgetState extends State<RecontactWidget> {
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'GeistSans',
                                                                                           color: FlutterFlowTheme.of(context).revoCardTextColor,
-                                                                                          fontSize: 44.72,
+                                                                                          fontSize: 24.72,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w500,
                                                                                           useGoogleFonts: false,
